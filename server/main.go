@@ -49,6 +49,13 @@ func main() {
 	mux.HandleFunc("/v1/state", srv.handleState)
 	mux.HandleFunc("/v1/admin/assets/", srv.handleAdminAsset)
 
+	// Serve the static documentation website
+	webDir := "./website"
+	if _, err := os.Stat(webDir); os.IsNotExist(err) {
+		webDir = "server/website"
+	}
+	mux.Handle("/", http.FileServer(http.Dir(webDir)))
+
 	log.Printf("LVN server on %s, content=%s, admin=%v", *addr, *contentDir, *adminToken != "")
 	log.Fatal(http.ListenAndServe(*addr, withLog(mux)))
 }

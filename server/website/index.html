@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LVNScript — Elegant Visual Novel Scripting</title>
+    <meta name="description" content="Learn LVNScript, the ultra-simple narrative programming language that compiles to .lvn files. Try the interactive compiler in the browser.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">LVNScript</a>
+            <div class="nav-links">
+                <a href="#syntax">Syntax</a>
+                <a href="#playground">Playground</a>
+                <a href="#tutorials">Tutorials</a>
+                <a href="#reference">Operations Reference</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg-gradient"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Visual Novel Scripting,<br><span class="highlight">Perfected.</span></h1>
+            <p class="hero-subtitle">LVNScript is a lightweight, human-readable scripting language designed for visual novel writers. Understand the syntax in 4 lines, and compile directly to the universal <code>.lvn</code> format.</p>
+            <div class="hero-cta">
+                <a href="#playground" class="btn btn-primary">Try Interactive Playground</a>
+                <a href="#tutorials" class="btn btn-secondary">Read Tutorials</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Syntax Section -->
+    <section id="syntax" class="section container">
+        <h2 class="section-title">The 4-Line Syntax</h2>
+        <p class="section-subtitle">LVNScript is designed to get out of the way of your storytelling. You can master the syntax rules in under a minute:</p>
+        
+        <div class="syntax-card-grid">
+            <div class="syntax-card">
+                <div class="card-num">1</div>
+                <h3>Labels</h3>
+                <code class="code-line">:porch</code>
+                <p>Creates a bookmark/jump destination in your story.</p>
+            </div>
+            <div class="syntax-card">
+                <div class="card-num">2</div>
+                <h3>Speech & Narration</h3>
+                <code class="code-line">Mara [smile]: "You came back."</code>
+                <p>Write dialogue with character names and emotions, or plain text for narration.</p>
+            </div>
+            <div class="syntax-card">
+                <div class="card-num">3</div>
+                <h3>Interactive Choices</h3>
+                <code class="code-line">- "I did." -> inside min=2</code>
+                <p>Present choices to the player, branching directly to other labels with optional stat gates.</p>
+            </div>
+            <div class="syntax-card">
+                <div class="card-num">4</div>
+                <h3>Engine Operations</h3>
+                <code class="code-line">bg sprite_url="/content/bg.jpg"</code>
+                <p>Invoke engine actions like changing backgrounds, camera shakes, or adjusting stats.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Playground Section -->
+    <section id="playground" class="section playground-section">
+        <div class="container">
+            <h2 class="section-title text-center">Interactive Compiler Playground</h2>
+            <p class="section-subtitle text-center">Type your LVNScript on the left, and watch it compile to the engine-ready <code>.lvn</code> JSON in real-time!</p>
+            
+            <div class="playground-wrapper glass">
+                <div class="playground-panel">
+                    <div class="panel-header">
+                        <span>LVNScript Editor (lvns)</span>
+                        <span id="status-badge" class="badge success">✓ Compiled Successfully</span>
+                    </div>
+                    <textarea id="editor" spellcheck="false" placeholder="Write your LVNScript here...">scene hello
+actor_map Mara=mara
+
+goto porch
+
+:porch
+bg sprite_url="/content/bg/porch.jpg"
+fade to="clear" duration=0.6
+Rain ticked on the porch roof.
+actor id="mara" show=true position="left" sprite_url="/content/actors/mara.png"
+Mara: You came back.
+Mara: I wasn't sure you would.
+
+- I did. -> warmth_choice
+- I can't stay. -> leave
+
+:warmth_choice
+inc key="warmth" by=1
+Mara [smile]: Then come in out of the rain.
+goto inside
+
+:inside
+particles type="rain" on=false
+Mara: The kettle's still warm.
+goto __end
+
+:leave
+hint text="Some doors don't open twice." show=true
+Mara: She watched the dark take you back.
+fade to="black" duration=0.8
+goto __end</textarea>
+                </div>
+                
+                <div class="playground-panel">
+                    <div class="panel-header">
+                        <span>Compiled Output (lvn json)</span>
+                        <button id="copy-btn" class="btn-copy">Copy JSON</button>
+                    </div>
+                    <pre><code id="output" class="json-code"></code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorials Section -->
+    <section id="tutorials" class="section container">
+        <h2 class="section-title">Tutorial Lessons</h2>
+        <p class="section-subtitle">Follow these quick lessons to understand all features and operations of LVNScript.</p>
+
+        <div class="lessons-container">
+            <!-- Lesson 1 -->
+            <div class="lesson-card glass">
+                <div class="lesson-header">
+                    <span class="lesson-tag">Lesson 1</span>
+                    <h3>Document Structure & Narration</h3>
+                </div>
+                <div class="lesson-body">
+                    <p>Every story script starts with scene metadata and optional character mappings to map clean dialogue names to internal actor resource IDs. Anything that isn't a command, label, or choice is automatically treated as narration or speech.</p>
+                    <pre><code id="code-lesson1">scene intro_scene
+actor_map Mara=mara_character_id
+
+// This is a comment
+This is narration and has no speaker nameplate.
+Mara: This is a speech line. Nameplate shows "Mara".
+Mara [happy]: I am smiling now! This emits an actor emotion command automatically.</code></pre>
+                    <button class="btn btn-secondary try-btn" data-code-id="code-lesson1">Load in Playground</button>
+                </div>
+            </div>
+
+            <!-- Lesson 2 -->
+            <div class="lesson-card glass">
+                <div class="lesson-header">
+                    <span class="lesson-tag">Lesson 2</span>
+                    <h3>Branching & Variables</h3>
+                </div>
+                <div class="lesson-body">
+                    <p>Manage story flow with labels, absolute jumps, and conditional branching. Use <code>set</code> and <code>inc</code> to handle variables, and the <code>if</code> command to branch on conditions.</p>
+                    <pre><code id="code-lesson2">scene variables_branching
+set key="met_guest" value=false
+set key="friendship" value=0
+
+:start_story
+Mara: Hello! Have we met?
+- Yes, we have. -> met_before
+- No, this is the first time. -> first_meeting
+
+:met_before
+set key="met_guest" value=true
+inc key="friendship" by=5
+goto check_state
+
+:first_meeting
+Mara: Nice to meet you!
+goto check_state
+
+:check_state
+if expr="friendship >= 5" then="best_buds" else="strangers"
+
+:best_buds
+Mara [smile]: We are already great friends!
+goto __end
+
+:strangers
+Mara: I hope we get to know each other better.
+goto __end</code></pre>
+                    <button class="btn btn-secondary try-btn" data-code-id="code-lesson2">Load in Playground</button>
+                </div>
+            </div>
+
+            <!-- Lesson 3 -->
+            <div class="lesson-card glass">
+                <div class="lesson-header">
+                    <span class="lesson-tag">Lesson 3</span>
+                    <h3>Interactive Gated Choices</h3>
+                </div>
+                <div class="lesson-body">
+                    <p>Choices are declared using bullet points (<code>-</code>). You can restrict choices using narrative cost values or statistics required by the player. Gated parameters are written directly after the target label.</p>
+                    <pre><code id="code-lesson3">scene choices_gates
+:choices_room
+Mara: Do you want to try the forbidden door?
+
+- Enter the door -> enter_room min=5 requires_stat="courage"
+- Pay the lockpicker to open it -> open_with_money cost="50 gold"
+- Walk away -> leave_room
+
+:enter_room
+You courageously break through the door!
+goto __end
+
+:open_with_money
+The lockpicker opens the door with a click.
+goto __end
+
+:leave_room
+You walk away safely.
+goto __end</code></pre>
+                    <button class="btn btn-secondary try-btn" data-code-id="code-lesson3">Load in Playground</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reference Section -->
+    <section id="reference" class="section reference-section">
+        <div class="container">
+            <h2 class="section-title">Operations Reference</h2>
+            <p class="section-subtitle">Since LVNScript compiles 1:1 to the LVN engine, operations map directly to engine commands. Below is the list of available commands and their parameters.</p>
+            
+            <div class="table-wrapper glass">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Command Name</th>
+                            <th>Fields</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="6" class="cat-cell">Visuals & Camera</td>
+                            <td><code>bg</code></td>
+                            <td><code>sprite_url</code> (str), <code>id</code> (str)</td>
+                            <td>Sets the full-screen background image.</td>
+                        </tr>
+                        <tr>
+                            <td><code>actor</code></td>
+                            <td><code>id</code> (str), <code>sprite_url</code> (str), <code>show</code> (bool), <code>position</code> (left/center/right), <code>emotion</code> (str)</td>
+                            <td>Places, updates, or hides a character on the stage.</td>
+                        </tr>
+                        <tr>
+                            <td><code>fade</code></td>
+                            <td><code>to</code> (black/white/clear), <code>duration</code> (num)</td>
+                            <td>Triggers a full-screen transition fade.</td>
+                        </tr>
+                        <tr>
+                            <td><code>dim</code></td>
+                            <td><code>alpha</code> (0..1), <code>duration</code> (num)</td>
+                            <td>Dims the stage behind dialogue to focus on text.</td>
+                        </tr>
+                        <tr>
+                            <td><code>camera</code></td>
+                            <td><code>action</code> (shake/zoom/pan), <code>amplitude</code> (num), <code>duration</code> (num)</td>
+                            <td>Triggers a camera visual effect.</td>
+                        </tr>
+                        <tr>
+                            <td><code>particles</code></td>
+                            <td><code>type</code> (rain/snow), <code>on</code> (bool)</td>
+                            <td>Toggles background particle effects.</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="cat-cell">Audio & Timing</td>
+                            <td><code>audio</code></td>
+                            <td><code>channel</code> (music/sfx/ambient), <code>action</code> (play/stop), <code>url</code> (str)</td>
+                            <td>Plays or stops music/sfx.</td>
+                        </tr>
+                        <tr>
+                            <td><code>wait</code></td>
+                            <td><code>ms</code> (num)</td>
+                            <td>Pauses execution for N milliseconds before proceeding.</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4" class="cat-cell">Flow Control</td>
+                            <td><code>goto</code></td>
+                            <td><code>label</code> (str)</td>
+                            <td>Jumps to a label immediately. (Special label: <code>__end</code>)</td>
+                        </tr>
+                        <tr>
+                            <td><code>if</code></td>
+                            <td><code>expr</code> (str), <code>then</code> (str), <code>else</code> (str)</td>
+                            <td>Conditional jump based on an expression.</td>
+                        </tr>
+                        <tr>
+                            <td><code>call</code></td>
+                            <td><code>label</code> (str)</td>
+                            <td>Jump subroutine (saves return address).</td>
+                        </tr>
+                        <tr>
+                            <td><code>return</code></td>
+                            <td>—</td>
+                            <td>Returns from the last <code>call</code> subroutine.</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" class="cat-cell">State & Variables</td>
+                            <td><code>set</code></td>
+                            <td><code>key</code> (str), <code>value</code> (any)</td>
+                            <td>Assigns a variable value (string, number, boolean).</td>
+                        </tr>
+                        <tr>
+                            <td><code>inc</code></td>
+                            <td><code>key</code> (str), <code>by</code> (num)</td>
+                            <td>Increments a numeric variable.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Integration Section -->
+    <section id="ai-guide" class="section container">
+        <h2 class="section-title">AI & LLM Integration Guide</h2>
+        <p class="section-subtitle">Feeding this website to an AI? Here is a structured, copy-pasteable specification designed specifically for Large Language Models (LLMs) to write valid LVNScript code.</p>
+        
+        <div class="glass" style="padding: 2.5rem; margin-top: 2rem;">
+            <div class="panel-header" style="border-radius: 8px 8px 0 0; margin: -2.5rem -2.5rem 1.5rem -2.5rem;">
+                <span>LLM System Prompt Context (Markdown)</span>
+                <button id="copy-ai-btn" class="btn-copy">Copy System Prompt</button>
+            </div>
+            
+            <pre style="background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 8px; overflow-x: auto; margin-bottom: 0;"><code id="ai-prompt-text" style="font-family: var(--font-mono); font-size: 0.85rem; color: #a78bfa; white-space: pre-wrap;"># System Instructions for LVNScript (.lvns) Generation
+
+You are an expert story author and coder generating narrative scripts in LVNScript (.lvns) format. Always generate valid syntax matching these precise grammar rules:
+
+## 1. Document Configuration
+- **Scene ID**: Define the scene identifier at the top of the file:
+  `scene scene_name`
+- **Actor Mapping**: Define mappings from user-facing names to asset IDs:
+  `actor_map DisplayName=asset_id` (e.g., `actor_map Old Man=old_man`)
+
+## 2. Story Flow & Labels
+- **Labels**: Bookmarks/jump destinations are created with a leading colon:
+  `:label_id`
+- **Gotos & Subroutines**: Jump immediately or use call/return subroutines:
+  `goto label_id`
+  `call label_id`
+  `return` (returns to the last call point)
+
+## 3. Dialogue & Narration
+- **Narration**: Any plain text line without a speaker name is narration:
+  `The rain began to pour.` (Compiles to say command with who=null)
+- **Dialogue**: Character lines follow a speaker name and a colon:
+  `Mara: You came back.`
+- **Dialogue Emotions**: Define character name, optional emotion in brackets, colon, and text:
+  `Mara [smile]: Then come in.` (Emits actor emotion command followed by dialogue)
+
+## 4. Gated & Simple Choices
+- **Choices**: Consecutive lines starting with `-` form a choice list. Every choice must specify a target label using `->`:
+  `- Choice Text -> target_label`
+- **Gated Choices**: You can add optional trailing key-value parameters:
+  `- Buy the key -> unlock_door cost="50 gold"`
+  `- Break the door -> smash_door min=5 requires_stat="courage"`
+  `- Secret choice -> secret_path expr="friendship >= 5"`
+
+## 5. Script Operations
+- **Variables**: Assign or increment variables using key-value pairs:
+  `set key="flag" value=true`
+  `inc key="score" by=1`
+- **Environment**: Set background, fade transitions, camera action, or particle layers:
+  `bg sprite_url="/content/bg.jpg"`
+  `actor id="mara" show=true position="left" sprite_url="/content/mara.png"`
+  `fade to="black" duration=0.8`
+  `particles type="rain" on=true`
+  `camera action="shake" duration=0.5`
+  `wait ms=1000`
+- **Conditionals**: Jump to different labels based on expression evaluation:
+  `if expr="score >= 10" then="victory" else="defeat"`
+
+## 6. Example Script
+```lvns
+scene chapter_1
+actor_map Mara=mara
+
+goto start
+
+:start
+bg sprite_url="/content/bg/porch.jpg"
+Rain ticked on the porch.
+Mara [concerned]: You shouldn't be out in this.
+
+- I did -> warmth_choice
+- I'm leaving -> leave
+
+:warmth_choice
+inc key="friendship" by=1
+Mara [smile]: Then come in.
+goto __end
+
+:leave
+fade to="black" duration=0.8
+goto __end
+```</code></pre>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 LVNScript. Built with visual excellence.</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -11,12 +11,16 @@ namespace Lvn
         /// <summary>Minimum characters-per-second (guards a 0/garbage cps).</summary>
         public const float MinCps = 1f;
 
+        /// <summary>Global characters-per-second override. Set by the `text_pace`
+        /// op. 0 or negative means "use the per-line default".</summary>
+        public static float GlobalCps;
+
         /// <summary>Reveal head position, in glyphs (fractional), after
         /// <paramref name="elapsedSeconds"/> at <paramref name="cps"/>.</summary>
         public static float Progress(float elapsedSeconds, float cps)
         {
             if (elapsedSeconds < 0f) elapsedSeconds = 0f;
-            float rate = cps > MinCps ? cps : MinCps;
+            float rate = GlobalCps > MinCps ? GlobalCps : (cps > MinCps ? cps : MinCps);
             return elapsedSeconds * rate;
         }
 

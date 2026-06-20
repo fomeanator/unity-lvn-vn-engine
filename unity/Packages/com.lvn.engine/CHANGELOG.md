@@ -6,6 +6,53 @@ follows [Keep a Changelog](https://keepachangelog.com/); versions are SemVer.
 ## [Unreleased]
 
 ### Added
+- **Manifest-driven screen kit** (`Lvn.UI.Screens`) — three fully themeable novel
+  screens built in code from the manifest's `ui` block: `LoadingScreen` (backdrop,
+  scrim, fog, progress bar with optional track/fill/frame art, percent / current-file
+  / rotating-tip labels), `TitleCard` (chapter + subtitle reveal with fog and frame),
+  and `NameInputScreen` (backdrop, character art, prompt, field, confirm). Every
+  colour, image url, text, size and duration comes from `LvnUiConfig`
+  (`loading` / `title` / `name_input`); all optional with sensible defaults. The bar
+  maths (`LoadingProgressModel`, `ProgressRenderGate`) and the name rules
+  (`PlayerNameInput`) are pure and unit-tested. Referenced from Liminal's shipping
+  loading/title/name-input screens.
+- **Content pipeline** (`Lvn.Content`) — a networked, disk-cached content system
+  ported from a shipping VN client. `ContentLoader` (sha1(url@version) disk cache,
+  in-memory sprite cache, dedup of parallel fetches, `asset-versions.json`
+  cache-busting, byte-level progress, resumable retries, pipelined preload batch,
+  audio via `UnityWebRequestMultimedia`); `AssetScheduler` (prioritized
+  required/deferred release set, per-tier concurrency, EDF ordering);
+  `DownloadPolicy` (pure URL classification); `DownloadManager` (four phases —
+  boot / menu refresh / chapter entry / in-game look-ahead — over a generic
+  `LvnManifest`/`LvnTitle`/`LvnSeason`/`LvnChapter` model). Bridged to the engine
+  via `CachingAssets : ILvnAssets`.
+- **Composable asset loaders** — `MemoryCache` (L1), `ChainAssets` (try loaders in
+  order), and an optional Addressables backend (`Lvn.Engine.Addressables`, an
+  assembly auto-gated by the `com.unity.addressables` package — zero footprint
+  when it isn't installed).
+- **`flash` op** — quick coloured flash (white/red/etc.) that fades back to clear.
+- **`tint` op** — coloured tint wash (cold/warm/sepia) with configurable alpha.
+- **`blur` op** — blur overlay for depth-of-field simulation.
+- **`text_pace` op** — global characters-per-second override for typewriter speed.
+- **`camera` pan** — smooth camera pan to target x/y coordinates.
+- **Actor transitions** — `enter`/`exit` fields on `actor` op: `fade`, `slide_left`,
+  `slide_right`, `pop` animations with configurable duration.
+- **Backlog UI** — `BacklogPanel` component for scrollable dialogue history.
+- **Premium Meta-Shell** — `HubScreen` (chapter select), `LifeCardSystem`
+  (lives/regen), `PaywallGate` (IAP prompt).
+- **`wait` op** — blocking pause with configurable duration (`ms`). The player
+  halts execution and resumes automatically after the delay.
+- **`preload` op** — speculative asset loading. Non-blocking: the player
+  continues immediately while assets load in the background.
+- **Backlog** — `LvnPlayer.OnSay` event fires on every `say` command. `VnStage`
+  records dialogue history in `Backlog` (read-only list of who/text/style).
+- **Hover feedback** — `hover_opacity` field on `actor`/`obj` ops. Hotspots
+  brighten on mouse-enter and restore on mouse-leave.
+- **Richer `on_click`** — `on_click` now accepts an object: `{ "goto": "label",
+  "set": { "key": value } }`. The `set` ops run before the jump.
+- **Save/Load** — `LvnPlayer.Save()` returns an `LvnSnapshot` (IP, vars, call
+  stack). `Restore(LvnSnapshot)` resumes. `SaveLoadPanel` provides a slot-based
+  UI for save/load.
 - `FxLayer` — full-screen effects overlay; `VnStage` now renders the `fade`
   (to black/white/clear) and `dim` (focus-pull) ops as animated veils.
 - `CameraRig` — `camera` op: shake (diminishing jitter) and zoom on the world
@@ -43,6 +90,7 @@ follows [Keep a Changelog](https://keepachangelog.com/); versions are SemVer.
   engine via `DirectoryAssets` — characters composite from their body/outfit
   layers over the real art.
 - 15/15 EditMode tests green (expression, player, sprite composer).
+- New tests: `WaitPreloadTests`, `BacklogTests`, `HotspotTests`, `SaveLoadTests`.
 
 ### Added
 - `VnStage.ContentRoot` — a serialized content-folder path. When set (and
@@ -50,6 +98,14 @@ follows [Keep a Changelog](https://keepachangelog.com/); versions are SemVer.
   plays with real art straight from Play with no code.
 
 ### Fixed
+- **Compile blockers** that broke the whole `Lvn.Engine.UI` assembly: (1)
+  `DirectoryAssets.LoadAudioAsync` constructed an `AudioClip` (no public ctor) and
+  called `AudioClip.Create`/`SetData` on a background thread — replaced with
+  `UnityWebRequestMultimedia` decoding a `file://` url on the main thread (handles
+  wav/ogg/mp3); (2) `CameraRig.Pan` compared a `Length` struct against `null` —
+  now reads `.value` directly; (3) the Addressables loader referenced a
+  non-dependency package — moved into a separate assembly auto-gated by
+  `com.unity.addressables`, so the package compiles with or without it.
 - Freeze on click / advancing to the next op: `DirectoryAssets` decoded large
   textures synchronously on the main thread for every show (no cache), so each
   transition that revealed a background or character hitched. It now caches

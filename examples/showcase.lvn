@@ -1,0 +1,51 @@
+{
+  "scene": "showcase",
+  "script": [
+    { "op": "bg", "sprite_url": "/content/bg/hub.jpg" },
+    { "op": "say", "who": "Engine", "text": "A non-novel title — a button-driven hub. Tap a panel to demo an engine feature." },
+    { "op": "label", "id": "hub" },
+    { "op": "obj", "id": "btn_weather", "sprite_url": "/content/ui/panel.png", "x": 0.25, "y": 0.35, "width": 0.4, "height": 0.18, "anchor": "center", "on_click": "weather", "hover_opacity": 1.0, "opacity": 0.85 },
+    { "op": "obj", "id": "btn_camera", "sprite_url": "/content/ui/panel.png", "x": 0.75, "y": 0.35, "width": 0.4, "height": 0.18, "anchor": "center", "on_click": "camera_demo", "hover_opacity": 1.0, "opacity": 0.85 },
+    { "op": "obj", "id": "btn_fx", "sprite_url": "/content/ui/panel.png", "x": 0.25, "y": 0.62, "width": 0.4, "height": 0.18, "anchor": "center", "on_click": "fx", "hover_opacity": 1.0, "opacity": 0.85 },
+    { "op": "obj", "id": "btn_choice", "sprite_url": "/content/ui/panel.png", "x": 0.75, "y": 0.62, "width": 0.4, "height": 0.18, "anchor": "center", "on_click": "branch", "hover_opacity": 1.0, "opacity": 0.85 },
+    { "op": "say", "text": "Weather · Camera · Effects · Branch — pick one." },
+
+    { "op": "label", "id": "weather" },
+    { "op": "particles", "type": "rain", "on": true },
+    { "op": "say", "text": "Procedural rain — no textures. Tap to clear." },
+    { "op": "particles", "type": "rain", "on": false },
+    { "op": "goto", "label": "hub" },
+
+    { "op": "label", "id": "camera_demo" },
+    { "op": "camera", "mode": "shake", "duration": 0.5 },
+    { "op": "say", "text": "Camera shake on the world layer; the dialogue stays steady." },
+    { "op": "camera", "mode": "zoom", "factor": 1.25, "duration": 0.4 },
+    { "op": "say", "text": "And a zoom." },
+    { "op": "camera", "mode": "reset", "duration": 0.3 },
+    { "op": "goto", "label": "hub" },
+
+    { "op": "label", "id": "fx" },
+    { "op": "flash", "color": "white", "duration": 0.25 },
+    { "op": "say", "text": "Flash." },
+    { "op": "tint", "color": "cold", "alpha": 0.4, "duration": 0.5 },
+    { "op": "say", "text": "Cold tint wash." },
+    { "op": "tint", "color": "warm", "alpha": 0.0, "duration": 0.5 },
+    { "op": "goto", "label": "hub" },
+
+    { "op": "label", "id": "branch" },
+    { "op": "choice", "options": [
+      { "text": "Set a flag and continue", "goto": "set_flag" },
+      { "text": "Back to the hub", "goto": "hub" }
+    ]},
+    { "op": "label", "id": "set_flag" },
+    { "op": "set", "key": "visited_branch", "value": true },
+    { "op": "inc", "key": "branch_count", "by": 1 },
+    { "op": "say", "text": "Flag set. State + flow + clickable objects = a full button-driven game." },
+    { "op": "if", "expr": "branch_count >= 2", "then": "done", "else": "hub" },
+
+    { "op": "label", "id": "done" },
+    { "op": "fade", "to": "black", "duration": 0.8 },
+    { "op": "say", "text": "That's the engine — visual novel or point-and-click, same container." },
+    { "op": "goto", "label": "__end" }
+  ]
+}

@@ -68,5 +68,27 @@ namespace Lvn.UI
             _t.style.translate = new Translate(0, 0, 0);
             Zoom(1f, seconds);
         }
+
+        public void Pan(float targetX, float targetY, float seconds)
+        {
+            var fromT = _t.resolvedStyle.translate;
+            // resolvedStyle.translate exposes x/y as floats here — read them directly.
+            float fromX = fromT.x;
+            float fromY = fromT.y;
+            if (seconds <= 0f)
+            {
+                _t.style.translate = new Translate(targetX, targetY, 0);
+                return;
+            }
+            int ms = Mathf.Max(1, Mathf.RoundToInt(seconds * 1000f));
+            _t.experimental.animation
+                .Start(0f, 1f, ms, (el, p) =>
+                {
+                    float x = Mathf.LerpUnclamped(fromX, targetX, p);
+                    float y = Mathf.LerpUnclamped(fromY, targetY, p);
+                    el.style.translate = new Translate(x, y, 0);
+                })
+                .Ease(Easing.InOutCubic);
+        }
     }
 }

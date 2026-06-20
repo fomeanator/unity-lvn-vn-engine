@@ -12,8 +12,9 @@ namespace Lvn
         public static readonly HashSet<string> Known = new HashSet<string>
         {
             "say", "choice", "bg", "actor", "obj",
-            "fade", "dim", "camera", "particles",
-            "audio", "wait", "preload",
+            "fade", "dim", "flash", "tint", "blur",
+            "camera", "particles",
+            "audio", "wait", "preload", "text_pace",
             "label", "goto", "if",
             "set", "inc", "hint",
             "call", "return",

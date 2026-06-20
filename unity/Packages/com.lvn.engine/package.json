@@ -1,6 +1,6 @@
 {
   "name": "com.lvn.engine",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "displayName": "LVN Engine",
   "description": "An open visual-novel runtime that plays the .lvn container format. Drop it in, point an LvnPlayer at a .lvn, implement ILvnStage to render. 'ffmpeg for visual novels.'",
   "unity": "2022.3",

@@ -23,6 +23,7 @@ import (
 
 	"github.com/fomeanator/unity-lvn-vn-engine/tools/lvnconv/internal/articy"
 	"github.com/fomeanator/unity-lvn-vn-engine/tools/lvnconv/internal/ink"
+	"github.com/fomeanator/unity-lvn-vn-engine/tools/lvnconv/internal/lvns"
 	"github.com/fomeanator/unity-lvn-vn-engine/tools/lvnconv/lvn"
 )
 
@@ -74,6 +75,8 @@ func detectFormat(path string) string {
 	switch strings.ToLower(filepath.Ext(path)) {
 	case ".ink":
 		return "ink"
+	case ".lvns":
+		return "lvns"
 	case ".json", ".articy":
 		return "articy"
 	case ".lvn":
@@ -114,6 +117,12 @@ func cmdConvert(args []string) {
 		doc, err := ink.Convert(string(src))
 		if err != nil {
 			die("ink: " + err.Error())
+		}
+		data = mustJSON(doc)
+	case "lvns":
+		doc, err := lvns.Convert(string(src))
+		if err != nil {
+			die("lvns: " + err.Error())
 		}
 		data = mustJSON(doc)
 	case "articy":

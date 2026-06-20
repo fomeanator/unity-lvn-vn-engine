@@ -10,8 +10,9 @@ import (
 // rule the front-ends apply to staging tags, enforced here for any .lvn.
 var KnownOps = map[string]bool{
 	"say": true, "choice": true, "bg": true, "actor": true, "obj": true,
-	"fade": true, "dim": true, "camera": true, "particles": true,
-	"audio": true, "wait": true, "preload": true,
+	"fade": true, "dim": true, "flash": true, "tint": true, "blur": true,
+	"camera": true, "particles": true,
+	"audio": true, "wait": true, "preload": true, "text_pace": true,
 	"label": true, "goto": true, "if": true,
 	"set": true, "inc": true, "hint": true,
 	"call": true, "return": true,
@@ -92,6 +93,15 @@ func Validate(d *Doc) []Issue {
 		case "if":
 			ref(i, op, c.Str("then"))
 			ref(i, op, c.Str("else"))
+		case "obj", "actor":
+			// A clickable hotspot jumps to a label, either directly
+			// ("on_click": "label") or via an object ("on_click": {"goto": "label"}).
+			switch v := c["on_click"].(type) {
+			case string:
+				ref(i, op, v)
+			case map[string]any:
+				ref(i, op, Cmd(v).Str("goto"))
+			}
 		case "choice":
 			opts, _ := c["options"].([]any)
 			for _, o := range opts {

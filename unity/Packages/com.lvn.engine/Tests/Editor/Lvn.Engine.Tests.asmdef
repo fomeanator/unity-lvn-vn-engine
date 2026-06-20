@@ -3,6 +3,8 @@
   "rootNamespace": "Lvn.Tests",
   "references": [
     "Lvn.Engine",
+    "Lvn.Engine.UI",
+    "Lvn.Engine.Content",
     "Unity.Nuget.Newtonsoft-Json",
     "UnityEngine.TestRunner",
     "UnityEditor.TestRunner"

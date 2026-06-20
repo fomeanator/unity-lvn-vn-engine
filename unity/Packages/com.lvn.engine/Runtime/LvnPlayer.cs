@@ -27,6 +27,9 @@ namespace Lvn
         /// <summary>Authored + bookkeeping variables. Public for save/restore.</summary>
         public readonly Dictionary<string, JToken> Vars = new Dictionary<string, JToken>();
 
+        /// <summary>Fired when a say command is executed. Arguments: who, text, style.</summary>
+        public Action<string, string, string> OnSay;
+
         /// <summary>
         /// Optional override for string <c>expr</c> conditions (option filters
         /// and <c>if</c>). When unset, the built-in <see cref="LvnExpression"/>
@@ -72,6 +75,32 @@ namespace Lvn
         }
 
         public IReadOnlyCollection<int> CallStack => _callStack;
+
+        /// <summary>Snapshot of the player's state for save/load.</summary>
+        public class LvnSnapshot
+        {
+            public int Index;
+            public Dictionary<string, JToken> Vars;
+            public int[] CallStack;
+        }
+
+        /// <summary>Capture the current state for serialization.</summary>
+        public LvnSnapshot Save()
+        {
+            return new LvnSnapshot
+            {
+                Index = _ip,
+                Vars = new Dictionary<string, JToken>(Vars),
+                CallStack = _callStack.ToArray(),
+            };
+        }
+
+        /// <summary>Restore from a snapshot.</summary>
+        public void Restore(LvnSnapshot snapshot)
+        {
+            if (snapshot == null) return;
+            Restore(snapshot.Index, snapshot.Vars, snapshot.CallStack);
+        }
 
         /// <summary>Run commands until the next pause point or the end.</summary>
         public void Advance()
@@ -119,9 +148,23 @@ namespace Lvn
                         return;
 
                     case "say":
-                        _stage.ShowSay((string)c["who"], (string)c["text"], (string)c["style"]);
+                        var sayWho = (string)c["who"];
+                        var sayText = (string)c["text"];
+                        var sayStyle = (string)c["style"];
+                        OnSay?.Invoke(sayWho, sayText, sayStyle);
+                        _stage.ShowSay(sayWho, sayText, sayStyle);
                         _ip++;
                         return;
+
+                    case "wait":
+                        _stage.ApplyStage(c);
+                        _ip++;
+                        return;
+
+                    case "preload":
+                        _stage.ApplyStage(c);
+                        _ip++;
+                        break;
 
                     default:
                         _stage.ApplyStage(c);

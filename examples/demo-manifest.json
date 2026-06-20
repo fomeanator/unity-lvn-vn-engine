@@ -1,0 +1,73 @@
+{
+  "titles": [
+    {
+      "id": "last-guest",
+      "name": "The Last Guest",
+      "subtitle": "A dark-fantasy visual novel",
+      "cover_url": "/content/ui/cover_last_guest.png",
+      "seasons": [
+        { "chapters": [
+          { "id": "lg-ch1", "number": 1, "script_url": "/content/scripts/ch1.lvn", "bg_url": "/content/ui/loading/ch1.png" }
+        ]}
+      ]
+    },
+    {
+      "id": "engine-showcase",
+      "name": "Engine Showcase",
+      "subtitle": "A non-novel, button-driven demo of every feature",
+      "cover_url": "/content/ui/cover_showcase.png",
+      "seasons": [
+        { "chapters": [
+          { "id": "showcase", "number": 0, "script_url": "/content/scripts/showcase.lvn", "bg_url": "/content/bg/hub.jpg" }
+        ]}
+      ]
+    }
+  ],
+  "ui": {
+    "boot": {
+      "bg_color": "#0a0a0e",
+      "logo_url": "/content/ui/logo.png",
+      "min_seconds": 1.5,
+      "bar_fill_color": "#c8a050"
+    },
+    "carousel": {
+      "bg_color": "#101015",
+      "card_width": 0.64,
+      "card_height": 0.6,
+      "title_color": "#f4ecd8",
+      "subtitle_color": "#cbb98f",
+      "play_text": "Play",
+      "play_bg_color": "#3a3a44",
+      "dot_active_color": "#f4ecd8"
+    },
+    "name_input": {
+      "bg_color": "#101015",
+      "prompt": "What is your name, traveller?",
+      "speaker_label": "Name",
+      "default_name": "Raven",
+      "confirm_text": "Begin",
+      "max_length": 20
+    },
+    "loading": {
+      "scrim_color": "#000000",
+      "scrim_opacity": 0.6,
+      "bar_fill_color": "#c8a050",
+      "percent_color": "#ffffff",
+      "tips": [
+        "Tip: choices remember their ids across content edits.",
+        "Tip: .lvn is the engine's universal container — ffmpeg for novels."
+      ]
+    },
+    "title": {
+      "chapter_color": "#f4ecd8",
+      "subtitle_color": "#cbb98f",
+      "hold_seconds": 2.0
+    },
+    "hud": {
+      "bg_color": "#00000088",
+      "height": 0.07,
+      "progress_color": "#f4ecd8",
+      "default_currency_icon_url": "/content/ui/icon_butterfly.png"
+    }
+  }
+}

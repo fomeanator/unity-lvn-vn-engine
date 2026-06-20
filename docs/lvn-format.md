@@ -35,7 +35,7 @@ error**, never a silent skip (`lvnconv validate`). Targets of `goto`, `if`,
 |---|---|---|
 | `say` | `text` (required), `who?`, `style?` | Show a line. `who` drives the nameplate; omit for narration. |
 | `bg` | `sprite_url` (required), `id?` | Set the full-screen background. |
-| `actor` | `id` (required), `sprite_url` **or** `body_url`/`clothes_url`/`hair_url`, `show?`, `position?` (`left`/`center`/`right`), `x?`/`y?` (0..1), `width?`/`height?` (fraction of viewport), `scale?`, `emotion?`, `enter?`/`exit?` | Place / update / hide a character. Sprites are layered: a null layer url is unchanged, an empty string removes it. |
+| `actor` | `id` (required), `sprite_url` **or** `body_url`/`clothes_url`/`hair_url`, `show?`, `position?` (`left`/`center`/`right`), `x?`/`y?` (0..1), `width?`/`height?` (fraction of viewport), `scale?`, `emotion?`, `enter?`/`exit?`, `on_click?` (label string or `{ "goto": "label", "set": {...} }`), `hover_opacity?` (0..1) | Place / update / hide a character. Sprites are layered: a null layer url is unchanged, an empty string removes it. `on_click` makes the object a tappable hotspot. |
 | `fade` | `to` (`black`/`white`/…), `duration` | Full-screen fade. |
 | `dim` | `alpha` (0..1), `duration` | Dim the stage (focus pull). |
 | `camera` | `action` (`shake`/`zoom`/`pan`), `amplitude?`, `factor?`, `duration?` | Camera move. |

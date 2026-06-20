@@ -49,6 +49,16 @@ namespace Lvn.UI
         private LvnPlayer _player;
         private CancellationTokenSource _cts;
         private bool _awaitingTap;
+        private bool _awaitingWait;
+
+        /// <summary>Public access to the underlying player for save/load.</summary>
+        public LvnPlayer Player => _player;
+
+        private readonly List<(string who, string text, string style)> _backlog
+            = new List<(string, string, string)>();
+
+        /// <summary>Read-only access to the dialogue history.</summary>
+        public IReadOnlyList<(string who, string text, string style)> Backlog => _backlog;
 
         private bool _built;
 
@@ -112,7 +122,13 @@ namespace Lvn.UI
         private void OnDisable()
         {
             _cts?.Cancel();
+            if (_player != null) _player.OnSay -= RecordSay;
             if (_choices != null) _choices.OnSelected -= OnChoiceSelected;
+        }
+
+        private void OnDestroy()
+        {
+            Assets?.UnloadAll();
         }
 
         /// <summary>Parse and start playing a .lvn document.</summary>
@@ -121,12 +137,17 @@ namespace Lvn.UI
             var doc = LvnDocument.Parse(lvnJson);
             _cast = SpriteComposer.ParseCast(doc.Cast);
             _player = new LvnPlayer(doc, this);
+            _player.OnSay += RecordSay;
             _player.Advance();
         }
+
+        private void RecordSay(string who, string text, string style)
+            => _backlog.Add((who, text, style));
 
         private void OnPointerDown(PointerDownEvent _)
         {
             if (_player == null || _player.Finished) return;
+            if (_awaitingWait) return;
             if (_dialogue.IsRevealing) { _dialogue.Complete(); return; }
             if (_awaitingTap)
             {
@@ -169,13 +190,23 @@ namespace Lvn.UI
                 case "obj": _ = ApplyActorAsync(command); break; // any placeable sprite
                 case "fade": ApplyFade(command); break;
                 case "dim": ApplyDim(command); break;
+                case "flash": ApplyFlash(command); break;
+                case "tint": ApplyTint(command); break;
+                case "blur": ApplyBlur(command); break;
                 case "camera": ApplyCamera(command); break;
                 case "particles":
                     _particles.Set((string)command["type"], command["on"] == null || (bool)command["on"]);
                     break;
                 case "audio": _ = ApplyAudioAsync(command); break;
-                // wait / hint / preload are loader/pacing hints handled elsewhere
-                // or no-ops here; unknown-but-registered ops are simply not drawn.
+                case "text_pace": ApplyTextPace(command); break;
+                case "wait":
+                    _awaitingWait = true;
+                    StartCoroutine(WaitCoroutine(command));
+                    break;
+                case "preload":
+                    _ = PreloadAssetsAsync(command);
+                    break;
+                // hint is a no-op; unknown-but-registered ops are simply not drawn.
             }
         }
 
@@ -183,6 +214,42 @@ namespace Lvn.UI
         {
             _dialogue.SetSpeaker(null);
             _dialogue.SetText(string.Empty);
+        }
+
+        // ── wait / preload ──────────────────────────────────────────────────
+
+        private IEnumerator WaitCoroutine(JObject cmd)
+        {
+            float ms = cmd["ms"] != null ? (float)cmd["ms"] : 1000f;
+            yield return new WaitForSecondsRealtime(ms / 1000f);
+            _awaitingWait = false;
+            if (_player != null && !_player.Finished)
+                _player.Advance();
+        }
+
+        private async Task PreloadAssetsAsync(JObject cmd)
+        {
+            if (Assets == null) return;
+            var assetArray = cmd["assets"] as JArray;
+            if (assetArray == null || assetArray.Count == 0) return;
+
+            var spriteUrls = new List<string>();
+            var audioUrls = new List<string>();
+            foreach (var a in assetArray)
+            {
+                var url = (string)((JObject)a)["url"];
+                var kind = (string)((JObject)a)["kind"];
+                if (string.IsNullOrEmpty(url)) continue;
+                if (kind == "audio") audioUrls.Add(url);
+                else spriteUrls.Add(url);
+            }
+
+            var tasks = new List<Task>();
+            if (spriteUrls.Count > 0)
+                tasks.Add(Assets.PreloadAsync(spriteUrls, "sprite", _cts.Token));
+            if (audioUrls.Count > 0)
+                tasks.Add(Assets.PreloadAsync(audioUrls, "audio", _cts.Token));
+            await Task.WhenAll(tasks);
         }
 
         // ── stage command helpers ─────────────────────────────────────────────
@@ -202,6 +269,70 @@ namespace Lvn.UI
             _fx.Dim(alpha, dur);
         }
 
+        private void ApplyFlash(JObject cmd)
+        {
+            var colour = ParseColor((string)cmd["color"], Color.white);
+            float dur = cmd["duration"] != null ? (float)cmd["duration"] : 0.2f;
+            _fx.Flash(colour, dur);
+        }
+
+        private void ApplyTint(JObject cmd)
+        {
+            var colour = ParseColor((string)cmd["color"], Color.white);
+            float alpha = cmd["alpha"] != null ? (float)cmd["alpha"] : 0.3f;
+            float dur = cmd["duration"] != null ? (float)cmd["duration"] : 0.5f;
+            _fx.Tint(colour, alpha, dur);
+        }
+
+        private void ApplyBlur(JObject cmd)
+        {
+            float alpha = cmd["alpha"] != null ? (float)cmd["alpha"] : 0.5f;
+            float dur = cmd["duration"] != null ? (float)cmd["duration"] : 0.5f;
+            if (alpha <= 0f) _fx.ClearBlur(dur);
+            else _fx.Blur(alpha, dur);
+        }
+
+        private void ApplyTextPace(JObject cmd)
+        {
+            float cps = cmd["cps"] != null ? (float)cmd["cps"] : 0f;
+            TypewriterClock.GlobalCps = cps;
+        }
+
+        internal static TransitionType ParseTransition(string name)
+        {
+            if (string.IsNullOrEmpty(name)) return TransitionType.None;
+            switch (name.ToLowerInvariant())
+            {
+                case "fade": return TransitionType.Fade;
+                case "slide_left": return TransitionType.SlideLeft;
+                case "slide_right": return TransitionType.SlideRight;
+                case "pop": return TransitionType.Pop;
+                default: return TransitionType.None;
+            }
+        }
+
+        internal static Color ParseColor(string name, Color fallback)
+        {
+            if (string.IsNullOrEmpty(name)) return fallback;
+            switch (name.ToLowerInvariant())
+            {
+                case "white": return Color.white;
+                case "black": return Color.black;
+                case "red": return Color.red;
+                case "blue": return Color.blue;
+                case "green": return Color.green;
+                case "yellow": return Color.yellow;
+                case "cyan": return Color.cyan;
+                case "magenta": return Color.magenta;
+                case "cold":
+                case "tint_cold": return new Color(0.6f, 0.7f, 1f, 1f);
+                case "warm":
+                case "tint_warm": return new Color(1f, 0.85f, 0.7f, 1f);
+                case "sepia": return new Color(0.76f, 0.6f, 0.42f, 1f);
+                default: return fallback;
+            }
+        }
+
         private void ApplyCamera(JObject cmd)
         {
             float dur = cmd["duration"] != null ? (float)cmd["duration"] : 0.3f;
@@ -212,6 +343,11 @@ namespace Lvn.UI
                     break;
                 case "zoom":
                     _camera.Zoom(cmd["factor"] != null ? (float)cmd["factor"] : 1.2f, dur);
+                    break;
+                case "pan":
+                    float px = cmd["x"] != null ? (float)cmd["x"] : 0f;
+                    float py = cmd["y"] != null ? (float)cmd["y"] : 0f;
+                    _camera.Pan(px, py, dur);
                     break;
                 case "reset":
                     _camera.Reset(dur);
@@ -277,12 +413,12 @@ namespace Lvn.UI
             if (sprite != null) _bg.SetSprite(sprite);
         }
 
-        private static readonly HashSet<string> ReservedActorFields = new HashSet<string>
+        internal static readonly HashSet<string> ReservedActorFields = new HashSet<string>
         {
             "op", "id", "show", "position", "x", "y", "width", "height", "scale",
             "anchor", "anchor_x", "anchor_y", "z", "flip", "rotation", "opacity",
-            "on_click", "breathing", "sprite_url", "body_url", "clothes_url", "hair_url",
-            "transition", "enter", "exit",
+            "on_click", "hover_opacity", "breathing", "sprite_url", "body_url", "clothes_url", "hair_url",
+            "transition", "transition_duration", "enter", "exit",
         };
 
         private async Task ApplyActorAsync(JObject cmd)
@@ -334,16 +470,43 @@ namespace Lvn.UI
             }
 
             System.Action onClick = null;
-            var clickTarget = (string)cmd["on_click"];
-            if (!string.IsNullOrEmpty(clickTarget))
-                onClick = () =>
+            var clickField = cmd["on_click"];
+            if (clickField != null)
+            {
+                if (clickField.Type == JTokenType.Object)
                 {
-                    if (_player == null) return;
-                    _player.GoTo(clickTarget);
-                    _awaitingTap = false;
-                    _choices.Dismiss();
-                    _player.Advance();
-                };
+                    var clickObj = (JObject)clickField;
+                    var target = (string)clickObj["goto"];
+                    var setOps = clickObj["set"] as JObject;
+                    onClick = () =>
+                    {
+                        if (_player == null) return;
+                        if (setOps != null)
+                        {
+                            foreach (var prop in setOps.Properties())
+                                _player.Vars[prop.Name] = prop.Value;
+                        }
+                        if (!string.IsNullOrEmpty(target))
+                            _player.GoTo(target);
+                        _awaitingTap = false;
+                        _choices.Dismiss();
+                        _player.Advance();
+                    };
+                }
+                else
+                {
+                    var clickTarget = (string)clickField;
+                    if (!string.IsNullOrEmpty(clickTarget))
+                        onClick = () =>
+                        {
+                            if (_player == null) return;
+                            _player.GoTo(clickTarget);
+                            _awaitingTap = false;
+                            _choices.Dismiss();
+                            _player.Advance();
+                        };
+                }
+            }
 
             _actors.Apply(id, layers, PlacementFrom(cmd), onClick);
         }
@@ -351,7 +514,7 @@ namespace Lvn.UI
         // Build placement from the command — everything in screen fractions so a
         // script controls any object's position, size, anchor, z, flip, rotation
         // and opacity without knowing the resolution.
-        private static Placement PlacementFrom(JObject cmd)
+        internal static Placement PlacementFrom(JObject cmd)
         {
             var p = new Placement
             {
@@ -366,6 +529,10 @@ namespace Lvn.UI
                 Flip = cmd["flip"] != null && (bool)cmd["flip"],
                 Rotation = cmd["rotation"] != null ? (float)cmd["rotation"] : 0f,
                 Opacity = cmd["opacity"] != null ? (float)cmd["opacity"] : 1f,
+                HoverOpacity = cmd["hover_opacity"] != null ? (float)cmd["hover_opacity"] : 1f,
+                EnterTransition = ParseTransition((string)cmd["enter"]),
+                ExitTransition = ParseTransition((string)cmd["exit"]),
+                TransitionDuration = cmd["transition_duration"] != null ? (float)cmd["transition_duration"] : 0.3f,
             };
 
             var anchor = (string)cmd["anchor"];
@@ -390,7 +557,7 @@ namespace Lvn.UI
 
         // The actor command's free-form named fields (pose, emotion, prop, …) —
         // everything outside the reserved layout/control set — are the cast axes.
-        private static Dictionary<string, string> AxesFrom(JObject cmd)
+        internal static Dictionary<string, string> AxesFrom(JObject cmd)
         {
             var axes = new Dictionary<string, string>();
             foreach (var p in cmd.Properties())

@@ -1,0 +1,31 @@
+scene hello
+actor_map Mara=mara
+
+goto porch
+
+:porch
+bg sprite_url="/content/bg/porch.jpg"
+fade to="clear" duration=0.6
+Rain ticked on the porch roof.
+actor id="mara" show=true position="left" sprite_url="/content/actors/mara.png"
+Mara: You came back.
+Mara: I wasn't sure you would.
+
+- I did. -> warmth_choice
+- I can't stay. -> leave
+
+:warmth_choice
+inc key="warmth" by=1
+Mara [smile]: Then come in out of the rain.
+goto inside
+
+:inside
+particles type="rain" on=false
+Mara: The kettle's still warm.
+goto __end
+
+:leave
+hint text="Some doors don't open twice." show=true
+Mara: She watched the dark take you back.
+fade to="black" duration=0.8
+goto __end

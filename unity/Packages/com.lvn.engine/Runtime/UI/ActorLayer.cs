@@ -2,9 +2,19 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.UIElements.Experimental;
 
 namespace Lvn.UI
 {
+    public enum TransitionType
+    {
+        None,
+        Fade,
+        SlideLeft,
+        SlideRight,
+        Pop,
+    }
+
     /// <summary>
     /// Where to put a stage object, all in screen fractions so a script controls
     /// it without knowing the resolution: the object's <see cref="AnchorX"/>/
@@ -24,6 +34,10 @@ namespace Lvn.UI
         public bool Flip;
         public float Rotation;       // degrees
         public float Opacity;
+        public float HoverOpacity;
+        public TransitionType EnterTransition;
+        public TransitionType ExitTransition;
+        public float TransitionDuration;
 
         public static Placement Standing(float x) => new Placement
         {
@@ -42,6 +56,8 @@ namespace Lvn.UI
         private readonly Dictionary<string, VisualElement> _slots = new Dictionary<string, VisualElement>();
         private readonly Dictionary<VisualElement, int> _z = new Dictionary<VisualElement, int>();
         private readonly Dictionary<string, Action> _onClick = new Dictionary<string, Action>();
+        private readonly Dictionary<string, float> _hoverOpacity = new Dictionary<string, float>();
+        private readonly Dictionary<string, float> _baseOpacity = new Dictionary<string, float>();
         private int _nextZ;
 
         public ActorLayer()
@@ -75,12 +91,24 @@ namespace Lvn.UI
                         evt.StopPropagation();
                     }
                 });
+                slot.RegisterCallback<MouseEnterEvent>(_ =>
+                {
+                    if (_hoverOpacity.TryGetValue(capturedId, out var hover))
+                        slot.style.opacity = hover;
+                });
+                slot.RegisterCallback<MouseLeaveEvent>(_ =>
+                {
+                    if (_baseOpacity.TryGetValue(capturedId, out var baseOp))
+                        slot.style.opacity = baseOp;
+                });
                 Add(slot);
                 _slots[id] = slot;
                 _z[slot] = _nextZ++;
             }
 
             _onClick[id] = onClick;
+            _hoverOpacity[id] = p.HoverOpacity;
+            _baseOpacity[id] = p.Opacity;
             // Only hotspots are pickable; everything else lets taps fall through
             // to the stage's tap-to-advance.
             slot.pickingMode = onClick != null ? PickingMode.Position : PickingMode.Ignore;
@@ -110,6 +138,11 @@ namespace Lvn.UI
             slot.style.opacity = p.Opacity;
             slot.style.display = p.Show ? DisplayStyle.Flex : DisplayStyle.None;
 
+            if (p.Show && p.EnterTransition != TransitionType.None)
+                PlayTransition(slot, p.EnterTransition, p.TransitionDuration, p);
+            else if (!p.Show && p.ExitTransition != TransitionType.None)
+                PlayTransition(slot, p.ExitTransition, p.TransitionDuration, p);
+
             if (p.Z.HasValue)
             {
                 _z[slot] = p.Z.Value;
@@ -121,7 +154,11 @@ namespace Lvn.UI
         public void SetSpeaker(string id)
         {
             foreach (var kv in _slots)
-                kv.Value.style.opacity = id == null || kv.Key == id ? 1f : 0.55f;
+            {
+                float target = id == null || kv.Key == id ? 1f : 0.55f;
+                kv.Value.style.opacity = target;
+                _baseOpacity[kv.Key] = target;
+            }
         }
 
         public void RemoveAll()
@@ -129,10 +166,64 @@ namespace Lvn.UI
             Clear();
             _slots.Clear();
             _z.Clear();
+            _onClick.Clear();
+            _hoverOpacity.Clear();
+            _baseOpacity.Clear();
             _nextZ = 0;
         }
 
         private int ZOf(VisualElement e) => _z.TryGetValue(e, out var z) ? z : 0;
+
+        private void PlayTransition(VisualElement slot, TransitionType type, float duration, Placement p)
+        {
+            if (duration <= 0f) duration = 0.3f;
+            int ms = Mathf.Max(1, Mathf.RoundToInt(duration * 1000f));
+
+            switch (type)
+            {
+                case TransitionType.Fade:
+                    slot.style.opacity = 0f;
+                    slot.experimental.animation
+                        .Start(0f, p.Opacity, ms, (e, t) => e.style.opacity = Mathf.Lerp(0f, p.Opacity, t))
+                        .Ease(Easing.InOutSine);
+                    break;
+
+                case TransitionType.SlideLeft:
+                    float targetLeft = p.X * 100f;
+                    slot.style.left = Length.Percent(-20f);
+                    slot.experimental.animation
+                        .Start(0f, 1f, ms, (e, t) =>
+                        {
+                            float v = Mathf.Lerp(-20f, targetLeft, t);
+                            e.style.left = Length.Percent(v);
+                        })
+                        .Ease(Easing.OutCubic);
+                    break;
+
+                case TransitionType.SlideRight:
+                    float targetRight = p.X * 100f;
+                    slot.style.left = Length.Percent(120f);
+                    slot.experimental.animation
+                        .Start(0f, 1f, ms, (e, t) =>
+                        {
+                            float v = Mathf.Lerp(120f, targetRight, t);
+                            e.style.left = Length.Percent(v);
+                        })
+                        .Ease(Easing.OutCubic);
+                    break;
+
+                case TransitionType.Pop:
+                    slot.style.scale = new Scale(new Vector2(0f, 0f));
+                    slot.experimental.animation
+                        .Start(0f, 1f, ms, (e, t) =>
+                        {
+                            float s = Mathf.Lerp(0f, 1f, t);
+                            e.style.scale = new Scale(new Vector2(s, s));
+                        })
+                        .Ease(Easing.OutBack);
+                    break;
+            }
+        }
 
         /// <summary>Named horizontal placement presets — the common VN slots from
         /// far-left to far-right (plus a few in between). A script can ignore

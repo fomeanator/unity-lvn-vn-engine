@@ -121,7 +121,23 @@ namespace Lvn
 
             public bool EqualTo(Val o)
             {
-                if (Kind == Kind.Null || o.Kind == Kind.Null) return Kind == o.Kind;
+                // An unset variable is null here, but in script terms it defaults
+                // to 0 / false / "" (ink semantics). So `unseen == 0`, `flag ==
+                // false` and `name == ""` all hold before anything sets them —
+                // which is what makes once-only choice gates (`__once == 0`) and
+                // first-visit checks work on the very first pass.
+                if (Kind == Kind.Null || o.Kind == Kind.Null)
+                {
+                    var other = Kind == Kind.Null ? o : this;
+                    switch (other.Kind)
+                    {
+                        case Kind.Null: return true;
+                        case Kind.Num: return other.N == 0;
+                        case Kind.Bool: return !other.B;
+                        case Kind.Str: return string.IsNullOrEmpty(other.S);
+                        default: return false;
+                    }
+                }
                 if (Kind == Kind.Str || o.Kind == Kind.Str) return AsStr() == o.AsStr();
                 return AsNum() == o.AsNum();
             }

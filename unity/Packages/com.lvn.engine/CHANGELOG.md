@@ -7,13 +7,23 @@ follows [Keep a Changelog](https://keepachangelog.com/); versions are SemVer.
 
 ### Added
 - `LvnExpression` — built-in evaluator for string `expr` conditions
-  (`|| && !`, comparisons, arithmetic, strings; unknown vars read as null).
+  (`|| && !`, comparisons, arithmetic, strings; unset vars default like ink).
   `if` and option `expr` filters now work out of the box; `LvnPlayer.ExprEvaluator`
   becomes an optional override rather than a requirement.
 - `LvnException` — runtime error type for malformed scripts/expressions.
+- Reference UI Toolkit component set (`Lvn.Engine.UI`): `VnTheme`, `DialogueBox`,
+  `ChoiceList`, `BackgroundLayer`, `ActorLayer`, `ILvnAssets`, and `VnStage` —
+  a `MonoBehaviour : ILvnStage` drop-in that plays a `.lvn` in a `UIDocument`.
+  Plus `RichTextTypewriter` / `TypewriterClock` (typewriter core).
+
+### Fixed
+- An unset variable now compares as 0 / false / "" (ink defaulting), so
+  once-only choice gates (`__once == 0`) and first-visit checks pass on the
+  first pass instead of filtering every option out.
 
 ### Verified
-- The runtime compiles clean against Unity 6 (6000.4) + Newtonsoft 3.2.
+- The full engine plays a `.lvn` end-to-end in Unity 6 (6000.4): scene → stage →
+  dialogue with typewriter → branching choice. Compiles clean, runs error-free.
 
 ## [0.1.0] — 2026-06-20
 

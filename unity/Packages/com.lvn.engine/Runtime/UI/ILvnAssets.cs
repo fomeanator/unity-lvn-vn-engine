@@ -14,5 +14,9 @@ namespace Lvn.UI
     public interface ILvnAssets
     {
         Task<Sprite> LoadSpriteAsync(string url, CancellationToken ct);
+
+        /// <summary>Resolve an <c>audio</c> command's url to a clip. Return null
+        /// (or throw) if you don't ship audio — the stage just stays silent.</summary>
+        Task<AudioClip> LoadAudioAsync(string url, CancellationToken ct);
     }
 }

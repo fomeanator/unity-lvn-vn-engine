@@ -8,6 +8,17 @@ follows [Keep a Changelog](https://keepachangelog.com/); versions are SemVer.
 ### Added
 - `FxLayer` — full-screen effects overlay; `VnStage` now renders the `fade`
   (to black/white/clear) and `dim` (focus-pull) ops as animated veils.
+- `CameraRig` — `camera` op: shake (diminishing jitter) and zoom on the world
+  layer, leaving the UI chrome steady.
+- `ParticleField` — `particles` op: procedural rain / snow weather, no textures.
+- Audio: `audio` op with music / ambient / sfx channels, looping beds and
+  one-shot sfx, with volume fades. `ILvnAssets` gains `LoadAudioAsync`.
+- `VnStage` wraps background + actors in a "world" layer so camera effects move
+  the scene but not the dialogue/choices.
+
+### Verified
+- Live in Unity 6: rain renders over the dialogue while the typewriter reveals
+  the line (captured via the panel's render texture).
 
 ## [0.2.0] — 2026-06-20
 

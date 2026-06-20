@@ -3,6 +3,12 @@
 All notable changes to the LVN Engine package are documented here. The format
 follows [Keep a Changelog](https://keepachangelog.com/); versions are SemVer.
 
+## [Unreleased]
+
+### Added
+- `FxLayer` — full-screen effects overlay; `VnStage` now renders the `fade`
+  (to black/white/clear) and `dim` (focus-pull) ops as animated veils.
+
 ## [0.2.0] — 2026-06-20
 
 ### Added

@@ -33,6 +33,7 @@ namespace Lvn.UI
         private ActorLayer _actors;
         private DialogueBox _dialogue;
         private ChoiceList _choices;
+        private FxLayer _fx;
         private LvnPlayer _player;
         private CancellationTokenSource _cts;
         private bool _awaitingTap;
@@ -48,10 +49,12 @@ namespace Lvn.UI
             _actors = new ActorLayer();
             _dialogue = new DialogueBox(Theme);
             _choices = new ChoiceList(Theme);
+            _fx = new FxLayer();
             root.Add(_bg);
             root.Add(_actors);
             root.Add(_dialogue);
             root.Add(_choices);
+            root.Add(_fx); // top: fades/dim veil everything below
             _choices.OnSelected += OnChoiceSelected;
 
             root.pickingMode = PickingMode.Position;
@@ -117,7 +120,9 @@ namespace Lvn.UI
             {
                 case "bg": _ = ApplyBgAsync(command); break;
                 case "actor": _ = ApplyActorAsync(command); break;
-                // fade / dim / camera / particles / audio / wait / hint / preload:
+                case "fade": ApplyFade(command); break;
+                case "dim": ApplyDim(command); break;
+                // camera / particles / audio / wait / hint / preload: further
                 // effect modules land in a later release; unknown-but-registered
                 // ops are simply not yet rendered here.
             }
@@ -130,6 +135,21 @@ namespace Lvn.UI
         }
 
         // ── stage command helpers ─────────────────────────────────────────────
+
+        private void ApplyFade(JObject cmd)
+        {
+            var to = (string)cmd["to"] ?? "black";
+            float dur = cmd["duration"] != null ? (float)cmd["duration"] : 0.5f;
+            if (to == "clear" || to == "none") _fx.Clear(dur);
+            else _fx.Fade(to == "white" ? Color.white : Color.black, dur);
+        }
+
+        private void ApplyDim(JObject cmd)
+        {
+            float alpha = cmd["alpha"] != null ? (float)cmd["alpha"] : 0.4f;
+            float dur = cmd["duration"] != null ? (float)cmd["duration"] : 0.5f;
+            _fx.Dim(alpha, dur);
+        }
 
         private async Task ApplyBgAsync(JObject cmd)
         {

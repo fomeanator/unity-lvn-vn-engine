@@ -1,0 +1,26 @@
+{
+  "name": "Lvn.Engine.Tests",
+  "rootNamespace": "Lvn.Tests",
+  "references": [
+    "Lvn.Engine",
+    "Unity.Nuget.Newtonsoft-Json",
+    "UnityEngine.TestRunner",
+    "UnityEditor.TestRunner"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "nunit.framework.dll",
+    "Newtonsoft.Json.dll"
+  ],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTS"
+  ],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

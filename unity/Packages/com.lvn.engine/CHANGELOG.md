@@ -21,9 +21,16 @@ follows [Keep a Changelog](https://keepachangelog.com/); versions are SemVer.
   once-only choice gates (`__once == 0`) and first-visit checks pass on the
   first pass instead of filtering every option out.
 
+### Tests
+- EditMode tests for `LvnExpression` and `LvnPlayer` (flow, set/inc, once-only
+  gating, call/return tunnels) — 11/11 green in Unity 6's Test Runner, with
+  regression cover for the unset-variable fix at both the expression and player
+  levels.
+
 ### Verified
 - The full engine plays a `.lvn` end-to-end in Unity 6 (6000.4): scene → stage →
   dialogue with typewriter → branching choice. Compiles clean, runs error-free.
+- Ships with `.meta` files (stable GUIDs) for clean Package Manager installs.
 
 ## [0.1.0] — 2026-06-20
 

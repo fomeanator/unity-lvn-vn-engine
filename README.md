@@ -1,5 +1,8 @@
 # LVN — an open visual-novel engine where `.lvn` is the universal format
 
+[![CI](https://github.com/fomeanator/unity-lvn-vn-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/fomeanator/unity-lvn-vn-engine/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 **LVN is "ffmpeg for visual novels."** You write your story in whatever
 authoring tool you like (Ink, articy:draft, …); a transcoder compiles it to
 **`.lvn`** — one flat, declarative command container — and the runtime plays

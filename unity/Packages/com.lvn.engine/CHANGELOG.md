@@ -44,6 +44,18 @@ follows [Keep a Changelog](https://keepachangelog.com/); versions are SemVer.
   layers over the real art.
 - 15/15 EditMode tests green (expression, player, sprite composer).
 
+### Added
+- `VnStage.ContentRoot` — a serialized content-folder path. When set (and
+  `Assets` is unwired) the stage auto-creates a `DirectoryAssets`, so a scene
+  plays with real art straight from Play with no code.
+
+### Fixed
+- Black screen on play, two causes: (1) `VnStage` could miss building its layers
+  when `UIDocument.rootVisualElement` was still null in `OnEnable` (a script-order
+  race) — it now builds in `OnEnable` **and** `Start`; (2) the asset loader was
+  code-only (always null on a plain Play, so backgrounds/characters never loaded)
+  — `ContentRoot` fixes that from the Inspector.
+
 ## [0.2.0] — 2026-06-20
 
 ### Added

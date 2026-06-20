@@ -31,6 +31,11 @@ namespace Lvn.UI
         /// backgrounds and no character art. Assign in code before play.</summary>
         public ILvnAssets Assets;
 
+        [Tooltip("Optional content folder. If set and Assets is unwired, the stage " +
+                 "loads sprites from here via DirectoryAssets — so a scene plays with " +
+                 "art straight from Play, no code. Editor/standalone file paths.")]
+        public string ContentRoot;
+
         private VisualElement _world;   // bg + actors, the camera target
         private BackgroundLayer _bg;
         private ActorLayer _actors;
@@ -45,10 +50,24 @@ namespace Lvn.UI
         private CancellationTokenSource _cts;
         private bool _awaitingTap;
 
-        private void OnEnable()
+        private bool _built;
+
+        // UIDocument's rootVisualElement can be null in OnEnable (it initializes
+        // its panel on its own OnEnable, and script order isn't guaranteed), so we
+        // also try in Start, by which point the panel is ready. Whichever sees a
+        // non-null root first builds; the other is a no-op.
+        private void OnEnable() => Build();
+        private void Start() => Build();
+
+        private void Build()
         {
+            if (_built) return;
             var root = GetComponent<UIDocument>().rootVisualElement;
-            if (root == null) return; // UIDocument not ready yet
+            if (root == null) return; // panel not ready yet — Start will retry
+            _built = true;
+
+            if (Assets == null && !string.IsNullOrEmpty(ContentRoot))
+                Assets = new DirectoryAssets(ContentRoot);
             root.Clear();
             root.style.flexGrow = 1;
 

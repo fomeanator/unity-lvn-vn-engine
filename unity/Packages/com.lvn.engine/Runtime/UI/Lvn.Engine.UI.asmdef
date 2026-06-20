@@ -2,7 +2,8 @@
   "name": "Lvn.Engine.UI",
   "rootNamespace": "Lvn.UI",
   "references": [
-    "Lvn.Engine"
+    "Lvn.Engine",
+    "Unity.Nuget.Newtonsoft-Json"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

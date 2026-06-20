@@ -28,11 +28,15 @@ namespace Lvn
         public readonly Dictionary<string, JToken> Vars = new Dictionary<string, JToken>();
 
         /// <summary>
-        /// Optional evaluator for string <c>expr</c> conditions (option filters
-        /// and <c>if</c>). When unset, structured <c>cond</c> still works and a
-        /// string <c>expr</c> reads as false. Wire your expression module here.
+        /// Optional override for string <c>expr</c> conditions (option filters
+        /// and <c>if</c>). When unset, the built-in <see cref="LvnExpression"/>
+        /// evaluator is used; set this only to plug in a different expression
+        /// dialect. Structured <c>cond</c> is unaffected.
         /// </summary>
         public Func<string, IReadOnlyDictionary<string, JToken>, bool> ExprEvaluator;
+
+        private bool EvalExpr(string expr) =>
+            ExprEvaluator != null ? ExprEvaluator(expr, Vars) : LvnExpression.EvaluateBool(expr, Vars);
 
         private int _ip;
 
@@ -189,7 +193,7 @@ namespace Lvn
                     continue;
 
                 var expr = (string)o["expr"];
-                if (expr != null && (ExprEvaluator == null || !ExprEvaluator(expr, Vars)))
+                if (expr != null && !EvalExpr(expr))
                     continue;
 
                 result.Add(new LvnOption(i, (string)o["text"] ?? "", (string)o["cost"]));
@@ -201,7 +205,7 @@ namespace Lvn
         {
             var expr = (string)c["expr"];
             if (expr != null)
-                return ExprEvaluator != null && ExprEvaluator(expr, Vars);
+                return EvalExpr(expr);
 
             if (!(c["cond"] is JObject cond))
                 return false;

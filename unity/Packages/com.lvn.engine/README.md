@@ -43,8 +43,9 @@ Drive it by alternating with the player:
 Flow control — `goto`, `if`, `choice`, `call`/`return` tunnels — and the
 variable bag (`set`/`inc`, exposed as `player.Vars`) are handled for you.
 `player.Index`, `player.Vars` and `player.CallStack` are the autosave snapshot;
-`player.Restore(...)` puts a player back. Wire `player.ExprEvaluator` to support
-string `expr` conditions (structured `cond` works out of the box).
+`player.Restore(...)` puts a player back. Both structured `cond` and string
+`expr` conditions (`courage >= 2 && !lied`) evaluate out of the box via
+`LvnExpression`; set `player.ExprEvaluator` only to plug in a different dialect.
 
 ## Sample
 

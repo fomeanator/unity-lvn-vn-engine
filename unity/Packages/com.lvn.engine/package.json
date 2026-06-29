@@ -25,8 +25,8 @@
   },
   "samples": [
     {
-      "displayName": "Hello LVN",
-      "description": "A tiny .lvn and a console host that plays it.",
+      "displayName": "Hello Elvin",
+      "description": "Press Play to see a game: add the ElvinVnStageSample component (story + theme bundled). Also includes HelloLvnRunner, a headless console host. See docs/unity-getting-started.md.",
       "path": "Samples~/HelloLvn"
     }
   ]

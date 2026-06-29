@@ -1,0 +1,48 @@
+scene hello
+
+// A tiny but complete Elvin game: narration, a line with a speaker, a branching
+// choice, a flag, and two endings. Drop this .lvns into a Unity project and the
+// importer compiles it automatically — no external tool. See the repo's
+// docs/unity-getting-started.md to put it on screen.
+
+warmth = 0
+
+bg /content/bg/porch.jpg
+Rain ticked on the porch roof. You came back to a door you swore you'd never knock on again.
+
+actor mara left neutral
+Mara: You came back. I wasn't sure you would.
+
+- "I missed you." -> warm
+- "We need to talk." -> talk
+
+:warm
+warmth = warmth + 1
+Mara [smile]: Then come in out of the rain.
+-> inside
+
+:talk
+Mara [neutral]: ...Alright. I'm listening.
+- Tell the truth -> truth
+- Say nothing -> inside
+:truth
+warmth = warmth + 1
+You told her everything. She was quiet for a long time.
+Mara [smile]: Thank you for not making something up.
+-> inside
+
+:inside
+bg /content/bg/kitchen.jpg
+Mara: The kettle's still warm. Staying?
+if warmth >= 1 -> end_good
+-> end_cold
+
+:end_good
+Mara [smile]: Good. It's good that you came back.
+You talked until the rain stopped. ENDING: "Warm light."
+-> __end
+
+:end_cold
+Mara [neutral]: Finish your tea, then. It's late.
+ENDING: "Cold tea."
+-> __end

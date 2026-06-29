@@ -32,3 +32,6 @@ Thumbs.db
 # Stray screenshots
 Screenshot*.png
 *_demo.png
+
+# Release build artifacts
+/dist/

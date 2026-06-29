@@ -40,10 +40,19 @@ While **Ink** and **articy:draft** are great for complex branching, we designed 
 ### Interactive Playground & AI Prompt Guide
 The Go server hosts a documentation website featuring an interactive, real-time **LVNScript Playground** and a copy-pasteable **AI System Prompt Spec** that lets any LLM agent immediately code valid scripts in LVNScript.
 
+> 🤖 **Making a game (human or AI agent)? Start with [`howto/AGENTS.md`](howto/AGENTS.md).**
+> The `howto/` folder is a self-contained build kit: a mental model, the full
+> language reference ([`howto/LANGUAGE.md`](howto/LANGUAGE.md)), an explicit
+> capabilities-and-limitations map ([`howto/CAPABILITIES.md`](howto/CAPABILITIES.md)),
+> a one-page cheatsheet, a recipe book, and **12 genre guides each with a working,
+> validated `.lvns` example**. It is written so a fresh session can build any
+> supported game without reading engine source.
+
 ## Repository layout
 
 | Path | What |
 |---|---|
+| `howto/` | **Build-a-game guides + a large base of validated `.lvns` examples by genre.** Start at `howto/AGENTS.md` (orientation for humans and AI agents), `howto/CAPABILITIES.md` (what the engine can and cannot do). |
 | `tools/lvnconv/` | The transcoder CLI (Go). `convert` Ink/articy/LVNScript → `.lvn`, `validate`, `probe`. |
 | `docs/lvn-format.md` | The `.lvn` command catalog — the container spec. |
 | `docs/staging-tags.md` | The staging-tag vocabulary front-ends share. |

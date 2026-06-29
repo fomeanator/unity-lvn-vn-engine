@@ -1,0 +1,86 @@
+scene tycoon
+
+// ═══════════════════ TYCOON / МЕНЕДЖМЕНТ ═══════════════════
+// Пошаговая экономика: ресурсы, ход = «месяц», случайные события (rand),
+// инвестиции с отдачей и условие победы/проигрыша. Каждый ход игрок
+// распределяет деньги, затем считается доход и выпадает событие.
+
+cash = 100
+shops = 1
+rep = 0
+month = 1
+months = 8
+
+text hud x=3 y=8 size=40 color=#c9f0d0 «Месяц {month}/{months}  💵{cash}  🏪{shops}  ⭐{rep}»
+
+bg /content/bg/city_office.jpg
+Ты открыл сеть кофеен. Цель — за {months} месяцев выйти на 500💵.
+-> turn
+
+:turn
+if month > months -> finale
+// Доход месяца зависит от числа точек и репутации.
+income = shops * 25 + rep * 5
+cash = cash + income
+bg /content/bg/city_office.jpg
+Месяц {month}. Доход составил {income}💵. Во что вложишься?
+- 🏪 Новая кофейня — 120💵 -> invest_shop
+- 📣 Реклама — 40💵 (+репутация) -> invest_ad
+- 💰 Ничего, копить -> hold
+
+:invest_shop
+if cash >= 120 -> do_shop
+Не хватает денег на новую точку.
+-> turn
+:do_shop
+cash = cash - 120
+shops = shops + 1
+Открыта новая кофейня! Теперь их {shops}.
+-> event
+:invest_ad
+if cash >= 40 -> do_ad
+Не хватает на рекламную кампанию.
+-> turn
+:do_ad
+cash = cash - 40
+rep = rep + 2
+Реклама сработала — о тебе заговорили.
+-> event
+:hold
+Ты придержал капитал на следующий месяц.
+-> event
+
+// Случайное событие конца месяца.
+:event
+roll = rand(1, 6)
+if roll <= 2 -> ev_good
+if roll <= 3 -> ev_bad
+Спокойный месяц без потрясений.
+-> next_month
+:ev_good
+bonus = 30 + shops * 10
+cash = cash + bonus
+📈 Вирусный пост в сети! Наплыв клиентов: +{bonus}💵.
+-> next_month
+:ev_bad
+loss = 25
+cash = cash - loss
+rep = max(0, rep - 1)
+📉 Поломка кофемашины и жалобы: -{loss}💵, репутация просела.
+-> next_month
+
+:next_month
+month = month + 1
+-> turn
+
+:finale
+bg /content/bg/city_office.jpg
+Год подошёл к концу. Капитал: {cash}💵, точек {shops}, репутация {rep}.
+if cash >= 500 -> win
+-> lose
+:win
+🏆 Ты сколотил кофейную империю! Цель достигнута.
+-> __end
+:lose
+Бизнес устоял, но до цели не дотянул. В следующий раз получится.
+-> __end

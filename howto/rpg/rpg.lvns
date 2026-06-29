@@ -1,0 +1,127 @@
+scene rpg
+
+// ═══════════════════ RPG (мини) ═══════════════════
+// Характеристики, инвентарь, лавка, случайный бой как ПЕРЕИСПОЛЬЗУЕМАЯ
+// подпрограмма (call/return) и повышение уровня. Полную большую RPG см.
+// server/content/scripts/rpg-inv.lvns — здесь компактная обучающая версия.
+
+level = 1
+xp = 0
+need = 8
+maxhp = 20
+hp = 20
+atk = 4
+gold = 10
+potions = 1
+
+// Реактивный стат-бар — сам обновляется по ходу боя.
+text hud x=3 y=8 size=42 color=#f1e4c9 «Ур.{level}  ♥{hp}/{maxhp}  атк {atk}  💰{gold}  🧪{potions}»
+
+bg /content/bg/town.jpg
+Городок Дубрава. Староста просит очистить лес от волков.
+-> town
+
+:town
+Площадь. Куда пойдёшь?
+- 🛒 К торговцу (зелья, меч) -> shop
+- 🌲 В лес (бой) -> forest
+- 🏆 Сразиться с вожаком стаи -> boss
+
+:shop
+Торговец: Звонкой монеты — звонкий товар.
+- Зелье лечения — 5💰 -> buy_pot
+- Стальной меч (+3 атк) — 12💰 -> buy_sword
+- Назад -> town
+:buy_pot
+if gold >= 5 { gold = gold - 5  potions = potions + 1  Торговец: Береги на чёрный день. } else { Торговец: Не хватает. }
+-> shop
+:buy_sword
+if gold >= 12 { gold = gold - 12  atk = atk + 3  Торговец: Добрый клинок. } else { Торговец: Не хватает. }
+-> shop
+
+:forest
+bg /content/bg/forest.jpg
+Из кустов выскакивает волк!
+ename = "Волк"
+ehp = 12
+eatk = 5
+goldw = 6
+xpw = 5
+call fight
+bg /content/bg/town.jpg
+-> town
+
+:boss
+bg /content/bg/forest.jpg
+Матёрый вожак стаи преграждает тропу!
+ename = "Вожак стаи"
+ehp = 40
+eatk = 9
+goldw = 50
+xpw = 30
+call fight
+-> victory
+
+// ── Боевой движок: подпрограмма. Вход: ename/ehp/eatk/goldw/xpw ──
+:fight
+{ename} перед тобой — ♥{ehp}. Твой ход.
+- ⚔ Атаковать -> f_atk
+- 🧪 Выпить зелье -> f_pot
+- 🏃 Бежать -> f_flee
+:f_atk
+dmg = max(1, atk + rand(0,3))
+ehp = ehp - dmg
+Ты бьёшь на {dmg}. ({ename}: ♥{ehp})
+if ehp <= 0 -> f_win
+-> f_enemy
+:f_pot
+if potions >= 1 -> do_pot
+Зелий нет!
+-> fight
+:do_pot
+potions = potions - 1
+hp = min(maxhp, hp + 12)
+Зелье восстановило силы.
+-> f_enemy
+:f_flee
+if chance(0.5) -> fled
+Сбежать не вышло!
+-> f_enemy
+:fled
+Ты сбежал.
+return
+:f_enemy
+edmg = max(1, eatk - rand(0,2))
+hp = hp - edmg
+{ename} бьёт на {edmg}. (♥{hp})
+if hp <= 0 -> dead
+-> fight
+:f_win
+{ename} повержен! +{goldw}💰 +{xpw} опыта.
+gold = gold + goldw
+xp = xp + xpw
+call levelup
+return
+
+// Повышение уровня — может сработать несколько раз за бой.
+:levelup
+while xp >= need {
+  xp = xp - need
+  level = level + 1
+  maxhp = maxhp + 5
+  hp = maxhp
+  atk = atk + 1
+  need = floor(need * 1.5)
+  ✨ Новый уровень — {level}!
+}
+return
+
+:victory
+bg /content/bg/town.jpg
+Вожак пал, лес свободен. Дубрава славит твоё имя! Ур.{level}, золота {gold}.
+-> __end
+
+:dead
+fade to="black" duration=0.8
+Последний удар свалил тебя. Тропа героя обрывается.
+-> __end

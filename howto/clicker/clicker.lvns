@@ -1,0 +1,56 @@
+scene clicker
+
+// ═══════════════════ КЛИКЕР / IDLE ═══════════════════
+// Ядро инкрементальной игры: реактивный HUD (text «{выражение}» сам обновляется
+// на тике ~200 мс), клик-цикл через выбор, апгрейды, экономика на переменных.
+// Каждый «клик» = выбор, который добавляет ресурс и возвращается в цикл.
+
+cookies = 0
+per_click = 1
+ovens = 0
+oven_cost = 15
+goal = 50
+
+// Реактивная панель: значения в {…} пересчитываются автоматически.
+text hud x=4 y=8 size=44 color=#ffe9b0 «🍪 {cookies}   за клик: {per_click}   печей: {ovens}   цель: {goal}»
+
+bg /content/bg/bakery.jpg
+Пекарня открыта! Пеки печенье и расширяй производство.
+-> loop
+
+:loop
+// Печи дают пассивный доход — начисляем его на каждом проходе цикла.
+cookies = cookies + ovens
+if cookies >= goal -> win
+- 🍪 Печь печенье (+{per_click}) -> bake
+- 🔥 Купить печь ({oven_cost}🍪, +1/такт) -> buy_oven
+- ⬆ Прокачать руки (20🍪, +1 за клик) -> buy_hands
+
+:bake
+cookies = cookies + per_click
+-> loop
+
+:buy_oven
+if cookies >= oven_cost -> do_oven
+Не хватает печенья на печь.
+-> loop
+:do_oven
+cookies = cookies - oven_cost
+ovens = ovens + 1
+oven_cost = floor(oven_cost * 1.6)
+Новая печь гудит! Каждый такт приносит печенье само.
+-> loop
+
+:buy_hands
+if cookies >= 20 -> do_hands
+Не хватает печенья на прокачку.
+-> loop
+:do_hands
+cookies = cookies - 20
+per_click = per_click + 1
+Ловкие руки! Теперь каждый клик весомее.
+-> loop
+
+:win
+Цель достигнута — {goal} печений! Ты пекарь-магнат. 🎉
+-> __end

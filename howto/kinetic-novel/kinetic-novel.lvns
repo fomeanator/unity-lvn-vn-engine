@@ -1,0 +1,46 @@
+scene kinetic-novel
+
+// ═══════════════════ КИНЕТИЧЕСКАЯ НОВЕЛЛА ═══════════════════
+// История без выбора — но с ПОСТАНОВКОЙ: фоны, выход/уход актёров, эмоции,
+// анимация (anim/move), переходы (fade/dim), камера, частицы и звук. Здесь
+// движок работает как режиссёр. Правило анимации: разные каналы идут парал-
+// лельно, ключи внутри канала — по очереди. Подробно: docs/animation-system.md
+
+actor_map Эмбер=amber
+
+// Атмосфера: дождь и музыка с первого кадра.
+bg /content/bg/night_station.jpg
+audio channel=music action=play url="/content/audio/rain_theme.ogg"
+particles type=rain on=true
+fade to="clear" duration=1.2
+Перрон опустел. Последний поезд ушёл десять минут назад.
+
+// Актриса въезжает слева за кадр (move по экрану) и «дышит» (idle-анимация).
+actor amber left neutral
+move id=amber path="-0.2,0.5 0.28,0.5" dur=1.2 ease=outCubic
+anim amber scale [1 1.03 1] 3s yoyo
+Эмбер [sad]: Я опоздала. Опять.
+
+// Лёгкое покачивание головы — отдельный канал, играет поверх «дыхания».
+anim id=amber prop=rotation keys="0:0 1:3 2:-3 3:0" loop=yoyo ease=inOutSine
+Эмбер [neutral]: Хотя... может, так и надо. Может, я и не хотела успеть.
+
+// Акцент: дрожь камеры на воспоминании + вспышка.
+camera action=shake amplitude=0.02 duration=0.4
+flash to="white" duration=0.3
+Голос из памяти: «Если опоздаешь — я не буду ждать».
+
+// Смена кадра: затемнили, сменили фон, проявили.
+dim alpha=0.6 duration=0.5
+bg /content/bg/empty_platform_dawn.jpg
+particles type=rain on=false
+audio channel=music action=stop
+dim alpha=0 duration=0.8
+Рассвет. Дождь кончился. Эмбер всё ещё стоит на перроне — но уже улыбается.
+
+// Финальный «поп» — короткое увеличение как точка в сцене.
+actor amber center smile
+anim amber scale to=1.08 dur=0.4 ease=outBack
+Эмбер [smile]: Ладно. Следующий поезд — мой.
+fade to="black" duration=1.5
+-> __end

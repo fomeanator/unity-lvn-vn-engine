@@ -1,0 +1,81 @@
+scene dating-sim
+
+// ═══════════════════ DATING SIM / СИМУЛЯТОР ОТНОШЕНИЙ ═══════════════════
+// Метры симпатии на персонажа, дневной цикл (выбор «к кому пойти»), реплики,
+// поднимающие симпатию, и финал-«роут», который открывается по порогу. Скрытые
+// до порога варианты — через expr= на строке выбора.
+
+actor_map Лия=lia
+actor_map Ким=kim
+
+lia = 0
+kim = 0
+day = 1
+days = 4
+
+text hud x=4 y=8 size=40 color=#ffd9e6 «День {day}/{days}   ❤Лия {lia}   ❤Ким {kim}»
+
+bg /content/bg/campus.jpg
+Новый семестр. У тебя есть {days} дня, чтобы сблизиться с кем-то.
+-> day_start
+
+:day_start
+if day > days -> finale
+bg /content/bg/campus.jpg
+День {day}. С кем проведёшь время?
+- ☕ Лия в кофейне -> see_lia
+- 📚 Ким в библиотеке -> see_kim
+
+:see_lia
+bg /content/bg/cafe.jpg
+actor lia center smile
+Лия: О, ты пришёл! Бери латте, я угощаю.
+- Спросить о её музыке -> lia_music
+- Похвалить кофе -> lia_safe
+:lia_music
+lia = lia + 2
+Лия [smile]: Ты первый, кто спросил! Дай покажу плейлист…
+-> end_day
+:lia_safe
+lia = lia + 1
+Лия: Да, бариста тут старается.
+-> end_day
+
+:see_kim
+bg /content/bg/library.jpg
+actor kim center neutral
+Ким: Тихо. ...Ладно, тебе можно. Садись.
+- Помочь с конспектом -> kim_help
+- Поболтать о пустяках -> kim_safe
+:kim_help
+kim = kim + 2
+Ким [smile]: С тобой и зачёт не страшен. Спасибо.
+-> end_day
+:kim_safe
+kim = kim - 1
+Ким [sad]: Я вообще-то занимаюсь. Потом, ладно?
+-> end_day
+
+:end_day
+day = day + 1
+-> day_start
+
+:finale
+bg /content/bg/sunset_roof.jpg
+Семестр на исходе. Кого ты позовёшь на крышу под закат?
+// Роут открыт только при достаточной симпатии (expr-фильтр).
+- Позвать Лию -> route_lia expr="lia >= 4"
+- Позвать Ким -> route_kim expr="kim >= 4"
+- Уйти одному -> route_alone
+
+:route_lia
+actor lia center smile
+Лия [smile]: Я надеялась, что это будешь ты. КОНЦОВКА: «Лия».
+-> __end
+:route_kim
+actor kim center smile
+Ким [smile]: Тссс. Просто смотри на закат. Со мной. КОНЦОВКА: «Ким».
+-> __end
+:route_alone
+Ни с кем ты так и не сблизился. Закат ты встретил один. КОНЦОВКА: «В одиночку».
+-> __end

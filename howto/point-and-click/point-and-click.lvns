@@ -1,0 +1,60 @@
+scene pnc-room
+
+// ═══════════════════ POINT-AND-CLICK / КОМНАТА-ПОБЕГ ═══════════════════
+// Это НЕ новелла. Сцена-«экран» = пауза (строка-нарратив), вокруг которой
+// расставлены кликабельные объекты (obj + on_click). Клик по объекту прыгает
+// на его метку и ГАСИТ тап (диалог не проматывается). Метка возвращает на
+// экран — получается опрашиваемая комната. Состояние держим в переменных.
+
+bg /content/bg/study_room.jpg
+has_key = 0
+knows_code = 0
+safe_open = 0
+-> room
+
+:room
+// Хотспоты. anchor="0.5,0.5" центрирует объект на x,y. on_click — метка-прыжок.
+obj id=desk     sprite_url="/content/ui/hotspot/desk.png"     x=0.22 y=0.70 width=0.18 height=0.16 anchor="0.5,0.5" on_click="desk"
+obj id=painting sprite_url="/content/ui/hotspot/painting.png" x=0.50 y=0.28 width=0.16 height=0.20 anchor="0.5,0.5" on_click="painting"
+obj id=safe     sprite_url="/content/ui/hotspot/safe.png"     x=0.74 y=0.55 width=0.14 height=0.16 anchor="0.5,0.5" on_click="safe"
+obj id=door     sprite_url="/content/ui/hotspot/door.png"     x=0.92 y=0.50 width=0.12 height=0.34 anchor="0.5,0.5" on_click="door"
+Кабинет заперт. Осмотрись: стол, картина, сейф, дверь.
+// Пауза-экран: пустой нарратив держит хотспоты до клика.
+-> room
+
+:desk
+if has_key == 1 -> desk_empty
+Ты обыскал стол. В нижнем ящике — латунный ключ.
+has_key = 1
+-> room
+:desk_empty
+В столе больше ничего нет.
+-> room
+
+:painting
+За картиной нацарапан код сейфа: 1962.
+knows_code = 1
+-> room
+
+:safe
+if safe_open == 1 -> safe_done
+if knows_code == 1 -> safe_unlock
+Сейф заперт на код. Цифр ты пока не знаешь.
+-> room
+:safe_unlock
+Ты набираешь 1962 — сейф щёлкает. Внутри записка: «выход не там, где вход».
+safe_open = 1
+-> room
+:safe_done
+Сейф пуст — записку ты уже забрал.
+-> room
+
+:door
+if has_key == 1 -> escaped
+Дверь заперта. Нужен ключ.
+-> room
+
+:escaped
+bg /content/bg/corridor.jpg
+Ключ поворачивается, дверь открыта. Ты выбрался из кабинета. Победа!
+-> __end

@@ -21,6 +21,14 @@ the project aims for [Semantic Versioning](https://semver.org/).
   a validated `.lvns` example.
 - **`AGENTS.md`** (root + `howto/`) — onboarding for coding agents and authors.
 - **`GROWTH.md`** — growth analysis and a Unity-native plan.
+- **Faithful branch reconvergence in the articy `.adpd` importer**
+  (`linearizeByComponents`): within a scene the 0x02 pin graph drives the flow, so
+  a choice's branches rejoin at their shared next stop (the merge points the
+  authoring-order spine flattened away); scenes are chained in authoring order onto
+  reached dead-ends (never a bogus choice). Self-validates 100% coverage and falls
+  back to the spine, so it can never produce worse coverage. Validated on 5 real
+  novels — 100% content coverage, 0 lost lines, 348–606 real merge points each
+  (previously 0), cleaner choice counts.
 
 ### Changed
 - **Rebrand to "Elvin"** (how "LVN" is pronounced). The `.lvn`/`.lvns` extensions

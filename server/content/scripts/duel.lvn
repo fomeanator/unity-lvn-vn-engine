@@ -1,0 +1,319 @@
+{
+  "scene": "duel",
+  "script": [
+    {
+      "key": "php",
+      "op": "set",
+      "value": 10
+    },
+    {
+      "key": "ehp",
+      "op": "set",
+      "value": 14
+    },
+    {
+      "id": "Двор",
+      "op": "bg",
+      "sprite_url": "/content/bg/Двор.jpg"
+    },
+    {
+      "op": "say",
+      "text": "Гопник у пивной сплюнул сквозь зубы и закатал рукава.",
+      "who": "Автор"
+    },
+    {
+      "op": "say",
+      "text": "Ну чё, боксёр, потанцуем?",
+      "who": "Гопник"
+    },
+    {
+      "op": "say",
+      "text": "Читай его движения. Ошибёшься — пропустишь. Угадаешь — накажешь.",
+      "who": "Автор"
+    },
+    {
+      "op": "say",
+      "text": "• Замах назад → БЛОК.  • Открылся бок → УДАР.  • Дёргается, дразнит → ВЫЖДАТЬ (не купись).",
+      "who": "Автор"
+    },
+    {
+      "id": "round",
+      "op": "label"
+    },
+    {
+      "else": "chkp",
+      "expr": "ehp \u003c= 0",
+      "op": "if",
+      "then": "win"
+    },
+    {
+      "id": "chkp",
+      "op": "label"
+    },
+    {
+      "else": "fight",
+      "expr": "php \u003c= 0",
+      "op": "if",
+      "then": "lose"
+    },
+    {
+      "id": "fight",
+      "op": "label"
+    },
+    {
+      "op": "say",
+      "text": "❤ Ты: {php}    ☠ Он: {ehp}",
+      "who": "Автор"
+    },
+    {
+      "expr": "rand(1,3)",
+      "key": "intent",
+      "op": "set"
+    },
+    {
+      "else": "chk2",
+      "expr": "intent == 1",
+      "op": "if",
+      "then": "tell1"
+    },
+    {
+      "id": "chk2",
+      "op": "label"
+    },
+    {
+      "else": "tell3",
+      "expr": "intent == 2",
+      "op": "if",
+      "then": "tell2"
+    },
+    {
+      "id": "tell1",
+      "op": "label"
+    },
+    {
+      "op": "say",
+      "text": "Он отводит кулак далеко назад — готовит широкий хук.",
+      "who": "Автор"
+    },
+    {
+      "op": "choice",
+      "options": [
+        {
+          "goto": "rBlock",
+          "text": "Блок"
+        },
+        {
+          "goto": "rAtk",
+          "text": "Удар"
+        },
+        {
+          "goto": "rWait",
+          "text": "Выждать"
+        }
+      ]
+    },
+    {
+      "id": "tell2",
+      "op": "label"
+    },
+    {
+      "op": "say",
+      "text": "Он оступился, бок открыт нараспашку!",
+      "who": "Автор"
+    },
+    {
+      "op": "choice",
+      "options": [
+        {
+          "goto": "rBlock",
+          "text": "Блок"
+        },
+        {
+          "goto": "rAtk",
+          "text": "Удар"
+        },
+        {
+          "goto": "rWait",
+          "text": "Выждать"
+        }
+      ]
+    },
+    {
+      "id": "tell3",
+      "op": "label"
+    },
+    {
+      "op": "say",
+      "text": "Он дёргается и ухмыляется, будто провоцируя тебя ударить.",
+      "who": "Автор"
+    },
+    {
+      "op": "choice",
+      "options": [
+        {
+          "goto": "rBlock",
+          "text": "Блок"
+        },
+        {
+          "goto": "rAtk",
+          "text": "Удар"
+        },
+        {
+          "goto": "rWait",
+          "text": "Выждать"
+        }
+      ]
+    },
+    {
+      "id": "rBlock",
+      "op": "label"
+    },
+    {
+      "key": "resp",
+      "op": "set",
+      "value": 1
+    },
+    {
+      "label": "resolve",
+      "op": "goto"
+    },
+    {
+      "id": "rAtk",
+      "op": "label"
+    },
+    {
+      "key": "resp",
+      "op": "set",
+      "value": 2
+    },
+    {
+      "label": "resolve",
+      "op": "goto"
+    },
+    {
+      "id": "rWait",
+      "op": "label"
+    },
+    {
+      "key": "resp",
+      "op": "set",
+      "value": 3
+    },
+    {
+      "label": "resolve",
+      "op": "goto"
+    },
+    {
+      "id": "resolve",
+      "op": "label"
+    },
+    {
+      "else": "bad",
+      "expr": "resp == intent",
+      "op": "if",
+      "then": "good"
+    },
+    {
+      "id": "good",
+      "op": "label"
+    },
+    {
+      "expr": "rand(3,5)",
+      "key": "d",
+      "op": "set"
+    },
+    {
+      "expr": "ehp - d",
+      "key": "ehp",
+      "op": "set"
+    },
+    {
+      "op": "say",
+      "text": "{~Есть!|Точно в цель!|Читаю тебя!}",
+      "who": "Главный герой"
+    },
+    {
+      "op": "say",
+      "text": "Ты прочитал его и наказал на {d}. У него осталось {ehp}.",
+      "who": "Автор"
+    },
+    {
+      "label": "round",
+      "op": "goto"
+    },
+    {
+      "id": "bad",
+      "op": "label"
+    },
+    {
+      "expr": "rand(2,4)",
+      "key": "d",
+      "op": "set"
+    },
+    {
+      "expr": "php - d",
+      "key": "php",
+      "op": "set"
+    },
+    {
+      "op": "say",
+      "text": "{~Хэк!|Купился!|Медленный!}",
+      "who": "Гопник"
+    },
+    {
+      "op": "say",
+      "text": "Ты угадал не то — он достаёт тебя на {d}. У тебя осталось {php}.",
+      "who": "Автор"
+    },
+    {
+      "label": "round",
+      "op": "goto"
+    },
+    {
+      "id": "win",
+      "op": "label"
+    },
+    {
+      "op": "say",
+      "text": "Последний точный ответ ломает его защиту. Гопник валится на асфальт.",
+      "who": "Автор"
+    },
+    {
+      "op": "say",
+      "text": "Всё... понял я, понял.",
+      "who": "Гопник"
+    },
+    {
+      "op": "say",
+      "text": "🏆 Ты переиграл его по чтению.",
+      "who": "Автор"
+    },
+    {
+      "label": "__end",
+      "op": "goto"
+    },
+    {
+      "id": "lose",
+      "op": "label"
+    },
+    {
+      "op": "say",
+      "text": "Очередной пропущенный удар гасит свет. Колени встречаются с асфальтом.",
+      "who": "Автор"
+    },
+    {
+      "op": "say",
+      "text": "Слабак. Гони мелочь.",
+      "who": "Гопник"
+    },
+    {
+      "op": "say",
+      "text": "💀 Он тебя переиграл.",
+      "who": "Автор"
+    },
+    {
+      "label": "__end",
+      "op": "goto"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+scene kpp
+
+// ── КПП «Дружба» — пропускной пункт в стиле Papers, Please ──
+// Оригинальные ассеты (советские документы/штампы) + реальные персонажи новеллы.
+bg id=kpp sprite_url="/content/bg/Interrogation_room.jpg"
+set key="strikes" value=0
+set key="processed" value=0
+set key="approved" value=0
+set key="turned" value=0
+
+Автор: 1983 год. Пропускной пункт «Дружба». Ты — инспектор.
+Начальник: Инструкция на смену. Пропускать — только если ВСЁ чисто.
+Начальник: 1) Паспорт не просрочен. 2) Имя в пропуске совпадает. 3) Есть печать. 4) Не в розыске.
+Начальник: Ошибёшься — выговор. Три выговора, и ты уволен. Смена — шесть человек. Работай.
+goto next
+
+// ── диспетчер посетителей ────────────────────────────────────
+:next
+if expr="strikes >= 3" then="fired" else="chknext"
+:chknext
+if expr="processed >= 6" then="shift_over" else="pick"
+:pick
+if expr="processed == 0" then="t0" else="c1"
+:c1
+if expr="processed == 1" then="t1" else="c2"
+:c2
+if expr="processed == 2" then="t2" else="c3"
+:c3
+if expr="processed == 3" then="t3" else="c4"
+:c4
+if expr="processed == 4" then="t4" else="t5"
+
+:t0
+set key="tname" value="Андрей"
+set key="treason" value="Возвращаюсь из части, товарищ инспектор. Всё по уставу."
+set key="t_ok" value="Благодарю. Честь имею."
+set key="t_no" value="Это какая-то ошибка. Я свои документы знаю."
+actor id=Гость show=true x=0.15 y=1 width=0.30 height=0.46 sprite_url="/content/art/Андрей_Обычный.png" enter="fade"
+goto roll
+:t1
+set key="tname" value="Марина"
+set key="treason" value="Ой, я к сестре в Ленинград! Вот, всё-всё собрала."
+set key="t_ok" value="Спасибо огромное, вы такой душка!"
+set key="t_no" value="Да вы что?! Я же честно всё оформила!"
+actor id=Гость show=true x=0.15 y=1 width=0.30 height=0.46 sprite_url="/content/art/Марина_Обычная.png" enter="fade"
+goto roll
+:t2
+set key="tname" value="Тимур"
+set key="treason" value="По делам. Не задерживай, начальник, у меня время."
+set key="t_ok" value="Вот и славно. Бывай."
+set key="t_no" value="Слышь... ты потом об этом пожалеешь."
+actor id=Гость show=true x=0.15 y=1 width=0.30 height=0.46 sprite_url="/content/art/Тимур_Обычный.png" enter="fade"
+goto roll
+:t3
+set key="tname" value="Даниил"
+set key="treason" value="На научную конференцию. Всё в полном порядке, уверяю."
+set key="t_ok" value="Б-благодарю вас. Всего доброго."
+set key="t_no" value="Но... у меня же доклад! Пересмотрите, прошу!"
+actor id=Гость show=true x=0.15 y=1 width=0.30 height=0.46 sprite_url="/content/art/Даниил_Обычный.png" enter="fade"
+goto roll
+:t4
+set key="tname" value="Люба"
+set key="treason" value="Домой я, милок, к семье. Пусти уж, будь добр."
+set key="t_ok" value="Спасибо, сынок. Дай тебе бог здоровья."
+set key="t_no" value="Ну как же так... меня ж дома ждут..."
+actor id=Гость show=true x=0.15 y=1 width=0.30 height=0.46 sprite_url="/content/art/Люба_Обычная.png" enter="fade"
+goto roll
+:t5
+set key="tname" value="Вадим"
+set key="treason" value="...по личным делам. Долго ещё копаться будешь?"
+set key="t_ok" value="Наконец-то. Давно бы так."
+set key="t_no" value="Ну и сиди тут со своими печатями. Тьфу."
+actor id=Гость show=true x=0.15 y=1 width=0.30 height=0.46 sprite_url="/content/art/Вадим_Обычный.png" enter="fade"
+goto roll
+
+// ── случайный «изъян» (0 чисто, 1 просрочен, 2 имя, 3 печать) ──
+:roll
+set expr="max(0, rand(1,6) - 3)" key="flaw"
+set key="seen" value=0
+Автор: К окошку подходит {tname}.
+{tname}: {treason}
+goto desk
+
+// ── стол: кликай документы и ставь штамп ─────────────────────
+:desk
+obj id=doc_pass   sprite_url="/content/ui/kpp/passport.png" x=0.30 y=0.33 width=0.26 height=0.32 anchor="0.5,0.5" on_click="insp_pass"
+obj id=doc_permit sprite_url="/content/ui/kpp/permit.png"   x=0.56 y=0.33 width=0.27 height=0.32 anchor="0.5,0.5" on_click="insp_permit"
+obj id=doc_photo  sprite_url="/content/ui/kpp/photo.png"    x=0.81 y=0.34 width=0.21 height=0.28 anchor="0.5,0.5" on_click="insp_photo"
+obj id=st_ok      sprite_url="/content/ui/kpp/stamp_approve.png" x=0.44 y=0.82 width=0.30 height=0.13 anchor="0.5,0.5" on_click="do_pass"
+obj id=st_no      sprite_url="/content/ui/kpp/stamp_deny.png"    x=0.76 y=0.82 width=0.30 height=0.13 anchor="0.5,0.5" on_click="do_deny"
+Автор: Документы {tname}. Кликай, чтобы осмотреть. Штамп внизу — решение.
+goto desk
+
+:insp_pass
+set key="seen" value=1
+if expr="flaw == 1" then="pass_bad" else="pass_ok"
+:pass_bad
+Автор: 📕 ПАСПОРТ. Владелец: {tname}. Срок действия истёк — 1979 г. ⚠ ПРОСРОЧЕН.
+goto desk
+:pass_ok
+Автор: 📕 ПАСПОРТ. Владелец: {tname}. Срок действия: до 1987 г. Действителен.
+goto desk
+
+:insp_permit
+set key="seen" value=1
+if expr="flaw == 2" then="perm_name" else="perm_seal"
+:perm_name
+Автор: 📄 ПРОПУСК. Ф.И.О.: «Смирнов А.» — ⚠ НЕ совпадает с паспортом ({tname}).
+goto desk
+:perm_seal
+if expr="flaw == 3" then="perm_noseal" else="perm_ok"
+:perm_noseal
+Автор: 📄 ПРОПУСК на имя {tname}. ⚠ Печать ОТСУТСТВУЕТ.
+goto desk
+:perm_ok
+Автор: 📄 ПРОПУСК на имя {tname}. Печать на месте. В порядке.
+goto desk
+
+:insp_photo
+set key="seen" value=1
+Автор: 🖼 ФОТОКАРТОЧКА. Лицо совпадает с гражданином у окошка.
+goto desk
+
+// ── вердикт ──────────────────────────────────────────────────
+:do_pass
+if expr="seen == 0" then="warn_blind" else="pass_resolve"
+:pass_resolve
+if expr="flaw == 0" then="pass_right" else="pass_wrong"
+:pass_right
+set expr="approved + 1" key="approved"
+Автор: ✅ Печать «ПРОПУЩЕН». Документы чисты — верное решение.
+{tname}: {t_ok}
+goto done_ok
+:pass_wrong
+set expr="strikes + 1" key="strikes"
+{tname}: {t_ok}
+Автор: ✅ Ты пропустил... но в документах было нарушение! 📣 ВЫГОВОР ({strikes}/3).
+goto done_bad
+
+:do_deny
+if expr="seen == 0" then="warn_blind" else="deny_resolve"
+:deny_resolve
+if expr="flaw == 0" then="deny_wrong" else="deny_right"
+:deny_right
+set expr="turned + 1" key="turned"
+Автор: ⛔ Печать «ОТКАЗАНО». Нарушение подтверждено — верное решение.
+{tname}: {t_no}
+goto done_ok
+:deny_wrong
+set expr="strikes + 1" key="strikes"
+{tname}: {t_no}
+Автор: ⛔ Ты завернул честного гражданина! Жалоба. 📣 ВЫГОВОР ({strikes}/3).
+goto done_bad
+
+:warn_blind
+Автор: Сначала осмотри хотя бы один документ, инспектор.
+goto desk
+
+:done_ok
+goto advance
+:done_bad
+goto advance
+:advance
+actor id=Гость show=false exit="fade"
+set expr="processed + 1" key="processed"
+goto next
+
+// ── концовки ─────────────────────────────────────────────────
+:fired
+actor id=Гость show=false
+Начальник: Три выговора. Сдавай печать — ты уволен.
+Автор: 💀 Смена провалена. Пропущено верно: {approved}, завёрнуто: {turned}.
+goto __end
+
+:shift_over
+Автор: Смена окончена. Пропущено: {approved}, завёрнуто: {turned}, выговоров: {strikes}.
+if expr="strikes == 0" then="perfect" else="ok_end"
+:perfect
+Начальник: Ни одной ошибки за смену. Отличная работа, инспектор. 🏅
+goto __end
+:ok_end
+Начальник: Смену отработал. Бывает и лучше, но граница на замке.
+goto __end

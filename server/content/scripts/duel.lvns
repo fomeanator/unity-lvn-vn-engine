@@ -1,0 +1,74 @@
+scene duel
+
+set key="php" value=10
+set key="ehp" value=14
+
+bg id="Двор" sprite_url="/content/bg/Двор.jpg"
+Автор: Гопник у пивной сплюнул сквозь зубы и закатал рукава.
+Гопник: Ну чё, боксёр, потанцуем?
+Автор: Читай его движения. Ошибёшься — пропустишь. Угадаешь — накажешь.
+Автор: • Замах назад → БЛОК.  • Открылся бок → УДАР.  • Дёргается, дразнит → ВЫЖДАТЬ (не купись).
+
+:round
+if expr="ehp <= 0" then="win" else="chkp"
+:chkp
+if expr="php <= 0" then="lose" else="fight"
+:fight
+Автор: ❤ Ты: {php}    ☠ Он: {ehp}
+set expr="rand(1,3)" key="intent"
+if expr="intent == 1" then="tell1" else="chk2"
+:chk2
+if expr="intent == 2" then="tell2" else="tell3"
+
+:tell1
+Автор: Он отводит кулак далеко назад — готовит широкий хук.
+- Блок -> rBlock
+- Удар -> rAtk
+- Выждать -> rWait
+:tell2
+Автор: Он оступился, бок открыт нараспашку!
+- Блок -> rBlock
+- Удар -> rAtk
+- Выждать -> rWait
+:tell3
+Автор: Он дёргается и ухмыляется, будто провоцируя тебя ударить.
+- Блок -> rBlock
+- Удар -> rAtk
+- Выждать -> rWait
+
+:rBlock
+set key="resp" value=1
+goto resolve
+:rAtk
+set key="resp" value=2
+goto resolve
+:rWait
+set key="resp" value=3
+goto resolve
+
+:resolve
+if expr="resp == intent" then="good" else="bad"
+:good
+set expr="rand(3,5)" key="d"
+set expr="ehp - d" key="ehp"
+Главный герой: {~Есть!|Точно в цель!|Читаю тебя!}
+Автор: Ты прочитал его и наказал на {d}. У него осталось {ehp}.
+goto round
+:bad
+set expr="rand(2,4)" key="d"
+set expr="php - d" key="php"
+Гопник: {~Хэк!|Купился!|Медленный!}
+Автор: Ты угадал не то — он достаёт тебя на {d}. У тебя осталось {php}.
+goto round
+
+:win
+Автор: Последний точный ответ ломает его защиту. Гопник валится на асфальт.
+Гопник: Всё... понял я, понял.
+Автор: 🏆 Ты переиграл его по чтению.
+goto __end
+
+:lose
+Автор: Очередной пропущенный удар гасит свет. Колени встречаются с асфальтом.
+Гопник: Слабак. Гони мелочь.
+Автор: 💀 Он тебя переиграл.
+goto __end

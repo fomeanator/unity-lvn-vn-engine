@@ -1,0 +1,821 @@
+{
+  "scene": "kpp",
+  "script": [
+    {
+      "id": "kpp",
+      "op": "bg",
+      "sprite_url": "/content/bg/Interrogation_room.jpg"
+    },
+    {
+      "key": "strikes",
+      "op": "set",
+      "value": 0
+    },
+    {
+      "key": "processed",
+      "op": "set",
+      "value": 0
+    },
+    {
+      "key": "approved",
+      "op": "set",
+      "value": 0
+    },
+    {
+      "key": "turned",
+      "op": "set",
+      "value": 0
+    },
+    {
+      "op": "say",
+      "text": "1983 год. Пропускной пункт «Дружба». Ты — инспектор.",
+      "who": "Автор"
+    },
+    {
+      "op": "say",
+      "text": "Инструкция на смену. Пропускать — только если ВСЁ чисто.",
+      "who": "Начальник"
+    },
+    {
+      "op": "say",
+      "text": "1) Паспорт не просрочен. 2) Имя в пропуске совпадает. 3) Есть печать. 4) Не в розыске.",
+      "who": "Начальник"
+    },
+    {
+      "op": "say",
+      "text": "Ошибёшься — выговор. Три выговора, и ты уволен. Смена — шесть человек. Работай.",
+      "who": "Начальник"
+    },
+    {
+      "label": "next",
+      "op": "goto"
+    },
+    {
+      "id": "next",
+      "op": "label"
+    },
+    {
+      "else": "chknext",
+      "expr": "strikes \u003e= 3",
+      "op": "if",
+      "then": "fired"
+    },
+    {
+      "id": "chknext",
+      "op": "label"
+    },
+    {
+      "else": "pick",
+      "expr": "processed \u003e= 6",
+      "op": "if",
+      "then": "shift_over"
+    },
+    {
+      "id": "pick",
+      "op": "label"
+    },
+    {
+      "else": "c1",
+      "expr": "processed == 0",
+      "op": "if",
+      "then": "t0"
+    },
+    {
+      "id": "c1",
+      "op": "label"
+    },
+    {
+      "else": "c2",
+      "expr": "processed == 1",
+      "op": "if",
+      "then": "t1"
+    },
+    {
+      "id": "c2",
+      "op": "label"
+    },
+    {
+      "else": "c3",
+      "expr": "processed == 2",
+      "op": "if",
+      "then": "t2"
+    },
+    {
+      "id": "c3",
+      "op": "label"
+    },
+    {
+      "else": "c4",
+      "expr": "processed == 3",
+      "op": "if",
+      "then": "t3"
+    },
+    {
+      "id": "c4",
+      "op": "label"
+    },
+    {
+      "else": "t5",
+      "expr": "processed == 4",
+      "op": "if",
+      "then": "t4"
+    },
+    {
+      "id": "t0",
+      "op": "label"
+    },
+    {
+      "key": "tname",
+      "op": "set",
+      "value": "Андрей"
+    },
+    {
+      "key": "treason",
+      "op": "set",
+      "value": "Возвращаюсь из части, товарищ инспектор. Всё по уставу."
+    },
+    {
+      "key": "t_ok",
+      "op": "set",
+      "value": "Благодарю. Честь имею."
+    },
+    {
+      "key": "t_no",
+      "op": "set",
+      "value": "Это какая-то ошибка. Я свои документы знаю."
+    },
+    {
+      "enter": "fade",
+      "height": 0.46,
+      "id": "Гость",
+      "op": "actor",
+      "show": true,
+      "sprite_url": "/content/art/Андрей_Обычный.png",
+      "width": 0.3,
+      "x": 0.15,
+      "y": 1
+    },
+    {
+      "label": "roll",
+      "op": "goto"
+    },
+    {
+      "id": "t1",
+      "op": "label"
+    },
+    {
+      "key": "tname",
+      "op": "set",
+      "value": "Марина"
+    },
+    {
+      "key": "treason",
+      "op": "set",
+      "value": "Ой, я к сестре в Ленинград! Вот, всё-всё собрала."
+    },
+    {
+      "key": "t_ok",
+      "op": "set",
+      "value": "Спасибо огромное, вы такой душка!"
+    },
+    {
+      "key": "t_no",
+      "op": "set",
+      "value": "Да вы что?! Я же честно всё оформила!"
+    },
+    {
+      "enter": "fade",
+      "height": 0.46,
+      "id": "Гость",
+      "op": "actor",
+      "show": true,
+      "sprite_url": "/content/art/Марина_Обычная.png",
+      "width": 0.3,
+      "x": 0.15,
+      "y": 1
+    },
+    {
+      "label": "roll",
+      "op": "goto"
+    },
+    {
+      "id": "t2",
+      "op": "label"
+    },
+    {
+      "key": "tname",
+      "op": "set",
+      "value": "Тимур"
+    },
+    {
+      "key": "treason",
+      "op": "set",
+      "value": "По делам. Не задерживай, начальник, у меня время."
+    },
+    {
+      "key": "t_ok",
+      "op": "set",
+      "value": "Вот и славно. Бывай."
+    },
+    {
+      "key": "t_no",
+      "op": "set",
+      "value": "Слышь... ты потом об этом пожалеешь."
+    },
+    {
+      "enter": "fade",
+      "height": 0.46,
+      "id": "Гость",
+      "op": "actor",
+      "show": true,
+      "sprite_url": "/content/art/Тимур_Обычный.png",
+      "width": 0.3,
+      "x": 0.15,
+      "y": 1
+    },
+    {
+      "label": "roll",
+      "op": "goto"
+    },
+    {
+      "id": "t3",
+      "op": "label"
+    },
+    {
+      "key": "tname",
+      "op": "set",
+      "value": "Даниил"
+    },
+    {
+      "key": "treason",
+      "op": "set",
+      "value": "На научную конференцию. Всё в полном порядке, уверяю."
+    },
+    {
+      "key": "t_ok",
+      "op": "set",
+      "value": "Б-благодарю вас. Всего доброго."
+    },
+    {
+      "key": "t_no",
+      "op": "set",
+      "value": "Но... у меня же доклад! Пересмотрите, прошу!"
+    },
+    {
+      "enter": "fade",
+      "height": 0.46,
+      "id": "Гость",
+      "op": "actor",
+      "show": true,
+      "sprite_url": "/content/art/Даниил_Обычный.png",
+      "width": 0.3,
+      "x": 0.15,
+      "y": 1
+    },
+    {
+      "label": "roll",
+      "op": "goto"
+    },
+    {
+      "id": "t4",
+      "op": "label"
+    },
+    {
+      "key": "tname",
+      "op": "set",
+      "value": "Люба"
+    },
+    {
+      "key": "treason",
+      "op": "set",
+      "value": "Домой я, милок, к семье. Пусти уж, будь добр."
+    },
+    {
+      "key": "t_ok",
+      "op": "set",
+      "value": "Спасибо, сынок. Дай тебе бог здоровья."
+    },
+    {
+      "key": "t_no",
+      "op": "set",
+      "value": "Ну как же так... меня ж дома ждут..."
+    },
+    {
+      "enter": "fade",
+      "height": 0.46,
+      "id": "Гость",
+      "op": "actor",
+      "show": true,
+      "sprite_url": "/content/art/Люба_Обычная.png",
+      "width": 0.3,
+      "x": 0.15,
+      "y": 1
+    },
+    {
+      "label": "roll",
+      "op": "goto"
+    },
+    {
+      "id": "t5",
+      "op": "label"
+    },
+    {
+      "key": "tname",
+      "op": "set",
+      "value": "Вадим"
+    },
+    {
+      "key": "treason",
+      "op": "set",
+      "value": "...по личным делам. Долго ещё копаться будешь?"
+    },
+    {
+      "key": "t_ok",
+      "op": "set",
+      "value": "Наконец-то. Давно бы так."
+    },
+    {
+      "key": "t_no",
+      "op": "set",
+      "value": "Ну и сиди тут со своими печатями. Тьфу."
+    },
+    {
+      "enter": "fade",
+      "height": 0.46,
+      "id": "Гость",
+      "op": "actor",
+      "show": true,
+      "sprite_url": "/content/art/Вадим_Обычный.png",
+      "width": 0.3,
+      "x": 0.15,
+      "y": 1
+    },
+    {
+      "label": "roll",
+      "op": "goto"
+    },
+    {
+      "id": "roll",
+      "op": "label"
+    },
+    {
+      "expr": "max(0, rand(1,6) - 3)",
+      "key": "flaw",
+      "op": "set"
+    },
+    {
+      "key": "seen",
+      "op": "set",
+      "value": 0
+    },
+    {
+      "op": "say",
+      "text": "К окошку подходит {tname}.",
+      "who": "Автор"
+    },
+    {
+      "op": "say",
+      "text": "{treason}",
+      "who": "{tname}"
+    },
+    {
+      "label": "desk",
+      "op": "goto"
+    },
+    {
+      "id": "desk",
+      "op": "label"
+    },
+    {
+      "anchor": "0.5,0.5",
+      "height": 0.32,
+      "id": "doc_pass",
+      "on_click": "insp_pass",
+      "op": "obj",
+      "sprite_url": "/content/ui/kpp/passport.png",
+      "width": 0.26,
+      "x": 0.3,
+      "y": 0.33
+    },
+    {
+      "anchor": "0.5,0.5",
+      "height": 0.32,
+      "id": "doc_permit",
+      "on_click": "insp_permit",
+      "op": "obj",
+      "sprite_url": "/content/ui/kpp/permit.png",
+      "width": 0.27,
+      "x": 0.56,
+      "y": 0.33
+    },
+    {
+      "anchor": "0.5,0.5",
+      "height": 0.28,
+      "id": "doc_photo",
+      "on_click": "insp_photo",
+      "op": "obj",
+      "sprite_url": "/content/ui/kpp/photo.png",
+      "width": 0.21,
+      "x": 0.81,
+      "y": 0.34
+    },
+    {
+      "anchor": "0.5,0.5",
+      "height": 0.13,
+      "id": "st_ok",
+      "on_click": "do_pass",
+      "op": "obj",
+      "sprite_url": "/content/ui/kpp/stamp_approve.png",
+      "width": 0.3,
+      "x": 0.44,
+      "y": 0.82
+    },
+    {
+      "anchor": "0.5,0.5",
+      "height": 0.13,
+      "id": "st_no",
+      "on_click": "do_deny",
+      "op": "obj",
+      "sprite_url": "/content/ui/kpp/stamp_deny.png",
+      "width": 0.3,
+      "x": 0.76,
+      "y": 0.82
+    },
+    {
+      "op": "say",
+      "text": "Документы {tname}. Кликай, чтобы осмотреть. Штамп внизу — решение.",
+      "who": "Автор"
+    },
+    {
+      "label": "desk",
+      "op": "goto"
+    },
+    {
+      "id": "insp_pass",
+      "op": "label"
+    },
+    {
+      "key": "seen",
+      "op": "set",
+      "value": 1
+    },
+    {
+      "else": "pass_ok",
+      "expr": "flaw == 1",
+      "op": "if",
+      "then": "pass_bad"
+    },
+    {
+      "id": "pass_bad",
+      "op": "label"
+    },
+    {
+      "op": "say",
+      "text": "📕 ПАСПОРТ. Владелец: {tname}. Срок действия истёк — 1979 г. ⚠ ПРОСРОЧЕН.",
+      "who": "Автор"
+    },
+    {
+      "label": "desk",
+      "op": "goto"
+    },
+    {
+      "id": "pass_ok",
+      "op": "label"
+    },
+    {
+      "op": "say",
+      "text": "📕 ПАСПОРТ. Владелец: {tname}. Срок действия: до 1987 г. Действителен.",
+      "who": "Автор"
+    },
+    {
+      "label": "desk",
+      "op": "goto"
+    },
+    {
+      "id": "insp_permit",
+      "op": "label"
+    },
+    {
+      "key": "seen",
+      "op": "set",
+      "value": 1
+    },
+    {
+      "else": "perm_seal",
+      "expr": "flaw == 2",
+      "op": "if",
+      "then": "perm_name"
+    },
+    {
+      "id": "perm_name",
+      "op": "label"
+    },
+    {
+      "op": "say",
+      "text": "📄 ПРОПУСК. Ф.И.О.: «Смирнов А.» — ⚠ НЕ совпадает с паспортом ({tname}).",
+      "who": "Автор"
+    },
+    {
+      "label": "desk",
+      "op": "goto"
+    },
+    {
+      "id": "perm_seal",
+      "op": "label"
+    },
+    {
+      "else": "perm_ok",
+      "expr": "flaw == 3",
+      "op": "if",
+      "then": "perm_noseal"
+    },
+    {
+      "id": "perm_noseal",
+      "op": "label"
+    },
+    {
+      "op": "say",
+      "text": "📄 ПРОПУСК на имя {tname}. ⚠ Печать ОТСУТСТВУЕТ.",
+      "who": "Автор"
+    },
+    {
+      "label": "desk",
+      "op": "goto"
+    },
+    {
+      "id": "perm_ok",
+      "op": "label"
+    },
+    {
+      "op": "say",
+      "text": "📄 ПРОПУСК на имя {tname}. Печать на месте. В порядке.",
+      "who": "Автор"
+    },
+    {
+      "label": "desk",
+      "op": "goto"
+    },
+    {
+      "id": "insp_photo",
+      "op": "label"
+    },
+    {
+      "key": "seen",
+      "op": "set",
+      "value": 1
+    },
+    {
+      "op": "say",
+      "text": "🖼 ФОТОКАРТОЧКА. Лицо совпадает с гражданином у окошка.",
+      "who": "Автор"
+    },
+    {
+      "label": "desk",
+      "op": "goto"
+    },
+    {
+      "id": "do_pass",
+      "op": "label"
+    },
+    {
+      "else": "pass_resolve",
+      "expr": "seen == 0",
+      "op": "if",
+      "then": "warn_blind"
+    },
+    {
+      "id": "pass_resolve",
+      "op": "label"
+    },
+    {
+      "else": "pass_wrong",
+      "expr": "flaw == 0",
+      "op": "if",
+      "then": "pass_right"
+    },
+    {
+      "id": "pass_right",
+      "op": "label"
+    },
+    {
+      "expr": "approved + 1",
+      "key": "approved",
+      "op": "set"
+    },
+    {
+      "op": "say",
+      "text": "✅ Печать «ПРОПУЩЕН». Документы чисты — верное решение.",
+      "who": "Автор"
+    },
+    {
+      "op": "say",
+      "text": "{t_ok}",
+      "who": "{tname}"
+    },
+    {
+      "label": "done_ok",
+      "op": "goto"
+    },
+    {
+      "id": "pass_wrong",
+      "op": "label"
+    },
+    {
+      "expr": "strikes + 1",
+      "key": "strikes",
+      "op": "set"
+    },
+    {
+      "op": "say",
+      "text": "{t_ok}",
+      "who": "{tname}"
+    },
+    {
+      "op": "say",
+      "text": "✅ Ты пропустил... но в документах было нарушение! 📣 ВЫГОВОР ({strikes}/3).",
+      "who": "Автор"
+    },
+    {
+      "label": "done_bad",
+      "op": "goto"
+    },
+    {
+      "id": "do_deny",
+      "op": "label"
+    },
+    {
+      "else": "deny_resolve",
+      "expr": "seen == 0",
+      "op": "if",
+      "then": "warn_blind"
+    },
+    {
+      "id": "deny_resolve",
+      "op": "label"
+    },
+    {
+      "else": "deny_right",
+      "expr": "flaw == 0",
+      "op": "if",
+      "then": "deny_wrong"
+    },
+    {
+      "id": "deny_right",
+      "op": "label"
+    },
+    {
+      "expr": "turned + 1",
+      "key": "turned",
+      "op": "set"
+    },
+    {
+      "op": "say",
+      "text": "⛔ Печать «ОТКАЗАНО». Нарушение подтверждено — верное решение.",
+      "who": "Автор"
+    },
+    {
+      "op": "say",
+      "text": "{t_no}",
+      "who": "{tname}"
+    },
+    {
+      "label": "done_ok",
+      "op": "goto"
+    },
+    {
+      "id": "deny_wrong",
+      "op": "label"
+    },
+    {
+      "expr": "strikes + 1",
+      "key": "strikes",
+      "op": "set"
+    },
+    {
+      "op": "say",
+      "text": "{t_no}",
+      "who": "{tname}"
+    },
+    {
+      "op": "say",
+      "text": "⛔ Ты завернул честного гражданина! Жалоба. 📣 ВЫГОВОР ({strikes}/3).",
+      "who": "Автор"
+    },
+    {
+      "label": "done_bad",
+      "op": "goto"
+    },
+    {
+      "id": "warn_blind",
+      "op": "label"
+    },
+    {
+      "op": "say",
+      "text": "Сначала осмотри хотя бы один документ, инспектор.",
+      "who": "Автор"
+    },
+    {
+      "label": "desk",
+      "op": "goto"
+    },
+    {
+      "id": "done_ok",
+      "op": "label"
+    },
+    {
+      "label": "advance",
+      "op": "goto"
+    },
+    {
+      "id": "done_bad",
+      "op": "label"
+    },
+    {
+      "label": "advance",
+      "op": "goto"
+    },
+    {
+      "id": "advance",
+      "op": "label"
+    },
+    {
+      "exit": "fade",
+      "id": "Гость",
+      "op": "actor",
+      "show": false
+    },
+    {
+      "expr": "processed + 1",
+      "key": "processed",
+      "op": "set"
+    },
+    {
+      "label": "next",
+      "op": "goto"
+    },
+    {
+      "id": "fired",
+      "op": "label"
+    },
+    {
+      "id": "Гость",
+      "op": "actor",
+      "show": false
+    },
+    {
+      "op": "say",
+      "text": "Три выговора. Сдавай печать — ты уволен.",
+      "who": "Начальник"
+    },
+    {
+      "op": "say",
+      "text": "💀 Смена провалена. Пропущено верно: {approved}, завёрнуто: {turned}.",
+      "who": "Автор"
+    },
+    {
+      "label": "__end",
+      "op": "goto"
+    },
+    {
+      "id": "shift_over",
+      "op": "label"
+    },
+    {
+      "op": "say",
+      "text": "Смена окончена. Пропущено: {approved}, завёрнуто: {turned}, выговоров: {strikes}.",
+      "who": "Автор"
+    },
+    {
+      "else": "ok_end",
+      "expr": "strikes == 0",
+      "op": "if",
+      "then": "perfect"
+    },
+    {
+      "id": "perfect",
+      "op": "label"
+    },
+    {
+      "op": "say",
+      "text": "Ни одной ошибки за смену. Отличная работа, инспектор. 🏅",
+      "who": "Начальник"
+    },
+    {
+      "label": "__end",
+      "op": "goto"
+    },
+    {
+      "id": "ok_end",
+      "op": "label"
+    },
+    {
+      "op": "say",
+      "text": "Смену отработал. Бывает и лучше, но граница на замке.",
+      "who": "Начальник"
+    },
+    {
+      "label": "__end",
+      "op": "goto"
+    }
+  ]
+}

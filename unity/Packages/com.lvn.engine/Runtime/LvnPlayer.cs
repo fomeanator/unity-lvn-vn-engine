@@ -149,6 +149,13 @@ namespace Lvn
         /// <see cref="ScriptUrl"/> is set by the host (the player doesn't know it).</summary>
         public class LvnSnapshot
         {
+            /// <summary>The current on-disk schema version. Bump when the snapshot
+            /// shape changes and add a step to <see cref="Migrate"/>.</summary>
+            public const int CurrentVersion = 1;
+
+            /// <summary>Schema version this snapshot was written with. 0 = a
+            /// pre-versioning save (migrated up on load).</summary>
+            public int Version;
             public int Index;
             public Dictionary<string, JToken> Vars;
             public int[] CallStack;
@@ -158,6 +165,27 @@ namespace Lvn
             public bool Finished;
             /// <summary>Host-supplied id/url of the script this slot belongs to.</summary>
             public string ScriptUrl;
+            /// <summary>Unix seconds when the slot was written (host-stamped). 0 if unknown.</summary>
+            public long SavedAtUnix;
+
+            /// <summary>Upgrade an older snapshot to <see cref="CurrentVersion"/>,
+            /// returning it ready to restore — or <c>null</c> if it can't be trusted
+            /// (a save from a NEWER build than this one). Pure and side-effect-free
+            /// beyond the passed object, so it's unit-testable. Add a step per bump.</summary>
+            public static LvnSnapshot Migrate(LvnSnapshot s)
+            {
+                if (s == null) return null;
+                // v0 → v1: the version field simply didn't exist; the v1 format only
+                // ADDED metadata (Version/SavedAtUnix), so an old snapshot is already
+                // a structurally valid v1 — just stamp it.
+                if (s.Version < 1) s.Version = 1;
+                // Future migrations go here:
+                //   if (s.Version < 2) { /* transform */ s.Version = 2; }
+
+                // A save from a future build may carry state we can't interpret —
+                // refuse it (the caller starts fresh) rather than corrupt the run.
+                return s.Version <= CurrentVersion ? s : null;
+            }
         }
 
         /// <summary>Capture the current state for serialization.</summary>
@@ -165,6 +193,7 @@ namespace Lvn
         {
             return new LvnSnapshot
             {
+                Version = LvnSnapshot.CurrentVersion,
                 Index = _ip,
                 Vars = new Dictionary<string, JToken>(Vars),
                 CallStack = _callStack.ToArray(),

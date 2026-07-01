@@ -461,21 +461,24 @@ namespace Lvn.UI
         // `save [slot=name]` writes the player snapshot (cursor + vars + call stack)
         // to PlayerPrefs; `load [slot=name]` restores it, rebuilds the scene from the
         // saved point (ReplayVisuals) and resumes. Default slot is "quick".
-        private static string SaveKey(JObject cmd)
-        {
-            var slot = (string)cmd["slot"];
-            return "lvn_save_" + (string.IsNullOrEmpty(slot) ? "quick" : slot);
-        }
+        // Versioned, listable, corruption-safe save slots (see LvnSaveStore). The
+        // key scheme matches the old inline writer, so pre-existing saves still load.
+        private LvnSaveStore _saves;
+        public LvnSaveStore Saves => _saves ??= new LvnSaveStore(new PlayerPrefsKeyStore());
+
+        /// <summary>Host-set id/url of the script now playing, stamped into save slots
+        /// so a load menu (and cross-session resume) can tell which chapter a slot
+        /// belongs to. Null for a standalone stage that only round-trips in-session.</summary>
+        public string ScriptUrl;
 
         private void SaveSlot(JObject cmd)
         {
             if (_player == null) return;
             try
             {
-                var json = Newtonsoft.Json.JsonConvert.SerializeObject(_player.Save());
-                PlayerPrefs.SetString(SaveKey(cmd), json);
-                PlayerPrefs.Save();
-                LvnPlayer.Log?.Invoke("saved → " + SaveKey(cmd));
+                Saves.Write((string)cmd["slot"], _player.Save(), ScriptUrl,
+                    System.DateTimeOffset.UtcNow.ToUnixTimeSeconds());
+                LvnPlayer.Log?.Invoke("saved → slot " + LvnSaveStore.Norm((string)cmd["slot"]));
             }
             catch (System.Exception e) { Debug.LogWarning("[lvn] save failed: " + e.Message); }
         }
@@ -483,21 +486,31 @@ namespace Lvn.UI
         private void LoadSlot(JObject cmd)
         {
             if (_player == null) return;
-            var json = PlayerPrefs.GetString(SaveKey(cmd), "");
-            LvnPlayer.LvnSnapshot snap = null;
-            if (!string.IsNullOrEmpty(json))
-                try { snap = Newtonsoft.Json.JsonConvert.DeserializeObject<LvnPlayer.LvnSnapshot>(json); }
-                catch (System.Exception e) { Debug.LogWarning("[lvn] load parse failed: " + e.Message); }
+            var snap = Saves.Read((string)cmd["slot"]); // migrated; null if absent/corrupt
 
             if (snap == null || snap.Vars == null)
             {
                 _player.ContinueFrom(_player.Index + 1); // no/invalid save → skip the load op
                 return;
             }
+            ResumeFrom(snap, snap.Index);
+        }
+
+        /// <summary>Resume the current script from a saved snapshot: restore vars +
+        /// call stack, rebuild the visual stage up to <paramref name="startIndex"/>,
+        /// then continue from there. <paramref name="startIndex"/> is the resolved
+        /// resume point (e.g. from <see cref="ResumePlanner"/>) which may differ from
+        /// the snapshot's own index after a script edit; it's clamped into range so a
+        /// resume never runs off a shortened script. The cross-session counterpart of
+        /// the in-script <c>load</c> op — call after <see cref="Play"/>.</summary>
+        public void ResumeFrom(LvnPlayer.LvnSnapshot snap, int startIndex)
+        {
+            if (_player == null || snap == null) return;
+            startIndex = Mathf.Clamp(startIndex, 0, _player.Count);
             ResetStage();                       // clean slate
             _player.Restore(snap);              // cursor + vars + call stack
-            _player.ReplayVisuals(snap.Index);  // rebuild bg / actors / HUD up to the saved point
-            _player.ContinueFrom(snap.Index);   // resume → renders the saved beat
+            _player.ReplayVisuals(startIndex);  // rebuild bg / actors / HUD up to the resume point
+            _player.ContinueFrom(startIndex);   // resume → renders the resumed beat
         }
 
         // A persistent reactive text label (`text id=… x= y= anchor= «{expr}»`): a

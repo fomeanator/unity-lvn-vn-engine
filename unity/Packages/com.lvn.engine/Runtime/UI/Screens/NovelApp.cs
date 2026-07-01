@@ -326,21 +326,67 @@ namespace Lvn.UI.Screens
             _playerName = playerName;
             _currentScriptJson = json;
             Stage.Strings = await LoadCatalogAsync(chapter.script_url); // localization (null → inline text)
+            Stage.ScriptUrl = chapter.script_url; // stamp save slots with the owning chapter
             Stage.Play(json);
+
+            // Resume from the chapter's autosave (revives ResumePlanner): a matching,
+            // unfinished slot restores vars + jumps to where the player left off,
+            // surviving both leaving the app and the script changing length since.
+            string slot = AutoSlot(chapter);
+            var saved = Stage.Saves.Read(slot);
+            if (saved != null && Stage.Player != null)
+            {
+                var resume = ResumePlanner.Resolve(
+                    hasSlot: true, finished: saved.Finished,
+                    sameScript: saved.ScriptUrl == chapter.script_url,
+                    savedIndex: saved.Index, savedCommandCount: saved.CommandCount,
+                    currentCommandCount: Stage.Player.Count, lastEditAt: null);
+                if (resume.RestoreState)
+                    Stage.ResumeFrom(saved, resume.StartIndex);
+            }
+
+            // Player name reflects THIS session (set after resume so it overrides any
+            // stale name in the restored vars).
             if (Stage.Player != null && !string.IsNullOrEmpty(playerName))
                 Stage.Player.Vars["player"] = playerName;
 
+            // Autosave: one conflated writer, persisting on each new beat (not every
+            // frame). CoalescingWriter keeps writes from overlapping and always
+            // stores the newest snapshot — the right shape once persistence goes async.
+            var autosave = new CoalescingWriter<LvnPlayer.LvnSnapshot>((snap, ct) =>
+            {
+                Stage.Saves.Write(slot, snap, chapter.script_url,
+                    DateTimeOffset.UtcNow.ToUnixTimeSeconds());
+                return Task.CompletedTask;
+            });
+
             // Drive the HUD percent until the player reaches the end of the chapter.
+            int lastSavedIndex = -1;
             while (Stage.Player != null && !Stage.Player.Finished)
             {
                 _shell.Hud.SetProgress(Stage.Player.Index, Stage.Player.Count);
+                if (Stage.Player.Index != lastSavedIndex)
+                {
+                    lastSavedIndex = Stage.Player.Index;
+                    autosave.Request(Stage.Player.Save());
+                }
                 try { await Task.Yield(); }
                 catch (OperationCanceledException) { break; }
             }
             _shell.Hud.SetProgress(1, 1);
+            // Persist the final (finished) state so the next entry starts fresh, and
+            // make sure every queued autosave has actually landed before we leave.
+            if (Stage.Player != null) autosave.Request(Stage.Player.Save());
+            try { await autosave.FlushAsync(); } catch { /* best-effort */ }
+            _downloads.EndChapter(); // stop this chapter's deferred stream; next entry restarts it
             _currentChapter = null;
             _currentTitle = null;
         }
+
+        // Autosave slot for a chapter — kept distinct (auto: prefix) from any manual
+        // `save slot=…` the script writes.
+        private static string AutoSlot(LvnChapter ch) =>
+            "auto:" + (!string.IsNullOrEmpty(ch?.id) ? ch.id : ch?.script_url ?? "chapter");
 
         // Server content changed: refresh the version index, re-apply the manifest
         // (carousel rebuilds), and hot-reload the open chapter if its script moved.

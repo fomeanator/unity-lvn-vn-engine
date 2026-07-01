@@ -87,26 +87,47 @@ var narrativeRoles = map[string]bool{
 	"Туториал": true, "Смена ГГ": true,
 }
 
+// maxOnStage caps how many characters stand at once. Auto-import can't know a
+// scene's real cast, so "keep everyone who ever spoke" piles 4–5 sprites up; a
+// two-shot (the current conversational pair) is the clean classic default — when a
+// third speaks, the one silent longest fades out. Runtime dims the non-speaker.
+const maxOnStage = 2
+
 // AutoStage enriches a dialogue script with a first pass of staging by rule: a
 // scene-marker line ("Сцена N. <Location>") becomes a `bg` and clears the stage;
-// the first time a character with art speaks in a scene, an `actor` enters at the
-// next slot. The result is regular .lvn ops the author can refine in the editor.
+// a character with art enters (fading in) at a free side when they speak, capped
+// at a two-shot. The result is regular .lvn ops the author can refine in the editor.
 func AutoStage(doc *articy.Doc, cast map[string]string) {
-	slots := []string{"left", "right", "center", "far_left", "far_right"}
 	out := make([]articy.Cmd, 0, len(doc.Script))
-	onStage := map[string]bool{}
-	order := 0
+	type slot struct{ name, pos string }
+	var stage []slot // ordered oldest→newest by last time they spoke
+	sideFree := map[string]bool{"left": true, "right": true}
+	freeSide := func() string {
+		if sideFree["left"] {
+			return "left"
+		}
+		return "right"
+	}
+	hide := func(s slot) {
+		out = append(out, articy.Cmd{"op": "actor", "id": Slug(s.name), "show": false, "exit": "fade"})
+		sideFree[s.pos] = true
+	}
 	clear := func() {
-		names := make([]string, 0, len(onStage))
-		for n := range onStage {
-			names = append(names, n)
+		names := append([]slot{}, stage...)
+		sort.Slice(names, func(i, j int) bool { return names[i].name < names[j].name })
+		for _, s := range names {
+			hide(s)
 		}
-		sort.Strings(names)
-		for _, n := range names {
-			out = append(out, articy.Cmd{"op": "actor", "id": Slug(n), "show": false})
+		stage = nil
+		sideFree = map[string]bool{"left": true, "right": true}
+	}
+	indexOf := func(name string) int {
+		for i, s := range stage {
+			if s.name == name {
+				return i
+			}
 		}
-		onStage = map[string]bool{}
-		order = 0
+		return -1
 	}
 	for _, c := range doc.Script {
 		if c["op"] == "say" {
@@ -118,11 +139,23 @@ func AutoStage(doc *articy.Doc, cast map[string]string) {
 				out = append(out, articy.Cmd{"op": "bg", "id": loc, "sprite_url": "/content/bg/" + loc + ".jpg"})
 				continue // a scene marker is a background, not a spoken line
 			}
-			if spr, ok := cast[who]; ok && !narrativeRoles[who] && !onStage[who] {
-				out = append(out, articy.Cmd{"op": "actor", "id": Slug(who), "show": true,
-					"position": slots[order%len(slots)], "sprite_url": "/content/art/" + spr})
-				onStage[who] = true
-				order++
+			if spr, ok := cast[who]; ok && !narrativeRoles[who] {
+				if i := indexOf(who); i >= 0 {
+					// already on stage — just mark them most-recent (so eviction
+					// later drops whoever's been quiet longest, not the active pair).
+					s := stage[i]
+					stage = append(append(stage[:i:i], stage[i+1:]...), s)
+				} else {
+					if len(stage) >= maxOnStage {
+						hide(stage[0]) // evict the longest-silent
+						stage = stage[1:]
+					}
+					pos := freeSide()
+					sideFree[pos] = false
+					out = append(out, articy.Cmd{"op": "actor", "id": Slug(who), "show": true,
+						"position": pos, "sprite_url": "/content/art/" + spr, "enter": "fade"})
+					stage = append(stage, slot{name: who, pos: pos})
+				}
 			}
 		}
 		out = append(out, c)

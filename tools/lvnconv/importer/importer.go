@@ -49,6 +49,7 @@ type ArtFile struct {
 type Chapter struct {
 	ID        string `json:"id"`
 	Number    int    `json:"number"`
+	Name      string `json:"name,omitempty"` // episode title ("Эпизод 3. …") for the chapter list
 	ScriptURL string `json:"script_url"`
 	BgURL     string `json:"bg_url,omitempty"`
 }
@@ -249,7 +250,7 @@ func runMultiChapter(projectDir string, opt Options, chs []adpd.ChapterExport) (
 		if !reachesEnd(doc) {
 			return nil, nil // a chapter can't be finished when scoped → fall back to one
 		}
-		cid := fmt.Sprintf("%s-ch%d", opt.ID, i+1)
+		cid := fmt.Sprintf("%s-ch%02d", opt.ID, i+1) // zero-padded → files sort in order
 		rel := "scripts/" + cid + ".lvn"
 		res.Scripts = append(res.Scripts,
 			ScriptFile{Rel: rel, Data: lvn},
@@ -271,7 +272,7 @@ func runMultiChapter(projectDir string, opt Options, chs []adpd.ChapterExport) (
 			cover = firstBg
 		}
 		chapters = append(chapters, Chapter{
-			ID: cid, Number: i + 1, ScriptURL: "/content/" + rel, BgURL: firstBg,
+			ID: cid, Number: i + 1, Name: ch.Name, ScriptURL: "/content/" + rel, BgURL: firstBg,
 		})
 	}
 

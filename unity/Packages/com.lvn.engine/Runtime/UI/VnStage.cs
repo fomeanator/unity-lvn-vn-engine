@@ -72,6 +72,7 @@ namespace Lvn.UI
         private CancellationTokenSource _cts;
         private bool _awaitingTap;
         private bool _awaitingWait;
+        private Task _lastPreload; // most recent `preload` batch — `wait until=preload` blocks on it
         // Current on-screen beat — restored after a live theme rebuild so ApplyTheme
         // is safe to call mid-line (realtime theming keeps the line/choices visible).
         private bool _sayUp;
@@ -643,10 +644,14 @@ namespace Lvn.UI
                 case "text_pace": ApplyTextPace(command); break;
                 case "wait":
                     _awaitingWait = true;
-                    StartCoroutine(WaitCoroutine(command));
+                    // `until=preload` blocks on asset loading (this wait's own
+                    // assets/urls, else the pending `preload` batch) instead of a
+                    // timer — so a scene never shows before its art is ready.
+                    if ((string)command["until"] == "preload") WaitPreloadAsync(command);
+                    else StartCoroutine(WaitCoroutine(command));
                     break;
                 case "preload":
-                    _ = PreloadAssetsAsync(command);
+                    _lastPreload = PreloadAssetsAsync(command);
                     break;
                 // hint is a no-op; unknown-but-registered ops are simply not drawn.
             }
@@ -669,6 +674,39 @@ namespace Lvn.UI
         {
             float ms = cmd["ms"] != null ? (float)cmd["ms"] : 1000f;
             yield return new WaitForSecondsRealtime(ms / 1000f);
+            _awaitingWait = false;
+            if (_player != null && !_player.Finished)
+                _player.Advance();
+        }
+
+        // `wait until=preload`: pause the script until the relevant assets are on
+        // disk/in memory, then resume — the asset-gated counterpart to the timed
+        // wait. Sources, in order: this wait's own `assets`/`urls`, else the most
+        // recent `preload` op's batch. An optional `min_ms` floor keeps a fast cache
+        // hit from flashing the transition.
+        private async void WaitPreloadAsync(JObject cmd)
+        {
+            try
+            {
+                if (cmd["assets"] is JArray)
+                {
+                    await PreloadAssetsAsync(cmd);
+                }
+                else if (cmd["urls"] is JArray urls && Assets != null)
+                {
+                    var list = new List<string>();
+                    foreach (var u in urls) { var s = (string)u; if (!string.IsNullOrEmpty(s)) list.Add(s); }
+                    if (list.Count > 0) await Assets.PreloadAsync(list, "sprite", _cts.Token);
+                }
+                else if (_lastPreload != null)
+                {
+                    await _lastPreload;
+                }
+                float minMs = cmd["min_ms"] != null ? (float)cmd["min_ms"] : 0f;
+                if (minMs > 0f) await Task.Delay((int)minMs, _cts.Token);
+            }
+            catch (System.OperationCanceledException) { return; } // stage torn down
+            catch (System.Exception e) { Debug.LogWarning($"[vnstage] wait until=preload: {e.Message}"); }
             _awaitingWait = false;
             if (_player != null && !_player.Finished)
                 _player.Advance();

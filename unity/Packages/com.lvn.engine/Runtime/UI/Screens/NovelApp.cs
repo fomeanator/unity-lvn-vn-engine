@@ -62,6 +62,8 @@ namespace Lvn.UI.Screens
         private string _currentScriptJson;
         private string _playerName;
         private LvnUiConfig _globalUi; // manifest.ui — the base for per-title theming
+        private AssetScheduler _chapterScheduler; // prioritized download for the entering chapter
+        private ChapterEntryPlan _chapterPlan;    // how to enter it (decided at the loading gate)
 
         public CachingAssets Assets => _assets;
         public NovelShell Shell => _shell;
@@ -139,10 +141,33 @@ namespace Lvn.UI.Screens
 
             await _shell.RunAsync(
                 bootReady: () => prefetch.IsCompleted,
-                chapterReady: ch => () => true,
-                chapterProgress: null,
+                chapterReady: PrepareChapter,
+                chapterProgress: ch => () => _chapterScheduler?.Progress ?? 1f,
                 playChapter: PlayChapterAsync,
                 askName: AskName);
+        }
+
+        // Per-chapter loading gate. Decide how to enter the chapter from
+        // connectivity + what's already on disk (ported OfflinePolicy), kick off the
+        // prioritized download for whatever's missing (required assets first), and
+        // return the predicate the loading screen polls. It's "done" when the chapter
+        // can't or needn't wait — offline/degraded, or already fully cached — or when
+        // its REQUIRED (critical) assets have landed. Deferred assets keep streaming
+        // in during play; the whole set completing pre-pulls the next chapter.
+        private Func<bool> PrepareChapter(LvnChapter ch)
+        {
+            bool online = _assets.Loader.IsLocal || !LvnNetworkStatus.IsOffline;
+            var readiness = OfflinePolicy.ComputeReadiness(
+                _assets.Loader.IsScriptCached(ch?.script_url),
+                ch?.assets,
+                _assets.Loader.IsAssetCached);
+            _chapterPlan = ChapterEntryPlan.From(online, in readiness);
+            _chapterScheduler = _chapterPlan.RunScheduler && ch != null
+                ? _downloads.BeginChapter(ch, default)
+                : null;
+            return () => !_chapterPlan.CanPlay
+                || !_chapterPlan.LoadingWaitsForRequired
+                || (_chapterScheduler?.RequiredReady ?? true);
         }
 
         // Builds a VnStage on a child GameObject with its own UIDocument + panel
@@ -281,17 +306,10 @@ namespace Lvn.UI.Screens
             if (title?.ui != null) theme = VnThemeBuilder.From(title.ui, theme);
             Stage.ApplyTheme(theme);
 
-            // Offline decision layer (ported from the Liminal client): decide how
-            // to enter the chapter from connectivity + what's on disk. A local
-            // bundle reports everything cached/reachable, so it plays instantly;
-            // an online client degrades gracefully and never hangs.
-            bool online = _assets.Loader.IsLocal || !LvnNetworkStatus.IsOffline;
-            var readiness = OfflinePolicy.ComputeReadiness(
-                _assets.Loader.IsScriptCached(chapter.script_url),
-                chapter.assets,
-                _assets.Loader.IsAssetCached);
-            var plan = ChapterEntryPlan.From(online, in readiness);
-            if (!plan.CanPlay)
+            // Entry mode was decided at the loading gate (PrepareChapter): the
+            // required assets are already on disk (or we're playing degraded/offline).
+            // Honour an "unavailable" verdict here too — nothing to fall back to.
+            if (!_chapterPlan.CanPlay)
             {
                 Debug.LogWarning($"[novelapp] chapter '{chapter.id}' unavailable offline (script not cached)");
                 await Task.Delay(300);

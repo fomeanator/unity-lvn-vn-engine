@@ -41,7 +41,7 @@ error**, never a silent skip (`lvnconv validate`). Targets of `goto`, `if`,
 | `camera` | `action` (`shake`/`zoom`/`pan`), `amplitude?`, `factor?`, `duration?` | Camera move. |
 | `particles` | `type` (`rain`/`snow`/…), `on` (bool) | Toggle a particle layer. |
 | `audio` | `channel` (`music`/`sfx`/`ambient`), `action` (`play`/`stop`/…), `url?` | Sound control. |
-| `wait` | `ms` | Pause before the next command. |
+| `wait` | `ms`, **or** `until` (`"preload"`) + `urls?`/`assets?`/`min_ms?` | Pause before the next command. `until="preload"` blocks until assets are ready instead of on a timer: its own `assets`/`urls`, else the pending `preload` batch — so a scene never shows before its art loads. `min_ms` is an optional floor. |
 | `hint` | `text?`, `show` (bool) | Top "this choice will cost something" banner. |
 | `preload` | `assets`: `[{ "url", "kind": "sprite"|"audio" }]` | Hint the loader to warm assets. |
 

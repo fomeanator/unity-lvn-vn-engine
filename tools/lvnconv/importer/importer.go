@@ -206,7 +206,7 @@ func Run(projectDir string, opt Options) (*Result, error) {
 
 	// Resolve art before localization swaps say text for keys (art reads sprite_url,
 	// not text, but keep the ordering intent explicit).
-	art, missing, firstBg := collectArt(projectDir, doc)
+	art, missing, firstBg := collectArt(buildAssetIndex(projectDir), doc, map[string][]byte{})
 
 	// Auto-build the cast catalog from the compiled script (characters + the states
 	// they're shown in), reusing the resolved art / placeholders. Extra placeholders
@@ -282,6 +282,13 @@ func runMultiChapter(projectDir string, opt Options, chs []adpd.ChapterExport) (
 	var chapters []Chapter
 	var cover string
 
+	// Build the project's asset index ONCE, and share a matte/read cache across all
+	// chapters — a sprite used in many chapters is resolved (read + matted) a single
+	// time. (Was rebuilt + re-matted per chapter: O(chapters × art), which dominated
+	// the import of a large chaptered novel.)
+	index := buildAssetIndex(projectDir)
+	artCache := map[string][]byte{}
+
 	for i, ch := range chs {
 		doc, err := articy.Convert(ch.JSON, "")
 		if err != nil {
@@ -290,7 +297,7 @@ func runMultiChapter(projectDir string, opt Options, chs []adpd.ChapterExport) (
 		if opt.AutoStage {
 			AutoStage(doc, cast)
 		}
-		art, missing, firstBg := collectArt(projectDir, doc)
+		art, missing, firstBg := collectArt(index, doc, artCache)
 		sprites, extraArt := BuildCatalog(doc)
 		art = append(art, extraArt...)
 		lvns := ToLvns(doc)
@@ -467,14 +474,22 @@ const (
 // name) so the whole novel is visible — every character, pose and background —
 // before any art exists. Returns the files, the scene locations still missing real
 // art, and a content URL for the first background (the title cover).
-func collectArt(projectDir string, doc *articy.Doc) (art []ArtFile, missingBg []string, firstBg string) {
-	index := buildAssetIndex(projectDir)
-	seen := map[string]bool{}
-	add := func(rel string, data []byte) {
+func collectArt(index map[string]string, doc *articy.Doc, cache map[string][]byte) (art []ArtFile, missingBg []string, firstBg string) {
+	seen := map[string]bool{} // per-chapter dedup of the returned set
+	// add resolves a file's bytes ONCE (read+matte / placeholder) and memoises them
+	// in `cache` by content path, so a sprite shared across chapters — or the whole
+	// asset index walk — is never re-processed. This turns the multi-chapter import
+	// from O(chapters × art) matting into O(art).
+	add := func(rel string, compute func() []byte) {
 		if seen[rel] {
 			return
 		}
 		seen[rel] = true
+		data, ok := cache[rel]
+		if !ok {
+			data = compute()
+			cache[rel] = data
+		}
 		art = append(art, ArtFile{Rel: rel, Data: data})
 	}
 
@@ -488,29 +503,30 @@ func collectArt(projectDir string, doc *articy.Doc) (art []ArtFile, missingBg []
 		label := stem(base)
 		switch op {
 		case "actor", "obj":
-			if p, ok := index[normKey(label)]; ok {
-				if data, err := os.ReadFile(p); err == nil {
-					if matted, merr := Matte(data); merr == nil {
-						add("art/"+base, matted)
-					} else {
-						add("art/"+base, data) // non-fatal: ship the original
+			add("art/"+base, func() []byte {
+				if p, ok := index[normKey(label)]; ok {
+					if data, err := os.ReadFile(p); err == nil {
+						if matted, merr := Matte(data); merr == nil {
+							return matted
+						}
+						return data // non-fatal: ship the original
 					}
-					continue
 				}
-			}
-			add("art/"+base, Placeholder(label, phCharW, phCharH)) // dummy character
+				return Placeholder(label, phCharW, phCharH) // dummy character
+			})
 		case "bg":
-			if p := lookupBg(index, label); p != "" {
-				if data, err := os.ReadFile(p); err == nil {
-					add("bg/"+base, data)
-					if firstBg == "" {
-						firstBg = "/content/bg/" + base
-					}
-					continue
-				}
+			p := lookupBg(index, label)
+			if p == "" {
+				missingBg = append(missingBg, label)
 			}
-			missingBg = append(missingBg, label)
-			add("bg/"+base, Placeholder(label, phBgW, phBgH)) // dummy background
+			add("bg/"+base, func() []byte {
+				if p != "" {
+					if data, err := os.ReadFile(p); err == nil {
+						return data
+					}
+				}
+				return Placeholder(label, phBgW, phBgH) // dummy background
+			})
 			if firstBg == "" {
 				firstBg = "/content/bg/" + base
 			}

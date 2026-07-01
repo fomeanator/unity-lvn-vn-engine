@@ -37,7 +37,7 @@ func TestCollectArtResolvesAndMattes(t *testing.T) {
 		{"op": "say", "who": "Тимур", "text": "hi"},
 	}}
 
-	art, missing, firstBg := collectArt(proj, doc)
+	art, missing, firstBg := collectArt(buildAssetIndex(proj), doc, map[string][]byte{})
 
 	byRel := map[string][]byte{}
 	for _, a := range art {

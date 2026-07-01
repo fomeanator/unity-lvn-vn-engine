@@ -1933,14 +1933,18 @@ func BuildChaptersJSON(path string) ([]ChapterExport, error) {
 		return nil, nil
 	}
 	gvars := globalVars(proj, flowExprs(fl0))
+	kids := completeChildren(fl0) // read-only across chapters — hoist out of the loop
 
 	var out []ChapterExport
 	for _, ch := range chs {
-		fl, _, err := loadFlow(path) // fresh flow — linearize mutates succ/nodes
-		if err != nil {
-			return nil, err
-		}
-		allowed := subtree(completeChildren(fl), ch.root)
+		// Reuse the decoded flow; reset only the per-chapter MUTABLE state (succ/nodes
+		// that linearize rewrites). Reloading + re-decoding the whole Flow partition
+		// per chapter was O(chapters × flow size) — 26× a 28 MB decode for a big novel
+		// (minutes). Everything else (pin graph, hierarchy, text) is read-only here.
+		fl := fl0
+		fl.succ = map[uint32][]edge{}
+		fl.nodes = map[uint32]bool{}
+		allowed := subtree(kids, ch.root)
 		entries, ok := linearizeAnchored(fl, ch.root, allowed)
 		if !ok || len(entries) == 0 {
 			continue

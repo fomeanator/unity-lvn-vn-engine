@@ -38,15 +38,15 @@ func TestSlug(t *testing.T) {
 	}
 }
 
-// AutoStage turns a scene marker into a bg (dropping the marker line), walks the
-// first art-bearing speaker of each scene on stage, skips narrative roles, and
-// clears the stage when the scene changes.
+// AutoStage turns a scene marker into a bg (dropping the marker line) and drives
+// the mobile single-speaker stage: only the current speaker is shown; a narrator
+// or a scene change clears it; a speaker already shown isn't re-emitted.
 func TestAutoStageScenesAndActors(t *testing.T) {
 	doc := &articy.Doc{Script: []articy.Cmd{
 		{"op": "say", "text": "Сцена 1. Двор."},
 		{"op": "say", "who": "Тимур", "text": "Привет"},
-		{"op": "say", "who": "Игрок", "text": "..."},   // narrative role → no actor
-		{"op": "say", "who": "Тимур", "text": "Снова"}, // already on stage → no second actor
+		{"op": "say", "who": "Игрок", "text": "..."},   // narrator role → clears stage
+		{"op": "say", "who": "Тимур", "text": "Снова"}, // stage was cleared → re-enter
 		{"op": "say", "text": "Сцена 2. Парк."},
 		{"op": "say", "who": "Тимур", "text": "В парке"},
 	}}
@@ -54,7 +54,8 @@ func TestAutoStageScenesAndActors(t *testing.T) {
 
 	AutoStage(doc, cast)
 	got := ops(doc.Script)
-	want := []string{"bg", "actor", "say", "say", "say", "actor", "bg", "actor", "say"}
+	// show → (narrator) hide → show → (scene) hide → show
+	want := []string{"bg", "actor", "say", "actor", "say", "actor", "say", "actor", "bg", "actor", "say"}
 	if len(got) != len(want) {
 		t.Fatalf("op sequence = %v, want %v", got, want)
 	}
@@ -79,19 +80,20 @@ func TestAutoStageScenesAndActors(t *testing.T) {
 		}
 	}
 
-	// Тимур enters once per scene (re-entering after the clear), Игрок never does.
+	// Тимур is shown 3× (right side, non-protagonist) and cleared 2× (narrator +
+	// scene change); Игрок (a narrator role) is never staged.
 	shows, hides := 0, 0
 	for _, c := range doc.Script {
 		if c["op"] != "actor" {
 			continue
 		}
 		if c["id"] == "Игрок" {
-			t.Error("a narrative role was walked on stage")
+			t.Error("a narrator role was walked on stage")
 		}
 		if c["show"] == true {
 			shows++
-			if c["position"] != "left" {
-				t.Errorf("first slot should be left, got %v", c["position"])
+			if c["position"] != "right" {
+				t.Errorf("a non-protagonist should stand right, got %v", c["position"])
 			}
 			if c["sprite_url"] != "/content/art/Тимур_Обычный.png" {
 				t.Errorf("actor sprite_url = %v", c["sprite_url"])
@@ -100,13 +102,14 @@ func TestAutoStageScenesAndActors(t *testing.T) {
 			hides++
 		}
 	}
-	if shows != 2 || hides != 1 {
-		t.Errorf("actor shows=%d hides=%d, want 2/1", shows, hides)
+	if shows != 3 || hides != 2 {
+		t.Errorf("actor shows=%d hides=%d, want 3/2", shows, hides)
 	}
 }
 
-// Distinct speakers in one scene take successive slots.
-func TestAutoStageSlotRotation(t *testing.T) {
+// Single-speaker: a new speaker replaces the previous one (only one on stage at a
+// time), and non-protagonists stand on the right.
+func TestAutoStageSingleSpeakerSwap(t *testing.T) {
 	doc := &articy.Doc{Script: []articy.Cmd{
 		{"op": "say", "text": "Сцена 1. Класс."},
 		{"op": "say", "who": "Тимур", "text": "a"},
@@ -115,14 +118,49 @@ func TestAutoStageSlotRotation(t *testing.T) {
 	cast := map[string]string{"Тимур": "t.png", "Люба": "l.png"}
 	AutoStage(doc, cast)
 
-	var positions []string
+	// Люба's turn must first hide Тимур, then show Люба — never two up at once.
+	on := map[string]bool{}
+	maxOn := 0
+	var shownPos []string
 	for _, c := range doc.Script {
-		if c["op"] == "actor" && c["show"] == true {
-			positions = append(positions, c["position"].(string))
+		if c["op"] != "actor" {
+			continue
+		}
+		if c["show"] == true {
+			on[c["id"].(string)] = true
+			shownPos = append(shownPos, c["position"].(string))
+		} else {
+			delete(on, c["id"].(string))
+		}
+		if len(on) > maxOn {
+			maxOn = len(on)
 		}
 	}
-	if len(positions) != 2 || positions[0] != "left" || positions[1] != "right" {
-		t.Fatalf("slots = %v, want [left right]", positions)
+	if maxOn != 1 {
+		t.Fatalf("single-speaker violated: %d actors on stage at once", maxOn)
+	}
+	if len(shownPos) != 2 || shownPos[0] != "right" || shownPos[1] != "right" {
+		t.Fatalf("positions = %v, want [right right]", shownPos)
+	}
+}
+
+// The protagonist stands on the LEFT (mobile framing) when they have a sprite.
+func TestAutoStageProtagonistLeft(t *testing.T) {
+	doc := &articy.Doc{Script: []articy.Cmd{
+		{"op": "say", "who": "Главный герой", "text": "я"},
+		{"op": "say", "who": "Тимур", "text": "он"},
+	}}
+	cast := map[string]string{"Главный герой": "hero.png", "Тимур": "t.png"}
+	AutoStage(doc, cast)
+
+	var pos []string
+	for _, c := range doc.Script {
+		if c["op"] == "actor" && c["show"] == true {
+			pos = append(pos, c["position"].(string))
+		}
+	}
+	if len(pos) != 2 || pos[0] != "left" || pos[1] != "right" {
+		t.Fatalf("positions = %v, want [left right] (hero left, other right)", pos)
 	}
 }
 

@@ -62,6 +62,8 @@ namespace Lvn.UI.Screens
         private string _currentScriptJson;
         private string _playerName;
         private LvnUiConfig _globalUi; // manifest.ui — the base for per-title theming
+        private AssetScheduler _chapterScheduler; // prioritized download for the entering chapter
+        private ChapterEntryPlan _chapterPlan;    // how to enter it (decided at the loading gate)
 
         public CachingAssets Assets => _assets;
         public NovelShell Shell => _shell;
@@ -139,10 +141,33 @@ namespace Lvn.UI.Screens
 
             await _shell.RunAsync(
                 bootReady: () => prefetch.IsCompleted,
-                chapterReady: ch => () => true,
-                chapterProgress: null,
+                chapterReady: PrepareChapter,
+                chapterProgress: ch => () => _chapterScheduler?.Progress ?? 1f,
                 playChapter: PlayChapterAsync,
                 askName: AskName);
+        }
+
+        // Per-chapter loading gate. Decide how to enter the chapter from
+        // connectivity + what's already on disk (ported OfflinePolicy), kick off the
+        // prioritized download for whatever's missing (required assets first), and
+        // return the predicate the loading screen polls. It's "done" when the chapter
+        // can't or needn't wait — offline/degraded, or already fully cached — or when
+        // its REQUIRED (critical) assets have landed. Deferred assets keep streaming
+        // in during play; the whole set completing pre-pulls the next chapter.
+        private Func<bool> PrepareChapter(LvnChapter ch)
+        {
+            bool online = _assets.Loader.IsLocal || !LvnNetworkStatus.IsOffline;
+            var readiness = OfflinePolicy.ComputeReadiness(
+                _assets.Loader.IsScriptCached(ch?.script_url),
+                ch?.assets,
+                _assets.Loader.IsAssetCached);
+            _chapterPlan = ChapterEntryPlan.From(online, in readiness);
+            _chapterScheduler = _chapterPlan.RunScheduler && ch != null
+                ? _downloads.BeginChapter(ch, default)
+                : null;
+            return () => !_chapterPlan.CanPlay
+                || !_chapterPlan.LoadingWaitsForRequired
+                || (_chapterScheduler?.RequiredReady ?? true);
         }
 
         // Builds a VnStage on a child GameObject with its own UIDocument + panel
@@ -281,17 +306,10 @@ namespace Lvn.UI.Screens
             if (title?.ui != null) theme = VnThemeBuilder.From(title.ui, theme);
             Stage.ApplyTheme(theme);
 
-            // Offline decision layer (ported from the Liminal client): decide how
-            // to enter the chapter from connectivity + what's on disk. A local
-            // bundle reports everything cached/reachable, so it plays instantly;
-            // an online client degrades gracefully and never hangs.
-            bool online = _assets.Loader.IsLocal || !LvnNetworkStatus.IsOffline;
-            var readiness = OfflinePolicy.ComputeReadiness(
-                _assets.Loader.IsScriptCached(chapter.script_url),
-                chapter.assets,
-                _assets.Loader.IsAssetCached);
-            var plan = ChapterEntryPlan.From(online, in readiness);
-            if (!plan.CanPlay)
+            // Entry mode was decided at the loading gate (PrepareChapter): the
+            // required assets are already on disk (or we're playing degraded/offline).
+            // Honour an "unavailable" verdict here too — nothing to fall back to.
+            if (!_chapterPlan.CanPlay)
             {
                 Debug.LogWarning($"[novelapp] chapter '{chapter.id}' unavailable offline (script not cached)");
                 await Task.Delay(300);
@@ -308,21 +326,67 @@ namespace Lvn.UI.Screens
             _playerName = playerName;
             _currentScriptJson = json;
             Stage.Strings = await LoadCatalogAsync(chapter.script_url); // localization (null → inline text)
+            Stage.ScriptUrl = chapter.script_url; // stamp save slots with the owning chapter
             Stage.Play(json);
+
+            // Resume from the chapter's autosave (revives ResumePlanner): a matching,
+            // unfinished slot restores vars + jumps to where the player left off,
+            // surviving both leaving the app and the script changing length since.
+            string slot = AutoSlot(chapter);
+            var saved = Stage.Saves.Read(slot);
+            if (saved != null && Stage.Player != null)
+            {
+                var resume = ResumePlanner.Resolve(
+                    hasSlot: true, finished: saved.Finished,
+                    sameScript: saved.ScriptUrl == chapter.script_url,
+                    savedIndex: saved.Index, savedCommandCount: saved.CommandCount,
+                    currentCommandCount: Stage.Player.Count, lastEditAt: null);
+                if (resume.RestoreState)
+                    Stage.ResumeFrom(saved, resume.StartIndex);
+            }
+
+            // Player name reflects THIS session (set after resume so it overrides any
+            // stale name in the restored vars).
             if (Stage.Player != null && !string.IsNullOrEmpty(playerName))
                 Stage.Player.Vars["player"] = playerName;
 
+            // Autosave: one conflated writer, persisting on each new beat (not every
+            // frame). CoalescingWriter keeps writes from overlapping and always
+            // stores the newest snapshot — the right shape once persistence goes async.
+            var autosave = new CoalescingWriter<LvnPlayer.LvnSnapshot>((snap, ct) =>
+            {
+                Stage.Saves.Write(slot, snap, chapter.script_url,
+                    DateTimeOffset.UtcNow.ToUnixTimeSeconds());
+                return Task.CompletedTask;
+            });
+
             // Drive the HUD percent until the player reaches the end of the chapter.
+            int lastSavedIndex = -1;
             while (Stage.Player != null && !Stage.Player.Finished)
             {
                 _shell.Hud.SetProgress(Stage.Player.Index, Stage.Player.Count);
+                if (Stage.Player.Index != lastSavedIndex)
+                {
+                    lastSavedIndex = Stage.Player.Index;
+                    autosave.Request(Stage.Player.Save());
+                }
                 try { await Task.Yield(); }
                 catch (OperationCanceledException) { break; }
             }
             _shell.Hud.SetProgress(1, 1);
+            // Persist the final (finished) state so the next entry starts fresh, and
+            // make sure every queued autosave has actually landed before we leave.
+            if (Stage.Player != null) autosave.Request(Stage.Player.Save());
+            try { await autosave.FlushAsync(); } catch { /* best-effort */ }
+            _downloads.EndChapter(); // stop this chapter's deferred stream; next entry restarts it
             _currentChapter = null;
             _currentTitle = null;
         }
+
+        // Autosave slot for a chapter — kept distinct (auto: prefix) from any manual
+        // `save slot=…` the script writes.
+        private static string AutoSlot(LvnChapter ch) =>
+            "auto:" + (!string.IsNullOrEmpty(ch?.id) ? ch.id : ch?.script_url ?? "chapter");
 
         // Server content changed: refresh the version index, re-apply the manifest
         // (carousel rebuilds), and hot-reload the open chapter if its script moved.

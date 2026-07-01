@@ -72,6 +72,7 @@ namespace Lvn.UI
         private CancellationTokenSource _cts;
         private bool _awaitingTap;
         private bool _awaitingWait;
+        private Task _lastPreload; // most recent `preload` batch — `wait until=preload` blocks on it
         // Current on-screen beat — restored after a live theme rebuild so ApplyTheme
         // is safe to call mid-line (realtime theming keeps the line/choices visible).
         private bool _sayUp;
@@ -460,21 +461,24 @@ namespace Lvn.UI
         // `save [slot=name]` writes the player snapshot (cursor + vars + call stack)
         // to PlayerPrefs; `load [slot=name]` restores it, rebuilds the scene from the
         // saved point (ReplayVisuals) and resumes. Default slot is "quick".
-        private static string SaveKey(JObject cmd)
-        {
-            var slot = (string)cmd["slot"];
-            return "lvn_save_" + (string.IsNullOrEmpty(slot) ? "quick" : slot);
-        }
+        // Versioned, listable, corruption-safe save slots (see LvnSaveStore). The
+        // key scheme matches the old inline writer, so pre-existing saves still load.
+        private LvnSaveStore _saves;
+        public LvnSaveStore Saves => _saves ??= new LvnSaveStore(new PlayerPrefsKeyStore());
+
+        /// <summary>Host-set id/url of the script now playing, stamped into save slots
+        /// so a load menu (and cross-session resume) can tell which chapter a slot
+        /// belongs to. Null for a standalone stage that only round-trips in-session.</summary>
+        public string ScriptUrl;
 
         private void SaveSlot(JObject cmd)
         {
             if (_player == null) return;
             try
             {
-                var json = Newtonsoft.Json.JsonConvert.SerializeObject(_player.Save());
-                PlayerPrefs.SetString(SaveKey(cmd), json);
-                PlayerPrefs.Save();
-                LvnPlayer.Log?.Invoke("saved → " + SaveKey(cmd));
+                Saves.Write((string)cmd["slot"], _player.Save(), ScriptUrl,
+                    System.DateTimeOffset.UtcNow.ToUnixTimeSeconds());
+                LvnPlayer.Log?.Invoke("saved → slot " + LvnSaveStore.Norm((string)cmd["slot"]));
             }
             catch (System.Exception e) { Debug.LogWarning("[lvn] save failed: " + e.Message); }
         }
@@ -482,21 +486,31 @@ namespace Lvn.UI
         private void LoadSlot(JObject cmd)
         {
             if (_player == null) return;
-            var json = PlayerPrefs.GetString(SaveKey(cmd), "");
-            LvnPlayer.LvnSnapshot snap = null;
-            if (!string.IsNullOrEmpty(json))
-                try { snap = Newtonsoft.Json.JsonConvert.DeserializeObject<LvnPlayer.LvnSnapshot>(json); }
-                catch (System.Exception e) { Debug.LogWarning("[lvn] load parse failed: " + e.Message); }
+            var snap = Saves.Read((string)cmd["slot"]); // migrated; null if absent/corrupt
 
             if (snap == null || snap.Vars == null)
             {
                 _player.ContinueFrom(_player.Index + 1); // no/invalid save → skip the load op
                 return;
             }
+            ResumeFrom(snap, snap.Index);
+        }
+
+        /// <summary>Resume the current script from a saved snapshot: restore vars +
+        /// call stack, rebuild the visual stage up to <paramref name="startIndex"/>,
+        /// then continue from there. <paramref name="startIndex"/> is the resolved
+        /// resume point (e.g. from <see cref="ResumePlanner"/>) which may differ from
+        /// the snapshot's own index after a script edit; it's clamped into range so a
+        /// resume never runs off a shortened script. The cross-session counterpart of
+        /// the in-script <c>load</c> op — call after <see cref="Play"/>.</summary>
+        public void ResumeFrom(LvnPlayer.LvnSnapshot snap, int startIndex)
+        {
+            if (_player == null || snap == null) return;
+            startIndex = Mathf.Clamp(startIndex, 0, _player.Count);
             ResetStage();                       // clean slate
             _player.Restore(snap);              // cursor + vars + call stack
-            _player.ReplayVisuals(snap.Index);  // rebuild bg / actors / HUD up to the saved point
-            _player.ContinueFrom(snap.Index);   // resume → renders the saved beat
+            _player.ReplayVisuals(startIndex);  // rebuild bg / actors / HUD up to the resume point
+            _player.ContinueFrom(startIndex);   // resume → renders the resumed beat
         }
 
         // A persistent reactive text label (`text id=… x= y= anchor= «{expr}»`): a
@@ -643,10 +657,14 @@ namespace Lvn.UI
                 case "text_pace": ApplyTextPace(command); break;
                 case "wait":
                     _awaitingWait = true;
-                    StartCoroutine(WaitCoroutine(command));
+                    // `until=preload` blocks on asset loading (this wait's own
+                    // assets/urls, else the pending `preload` batch) instead of a
+                    // timer — so a scene never shows before its art is ready.
+                    if ((string)command["until"] == "preload") WaitPreloadAsync(command);
+                    else StartCoroutine(WaitCoroutine(command));
                     break;
                 case "preload":
-                    _ = PreloadAssetsAsync(command);
+                    _lastPreload = PreloadAssetsAsync(command);
                     break;
                 // hint is a no-op; unknown-but-registered ops are simply not drawn.
             }
@@ -669,6 +687,39 @@ namespace Lvn.UI
         {
             float ms = cmd["ms"] != null ? (float)cmd["ms"] : 1000f;
             yield return new WaitForSecondsRealtime(ms / 1000f);
+            _awaitingWait = false;
+            if (_player != null && !_player.Finished)
+                _player.Advance();
+        }
+
+        // `wait until=preload`: pause the script until the relevant assets are on
+        // disk/in memory, then resume — the asset-gated counterpart to the timed
+        // wait. Sources, in order: this wait's own `assets`/`urls`, else the most
+        // recent `preload` op's batch. An optional `min_ms` floor keeps a fast cache
+        // hit from flashing the transition.
+        private async void WaitPreloadAsync(JObject cmd)
+        {
+            try
+            {
+                if (cmd["assets"] is JArray)
+                {
+                    await PreloadAssetsAsync(cmd);
+                }
+                else if (cmd["urls"] is JArray urls && Assets != null)
+                {
+                    var list = new List<string>();
+                    foreach (var u in urls) { var s = (string)u; if (!string.IsNullOrEmpty(s)) list.Add(s); }
+                    if (list.Count > 0) await Assets.PreloadAsync(list, "sprite", _cts.Token);
+                }
+                else if (_lastPreload != null)
+                {
+                    await _lastPreload;
+                }
+                float minMs = cmd["min_ms"] != null ? (float)cmd["min_ms"] : 0f;
+                if (minMs > 0f) await Task.Delay((int)minMs, _cts.Token);
+            }
+            catch (System.OperationCanceledException) { return; } // stage torn down
+            catch (System.Exception e) { Debug.LogWarning($"[vnstage] wait until=preload: {e.Message}"); }
             _awaitingWait = false;
             if (_player != null && !_player.Finished)
                 _player.Advance();

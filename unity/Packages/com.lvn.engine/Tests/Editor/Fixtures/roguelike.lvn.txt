@@ -375,6 +375,20 @@
           "text": "🧪 Выпить зелье"
         },
         {
+          "cost": {
+            "amount": 5,
+            "var": "gold"
+          },
+          "goto": "buy_potion",
+          "text": "💰 Купить зелье у торговца"
+        },
+        {
+          "goto": "escape",
+          "requires_min": 8,
+          "requires_stat": "str",
+          "text": "💪 Выломать решётку (Сила 8)"
+        },
+        {
           "goto": "escape",
           "text": "🪜 Выйти с добычей"
         }
@@ -397,6 +411,23 @@
     {
       "op": "say",
       "text": "Зелье возвращает силы."
+    },
+    {
+      "label": "after_room",
+      "op": "goto"
+    },
+    {
+      "id": "buy_potion",
+      "op": "label"
+    },
+    {
+      "expr": "potions + 1",
+      "key": "potions",
+      "op": "set"
+    },
+    {
+      "op": "say",
+      "text": "Торговец молча протягивает склянку."
     },
     {
       "label": "after_room",

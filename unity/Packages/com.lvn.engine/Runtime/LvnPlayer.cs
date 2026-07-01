@@ -149,6 +149,13 @@ namespace Lvn
         /// <see cref="ScriptUrl"/> is set by the host (the player doesn't know it).</summary>
         public class LvnSnapshot
         {
+            /// <summary>The current on-disk schema version. Bump when the snapshot
+            /// shape changes and add a step to <see cref="Migrate"/>.</summary>
+            public const int CurrentVersion = 1;
+
+            /// <summary>Schema version this snapshot was written with. 0 = a
+            /// pre-versioning save (migrated up on load).</summary>
+            public int Version;
             public int Index;
             public Dictionary<string, JToken> Vars;
             public int[] CallStack;
@@ -158,6 +165,27 @@ namespace Lvn
             public bool Finished;
             /// <summary>Host-supplied id/url of the script this slot belongs to.</summary>
             public string ScriptUrl;
+            /// <summary>Unix seconds when the slot was written (host-stamped). 0 if unknown.</summary>
+            public long SavedAtUnix;
+
+            /// <summary>Upgrade an older snapshot to <see cref="CurrentVersion"/>,
+            /// returning it ready to restore — or <c>null</c> if it can't be trusted
+            /// (a save from a NEWER build than this one). Pure and side-effect-free
+            /// beyond the passed object, so it's unit-testable. Add a step per bump.</summary>
+            public static LvnSnapshot Migrate(LvnSnapshot s)
+            {
+                if (s == null) return null;
+                // v0 → v1: the version field simply didn't exist; the v1 format only
+                // ADDED metadata (Version/SavedAtUnix), so an old snapshot is already
+                // a structurally valid v1 — just stamp it.
+                if (s.Version < 1) s.Version = 1;
+                // Future migrations go here:
+                //   if (s.Version < 2) { /* transform */ s.Version = 2; }
+
+                // A save from a future build may carry state we can't interpret —
+                // refuse it (the caller starts fresh) rather than corrupt the run.
+                return s.Version <= CurrentVersion ? s : null;
+            }
         }
 
         /// <summary>Capture the current state for serialization.</summary>
@@ -165,6 +193,7 @@ namespace Lvn
         {
             return new LvnSnapshot
             {
+                Version = LvnSnapshot.CurrentVersion,
                 Index = _ip,
                 Vars = new Dictionary<string, JToken>(Vars),
                 CallStack = _callStack.ToArray(),
@@ -375,6 +404,22 @@ namespace Lvn
             var opt = (JObject)opts[optionIndex];
             Log?.Invoke("CHOOSE [" + optionIndex + "] \"" + (string)opt["text"] + "\"" + (opt["goto"] != null ? " → :" + opt["goto"] : ""));
 
+            // Defensive: a locked option must never resolve. The host greys it out,
+            // but a stale click (e.g. after a reload) is ignored — leave the cursor
+            // on the choice so the next Advance re-presents it.
+            if (OptionLocked(opt)) { Log?.Invoke("  locked — ignored"); return; }
+
+            // Spend a structured cost from its variable before navigating.
+            if (opt["cost"] is JObject costObj)
+            {
+                var cv = (string)(costObj["var"] ?? costObj["currency"]);
+                if (cv != null)
+                {
+                    Vars[cv] = new JValue(VarNum(cv) - Num(costObj["amount"], 0));
+                    Log?.Invoke("  spent " + FmtNum(Num(costObj["amount"], 0)) + " " + cv + " → " + VarNum(cv));
+                }
+            }
+
             if (opt["body"] is JArray body)
             {
                 foreach (var bt in body)
@@ -447,22 +492,86 @@ namespace Lvn
             {
                 var o = (JObject)opts[i];
 
-                var requires = (string)o["requires_stat"];
-                if (requires != null && VarNum(requires) < Num(o["min"], 0))
-                    continue;
-
+                // Hidden gate: an `expr` that evaluates false drops the option
+                // entirely — logic branching the player never sees.
                 var expr = (string)o["expr"];
                 if (expr != null && !EvalExpr(expr))
                     continue;
 
-                // {expr} interpolation so option text/cost track variables too
+                // Locked gate: a failed skill check (requires_stat/requires_min)
+                // or an unaffordable structured cost keeps the option visible but
+                // greyed, so the player knows what they can't do yet. `hide_if_locked`
+                // opts back into hiding for authors who prefer it.
+                bool locked = OptionLocked(o);
+                if (locked && (bool?)o["hide_if_locked"] == true)
+                    continue;
+
+                // {expr}/{var} interpolation so option text/cost track variables too
                 // (e.g. "Атаковать ({wname})", "Купить (-{price} зол)").
                 var optText = TextInterpolation.Apply(Localized(o), Vars);
-                var optCost = TextInterpolation.Apply((string)o["cost"], Vars);
-                result.Add(new LvnOption(i, optText, optCost));
+                var optCost = TextInterpolation.Apply(CostDisplay(o["cost"]), Vars);
+                var note = locked ? LockNote(o) : null;
+                result.Add(new LvnOption(i, optText, optCost, !locked, note));
             }
             return result;
         }
+
+        // A skill check or an affordable-cost gate that is currently unmet. Kept
+        // separate from the hidden `expr` filter so the host can grey the option
+        // out (see BuildOptions) and Choose can refuse it defensively.
+        private bool OptionLocked(JObject o)
+        {
+            var requires = (string)o["requires_stat"];
+            if (requires != null && VarNum(requires) < Num(o["requires_min"] ?? o["min"], 0))
+                return true;
+            if (o["cost"] is JObject co)
+            {
+                var cv = (string)(co["var"] ?? co["currency"]);
+                if (cv != null && VarNum(cv) < Num(co["amount"], 0))
+                    return true;
+            }
+            return false;
+        }
+
+        // Human note for a locked option: an author-supplied `locked_text`, else a
+        // terse auto label ("strength ≥ 5", "−5 gold").
+        private string LockNote(JObject o)
+        {
+            var custom = (string)o["locked_text"];
+            if (custom != null) return TextInterpolation.Apply(custom, Vars);
+            var requires = (string)o["requires_stat"];
+            if (requires != null && VarNum(requires) < Num(o["requires_min"] ?? o["min"], 0))
+                return requires + " ≥ " + FmtNum(Num(o["requires_min"] ?? o["min"], 0));
+            if (o["cost"] is JObject co)
+            {
+                var cv = (string)(co["var"] ?? co["currency"]);
+                if (cv != null) return "−" + FmtNum(Num(co["amount"], 0)) + " " + cv;
+            }
+            return null;
+        }
+
+        // The narrative cost line beneath an option. A string cost is shown as-is
+        // (pure flavour); a structured {var,amount[,label]} cost formats to
+        // "−<amount> <var>" unless it carries its own label.
+        private static string CostDisplay(JToken cost)
+        {
+            if (cost == null) return null;
+            if (cost.Type == JTokenType.String) return (string)cost;
+            if (cost is JObject co)
+            {
+                var label = (string)co["label"];
+                if (label != null) return label;
+                var cv = (string)(co["var"] ?? co["currency"]);
+                if (cv == null) return null;
+                return "−" + FmtNum(Num(co["amount"], 0)) + " " + cv;
+            }
+            return null;
+        }
+
+        private static string FmtNum(double d) =>
+            d == System.Math.Floor(d) && !double.IsInfinity(d)
+                ? ((long)d).ToString(System.Globalization.CultureInfo.InvariantCulture)
+                : d.ToString(System.Globalization.CultureInfo.InvariantCulture);
 
         private bool EvalCond(JObject c)
         {

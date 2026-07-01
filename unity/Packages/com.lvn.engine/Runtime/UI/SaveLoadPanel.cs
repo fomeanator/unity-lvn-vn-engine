@@ -22,17 +22,16 @@ namespace Lvn.UI
 
         private UIDocument _doc;
         private List<VisualElement> _slots = new List<VisualElement>();
-        private List<LvnPlayer.LvnSnapshot> _snapshots = new List<LvnPlayer.LvnSnapshot>();
         private bool _isOpen;
 
         private void Awake()
         {
             _doc = GetComponent<UIDocument>();
-            for (int i = 0; i < SlotCount; i++)
-            {
-                _snapshots.Add(null);
-            }
         }
+
+        // Persistent numbered slots, kept distinct from the engine's autosave
+        // (auto:) and any in-script `save slot=…` names.
+        private static string SlotName(int index) => "manual:" + (index + 1);
 
         private void OnEnable()
         {
@@ -65,6 +64,7 @@ namespace Lvn.UI
             grid.style.flexWrap = Wrap.Wrap;
             grid.style.justifyContent = Justify.Center;
 
+            _slots.Clear(); // rebuild cleanly if the panel is re-enabled
             for (int i = 0; i < SlotCount; i++)
             {
                 var slot = BuildSlot(i);
@@ -143,21 +143,27 @@ namespace Lvn.UI
 
         private void RefreshSlots()
         {
-            for (int i = 0; i < _slots.Count && i < _snapshots.Count; i++)
+            for (int i = 0; i < _slots.Count; i++)
             {
                 var label = _slots[i].Q<Label>();
-                var snap = _snapshots[i];
+                var loadBtn = _slots[i].Query<Button>().Last();
+                var snap = Stage != null ? Stage.Saves.Read(SlotName(i)) : null;
                 if (snap != null)
                 {
-                    label.text = $"Slot {i + 1}: Saved (IP {snap.Index})";
+                    string when = snap.SavedAtUnix > 0
+                        ? DateTimeOffset.FromUnixTimeSeconds(snap.SavedAtUnix).LocalDateTime.ToString("g")
+                        : $"beat {snap.Index}";
+                    label.text = $"Slot {i + 1}: {when}";
                     label.style.color = Color.white;
-                    _slots[i].Query<Button>().Last().style.opacity = 1f;
+                    loadBtn.SetEnabled(true);
+                    loadBtn.style.opacity = 1f;
                 }
                 else
                 {
                     label.text = $"Slot {i + 1}: Empty";
                     label.style.color = Color.gray;
-                    _slots[i].Query<Button>().Last().style.opacity = 0.5f;
+                    loadBtn.SetEnabled(false);
+                    loadBtn.style.opacity = 0.5f;
                 }
             }
         }
@@ -165,16 +171,18 @@ namespace Lvn.UI
         private void SaveToSlot(int index)
         {
             if (Stage == null || Stage.Player == null) return;
-            _snapshots[index] = Stage.Player.Save();
+            // Persist through the versioned, corruption-safe store — survives quit.
+            Stage.Saves.Write(SlotName(index), Stage.Player.Save(), Stage.ScriptUrl,
+                DateTimeOffset.UtcNow.ToUnixTimeSeconds());
             RefreshSlots();
         }
 
         private void LoadFromSlot(int index)
         {
             if (Stage == null || Stage.Player == null) return;
-            var snap = _snapshots[index];
+            var snap = Stage.Saves.Read(SlotName(index)); // migrated; null if absent/corrupt
             if (snap == null) return;
-            Stage.Player.Restore(snap);
+            Stage.ResumeFrom(snap, snap.Index); // rebuilds the scene, not just the cursor
             Close();
         }
     }

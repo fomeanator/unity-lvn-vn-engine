@@ -78,7 +78,11 @@ namespace Lvn.UI
         private VisualElement BuildOption(LvnOption option)
         {
             int index = option.Index;
-            var btn = new Button(() => OnSelected?.Invoke(index)) { text = string.Empty };
+            // A locked option (failed skill check / unaffordable) is shown greyed
+            // and non-interactive so the player sees what they can't do yet.
+            var btn = new Button(() => { if (option.Enabled) OnSelected?.Invoke(index); }) { text = string.Empty };
+            btn.SetEnabled(option.Enabled);
+            if (!option.Enabled) btn.style.opacity = 0.5f;
             btn.style.backgroundColor = _theme.ChoiceColor;
             btn.style.minWidth = Length.Percent(_theme.ChoiceMinWidthPercent);
             btn.style.maxWidth = Length.Percent(_theme.ChoiceMaxWidthPercent);
@@ -109,6 +113,17 @@ namespace Lvn.UI
                 cost.style.fontSize = Mathf.RoundToInt(_theme.ChoiceFontSize * 0.72f);
                 cost.style.marginTop = 4;
                 btn.Add(cost);
+            }
+
+            // The lock reason (skill requirement / price) sits beneath a greyed option.
+            if (!option.Enabled && !string.IsNullOrEmpty(option.Note))
+            {
+                var note = new Label(option.Note);
+                note.style.color = _theme.ChoiceCostColor;
+                note.style.fontSize = Mathf.RoundToInt(_theme.ChoiceFontSize * 0.66f);
+                note.style.marginTop = 2;
+                note.style.unityFontStyleAndWeight = FontStyle.Italic;
+                btn.Add(note);
             }
 
             if (_theme.ChoiceSprite != null)

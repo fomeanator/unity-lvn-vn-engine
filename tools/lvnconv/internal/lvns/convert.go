@@ -860,7 +860,33 @@ func parseChoiceOption(line string) (map[string]any, error) {
 			opt[k] = v
 		}
 	}
+	normalizeChoiceCost(opt)
 	return opt, nil
+}
+
+// normalizeChoiceCost rewrites a `cost=<var>:<amount>` shorthand into a
+// structured {var,amount} cost the runtime can actually deduct. A plain-string
+// cost with no numeric var:amount pair (e.g. cost="дорого") is left untouched —
+// it stays pure flavour text shown beneath the option.
+func normalizeChoiceCost(opt map[string]any) {
+	s, ok := opt["cost"].(string)
+	if !ok {
+		return
+	}
+	i := strings.LastIndex(s, ":")
+	if i <= 0 || i == len(s)-1 {
+		return
+	}
+	varName := strings.TrimSpace(s[:i])
+	amtStr := strings.TrimSpace(s[i+1:])
+	if !isValidKey(varName) {
+		return
+	}
+	if n, err := strconv.ParseInt(amtStr, 10, 64); err == nil {
+		opt["cost"] = map[string]any{"var": varName, "amount": n}
+	} else if f, err := strconv.ParseFloat(amtStr, 64); err == nil {
+		opt["cost"] = map[string]any{"var": varName, "amount": f}
+	}
 }
 
 func parseKeyValue(s string) (map[string]any, error) {

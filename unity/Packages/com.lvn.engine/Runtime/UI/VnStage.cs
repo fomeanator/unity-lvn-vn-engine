@@ -499,9 +499,10 @@ namespace Lvn.UI
                 return;
             }
             ResetStage();                       // clean slate
-            _player.Restore(snap);              // cursor + vars + call stack
-            _player.ReplayVisuals(snap.Index);  // rebuild bg / actors / HUD up to the saved point
-            _player.ContinueFrom(snap.Index);   // resume → renders the saved beat
+            _player.Restore(snap);              // cursor (via label anchor) + vars + call stack
+            int at = _player.Index;             // the anchor-relocated cursor, not the raw saved index
+            _player.ReplayVisuals(at);          // rebuild bg / actors / HUD up to the saved point
+            _player.ContinueFrom(at);           // resume → renders the saved beat
         }
 
         // A persistent reactive text label (`text id=… x= y= anchor= «{expr}»`): a

@@ -158,11 +158,18 @@ namespace Lvn
             public bool Finished;
             /// <summary>Host-supplied id/url of the script this slot belongs to.</summary>
             public string ScriptUrl;
+            /// <summary>Stable position anchor: the label the cursor was under and the
+            /// offset past it. Resume relocates by this first, so a save survives the
+            /// script being edited/re-imported (indices shifting) between sessions;
+            /// falls back to <see cref="Index"/> when the label is gone.</summary>
+            public string AnchorLabel;
+            public int AnchorSteps;
         }
 
         /// <summary>Capture the current state for serialization.</summary>
         public LvnSnapshot Save()
         {
+            var (aLabel, aSteps) = AnchorOf(_ip);
             return new LvnSnapshot
             {
                 Index = _ip,
@@ -170,14 +177,21 @@ namespace Lvn
                 CallStack = _callStack.ToArray(),
                 CommandCount = _script.Count,
                 Finished = Finished,
+                AnchorLabel = aLabel,
+                AnchorSteps = aSteps,
             };
         }
 
-        /// <summary>Restore from a snapshot.</summary>
+        /// <summary>Restore from a snapshot. Resolves the position by its label anchor
+        /// first (so a save survives the script being edited/re-imported), falling back
+        /// to the raw index for older saves that lack an anchor.</summary>
         public void Restore(LvnSnapshot snapshot)
         {
             if (snapshot == null) return;
-            Restore(snapshot.Index, snapshot.Vars, snapshot.CallStack);
+            int at = snapshot.AnchorLabel != null
+                ? Relocate(snapshot.AnchorLabel, snapshot.AnchorSteps, snapshot.Index)
+                : snapshot.Index;
+            Restore(at, snapshot.Vars, snapshot.CallStack);
         }
 
         /// <summary>
@@ -189,27 +203,60 @@ namespace Lvn
         /// the saved cursor no longer means the same beat. Text/parameter edits
         /// (a reworded line, a tweaked emotion or position) all pass.
         /// </summary>
+        // A stable anchor for a script index: the nearest PRECEDING label id plus the
+        // offset from it. Labels are jump targets and don't move meaning across edits,
+        // so an anchor survives a script whose command indices shifted (a line added /
+        // removed, a re-import). Returns (null, index) when the cursor is before any
+        // label (the leading set/init block).
+        private (string label, int steps) AnchorOf(int index)
+        {
+            int from = System.Math.Min(index, _script.Count) - 1;
+            for (int i = from; i >= 0; i--)
+                if (_script[i] is JObject c && (string)c["op"] == "label")
+                    return ((string)c["id"], index - i);
+            return (null, index);
+        }
+
+        // Resolve an anchor back to an index in the CURRENT script (call after _labels
+        // is rebuilt). Falls back to the raw index if the label is gone. Clamped.
+        private int Relocate(string label, int steps, int fallback)
+        {
+            int at = fallback;
+            if (!string.IsNullOrEmpty(label) && _labels.TryGetValue(label, out var i))
+                at = i + steps;
+            if (at < 0) at = 0;
+            if (at > _script.Count) at = _script.Count;
+            return at;
+        }
+
         public bool TryReplaceScript(LvnDocument doc)
         {
             var next = doc?.Script;
-            if (next == null || next.Count != _script.Count) return false;
-            // Staging ops that are pure-visual and side-effect-free to re-issue
-            // (no var mutation, no pause). On a live edit we re-apply the ones that
-            // changed and have already run, so editing an on-screen animation /
-            // actor / background updates it in place instead of only on next entry.
+            if (next == null || next.Count == 0) return false;
+            int oldCount = _script.Count;
+
+            // Anchor the cursor BEFORE swapping, so we can restore the same beat even
+            // if the edit changed the command count and shifted every index.
+            var (aLabel, aSteps) = AnchorOf(_ip);
+
+            // Index-aligned edit (same length + same op structure) → keep the cursor
+            // exactly and re-issue only the visual ops that changed. The common "fix a
+            // typo" path: no reposition, no re-fade.
+            bool aligned = next.Count == oldCount;
             List<int> reapply = null;
-            for (int i = 0; i < next.Count; i++)
-            {
-                var a = _script[i] as JObject;
-                var b = next[i] as JObject;
-                if (a == null || b == null) return false;
-                var op = (string)a["op"];
-                if (op != (string)b["op"]) return false;
-                // labels are the jump targets — a renamed/moved label breaks flow.
-                if (op == "label" && (string)a["id"] != (string)b["id"]) return false;
-                if (i < _ip && IsReapplyable(op) && !JToken.DeepEquals(a, b))
-                    (reapply ??= new List<int>()).Add(i);
-            }
+            if (aligned)
+                for (int i = 0; i < next.Count; i++)
+                {
+                    var a = _script[i] as JObject;
+                    var b = next[i] as JObject;
+                    if (a == null || b == null) { aligned = false; break; }
+                    var op = (string)a["op"];
+                    if (op != (string)b["op"]) { aligned = false; break; }
+                    if (op == "label" && (string)a["id"] != (string)b["id"]) { aligned = false; break; }
+                    if (i < _ip && IsReapplyable(op) && !JToken.DeepEquals(a, b))
+                        (reapply ??= new List<int>()).Add(i);
+                }
+
             _script = next;
             _labels.Clear();
             for (int i = 0; i < _script.Count; i++)
@@ -218,10 +265,20 @@ namespace Lvn
                     var id = (string)c["id"];
                     if (!string.IsNullOrEmpty(id)) _labels[id] = i;
                 }
-            if (_ip > _script.Count) _ip = _script.Count;
-            // re-issue edited, already-run staging so the live picture reflects it
-            if (reapply != null)
-                foreach (var i in reapply) _stage.ApplyStage((JObject)_script[i]);
+
+            if (aligned)
+            {
+                if (_ip > _script.Count) _ip = _script.Count;
+                if (reapply != null)
+                    foreach (var i in reapply) _stage.ApplyStage((JObject)_script[i]);
+            }
+            else
+            {
+                // Indices shifted — relocate the cursor to the same beat via its label
+                // anchor and rebuild the visible stage there. No restart, no jump.
+                _ip = Relocate(aLabel, aSteps, _ip);
+                ReplayVisuals(_ip);
+            }
             return true;
         }
 

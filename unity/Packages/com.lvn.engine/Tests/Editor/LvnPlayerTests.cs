@@ -185,47 +185,58 @@ namespace Lvn.Tests
         }
 
         [Test]
-        public void HotSwapRejectsStructuralChange()
+        public void HotSwapKeepsPositionAcrossInsert()
         {
+            // An edit that changes the command count must NOT restart the chapter:
+            // the cursor re-anchors to its nearest preceding label + offset, so the
+            // reader stays on the same beat even though every index shifted.
             var v1 = @"{""script"":[
                 {""op"":""say"",""text"":""a""},
-                {""op"":""say"",""text"":""b""}
+                {""op"":""label"",""id"":""mid""},
+                {""op"":""say"",""text"":""b""},
+                {""op"":""say"",""text"":""c""}
             ]}";
-            var p = Play(v1, out _);
-            p.Advance();
+            var p = Play(v1, out var stage);
+            p.Advance();            // "a"
+            p.Advance();            // label → "b" (current beat)
+            Assert.AreEqual("b", stage.Last);
 
-            // an inserted command → count differs → reject (host restarts)
+            // insert a bg at the very top — count changes, indices shift by one
             var inserted = @"{""script"":[
-                {""op"":""say"",""text"":""a""},
                 {""op"":""bg"",""id"":""x""},
-                {""op"":""say"",""text"":""b""}
-            ]}";
-            Assert.IsFalse(p.TryReplaceScript(LvnDocument.Parse(inserted)));
-
-            // same count but a changed op at index 1 → reject
-            var swappedOp = @"{""script"":[
                 {""op"":""say"",""text"":""a""},
-                {""op"":""choice"",""options"":[{""text"":""x"",""goto"":""__end""}]}
+                {""op"":""label"",""id"":""mid""},
+                {""op"":""say"",""text"":""b""},
+                {""op"":""say"",""text"":""c""}
             ]}";
-            Assert.IsFalse(p.TryReplaceScript(LvnDocument.Parse(swappedOp)));
+            Assert.IsTrue(p.TryReplaceScript(LvnDocument.Parse(inserted)));
+            p.RerenderCurrent();
+            Assert.AreEqual("b", stage.Last, "cursor re-anchored via the label — same beat, no restart");
+
+            p.Advance();
+            Assert.AreEqual("c", stage.Last, "continues into the next line, not back to the start");
+            Assert.IsFalse(p.Finished);
         }
 
         [Test]
-        public void HotSwapRejectsRenamedLabel()
+        public void HotSwapSurvivesRenamedLabelWithoutRestart()
         {
+            // Even a renamed anchor label doesn't restart: it falls back to the raw
+            // index (clamped). The contract is "never throw the player to the top".
             var v1 = @"{""script"":[
                 {""op"":""say"",""text"":""a""},
-                {""op"":""label"",""id"":""door""}
+                {""op"":""label"",""id"":""door""},
+                {""op"":""say"",""text"":""b""}
             ]}";
             var p = Play(v1, out _);
             p.Advance();
 
             var renamed = @"{""script"":[
                 {""op"":""say"",""text"":""a""},
-                {""op"":""label"",""id"":""window""}
+                {""op"":""label"",""id"":""window""},
+                {""op"":""say"",""text"":""b""}
             ]}";
-            Assert.IsFalse(p.TryReplaceScript(LvnDocument.Parse(renamed)),
-                "a renamed label is structural — jumps would break");
+            Assert.IsTrue(p.TryReplaceScript(LvnDocument.Parse(renamed)));
         }
 
         [Test]

@@ -52,6 +52,58 @@ type Chapter struct {
 	Name      string `json:"name,omitempty"` // episode title ("Эпизод 3. …") for the chapter list
 	ScriptURL string `json:"script_url"`
 	BgURL     string `json:"bg_url,omitempty"`
+	// Assets is the chapter's prioritized release set (content url → meta): the
+	// runtime's AssetScheduler warms the `critical` ones (the opening scene) BEFORE
+	// Play, so the first beats never pop-in; the rest stream during play. Without
+	// this the loading screen has nothing to gate on and sprites draw a frame late.
+	Assets map[string]AssetMeta `json:"assets,omitempty"`
+}
+
+// AssetMeta mirrors the runtime's LvnAssetMeta (the fields the client reads to
+// schedule downloads). critical → required set (gates Play); eta_ms orders the
+// deferred stream (earliest-used first).
+type AssetMeta struct {
+	Kind     string `json:"kind,omitempty"`
+	Scope    string `json:"scope,omitempty"`
+	Critical bool   `json:"critical,omitempty"`
+	ETAms    int    `json:"eta_ms,omitempty"`
+}
+
+// collectChapterAssets scans a compiled chapter for the sprites it shows (bg /
+// actor / obj) and builds its release set. The opening scene's first few sprites
+// are `critical` (warmed before Play so the start never pops in); everything after
+// is deferred, ordered by first appearance so it streams in just ahead of use.
+func collectChapterAssets(doc *articy.Doc) map[string]AssetMeta {
+	assets := map[string]AssetMeta{}
+	bgCount := 0 // scene boundaries: the first scene is bgCount<=1
+	visuals := 0
+	for _, c := range doc.Script {
+		op, _ := c["op"].(string)
+		if op != "bg" && op != "actor" && op != "obj" {
+			continue
+		}
+		if op == "bg" {
+			bgCount++
+		}
+		url, _ := c["sprite_url"].(string)
+		if url == "" {
+			continue
+		}
+		visuals++
+		// The opening SCENE (its bg + the characters shown in it, before the bg
+		// changes) is critical → warmed before Play so the start never pops in.
+		// Cap it so a scene with a big cast can't bloat the Play gate.
+		critical := bgCount <= 1 && visuals <= 8
+		m, ok := assets[url]
+		if !ok {
+			m = AssetMeta{Kind: "sprite", Scope: "chapter", ETAms: visuals * 40}
+		}
+		if critical {
+			m.Critical = true
+		}
+		assets[url] = m
+	}
+	return assets
 }
 type Season struct {
 	Chapters []Chapter `json:"chapters"`
@@ -207,6 +259,7 @@ func Run(projectDir string, opt Options) (*Result, error) {
 			Number:    1,
 			ScriptURL: "/content/" + res.ScriptRel,
 			BgURL:     cover,
+			Assets:    collectChapterAssets(doc),
 		}}}},
 	}
 	return res, nil
@@ -273,6 +326,7 @@ func runMultiChapter(projectDir string, opt Options, chs []adpd.ChapterExport) (
 		}
 		chapters = append(chapters, Chapter{
 			ID: cid, Number: i + 1, Name: ch.Name, ScriptURL: "/content/" + rel, BgURL: firstBg,
+			Assets: collectChapterAssets(doc),
 		})
 	}
 

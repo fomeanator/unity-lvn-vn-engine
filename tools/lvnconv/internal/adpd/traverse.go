@@ -54,6 +54,98 @@ func (g *pinGraph) isContainer(n uint32) bool {
 	return c == cidDialog || c == cidFlowFrag || c == cidStoryFolder
 }
 
+// isEmittable marks nodes that become commands in the .lvn — a DialogFragment
+// (say/choice), a Condition (if), or an Outcome/Instruction (set). The faithful
+// flow graph is built over ONLY these; containers and hubs are transparent
+// routing. Articy's TraverseFlow "pause" set (DialogueFragments) plus the flow
+// logic it evaluates in passing.
+func (g *pinGraph) isEmittable(n uint32) bool {
+	switch g.class[n] {
+	case cidDialogFrag, cidCondition, cidOutcome:
+		return true
+	}
+	return false
+}
+
+// outPins returns a node's output pins. Articy file order is [input, output…];
+// verified across DF (2), Condition (3: in,true,false), Outcome (2), container (2+).
+func (g *pinGraph) outPins(n uint32) []uint32 {
+	ps := g.pins[n]
+	if len(ps) <= 1 {
+		return nil
+	}
+	return ps[1:]
+}
+
+// reachFromPin follows one output pin's connections to the next EMITTABLE nodes,
+// passing transparently through containers (descend via an input pin / surface via
+// an output pin — whichever the connection entered) and hubs. This is TraverseFlow
+// reduced to "where does flow leaving this pin next pause / branch" — forward, by
+// construction, so a choice's options and a scene's linear next both fall out.
+func (g *pinGraph) reachFromPin(pin uint32) []uint32 {
+	var out []uint32
+	seenStep := map[uint64]bool{}
+	seenOut := map[uint32]bool{}
+	var visit func(node, via uint32, depth int)
+	visit = func(node, via uint32, depth int) {
+		if depth > 100000 {
+			return
+		}
+		key := uint64(node)<<32 | uint64(via)
+		if seenStep[key] {
+			return
+		}
+		seenStep[key] = true
+		if g.isEmittable(node) {
+			if !seenOut[node] {
+				seenOut[node] = true
+				out = append(out, node)
+			}
+			return // an emittable node is where this branch pauses — don't cross it
+		}
+		if g.isContainer(node) {
+			for _, e := range g.outPin[via] {
+				visit(e.dst, e.dstPin, depth+1)
+			}
+			return
+		}
+		for _, p := range g.outPins(node) { // hub / other: transparent
+			for _, e := range g.outPin[p] {
+				visit(e.dst, e.dstPin, depth+1)
+			}
+		}
+	}
+	for _, e := range g.outPin[pin] {
+		visit(e.dst, e.dstPin, 0)
+	}
+	return out
+}
+
+// rootEntry returns the first emittable node of the novel: descend from the
+// top-level container(s) (containers that own children but are never a child).
+func (g *pinGraph) rootEntry(childOf map[uint32]bool) []uint32 {
+	var tops []uint32
+	for n, c := range g.class {
+		if (c == cidStoryFolder || c == cidFlowFrag || c == cidDialog) && !childOf[n] {
+			tops = append(tops, n)
+		}
+	}
+	sort.Slice(tops, func(i, j int) bool { return tops[i] < tops[j] })
+	var out []uint32
+	seen := map[uint32]bool{}
+	for _, t := range tops {
+		if ps := g.pins[t]; len(ps) > 0 { // descend from the container's input pin
+			for _, r := range g.reachFromPin(ps[0]) {
+				if !seen[r] {
+					seen[r] = true
+					out = append(out, r)
+				}
+			}
+		}
+	}
+	return out
+}
+
 // nextStops returns the stop nodes reachable when leaving node n — exactly the
 // set ArticyFlowPlayer would pause on next (so ≥2 ⇒ a player choice). It follows
 // n's output pins' connections, descending through containers (via the pin the

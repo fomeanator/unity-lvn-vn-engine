@@ -555,6 +555,108 @@ func (fl flow) hierarchyOrder() []uint32 {
 // reached dead-end leaf (a single goto, never a bogus choice). Self-validates 100%
 // coverage; returns ok=false to fall back to linearizeByHierarchy if anything would
 // be stranded.
+// linearizeFaithful is the port of articy's TraverseFlow: it builds the flow graph
+// over ONLY emittable nodes (DialogFragment / Condition / Outcome), connected by
+// forward pin-flow (reachFromPin descends/surfaces containers, passes through
+// hubs). A DF with ≥2 forward targets is a player choice whose branches reconverge
+// forward at their shared next node — no backward "revisit the menu" loop unless
+// the author genuinely wired one. Conditions stay as if/then/else (kept in
+// fl.logic), Outcomes as set. Returns the root entries + ok; ok=false (stranded
+// content) falls back to the older heuristics.
+func linearizeFaithful(fl flow) ([]uint32, bool) {
+	if fl.pg == nil {
+		return nil, false
+	}
+	pg := fl.pg
+	childOf := map[uint32]bool{}
+	for _, ch := range fl.childrenOf {
+		for _, c := range ch {
+			childOf[c] = true
+		}
+	}
+	entries := pg.rootEntry(childOf)
+	if len(entries) == 0 {
+		return nil, false
+	}
+
+	var emit []uint32
+	for n, c := range pg.class {
+		if !pg.isEmittable(n) {
+			continue
+		}
+		emit = append(emit, n)
+		fl.nodes[n] = true
+		if c == cidCondition {
+			// [in, out-true, out-false] → two branches, tagged by source pin so
+			// emitModels' conditionPins can split them into the true/false outputs.
+			ops := pg.outPins(n)
+			var es []edge
+			for _, op := range ops {
+				for _, t := range pg.reachFromPin(op) {
+					es = append(es, edge{src: n, dst: t, srcPin: op})
+				}
+			}
+			fl.succ[n] = es
+			continue
+		}
+		// DialogFragment (say / choice) or Outcome (set): single output pin, its
+		// forward targets. ≥2 targets ⇒ a choice.
+		var targets []uint32
+		seen := map[uint32]bool{}
+		for _, p := range pg.outPins(n) {
+			for _, t := range pg.reachFromPin(p) {
+				if !seen[t] {
+					seen[t] = true
+					targets = append(targets, t)
+				}
+			}
+		}
+		var es []edge
+		for _, t := range targets {
+			es = append(es, edge{src: n, dst: t})
+		}
+		fl.succ[n] = es
+	}
+
+	// Coverage: reach from the root entries; chain any stranded emittable island
+	// (pockets entered only by Jump, etc.) onto a reached dead-end leaf so nothing
+	// is lost — a single forward goto, never a bogus choice.
+	_, R := bfs(fl, entries, 1<<30)
+	var leaves []uint32
+	for _, n := range emit {
+		if R[n] && len(fl.succ[n]) == 0 {
+			leaves = append(leaves, n)
+		}
+	}
+	sort.Slice(emit, func(i, j int) bool { return emit[i] < emit[j] })
+	for _, x := range emit {
+		if R[x] {
+			continue
+		}
+		if len(leaves) == 0 {
+			return nil, false
+		}
+		l := leaves[len(leaves)-1]
+		leaves = leaves[:len(leaves)-1]
+		fl.succ[l] = []edge{{src: l, dst: x}}
+		_, sub := bfs(fl, []uint32{x}, 1<<30)
+		for k := range sub {
+			if !R[k] {
+				R[k] = true
+				if pg.isEmittable(k) && len(fl.succ[k]) == 0 {
+					leaves = append(leaves, k)
+				}
+			}
+		}
+	}
+	for _, n := range emit {
+		if !R[n] {
+			return nil, false
+		}
+	}
+	return entries, true
+}
+
 func linearizeByComponents(fl flow) (uint32, bool) {
 	if fl.pg == nil {
 		return 0, false
@@ -1151,6 +1253,18 @@ func buildModel(fl flow, proj string, start, maxN int) export {
 			maxN = math.MaxInt32
 		}
 		return buildExport(fl, uint32(start), maxN, gvars)
+	}
+
+	// Faithful port of articy's TraverseFlow (forward pin-flow over emittable nodes)
+	// — no spurious backward menu loops. Tried first; falls back only if it would
+	// strand content.
+	if entries, ok := linearizeFaithful(fl); ok {
+		gvars := globalVars(proj, flowExprs(fl))
+		reach, seen := bfs(fl, entries, math.MaxInt32)
+		return emitModels(fl, reach, seen, entries, gvars)
+	}
+	for k := range fl.succ { // faithful mutated succ — reset before the heuristics
+		delete(fl.succ, k)
 	}
 
 	if entry, ok := linearizeByComponents(fl); ok {

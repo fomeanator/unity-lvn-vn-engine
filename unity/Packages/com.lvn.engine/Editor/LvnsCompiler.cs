@@ -747,7 +747,26 @@ namespace Lvn.Editor
                 var pars = ParseKeyValue(paramsStr);
                 foreach (var kv in pars) opt[kv.Key] = Tok(kv.Value);
             }
+            NormalizeChoiceCost(opt);
             return opt;
+        }
+
+        // Rewrite a `cost=<var>:<amount>` shorthand into a structured {var,amount}
+        // cost the runtime can deduct. A plain-string cost (no numeric var:amount)
+        // is left as flavour text. Mirrors normalizeChoiceCost in the Go converter.
+        static void NormalizeChoiceCost(JObject opt)
+        {
+            if (!(opt["cost"] is JValue jv) || jv.Type != JTokenType.String) return;
+            string s = (string)jv;
+            int i = s.LastIndexOf(':');
+            if (i <= 0 || i == s.Length - 1) return;
+            string varName = s.Substring(0, i).Trim();
+            string amtStr = s.Substring(i + 1).Trim();
+            if (!IsValidKey(varName)) return;
+            if (long.TryParse(amtStr, System.Globalization.NumberStyles.Integer, System.Globalization.CultureInfo.InvariantCulture, out var n))
+                opt["cost"] = new JObject { ["var"] = varName, ["amount"] = n };
+            else if (double.TryParse(amtStr, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var f))
+                opt["cost"] = new JObject { ["var"] = varName, ["amount"] = f };
         }
 
         // ParseKeyValue throws on malformed input (mirrors Go error return used as

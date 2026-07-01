@@ -99,6 +99,57 @@ namespace Lvn.Tests
             Assert.AreEqual(0, stage.Options.Count, "after choosing: gated out");
         }
 
+        // Skill checks and structured costs LOCK an option (shown greyed) rather
+        // than hide it; picking a locked one is ignored, an affordable cost is
+        // deducted from its variable.
+        [Test]
+        public void StatAndCostGatesLockAndDeduct()
+        {
+            var json = @"{""script"":[
+                {""op"":""set"",""key"":""gold"",""value"":10},
+                {""op"":""choice"",""options"":[
+                    {""text"":""force"",""requires_stat"":""str"",""requires_min"":5,""goto"":""done""},
+                    {""text"":""buy"",""cost"":{""var"":""gold"",""amount"":4},""goto"":""done""},
+                    {""text"":""poor"",""cost"":{""var"":""gold"",""amount"":999},""goto"":""done""}
+                ]},
+                {""op"":""label"",""id"":""done""},{""op"":""say"",""text"":""ok""}
+            ]}";
+            var p = Play(json, out var stage);
+            p.Advance();
+            Assert.AreEqual(3, stage.Options.Count, "all shown — none hidden");
+            Assert.IsFalse(stage.Options[0].Enabled, "stat check unmet → locked");
+            Assert.IsTrue(stage.Options[1].Enabled, "affordable → enabled");
+            Assert.IsFalse(stage.Options[2].Enabled, "unaffordable → locked");
+
+            // A locked pick is a no-op: nothing spent, still at the choice.
+            p.Choose(stage.Options[0].Index);
+            Assert.IsTrue(p.AtChoice, "locked pick ignored — still at choice");
+            Assert.AreEqual(10d, (double)p.Vars["gold"], 0.0001);
+
+            // The affordable paid option deducts its cost, then proceeds.
+            p.Choose(stage.Options[1].Index);
+            Assert.AreEqual(6d, (double)p.Vars["gold"], 0.0001);
+            p.Advance();
+            Assert.AreEqual("ok", stage.Last);
+        }
+
+        // hide_if_locked turns a failed *locked* gate back into a *hidden* one.
+        [Test]
+        public void HideIfLockedHidesFailedGate()
+        {
+            var json = @"{""script"":[
+                {""op"":""choice"",""options"":[
+                    {""text"":""secret"",""requires_stat"":""str"",""requires_min"":5,""hide_if_locked"":true,""goto"":""done""},
+                    {""text"":""plain"",""goto"":""done""}
+                ]},
+                {""op"":""label"",""id"":""done""},{""op"":""say"",""text"":""ok""}
+            ]}";
+            var p = Play(json, out var stage);
+            p.Advance();
+            Assert.AreEqual(1, stage.Options.Count, "locked + hide_if_locked → hidden");
+            Assert.AreEqual("plain", stage.Options[0].Text);
+        }
+
         [Test]
         public void GoToDrivesHotspotJumps()
         {

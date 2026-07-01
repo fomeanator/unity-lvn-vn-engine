@@ -81,11 +81,17 @@ if hp <= 0 -> dead
 :after_room
 - ⬇ Спуститься глубже (риск) -> descend
 - 🧪 Выпить зелье -> drink expr="potions >= 1"
+- 💰 Купить зелье у торговца -> buy_potion cost=gold:5
+- 💪 Выломать решётку (Сила 8) -> escape requires_stat=str requires_min=8
 - 🪜 Выйти с добычей -> escape
 :drink
 potions = potions - 1
 hp = min(maxhp, hp + 6)
 Зелье возвращает силы.
+-> after_room
+:buy_potion
+potions = potions + 1
+Торговец молча протягивает склянку.
 -> after_room
 
 :escape

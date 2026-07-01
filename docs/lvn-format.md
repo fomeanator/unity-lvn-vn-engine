@@ -33,7 +33,7 @@ error**, never a silent skip (`lvnconv validate`). Targets of `goto`, `if`,
 
 | op | fields | meaning |
 |---|---|---|
-| `say` | `text` (required), `who?`, `style?` | Show a line. `who` drives the nameplate; omit for narration. |
+| `say` | `text` (required), `who?`, `style?` | Show a line. `who` drives the nameplate; omit for narration. `style` ∈ `thought` (italic) / `shout` (bold, larger) / `narration` (centred, no panel) / `whisper` (italic, faint panel); unknown resets to default. One-off formatting (colour, bold, size) goes inline via rich-text tags in `text`, e.g. `<b>…</b>`, `<color=#f33>…</color>`. |
 | `bg` | `sprite_url` (required), `id?` | Set the full-screen background. |
 | `actor` | `id` (required), `sprite_url` **or** `body_url`/`clothes_url`/`hair_url`, `show?`, `position?` (`left`/`center`/`right`), `x?`/`y?` (0..1), `width?`/`height?` (fraction of viewport), `scale?`, `emotion?`, `enter?`/`exit?`, `on_click?` (label string or `{ "goto": "label", "set": {...} }`), `hover_opacity?` (0..1) | Place / update / hide a character. Sprites are layered: a null layer url is unchanged, an empty string removes it. `on_click` makes the object a tappable hotspot. |
 | `fade` | `to` (`black`/`white`/…), `duration` | Full-screen fade. |
@@ -57,9 +57,21 @@ error**, never a silent skip (`lvnconv validate`). Targets of `goto`, `if`,
 | `return` | — | Tunnel: pop and resume after the matching `call`. |
 
 **Choice option object:** `text` (required), `goto` (target label) **or**
-`body` (inline command array, usually ending in `goto`), plus optional
-`cost` (narrative cost shown under the option), `requires_stat`/`min` (gate by
-a stat threshold), and `expr` (a boolean filter — option hidden when false).
+`body` (inline command array, usually ending in `goto`), plus optional gating:
+
+- `expr` — a boolean filter. **Hidden** gate: when it evaluates false the option
+  is dropped entirely (pure logic branching; the player never sees it).
+- `requires_stat` + `requires_min` (legacy alias `min`) — a skill check.
+  **Locked** gate: when `var(requires_stat) < requires_min` the option is still
+  shown, but greyed and non-interactive, with an auto note (`str ≥ 8`). The
+  player sees what they can't do yet (Disco-Elysium style).
+- `cost` — either a **string** (pure flavour shown under the option) or a
+  **structured** object `{ "var": "gold", "amount": 5 }` (`currency` is an
+  accepted alias for `var`, emitted by the ink/articy importers). A structured
+  cost **locks** the option when unaffordable and is **deducted from the
+  variable** when the option is chosen. `.lvns` shorthand: `cost=gold:5`.
+- `locked_text` — override the auto lock note; `hide_if_locked: true` turns a
+  failed *locked* gate back into a *hidden* one.
 
 ### State
 

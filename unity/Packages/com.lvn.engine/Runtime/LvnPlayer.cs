@@ -575,6 +575,11 @@ namespace Lvn
         {
             var key = (string)c["key"];
             if (string.IsNullOrEmpty(key)) return;
+            // `default:true` = initialise-only. A global-variable default must not
+            // overwrite a value carried in from an earlier chapter or a loaded save,
+            // so skip it when the key already holds a value.
+            if (c["default"] != null && (bool)c["default"] && Vars.ContainsKey(key))
+                return;
             if ((string)c["op"] == "inc")
             {
                 Vars[key] = new JValue(VarNum(key) + Num(c["by"], 1));

@@ -112,11 +112,14 @@ func Convert(src []byte, dialogue string) (*Doc, error) {
 	g.dlgID = prop(dlg.Properties, "Id")
 	g.doc.Scene = firstNonEmpty(prop(dlg.Properties, "TechnicalName"), prop(dlg.Properties, "DisplayName"))
 
-	// Global variables initialise at chapter start. Names stay dotted
-	// (namespace.var) — the engine's expression evaluator resolves them.
+	// Global variables initialise at chapter start — but as DEFAULTS only
+	// (`default:true`): they set the value just once, when the key doesn't exist
+	// yet, so a value carried in from an earlier chapter or a saved game isn't
+	// clobbered back to zero. Names stay dotted (namespace.var); the engine's
+	// expression evaluator resolves them.
 	for _, ns := range ex.GlobalVariables {
 		for _, v := range ns.Variables {
-			g.emit(Cmd{"op": "set", "key": ns.Namespace + "." + v.Variable, "value": varValue(v.Type, v.Value)})
+			g.emit(Cmd{"op": "set", "key": ns.Namespace + "." + v.Variable, "value": varValue(v.Type, v.Value), "default": true})
 		}
 	}
 

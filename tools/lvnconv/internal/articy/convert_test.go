@@ -63,10 +63,12 @@ func TestLabelGraphIsIntact(t *testing.T) {
 
 func TestGlobalVarsInitialiseFirst(t *testing.T) {
 	d := load(t)
-	if js(t, d.Script[0]) != `{"key":"vars.courage","op":"set","value":0}` {
+	// Global-var inits are DEFAULTS (default:true) so a value carried in from an
+	// earlier chapter / a save isn't reset to zero.
+	if js(t, d.Script[0]) != `{"default":true,"key":"vars.courage","op":"set","value":0}` {
 		t.Fatalf("vars init wrong: %s", js(t, d.Script[0]))
 	}
-	if js(t, d.Script[1]) != `{"key":"vars.met","op":"set","value":false}` {
+	if js(t, d.Script[1]) != `{"default":true,"key":"vars.met","op":"set","value":false}` {
 		t.Fatalf("vars init wrong: %s", js(t, d.Script[1]))
 	}
 }

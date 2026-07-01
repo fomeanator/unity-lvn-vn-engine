@@ -308,6 +308,10 @@ namespace Lvn.UI.Screens
             _playerName = playerName;
             _currentScriptJson = json;
             Stage.Strings = await LoadCatalogAsync(chapter.script_url); // localization (null → inline text)
+            // Carry this title's persisted stats into the chapter (relationships, route,
+            // memory flags…). The imported global defaults are `default:true`, so they
+            // don't overwrite these; a fresh game starts with an empty store.
+            Stage.SeedVars = LoadTitleVars(title?.id);
             Stage.Play(json);
             if (Stage.Player != null && !string.IsNullOrEmpty(playerName))
                 Stage.Player.Vars["player"] = playerName;
@@ -319,9 +323,42 @@ namespace Lvn.UI.Screens
                 try { await Task.Yield(); }
                 catch (OperationCanceledException) { break; }
             }
+            // Persist the chapter's ending state so the next chapter (and the next
+            // session) resume with the same stats — whether it finished or the player
+            // left mid-chapter (the loop also breaks on cancellation).
+            if (Stage.Player != null) SaveTitleVars(title?.id, Stage.Player.Vars);
             _shell.Hud.SetProgress(1, 1);
             _currentChapter = null;
             _currentTitle = null;
+        }
+
+        // ── persistent per-title variables (stats carry across chapters & sessions) ──
+        private static string VarsKey(string titleId) => "lvn_vars_" + (titleId ?? "");
+
+        private System.Collections.Generic.IReadOnlyDictionary<string, Newtonsoft.Json.Linq.JToken> LoadTitleVars(string titleId)
+        {
+            var json = PlayerPrefs.GetString(VarsKey(titleId), "");
+            if (string.IsNullOrEmpty(json)) return null;
+            try { return Newtonsoft.Json.JsonConvert.DeserializeObject<System.Collections.Generic.Dictionary<string, Newtonsoft.Json.Linq.JToken>>(json); }
+            catch { return null; }
+        }
+
+        private void SaveTitleVars(string titleId, System.Collections.Generic.IReadOnlyDictionary<string, Newtonsoft.Json.Linq.JToken> vars)
+        {
+            if (string.IsNullOrEmpty(titleId) || vars == null) return;
+            try
+            {
+                PlayerPrefs.SetString(VarsKey(titleId), Newtonsoft.Json.JsonConvert.SerializeObject(vars));
+                PlayerPrefs.Save();
+            }
+            catch (System.Exception e) { Debug.LogWarning("[novelapp] save vars failed: " + e.Message); }
+        }
+
+        // Mobile: persist stats when the app is backgrounded / quit mid-chapter.
+        private void OnApplicationPause(bool paused)
+        {
+            if (paused && Stage?.Player != null && _currentTitle != null)
+                SaveTitleVars(_currentTitle.id, Stage.Player.Vars);
         }
 
         // Server content changed: refresh the version index, re-apply the manifest

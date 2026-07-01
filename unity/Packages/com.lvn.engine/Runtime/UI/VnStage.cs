@@ -300,6 +300,13 @@ namespace Lvn.UI
             _dialogue?.SetText(string.Empty);
         }
 
+        /// <summary>Persistent variables to preload into the next chapter BEFORE it
+        /// runs (set by the host from a per-title/save store). With the imported
+        /// global-variable defaults marked `default:true`, these carried-in values
+        /// survive the chapter's init block — so relationship/route/memory stats flow
+        /// from one chapter to the next and across sessions.</summary>
+        public System.Collections.Generic.IReadOnlyDictionary<string, Newtonsoft.Json.Linq.JToken> SeedVars;
+
         /// <summary>Parse and start playing a .lvn document.</summary>
         public void Play(string lvnJson)
         {
@@ -309,6 +316,8 @@ namespace Lvn.UI
             ResetStage();
             _player = new LvnPlayer(doc, this);
             _player.Strings = Strings; // localization catalog (text_id → string), if any
+            if (SeedVars != null)      // carry stats in before the init defaults run
+                foreach (var kv in SeedVars) _player.Vars[kv.Key] = kv.Value;
             _player.OnSay += RecordSay;
             _player.Advance();
         }

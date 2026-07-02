@@ -53,6 +53,9 @@ namespace Lvn.UI.Screens
                  "Stats always work offline; the server is a durable cross-device backup.")]
         public string UserId = "";
 
+        [Tooltip("Shared secret gating this user's server saves (X-State-Key). MUST be the same on every device when UserId is a cross-device account; leave empty for a per-device secret.")]
+        public string StateKey = "";
+
         [Tooltip("Live content sync: poll the server's version endpoint this often (seconds). " +
                  "Edit a .lvn or the manifest on the server and the app reloads within one interval. " +
                  "0 disables polling.")]
@@ -93,7 +96,7 @@ namespace Lvn.UI.Screens
             // keeps stats when the server is down).
             _state = OfflineBundled
                 ? (ILvnStateStore)new LocalStateStore()
-                : new HttpStateStore(contentBase, ResolveUserId());
+                : new HttpStateStore(contentBase, ResolveUserId(), StateKey);
 
             // Connectivity gate (Liminal-style): probe the server with a hard 3s
             // deadline so an unreachable server falls straight through to the offline

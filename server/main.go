@@ -280,6 +280,16 @@ func (s *server) handleState(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "user query param required", http.StatusBadRequest)
 		return
 	}
+	// Per-blob key, trust-on-first-use: the first PUT that carries X-State-Key
+	// claims the blob (its hash is stored beside the save); every later access
+	// must present the same key. The user id travels in the URL — which proxies
+	// and access logs record — so the id alone must not be enough to read or
+	// overwrite a stranger's save. Unclaimed blobs stay open (legacy clients).
+	key := r.Header.Get("X-State-Key")
+	if !s.stateKeyOK(user, key, r.Method == http.MethodPut) {
+		http.Error(w, "state key mismatch", http.StatusUnauthorized)
+		return
+	}
 	switch r.Method {
 	case http.MethodGet:
 		entry, ok := s.loadState(user)
@@ -322,6 +332,29 @@ func (s *server) handleState(w http.ResponseWriter, r *http.Request) {
 	default:
 		http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
 	}
+}
+
+// stateKeyOK enforces the per-blob TOFU key. Rules:
+//   - blob unclaimed (no .key sidecar): GET is open; a PUT WITH a key claims
+//     the blob; a PUT without one stays legacy-open.
+//   - blob claimed: both methods require the matching key.
+func (s *server) stateKeyOK(user, key string, isPut bool) bool {
+	keyPath := s.stateFile(user) + ".key"
+	stored, err := os.ReadFile(keyPath)
+	if err != nil { // unclaimed
+		if isPut && key != "" {
+			sum := sha256.Sum256([]byte(key))
+			if werr := os.MkdirAll(filepath.Dir(keyPath), 0o755); werr == nil {
+				_ = atomicWrite(keyPath, []byte(hex.EncodeToString(sum[:])), 0o600)
+			}
+		}
+		return true
+	}
+	if key == "" {
+		return false
+	}
+	sum := sha256.Sum256([]byte(key))
+	return subtle.ConstantTimeCompare(stored, []byte(hex.EncodeToString(sum[:]))) == 1
 }
 
 // loadState returns a user's save from memory, falling back to the on-disk

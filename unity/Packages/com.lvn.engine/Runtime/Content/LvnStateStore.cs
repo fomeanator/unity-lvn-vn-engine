@@ -73,6 +73,34 @@ namespace Lvn.Content
             }
             catch (Exception e) { Debug.LogWarning("[lvn-state] local write failed: " + e.Message); }
         }
+
+        // ── sync base ────────────────────────────────────────────────────────
+        // The vars as of the LAST successful server sync. The field-level merge
+        // needs it: "which keys did THIS device change since we agreed with the
+        // server" — those keys win over the server's copy in a conflict; keys we
+        // didn't touch take the other device's values.
+
+        internal static string BaseKey(string titleId) => "lvn_state_base_" + (titleId ?? "");
+
+        internal static JObject ReadBase(string titleId)
+        {
+            try
+            {
+                var s = PlayerPrefs.GetString(BaseKey(titleId), "");
+                return string.IsNullOrEmpty(s) ? null : JObject.Parse(s);
+            }
+            catch { return null; }
+        }
+
+        internal static void WriteBase(string titleId, JObject vars)
+        {
+            try
+            {
+                PlayerPrefs.SetString(BaseKey(titleId), (vars ?? new JObject()).ToString(Newtonsoft.Json.Formatting.None));
+                PlayerPrefs.Save();
+            }
+            catch { /* base is an optimisation — merge degrades to overlay-all */ }
+        }
     }
 
     /// <summary>
@@ -104,10 +132,33 @@ namespace Lvn.Content
 
         private string VKey(string titleId) => titleId ?? "";
 
-        public HttpStateStore(string baseUrl, string userId)
+        // The per-blob secret (X-State-Key header). The user id travels in the
+        // URL, which proxies and access logs record — the key is what actually
+        // gates the blob (TOFU-claimed server-side on the first keyed PUT). An
+        // account-style host passes a shared key; otherwise a per-device secret
+        // is generated once.
+        private readonly string _key;
+
+        internal static string DeviceKey()
+        {
+            var k = PlayerPrefs.GetString("lvn_state_key", "");
+            if (string.IsNullOrEmpty(k))
+            {
+                k = Guid.NewGuid().ToString("N") + Guid.NewGuid().ToString("N");
+                PlayerPrefs.SetString("lvn_state_key", k);
+                PlayerPrefs.Save();
+            }
+            return k;
+        }
+
+        /// <param name="stateKey">Shared secret for the user's blobs. REQUIRED to
+        /// be the same across devices when <paramref name="userId"/> is an account
+        /// id used on several devices; defaults to a per-device secret.</param>
+        public HttpStateStore(string baseUrl, string userId, string stateKey = null)
         {
             _base = (baseUrl ?? "").TrimEnd('/');
             _user = string.IsNullOrEmpty(userId) ? "anon" : userId;
+            _key = string.IsNullOrEmpty(stateKey) ? DeviceKey() : stateKey;
         }
 
         private string Url(string titleId) =>
@@ -123,6 +174,8 @@ namespace Lvn.Content
                 {
                     var pick = Newer(server, local);
                     LocalStateStore.WriteDoc(titleId, pick); // keep local aligned with the winner
+                    if (ReferenceEquals(pick, server))
+                        LocalStateStore.WriteBase(titleId, LocalStateStore.Vars(server)); // in sync now
                     return LocalStateStore.Vars(pick);
                 }
             }
@@ -135,6 +188,25 @@ namespace Lvn.Content
             LocalStateStore.WriteDoc(titleId, doc); // local first — instant, offline-safe
             if (!LvnNetworkStatus.IsOffline)
                 try { await Put(titleId, doc, ct); } catch { /* stays local; reconciles later */ }
+        }
+
+        /// <summary>Field-level conflict merge: start from the OTHER device's doc
+        /// (the server's winner) and overlay only the keys THIS device changed
+        /// since it last agreed with the server — so two devices touching
+        /// different stats both keep their progress, instead of whole-blob
+        /// newer-wins throwing one side away. With no baseline (fresh install),
+        /// every local key overlays — the old behaviour.</summary>
+        internal static JObject MergeVars(JObject serverVars, JObject localVars, JObject baseVars)
+        {
+            var merged = serverVars != null ? (JObject)serverVars.DeepClone() : new JObject();
+            if (localVars == null) return merged;
+            foreach (var p in localVars.Properties())
+            {
+                var baseVal = baseVars?[p.Name];
+                if (baseVal != null && JToken.DeepEquals(baseVal, p.Value)) continue; // untouched here — theirs wins
+                merged[p.Name] = p.Value.DeepClone();
+            }
+            return merged;
         }
 
         // Pick the doc with the later updatedAt; a null side loses to a real one.
@@ -156,11 +228,23 @@ namespace Lvn.Content
             return dx > dy;
         }
 
+        private bool _keyRejectedLogged;
+
+        private void WarnKeyRejected(string what)
+        {
+            if (_keyRejectedLogged) return;
+            _keyRejectedLogged = true;
+            Debug.LogWarning("[lvn-state] " + what + ": the server blob is claimed by a different state key. " +
+                             "Multi-device accounts must share one key (HttpStateStore stateKey / NovelApp.StateKey). " +
+                             "Playing on local state.");
+        }
+
         private async Task<JObject> TryGet(string titleId, CancellationToken ct)
         {
             try
             {
                 using var req = UnityWebRequest.Get(Url(titleId));
+                req.SetRequestHeader("X-State-Key", _key);
                 req.timeout = TimeoutSeconds;
                 var op = req.SendWebRequest();
                 while (!op.isDone)
@@ -177,6 +261,7 @@ namespace Lvn.Content
                 // A real HTTP response (even a 404) proves the wire is back —
                 // recover the global flag so other subsystems resume too.
                 LvnNetworkStatus.MarkOnline("state GET ok");
+                if (req.responseCode == 401) { WarnKeyRejected("load"); return null; }
                 if (req.responseCode < 200 || req.responseCode >= 300) return null; // 404 = no save yet
                 var doc = JObject.Parse(req.downloadHandler.text);
                 if (doc["_version"] != null) // remember the OCC token for the next PUT
@@ -201,6 +286,7 @@ namespace Lvn.Content
                 req.uploadHandler = new UploadHandlerRaw(body);
                 req.downloadHandler = new DownloadHandlerBuffer();
                 req.SetRequestHeader("Content-Type", "application/json");
+                req.SetRequestHeader("X-State-Key", _key);
                 req.timeout = TimeoutSeconds;
                 var op = req.SendWebRequest();
                 while (!op.isDone)
@@ -216,15 +302,21 @@ namespace Lvn.Content
                 }
                 LvnNetworkStatus.MarkOnline("state PUT ok"); // the sync reached the server → we're online
 
+                if (req.responseCode == 401) { WarnKeyRejected("save"); return; } // stays local
+
                 if (req.responseCode == 409)
                 {
                     try
                     {
                         var resp = JObject.Parse(req.downloadHandler.text);
                         _versions[VKey(titleId)] = (long?)resp["version"] ?? 0;
-                        var winner = Newer(resp["doc"] as JObject, doc);
-                        LocalStateStore.WriteDoc(titleId, winner); // local mirrors the merge outcome
-                        doc = winner;
+                        // Field-level merge: the other device's doc wins by default;
+                        // only the keys WE changed since the last agreed sync overlay it.
+                        var serverVars = LocalStateStore.Vars(resp["doc"] as JObject);
+                        var merged = LocalStateStore.MakeDoc(MergeVars(
+                            serverVars, LocalStateStore.Vars(doc), LocalStateStore.ReadBase(titleId)));
+                        LocalStateStore.WriteDoc(titleId, merged); // local mirrors the merge outcome
+                        doc = merged;
                         continue; // one retry with the fresh version
                     }
                     catch { return; } // unparseable conflict — leave it local, reconcile next load
@@ -237,6 +329,8 @@ namespace Lvn.Content
                         if (resp["version"] != null) _versions[VKey(titleId)] = (long)resp["version"];
                     }
                     catch { /* legacy server without versions — LWW as before */ }
+                    // The server accepted this doc — it IS the agreed state now.
+                    LocalStateStore.WriteBase(titleId, LocalStateStore.Vars(doc));
                 }
                 return;
             }

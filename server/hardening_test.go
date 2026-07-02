@@ -187,6 +187,66 @@ func TestStateVersionConflict(t *testing.T) {
 	}
 }
 
+// TOFU state key: the first keyed PUT claims the blob; afterwards the id alone
+// (which leaks into proxy/access logs via the URL) is no longer enough.
+func TestStateKeyTOFU(t *testing.T) {
+	s := &server{content: t.TempDir(), state: map[string]stateEntry{}}
+	do := func(method, key, body string) *httptest.ResponseRecorder {
+		rec := httptest.NewRecorder()
+		var req *http.Request
+		if method == "PUT" {
+			req = httptest.NewRequest("PUT", "/v1/state?user=u1", strings.NewReader(body))
+		} else {
+			req = httptest.NewRequest("GET", "/v1/state?user=u1", nil)
+		}
+		if key != "" {
+			req.Header.Set("X-State-Key", key)
+		}
+		s.handleState(rec, req)
+		return rec
+	}
+
+	// Keyed PUT claims the blob.
+	if rec := do("PUT", "device-secret", `{"vars":{"g":1}}`); rec.Code != 200 {
+		t.Fatalf("claiming PUT = %d", rec.Code)
+	}
+	// Right key reads; no key / wrong key are locked out of BOTH methods.
+	if rec := do("GET", "device-secret", ""); rec.Code != 200 {
+		t.Fatalf("keyed GET = %d, want 200", rec.Code)
+	}
+	if rec := do("GET", "", ""); rec.Code != http.StatusUnauthorized {
+		t.Fatalf("keyless GET on claimed blob = %d, want 401", rec.Code)
+	}
+	if rec := do("GET", "stolen-guess", ""); rec.Code != http.StatusUnauthorized {
+		t.Fatalf("wrong-key GET = %d, want 401", rec.Code)
+	}
+	if rec := do("PUT", "stolen-guess", `{"vars":{"g":666}}`); rec.Code != http.StatusUnauthorized {
+		t.Fatalf("wrong-key PUT = %d, want 401", rec.Code)
+	}
+	// The failed overwrite really was rejected.
+	rec := do("GET", "device-secret", "")
+	if !strings.Contains(rec.Body.String(), `"g":1`) {
+		t.Fatalf("claimed blob was overwritten: %s", rec.Body.String())
+	}
+}
+
+// An unclaimed blob keeps working for legacy clients that send no key.
+func TestStateKeyLegacyOpen(t *testing.T) {
+	s := &server{content: t.TempDir(), state: map[string]stateEntry{}}
+	rec := httptest.NewRecorder()
+	req := httptest.NewRequest("PUT", "/v1/state?user=old", strings.NewReader(`{"vars":{"g":1}}`))
+	s.handleState(rec, req)
+	if rec.Code != 200 {
+		t.Fatalf("legacy keyless PUT = %d", rec.Code)
+	}
+	rec = httptest.NewRecorder()
+	req = httptest.NewRequest("GET", "/v1/state?user=old", nil)
+	s.handleState(rec, req)
+	if rec.Code != 200 {
+		t.Fatalf("legacy keyless GET = %d", rec.Code)
+	}
+}
+
 // Legacy on-disk saves (raw client JSON, pre-versioning) read as version 0 and
 // upgrade transparently on the next write.
 func TestStateLegacyDiskFileMigrates(t *testing.T) {

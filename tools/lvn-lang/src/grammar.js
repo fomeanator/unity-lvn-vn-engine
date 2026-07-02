@@ -6,8 +6,8 @@ export const DIRECTIVES = ["scene", "actor_map"];
 
 export const OPS = [
   "say", "choice", "bg", "actor", "obj", "fade", "dim", "flash", "tint", "blur",
-  "camera", "particles", "audio", "wait", "preload", "text_pace",
-  "goto", "if", "set", "inc", "hint", "call", "return",
+  "camera", "particles", "audio", "wait", "preload", "text_pace", "text", "anim",
+  "goto", "if", "set", "inc", "hint", "call", "return", "save", "load",
 ];
 
 export const OP_FIELDS = {
@@ -18,6 +18,9 @@ export const OP_FIELDS = {
   tint: ["color", "alpha", "duration"], blur: ["alpha", "duration"],
   camera: ["action", "amplitude", "factor", "x", "y", "duration"], particles: ["type", "on"],
   audio: ["channel", "url", "action"], wait: ["ms"], text_pace: ["cps"],
+  text: ["id", "text", "hide", "x", "y", "anchor", "size", "color", "font"],
+  anim: ["id", "anim", "stop", "channel", "mode"],
+  save: ["slot"], load: ["slot"],
   if: ["expr", "then", "else"], set: ["key", "value", "expr"], inc: ["key", "by"], hint: ["text", "show"],
 };
 
@@ -37,7 +40,7 @@ export const OP_DOCS = {
   scene: ["scene <name>", "Chapter id at the top of the file."],
   actor_map: ["actor_map Display=asset_id", "Map a speaker name to a sprite id."],
   say: ["Name: text · Name [emo]: text", "A line of dialogue (narration if no name)."],
-  choice: ["- Text -> label", "Branching options — one '-' line per choice."],
+  choice: ["- Text -> label  [cost= min= requires_stat=]", "Branching options — one '-' line each; optional cost/min/requires_stat gate an option."],
   bg: ['bg sprite_url="…" | id="…"', "Set the background image."],
   actor: ['actor id="x" show=true position="left" emotion="happy"', "Show, place and emote a character."],
   obj: ['obj id="x" sprite_url="…" x= y= on_click="label"', "A placeable, optionally clickable sprite."],
@@ -59,6 +62,10 @@ export const OP_DOCS = {
   hint: ['hint text="…" show=true', "Show or hide a hint."],
   call: ["call label", "Jump to a label, remembering where to return."],
   return: ["return", "Return to the matching call."],
+  text: ['text id="hp" text="{hp} HP" x= y= anchor="top-left"', "A reactive on-screen label (HUD/stat); text hide=true removes it."],
+  anim: ['anim id="x" anim={…}  ·  anim id="x" stop="all"', "Play or stop a script-driven tween on an entity."],
+  save: ['save slot="quick"', "Snapshot the current state to a slot."],
+  load: ['load slot="quick"', "Restore state from a slot."],
 };
 
 // Multi-field templates. `$1`,`$2`,… are tab-stops; `$0` is the final caret.

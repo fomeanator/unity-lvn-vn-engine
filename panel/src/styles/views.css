@@ -815,14 +815,19 @@ body.col-resizing { cursor: col-resize; user-select: none; }
 }
 .qo-list { max-height: 46vh; overflow-y: auto; padding: 6px; }
 .qo-item {
-  display: flex; gap: 10px; align-items: baseline;
+  display: flex; gap: 12px; align-items: center;
   width: 100%; text-align: left;
-  padding: 9px 12px; border: 0; border-radius: 8px;
+  padding: 8px 12px; border: 0; border-radius: 8px;
   background: transparent; color: var(--ink, #efe9dc);
   cursor: pointer; font-size: 14px;
 }
 .qo-item.active { background: rgba(255, 255, 255, 0.08); }
 .qo-item.current .qo-item-id { color: var(--rose, #e8a0a0); }
-.qo-item-id { font-family: var(--mono, monospace); opacity: 0.95; }
-.qo-item-name { opacity: 0.62; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* The id:line locator is a fixed, never-wrapping column — results align in a
+   clean grid instead of each row ragging at its own width. */
+.qo-item-id {
+  font-family: var(--mono, monospace); font-size: 12.5px; opacity: 0.9;
+  white-space: nowrap; flex-shrink: 0; min-width: 148px;
+}
+.qo-item-name { flex: 1; opacity: 0.62; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .qo-empty { padding: 14px; opacity: 0.55; font-size: 13px; }

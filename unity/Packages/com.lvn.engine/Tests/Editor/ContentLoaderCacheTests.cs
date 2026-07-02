@@ -31,6 +31,46 @@ namespace Lvn.Tests
         }
 
         [Test]
+        public void PickEvictions_OldestFirstUntilUnderBudget()
+        {
+            const long MB = 1 << 20;
+            var entries = new System.Collections.Generic.List<(string, long, long, float)>
+            {
+                ("old-a", 10 * MB, 1, 0f),
+                ("old-b", 10 * MB, 2, 0f),
+                ("newer", 10 * MB, 3, 0f),
+            };
+            // Budget 15MB, total 30MB, all past grace → evict the two oldest.
+            var evict = ContentLoader.PickEvictions(entries, 15 * MB, 1000f, 60f);
+            CollectionAssert.AreEqual(new[] { "old-a", "old-b" }, evict);
+        }
+
+        [Test]
+        public void PickEvictions_GraceProtectsRecentlyUsed()
+        {
+            const long MB = 1 << 20;
+            var entries = new System.Collections.Generic.List<(string, long, long, float)>
+            {
+                ("visible-bg", 20 * MB, 1, 995f), // requested 5s ago — on screen
+                ("stale",      20 * MB, 2, 0f),
+            };
+            var evict = ContentLoader.PickEvictions(entries, 25 * MB, 1000f, 60f);
+            CollectionAssert.AreEqual(new[] { "stale" }, evict,
+                "recently-requested art is never evicted, even if it's the oldest by sequence");
+        }
+
+        [Test]
+        public void PickEvictions_UnderBudgetEvictsNothing()
+        {
+            const long MB = 1 << 20;
+            var entries = new System.Collections.Generic.List<(string, long, long, float)>
+            {
+                ("a", 5 * MB, 1, 0f), ("b", 5 * MB, 2, 0f),
+            };
+            CollectionAssert.IsEmpty(ContentLoader.PickEvictions(entries, 100 * MB, 1000f, 60f));
+        }
+
+        [Test]
         public void HashKey_IsDeterministic()
         {
             var a = ContentLoader.HashKey("/content/bg/porch.jpg", null);

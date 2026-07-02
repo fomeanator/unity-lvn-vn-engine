@@ -152,9 +152,32 @@ namespace Lvn.Content
         private readonly Dictionary<string, int> _attempts = new();
 
         // Session-scoped sprite cache. Sprites are keyed by URL so the same
-        // background or portrait is decoded once per session — prevents a new
-        // Texture2D being allocated every time the same asset is requested.
-        private readonly Dictionary<string, Sprite> _spriteCache = new();
+        // background or portrait is decoded once — and BOUNDED: full-res RGBA32
+        // decodes are big (a 1080p background ≈ 8 MB), so an unbounded cache is an
+        // OOM on a large title. Over budget, the least-recently-requested entries
+        // are destroyed — except anything touched within the grace window, which
+        // is how "probably still on screen" art is protected without a pin API.
+        private sealed class SpriteEntry
+        {
+            public Sprite Sprite;
+            public long Bytes;
+            public long Seq;   // request recency (monotonic)
+            public float At;   // request time (realtime seconds)
+        }
+
+        private readonly Dictionary<string, SpriteEntry> _spriteCache = new();
+        private readonly Dictionary<string, Task<Sprite>> _decoding = new();
+        private long _spriteSeq;
+        private long _spriteBytes;
+
+        /// <summary>Decoded-sprite memory budget. Over it, the least-recently-used
+        /// sprites are evicted (grace-protected — see <see cref="SpriteEvictionGraceSeconds"/>).
+        /// Tune down for low-memory targets.</summary>
+        public static long SpriteCacheBudgetBytes = 384L << 20;
+
+        /// <summary>Entries requested within this window are never evicted — art
+        /// requested recently is very likely still on screen.</summary>
+        public static float SpriteEvictionGraceSeconds = 60f;
         public int AttemptOf(string url) =>
             url != null && _attempts.TryGetValue(url, out var n) ? n : 1;
 
@@ -209,6 +232,23 @@ namespace Lvn.Content
             _assetCacheDir = Path.Combine(cacheRoot, "assets");
             Directory.CreateDirectory(_scriptCacheDir);
             Directory.CreateDirectory(_assetCacheDir);
+            SweepStaleParts();
+        }
+
+        // Resume files (.part) enable interrupted downloads to continue — but one
+        // abandoned mid-download (its version has moved on, so its cache key will
+        // never be requested again) would sit on disk forever. Sweep any not
+        // touched for a week; a live download re-creates its .part instantly.
+        private void SweepStaleParts()
+        {
+            try
+            {
+                var cutoff = DateTime.UtcNow.AddDays(-7);
+                foreach (var f in new DirectoryInfo(_assetCacheDir).GetFiles("*.part"))
+                    if (f.LastWriteTimeUtc < cutoff)
+                        try { f.Delete(); } catch { }
+            }
+            catch { /* best-effort housekeeping */ }
         }
 
         /// <summary>Lightweight connectivity probe: GET <c>&lt;baseUrl&gt;/healthz</c>.
@@ -465,36 +505,116 @@ namespace Lvn.Content
             DownloadBytes(assetUrl, _assetCacheDir, ct);
 
         /// <summary>Loads (or fetches and caches) the URL, decodes the bytes into
-        /// a texture, and wraps it as a Sprite. Returns null on missing data. The
-        /// sprite is cached by URL for the session so the same asset is decoded
-        /// exactly once, regardless of how many views request it.</summary>
-        public async Task<Sprite> DownloadSpriteAsync(string url, CancellationToken ct = default)
+        /// a texture, and wraps it as a Sprite. Returns null on missing data.
+        /// Concurrent requests for the same url share ONE decode (no leaked
+        /// Texture2D from a lost race), and the cache is LRU-bounded by
+        /// <see cref="SpriteCacheBudgetBytes"/>.</summary>
+        public Task<Sprite> DownloadSpriteAsync(string url, CancellationToken ct = default)
         {
-            if (string.IsNullOrEmpty(url)) return null;
+            if (string.IsNullOrEmpty(url)) return Task.FromResult<Sprite>(null);
             lock (_spriteCache)
             {
-                if (_spriteCache.TryGetValue(url, out var hit) && hit != null) return hit;
+                if (_spriteCache.TryGetValue(url, out var hit) && hit.Sprite != null)
+                {
+                    Touch(hit);
+                    return Task.FromResult(hit.Sprite);
+                }
+                // Someone is already decoding this url — share their result instead
+                // of decoding a second texture and leaking the loser.
+                if (_decoding.TryGetValue(url, out var inflight)) return inflight;
+                var task = DecodeSpriteAsync(url, ct);
+                _decoding[url] = task;
+                return task;
             }
-            var bytes = await DownloadAssetBytes(url, ct);
-            if (bytes == null || bytes.Length == 0) return null;
-            // Another concurrent download of the same url may have finished and
-            // already filled the cache while we were awaiting.
-            lock (_spriteCache)
+        }
+
+        private async Task<Sprite> DecodeSpriteAsync(string url, CancellationToken ct)
+        {
+            try
             {
-                if (_spriteCache.TryGetValue(url, out var hit) && hit != null) return hit;
+                var bytes = await DownloadAssetBytes(url, ct);
+                if (bytes == null || bytes.Length == 0) return null;
+                var tex = new Texture2D(2, 2, TextureFormat.RGBA32, mipChain: false);
+                if (!tex.LoadImage(bytes))
+                {
+                    UnityEngine.Object.Destroy(tex);
+                    return null;
+                }
+                tex.wrapMode   = TextureWrapMode.Clamp;
+                tex.filterMode = FilterMode.Bilinear;
+                tex.Apply(updateMipmaps: false, makeNoLongerReadable: false);
+                var sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100f);
+
+                List<SpriteEntry> victims;
+                lock (_spriteCache)
+                {
+                    var e = new SpriteEntry { Sprite = sprite, Bytes = (long)tex.width * tex.height * 4 };
+                    Touch(e);
+                    _spriteCache[url] = e;
+                    _spriteBytes += e.Bytes;
+                    victims = EvictOverBudgetLocked();
+                }
+                foreach (var v in victims) DestroySprite(v.Sprite);
+                return sprite;
             }
-            var tex = new Texture2D(2, 2, TextureFormat.RGBA32, mipChain: false);
-            if (!tex.LoadImage(bytes))
+            finally
             {
-                UnityEngine.Object.Destroy(tex);
-                return null;
+                lock (_spriteCache) _decoding.Remove(url);
             }
-            tex.wrapMode   = TextureWrapMode.Clamp;
-            tex.filterMode = FilterMode.Bilinear;
-            tex.Apply(updateMipmaps: false, makeNoLongerReadable: false);
-            var sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100f);
-            lock (_spriteCache) { _spriteCache[url] = sprite; }
-            return sprite;
+        }
+
+        private void Touch(SpriteEntry e)
+        {
+            e.Seq = ++_spriteSeq;
+            e.At = Time.realtimeSinceStartup;
+        }
+
+        // Must run under the _spriteCache lock. Returns the evicted entries so the
+        // caller destroys their textures OUTSIDE the lock.
+        private List<SpriteEntry> EvictOverBudgetLocked()
+        {
+            var victims = new List<SpriteEntry>();
+            if (_spriteBytes <= SpriteCacheBudgetBytes) return victims;
+            float now = Time.realtimeSinceStartup;
+            foreach (var url in PickEvictions(
+                         SnapshotLocked(), SpriteCacheBudgetBytes, now, SpriteEvictionGraceSeconds))
+            {
+                if (!_spriteCache.TryGetValue(url, out var e)) continue;
+                _spriteCache.Remove(url);
+                _spriteBytes -= e.Bytes;
+                victims.Add(e);
+            }
+            return victims;
+        }
+
+        private List<(string url, long bytes, long seq, float at)> SnapshotLocked()
+        {
+            var list = new List<(string, long, long, float)>(_spriteCache.Count);
+            foreach (var kv in _spriteCache)
+                list.Add((kv.Key, kv.Value.Bytes, kv.Value.Seq, kv.Value.At));
+            return list;
+        }
+
+        /// <summary>Pure eviction policy, exposed for tests: evict oldest-requested
+        /// first until the total fits the budget, skipping anything requested within
+        /// the grace window (it's very likely still on screen).</summary>
+        internal static List<string> PickEvictions(
+            List<(string url, long bytes, long seq, float at)> entries,
+            long budgetBytes, float now, float graceSeconds)
+        {
+            var evict = new List<string>();
+            long total = 0;
+            foreach (var e in entries) total += e.bytes;
+            if (total <= budgetBytes) return evict;
+            entries.Sort((a, b) => a.seq.CompareTo(b.seq)); // oldest request first
+            foreach (var e in entries)
+            {
+                if (total <= budgetBytes) break;
+                if (now - e.at < graceSeconds) continue; // recently used — protected
+                evict.Add(e.url);
+                total -= e.bytes;
+            }
+            return evict;
         }
 
         /// <summary>Synchronous in-memory lookup — returns true (and the sprite)
@@ -507,7 +627,12 @@ namespace Lvn.Content
             sprite = null;
             if (string.IsNullOrEmpty(url)) return false;
             lock (_spriteCache)
-                return _spriteCache.TryGetValue(url, out sprite) && sprite != null;
+            {
+                if (!_spriteCache.TryGetValue(url, out var e) || e.Sprite == null) return false;
+                Touch(e);
+                sprite = e.Sprite;
+                return true;
+            }
         }
 
         /// <summary>Releases the in-memory sprite cached for a single url and
@@ -516,13 +641,34 @@ namespace Lvn.Content
         public void Unload(string url)
         {
             if (string.IsNullOrEmpty(url)) return;
-            Sprite sprite;
+            SpriteEntry entry;
             lock (_spriteCache)
             {
-                if (!_spriteCache.TryGetValue(url, out sprite)) return;
+                if (!_spriteCache.TryGetValue(url, out entry)) return;
                 _spriteCache.Remove(url);
+                _spriteBytes -= entry.Bytes;
             }
-            DestroySprite(sprite);
+            DestroySprite(entry.Sprite);
+        }
+
+        /// <summary>Releases every cached sprite whose url matches — e.g. a chapter's
+        /// art/backgrounds on chapter exit, keeping UI covers/skins warm.</summary>
+        public void UnloadWhere(Func<string, bool> match)
+        {
+            if (match == null) return;
+            var victims = new List<SpriteEntry>();
+            lock (_spriteCache)
+            {
+                var keys = new List<string>(_spriteCache.Keys);
+                foreach (var k in keys)
+                {
+                    if (!match(k)) continue;
+                    victims.Add(_spriteCache[k]);
+                    _spriteBytes -= _spriteCache[k].Bytes;
+                    _spriteCache.Remove(k);
+                }
+            }
+            foreach (var v in victims) DestroySprite(v.Sprite);
         }
 
         /// <summary>Releases every in-memory sprite and destroys its texture. Call
@@ -530,13 +676,14 @@ namespace Lvn.Content
         /// untouched.</summary>
         public void UnloadAll()
         {
-            List<Sprite> sprites;
+            List<SpriteEntry> entries;
             lock (_spriteCache)
             {
-                sprites = new List<Sprite>(_spriteCache.Values);
+                entries = new List<SpriteEntry>(_spriteCache.Values);
                 _spriteCache.Clear();
+                _spriteBytes = 0;
             }
-            foreach (var s in sprites) DestroySprite(s);
+            foreach (var e in entries) DestroySprite(e.Sprite);
         }
 
         private static void DestroySprite(Sprite sprite)

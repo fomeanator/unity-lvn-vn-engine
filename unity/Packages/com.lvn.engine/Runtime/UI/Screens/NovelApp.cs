@@ -359,6 +359,10 @@ namespace Lvn.UI.Screens
             _shell.Hud.SetProgress(1, 1);
             _currentChapter = null;
             _currentTitle = null;
+            // Free the finished chapter's decoded art (a chapter can hold dozens of
+            // full-res RGBA sprites). UI art — covers, theme skins under ui/ — stays
+            // warm; the disk cache is intact so the next entry re-decodes quickly.
+            _assets.Loader.UnloadWhere(u => u.Contains("/art/") || u.Contains("/bg/"));
         }
 
         // The save identity for /v1/state. An explicit UserId (an account) wins; else

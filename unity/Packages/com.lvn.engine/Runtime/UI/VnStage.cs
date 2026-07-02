@@ -295,6 +295,41 @@ namespace Lvn.UI
         /// tap handling) while an overlay is up.</summary>
         public bool InputBlocked;
 
+        // ── look-ahead prefetch ──────────────────────────────────────────────
+        // While the player reads a line, warm the assets the next few beats will
+        // show — the decode happens during the pause, so a cold bg/portrait never
+        // pops in a frame late mid-scene. Bounded per beat (the sprite cache and
+        // in-flight dedup make repeats free); the set resets with the stage.
+        private readonly HashSet<string> _prefetched = new HashSet<string>();
+
+        private void PrefetchAhead()
+        {
+            if (_player == null || Assets == null) return;
+            const int lookAhead = 25, maxSprites = 6, maxAudio = 2;
+            List<string> sprites = null, audio = null;
+            foreach (var c in _player.PeekForward(lookAhead))
+            {
+                var op = (string)c["op"];
+                if (op == "bg" || op == "actor" || op == "obj")
+                {
+                    var url = (string)c["sprite_url"];
+                    if (string.IsNullOrEmpty(url) || !_prefetched.Add(url)) continue;
+                    (sprites ??= new List<string>()).Add(url);
+                }
+                else if (op == "audio")
+                {
+                    var url = (string)c["url"];
+                    if (string.IsNullOrEmpty(url) || !_prefetched.Add(url)) continue;
+                    (audio ??= new List<string>()).Add(url);
+                }
+                if ((sprites?.Count ?? 0) >= maxSprites && (audio?.Count ?? 0) >= maxAudio) break;
+            }
+            if (sprites != null && sprites.Count > maxSprites) sprites.RemoveRange(maxSprites, sprites.Count - maxSprites);
+            if (audio != null && audio.Count > maxAudio) audio.RemoveRange(maxAudio, audio.Count - maxAudio);
+            if (sprites != null) _ = Assets.PreloadAsync(sprites, "sprite", _cts.Token);
+            if (audio != null) _ = Assets.PreloadAsync(audio, "audio", _cts.Token);
+        }
+
         private void AutoAdvanceTick()
         {
             if (!LvnPrefs.AutoAdvance || InputBlocked
@@ -404,6 +439,7 @@ namespace Lvn.UI
             _fx?.ClearBlur(0f);
             _camera?.Reset(0f);
             _backlog.Clear();
+            _prefetched.Clear(); // the next chapter/load re-warms from scratch
             _awaitingTap = false;
             _awaitingWait = false;
             _sayUp = false;
@@ -559,6 +595,7 @@ namespace Lvn.UI
             _awaitingTap = true;
             _sayUp = true;
             _curChoices = null;
+            PrefetchAhead(); // warm the next beats' art/audio while the player reads
 
             // Classic VN focus: the speaker is at full opacity, everyone else present
             // dims — so a two-shot reads as "this one is talking" instead of a flat row.

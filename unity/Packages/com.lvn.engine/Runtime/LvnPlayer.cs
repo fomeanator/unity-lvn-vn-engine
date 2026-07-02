@@ -218,6 +218,19 @@ namespace Lvn
         /// save, where the recorded beats no longer describe the path taken.</summary>
         public void ClearHistory() => _history.Clear();
 
+        /// <summary>The next <paramref name="maxCommands"/> commands ahead of the
+        /// cursor, in script order (a linear look-ahead — jumps are not followed).
+        /// The stage uses it to warm the art/audio the scene is about to need, so
+        /// a cold sprite never pops in mid-line.</summary>
+        public IEnumerable<JObject> PeekForward(int maxCommands)
+        {
+            if (_script == null) yield break;
+            int end = System.Math.Min(_ip + maxCommands, _script.Count);
+            for (int i = System.Math.Max(_ip, 0); i < end; i++)
+                if (_script[i] is JObject c)
+                    yield return c;
+        }
+
         private void PushHistory()
         {
             // A re-presented beat (a tap while the same choice is up, a re-render)

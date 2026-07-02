@@ -322,15 +322,20 @@ namespace Lvn.Content
             try
             {
                 var bytes = await FetchOnce(scriptUrl, ct);
-                try { await WriteAllBytesAsync(path, bytes, ct); } catch { /* cache write best-effort */ }
+                try
+                {
+                    await WriteAllBytesAsync(path, bytes, ct);
+                    await WriteScriptUrlSidecar(path, scriptUrl, ct);
+                }
+                catch { /* cache write best-effort */ }
                 return Encoding.UTF8.GetString(bytes);
             }
             catch (OperationCanceledException) { throw; }
             catch
             {
-                // Offline and not cached for this version. Last resort: any
-                // previously cached version of the same url (older but playable).
-                var stale = NewestCachedScript();
+                // Offline and not cached for this version. Last resort: a previously
+                // cached version OF THE SAME url (older but the right chapter).
+                var stale = NewestCachedScript(scriptUrl);
                 if (stale != null)
                 {
                     try { return await ReadAllTextAsync(stale, ct); } catch { }
@@ -358,26 +363,53 @@ namespace Lvn.Content
                 if (File.Exists(path)) return; // newest version already cached
                 var bytes = await FetchOnce(scriptUrl, CancellationToken.None);
                 await WriteAllBytesAsync(path, bytes, CancellationToken.None);
+                await WriteScriptUrlSidecar(path, scriptUrl, CancellationToken.None);
                 Debug.Log($"[content] script cache refreshed: {scriptUrl}");
             }
             catch { /* best-effort background refresh */ }
         }
 
-        // Finds the most recently written cached script (the version-folded key
-        // embeds the hash, so different versions are different files). Used as an
-        // offline fallback.
-        private string NewestCachedScript()
+        // Finds the most recently written cached version OF THE SAME script url —
+        // the offline fallback. The version-folded filename (sha1(url@version))
+        // can't be reversed, so each cached script is written with a `.url` sidecar
+        // holding its plain url; we only accept a `.txt` whose sidecar matches the
+        // requested url. Without this the fallback returned whatever chapter was
+        // cached most recently — silently dropping the player into the wrong
+        // chapter and saving the wrong ending. Returns null (→ Unavailable) rather
+        // than ever serving a different script.
+        private string NewestCachedScript(string scriptUrl)
         {
+            if (string.IsNullOrEmpty(scriptUrl)) return null;
             try
             {
                 var dir = new DirectoryInfo(_scriptCacheDir);
                 if (!dir.Exists) return null;
                 FileInfo newest = null;
                 foreach (var f in dir.GetFiles("*.txt"))
+                {
+                    var sidecar = Path.ChangeExtension(f.FullName, ".url");
+                    string cachedUrl = null;
+                    try { if (File.Exists(sidecar)) cachedUrl = File.ReadAllText(sidecar).Trim(); }
+                    catch { }
+                    if (cachedUrl != scriptUrl) continue; // different (or legacy, un-tagged) script
                     if (newest == null || f.LastWriteTimeUtc > newest.LastWriteTimeUtc) newest = f;
+                }
                 return newest?.FullName;
             }
             catch { return null; }
+        }
+
+        // Records the plain url of a just-cached script beside its version-folded
+        // cache file, so the offline fallback can match cached versions to the
+        // requested url (see NewestCachedScript).
+        private static async Task WriteScriptUrlSidecar(string scriptPath, string scriptUrl, CancellationToken ct)
+        {
+            try
+            {
+                await WriteAllBytesAsync(Path.ChangeExtension(scriptPath, ".url"),
+                    Encoding.UTF8.GetBytes(scriptUrl), ct);
+            }
+            catch { /* sidecar is best-effort; a missing one just disables offline fallback for this file */ }
         }
 
         public Task<byte[]> DownloadAssetBytes(string assetUrl, CancellationToken ct = default) =>
@@ -674,12 +706,10 @@ namespace Lvn.Content
                 var capBody = body;
                 await diskTask;
                 diskTask = capBody != null
-                    ? Task.Run(() =>
-                    {
-                        Directory.CreateDirectory(Path.GetDirectoryName(capPath));
-                        if (File.Exists(capPath)) File.Delete(capPath);
-                        File.WriteAllBytes(capPath, capBody);
-                    }, CancellationToken.None)
+                    // Write atomically (staged temp + move): a crash mid-write must
+                    // not leave a truncated .bin, which File.Exists would then treat
+                    // as a valid cache entry forever (permanent boot-art corruption).
+                    ? Task.Run(() => AtomicWriteAllBytes(capPath, capBody), CancellationToken.None)
                     : Task.CompletedTask;
 
                 lock (_inflight) BatchDone++;
@@ -1195,11 +1225,31 @@ namespace Lvn.Content
 
         private static async Task WriteAllBytesAsync(string path, byte[] bytes, CancellationToken ct)
         {
-#if UNITY_2021_2_OR_NEWER
-            await File.WriteAllBytesAsync(path, bytes, ct);
-#else
-            await Task.Run(() => File.WriteAllBytes(path, bytes), ct);
-#endif
+            // Always atomic — a half-written cache file is worse than none (File.Exists
+            // would treat the truncated file as valid on the next run).
+            await Task.Run(() => AtomicWriteAllBytes(path, bytes), ct);
+        }
+
+        // Atomic write: stage to a unique temp file in the same directory, then move
+        // it into place (mirrors the .part → File.Move pattern DownloadBytes uses).
+        // The destination path therefore only ever holds a complete file — never a
+        // truncated one from an interrupted write.
+        internal static void AtomicWriteAllBytes(string path, byte[] bytes)
+        {
+            var dir = Path.GetDirectoryName(path);
+            if (!string.IsNullOrEmpty(dir)) Directory.CreateDirectory(dir);
+            var tmp = path + ".tmp-" + Guid.NewGuid().ToString("N");
+            try
+            {
+                File.WriteAllBytes(tmp, bytes);
+                if (File.Exists(path)) File.Delete(path);
+                File.Move(tmp, path);
+            }
+            catch
+            {
+                try { if (File.Exists(tmp)) File.Delete(tmp); } catch { }
+                throw;
+            }
         }
     }
 

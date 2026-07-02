@@ -1,3 +1,6 @@
+using System.IO;
+using System.Linq;
+using System.Text;
 using Lvn.Content;
 using NUnit.Framework;
 
@@ -5,6 +8,28 @@ namespace Lvn.Tests
 {
     public class ContentLoaderCacheTests
     {
+        [Test]
+        public void AtomicWrite_WritesContentAndLeavesNoTemp()
+        {
+            var dir = Path.Combine(Path.GetTempPath(), "lvn-atomic-" + System.Guid.NewGuid().ToString("N"));
+            Directory.CreateDirectory(dir);
+            try
+            {
+                var path = Path.Combine(dir, "cache.bin");
+                ContentLoader.AtomicWriteAllBytes(path, Encoding.UTF8.GetBytes("hello"));
+                Assert.AreEqual("hello", File.ReadAllText(path));
+
+                // Overwrite must replace the content, not append or fail.
+                ContentLoader.AtomicWriteAllBytes(path, Encoding.UTF8.GetBytes("world!!"));
+                Assert.AreEqual("world!!", File.ReadAllText(path));
+
+                // No staging temp files may be left behind.
+                var leftovers = Directory.GetFiles(dir).Where(f => f.Contains(".tmp-")).ToArray();
+                CollectionAssert.IsEmpty(leftovers, "atomic write left a temp file behind");
+            }
+            finally { Directory.Delete(dir, true); }
+        }
+
         [Test]
         public void HashKey_IsDeterministic()
         {

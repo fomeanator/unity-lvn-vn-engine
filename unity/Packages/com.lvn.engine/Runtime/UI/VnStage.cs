@@ -175,6 +175,10 @@ namespace Lvn.UI
 
             root.pickingMode = PickingMode.Position;
             root.RegisterCallback<PointerDownEvent>(OnPointerDown);
+            root.RegisterCallback<PointerMoveEvent>(OnPointerMove);
+            root.RegisterCallback<PointerUpEvent>(OnPointerUp);
+            root.RegisterCallback<PointerCancelEvent>(_ => OnPointerCancelled());
+            root.RegisterCallback<PointerCaptureOutEvent>(_ => OnPointerCancelled());
             // Desktop convenience (the Ren'Py convention): wheel-up steps back one beat.
             root.RegisterCallback<WheelEvent>(evt =>
             {
@@ -356,7 +360,7 @@ namespace Lvn.UI
 
         private void AutoAdvanceTick()
         {
-            if (!LvnPrefs.AutoAdvance || InputBlocked
+            if (!LvnPrefs.AutoAdvance || InputBlocked || _chromeHidden
                 || _player == null || _player.Finished || _player.AtChoice
                 || !_awaitingTap || _awaitingWait
                 || _dialogue == null || _dialogue.IsRevealing)
@@ -463,6 +467,7 @@ namespace Lvn.UI
             _fx?.ClearBlur(0f);
             _backlog.Clear();
             _prefetched.Clear(); // the next chapter/load re-warms from scratch
+            SetChromeHidden(false); // never carry a hidden UI across a reset
             _awaitingTap = false;
             _awaitingWait = false;
             _sayUp = false;
@@ -526,9 +531,87 @@ namespace Lvn.UI
             return true;
         }
 
+        // ── press handling: tap advances, a LONG press hides the UI ─────────
+        // The genre staple: hold anywhere and the whole chrome (dialogue box,
+        // choices, HUD labels, quick menu — and the shell HUD via the event)
+        // fades away so the player can admire the art; release brings it back,
+        // and that release never counts as a tap. Because a press can now mean
+        // two things, the tap action fires on POINTER UP, not down.
+
+        private const long LongPressMs = 450;
+        private const float PressDriftSq = 400f; // ~20px of drift cancels tap & hold
+
+        private bool _chromeHidden;
+        private bool _pressTracking, _suppressTap;
+        private Vector2 _pressPos;
+        private IVisualElementScheduledItem _longPress;
+
+        /// <summary>Raised when the long-press art view hides/shows the chrome —
+        /// the host mirrors it onto its own HUD.</summary>
+        public event Action<bool> ChromeHiddenChanged;
+
+        private void SetChromeHidden(bool hidden)
+        {
+            if (_chromeHidden == hidden) return;
+            _chromeHidden = hidden;
+            var vis = hidden ? Visibility.Hidden : Visibility.Visible;
+            if (_dialogue != null) _dialogue.style.visibility = vis;
+            if (_choices != null) _choices.style.visibility = vis;
+            if (_labelLayer != null) _labelLayer.style.visibility = vis;
+            if (_menu != null) _menu.style.visibility = vis;
+            ChromeHiddenChanged?.Invoke(hidden);
+        }
+
         private void OnPointerDown(PointerDownEvent evt)
         {
             if (InputBlocked) return; // an overlay (quick menu) owns the screen
+            if (_player == null || _player.Finished) return;
+            if (_awaitingWait) return;
+            if (evt.target is Button) return; // buttons (choices etc.) own their press
+
+            _pressTracking = true;
+            _suppressTap = false;
+            _pressPos = evt.position;
+            _longPress?.Pause();
+            _longPress = _uiRoot?.schedule.Execute(() =>
+            {
+                if (!_pressTracking) return;
+                _suppressTap = true;      // this press is an art view, not a tap
+                SetChromeHidden(true);
+            });
+            _longPress?.ExecuteLater(LongPressMs);
+        }
+
+        private void OnPointerMove(PointerMoveEvent evt)
+        {
+            if (!_pressTracking) return;
+            if (((Vector2)evt.position - _pressPos).sqrMagnitude <= PressDriftSq) return;
+            _suppressTap = true; // a drag is neither a tap nor a hold
+            _longPress?.Pause();
+        }
+
+        private void OnPointerUp(PointerUpEvent evt)
+        {
+            bool wasTracking = _pressTracking;
+            _pressTracking = false;
+            _longPress?.Pause();
+
+            if (_chromeHidden) { SetChromeHidden(false); return; } // release restores, swallows the tap
+            if (!wasTracking || _suppressTap) return;
+            HandleTap(evt.position);
+        }
+
+        private void OnPointerCancelled()
+        {
+            // Touch cancelled / capture lost mid-hold — never strand a hidden UI.
+            _pressTracking = false;
+            _longPress?.Pause();
+            SetChromeHidden(false);
+        }
+
+        private void HandleTap(Vector2 pos)
+        {
+            if (InputBlocked) return;
             if (_player == null || _player.Finished) return;
             if (_awaitingWait) return;
 
@@ -541,7 +624,6 @@ namespace Lvn.UI
             // not advance/re-print the room). Hotspots win over tap-to-advance.
             if (_hotspots.Count > 0 && _uiRoot != null)
             {
-                Vector2 pos = evt.position; // event-driven → works with mouse, touch & Simulator
                 float pw = _uiRoot.layout.width, ph = _uiRoot.layout.height;
                 var hit = HotspotAt(pos, pw, ph);
                 if (hit != null)

@@ -148,6 +148,16 @@ namespace Lvn.UI.Screens
             _shell = NovelShell.Create(transform, 30, ShellTheme);
             _shell.Build(manifest, _assets);
 
+            // The long-press art view hides the stage's chrome; mirror it onto the
+            // shell HUD (a separate UIDocument) so the WHOLE screen is just the scene.
+            Stage.ChromeHiddenChanged += hidden =>
+            {
+                if (_shell?.Hud != null)
+                    _shell.Hud.style.visibility = hidden
+                        ? UnityEngine.UIElements.Visibility.Hidden
+                        : UnityEngine.UIElements.Visibility.Visible;
+            };
+
             // Live content sync — poll the version endpoint; reload on change.
             if (SyncInterval > 0f)
             {

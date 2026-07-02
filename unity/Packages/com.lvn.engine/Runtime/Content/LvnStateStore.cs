@@ -165,6 +165,9 @@ namespace Lvn.Content
                     LvnNetworkStatus.MarkOffline("state GET network error");
                     return null;
                 }
+                // A real HTTP response (even a 404) proves the wire is back —
+                // recover the global flag so other subsystems resume too.
+                LvnNetworkStatus.MarkOnline("state GET ok");
                 if (req.responseCode < 200 || req.responseCode >= 300) return null; // 404 = no save yet
                 return JObject.Parse(req.downloadHandler.text);
             }
@@ -188,6 +191,8 @@ namespace Lvn.Content
             if (req.result is UnityWebRequest.Result.ConnectionError
                            or UnityWebRequest.Result.DataProcessingError)
                 LvnNetworkStatus.MarkOffline("state PUT network error");
+            else
+                LvnNetworkStatus.MarkOnline("state PUT ok"); // the sync reached the server → we're online
         }
     }
 }

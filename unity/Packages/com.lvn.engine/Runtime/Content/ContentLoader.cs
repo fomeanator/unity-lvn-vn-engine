@@ -74,10 +74,59 @@ namespace Lvn.Content
         }
 
         // MarkOffline only when reading from a real network origin; a missing
-        // local file must not poison the global offline status.
+        // local file must not poison the global offline status. Going offline also
+        // starts the recovery probe so the app self-heals when the wire returns.
         private void MarkOfflineUnlessLocal(string reason)
         {
-            if (!_local) LvnNetworkStatus.MarkOffline(reason);
+            if (_local) return;
+            LvnNetworkStatus.MarkOffline(reason);
+            EnsureRecoveryLoop();
+        }
+
+        // 1 while the background recovery probe is running (guards against starting
+        // a second one on every subsequent failed fetch).
+        private int _recovering;
+
+        // Once we've gone offline, nothing else re-probes connectivity — every
+        // fetch just fast-fails on the global flag — so a single network blip would
+        // wedge the app offline for the whole session (dead live-sync, no new
+        // chapters, dropped saves). This loop probes /healthz with backoff while
+        // offline and flips the flag back on the moment the server answers, which
+        // unblocks the next fetch/sync automatically. HealthzAsync MarkOnlines on a
+        // 2xx (and never MarkOffline), so a failed probe just waits and retries.
+        private void EnsureRecoveryLoop()
+        {
+            if (_local || LvnNetworkStatus.ForceOffline) return; // never probe a local bundle / a test kill-switch
+            if (Interlocked.Exchange(ref _recovering, 1) == 1) return; // already probing
+            _ = RecoveryLoopAsync();
+        }
+
+        private async Task RecoveryLoopAsync()
+        {
+            try
+            {
+                int attempt = 2; // start at the first non-zero backoff step
+                while (LvnNetworkStatus.IsOffline && !LvnNetworkStatus.ForceOffline)
+                {
+                    var delay = LvnBackoff.DelaySeconds(attempt++);
+                    // Wake the sleep early on ANY status change (recovered via another
+                    // path, or ForceOffline set) so the loop reacts at once instead of
+                    // idling out the full backoff. A fresh token per iteration avoids a
+                    // stale-cancelled-token hot spin.
+                    using (var wake = new CancellationTokenSource())
+                    {
+                        Action<bool> onChange = _ => { try { wake.Cancel(); } catch { } };
+                        LvnNetworkStatus.Changed += onChange;
+                        try { await Task.Delay((int)(delay * 1000f) + 500, wake.Token); }
+                        catch (OperationCanceledException) { /* status changed — re-check now */ }
+                        finally { LvnNetworkStatus.Changed -= onChange; }
+                    }
+                    if (LvnNetworkStatus.IsOnline || LvnNetworkStatus.ForceOffline) break;
+                    try { if (await HealthzAsync()) break; } // MarkOnlines on success
+                    catch { /* probe failed — keep waiting */ }
+                }
+            }
+            finally { Interlocked.Exchange(ref _recovering, 0); }
         }
 
         // Dedup tracker for in-flight fetches. Key = url, value = the running

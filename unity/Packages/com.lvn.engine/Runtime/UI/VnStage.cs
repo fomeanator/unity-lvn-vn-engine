@@ -54,11 +54,8 @@ namespace Lvn.UI
                  "stay on UI Toolkit above it. Off by default (UITK scene).")]
         public bool UseCanvasScene;
 
-        private VisualElement _world;   // bg + actors, the camera target (UITK path)
-        private BackgroundLayer _bg;
-        private ActorLayer _actors;
-        private CameraRig _camera;
-        private World.WorldStage _scene; // uGUI scene path (when UseCanvasScene)
+        private VisualElement _world;      // the camera target (UITK path)
+        private ISceneRenderer _renderer;  // bg + actors + camera, renderer-agnostic
         private ParticleField _particles;
         private DialogueBox _dialogue;
         private ChoiceList _choices;
@@ -127,19 +124,20 @@ namespace Lvn.UI
             if (UseCanvasScene)
             {
                 // sortingOrder below the panel (10) so the UITK chrome composites on top.
-                _scene = new World.WorldStage(transform, sortingOrder: 0);
-                _scene.SetBackgroundColor(Color.black);
+                var scene = new World.WorldStage(transform, sortingOrder: 0);
+                scene.SetBackgroundColor(Color.black);
+                _renderer = new CanvasSceneRenderer(scene);
             }
             else
             {
                 _world = new VisualElement { name = "vn-world", pickingMode = PickingMode.Ignore };
                 _world.style.position = Position.Absolute;
                 _world.style.left = 0; _world.style.right = 0; _world.style.top = 0; _world.style.bottom = 0;
-                _bg = new BackgroundLayer();
-                _actors = new ActorLayer();
-                _world.Add(_bg);
-                _world.Add(_actors);
-                _camera = new CameraRig(_world);
+                var bg = new BackgroundLayer();
+                var actors = new ActorLayer();
+                _world.Add(bg);
+                _world.Add(actors);
+                _renderer = new UitkSceneRenderer(bg, actors, new CameraRig(_world));
             }
 
             _particles = new ParticleField();
@@ -436,16 +434,14 @@ namespace Lvn.UI
             // on the fresh chapter when its old timer elapses.
             StopAllCoroutines();
             _hotspots.Clear();
-            _actors?.RemoveAll();
-            _scene?.RemoveAll();
-            _scene?.ResetCamera(0f);
+            _renderer?.RemoveAll();
+            _renderer?.ResetCamera(0f);
             _talkAnims.Clear();
-            _bg?.SetColor(Color.clear);
+            _renderer?.ClearBackground();
             _particles?.Set("rain", false);
             _particles?.Set("snow", false);
             _fx?.Clear(0f);
             _fx?.ClearBlur(0f);
-            _camera?.Reset(0f);
             _backlog.Clear();
             _prefetched.Clear(); // the next chapter/load re-warms from scratch
             _awaitingTap = false;
@@ -560,19 +556,15 @@ namespace Lvn.UI
         // pixel scale and aspect (and panel-vs-canvas coordinate differences).
         private System.Action HotspotAt(Vector2 panelPos, float panelW, float panelH)
         {
-            if (_scene == null || panelW <= 0f || panelH <= 0f) return null;
+            if (_renderer == null || panelW <= 0f || panelH <= 0f) return null;
             float nx = panelPos.x / panelW, ny = panelPos.y / panelH; // UITK: top-left, y-down
-            float sw = Screen.width, sh = Screen.height;
-            if (sw <= 0f || sh <= 0f) return null;
-            var c = new Vector3[4];
             for (int i = _hotspots.Count - 1; i >= 0; i--)
             {
-                var a = _scene.ActorFor(_hotspots[i].id);
-                if (a == null || a.Slot == null) continue;
-                a.Slot.GetWorldCorners(c); // ScreenSpaceOverlay → screen pixels (y-up)
-                float left = Mathf.Min(c[0].x, c[2].x) / sw, right = Mathf.Max(c[0].x, c[2].x) / sw;
-                float top = 1f - Mathf.Max(c[0].y, c[2].y) / sh, bot = 1f - Mathf.Min(c[0].y, c[2].y) / sh;
-                if (nx >= left && nx <= right && ny >= top && ny <= bot) return _hotspots[i].onClick;
+                // Renderer-normalized rect (0..1, top-left origin); null when the
+                // renderer does its own picking or the actor is gone.
+                var r = _renderer.ActorScreenRect(_hotspots[i].id);
+                if (r == null) continue;
+                if (r.Value.Contains(new Vector2(nx, ny))) return _hotspots[i].onClick;
             }
             return null;
         }
@@ -614,19 +606,18 @@ namespace Lvn.UI
             foreach (var kv in _talkAnims) SceneTalk(kv.Key, kv.Value, kv.Key == spId);
         }
 
-        // Scene dispatch: route actor placement/animation to whichever renderer is
-        // live (uGUI WorldStage when UseCanvasScene, else the UITK ActorLayer), so
-        // the ILvnStage logic stays renderer-agnostic.
-        private void SceneSetFrames(string id, Dictionary<string, Dictionary<string, Sprite>> frames)
-        { if (UseCanvasScene) _scene?.SetFrames(id, frames); else _actors?.SetFrames(id, frames); }
-        private void SceneEnsureIdle(string id, LvnAnim a) { if (UseCanvasScene) _scene?.EnsureIdle(id, a); else _actors?.EnsureIdle(id, a); }
-        private void SceneEnsureBlink(string id, LvnAnim a) { if (UseCanvasScene) _scene?.EnsureBlink(id, a); else _actors?.EnsureBlink(id, a); }
-        private void ScenePlayGesture(string id, LvnAnim g, LvnAnim idle) { if (UseCanvasScene) _scene?.PlayGesture(id, g, idle); else _actors?.PlayGesture(id, g, idle); }
-        private void ScenePlayAnim(string id, string channel, LvnAnim a) { if (UseCanvasScene) _scene?.PlayAnim(id, channel, a); else _actors?.PlayAnim(id, channel, a); }
-        private void ScenePlayAnimQueued(string id, string channel, LvnAnim a) { if (UseCanvasScene) _scene?.PlayAnimQueued(id, channel, a); else _actors?.PlayAnimQueued(id, channel, a); }
-        private void SceneStopAnim(string id, string target) { if (UseCanvasScene) _scene?.StopAnim(id, target); else _actors?.StopAnim(id, target); }
-        private void SceneTalk(string id, LvnAnim t, bool on) { if (UseCanvasScene) _scene?.Talk(id, t, on); else _actors?.Talk(id, t, on); }
-        private void SceneHighlightSpeaker(string who) { if (UseCanvasScene) _scene?.HighlightSpeaker(who); else _actors?.HighlightSpeaker(who); }
+        // Scene calls go through the ISceneRenderer seam — path-specific behaviour
+        // lives inside UitkSceneRenderer / CanvasSceneRenderer, not in per-call-site
+        // conditionals here. These thin aliases keep historical call names readable.
+        private void SceneSetFrames(string id, Dictionary<string, Dictionary<string, Sprite>> frames) => _renderer?.SetFrames(id, frames);
+        private void SceneEnsureIdle(string id, LvnAnim a) => _renderer?.EnsureIdle(id, a);
+        private void SceneEnsureBlink(string id, LvnAnim a) => _renderer?.EnsureBlink(id, a);
+        private void ScenePlayGesture(string id, LvnAnim g, LvnAnim idle) => _renderer?.PlayGesture(id, g, idle);
+        private void ScenePlayAnim(string id, string channel, LvnAnim a) => _renderer?.PlayAnim(id, channel, a);
+        private void ScenePlayAnimQueued(string id, string channel, LvnAnim a) => _renderer?.PlayAnimQueued(id, channel, a);
+        private void SceneStopAnim(string id, string target) => _renderer?.StopAnim(id, target);
+        private void SceneTalk(string id, LvnAnim t, bool on) => _renderer?.Talk(id, t, on);
+        private void SceneHighlightSpeaker(string who) => _renderer?.HighlightSpeaker(who);
 
         // ── save / load ──────────────────────────────────────────────────────
         // `save [slot=name]` writes the player snapshot (cursor + vars + call stack)
@@ -1096,24 +1087,24 @@ namespace Lvn.UI
                 {
                     if (LvnPrefs.ReduceMotion) break; // comfort setting: no screen shake
                     float amp = NumOr(cmd["amplitude"], 8f);
-                    if (UseCanvasScene) _scene?.Shake(amp, dur); else _camera.Shake(amp, dur);
+                    _renderer?.Shake(amp, dur);
                     break;
                 }
                 case "zoom":
                 {
                     float factor = NumOr(cmd["factor"], 1.2f);
-                    if (UseCanvasScene) _scene?.Zoom(factor, dur); else _camera.Zoom(factor, dur);
+                    _renderer?.Zoom(factor, dur);
                     break;
                 }
                 case "pan":
                 {
                     float px = NumOr(cmd["x"], 0f);
                     float py = NumOr(cmd["y"], 0f);
-                    if (UseCanvasScene) _scene?.Pan(px, py, dur); else _camera.Pan(px, py, dur);
+                    _renderer?.Pan(px, py, dur);
                     break;
                 }
                 case "reset":
-                    if (UseCanvasScene) _scene?.ResetCamera(dur); else _camera.Reset(dur);
+                    _renderer?.ResetCamera(dur);
                     break;
             }
         }
@@ -1135,8 +1126,7 @@ namespace Lvn.UI
             if (Assets == null || string.IsNullOrEmpty(url)) return;
             var sprite = await Assets.LoadSpriteAsync(url, _cts.Token);
             if (sprite == null) return;
-            if (UseCanvasScene) _scene?.SetBackgroundSprite(sprite);
-            else _bg.SetSprite(sprite);
+            _renderer?.SetBackground(sprite);
         }
 
         // Evaluates a layer's `when` condition against the player's vars, so a
@@ -1241,12 +1231,13 @@ namespace Lvn.UI
             }
 
             var placement = PlacementFrom(cmd);
-            if (UseCanvasScene)
-            {
-                _scene?.ApplyActor(id, null, placement, null, null); // create + place now; art loads below
-                _hotspots.RemoveAll(h => h.id == id);
-                if (onClick != null && placement.Show) _hotspots.Add((id, onClick));
-            }
+            // Place first so the slot exists before the (async) art arrives — a
+            // no-op on renderers that apply placement together with the art.
+            _renderer?.PlaceActor(id, placement);
+            _hotspots.RemoveAll(h => h.id == id);
+            // Manual hotspot hit-testing only applies to renderers that expose
+            // actor rects (the canvas path); the UITK path uses element picking.
+            if (onClick != null && placement.Show && UseCanvasScene) _hotspots.Add((id, onClick));
 
             // Now load the layer sprites (async) and set them on the placed actor.
             List<Sprite> layers = null;
@@ -1271,12 +1262,7 @@ namespace Lvn.UI
                 }
             }
 
-            if (UseCanvasScene)
-            {
-                if (layers != null && layers.Count > 0)
-                    _scene?.ApplyActor(id, layers, placement, layerIds, layerRects);
-            }
-            else _actors.Apply(id, layers, placement, onClick, layerIds, layerRects);
+            _renderer?.ApplyActor(id, layers, placement, onClick, layerIds, layerRects);
 
             // Animations (rigged entities): idle (whole-actor) + blink (a layer)
             // auto-run on show; play="name" fires a one-shot gesture; an

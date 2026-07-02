@@ -96,6 +96,7 @@ namespace Lvn.UI
                 if (m.corner_radius.HasValue) t.MenuCornerRadius = m.corner_radius.Value;
                 if (m.show_rollback.HasValue) t.MenuShowRollback = m.show_rollback.Value;
                 if (m.show_menu.HasValue) t.MenuShowMenu = m.show_menu.Value;
+                if (m.labels != null && m.labels.Count > 0) t.MenuLabels = m.labels;
             }
 
             return t;

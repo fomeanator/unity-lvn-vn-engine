@@ -168,6 +168,9 @@ namespace Lvn.UI
             // its reading delay passes, advance as if tapped. Choices always wait.
             root.schedule.Execute(AutoAdvanceTick).Every(100);
 
+            // Skip: fast-forward gear (~13 lines/s), stops on anything interactive.
+            root.schedule.Execute(SkipTick).Every(75);
+
             // Player comfort settings (dialogue window opacity now, live on change).
             _dialogue.SetUserOpacity(LvnPrefs.DialogOpacity);
             LvnPrefs.Changed -= OnPrefsChanged;
@@ -293,6 +296,39 @@ namespace Lvn.UI
         private void OnPrefsChanged()
         {
             _dialogue?.SetUserOpacity(LvnPrefs.DialogOpacity);
+        }
+
+        // ── skip (fast-forward) ──────────────────────────────────────────────
+        // The genre's re-read gear: lines fly by until something needs the
+        // player — a choice, a tap, the chapter's end, an opened menu.
+
+        /// <summary>True while fast-forward is running.</summary>
+        public bool Skipping { get; private set; }
+
+        /// <summary>Fast-forward lines until a choice, a tap, or the chapter ends.</summary>
+        public void StartSkip()
+        {
+            if (_player == null || _player.Finished) return;
+            Skipping = true;
+        }
+
+        public void StopSkip() => Skipping = false;
+
+        private void SkipTick()
+        {
+            if (!Skipping) return;
+            if (_player == null || _player.Finished || _player.AtChoice)
+            {
+                Skipping = false; // something needs the player — gear down
+                return;
+            }
+            if (InputBlocked || _chromeHidden || _awaitingWait) return; // paused, not cancelled
+            if (_dialogue != null && _dialogue.IsRevealing) { _dialogue.Complete(); return; }
+            if (_awaitingTap)
+            {
+                _awaitingTap = false;
+                _player.Advance();
+            }
         }
 
         // ── auto-advance ─────────────────────────────────────────────────────
@@ -468,6 +504,7 @@ namespace Lvn.UI
             _backlog.Clear();
             _prefetched.Clear(); // the next chapter/load re-warms from scratch
             SetChromeHidden(false); // never carry a hidden UI across a reset
+            StopSkip();             // fast-forward dies with the scene it was skipping
             _awaitingTap = false;
             _awaitingWait = false;
             _sayUp = false;
@@ -598,6 +635,7 @@ namespace Lvn.UI
 
             if (_chromeHidden) { SetChromeHidden(false); return; } // release restores, swallows the tap
             if (!wasTracking || _suppressTap) return;
+            if (Skipping) { StopSkip(); return; } // a tap during fast-forward just stops it
             HandleTap(evt.position);
         }
 
@@ -690,6 +728,7 @@ namespace Lvn.UI
         {
             _dialogue.SetSpeaker(who);
             _dialogue.ApplyStyle(style);
+            _dialogue.SuppressAdvanceHint(false); // a plain line invites the tap again
             _dialogue.Reveal(text);
             _lastSayLength = text?.Length ?? 0; // drives the auto-advance reading delay
             _autoRevealDoneAt = -1f;
@@ -1011,6 +1050,7 @@ namespace Lvn.UI
         {
             _awaitingTap = false;
             _curChoices = options;
+            _dialogue?.SuppressAdvanceHint(true); // a choice is up — don't invite a tap
             _choices.Present(options);
         }
 

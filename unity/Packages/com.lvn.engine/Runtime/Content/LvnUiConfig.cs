@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Lvn.Content
 {
     /// <summary>
@@ -38,6 +40,13 @@ namespace Lvn.Content
         public float? corner_radius;  // sheet/panel rounding; default 12
         public bool? show_rollback;   // the ↩ button; default true
         public bool? show_menu;       // the ☰ button; default true
+
+        /// <summary>Text overrides for every chrome string, keyed by a stable id —
+        /// the localization hook ("save" → "Сохранить"). Known keys: save, load,
+        /// quick_save, history, auto, skip, settings, exit, close, autosave, slot,
+        /// empty, quick_slot, text_speed, auto_advance, auto_delay, music, ambient,
+        /// sfx, window_opacity, reduce_motion. Missing keys fall back to English.</summary>
+        public Dictionary<string, string> labels;
     }
 
     /// <summary>In-game dialogue box: colours, fonts, padding and the typewriter

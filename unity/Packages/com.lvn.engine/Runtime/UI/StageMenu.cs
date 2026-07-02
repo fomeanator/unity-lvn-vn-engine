@@ -14,6 +14,7 @@ namespace Lvn.UI
     public sealed class StageMenu : VisualElement
     {
         private const int SlotCount = 6;
+        private const string QuickSlot = "quick"; // the one-tap save; shown in Load
 
         private readonly VnStage _stage;
         private readonly VnTheme _theme;
@@ -21,6 +22,13 @@ namespace Lvn.UI
         private VisualElement _scrim;
 
         public bool IsOpen { get; private set; }
+
+        // Every chrome string resolves through the theme's label map (manifest
+        // ui.menu.labels) so a novel ships its own language; English is the
+        // engine default.
+        private string L(string key, string fallback) =>
+            _theme.MenuLabels != null && _theme.MenuLabels.TryGetValue(key, out var v) && !string.IsNullOrEmpty(v)
+                ? v : fallback;
 
         public StageMenu(VnStage stage, VnTheme theme)
         {
@@ -39,9 +47,46 @@ namespace Lvn.UI
             _fabRow.style.top = Length.Percent(8.5f);
             _fabRow.style.right = 10;
             _fabRow.style.flexDirection = FlexDirection.Row;
+            // Mode badge: AUTO ▷ / SKIP ▶▶ while a hands-free mode runs — the
+            // player must SEE why the game advances itself (and a tap on the
+            // badge turns the mode off). Sits left of the buttons.
+            _modeBadge = new Button(() =>
+            {
+                if (_stage.Skipping) _stage.StopSkip();
+                else LvnPrefs.AutoAdvance = false;
+            });
+            _modeBadge.style.height = 44;
+            _modeBadge.style.marginRight = 8;
+            _modeBadge.style.paddingLeft = 12; _modeBadge.style.paddingRight = 12;
+            _modeBadge.style.fontSize = 15;
+            _modeBadge.style.unityFontStyleAndWeight = FontStyle.Bold;
+            _modeBadge.style.color = _theme.MenuTextColor;
+            _modeBadge.style.backgroundColor = _theme.MenuFabColor;
+            Round(_modeBadge, 22);
+            ClearBorder(_modeBadge);
+            _modeBadge.RegisterCallback<PointerDownEvent>(e => e.StopPropagation());
+            if (_theme.Font != null) _modeBadge.style.unityFont = new StyleFont(_theme.Font);
+            _modeBadge.style.display = DisplayStyle.None;
+            _fabRow.Add(_modeBadge);
+
             if (_theme.MenuShowRollback) _fabRow.Add(Fab("↩", () => _stage.RollbackStep()));
             if (_theme.MenuShowMenu) _fabRow.Add(Fab("☰", OpenSheet));
             Add(_fabRow);
+
+            // Cheap poll keeps the badge honest across every way a mode can flip
+            // (menu, settings, a stopping tap, a choice ending skip).
+            schedule.Execute(RefreshModeBadge).Every(250);
+        }
+
+        private Button _modeBadge;
+
+        private void RefreshModeBadge()
+        {
+            string label = _stage.Skipping ? L("skip", "Skip").ToUpperInvariant() + " ▶▶"
+                : LvnPrefs.AutoAdvance ? L("auto", "Auto").ToUpperInvariant() + " ▷"
+                : null;
+            _modeBadge.style.display = label == null ? DisplayStyle.None : DisplayStyle.Flex;
+            if (label != null && _modeBadge.text != label) _modeBadge.text = label;
         }
 
         private VisualElement Fab(string glyph, Action onClick)
@@ -135,23 +180,33 @@ namespace Lvn.UI
             sheet.RegisterCallback<PointerDownEvent>(e => e.StopPropagation());
             _scrim.Add(sheet);
 
-            sheet.Add(Item("Save", () => ShowSlots(saveMode: true)));
-            sheet.Add(Item("Load", () => ShowSlots(saveMode: false)));
-            sheet.Add(Item("History", ShowHistory));
-            sheet.Add(Item(LvnPrefs.AutoAdvance ? "Auto ✓" : "Auto", () =>
+            sheet.Add(Item(L("quick_save", "Quick save"), () =>
+            {
+                _stage.SaveToSlot(QuickSlot);
+                Close();
+            }));
+            sheet.Add(Item(L("save", "Save"), () => ShowSlots(saveMode: true)));
+            sheet.Add(Item(L("load", "Load"), () => ShowSlots(saveMode: false)));
+            sheet.Add(Item(L("history", "History"), ShowHistory));
+            sheet.Add(Item(LvnPrefs.AutoAdvance ? L("auto", "Auto") + " ✓" : L("auto", "Auto"), () =>
             {
                 LvnPrefs.AutoAdvance = !LvnPrefs.AutoAdvance;
                 Close(); // hands-free mode starts/stops right away
             }));
-            sheet.Add(Item("Settings", ShowSettings));
-            sheet.Add(Item("Exit to menu", () =>
+            sheet.Add(Item(L("skip", "Skip"), () =>
+            {
+                Close();
+                _stage.StartSkip(); // fast-forward until a choice or a tap
+            }));
+            sheet.Add(Item(L("settings", "Settings"), ShowSettings));
+            sheet.Add(Item(L("exit", "Exit to menu"), () =>
             {
                 // Autosaves, then signals the host loop back to the title screen —
                 // the carousel's Continue returns to this exact line.
                 Close();
                 _stage.RequestExit();
             }));
-            sheet.Add(Item("Close", Close));
+            sheet.Add(Item(L("close", "Close"), Close));
         }
 
         private VisualElement Item(string label, Action onClick)
@@ -172,22 +227,25 @@ namespace Lvn.UI
 
         private void ShowSlots(bool saveMode)
         {
-            var p = Panel(saveMode ? "Save" : "Load");
+            var p = Panel(saveMode ? L("save", "Save") : L("load", "Load"));
             var scroll = new ScrollView();
             scroll.style.flexGrow = 1;
             p.Add(scroll);
 
             var all = LvnSaveStore.Slots(_stage.SaveTitleId);
 
-            // The autosave appears in load mode only (it's the engine's own slot).
+            // Engine-owned slots appear in load mode only: the rolling autosave
+            // and the one-tap quick save.
             if (!saveMode && all.TryGetValue(LvnSaveStore.AutoSlot, out var auto) && auto?.Snap != null)
-                scroll.Add(SlotRow("Autosave", auto, () => TryLoad(LvnSaveStore.AutoSlot)));
+                scroll.Add(SlotRow(L("autosave", "Autosave"), auto, () => TryLoad(LvnSaveStore.AutoSlot)));
+            if (!saveMode && all.TryGetValue(QuickSlot, out var quick) && quick?.Snap != null)
+                scroll.Add(SlotRow(L("quick_slot", "Quick save"), quick, () => TryLoad(QuickSlot)));
 
             for (int i = 0; i < SlotCount; i++)
             {
                 var name = "slot" + (i + 1);
                 all.TryGetValue(name, out var slot);
-                var label = "Slot " + (i + 1);
+                var label = L("slot", "Slot") + " " + (i + 1);
                 if (saveMode)
                     scroll.Add(SlotRow(label, slot, () =>
                     {
@@ -220,7 +278,7 @@ namespace Lvn.UI
             ClearBorder(row);
             row.SetEnabled(enabled);
 
-            string when = slot?.Snap == null ? "— empty —"
+            string when = slot?.Snap == null ? L("empty", "— empty —")
                 : DateTimeOffset.FromUnixTimeMilliseconds(slot.SavedAtUnixMs).ToLocalTime().ToString("dd.MM HH:mm");
             row.Add(Text(label + "   " + when, 15, FontStyle.Bold));
             if (!string.IsNullOrEmpty(slot?.Preview))
@@ -232,7 +290,7 @@ namespace Lvn.UI
 
         private void ShowHistory()
         {
-            var p = Panel("History");
+            var p = Panel(L("history", "History"));
             var scroll = new ScrollView();
             scroll.style.flexGrow = 1;
             p.Add(scroll);
@@ -254,19 +312,19 @@ namespace Lvn.UI
 
         private void ShowSettings()
         {
-            var p = Panel("Settings");
+            var p = Panel(L("settings", "Settings"));
             var scroll = new ScrollView();
             scroll.style.flexGrow = 1;
             p.Add(scroll);
 
-            scroll.Add(SliderRow("Text speed", 0.25f, 3f, LvnPrefs.TextSpeed, v => LvnPrefs.TextSpeed = v));
-            scroll.Add(ToggleRow("Auto-advance", LvnPrefs.AutoAdvance, v => LvnPrefs.AutoAdvance = v));
-            scroll.Add(SliderRow("Auto delay", 0.5f, 2.5f, LvnPrefs.AutoDelayScale, v => LvnPrefs.AutoDelayScale = v));
-            scroll.Add(SliderRow("Music", 0f, 1f, LvnPrefs.VolMusic, v => LvnPrefs.VolMusic = v));
-            scroll.Add(SliderRow("Ambient", 0f, 1f, LvnPrefs.VolAmbient, v => LvnPrefs.VolAmbient = v));
-            scroll.Add(SliderRow("Sound FX", 0f, 1f, LvnPrefs.VolSfx, v => LvnPrefs.VolSfx = v));
-            scroll.Add(SliderRow("Window opacity", 0.2f, 1f, LvnPrefs.DialogOpacity, v => LvnPrefs.DialogOpacity = v));
-            scroll.Add(ToggleRow("Reduce motion", LvnPrefs.ReduceMotion, v => LvnPrefs.ReduceMotion = v));
+            scroll.Add(SliderRow(L("text_speed", "Text speed"), 0.25f, 3f, LvnPrefs.TextSpeed, v => LvnPrefs.TextSpeed = v));
+            scroll.Add(ToggleRow(L("auto_advance", "Auto-advance"), LvnPrefs.AutoAdvance, v => LvnPrefs.AutoAdvance = v));
+            scroll.Add(SliderRow(L("auto_delay", "Auto delay"), 0.5f, 2.5f, LvnPrefs.AutoDelayScale, v => LvnPrefs.AutoDelayScale = v));
+            scroll.Add(SliderRow(L("music", "Music"), 0f, 1f, LvnPrefs.VolMusic, v => LvnPrefs.VolMusic = v));
+            scroll.Add(SliderRow(L("ambient", "Ambient"), 0f, 1f, LvnPrefs.VolAmbient, v => LvnPrefs.VolAmbient = v));
+            scroll.Add(SliderRow(L("sfx", "Sound FX"), 0f, 1f, LvnPrefs.VolSfx, v => LvnPrefs.VolSfx = v));
+            scroll.Add(SliderRow(L("window_opacity", "Window opacity"), 0.2f, 1f, LvnPrefs.DialogOpacity, v => LvnPrefs.DialogOpacity = v));
+            scroll.Add(ToggleRow(L("reduce_motion", "Reduce motion"), LvnPrefs.ReduceMotion, v => LvnPrefs.ReduceMotion = v));
         }
 
         private VisualElement SliderRow(string label, float min, float max, float value, Action<float> onChange)

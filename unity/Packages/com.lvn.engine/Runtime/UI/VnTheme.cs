@@ -155,5 +155,10 @@ namespace Lvn.UI
         public bool MenuShowRollback = true;
         [Tooltip("Show the ☰ quick-menu floating button (hiding it removes the whole menu).")]
         public bool MenuShowMenu = true;
+
+        /// <summary>Chrome text overrides by stable key (manifest ui.menu.labels) —
+        /// how a Russian novel gets «Сохранить» instead of "Save". Null/missing
+        /// keys fall back to the engine's English defaults.</summary>
+        [HideInInspector] public System.Collections.Generic.Dictionary<string, string> MenuLabels;
     }
 }

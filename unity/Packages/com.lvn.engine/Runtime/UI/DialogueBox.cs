@@ -25,6 +25,38 @@ namespace Lvn.UI
         private float _startTime;
         private float _cps;
 
+        private Label _advanceHint;
+        private IVisualElementScheduledItem _hintPulse;
+        private bool _hintSuppressed;
+
+        /// <summary>Hide the ▼ "tap to continue" marker while a choice is up (a
+        /// tap shouldn't be invited when the player must pick).</summary>
+        public void SuppressAdvanceHint(bool suppressed)
+        {
+            _hintSuppressed = suppressed;
+            RefreshAdvanceHint();
+        }
+
+        private void RefreshAdvanceHint()
+        {
+            bool show = !_hintSuppressed && !IsRevealing && _tw.VisibleCount > 0;
+            _advanceHint.style.display = show ? DisplayStyle.Flex : DisplayStyle.None;
+            if (show)
+            {
+                if (_hintPulse == null)
+                {
+                    bool dim = false;
+                    _hintPulse = schedule.Execute(() =>
+                    {
+                        dim = !dim;
+                        _advanceHint.style.opacity = dim ? 0.35f : 0.95f;
+                    }).Every(600);
+                }
+                _hintPulse.Resume();
+            }
+            else _hintPulse?.Pause();
+        }
+
         /// <summary>True while the typewriter is still revealing the line.</summary>
         public bool IsRevealing { get; private set; }
 
@@ -135,6 +167,20 @@ namespace Lvn.UI
             _body.style.whiteSpace = WhiteSpace.Normal;
             if (_theme.Font != null) _body.style.unityFont = new StyleFont(_theme.Font);
             _panel.Add(_body);
+
+            // The genre's "line finished — tap" marker: a small pulsing ▼ in the
+            // panel's bottom-right corner. Shown when the reveal is done (and no
+            // choice is up — the host suppresses it then).
+            _advanceHint = new Label("▼") { name = "vn-advance-hint", pickingMode = PickingMode.Ignore };
+            _advanceHint.style.position = Position.Absolute;
+            _advanceHint.style.right = 10;
+            _advanceHint.style.bottom = 4;
+            _advanceHint.style.fontSize = Mathf.RoundToInt(_theme.BodyFontSize * 0.55f);
+            _advanceHint.style.color = _theme.SpeakerColor;
+            _advanceHint.style.display = DisplayStyle.None;
+            if (_theme.Font != null) _advanceHint.style.unityFont = new StyleFont(_theme.Font);
+            _panel.Add(_advanceHint);
+
             _box.Add(_panel);
 
             pickingMode = PickingMode.Ignore; // the host root owns tap-to-advance
@@ -173,6 +219,7 @@ namespace Lvn.UI
             _tick?.Pause();
 
             IsRevealing = _tw.VisibleCount > 0;
+            RefreshAdvanceHint(); // hidden while revealing
             if (IsRevealing)
             {
                 // Fixed layout from frame 0: the whole line is present (hidden),
@@ -189,6 +236,7 @@ namespace Lvn.UI
             _tick?.Pause();
             _body.text = _tw.Full();
             IsRevealing = false;
+            RefreshAdvanceHint();
         }
 
         /// <summary>Show a complete line with no reveal (resume / backlog).</summary>
@@ -198,6 +246,7 @@ namespace Lvn.UI
             _tw.SetText(text ?? "");
             _body.text = _tw.Full();
             IsRevealing = false;
+            RefreshAdvanceHint();
         }
 
         // The player's window-opacity preference and the current style's own panel

@@ -1,0 +1,8732 @@
+{
+ "scene": "chapter",
+ "script": [
+  {
+   "default": true,
+   "key": "Cutscenes.showAndreyFirstScene_1_5",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showDaniilLaboratory_1_6",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showOlesyaDurka",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showKissTimur_1_8",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showLyubaOlesya_12_3",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showDaniels_bathroom_intim_1_16",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showMonument_1_19",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showOlesyaTombstone_1_19",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showMonumentRabbit_1_19",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showOlesya_and_Phobos_21",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showMeme_family",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showMeme_Dog_bones_market",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showMeme_Joke_red_fish",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showJonh_1_23",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showSiegfried_and_Odette_25",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showOlesyas_parents_26",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showWedding_with_Timur_29",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showOn_hike_with_Andrey_29",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showWith_Daniil_on_the_windowsill_29",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showWinter_in_Kulpino_11",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showWinter_in_Kulpino_12",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showWinter_in_Kulpino_13",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showWinter_in_Kulpino_14",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showWinter_in_Kulpino_15",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showWinter_in_Kulpino_16",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Cutscenes.showWinter_in_Kulpino_17",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Silence",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Passion",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Romance",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Fight",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Afghanistan",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Fantastic",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Miracle",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Promenade",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Native",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Adventure",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Alert",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Revelation",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Havana",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Bustle",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Comedian",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Socialism",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Sound_of_the_sea",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Noise_underwater",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Sound_of_storm",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.River",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Sound_of_cicadas",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Sound_of_wind",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Noise_river_campfire",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Chopping_firewood",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Stone_in_water",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Noise_forest",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Street_noise",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Sound_city_after_rain",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Sound_of_rain",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Kitchen_noise",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Waterfall_noise",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Korea",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Magic",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Snowstorm_noise",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Determination",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Thunderstorm_noise",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.Swan_Lake",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Music.New_Years",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Sirena",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Broken_dishes",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Car_brakes",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Bird_scream",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Knock",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Sea_waves",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Shower",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Alarm",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.KnockDoor",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Kitchen",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Broken_glass",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Svarka",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.SvarochnyZeh",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Tazik",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Stolovka",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Storm_noise",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Cat_howling",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Dog_growling",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Fountain_noise",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Police_whistle",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Fire_alarm",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.shooting_1_10",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Silence",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.War",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Urring_cat",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Crash_of_stones",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Frying_pan_head",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Frying_pan_fell_down",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Sizzle_hot_stones",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Slapping_brooms",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Lowing_cow",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Bellowing_calf",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Cuckoo",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.ships_horn",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.happy_crowd",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Doorbell_rings",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Steps",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Sparrows_chirping",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Car_beeps",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Train",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Phone_call",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Sound.Doorbell_knock",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Open.Wardrobe",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Open.ReOpenWardrobe",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Wardrobe.FreeWardrobe_Access",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Wardrobe.mainCh_Clothes",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Wardrobe.mainCh_Hair",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Wardrobe.Andrey",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Wardrobe.Timur",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Wardrobe.Lyuba",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Wardrobe.Daniil",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Wardrobe.Psychiatrist",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Wardrobe.Child_Olesya",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Wardrobe.Daniil_without_glasses",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Wardrobe.Child_Olesya_Cold",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Wardrobe.Mother",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Wardrobe.Nonna",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Remember.Pirozhki_1_1",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Selfie_1_1",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.RudeOldLady",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.TakeaWallet",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Made_Flight_1_3",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.PhilosophLetter_1_3",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.DrinkBeer_1_3",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.SoberLyuba_1_3",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.OpenDoor_1_3",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.HelpBabulya_1_4",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Cooking_1_4",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.NewVariable",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.FlashbackOlesya_1_5",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Lyuda_pomnit",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Samolet",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Kiss_Timur_1_8",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Relationships_Daniil_1_9",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Relationships_Andrey_1_10",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Stone_1_10",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Candies_1_10",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.connected_1_10",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Take_cat",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Reletionship_Lyuba_1_11",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Photo_cans_1_11",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Exchange_numbers_1_11",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.OlesyaRememberDomKultyri_1_12",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Talk_with_Stalina_1_13",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Cow_birth_1_14",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Tell_ab_Makar_and_Praskovia_1_15",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Timur_asks_Alina_1_15",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Take_paper_1_15",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Amirani_1_16",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Em_1_16",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Relationships_John_1_17",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.FriendshipDanielTimur_1_18",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.MixerforLuba_1_18",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Blame_father_1_18",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Justify_father_1_18",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Pick_up_letter_1_19",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Leave_letter_1_19",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Kimbap_1_19",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Teokbokki_1_19",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Roses_1_19",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Lilies_1_19",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Lotus_1_19",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Get_into_trash_can_1_19",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Open_scene_1_20",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Will_miss_1_20",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Willnot_miss_1_20",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Find_out_about_lake_1_20",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Want_see_Phobos_1_20",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Put_in_place_John_17",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Phobos_remains",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Tea_with_lemon",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Tea_with_acacia_honey",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Lyuba_Univer_1_22",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Friendship_Lyuba",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Bouillon_1_22",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Sorcerers_1_22",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Keys_1_22",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Photos_1_22",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Song_1_23",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Hello_Melentyev",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Documents_1_23",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Information_from_room_1_24",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Document_case_24",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Scientist_24",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Timurs_reflection_24",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Timurs_bride_24",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Shop_24",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Andreis_reflection_24",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Andreis_bride_24",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.pot_24",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Olesya_great_24",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.John_newbie_24",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Stat_Raisa_eavesdropping_25",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Stepka_25",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.overheard_25",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.ballerina_25",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.camera_25",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.stolen_26",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Daniels_discovery_26",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.child_from_Andrey_26",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.parents_documents_27",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.concert_27",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.friendship_AT_27",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.resentment_Timur_27",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.resentment_Andrey_27",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.headphones_27",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.lyuda_prison_27",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.roses_27",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Kiss_John_27",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.favor_to_John_27",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.help_John_27",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Melentyev_details_27",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Johns_work_27",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.sex_John_27",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Johns_advice_28",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Lyuba_Love_28",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.tea_Melentyev_28",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.get_Melentyev_to_talk_28",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.broke_out_28",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.parting_Timur_29",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.parting_Andrey_29",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Melentyev_won_29",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.NP_29",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Daniel_parting_29",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.bride_Daniila_29",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Remember.Finale_Crazy_Phobos_29",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Names.cname",
+   "op": "set",
+   "value": "Олеся"
+  },
+  {
+   "default": true,
+   "key": "Names.pname",
+   "op": "set",
+   "value": "..."
+  },
+  {
+   "default": true,
+   "key": "Names.Marina",
+   "op": "set",
+   "value": "Марина"
+  },
+  {
+   "default": true,
+   "key": "Names.Vadim",
+   "op": "set",
+   "value": "Вадим"
+  },
+  {
+   "default": true,
+   "key": "Names.Starushka",
+   "op": "set",
+   "value": "Старушка"
+  },
+  {
+   "default": true,
+   "key": "Names.Father",
+   "op": "set",
+   "value": "Папа"
+  },
+  {
+   "default": true,
+   "key": "Names.Mother",
+   "op": "set",
+   "value": "Мама"
+  },
+  {
+   "default": true,
+   "key": "Names.Andrey",
+   "op": "set",
+   "value": "Андрей"
+  },
+  {
+   "default": true,
+   "key": "Names.Daniil",
+   "op": "set",
+   "value": "Даниил"
+  },
+  {
+   "default": true,
+   "key": "Names.Timur",
+   "op": "set",
+   "value": "Тимур"
+  },
+  {
+   "default": true,
+   "key": "Names.Lyuba",
+   "op": "set",
+   "value": "Люба"
+  },
+  {
+   "default": true,
+   "key": "Names.Nina_Pavlovna",
+   "op": "set",
+   "value": "Нина Павловна"
+  },
+  {
+   "default": true,
+   "key": "Names.OldLady",
+   "op": "set",
+   "value": "Старушка"
+  },
+  {
+   "default": true,
+   "key": "Names.Milicioner",
+   "op": "set",
+   "value": "Милиционер"
+  },
+  {
+   "default": true,
+   "key": "Names.Men1",
+   "op": "set",
+   "value": "Седой мужик"
+  },
+  {
+   "default": true,
+   "key": "Names.Men2",
+   "op": "set",
+   "value": "Лысый мужик"
+  },
+  {
+   "default": true,
+   "key": "Names.Doorman",
+   "op": "set",
+   "value": "Швейцар"
+  },
+  {
+   "default": true,
+   "key": "Names.Waiter",
+   "op": "set",
+   "value": "Официант"
+  },
+  {
+   "default": true,
+   "key": "Names.Driver",
+   "op": "set",
+   "value": "Водитель"
+  },
+  {
+   "default": true,
+   "key": "Names.Milicioner_2",
+   "op": "set",
+   "value": "Милиционер"
+  },
+  {
+   "default": true,
+   "key": "Names.Doctor",
+   "op": "set",
+   "value": "Медик"
+  },
+  {
+   "default": true,
+   "key": "Names.Nurse",
+   "op": "set",
+   "value": "Медсестра"
+  },
+  {
+   "default": true,
+   "key": "Names.Patient",
+   "op": "set",
+   "value": "Пациент"
+  },
+  {
+   "default": true,
+   "key": "Names.Psychiatrist",
+   "op": "set",
+   "value": "Врач"
+  },
+  {
+   "default": true,
+   "key": "Names.Sanitar",
+   "op": "set",
+   "value": "Санитар"
+  },
+  {
+   "default": true,
+   "key": "Names.Sanitar_2",
+   "op": "set",
+   "value": "Санитар"
+  },
+  {
+   "default": true,
+   "key": "Names.Crazy",
+   "op": "set",
+   "value": "Сумасшедший"
+  },
+  {
+   "default": true,
+   "key": "Names.Lyuda",
+   "op": "set",
+   "value": "Люда"
+  },
+  {
+   "default": true,
+   "key": "Names.Borya",
+   "op": "set",
+   "value": "Незнакомец"
+  },
+  {
+   "default": true,
+   "key": "Names.Babulya_vedra",
+   "op": "set",
+   "value": "Старушка"
+  },
+  {
+   "default": true,
+   "key": "Names.Stalina",
+   "op": "set",
+   "value": "Сталина Ильинична"
+  },
+  {
+   "default": true,
+   "key": "Names.Lyuda_Black",
+   "op": "set",
+   "value": "Люда"
+  },
+  {
+   "default": true,
+   "key": "Names.Worker",
+   "op": "set",
+   "value": "Работник цеха"
+  },
+  {
+   "default": true,
+   "key": "Names.Worker_Black1",
+   "op": "set",
+   "value": "Рабочий"
+  },
+  {
+   "default": true,
+   "key": "Names.Worker_Black2",
+   "op": "set",
+   "value": "Рабочий"
+  },
+  {
+   "default": true,
+   "key": "Names.Worker_Black3",
+   "op": "set",
+   "value": "Рабочий"
+  },
+  {
+   "default": true,
+   "key": "Names.WorkerCap",
+   "op": "set",
+   "value": "Рабочий"
+  },
+  {
+   "default": true,
+   "key": "Names.Iosiph",
+   "op": "set",
+   "value": "Иосиф"
+  },
+  {
+   "default": true,
+   "key": "Names.Miriam",
+   "op": "set",
+   "value": "Мириам"
+  },
+  {
+   "default": true,
+   "key": "Names.Alesha",
+   "op": "set",
+   "value": "Мальчик"
+  },
+  {
+   "default": true,
+   "key": "Names.Zoya",
+   "op": "set",
+   "value": "Девушка"
+  },
+  {
+   "default": true,
+   "key": "Names.Veduschii",
+   "op": "set",
+   "value": "Ведущий"
+  },
+  {
+   "default": true,
+   "key": "Names.John",
+   "op": "set",
+   "value": "Джон"
+  },
+  {
+   "default": true,
+   "key": "Names.Nonna",
+   "op": "set",
+   "value": "Официантка"
+  },
+  {
+   "default": true,
+   "key": "Names.Eleanor",
+   "op": "set",
+   "value": "Элеонора"
+  },
+  {
+   "default": true,
+   "key": "Names.Andrey_child",
+   "op": "set",
+   "value": "Андрей"
+  },
+  {
+   "default": true,
+   "key": "Names.Timur_child",
+   "op": "set",
+   "value": "Тимур"
+  },
+  {
+   "default": true,
+   "key": "Names.Dog",
+   "op": "set",
+   "value": "Пес"
+  },
+  {
+   "default": true,
+   "key": "Names.Laboratory_assistant",
+   "op": "set",
+   "value": "Незнакомка"
+  },
+  {
+   "default": true,
+   "key": "Names.Cat",
+   "op": "set",
+   "value": "Кошка"
+  },
+  {
+   "default": true,
+   "key": "Names.John_with_glasses",
+   "op": "set",
+   "value": "Американец"
+  },
+  {
+   "default": true,
+   "key": "Names.Eleanor_without_glasses",
+   "op": "set",
+   "value": "Женщина"
+  },
+  {
+   "default": true,
+   "key": "Names.John_with_polaroid",
+   "op": "set",
+   "value": "Джон"
+  },
+  {
+   "default": true,
+   "key": "Names.Timur_Black",
+   "op": "set",
+   "value": "Тимур"
+  },
+  {
+   "default": true,
+   "key": "Names.Lilia_Igorevna",
+   "op": "set",
+   "value": "Лилия Игоревна"
+  },
+  {
+   "default": true,
+   "key": "Names.Cow",
+   "op": "set",
+   "value": "Буренка"
+  },
+  {
+   "default": true,
+   "key": "Names.Mom_Luba",
+   "op": "set",
+   "value": "Мама"
+  },
+  {
+   "default": true,
+   "key": "Names.Child_Olesya",
+   "op": "set",
+   "value": "Олеся"
+  },
+  {
+   "default": true,
+   "key": "Names.Beat_paren",
+   "op": "set",
+   "value": "Парень"
+  },
+  {
+   "default": true,
+   "key": "Names.Bully",
+   "op": "set",
+   "value": "Задира"
+  },
+  {
+   "default": true,
+   "key": "Names.Vanya",
+   "op": "set",
+   "value": "Ваня"
+  },
+  {
+   "default": true,
+   "key": "Names.Vanya_rana",
+   "op": "set",
+   "value": "Ваня"
+  },
+  {
+   "default": true,
+   "key": "Names.Andrey_forma_rana",
+   "op": "set",
+   "value": "Андрей"
+  },
+  {
+   "default": true,
+   "key": "Names.Dushman",
+   "op": "set",
+   "value": "Душман"
+  },
+  {
+   "default": true,
+   "key": "Names.Ashrafi",
+   "op": "set",
+   "value": "Девочка"
+  },
+  {
+   "default": true,
+   "key": "Names.Ashrafi_i_basket",
+   "op": "set",
+   "value": "Девочка"
+  },
+  {
+   "default": true,
+   "key": "Names.Dushman_blood",
+   "op": "set",
+   "value": "Душман"
+  },
+  {
+   "default": true,
+   "key": "Names.Dushman_i_Vanya",
+   "op": "set",
+   "value": "Душман"
+  },
+  {
+   "default": true,
+   "key": "Names.Andrey_rucablood",
+   "op": "set",
+   "value": "Андрей"
+  },
+  {
+   "default": true,
+   "key": "Names.Andrey_i_gun",
+   "op": "set",
+   "value": "Андрей"
+  },
+  {
+   "default": true,
+   "key": "Names.Child_Olesya_Cold",
+   "op": "set",
+   "value": "Олеся"
+  },
+  {
+   "default": true,
+   "key": "Names.Young_mother_clothes_1",
+   "op": "set",
+   "value": "Аня"
+  },
+  {
+   "default": true,
+   "key": "Names.Young_Father",
+   "op": "set",
+   "value": "Дима"
+  },
+  {
+   "default": true,
+   "key": "Names.Father_fairy",
+   "op": "set",
+   "value": "Рыбак"
+  },
+  {
+   "default": true,
+   "key": "Names.Agnia_fairy",
+   "op": "set",
+   "value": "Владычица"
+  },
+  {
+   "default": true,
+   "key": "Names.Agnia_Older",
+   "op": "set",
+   "value": "Агния"
+  },
+  {
+   "default": true,
+   "key": "Names.Mother_Fairy",
+   "op": "set",
+   "value": "Морская дева"
+  },
+  {
+   "default": true,
+   "key": "Names.Little_Olesya_summer",
+   "op": "set",
+   "value": "Олеся"
+  },
+  {
+   "default": true,
+   "key": "Names.Daniil_without_glasses",
+   "op": "set",
+   "value": "Даниил"
+  },
+  {
+   "default": true,
+   "key": "Names.Agnia_Older_black",
+   "op": "set",
+   "value": "Агния"
+  },
+  {
+   "default": true,
+   "key": "Names.Andrey_black",
+   "op": "set",
+   "value": "Андрей"
+  },
+  {
+   "default": true,
+   "key": "Names.Phobos",
+   "op": "set",
+   "value": "Незнакомец"
+  },
+  {
+   "default": true,
+   "key": "Names.Borya_work",
+   "op": "set",
+   "value": "Боря"
+  },
+  {
+   "default": true,
+   "key": "Names.Lyuda_work",
+   "op": "set",
+   "value": "Люда"
+  },
+  {
+   "default": true,
+   "key": "Names.Agnia_young",
+   "op": "set",
+   "value": "Агния"
+  },
+  {
+   "default": true,
+   "key": "Names.Vladimir",
+   "op": "set",
+   "value": "Владимир"
+  },
+  {
+   "default": true,
+   "key": "Names.Little_Anya",
+   "op": "set",
+   "value": "Аня"
+  },
+  {
+   "default": true,
+   "key": "Names.Alonso",
+   "op": "set",
+   "value": "Кубинец"
+  },
+  {
+   "default": true,
+   "key": "Names.Young_mother_clothes_2",
+   "op": "set",
+   "value": "Аня"
+  },
+  {
+   "default": true,
+   "key": "Names.Commandos",
+   "op": "set",
+   "value": "Кубинец"
+  },
+  {
+   "default": true,
+   "key": "Names.Borya_work_black",
+   "op": "set",
+   "value": "Боря"
+  },
+  {
+   "default": true,
+   "key": "Names.Lyuda_work_black",
+   "op": "set",
+   "value": "Люда"
+  },
+  {
+   "default": true,
+   "key": "Names.Lyuba_ryingpan",
+   "op": "set",
+   "value": "Люба"
+  },
+  {
+   "default": true,
+   "key": "Names.Iraklii",
+   "op": "set",
+   "value": "Ираклий"
+  },
+  {
+   "default": true,
+   "key": "Names.Jamalia",
+   "op": "set",
+   "value": "Джамалия"
+  },
+  {
+   "default": true,
+   "key": "Names.Dali",
+   "op": "set",
+   "value": "Дали"
+  },
+  {
+   "default": true,
+   "key": "Names.Daniil_black",
+   "op": "set",
+   "value": "Даниил"
+  },
+  {
+   "default": true,
+   "key": "Names.Praskovia",
+   "op": "set",
+   "value": "Прасковья"
+  },
+  {
+   "default": true,
+   "key": "Names.Andrey_bayan",
+   "op": "set",
+   "value": "Андрей"
+  },
+  {
+   "default": true,
+   "key": "Names.Calf",
+   "op": "set",
+   "value": "Теленок"
+  },
+  {
+   "default": true,
+   "key": "Names.Tatyana_Gennadievna",
+   "op": "set",
+   "value": "Женщина"
+  },
+  {
+   "default": true,
+   "key": "Names.Makar",
+   "op": "set",
+   "value": "Макар"
+  },
+  {
+   "default": true,
+   "key": "Names.Alina",
+   "op": "set",
+   "value": "Девушка"
+  },
+  {
+   "default": true,
+   "key": "Names.Andrey_Axe",
+   "op": "set",
+   "value": "Андрей"
+  },
+  {
+   "default": true,
+   "key": "Names.Dragon",
+   "op": "set",
+   "value": "Дракон"
+  },
+  {
+   "default": true,
+   "key": "Names.Daniel_child",
+   "op": "set",
+   "value": "Даниил"
+  },
+  {
+   "default": true,
+   "key": "Names.Ania_black",
+   "op": "set",
+   "value": "Аня"
+  },
+  {
+   "default": true,
+   "key": "Names.John_lifeline",
+   "op": "set",
+   "value": "Джон"
+  },
+  {
+   "default": true,
+   "key": "Names.Den",
+   "op": "set",
+   "value": "Парень"
+  },
+  {
+   "default": true,
+   "key": "Names.Nikita_Melentyev",
+   "op": "set",
+   "value": "Никита"
+  },
+  {
+   "default": true,
+   "key": "Names.Nikita_Melentyev_glasses",
+   "op": "set",
+   "value": "Никита"
+  },
+  {
+   "default": true,
+   "key": "Names.Nikita_Melentyev_old",
+   "op": "set",
+   "value": "Никита"
+  },
+  {
+   "default": true,
+   "key": "Names.Konstantin_Melentyev",
+   "op": "set",
+   "value": "Мелентьев"
+  },
+  {
+   "default": true,
+   "key": "Names.Mother_2",
+   "op": "set",
+   "value": "Мама"
+  },
+  {
+   "default": true,
+   "key": "Names.Father_3",
+   "op": "set",
+   "value": "Папа"
+  },
+  {
+   "default": true,
+   "key": "Names.Father_2",
+   "op": "set",
+   "value": "Папа"
+  },
+  {
+   "default": true,
+   "key": "Names.Olesya_sleeping",
+   "op": "set",
+   "value": "Олеся"
+  },
+  {
+   "default": true,
+   "key": "Names.Seagull",
+   "op": "set",
+   "value": "Чайка"
+  },
+  {
+   "default": true,
+   "key": "Names.Watchman",
+   "op": "set",
+   "value": "Сторож"
+  },
+  {
+   "default": true,
+   "key": "Names.Boss_black",
+   "op": "set",
+   "value": "Начальник"
+  },
+  {
+   "default": true,
+   "key": "Names.John_suit",
+   "op": "set",
+   "value": "Джон"
+  },
+  {
+   "default": true,
+   "key": "Names.Singer_black",
+   "op": "set",
+   "value": "Певица"
+  },
+  {
+   "default": true,
+   "key": "Names.Singer",
+   "op": "set",
+   "value": "Певица"
+  },
+  {
+   "default": true,
+   "key": "Names.Valentin_Nikolaevich",
+   "op": "set",
+   "value": "Дедушка"
+  },
+  {
+   "default": true,
+   "key": "Names.Scientist",
+   "op": "set",
+   "value": "Ученый"
+  },
+  {
+   "default": true,
+   "key": "Names.Andrey_dirty_24",
+   "op": "set",
+   "value": "Андрей"
+  },
+  {
+   "default": true,
+   "key": "Names.Timur_dirty_24",
+   "op": "set",
+   "value": "Тимур"
+  },
+  {
+   "default": true,
+   "key": "Names.Philosopher",
+   "op": "set",
+   "value": "Георгий Николаевич"
+  },
+  {
+   "default": true,
+   "key": "Names.Raisa_with_child",
+   "op": "set",
+   "value": "Раиса с ребенком"
+  },
+  {
+   "default": true,
+   "key": "Names.Raisa",
+   "op": "set",
+   "value": "Раиса"
+  },
+  {
+   "default": true,
+   "key": "Names.Melentyevs_assistant",
+   "op": "set",
+   "value": "Мужчина"
+  },
+  {
+   "default": true,
+   "key": "Names.Siegfried",
+   "op": "set",
+   "value": "Зигфрид"
+  },
+  {
+   "default": true,
+   "key": "Names.Svetlana_Ulanova",
+   "op": "set",
+   "value": "Светлана"
+  },
+  {
+   "default": true,
+   "key": "Names.Victoria_Lisinskaya",
+   "op": "set",
+   "value": "Виктория"
+  },
+  {
+   "default": true,
+   "key": "Names.Andrey_with_bandage",
+   "op": "set",
+   "value": "Андрей"
+  },
+  {
+   "default": true,
+   "key": "Names.Iosiph_old",
+   "op": "set",
+   "value": "Отец"
+  },
+  {
+   "default": true,
+   "key": "Names.Teenager",
+   "op": "set",
+   "value": "Парень"
+  },
+  {
+   "default": true,
+   "key": "Names.Luda_Spy",
+   "op": "set",
+   "value": "Люда"
+  },
+  {
+   "default": true,
+   "key": "Names.Tatyana_Gennadievna_without_jacket",
+   "op": "set",
+   "value": "Татьяна"
+  },
+  {
+   "default": true,
+   "key": "Names.John_underpants_27",
+   "op": "set",
+   "value": "Джон"
+  },
+  {
+   "default": true,
+   "key": "Names.Iraklii_black",
+   "op": "set",
+   "value": "Ираклий"
+  },
+  {
+   "default": true,
+   "key": "Names.Jamalia_black",
+   "op": "set",
+   "value": "Джамалия"
+  },
+  {
+   "default": true,
+   "key": "Names.Policeman_regular_clothes",
+   "op": "set",
+   "value": "Милиционер"
+  },
+  {
+   "default": true,
+   "key": "Names.Policeman",
+   "op": "set",
+   "value": "Милиционер"
+  },
+  {
+   "default": true,
+   "key": "Names.Lyuba_black",
+   "op": "set",
+   "value": "Люба"
+  },
+  {
+   "default": true,
+   "key": "Names.Gypsy_Mirella",
+   "op": "set",
+   "value": "Женщина"
+  },
+  {
+   "default": true,
+   "key": "Names.Nina_Pavlovna_elegant",
+   "op": "set",
+   "value": "Нина Павловна"
+  },
+  {
+   "default": true,
+   "key": "Names.Dan_alternate",
+   "op": "set",
+   "value": "Дэн"
+  },
+  {
+   "default": true,
+   "key": "Names.Daniel_Little_modernity",
+   "op": "set",
+   "value": "Даниил"
+  },
+  {
+   "default": true,
+   "key": "Names.Lyuba_Little",
+   "op": "set",
+   "value": "Люба"
+  },
+  {
+   "default": true,
+   "key": "Names.Alice",
+   "op": "set",
+   "value": "Алиса"
+  },
+  {
+   "default": true,
+   "key": "Names.Mom_Another",
+   "op": "set",
+   "value": "Мама"
+  },
+  {
+   "default": true,
+   "key": "Names.Andrey_New_Years_accordion",
+   "op": "set",
+   "value": "Андрей"
+  },
+  {
+   "default": true,
+   "key": "Enter._cname_",
+   "op": "set",
+   "value": "Олеся"
+  },
+  {
+   "default": true,
+   "key": "Enter._pname_",
+   "op": "set",
+   "value": ""
+  },
+  {
+   "default": true,
+   "key": "Temp.focus",
+   "op": "set",
+   "value": ""
+  },
+  {
+   "default": true,
+   "key": "Temp.saveMainChClothes",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Temp.saveMainChHair",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Temp.saveMainChClothes_intim",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Temp.saveMainChHair_intim",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Temp.saveMainChClothes_underwear",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Temp.saveMainChClothes_beforeW",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Temp.saveMainChHair_beforeW",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Relationships.Andrey",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Relationships.Lyuba",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Relationships.Timur",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Relationships.Daniil",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Relationships.Nonna",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Relationships.Jonh",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Relationships.Father",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Relationships.Mother",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Relationships.Marina",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Relationships.Vadim",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Relationships.Praskovia",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Achievements.durka",
+   "op": "set",
+   "value": false
+  },
+  {
+   "default": true,
+   "key": "Way.laziness",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Way.diligence",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Way.calmness",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Way.rage",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Way.crazy",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Way.normal",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Way.rage_10",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Way.Support_parents_1_11",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Way.Dynamo_Plant_1_11",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Way.USSR",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Way.Modernity",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Way.Secret_ending",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "default": true,
+   "key": "Way.Drunkard",
+   "op": "set",
+   "value": 0
+  },
+  {
+   "id": "Двор",
+   "op": "bg",
+   "sprite_url": "/content/bg/Двор.jpg"
+  },
+  {
+   "key": "Wardrobe.FreeWardrobe_Access",
+   "op": "set",
+   "value": false
+  },
+  {
+   "key": "Music.Native",
+   "op": "set",
+   "value": true
+  },
+  {
+   "id": "n1_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Прохлада летнего утра бодрит. Первые лучи солнца пробиваются между высотками.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Уже светает, около четырех утра.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Внезапно налетевший ветерок заставляет меня поежиться и чихнуть.",
+   "who": "Автор"
+  },
+  {
+   "key": "Wardrobe.mainCh_Clothes",
+   "op": "set",
+   "value": 11
+  },
+  {
+   "key": "Wardrobe.mainCh_Hair",
+   "op": "set",
+   "value": 11
+  },
+  {
+   "op": "say",
+   "text": "Экзамены позади… Наконец-то этот учебный год закончился!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Ура! Полечу на Ибицу, как родители и обещали.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Но внезапно накатившая тошнота вынуждает меня поморщиться, согнуться и схватиться за живот.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "От оглушительного щебета птиц голова начинает болеть так нестерпимо, что на секунду омрачает радость предвкушения предстоящих каникул.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Ох… Надо было меньше пить…",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Смутные воспоминания о кислотных софитах ночного клуба, опустошенных стаканах из-под коктейлей, которым я потеряла счет…",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Воспоминание о пробуждении на лавке в каком-то парке заставляет меня почувствовать себя совсем паршиво.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "И...",
+   "who": "Автор"
+  },
+  {
+   "op": "choice",
+   "options": [
+    {
+     "goto": "n2_000000",
+     "text": "И мне стыдно за свой поступок."
+    },
+    {
+     "goto": "n3_000000",
+     "text": "И я прогоняю чувство стыда."
+    }
+   ]
+  },
+  {
+   "id": "n2_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "И мне стыдно за свой поступок.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "Повезло, что меня не ограбили.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Когда-нибудь так нарвусь на маньяка...",
+   "who": "Главный герой"
+  },
+  {
+   "id": "n4_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Я резко выдыхаю, пытаясь набраться храбрости.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Лишь бы родители не услышали, как я возвращаюсь…",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Они меня убьют, если узнают, что меня опять всю ночь не было.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Ничего! Они в это время давно уже спят. Прошмыгну, как мышка.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "А утром сделаю вид, что пришла в двенадцать, когда они уже спали.",
+   "who": "Главный герой"
+  },
+  {
+   "id": "Прихожая",
+   "op": "bg",
+   "sprite_url": "/content/bg/Прихожая.jpg"
+  },
+  {
+   "key": "Music.Alert",
+   "op": "set",
+   "value": true
+  },
+  {
+   "op": "say",
+   "text": "Стараясь не шуметь, я открываю дверь, сбрасываю каблуки, от которых уже гудят ноги, и пытаюсь бесшумно на цыпочках пробраться в свою комнату.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Но пол предательски скрипит, и все внутри меня обрывается.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Только бы не услышали!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Но моя надежда не попасться и избежать непростого разговора с родителями разбивается вдребезги, когда я слышу щелчок выключателя в прихожей.",
+   "who": "Автор"
+  },
+  {
+   "id": "Гостиная",
+   "op": "bg",
+   "sprite_url": "/content/bg/Гостиная.jpg"
+  },
+  {
+   "op": "say",
+   "text": "И в следующую же секунду стою, как провинившаяся школьница, под тяжелыми взглядами мамы и папы .",
+   "who": "Автор"
+  },
+  {
+   "key": "Wardrobe.Mother",
+   "op": "set",
+   "value": 1
+  },
+  {
+   "op": "say",
+   "text": "И где же тебя всю ночь носило ?",
+   "who": "Mother"
+  },
+  {
+   "op": "say",
+   "text": "...",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Отвечай!",
+   "who": "Mother"
+  },
+  {
+   "op": "say",
+   "text": "Не твое дело!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Ты как с матерью разговариваешь?",
+   "who": "Mother"
+  },
+  {
+   "op": "say",
+   "text": "Так же, как и ты со мной.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Мама поворачивается к папе, сокрушенно взмахивая руками, и показывает на меня.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Дима, ты слышал, как твоя дочь со мной разговаривает?!",
+   "who": "Mother"
+  },
+  {
+   "op": "say",
+   "text": "Папа устало встает из-за стола, и я читаю в его взгляде больше горечи и беспокойства, чем гнева.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Он поворачивается к маме и грустно вздыхает.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Аня, она твоя дочь ровно настолько же, насколько и моя.",
+   "who": "Father"
+  },
+  {
+   "op": "say",
+   "text": "Затем папа поворачивается ко мне и смотрит на меня так печально, что мне на какую-то долю секунды становится стыдно за то, что я пропадала всю ночь.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Но я быстро прогоняю эти мысли.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Олеся, мы с мамой безумно волновались. Места себе не находили.",
+   "who": "Father"
+  },
+  {
+   "op": "say",
+   "text": "За всю ночь глаз не сомкнули.",
+   "who": "Father"
+  },
+  {
+   "op": "say",
+   "text": "Где ты была? Почему нас не предупредила?",
+   "who": "Father"
+  },
+  {
+   "op": "say",
+   "text": "Не стоило беспокоиться. Я уже взрослая.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Где и с кем мне проводить время – это мое дело. Не ваше.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Так. Мне это надоело. Ведешь себя как распутная девица ! На Ибицу ты не летишь.",
+   "who": "Mother"
+  },
+  {
+   "op": "say",
+   "text": "Почему это? Вы же обещали мне, что если я хорошо закрою сессию, то полечу!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "А ты закрыла сессию на сплошные тройки.",
+   "who": "Father"
+  },
+  {
+   "op": "say",
+   "text": "Вот! Еле как на тройки закрыла! И то мне бегать пришлось в университет, упрашивать твоего декана, чтобы тебе пересдать разрешили!",
+   "who": "Mother"
+  },
+  {
+   "op": "say",
+   "text": "Шляешься по ночным клубам, учебу запустила… Не летишь и точка!",
+   "who": "Mother"
+  },
+  {
+   "op": "say",
+   "text": "Мама права, Олеся. Мы в твоем возрасте так себя не вели.",
+   "who": "Father"
+  },
+  {
+   "op": "say",
+   "text": "Твоя мама закончила университет с красным дипломом.",
+   "who": "Father"
+  },
+  {
+   "op": "say",
+   "text": "А я тяжело работал во время учебы и учился при этом хорошо. Был активистом в профсоюзе.",
+   "who": "Father"
+  },
+  {
+   "op": "say",
+   "text": "И уж точно мы с мамой не пропадали ночи напролет на тусовках!",
+   "who": "Father"
+  },
+  {
+   "op": "say",
+   "text": "Да как вы вообще жили в своем Совке?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Что вы там вообще видели, кроме учебы и работы?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Вы никакой нормальной жизни там не видели!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Мама решительно идет в сторону кабинета отца.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Хватит. Избаловали мы с отцом тебя.",
+   "who": "Mother"
+  },
+  {
+   "op": "say",
+   "text": "Все тебе давали, абсолютно все, что пожелаешь. А выросла неблагодарная дрянь.",
+   "who": "Mother"
+  },
+  {
+   "op": "say",
+   "text": "Куда ты?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Порву твои билеты и спрячу загран. В Испанию ты не летишь.",
+   "who": "Mother"
+  },
+  {
+   "op": "say",
+   "text": "Твои выборы влияют на отношения с персонажами.",
+   "who": "Подсказка"
+  },
+  {
+   "op": "say",
+   "text": "Надежда на крутые каникулы на солнечном испанском острове рушится, словно карточный домик.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Я...",
+   "who": "Автор"
+  },
+  {
+   "op": "choice",
+   "options": [
+    {
+     "goto": "n5_000000",
+     "text": "Дальше"
+    },
+    {
+     "goto": "n6_000000",
+     "text": "Истерю и ругаюсь."
+    }
+   ]
+  },
+  {
+   "id": "n5_000000",
+   "op": "label"
+  },
+  {
+   "expr": "Relationships.Mother + 1",
+   "key": "Relationships.Mother",
+   "op": "set"
+  },
+  {
+   "op": "say",
+   "text": "Мама, пожалуйста, не надо! Я больше так не буду! Я буду себя хорошо вести!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Ты сделала шаг к улучшению отношени й с мамой .",
+   "who": "Отношения"
+  },
+  {
+   "id": "n7_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Мама с непроницаемым лицом скрывается за дверью кабинета отца и вскоре выносит мои билеты в Испанию.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Демонстративно рвет их на мелкие клочки и бросает на паркет.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "....",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Я сломя голову несусь в свою комнату, даже не пытаясь усмирить клокочущий в груди гнев.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Гнев, сжигающий меня изнутри, словно лава из жерла вулкана .",
+   "who": "Автор"
+  },
+  {
+   "id": "Спальня",
+   "op": "bg",
+   "sprite_url": "/content/bg/Спальня.jpg"
+  },
+  {
+   "key": "Music.Adventure",
+   "op": "set",
+   "value": true
+  },
+  {
+   "op": "say",
+   "text": "Слезы обиды и злости рвутся из глаз, я небрежно вытираю их ладонями, размазывая тушь, в то время как бросаю в сумку свои вещи.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Папа заходит в комнату, и я слышу за спиной его разочарованный голос.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Куда ты собираешься, Олеся?",
+   "who": "Father"
+  },
+  {
+   "op": "say",
+   "text": "Подальше отсюда. Подальше от вас!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Олеся, мама была слишком резкой с тобой, но она права.",
+   "who": "Father"
+  },
+  {
+   "op": "say",
+   "text": "Ты гробишь свою жизнь, и мы не можем просто спокойно наблюдать за этим.",
+   "who": "Father"
+  },
+  {
+   "op": "say",
+   "text": "Когда-нибудь ты нас поймешь.",
+   "who": "Father"
+  },
+  {
+   "op": "say",
+   "text": "Я резко разворачиваюсь, одаривая папу гневным взглядом.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Никогда! Никогда я вас не пойму! Ненавижу вас!",
+   "who": "Главный герой"
+  },
+  {
+   "id": "Прихожая",
+   "op": "bg",
+   "sprite_url": "/content/bg/Прихожая.jpg"
+  },
+  {
+   "op": "say",
+   "text": "Любимые туфли с каблуками все еще валяются в коридоре.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Я забрасываю их в сумку к остальным своим вещам, хаотично брошенным туда, а сама надеваю удобные кеды.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "И убегаю из дома, громко хлопнув дверью.",
+   "who": "Автор"
+  },
+  {
+   "id": "Двор",
+   "op": "bg",
+   "sprite_url": "/content/bg/Двор.jpg"
+  },
+  {
+   "op": "say",
+   "text": "Выбежав из подъезда, тяжело дыша, я достаю из кармана дрожащими от гнева пальцами смартфон и звоню своей единственной подруге.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Длинные гудки… Долго никто не берет трубку.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Неужели у Маринки телефон на беззвучном?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Вскоре я слышу сонный и явно недовольный голос подруги .",
+   "who": "Автор"
+  },
+  {
+   "key": "Scene.call",
+   "op": "set",
+   "value": true
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Леська, ты с ума сошла? Звонить в такое время…",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Марина!..",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Я ужасно рассорилась с родителями. Не хочу рассказывать по телефону.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Можно приехать к тебе? Мне вообще некуда теперь податься…",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Ладно. Бедовая ты девчонка.",
+   "who": "Marina"
+  },
+  {
+   "op": "say",
+   "text": "Куда деваться? Не оставлять же тебя на улице.",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Я сейчас приеду, Маришка…",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Я устало улыбаюсь уголками губ. Ну , хотя бы не придется бомжевать на вокзале…",
+   "who": "Автор"
+  },
+  {
+   "id": "Гостиная_Марины",
+   "op": "bg",
+   "sprite_url": "/content/bg/Гостиная_Марины.jpg"
+  },
+  {
+   "key": "Music.Miracle",
+   "op": "set",
+   "value": true
+  },
+  {
+   "op": "say",
+   "text": "Укутавшись в плед, я тупо смотрю в телевизор, потягивая вино прямо из горла бутылки.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Мне оставь хоть немного! Всю бутылку так вылакаешь!",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Поделиться вином с подругой?",
+   "who": "Автор"
+  },
+  {
+   "op": "choice",
+   "options": [
+    {
+     "goto": "n8_000000",
+     "text": "Поделиться."
+    },
+    {
+     "goto": "n9_000000",
+     "text": "Не делиться."
+    }
+   ]
+  },
+  {
+   "id": "n8_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "[premium]Поделиться.",
+   "who": "Игрок"
+  },
+  {
+   "expr": "Relationships.Marina + 1",
+   "key": "Relationships.Marina",
+   "op": "set"
+  },
+  {
+   "op": "say",
+   "text": "Марина будет тебе благодарна!",
+   "who": "Отношения"
+  },
+  {
+   "op": "say",
+   "text": "Держи, пей.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Я протягиваю уже наполовину опустошенную бутылку подруге.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "А ты не такая уж и жадина, Леся.",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Ты же знаешь, что я терпеть не могу, когда меня так зовут!",
+   "who": "Главный герой"
+  },
+  {
+   "id": "n10_000000",
+   "op": "label"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Ну ты расскажешь мне, что у тебя такого стряслось с родаками, что ты сбежала ранним утром и притащилась ко мне, как блудная собака?",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Молчала бы! Сколько раз я тебя выручала!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Марина вскидывает ладони в знак капитуляции и успокаивающе улыбается.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Рассказывай. Все, как на духу.",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Сделав еще пару глотков вина для храбрости, я приступаю к рассказу об этих пренеприятных событиях.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "После того, как я заканчиваю, подруга присвистывает от удивления.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Да-а-а… Пережестили они, конечно…",
+   "who": "Marina"
+  },
+  {
+   "op": "say",
+   "text": "Ты такого облома вообще не заслужила.",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Я молча киваю, зарываюсь в кокон мягкого пледа и беру пульт, чтобы полистать каналы.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Бесцельно нажимая на кнопку пульта, я натыкаюсь на канал, где показывают какое-то старое выступление.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Там светловолосая девушка в черном платье и золотистом платке на плечах меланхолично поет :",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "«Мы нежность, мы нежность...»",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "«Мы вечная нежность друг друга...»",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Я хмурюсь, потому что пытаюсь вспомнить, как зовут эту певицу.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Что-то очень знакомое…",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Но не могу вспомнить: уставший мозг, снова затуманенный алкоголем, никак не хочет соображать.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Марина, видя мое замешательство, усмехается и прекращает мои мучения.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Это же Анна Герман! Моя мама любит ее слушать.",
+   "who": "Marina"
+  },
+  {
+   "op": "say",
+   "text": "Говорит, что во время ее молодости она была супер популярна.",
+   "who": "Marina"
+  },
+  {
+   "op": "say",
+   "text": "Везде крутили ее песни. Из любого утюга.",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Точно, вспомнила.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Затем я переключаю канал, продолжая бесцельно листать дальше .",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Скучно. Мне гораздо больше нравится Ариана Гранде.",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Да-а-а… Какой же все-таки облом, Олеся!",
+   "who": "Marina"
+  },
+  {
+   "op": "say",
+   "text": "Но нельзя, чтобы твоим родителям удалось испортить тебе каникулы.",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Уже удалось испортить. Полностью уничтожить, точнее.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Что я могу сделать?",
+   "who": "Главный герой"
+  },
+  {
+   "key": "Music.Promenade",
+   "op": "set",
+   "value": true
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Мы! Мы можем!",
+   "who": "Marina"
+  },
+  {
+   "op": "say",
+   "text": "Поедем на море!",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Но как? Загран мой спрятали, кредитку заблокировали.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "На другой карте денег мало для заграницы. Да и без заграна туда никак.",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "А мы не за границу!",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "...",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Поехали на Черное море!",
+   "who": "Marina"
+  },
+  {
+   "op": "say",
+   "text": "Развеемся, попутешествуем по побережью, покупаемся в море!",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Неожиданное предложение подруги заставляет меня поперхнуться вином и закашляться.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Марина хлопает меня по спине, глядя на меня с сочувствием.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Ну ты чего?",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Да ты сравнила Ибицу и наше Черное море! Какой там сервис! А какой… у нас.",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "А у тебя есть выбор?",
+   "who": "Marina"
+  },
+  {
+   "op": "say",
+   "text": "Выбирай: либо ты едешь со мной, либо остаешься в городе.",
+   "who": "Marina"
+  },
+  {
+   "op": "say",
+   "text": "Но я не знаю, куда ты подашься, когда я уеду.",
+   "who": "Marina"
+  },
+  {
+   "op": "say",
+   "text": "Придется вернуться к родителям.",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "От слов подруги меня всю словно прошибает током.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Я передергиваюсь всем телом и яростно мотаю головой.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Нет! Этого еще не хватало!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Ладно! Поедем на Черное море.",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Вот и ладненько!",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "И теперь я наблюдаю за тем, как Марина тянется к журнальному столику и берет свой телефон, копаясь там в контактах.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Ты кому это звонить собралась?",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Вадиму. Позову с нами.",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Вадиму? Только не ему!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Зачем его с собой звать?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Подруга хитро прищуривается и направляет на меня свои глаза-рентгены.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Мне становится неуютно от ее испытующего взгляда, и я спешу отвести взгляд в сторону.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Марина подсаживается ко мне совсем близко, коварно улыбаясь, и я по ее глазам вижу, какие вопросы сейчас посыпятся.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Говори! Что за черная кошка между вами пробежала?",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "....",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Как ответить Марине?",
+   "who": "Автор"
+  },
+  {
+   "op": "choice",
+   "options": [
+    {
+     "goto": "n11_000000",
+     "text": "Грубо осадить."
+    },
+    {
+     "goto": "n12_000000",
+     "text": "Перевести тему разговора."
+    }
+   ]
+  },
+  {
+   "id": "n11_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Грубо осадить.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "Ничего! Не суй свой нос не в свое дело!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Лицо подруги неприязненно искажается, она отшатывается от меня, как от огня.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Какая же ты… вредина.",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Марина явно хотела охарактеризовать меня словами покрепче, но сдержалась.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "А ты та еще приставала!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "И вечно любишь лезть не в свое дело.",
+   "who": "Главный герой"
+  },
+  {
+   "id": "n13_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Подруга поджимает губы и смотрит на меня умоляюще.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Вадим нам нужен просто для безопасности.",
+   "who": "Marina"
+  },
+  {
+   "op": "say",
+   "text": "Две девушки отправляются в автопутешествие. Долгая дорога, машина может поломаться…",
+   "who": "Marina"
+  },
+  {
+   "op": "say",
+   "text": "А если мы нарвемся на маньяка? Или на пьяную компанию, которая захочет развлечься с красотками ?",
+   "who": "Marina"
+  },
+  {
+   "op": "say",
+   "text": "Это слишком опасно. Ты беспечна, но не настолько же?",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Я закатываю глаза, сижу, насупившись .",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Но, не найдя ни одного убедительного довода «против», сокрушенно вздыхаю.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Ладно. Это чисто необходимость.",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Вот и ладушки! С ним будет и веселее.",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "С сияющим лицом девушка находит номер нашего давнего друга и звонит ему.",
+   "who": "Автор"
+  },
+  {
+   "id": "БМВ_у_моря",
+   "op": "bg",
+   "sprite_url": "/content/bg/БМВ_у_моря.jpg"
+  },
+  {
+   "key": "Music.Native",
+   "op": "set",
+   "value": true
+  },
+  {
+   "op": "say",
+   "text": "Вадим вальяжно сидит за рулем своего автомобиля и внимательно следит за дорогой.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Я сижу на заднем сиденье, Марина – рядом с парнем.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Задумчиво смотрю на сменяющиеся пейзажи за окном, совершенно не чувствуя радости от предстоящего отдыха на море.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "...",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Когда мой взгляд падает на зеркало заднего вида, то я вижу насмешливые глаза Вадима.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "....",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Знает же, что я смотрю на его отражение…",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Смеется надо мной.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Не надо было соглашаться ехать с ним…",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Я открываю окно автомобиля шире, и соленый морской воздух заполняет салон.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "...",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Марина смотрит на сменяющиеся пейзажи за окном с улыбкой настолько широкой, что я удивляюсь, как у нее еще лицо не заболело от такой улыбки.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Все молчат. Только крики чаек и шум автомобиля, подскакивающего на кочках, нарушают эту тишину…",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "И тут насмешливый голос Вадима прерывает повисшее молчание.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Вы удивили меня, девчонки, таким внезапным приглашением на отдых.",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Не говори нам, что ты был недоволен! Сияешь, словно сорвал куш.",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "А как же? Еду на море с такими красотками!",
+   "who": "Vadim"
+  },
+  {
+   "op": "say",
+   "text": "Не просто же так вы меня позвали? Это явный намек…",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Марина хмурит брови, затем звонко смеется и толкает парня локтем в бок.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Пошляк!",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Эй! Не отвлекай меня! А то мы свалимся к черту с этой дороги.",
+   "who": "Vadim"
+  },
+  {
+   "op": "say",
+   "text": "Зато искупаемся.",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "А потом ты попадешь к черту в ад. Он тебе там приготовил особое место.",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Только ли мне?",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "И в этот момент он снова направляет испытующий взгляд своих насмешливых темных глаз в зеркало заднего вида.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Мои щеки вспыхивают, я отворачиваюсь и снова апатично смотрю в окно.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Теплый июньский ветер треплет мои волосы, но не уносит прочь беспокойные мысли из головы.",
+   "who": "Автор"
+  },
+  {
+   "key": "Music.Adventure",
+   "op": "set",
+   "value": true
+  },
+  {
+   "op": "say",
+   "text": "И следующие слова друга для меня становятся громом среди ясного неба.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Олеся, мне очень понравилось в прошлый раз. Может быть, как-нибудь повторим?",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "…",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Злоба захлестывает меня, но я душу ее внутри себя изо всех сил.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Марина же смотрит на нас с улыбкой гиены.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Так… вы вместе?",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Нет! Не вместе!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "А Вадим, как ни в чем не бывало, ухмыляется и повторяет свой вопрос.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Ну так повторим? Море, солнце, пляжи… Идеально же! Развеемся, никаких обязательств…",
+   "who": "Vadim"
+  },
+  {
+   "op": "say",
+   "text": "А ты, Маринка, можешь к нам присоединиться.",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Марина снова пихает его локтем в бок и сердито цокает.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "...",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Как отреагировать?",
+   "who": "Автор"
+  },
+  {
+   "op": "choice",
+   "options": [
+    {
+     "goto": "n14_000000",
+     "text": "Подыграть Вадиму."
+    },
+    {
+     "goto": "n15_000000",
+     "text": "Осадить его."
+    }
+   ]
+  },
+  {
+   "id": "n14_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "[premium]Подыграть Вадиму.",
+   "who": "Игрок"
+  },
+  {
+   "expr": "Relationships.Vadim + 1",
+   "key": "Relationships.Vadim",
+   "op": "set"
+  },
+  {
+   "op": "say",
+   "text": "Вадим приятно удивлен твоей находчивостью!",
+   "who": "Отношения"
+  },
+  {
+   "op": "say",
+   "text": "А давай!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Только знаешь… В прошлый раз было как-то скучно.",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "...",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Я хочу чего-то нового! Плетки, веревки… Наручники. БДСМ!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "А то и ты не Кристиан Грей. У тебя нет своей корпорации. Так хоть Красной Комнатой меня удиви.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Вадим удивляется и беззлобно усмехается.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Не-е-е… Я, конечно, безбашенный. Но не настолько же!",
+   "who": "Vadim"
+  },
+  {
+   "op": "say",
+   "text": "Буду чувствовать себя маньяком. Я так не могу.",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Я начинаю громко смеяться.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Расслабься. Я же пошутила.",
+   "who": "Главный герой"
+  },
+  {
+   "id": "n16_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Я с интересом всматриваюсь в даль дороги и вижу, что мы подъезжаем к какой-то деревне .",
+   "who": "Автор"
+  },
+  {
+   "id": "БМВ_деревня",
+   "op": "bg",
+   "sprite_url": "/content/bg/БМВ_деревня.jpg"
+  },
+  {
+   "key": "Music.Miracle",
+   "op": "set",
+   "value": true
+  },
+  {
+   "op": "say",
+   "text": "Марина оживляется и умоляюще смотрит на Вадима.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Давай здесь остановимся! Я в туалет хочу!",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Марина, эти придорожные туалеты страшнее атомной войны.",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "А что мне делать? Не в кусты же бежать, как собачка!",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "По мне так лучше в кусты, чем в эти страшные вонючие туалеты с дыркой в полу.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Подруга лишь отмахивается от меня и снова упрашивает Вадима .",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Пожалуйста!",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Хорошо, сейчас остановимся.",
+   "who": "Vadim"
+  },
+  {
+   "op": "say",
+   "text": "И бегите, девчонки, по своим делам.",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "id": "Площадь_торговая",
+   "op": "bg",
+   "sprite_url": "/content/bg/Площадь_торговая.jpg"
+  },
+  {
+   "op": "say",
+   "text": "Подруга выбирается из автомобиля, потягивается, как кошка, и разминает затекшие ноги.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Затем поворачивается ко мне и спрашивает с задорной улыбкой .",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Ну ты со мной?",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "В страшный туалет? Не-е-е… Я тебя здесь подожду.",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Ладно, девчонки, я в магазин за сигаретами. Курить жутко хочется!",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Минздрав России предупреждает! Курение убивает!",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Чрезмерное употребление алкоголя тоже убивает, но тебя это не останавливает.",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Ты меня сейчас пьяницей назвал? Ты бессмертный что ли?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Друг вскидывает руки и пятится от меня в сторону магазина.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Пошел я, пока ты меня не прибила. А то так и не покурю перед смертью.",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Фу. От тебя будет потом разить, как от пепельницы.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "А я на пассивное курение не подписывалась!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Вадим лишь отмахивается от меня, как от назойливой мухи, и убегает в сторону магазина.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Я прохожусь вдоль столов, за которыми старушки продают овощи, соленья и яйца.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Сегодня очень жарко, духота и пыль от дороги вызывают у меня лишь желание поскорее убраться отсюда и принять душ.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Ну или хотя бы окунуться в прохладные воды моря, до которого отсюда рукой подать.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Старушки направляют на меня взгляды, полные надежды.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "И от этого мне становится неуютно, я спешу вернуться к машине Вадима.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Друзья как-то не торопятся возвращаться ко мне, а я уже хочу поскорее покинуть это место, пропахшее коровами и курами.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Мимо проходит старушка с корзинкой, зазывая остановившихся передохнуть автомобилистов.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Бабушка.png"
+  },
+  {
+   "op": "say",
+   "text": "Пирожки! Кому жареные пирожки?",
+   "who": "Starushka"
+  },
+  {
+   "op": "say",
+   "text": "Только с печки! С пылу, с жару!",
+   "who": "Starushka"
+  },
+  {
+   "exit": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Она подходит уже совсем близко ко мне и спрашивает меня с радушной улыбкой .",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Бабушка.png"
+  },
+  {
+   "op": "say",
+   "text": "Доченька, будешь пирожки? Ты таких вкусных пирожков точно не ела!",
+   "who": "Starushka"
+  },
+  {
+   "exit": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Что сделать?",
+   "who": "Автор"
+  },
+  {
+   "op": "choice",
+   "options": [
+    {
+     "goto": "n17_000000",
+     "text": "Купить пирожки."
+    },
+    {
+     "goto": "n18_000000",
+     "text": "Отказаться от пирожков."
+    }
+   ]
+  },
+  {
+   "id": "n17_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "[premium]Купить пирожки.",
+   "who": "Игрок"
+  },
+  {
+   "key": "Remember.Pirozhki_1_1",
+   "op": "set",
+   "value": true
+  },
+  {
+   "op": "say",
+   "text": "Друзья будут очень благодарны!",
+   "who": "Отношения"
+  },
+  {
+   "op": "say",
+   "text": "Пирожки так заманчиво пахнут, а я чувствую, что желудок уже сводит от голода.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Может быть, и купить?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Я уже такая голодная…",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "И ребятам куплю!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Хотя Вадим этого не заслужил. Трепло.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Маринка меня теперь замучает расспросами и подколами. А я ничего и не помню, просто провал в памяти.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Заманчивый запах пирожков возвращает меня из моих мыслей.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Бабушка.png"
+  },
+  {
+   "op": "say",
+   "text": "Купи, доченька, пирожки.",
+   "who": "Starushka"
+  },
+  {
+   "op": "say",
+   "text": "А то ты такая худенькая! Тебе нужно больше кушать.",
+   "who": "Starushka"
+  },
+  {
+   "exit": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "С чем у вас пирожки?",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Бабушка.png"
+  },
+  {
+   "op": "say",
+   "text": "Ой, доченька! Есть с яблоком, с луком и яйцом…",
+   "who": "Starushka"
+  },
+  {
+   "exit": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Я выберу…",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Какие пирожки взять?",
+   "who": "Автор"
+  },
+  {
+   "op": "choice",
+   "options": [
+    {
+     "goto": "n19_000000",
+     "text": "Сладкие."
+    },
+    {
+     "goto": "n20_000000",
+     "text": "Сытные."
+    }
+   ]
+  },
+  {
+   "id": "n19_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Сладкие.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "С яблоком!",
+   "who": "Главный герой"
+  },
+  {
+   "id": "n21_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Старушка улыбается, достает полиэтиленовый пакетик и копается в корзинке.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Бабушка.png"
+  },
+  {
+   "op": "say",
+   "text": "Сейчас достану тебе самые пышные и горячие.",
+   "who": "Starushka"
+  },
+  {
+   "exit": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Я говорю старушке, сколько пирожков куплю, и тянусь в карман за деньгами.",
+   "who": "Автор"
+  },
+  {
+   "id": "n22_000000",
+   "op": "label"
+  },
+  {
+   "key": "Music.Native",
+   "op": "set",
+   "value": true
+  },
+  {
+   "op": "say",
+   "text": "И тут к нам подходят Марина и Вадим. Девушка засматривается на то, что предлагают купить деревенские, но быстро отворачивается.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Я все! Готова ехать!",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Вадим же докуривает сигарету, выпуская облака ядовитого дыма в небо, бросает окурок на асфальт и растаптывает его.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Я тоже готов ехать.",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "А нам твоим куревом дышать!",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Да что с тобой? Когда ты со мной развлекалась, тебя ничто не смущало!",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Заткнись! Еще слово об этом – и мы с Маринкой бросаем тебя, отдыхай без нас.",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Да чего ты как с цепи сорвалась? Не было ничего у нас!",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Как это?",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Что? Вы сговорились что ли, чтобы меня разыграть?",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Олеся в ту ночь напилась в клубе, как обычно. Я не стал оставлять ее там, она была никакая.",
+   "who": "Vadim"
+  },
+  {
+   "op": "say",
+   "text": "Чтобы никто не воспользовался ее состоянием, отвез к себе.",
+   "who": "Vadim"
+  },
+  {
+   "op": "say",
+   "text": "А по дороге ее стошнило, она вся была грязная.",
+   "who": "Vadim"
+  },
+  {
+   "op": "say",
+   "text": "Вот мне и пришлось ее одежду закинуть в стиралку. Так Олеся и проснулась в моей одежде.",
+   "who": "Vadim"
+  },
+  {
+   "op": "say",
+   "text": "А я решил ее разыграть. Как я мог упустить такой случай?",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Убить тебя мало за такой розыгрыш!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Но зато какое облегчение! Я хотя бы не женщина легкого поведения.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Все, с пьянством завязываю. Сколько можно позориться? Во всем надо знать меру.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Что-то очень похожее на то, что говорили мне родители.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Сама буду все решать! Сама! Это моя жизнь!",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Ты серьезно думала, что я на такое способен?",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Да.",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Я оскорблен до глубины души.",
+   "who": "Vadim"
+  },
+  {
+   "else": "n24_000000",
+   "expr": "Remember.Pirozhki_1_1 == true",
+   "op": "if",
+   "then": "n23_000000"
+  },
+  {
+   "id": "n23_000000",
+   "op": "label"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Зря только для тебя пирожки купила!",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Пирожки? Отлично! Я такой голодный!",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Марина подлетает к нам и смотрит на меня с надеждой.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Мне же тоже купила? Не оставишь же ты свою подругу голодной?",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Не оставлю.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Протягиваю ей пакет с горячими пирожками, от которых еще исходит пар.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Хватай, пока этот все не забрал и не слопал.",
+   "who": "Главный герой"
+  },
+  {
+   "id": "n25_000000",
+   "op": "label"
+  },
+  {
+   "key": "Music.Bustle",
+   "op": "set",
+   "value": true
+  },
+  {
+   "op": "say",
+   "text": "Пока Марина и Вадим перекусывают, женщина смотрит на нас с любопытством.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Бабушка.png"
+  },
+  {
+   "op": "say",
+   "text": "А куда вы, ребята, направляетесь?",
+   "who": "Starushka"
+  },
+  {
+   "exit": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Да так… Просто путешествуем по побережью.",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Нет конкретной цели. Едем, куда глаза глядят, ищем что-нибудь интересное.",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Бабушка.png"
+  },
+  {
+   "op": "say",
+   "text": "Интересное? А в наших краях есть место, которое вам понравится. Волшебное…",
+   "who": "Starushka"
+  },
+  {
+   "exit": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Волшебное?",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Бабушка.png"
+  },
+  {
+   "op": "say",
+   "text": "Да. Пещера, которая исполняет желания.",
+   "who": "Starushka"
+  },
+  {
+   "exit": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Исполняет желания? Это как?",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Бабушка.png"
+  },
+  {
+   "op": "say",
+   "text": "Пещера у самого моря, а в ней спрятано лазурное бездонное озеро.",
+   "who": "Starushka"
+  },
+  {
+   "op": "say",
+   "text": "По легенде, кто в этом озере искупается и загадает желание, тот обязательно получит то, что хочет.",
+   "who": "Starushka"
+  },
+  {
+   "op": "say",
+   "text": "Его желание сбудется. Непременно.",
+   "who": "Starushka"
+  },
+  {
+   "exit": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Далеко отсюда?",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Бабушка.png"
+  },
+  {
+   "op": "say",
+   "text": "Совсем недалече, сынок! Я объясню, как добраться.",
+   "who": "Starushka"
+  },
+  {
+   "exit": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Ты в это веришь? Серьезно?",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Ну мы же путешествуем! Отдыхаем…",
+   "who": "Vadim"
+  },
+  {
+   "op": "say",
+   "text": "Почему бы нам не заехать туда? Раз уж там красиво.",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "А точно! Давай, Олеся!",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Ну давайте заедем…",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Бабушка.png"
+  },
+  {
+   "op": "say",
+   "text": "Умница, дочка! Ты мне еще потом « С пасибо» скажешь.",
+   "who": "Starushka"
+  },
+  {
+   "exit": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Ага, конечно…",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Но я такая грязная, пыльная и потная, что мне не мешало бы искупаться.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "А то когда еще доберемся до гостиницы?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Когда Вадим получает разъяснения о том, куда ехать, мы садимся в автомобиль и уезжаем, оставляя позади шум и запахи деревни.",
+   "who": "Автор"
+  },
+  {
+   "id": "Пещера",
+   "op": "bg",
+   "sprite_url": "/content/bg/Пещера.jpg"
+  },
+  {
+   "key": "Music.Fantastic",
+   "op": "set",
+   "value": true
+  },
+  {
+   "op": "say",
+   "text": "Я смотрю на лазурные воды озера. Они манят меня, приглашая погрузиться в их прохладу.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "В голову приходит мысль, что я как-то долго ничего не постила в социальные сети . Целый день.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "У меня уже ломка начинается: так хочется разместить фотку и похвастаться, где я.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Ага, было бы, чем хвастаться. Это же не Ибица!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Хотя не обязательно писать, что это не Испания.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Можно же оставить загадочный хэштег , пусть подписчики гадают, где я...",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Что выбрать?",
+   "who": "Автор"
+  },
+  {
+   "op": "choice",
+   "options": [
+    {
+     "goto": "n26_000000",
+     "text": "Сделать селфи."
+    },
+    {
+     "goto": "n27_000000",
+     "text": "Не делать селфи."
+    }
+   ]
+  },
+  {
+   "id": "n26_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "[premium]Сделать селфи.",
+   "who": "Игрок"
+  },
+  {
+   "key": "Remember.Selfie_1_1",
+   "op": "set",
+   "value": true
+  },
+  {
+   "op": "say",
+   "text": "Это фото пригодится тебе позднее !",
+   "who": "Информация"
+  },
+  {
+   "op": "say",
+   "text": "Ребята, а давайте сфотаемся!",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "А зачем это?",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Как это зачем?",
+   "who": "Marina"
+  },
+  {
+   "op": "say",
+   "text": "Для Инсты! Чтобы другие обзавидовались!",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Ну и девчонки… Выпендрежницы!",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Молчал бы! Двигайся к нам!",
+   "who": "Marina"
+  },
+  {
+   "op": "say",
+   "text": "Или не двигайся и топай отсюда. Без тебя сфотаемся.",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Да нет, девчонки! Я ради вас дела отменил...",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Какие дела? Шляться по ночным клубам и цеплять девушек все лето?",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Уж кто бы говорил про ночные клубы!",
+   "who": "Vadim"
+  },
+  {
+   "op": "say",
+   "text": "В общем, я потащился с вами сюда. Меня тоже нужно запечатлеть для истории.",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Тогда вставай к нам ближе и делай губы уточкой!",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Друг пододвигается ко мне совсем близко, обнимая за талию.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Руки убери!",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Убрал и обижен. Больше тебя пьяную не буду спасать.",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Олеся, как ты могла с ним попасть в такую нелепую ситуацию?",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Сама не перестаю задаваться этим вопросом… Просто надо меньше пить.",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Кучкуйтесь! Ближе, вставайте ближе!",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Мы подходим ближе друг к другу, я достаю смартфон и протягиваю руку.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Блин, селфи-палку забыла...",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Ничего! И так справимся. Губы уточкой!",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Смеясь и придуриваясь, мы все-таки делаем фото.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Я заливаю фото и ставлю хэштеги.",
+   "who": "Автор"
+  },
+  {
+   "id": "n28_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Жаркая погода, пыльные дороги, запах деревни, впитавшийся в мои волосы…",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Я просто хочу поскорее смыть это с себя.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Ребята, вы будете купаться?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Марина подходит ближе к озеру, садится на корточки и осторожно трогает воду ладонью.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Какая ледяная!",
+   "who": "Marina"
+  },
+  {
+   "op": "say",
+   "text": "Ни за что не полезу в эту воду, когда можно искупаться в теплом море!",
+   "who": "Marina"
+  },
+  {
+   "op": "say",
+   "text": "Лучше пойду к морю.",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Ну и пожалуйста, ну и не нужно!",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Не печалься, Олеся! Я могу составить тебе компанию.",
+   "who": "Vadim"
+  },
+  {
+   "op": "say",
+   "text": "С превеликим удовольствием составлю…",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Да что он себе позволяет?!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Как ответить Вадиму?",
+   "who": "Автор"
+  },
+  {
+   "op": "choice",
+   "options": [
+    {
+     "goto": "n29_000000",
+     "text": "Отказать вежливо."
+    },
+    {
+     "goto": "n30_000000",
+     "text": "Отказать грубо."
+    }
+   ]
+  },
+  {
+   "id": "n29_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Отказать вежливо.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "Пожалуй… откажусь.",
+   "who": "Главный герой"
+  },
+  {
+   "id": "n31_000000",
+   "op": "label"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Ладно, как скажешь. Пойду к морю с Маринкой.",
+   "who": "Vadim"
+  },
+  {
+   "op": "say",
+   "text": "Присоединяйся потом к нам.",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Друзья уходят, и их удаляющиеся шаги гулко эхом раздаются под мрачными сводами пещеры.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Я кричу им вдогонку:",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Эй! А как же загадать желание?",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Ты думаешь, мы верим в эти сказки?",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Я тоже не верю! Мне просто нужно отмыться от дороги и не так, чтобы быть потом в морской соли.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Они уходят, а я сбрасываю с себя обувь, от которой уже устали ноги, и одежду, оставшись в одном купальнике.",
+   "who": "Автор"
+  },
+  {
+   "key": "Wardrobe.mainCh_Clothes",
+   "op": "set",
+   "value": 3
+  },
+  {
+   "op": "say",
+   "text": "Ох, хоть смою с себя всю эту пыль.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Немного поежившись от прохлады пещеры, я подхожу ближе к озеру, к самому краю, и трогаю ногой воду.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Ледяная!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Так, Олеся… Нельзя же быть такой трусихой!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "В омут нужно прыгать с разбега! Чтобы не успеть испугаться еще больше…",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Я отхожу, группируюсь, решительно смотрю на манящую лазурную гладь озера и бегу.",
+   "who": "Автор"
+  },
+  {
+   "id": "Вода",
+   "op": "bg",
+   "sprite_url": "/content/bg/Вода.jpg"
+  },
+  {
+   "key": "Music.Revelation",
+   "op": "set",
+   "value": true
+  },
+  {
+   "op": "say",
+   "text": "Прыжок. Ледяная вода, от которой перехватывает дыхание, а все тело словно пронзает миллионом иголок.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Воды смыкаются над моей головой, я погружаюсь все глубже.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "В памяти вспышками возникает та ужасная ссора с родителями.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Все тебе давали, абсолютно все, что пожелаешь. А выросла неблагодарная дрянь.",
+   "who": "Mother"
+  },
+  {
+   "op": "say",
+   "text": "Ты гробишь свою жизнь, и мы не можем просто спокойно наблюдать за этим.",
+   "who": "Father"
+  },
+  {
+   "op": "say",
+   "text": "И обида в моей груди разрастается все больше и больше, заполоняя мою душу, выгоняя из нее все светлое.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Лучше бы их у меня не было. Без них было бы лучше.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Но мне уже не хватает кислорода, в панике я выдыхаю пузырьки оставшегося воздуха. Они окружают меня и рвутся наверх.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "И я вслед за ними устремляюсь наверх размашистыми гребками.",
+   "who": "Автор"
+  },
+  {
+   "id": "Пещера",
+   "op": "bg",
+   "sprite_url": "/content/bg/Пещера.jpg"
+  },
+  {
+   "op": "say",
+   "text": "Когда я выбираюсь из воды, мои зубы уже отбивают барабанную дробь.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Балда! Могла хоть полотенце взять!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "И согрелась бы быстрее, и не напяливать же на мокрое тело одежду!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Но мне ничего не остается, кроме того, чтобы подхватить свою одежду и обувь и выбираться из пещеры.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Пойду к машине. Там и достану полотенце из сумки.",
+   "who": "Главный герой"
+  },
+  {
+   "id": "Закат",
+   "op": "bg",
+   "sprite_url": "/content/bg/Закат.jpg"
+  },
+  {
+   "op": "say",
+   "text": "Но подойдя к тому месту, где Вадим оставил автомобиль, я никого не обнаруживаю.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Где же они? Вадим переставил машину?",
+   "who": "Главный герой"
+  },
+  {
+   "id": "Пещера",
+   "op": "bg",
+   "sprite_url": "/content/bg/Пещера.jpg"
+  },
+  {
+   "op": "say",
+   "text": "Я брожу вдоль дороги, по пляжу, возвращаюсь в пещеру…",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Но там мен я встречают лишь безмятежна я гладь озера и мертвая тишина.",
+   "who": "Автор"
+  },
+  {
+   "id": "Закат",
+   "op": "bg",
+   "sprite_url": "/content/bg/Закат.jpg"
+  },
+  {
+   "op": "say",
+   "text": "И, вновь вернувшись к трассе, я начинаю паниковать.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Ребята, где же вы?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Марина! Вадим! Ау! Где вы?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Где же вы? Не могли же вы меня здесь бросить?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Пока я ходила и искала их, солнце уже стало клониться к горизонту.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Купальник на мне уже высох, и я решаю, что глупо ходить искать их в таком виде.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Поэтому одеваюсь, расправляя еще влажные волосы.",
+   "who": "Автор"
+  },
+  {
+   "key": "Wardrobe.mainCh_Clothes",
+   "op": "set",
+   "value": 11
+  },
+  {
+   "op": "say",
+   "text": "Ну точно! Надо же им просто позвонить!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Я копаюсь в кармане джинсов и достаю оттуда телефон.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Но покрытия абсолютно нет, и батарея скоро совсем разрядится.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Почему связи нет?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Я же видела, когда мы только сюда приехали, что здесь прекрасно ловит связь.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Я все же пытаюсь позвонить то Марине, то Вадиму, но гудки не идут.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "И нет даже автоответчика: «Аппарат абонента выключен или находится вне зоны действия сети».",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Просто мертвая тишина.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Еще несколько попыток дозвониться, и телефон выключается из-за того, что батарея разряжена.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Я совсем одна на загородной трассе.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "И не могу ни до кого дозвониться. Нужно идти вдоль дороги.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Дойду до любого населенного пункта, там попрошу помощи.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Или кто-нибудь меня подберет на дороге и подбросит до поселка или города, что тут ближе .",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Мысли о том, что я буду ловить попутку, и могу попасться какому-нибудь маньяку, заставляют меня поежиться от страха.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Но мне ничего не остается. Кроме как пойти по дороге, уходящей в неизведанную даль, под лучами закатного солнца...",
+   "who": "Автор"
+  },
+  {
+   "id": "Дорога_без_жигулей",
+   "op": "bg",
+   "sprite_url": "/content/bg/Дорога_без_жигулей.jpg"
+  },
+  {
+   "key": "Music.Adventure",
+   "op": "set",
+   "value": true
+  },
+  {
+   "op": "say",
+   "text": "Я иду по дороге уже битый час, но мимо даже никто не проедет.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Как же гудят ноги… Надо было больше спортом заниматься.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Не привыкла я так много ходить…",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "А если мне придется ночевать в лесу?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Как Марина и Вадим могли меня здесь бросить? Как?!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "От этого подонка можно было ожидать, чего угодно. Но Марина? Мы же дружим с пеленок!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Усталость, злость и ужас из-за того, что я одна за городом, брошенная лучшими друзьями посреди незнакомых мест, вырываются криком из груди .",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Ненавижу вас! Как вы могли?! Ненавижу-ненавижу!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "И тут же я слышу за спиной шум машины. Машина пока еще далеко, но неизбежно приближается.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "А если это ребята за мной вернулись?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Я оборачиваюсь в надежде увидеть машину Вадима, но меня постигает разочарование, когда я вижу желтые «Жигули»",
+   "who": "Автор"
+  },
+  {
+   "id": "Жигули_у_дороги",
+   "op": "bg",
+   "sprite_url": "/content/bg/Жигули_у_дороги.jpg"
+  },
+  {
+   "op": "say",
+   "text": "???",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Как поступить?",
+   "who": "Автор"
+  },
+  {
+   "op": "choice",
+   "options": [
+    {
+     "goto": "n32_000000",
+     "text": "Ловить попутку."
+    },
+    {
+     "goto": "n33_000000",
+     "text": "Спрятаться в кустах."
+    }
+   ]
+  },
+  {
+   "id": "n32_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Ловить попутку.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "Страшно. Но у меня нет другого выхода.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "А если мне придется ночевать в лесу?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "До людей мне на своих двоих точно не добраться…",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Набравшись смелости, я поднимаю руку, чтобы остановить подъезжающий автомобиль.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Рядом со мной останавливаются желтые «Жигули». Оттуда раздается громкая музыка, явно с «Ретро FM»",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Затем выглядывает из окна парень кавказской национальности.",
+   "who": "Автор"
+  },
+  {
+   "key": "Names.Timur",
+   "op": "set",
+   "value": "Кавказец"
+  },
+  {
+   "key": "Wardrobe.Timur",
+   "op": "set",
+   "value": 1
+  },
+  {
+   "enter": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Тимур_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Красавица, ты как здесь одна за городом оказалась?",
+   "who": "Timur"
+  },
+  {
+   "op": "say",
+   "text": "Словно лебедь белая, затерянная на чужбине…",
+   "who": "Timur"
+  },
+  {
+   "exit": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Не стоило ловить попутку. Ничему меня выпуски новостей не учат.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Тут же заднее окно автомобиля открывается, и оттуда выглядывает девушка с задорной улыбкой.",
+   "who": "Автор"
+  },
+  {
+   "id": "n34_000000",
+   "op": "label"
+  },
+  {
+   "key": "Wardrobe.Lyuba",
+   "op": "set",
+   "value": 1
+  },
+  {
+   "key": "Names.Lyuba",
+   "op": "set",
+   "value": "Девушка"
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Ну шо ты, Тимур, такую гарну дивчину стращаешь?",
+   "who": "Lyuba"
+  },
+  {
+   "key": "Music.Native",
+   "op": "set",
+   "value": true
+  },
+  {
+   "key": "Names.Timur",
+   "op": "set",
+   "value": "Тимур"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Она улыбается мне и делает приглашающий жест в сторону желтых «Жигулей» .",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Не бойся. Шо за беда у тебя стряслась?",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Я с опаской подхожу к ним ближе.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Друзья бросили меня здесь одну. Уехали, а в той машине все мои вещи остались. И телефон разрядился…",
+   "who": "Главный герой"
+  },
+  {
+   "key": "Wardrobe.Daniil",
+   "op": "set",
+   "value": 1
+  },
+  {
+   "key": "Names.Daniil",
+   "op": "set",
+   "value": "Незнакомец"
+  },
+  {
+   "enter": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Даниил_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Телефон разрядился? Это как?",
+   "who": "Daniil"
+  },
+  {
+   "exit": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Из «Жигулей» выбирается темноволосый кудрявый парень в очках и удивленно смотрит на меня.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Девушка же отмахивается от него и рассерженно цокает.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Даня, не смущай дивчину! Шо ты калдычишь? Шо за глупые расспросы?",
+   "who": "Lyuba"
+  },
+  {
+   "op": "say",
+   "text": "Так давай мы тебя до города довезем! Тут недалече до Новороссийска! Там тебе помогут!",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Затем она поворачивается к парням, а я уже вижу рядом с ними еще одного.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Да ведь, Андрюша?",
+   "who": "Lyuba"
+  },
+  {
+   "key": "Wardrobe.Andrey",
+   "op": "set",
+   "value": 1
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Андрей_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Люба, а как же? В Советском Союзе все друг другу товарищи, а если кто-то в беде, разве мы можем просто проехать мимо?",
+   "who": "Andrey"
+  },
+  {
+   "key": "Names.Lyuba",
+   "op": "set",
+   "value": "Люба"
+  },
+  {
+   "exit": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Советский Союз? О чем он болтает?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "И почему они так старомодно одеты? Они с какого-то конкурса косплеев? С тематической вечеринки?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Хорошо же вжились в свои роли. Чудики какие-то.",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Садись к нам, дивчина! Мы тебя здесь не оставим!",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Хорошо… Может быть, хоть там найду своих друзей?",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Так давай знакомиться!",
+   "who": "Lyuba"
+  },
+  {
+   "op": "say",
+   "text": "Меня кликати Люба! Это Тимур, Андрей и Даниил! А тебя как кликати, дивчина?",
+   "who": "Lyuba"
+  },
+  {
+   "key": "Names.Daniil",
+   "op": "set",
+   "value": "Даниил"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Олеся…",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Тимур_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "О, так это как в песне «Сябров»! «Алеся, Алеся, Але-еся-я...»",
+   "who": "Timur"
+  },
+  {
+   "exit": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Голос Тимура бархатистый и раскатистый, но мне сейчас совсем не до того, чтобы слушать его пение.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Ага, вроде как родители меня назвали в честь этой песни…",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Даниил_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Как такое возможно? Эта же песня вышла лишь несколько лет назад!",
+   "who": "Daniil"
+  },
+  {
+   "exit": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Что он мелет? Меня еще и в планах не было, когда она вышла. Такое старье…",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Как поступить?",
+   "who": "Автор"
+  },
+  {
+   "op": "choice",
+   "options": [
+    {
+     "goto": "n35_000000",
+     "text": "Ответить вежливо."
+    },
+    {
+     "goto": "n36_000000",
+     "text": "Грубо сказать об этом."
+    }
+   ]
+  },
+  {
+   "id": "n35_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Ответить вежливо.",
+   "who": "Игрок"
+  },
+  {
+   "expr": "Relationships.Daniil +1",
+   "key": "Relationships.Daniil",
+   "op": "set"
+  },
+  {
+   "op": "say",
+   "text": "Ваши отношения с Даниилом улучшились!",
+   "who": "Отношения"
+  },
+  {
+   "op": "say",
+   "text": "Не знаю, о чем ты… Меня даже в планах не было, когда она вышла.",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Даниил_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "О чем ты?..",
+   "who": "Daniil"
+  },
+  {
+   "exit": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Точно какие-то чудики.",
+   "who": "Главный герой"
+  },
+  {
+   "id": "n37_000000",
+   "op": "label"
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Ну давай, садись к нам, не сумливайся! Не турбувайся, вместе сдужим! Поищем твоих друзей в Новороссийске!",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Что она сказала? Что-то на татарском ...",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Как отреагировать?",
+   "who": "Автор"
+  },
+  {
+   "op": "choice",
+   "options": [
+    {
+     "goto": "n38_000000",
+     "text": "Отреагировать спокойно."
+    },
+    {
+     "goto": "n39_000000",
+     "text": "Рассердиться."
+    }
+   ]
+  },
+  {
+   "id": "n38_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Отреагировать спокойно.",
+   "who": "Игрок"
+  },
+  {
+   "expr": "Relationships.Lyuba +1",
+   "key": "Relationships.Lyuba",
+   "op": "set"
+  },
+  {
+   "op": "say",
+   "text": "Ваши отношения с Любой улучшились!",
+   "who": "Отношения"
+  },
+  {
+   "op": "say",
+   "text": "Какая милая девушка…",
+   "who": "Главный герой"
+  },
+  {
+   "id": "n40_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Голубоглазый парень с добродушной улыбкой подходит ближе к нам.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Андрей_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Люба, ну ты же видишь, что девушка не понимает твою кубанскую балачку!",
+   "who": "Andrey"
+  },
+  {
+   "op": "say",
+   "text": "Говори так, как ты на работе обычно говоришь.",
+   "who": "Andrey"
+  },
+  {
+   "op": "say",
+   "text": "Чтобы Олесе было яснее, а то она через раз тебя понимает.",
+   "who": "Andrey"
+  },
+  {
+   "exit": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Хорошо! Буду говорить на москальском. Привычная уже.",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Тимур_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Ну так погнали в Новороссийск? А то уже смеркается.",
+   "who": "Timur"
+  },
+  {
+   "op": "say",
+   "text": "Долго там провозиться можем…",
+   "who": "Timur"
+  },
+  {
+   "exit": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Даниил_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Поехали. Хотя, по теории вероятности…",
+   "who": "Daniil"
+  },
+  {
+   "exit": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Не занудствуй!",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Затем девушка поворачивается ко мне и снисходительно улыбается.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Ученый наш! Вечно умничает, а мы его почти никогда не понимаем.",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Тимур_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Только придется ребятам потесниться… У меня не «Волга» пока что. К сожалению.",
+   "who": "Timur"
+  },
+  {
+   "exit": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Когда это «Волга» была пределом мечтаний у автомобилистов? Лет сто назад?",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Андрей_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Потеснимся! В тесноте, да не в обиде!",
+   "who": "Andrey"
+  },
+  {
+   "exit": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Когда мы все усаживаемся в машину, Тимур по-хозяйски разваливается за рулем, поворачивает ключ зажигания, и мы отъезжаем.",
+   "who": "Автор"
+  },
+  {
+   "id": "Ночная_дорога",
+   "op": "bg",
+   "sprite_url": "/content/bg/Ночная_дорога.jpg"
+  },
+  {
+   "key": "Music.Promenade",
+   "op": "set",
+   "value": true
+  },
+  {
+   "op": "say",
+   "text": "Андрей сидит впереди, рядом с Тимуром. А сзади я, Люба – рядом со мной, и с краю Даниил.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Тимур бросает быстрый взгляд в зеркало заднего вида.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Тимур_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Вах! Какую все-таки красивую лебедь мы подобрали там, где и не ожидали.",
+   "who": "Timur"
+  },
+  {
+   "exit": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Не смущай Олесю! Дамский угодник…",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Как поступить?",
+   "who": "Автор"
+  },
+  {
+   "op": "choice",
+   "options": [
+    {
+     "goto": "n41_000000",
+     "text": "Заступиться за Тимура."
+    },
+    {
+     "goto": "n42_000000",
+     "text": "Напасть на Тимура."
+    }
+   ]
+  },
+  {
+   "id": "n41_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Заступиться за Тимура.",
+   "who": "Игрок"
+  },
+  {
+   "expr": "Relationships.Timur +1",
+   "key": "Relationships.Timur",
+   "op": "set"
+  },
+  {
+   "op": "say",
+   "text": "Тимуру приятно это слышать!",
+   "who": "Отношения"
+  },
+  {
+   "op": "say",
+   "text": "Да ничего… Он меня не смущает.",
+   "who": "Главный герой"
+  },
+  {
+   "id": "n43_000000",
+   "op": "label"
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Лучше включи радио.",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Тимур послушно нажимает какие-то кнопки и что-то крутит.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Ладно, машина такая допотопная… Бывает. Но такая древняя автомагнитола? Это как?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "После очередного нажатия кнопки я слышу оглушительный визг Любы, от которого вздрагиваю.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "А-а-а! Муслим Магомаев! Оставь, Тимур!",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Из радио раздается мощный голос, трогающий до глубины души.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Любого, кроме меня.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Люба начинает подпевать, и я удивляюсь, насколько чистый и звонкий у нее голос.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "И тут ее песню подхватывают и парни, даже скромный Даниил, продолжая петь вместе с Муслимом Магомаевым.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "После того, как мои попутчики заканчивают петь, девушка смеется, а парни улыбаются.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Ох, Муслим Магомаев… Мужчина мечты.",
+   "who": "Lyuba"
+  },
+  {
+   "op": "say",
+   "text": "Даже наши хлопцы на хуторе его любят. Хотя обычно не любят артистов, считая их позерами.",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Андрей_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Да, он гордость нашего народа. Столько в наших республиках талантов, прославляющих нашу великую страну!",
+   "who": "Andrey"
+  },
+  {
+   "exit": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Наши республики? Какие же они наши?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Я с любопытством смотрю на Любу, потому что впервые вижу такую молодую девушку, которой нравился бы такой старый исполнитель.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "И вообще молодых людей с такими музыкальными вкусами.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Он твой краш, Люба?",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Кто такой кр.. Кр… Краш?",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Как ты можешь этого не знать?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Но вскоре Люба отвлекается от обсуждения Муслима Магомаева.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Ее глаза загораются, и она начинает трогать мои ноги.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Джинсы! Как я сразу не заметила?",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Ну да… Самые обычные джинсы…",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "А что такого?",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Ничего себе обычные! Это же жуткий дефицит!",
+   "who": "Lyuba"
+  },
+  {
+   "op": "say",
+   "text": "И фасона такого я нигде не видела…",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Какой дефицит? О чем ты говоришь ?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Этими джинсами все торговые центры завалены!",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Андрей_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Т орговые центры? Что это?",
+   "who": "Andrey"
+  },
+  {
+   "exit": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Даниил_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Ну, как я понимаю, это… Центры торговли? Это универмаги что ли?",
+   "who": "Daniil"
+  },
+  {
+   "exit": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Н...наверное…",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Но ни в каких универмагах джинсов не найти!",
+   "who": "Lyuba"
+  },
+  {
+   "op": "say",
+   "text": "Я так хочу джинсы…",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Тимур_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Я могу это легко устроить!",
+   "who": "Timur"
+  },
+  {
+   "exit": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "У тебя цены неподъемные!",
+   "who": "Lyuba"
+  },
+  {
+   "op": "say",
+   "text": "Не для простой поварихи. У меня нема столько денег.",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Тимур_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Ладно, для давней подруги сделаю подарок.",
+   "who": "Timur"
+  },
+  {
+   "exit": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Небольшую скидку?",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Тимур_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Да, небольшую… Сто процентов. Но только тебе!",
+   "who": "Timur"
+  },
+  {
+   "op": "say",
+   "text": "Далеко бы я не уехал, если бы всем свой товар дарил.",
+   "who": "Timur"
+  },
+  {
+   "exit": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Люба восклицает, радостно подскакивает и с заднего сиденья тянется к Тимуру, крепко обнимая его.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Андрей_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Осторожно! Не отвлекай его за рулем.",
+   "who": "Andrey"
+  },
+  {
+   "op": "say",
+   "text": "А то все улетим в кювет. Отличное будет окончание отпуска друзей.",
+   "who": "Andrey"
+  },
+  {
+   "exit": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Тимур_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Андрей прав. Потом отблагодаришь меня, Люб.",
+   "who": "Timur"
+  },
+  {
+   "exit": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Как?",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Т имур с серьезным лицом выдерживает долгую паузу для интриги, затем успокаивающе улыбается.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Тимур_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Пирожки! Напечешь мне пирожков. Они у тебя самые вкусные.",
+   "who": "Timur"
+  },
+  {
+   "exit": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "С радостью! Да хоть хачапури, кубдари, что тебе роднее! Я и это умею.",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Тимур_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Это ты мне потом напечешь. Для начала хватит небольшого тазика пирожков .",
+   "who": "Timur"
+  },
+  {
+   "exit": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Я замечаю, с каким неодобрением Андрей смотрит на Тимура.",
+   "who": "Автор"
+  },
+  {
+   "key": "Music.Adventure",
+   "op": "set",
+   "value": true
+  },
+  {
+   "enter": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Тимур_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Не испепелишь ты меня взглядом, и не пытайся. Зря стараешься.",
+   "who": "Timur"
+  },
+  {
+   "op": "say",
+   "text": "Я просто сделал подарок подруге. Что в этом такого?",
+   "who": "Timur"
+  },
+  {
+   "exit": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Андрей_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Ты знаешь, что дело не в этом… А в твоем занятии. Ты фарцовщик!",
+   "who": "Andrey"
+  },
+  {
+   "op": "say",
+   "text": "Преступник! Рушишь экономику нашей страны!",
+   "who": "Andrey"
+  },
+  {
+   "exit": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Тимур_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Я ее развиваю. Если люди хотят модно одеваться в импортные шмотки, то имеют на это полное право.",
+   "who": "Timur"
+  },
+  {
+   "op": "say",
+   "text": "Еще врагом народа меня назови!",
+   "who": "Timur"
+  },
+  {
+   "op": "say",
+   "text": "Можешь выдать меня. Пожалуйста! И пускай меня посадят.",
+   "who": "Timur"
+  },
+  {
+   "exit": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Андрей_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Ты же знаешь, что я тебя никогда не выдам.",
+   "who": "Andrey"
+  },
+  {
+   "exit": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "И тут Андрей бросает на меня настороженный взгляд, ребята замолкают, словно только что вспомнили, что я еду с ними в машине.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "А меня начинает раздражать, что они настолько вжились в свои роли, что никак не хотят выходить из них.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Я вспоминаю о телефоне, который отчаянно нуждается в зарядке, и достаю его из кармана.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Ребята, у вас есть USB-кабель? У меня телефон совсем разрядился…",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Зарядила бы, вдруг друзья мне звонили и ищут меня.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Андрей поворачивается ко мне и смотрит на меня, как на инопланетянку.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Андрей_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Как телефон может разрядиться?",
+   "who": "Andrey"
+  },
+  {
+   "exit": "fade",
+   "id": "Andrey",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Как ответить?",
+   "who": "Автор"
+  },
+  {
+   "op": "choice",
+   "options": [
+    {
+     "goto": "n44_000000",
+     "text": "Ответить вежливо."
+    },
+    {
+     "goto": "n45_000000",
+     "text": "Ответить грубо."
+    }
+   ]
+  },
+  {
+   "id": "n44_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Ответить вежливо.",
+   "who": "Игрок"
+  },
+  {
+   "expr": "Relationships.Andrey +1",
+   "key": "Relationships.Andrey",
+   "op": "set"
+  },
+  {
+   "op": "say",
+   "text": "Ваши отношения с Андреем улучшились!",
+   "who": "Отношения"
+  },
+  {
+   "op": "say",
+   "text": "Ну… телефон долго не был на зарядке, вот и разрядился.",
+   "who": "Главный герой"
+  },
+  {
+   "id": "n46_000000",
+   "op": "label"
+  },
+  {
+   "enter": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Даниил_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "И что такое Ю... Эс… Би… кабель?",
+   "who": "Daniil"
+  },
+  {
+   "exit": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Вы какие-то косплееры?",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Даниил_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Кос… Кто это? Это связано с космосом?",
+   "who": "Daniil"
+  },
+  {
+   "exit": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Хватит меня разыгрывать!",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Никто тебя не разыгрывает. О чем ты?",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Почему вы так одеты? Почему вы так говорите?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Почему?! Словно мы не в двадцать первом веке, а в восьмидесятых!",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Люба_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Олеся, ты как себя чувствуешь?",
+   "who": "Lyuba"
+  },
+  {
+   "exit": "fade",
+   "id": "Lyuba",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Я устала! И меня бесит, что вы меня разыгрываете! Хватит надо мной рофлить!",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Даниил_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Никто тебя не разыгрывает! Какой двадцать первый век? И что такое «рофлить»?",
+   "who": "Daniil"
+  },
+  {
+   "op": "say",
+   "text": "Мы же в двадцатом веке! А точнее, в восемьдесят первом году.",
+   "who": "Daniil"
+  },
+  {
+   "exit": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Это известие оглушает меня тяжелым обухом по голове.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Я мотаю головой, не переставая шептать:",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Нет, нет, нет, нет, нет…",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "И в этот момент по радио начинает играть знакомая музыка.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Но слова совсем непривычные.",
+   "who": "Автор"
+  },
+  {
+   "id": "Машина_Новороссийск",
+   "op": "bg",
+   "sprite_url": "/content/bg/Машина_Новороссийск.jpg"
+  },
+  {
+   "op": "say",
+   "text": "«Союз нерушимый республик свободны х...",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "... Сплотила навеки Великая Русь. ..",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "... Да здравствует созданный волей народо в...",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "... Единый, могучий Советский Союз!»",
+   "who": "Автор"
+  },
+  {
+   "label": "__end",
+   "op": "goto"
+  },
+  {
+   "id": "n45_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Ответить грубо.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "Что за дурацкий вопрос? Обыкновенно! Взял и разрядился!",
+   "who": "Главный герой"
+  },
+  {
+   "label": "n46_000000",
+   "op": "goto"
+  },
+  {
+   "id": "n42_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Напасть на Тимура.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "Вот именно! У меня дикий стресс!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Меня друзья бросили!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Мне сейчас не до подкатов!",
+   "who": "Главный герой"
+  },
+  {
+   "label": "n43_000000",
+   "op": "goto"
+  },
+  {
+   "id": "n39_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Рассердиться.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "Деревенщина какая-то…",
+   "who": "Главный герой"
+  },
+  {
+   "label": "n40_000000",
+   "op": "goto"
+  },
+  {
+   "id": "n36_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Грубо сказать об этом.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "Т ы сильно вжился в роль. Переигрываешь уже.",
+   "who": "Главный герой"
+  },
+  {
+   "enter": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Даниил_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "?",
+   "who": "Daniil"
+  },
+  {
+   "exit": "fade",
+   "id": "Daniil",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Парень явно удивляется, открывает рот, чтобы что-то сказать, но обиженно замолкает.",
+   "who": "Автор"
+  },
+  {
+   "label": "n37_000000",
+   "op": "goto"
+  },
+  {
+   "id": "n33_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Спрятаться в кустах.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "Да кто в наше время может ездить на таком старье?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Попадусь каким-нибудь гопникам, увезут меня в лес. Никто и никогда меня не найдет .",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Сама доберусь до людей, зато живой останусь .",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Пока «Жигули» не подъехали совсем близко, я прыгаю с дороги в густые кусты и притаиваюсь.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Я стою за кустами, задержав дыхание, но когда рядом останавливается этот автомобиль, то хочу рвануть и бежать изо всех сил, не оглядываясь",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Тогда меня точно услышат. Побегут за мной, не успею спастись.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Может быть, не заметят и уедут?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Но из машины выходит парень кавказской национальности и всматривается в кусты у дороги, где я прячусь.",
+   "who": "Автор"
+  },
+  {
+   "key": "Names.Timur",
+   "op": "set",
+   "value": "Кавказец"
+  },
+  {
+   "key": "Wardrobe.Timur",
+   "op": "set",
+   "value": 1
+  },
+  {
+   "enter": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Тимур_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Эй, девица-красавица, я видел, что ты здесь. Не прячься.",
+   "who": "Timur"
+  },
+  {
+   "exit": "fade",
+   "id": "Timur",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Затем из автомобиля выпрыгивает бойкая девушка, подскакивает к парню и шлепает его по спине.",
+   "who": "Автор"
+  },
+  {
+   "label": "n34_000000",
+   "op": "goto"
+  },
+  {
+   "id": "n30_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Отказать грубо.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "Пошел вон! Никто мне не нужен! Одна искупаюсь.",
+   "who": "Главный герой"
+  },
+  {
+   "label": "n31_000000",
+   "op": "goto"
+  },
+  {
+   "id": "n27_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Не делать селфи.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "Это повлияет на события в дальнейшем!",
+   "who": "Информация"
+  },
+  {
+   "op": "say",
+   "text": "Какая глупость! Зачем все время фотаться?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Да я и устала… Успеем еще. Потом.",
+   "who": "Главный герой"
+  },
+  {
+   "label": "n28_000000",
+   "op": "goto"
+  },
+  {
+   "id": "n24_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Старушка подходит к Вадиму, протягивает ему корзинку и показывает пирожки.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Бабушка.png"
+  },
+  {
+   "op": "say",
+   "text": "Сынок, будешь пирожки? Горячие, только с печки!",
+   "who": "Starushka"
+  },
+  {
+   "exit": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "А почему нет? Я голодный, как волк!",
+   "who": "Vadim"
+  },
+  {
+   "op": "say",
+   "text": "Куплю побольше. Девчонки, на вас взять?",
+   "who": "Vadim"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Мне да!",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "А мне не нужно.",
+   "who": "Главный герой"
+  },
+  {
+   "label": "n25_000000",
+   "op": "goto"
+  },
+  {
+   "id": "n20_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Сытные.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "С луком и яйцом!",
+   "who": "Главный герой"
+  },
+  {
+   "label": "n21_000000",
+   "op": "goto"
+  },
+  {
+   "id": "n18_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Отказаться от пирожков.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "Старушка подходит ближе ко мне, протягивает корзинку и приподнимает полотенце.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Я с подозрением смотрю на жареные пирожки в промасленных салфетках.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Такие жирные…",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "И неизвестно, в каком масле вы их жарили.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Сплошные канцерогены и калории.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Старушка осуждающе качает головой и убирает от меня пирожки.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Бабушка.png"
+  },
+  {
+   "op": "say",
+   "text": "Зачем ты так, дочка? Все свежее и натуральное.",
+   "who": "Starushka"
+  },
+  {
+   "label": "n22_000000",
+   "op": "goto"
+  },
+  {
+   "id": "n15_000000",
+   "op": "label"
+  },
+  {
+   "exit": "fade",
+   "id": "Starushka",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Осадить его.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "Нет.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Вадим обескуражен отказом, но ненадолго!",
+   "who": "Отношения"
+  },
+  {
+   "op": "say",
+   "text": "Никогда нет.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Сто тысяч раз нет.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Это было ошибкой.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "И я ее больше не повторю!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Парень усмехается, бросает быстрый взгляд на зеркало заднего вида и снова сосредоточивается на дороге.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Вадим_Обычный.png"
+  },
+  {
+   "op": "say",
+   "text": "Да ладно тебе.",
+   "who": "Vadim"
+  },
+  {
+   "op": "say",
+   "text": "Я же никого ни к чему не принуждаю.",
+   "who": "Vadim"
+  },
+  {
+   "label": "n16_000000",
+   "op": "goto"
+  },
+  {
+   "id": "n12_000000",
+   "op": "label"
+  },
+  {
+   "exit": "fade",
+   "id": "Vadim",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Перевести тему разговора.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "Марина, а что твои родители сказали на то, что ты помяла их машину, когда мы в прошлый раз катались за городом ?",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Марина отсаживается от меня, проигнорировав неприятный вопрос.",
+   "who": "Автор"
+  },
+  {
+   "op": "say",
+   "text": "Затем фальшиво улыбается и спрашивает меня .",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "Может быть, тебе налить горячий чай?",
+   "who": "Marina"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Нет, мой желудок переполнен.",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Я лопну, если еще хоть немного чая выпью.",
+   "who": "Главный герой"
+  },
+  {
+   "label": "n13_000000",
+   "op": "goto"
+  },
+  {
+   "id": "n9_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "Не делиться.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "Не дам! Твоя печень тебе не скажет за это «Спасибо!»",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Я отодвигаюсь подальше от подруги, притягивая бутылку ближе к себе.",
+   "who": "Автор"
+  },
+  {
+   "enter": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "position": "right",
+   "show": true,
+   "sprite_url": "/content/art/Марина_Обычная.png"
+  },
+  {
+   "op": "say",
+   "text": "А ты отважно спасаешь мою печень, жертвуя своей?",
+   "who": "Marina"
+  },
+  {
+   "label": "n10_000000",
+   "op": "goto"
+  },
+  {
+   "id": "n6_000000",
+   "op": "label"
+  },
+  {
+   "exit": "fade",
+   "id": "Marina",
+   "op": "actor",
+   "show": false
+  },
+  {
+   "op": "say",
+   "text": "Истерю и ругаюсь.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "Стой! Ты не можешь так со мной поступить! Ты просто озлобленная истеричка!",
+   "who": "Главный герой"
+  },
+  {
+   "label": "n7_000000",
+   "op": "goto"
+  },
+  {
+   "id": "n3_000000",
+   "op": "label"
+  },
+  {
+   "op": "say",
+   "text": "И я прогоняю чувство стыда.",
+   "who": "Игрок"
+  },
+  {
+   "op": "say",
+   "text": "Зато было весело!",
+   "who": "Главный герой"
+  },
+  {
+   "op": "say",
+   "text": "Надо развлекаться, пока молодая!",
+   "who": "Главный герой"
+  },
+  {
+   "label": "n4_000000",
+   "op": "goto"
+  },
+  {
+   "id": "__end",
+   "op": "label"
+  }
+ ]
+}

@@ -275,15 +275,92 @@ namespace Lvn.UI.Screens
             catch { return null; }
         }
 
-        // Stream the chapter script and run it through the VnStage. The shell's
-        // opaque carousel covers the stage between chapters, so no activation
-        // toggling is needed — we just play, drive the HUD, and return on finish.
+        // Play a title from its entry point and KEEP GOING: when a chapter finishes,
+        // the next one (by number) follows seamlessly — the player reads the whole
+        // novel without bouncing off the carousel between episodes. A progress
+        // marker remembers the furthest chapter started, so re-entering the title
+        // continues there (and the in-chapter autosave restores the exact line);
+        // finishing the last chapter clears it so a replay starts clean.
         private async Task PlayChapterAsync(LvnTitle title, LvnChapter chapter, string playerName)
+        {
+            var resume = ResumeChapterOf(title);
+            if (resume != null) chapter = resume;
+            while (chapter != null)
+            {
+                MarkChapterProgress(title, chapter);
+                var finished = await PlayOneChapterAsync(title, chapter, playerName);
+                if (finished == null) break; // left mid-chapter (cancel/error) → carousel
+                // A cross-chapter save load can land the player in another title —
+                // continue along whichever title the finished chapter belongs to.
+                var (owner, _) = FindChapterByScriptUrl(finished.script_url);
+                if (owner != null) title = owner;
+                var next = NextChapterOf(title, finished);
+                if (next == null)
+                {
+                    ClearChapterProgress(title); // the novel is complete — replays restart
+                    break;
+                }
+                chapter = next;
+            }
+        }
+
+        private static string ProgressKey(LvnTitle title) => "lvn_chapter_" + (title?.id ?? "");
+
+        private static void MarkChapterProgress(LvnTitle title, LvnChapter chapter)
+        {
+            if (title == null || chapter == null) return;
+            PlayerPrefs.SetString(ProgressKey(title), chapter.id);
+            PlayerPrefs.Save();
+        }
+
+        private static void ClearChapterProgress(LvnTitle title)
+        {
+            if (title == null) return;
+            PlayerPrefs.DeleteKey(ProgressKey(title));
+        }
+
+        // The chapter to continue from (the furthest one started), or null to
+        // start at the beginning.
+        private static LvnChapter ResumeChapterOf(LvnTitle title)
+        {
+            if (title?.seasons == null) return null;
+            var id = PlayerPrefs.GetString(ProgressKey(title), "");
+            if (string.IsNullOrEmpty(id)) return null;
+            foreach (var s in title.seasons)
+                if (s?.chapters != null)
+                    foreach (var c in s.chapters)
+                        if (c != null && c.id == id)
+                            return c;
+            return null; // the chapter vanished from the manifest — start over
+        }
+
+        // The next chapter by number, or null when this was the last one.
+        private static LvnChapter NextChapterOf(LvnTitle title, LvnChapter current)
+        {
+            if (title?.seasons == null || current == null) return null;
+            LvnChapter best = null;
+            foreach (var s in title.seasons)
+            {
+                if (s?.chapters == null) continue;
+                foreach (var c in s.chapters)
+                {
+                    if (c == null || c.number <= current.number) continue;
+                    if (best == null || c.number < best.number) best = c;
+                }
+            }
+            return best;
+        }
+
+        // Stream one chapter's script and run it through the VnStage, driving the
+        // HUD until it ends. Returns the chapter that actually FINISHED (it can
+        // differ from the requested one — a cross-chapter save load switches the
+        // stage mid-play), or null when the player left mid-chapter.
+        private async Task<LvnChapter> PlayOneChapterAsync(LvnTitle title, LvnChapter chapter, string playerName)
         {
             if (Stage == null || chapter == null || string.IsNullOrEmpty(chapter.script_url))
             {
                 await Task.Delay(400);
-                return;
+                return null;
             }
 
             // Clean the stage at the START too — not just on the previous chapter's
@@ -311,13 +388,13 @@ namespace Lvn.UI.Screens
             {
                 Debug.LogWarning($"[novelapp] chapter '{chapter.id}' unavailable offline (script not cached)");
                 await Task.Delay(300);
-                return;
+                return null;
             }
 
             string json;
             try { json = await _assets.Loader.DownloadScriptCached(chapter.script_url); }
-            catch (Exception ex) { Debug.LogWarning($"[novelapp] script fetch failed: {ex.Message}"); return; }
-            if (string.IsNullOrEmpty(json)) { Debug.LogWarning($"[novelapp] no script for '{chapter.id}'"); return; }
+            catch (Exception ex) { Debug.LogWarning($"[novelapp] script fetch failed: {ex.Message}"); return null; }
+            if (string.IsNullOrEmpty(json)) { Debug.LogWarning($"[novelapp] no script for '{chapter.id}'"); return null; }
 
             _currentChapter = chapter;
             _currentTitle = title;
@@ -360,12 +437,17 @@ namespace Lvn.UI.Screens
             // left mid-chapter (the loop also breaks on cancellation).
             if (Stage.Player != null) await _state.SaveVarsAsync(title?.id, VarsToJObject(Stage.Player.Vars), default);
             _shell.Hud.SetProgress(1, 1);
+            // The chapter that actually played to the end — a cross-chapter save
+            // load may have switched the stage away from the requested one.
+            bool finished = Stage.Player != null && Stage.Player.Finished;
+            var played = _currentChapter ?? chapter;
             _currentChapter = null;
             _currentTitle = null;
             // Free the finished chapter's decoded art (a chapter can hold dozens of
             // full-res RGBA sprites). UI art — covers, theme skins under ui/ — stays
             // warm; the disk cache is intact so the next entry re-decodes quickly.
             _assets.Loader.UnloadWhere(u => u.Contains("/art/") || u.Contains("/bg/"));
+            return finished ? played : null;
         }
 
         // Cross-chapter save routing: a slot taken in another chapter resolves to
@@ -399,6 +481,7 @@ namespace Lvn.UI.Screens
             _currentChapter = chapter;
             _currentTitle = title ?? _currentTitle;
             _currentScriptJson = json;
+            MarkChapterProgress(_currentTitle, chapter); // continue follows the jump
             Debug.Log($"[novelapp] loaded save into '{chapter.id}' (@{slot.Snap.Index})");
             return true;
         }

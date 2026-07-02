@@ -1,0 +1,2020 @@
+scene chapter
+
+set default=true key="Cutscenes.showAndreyFirstScene_1_5" value=false
+set default=true key="Cutscenes.showDaniilLaboratory_1_6" value=false
+set default=true key="Cutscenes.showOlesyaDurka" value=false
+set default=true key="Cutscenes.showKissTimur_1_8" value=false
+set default=true key="Cutscenes.showLyubaOlesya_12_3" value=false
+set default=true key="Cutscenes.showDaniels_bathroom_intim_1_16" value=false
+set default=true key="Cutscenes.showMonument_1_19" value=false
+set default=true key="Cutscenes.showOlesyaTombstone_1_19" value=false
+set default=true key="Cutscenes.showMonumentRabbit_1_19" value=false
+set default=true key="Cutscenes.showOlesya_and_Phobos_21" value=false
+set default=true key="Cutscenes.showMeme_family" value=false
+set default=true key="Cutscenes.showMeme_Dog_bones_market" value=false
+set default=true key="Cutscenes.showMeme_Joke_red_fish" value=false
+set default=true key="Cutscenes.showJonh_1_23" value=false
+set default=true key="Cutscenes.showSiegfried_and_Odette_25" value=false
+set default=true key="Cutscenes.showOlesyas_parents_26" value=false
+set default=true key="Cutscenes.showWedding_with_Timur_29" value=false
+set default=true key="Cutscenes.showOn_hike_with_Andrey_29" value=false
+set default=true key="Cutscenes.showWith_Daniil_on_the_windowsill_29" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_11" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_12" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_13" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_14" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_15" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_16" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_17" value=false
+set default=true key="Music.Silence" value=false
+set default=true key="Music.Passion" value=false
+set default=true key="Music.Romance" value=false
+set default=true key="Music.Fight" value=false
+set default=true key="Music.Afghanistan" value=false
+set default=true key="Music.Fantastic" value=false
+set default=true key="Music.Miracle" value=false
+set default=true key="Music.Promenade" value=false
+set default=true key="Music.Native" value=false
+set default=true key="Music.Adventure" value=false
+set default=true key="Music.Alert" value=false
+set default=true key="Music.Revelation" value=false
+set default=true key="Music.Havana" value=false
+set default=true key="Music.Bustle" value=false
+set default=true key="Music.Comedian" value=false
+set default=true key="Music.Socialism" value=false
+set default=true key="Music.Sound_of_the_sea" value=false
+set default=true key="Music.Noise_underwater" value=false
+set default=true key="Music.Sound_of_storm" value=false
+set default=true key="Music.River" value=false
+set default=true key="Music.Sound_of_cicadas" value=false
+set default=true key="Music.Sound_of_wind" value=false
+set default=true key="Music.Noise_river_campfire" value=false
+set default=true key="Music.Chopping_firewood" value=false
+set default=true key="Music.Stone_in_water" value=false
+set default=true key="Music.Noise_forest" value=false
+set default=true key="Music.Street_noise" value=false
+set default=true key="Music.Sound_city_after_rain" value=false
+set default=true key="Music.Sound_of_rain" value=false
+set default=true key="Music.Kitchen_noise" value=false
+set default=true key="Music.Waterfall_noise" value=false
+set default=true key="Music.Korea" value=false
+set default=true key="Music.Magic" value=false
+set default=true key="Music.Snowstorm_noise" value=false
+set default=true key="Music.Determination" value=false
+set default=true key="Music.Thunderstorm_noise" value=false
+set default=true key="Music.Swan_Lake" value=false
+set default=true key="Music.New_Years" value=false
+set default=true key="Sound.Sirena" value=false
+set default=true key="Sound.Broken_dishes" value=false
+set default=true key="Sound.Car_brakes" value=false
+set default=true key="Sound.Bird_scream" value=false
+set default=true key="Sound.Knock" value=false
+set default=true key="Sound.Sea_waves" value=false
+set default=true key="Sound.Shower" value=false
+set default=true key="Sound.Alarm" value=false
+set default=true key="Sound.KnockDoor" value=false
+set default=true key="Sound.Kitchen" value=false
+set default=true key="Sound.Broken_glass" value=false
+set default=true key="Sound.Svarka" value=false
+set default=true key="Sound.SvarochnyZeh" value=false
+set default=true key="Sound.Tazik" value=false
+set default=true key="Sound.Stolovka" value=false
+set default=true key="Sound.Storm_noise" value=false
+set default=true key="Sound.Cat_howling" value=false
+set default=true key="Sound.Dog_growling" value=false
+set default=true key="Sound.Fountain_noise" value=false
+set default=true key="Sound.Police_whistle" value=false
+set default=true key="Sound.Fire_alarm" value=false
+set default=true key="Sound.shooting_1_10" value=false
+set default=true key="Sound.Silence" value=false
+set default=true key="Sound.War" value=false
+set default=true key="Sound.Urring_cat" value=false
+set default=true key="Sound.Crash_of_stones" value=false
+set default=true key="Sound.Frying_pan_head" value=false
+set default=true key="Sound.Frying_pan_fell_down" value=false
+set default=true key="Sound.Sizzle_hot_stones" value=false
+set default=true key="Sound.Slapping_brooms" value=false
+set default=true key="Sound.Lowing_cow" value=false
+set default=true key="Sound.Bellowing_calf" value=false
+set default=true key="Sound.Cuckoo" value=false
+set default=true key="Sound.ships_horn" value=false
+set default=true key="Sound.happy_crowd" value=false
+set default=true key="Sound.Doorbell_rings" value=false
+set default=true key="Sound.Steps" value=false
+set default=true key="Sound.Sparrows_chirping" value=false
+set default=true key="Sound.Car_beeps" value=false
+set default=true key="Sound.Train" value=false
+set default=true key="Sound.Phone_call" value=false
+set default=true key="Sound.Doorbell_knock" value=false
+set default=true key="Open.Wardrobe" value=false
+set default=true key="Open.ReOpenWardrobe" value=false
+set default=true key="Wardrobe.FreeWardrobe_Access" value=false
+set default=true key="Wardrobe.mainCh_Clothes" value=0
+set default=true key="Wardrobe.mainCh_Hair" value=0
+set default=true key="Wardrobe.Andrey" value=0
+set default=true key="Wardrobe.Timur" value=0
+set default=true key="Wardrobe.Lyuba" value=0
+set default=true key="Wardrobe.Daniil" value=0
+set default=true key="Wardrobe.Psychiatrist" value=0
+set default=true key="Wardrobe.Child_Olesya" value=0
+set default=true key="Wardrobe.Daniil_without_glasses" value=0
+set default=true key="Wardrobe.Child_Olesya_Cold" value=0
+set default=true key="Wardrobe.Mother" value=0
+set default=true key="Wardrobe.Nonna" value=0
+set default=true key="Remember.Pirozhki_1_1" value=false
+set default=true key="Remember.Selfie_1_1" value=false
+set default=true key="Remember.RudeOldLady" value=false
+set default=true key="Remember.TakeaWallet" value=false
+set default=true key="Remember.Made_Flight_1_3" value=false
+set default=true key="Remember.PhilosophLetter_1_3" value=false
+set default=true key="Remember.DrinkBeer_1_3" value=false
+set default=true key="Remember.SoberLyuba_1_3" value=false
+set default=true key="Remember.OpenDoor_1_3" value=false
+set default=true key="Remember.HelpBabulya_1_4" value=false
+set default=true key="Remember.Cooking_1_4" value=false
+set default=true key="Remember.NewVariable" value=false
+set default=true key="Remember.FlashbackOlesya_1_5" value=false
+set default=true key="Remember.Lyuda_pomnit" value=false
+set default=true key="Remember.Samolet" value=false
+set default=true key="Remember.Kiss_Timur_1_8" value=false
+set default=true key="Remember.Relationships_Daniil_1_9" value=false
+set default=true key="Remember.Relationships_Andrey_1_10" value=false
+set default=true key="Remember.Stone_1_10" value=false
+set default=true key="Remember.Candies_1_10" value=false
+set default=true key="Remember.connected_1_10" value=false
+set default=true key="Remember.Take_cat" value=false
+set default=true key="Remember.Reletionship_Lyuba_1_11" value=false
+set default=true key="Remember.Photo_cans_1_11" value=false
+set default=true key="Remember.Exchange_numbers_1_11" value=false
+set default=true key="Remember.OlesyaRememberDomKultyri_1_12" value=false
+set default=true key="Remember.Talk_with_Stalina_1_13" value=false
+set default=true key="Remember.Cow_birth_1_14" value=false
+set default=true key="Remember.Tell_ab_Makar_and_Praskovia_1_15" value=false
+set default=true key="Remember.Timur_asks_Alina_1_15" value=false
+set default=true key="Remember.Take_paper_1_15" value=false
+set default=true key="Remember.Amirani_1_16" value=false
+set default=true key="Remember.Em_1_16" value=false
+set default=true key="Remember.Relationships_John_1_17" value=false
+set default=true key="Remember.FriendshipDanielTimur_1_18" value=false
+set default=true key="Remember.MixerforLuba_1_18" value=false
+set default=true key="Remember.Blame_father_1_18" value=false
+set default=true key="Remember.Justify_father_1_18" value=false
+set default=true key="Remember.Pick_up_letter_1_19" value=false
+set default=true key="Remember.Leave_letter_1_19" value=false
+set default=true key="Remember.Kimbap_1_19" value=false
+set default=true key="Remember.Teokbokki_1_19" value=false
+set default=true key="Remember.Roses_1_19" value=false
+set default=true key="Remember.Lilies_1_19" value=false
+set default=true key="Remember.Lotus_1_19" value=false
+set default=true key="Remember.Get_into_trash_can_1_19" value=false
+set default=true key="Remember.Open_scene_1_20" value=false
+set default=true key="Remember.Will_miss_1_20" value=false
+set default=true key="Remember.Willnot_miss_1_20" value=false
+set default=true key="Remember.Find_out_about_lake_1_20" value=false
+set default=true key="Remember.Want_see_Phobos_1_20" value=false
+set default=true key="Remember.Put_in_place_John_17" value=false
+set default=true key="Remember.Phobos_remains" value=false
+set default=true key="Remember.Tea_with_lemon" value=false
+set default=true key="Remember.Tea_with_acacia_honey" value=false
+set default=true key="Remember.Lyuba_Univer_1_22" value=false
+set default=true key="Remember.Friendship_Lyuba" value=false
+set default=true key="Remember.Bouillon_1_22" value=false
+set default=true key="Remember.Sorcerers_1_22" value=false
+set default=true key="Remember.Keys_1_22" value=false
+set default=true key="Remember.Photos_1_22" value=false
+set default=true key="Remember.Song_1_23" value=false
+set default=true key="Remember.Hello_Melentyev" value=false
+set default=true key="Remember.Documents_1_23" value=false
+set default=true key="Remember.Information_from_room_1_24" value=false
+set default=true key="Remember.Document_case_24" value=false
+set default=true key="Remember.Scientist_24" value=false
+set default=true key="Remember.Timurs_reflection_24" value=false
+set default=true key="Remember.Timurs_bride_24" value=false
+set default=true key="Remember.Shop_24" value=false
+set default=true key="Remember.Andreis_reflection_24" value=false
+set default=true key="Remember.Andreis_bride_24" value=false
+set default=true key="Remember.pot_24" value=false
+set default=true key="Remember.Olesya_great_24" value=false
+set default=true key="Remember.John_newbie_24" value=false
+set default=true key="Remember.Stat_Raisa_eavesdropping_25" value=false
+set default=true key="Remember.Stepka_25" value=false
+set default=true key="Remember.overheard_25" value=false
+set default=true key="Remember.ballerina_25" value=false
+set default=true key="Remember.camera_25" value=false
+set default=true key="Remember.stolen_26" value=false
+set default=true key="Remember.Daniels_discovery_26" value=false
+set default=true key="Remember.child_from_Andrey_26" value=false
+set default=true key="Remember.parents_documents_27" value=false
+set default=true key="Remember.concert_27" value=false
+set default=true key="Remember.friendship_AT_27" value=false
+set default=true key="Remember.resentment_Timur_27" value=false
+set default=true key="Remember.resentment_Andrey_27" value=false
+set default=true key="Remember.headphones_27" value=false
+set default=true key="Remember.lyuda_prison_27" value=false
+set default=true key="Remember.roses_27" value=false
+set default=true key="Remember.Kiss_John_27" value=false
+set default=true key="Remember.favor_to_John_27" value=false
+set default=true key="Remember.help_John_27" value=false
+set default=true key="Remember.Melentyev_details_27" value=false
+set default=true key="Remember.Johns_work_27" value=false
+set default=true key="Remember.sex_John_27" value=false
+set default=true key="Remember.Johns_advice_28" value=false
+set default=true key="Remember.Lyuba_Love_28" value=false
+set default=true key="Remember.tea_Melentyev_28" value=false
+set default=true key="Remember.get_Melentyev_to_talk_28" value=false
+set default=true key="Remember.broke_out_28" value=false
+set default=true key="Remember.parting_Timur_29" value=false
+set default=true key="Remember.parting_Andrey_29" value=false
+set default=true key="Remember.Melentyev_won_29" value=false
+set default=true key="Remember.NP_29" value=false
+set default=true key="Remember.Daniel_parting_29" value=false
+set default=true key="Remember.bride_Daniila_29" value=false
+set default=true key="Remember.Finale_Crazy_Phobos_29" value=false
+set default=true key="Names.cname" value="Олеся"
+set default=true key="Names.pname" value="..."
+set default=true key="Names.Marina" value="Марина"
+set default=true key="Names.Vadim" value="Вадим"
+set default=true key="Names.Starushka" value="Старушка"
+set default=true key="Names.Father" value="Папа"
+set default=true key="Names.Mother" value="Мама"
+set default=true key="Names.Andrey" value="Андрей"
+set default=true key="Names.Daniil" value="Даниил"
+set default=true key="Names.Timur" value="Тимур"
+set default=true key="Names.Lyuba" value="Люба"
+set default=true key="Names.Nina_Pavlovna" value="Нина Павловна"
+set default=true key="Names.OldLady" value="Старушка"
+set default=true key="Names.Milicioner" value="Милиционер"
+set default=true key="Names.Men1" value="Седой мужик"
+set default=true key="Names.Men2" value="Лысый мужик"
+set default=true key="Names.Doorman" value="Швейцар"
+set default=true key="Names.Waiter" value="Официант"
+set default=true key="Names.Driver" value="Водитель"
+set default=true key="Names.Milicioner_2" value="Милиционер"
+set default=true key="Names.Doctor" value="Медик"
+set default=true key="Names.Nurse" value="Медсестра"
+set default=true key="Names.Patient" value="Пациент"
+set default=true key="Names.Psychiatrist" value="Врач"
+set default=true key="Names.Sanitar" value="Санитар"
+set default=true key="Names.Sanitar_2" value="Санитар"
+set default=true key="Names.Crazy" value="Сумасшедший"
+set default=true key="Names.Lyuda" value="Люда"
+set default=true key="Names.Borya" value="Незнакомец"
+set default=true key="Names.Babulya_vedra" value="Старушка"
+set default=true key="Names.Stalina" value="Сталина Ильинична"
+set default=true key="Names.Lyuda_Black" value="Люда"
+set default=true key="Names.Worker" value="Работник цеха"
+set default=true key="Names.Worker_Black1" value="Рабочий"
+set default=true key="Names.Worker_Black2" value="Рабочий"
+set default=true key="Names.Worker_Black3" value="Рабочий"
+set default=true key="Names.WorkerCap" value="Рабочий"
+set default=true key="Names.Iosiph" value="Иосиф"
+set default=true key="Names.Miriam" value="Мириам"
+set default=true key="Names.Alesha" value="Мальчик"
+set default=true key="Names.Zoya" value="Девушка"
+set default=true key="Names.Veduschii" value="Ведущий"
+set default=true key="Names.John" value="Джон"
+set default=true key="Names.Nonna" value="Официантка"
+set default=true key="Names.Eleanor" value="Элеонора"
+set default=true key="Names.Andrey_child" value="Андрей"
+set default=true key="Names.Timur_child" value="Тимур"
+set default=true key="Names.Dog" value="Пес"
+set default=true key="Names.Laboratory_assistant" value="Незнакомка"
+set default=true key="Names.Cat" value="Кошка"
+set default=true key="Names.John_with_glasses" value="Американец"
+set default=true key="Names.Eleanor_without_glasses" value="Женщина"
+set default=true key="Names.John_with_polaroid" value="Джон"
+set default=true key="Names.Timur_Black" value="Тимур"
+set default=true key="Names.Lilia_Igorevna" value="Лилия Игоревна"
+set default=true key="Names.Cow" value="Буренка"
+set default=true key="Names.Mom_Luba" value="Мама"
+set default=true key="Names.Child_Olesya" value="Олеся"
+set default=true key="Names.Beat_paren" value="Парень"
+set default=true key="Names.Bully" value="Задира"
+set default=true key="Names.Vanya" value="Ваня"
+set default=true key="Names.Vanya_rana" value="Ваня"
+set default=true key="Names.Andrey_forma_rana" value="Андрей"
+set default=true key="Names.Dushman" value="Душман"
+set default=true key="Names.Ashrafi" value="Девочка"
+set default=true key="Names.Ashrafi_i_basket" value="Девочка"
+set default=true key="Names.Dushman_blood" value="Душман"
+set default=true key="Names.Dushman_i_Vanya" value="Душман"
+set default=true key="Names.Andrey_rucablood" value="Андрей"
+set default=true key="Names.Andrey_i_gun" value="Андрей"
+set default=true key="Names.Child_Olesya_Cold" value="Олеся"
+set default=true key="Names.Young_mother_clothes_1" value="Аня"
+set default=true key="Names.Young_Father" value="Дима"
+set default=true key="Names.Father_fairy" value="Рыбак"
+set default=true key="Names.Agnia_fairy" value="Владычица"
+set default=true key="Names.Agnia_Older" value="Агния"
+set default=true key="Names.Mother_Fairy" value="Морская дева"
+set default=true key="Names.Little_Olesya_summer" value="Олеся"
+set default=true key="Names.Daniil_without_glasses" value="Даниил"
+set default=true key="Names.Agnia_Older_black" value="Агния"
+set default=true key="Names.Andrey_black" value="Андрей"
+set default=true key="Names.Phobos" value="Незнакомец"
+set default=true key="Names.Borya_work" value="Боря"
+set default=true key="Names.Lyuda_work" value="Люда"
+set default=true key="Names.Agnia_young" value="Агния"
+set default=true key="Names.Vladimir" value="Владимир"
+set default=true key="Names.Little_Anya" value="Аня"
+set default=true key="Names.Alonso" value="Кубинец"
+set default=true key="Names.Young_mother_clothes_2" value="Аня"
+set default=true key="Names.Commandos" value="Кубинец"
+set default=true key="Names.Borya_work_black" value="Боря"
+set default=true key="Names.Lyuda_work_black" value="Люда"
+set default=true key="Names.Lyuba_ryingpan" value="Люба"
+set default=true key="Names.Iraklii" value="Ираклий"
+set default=true key="Names.Jamalia" value="Джамалия"
+set default=true key="Names.Dali" value="Дали"
+set default=true key="Names.Daniil_black" value="Даниил"
+set default=true key="Names.Praskovia" value="Прасковья"
+set default=true key="Names.Andrey_bayan" value="Андрей"
+set default=true key="Names.Calf" value="Теленок"
+set default=true key="Names.Tatyana_Gennadievna" value="Женщина"
+set default=true key="Names.Makar" value="Макар"
+set default=true key="Names.Alina" value="Девушка"
+set default=true key="Names.Andrey_Axe" value="Андрей"
+set default=true key="Names.Dragon" value="Дракон"
+set default=true key="Names.Daniel_child" value="Даниил"
+set default=true key="Names.Ania_black" value="Аня"
+set default=true key="Names.John_lifeline" value="Джон"
+set default=true key="Names.Den" value="Парень"
+set default=true key="Names.Nikita_Melentyev" value="Никита"
+set default=true key="Names.Nikita_Melentyev_glasses" value="Никита"
+set default=true key="Names.Nikita_Melentyev_old" value="Никита"
+set default=true key="Names.Konstantin_Melentyev" value="Мелентьев"
+set default=true key="Names.Mother_2" value="Мама"
+set default=true key="Names.Father_3" value="Папа"
+set default=true key="Names.Father_2" value="Папа"
+set default=true key="Names.Olesya_sleeping" value="Олеся"
+set default=true key="Names.Seagull" value="Чайка"
+set default=true key="Names.Watchman" value="Сторож"
+set default=true key="Names.Boss_black" value="Начальник"
+set default=true key="Names.John_suit" value="Джон"
+set default=true key="Names.Singer_black" value="Певица"
+set default=true key="Names.Singer" value="Певица"
+set default=true key="Names.Valentin_Nikolaevich" value="Дедушка"
+set default=true key="Names.Scientist" value="Ученый"
+set default=true key="Names.Andrey_dirty_24" value="Андрей"
+set default=true key="Names.Timur_dirty_24" value="Тимур"
+set default=true key="Names.Philosopher" value="Георгий Николаевич"
+set default=true key="Names.Raisa_with_child" value="Раиса с ребенком"
+set default=true key="Names.Raisa" value="Раиса"
+set default=true key="Names.Melentyevs_assistant" value="Мужчина"
+set default=true key="Names.Siegfried" value="Зигфрид"
+set default=true key="Names.Svetlana_Ulanova" value="Светлана"
+set default=true key="Names.Victoria_Lisinskaya" value="Виктория"
+set default=true key="Names.Andrey_with_bandage" value="Андрей"
+set default=true key="Names.Iosiph_old" value="Отец"
+set default=true key="Names.Teenager" value="Парень"
+set default=true key="Names.Luda_Spy" value="Люда"
+set default=true key="Names.Tatyana_Gennadievna_without_jacket" value="Татьяна"
+set default=true key="Names.John_underpants_27" value="Джон"
+set default=true key="Names.Iraklii_black" value="Ираклий"
+set default=true key="Names.Jamalia_black" value="Джамалия"
+set default=true key="Names.Policeman_regular_clothes" value="Милиционер"
+set default=true key="Names.Policeman" value="Милиционер"
+set default=true key="Names.Lyuba_black" value="Люба"
+set default=true key="Names.Gypsy_Mirella" value="Женщина"
+set default=true key="Names.Nina_Pavlovna_elegant" value="Нина Павловна"
+set default=true key="Names.Dan_alternate" value="Дэн"
+set default=true key="Names.Daniel_Little_modernity" value="Даниил"
+set default=true key="Names.Lyuba_Little" value="Люба"
+set default=true key="Names.Alice" value="Алиса"
+set default=true key="Names.Mom_Another" value="Мама"
+set default=true key="Names.Andrey_New_Years_accordion" value="Андрей"
+set default=true key="Enter._cname_" value="Олеся"
+set default=true key="Enter._pname_" value=""
+set default=true key="Temp.focus" value=""
+set default=true key="Temp.saveMainChClothes" value=false
+set default=true key="Temp.saveMainChHair" value=false
+set default=true key="Temp.saveMainChClothes_intim" value=false
+set default=true key="Temp.saveMainChHair_intim" value=false
+set default=true key="Temp.saveMainChClothes_underwear" value=false
+set default=true key="Temp.saveMainChClothes_beforeW" value=false
+set default=true key="Temp.saveMainChHair_beforeW" value=false
+set default=true key="Relationships.Andrey" value=0
+set default=true key="Relationships.Lyuba" value=0
+set default=true key="Relationships.Timur" value=0
+set default=true key="Relationships.Daniil" value=0
+set default=true key="Relationships.Nonna" value=0
+set default=true key="Relationships.Jonh" value=0
+set default=true key="Relationships.Father" value=false
+set default=true key="Relationships.Mother" value=0
+set default=true key="Relationships.Marina" value=0
+set default=true key="Relationships.Vadim" value=0
+set default=true key="Relationships.Praskovia" value=0
+set default=true key="Achievements.durka" value=false
+set default=true key="Way.laziness" value=0
+set default=true key="Way.diligence" value=0
+set default=true key="Way.calmness" value=0
+set default=true key="Way.rage" value=0
+set default=true key="Way.crazy" value=0
+set default=true key="Way.normal" value=0
+set default=true key="Way.rage_10" value=0
+set default=true key="Way.Support_parents_1_11" value=0
+set default=true key="Way.Dynamo_Plant_1_11" value=0
+set default=true key="Way.USSR" value=0
+set default=true key="Way.Modernity" value=0
+set default=true key="Way.Secret_ending" value=0
+set default=true key="Way.Drunkard" value=0
+bg id="Квартира_Гавана" sprite_url="/content/bg/Квартира_Гавана.jpg"
+Автор: Правда в памяти. У кого нет памяти, у того нет жизни.
+Информация: «Прощание с Матерой» Валентин Распутин
+set key="Music.Revelation" value=true
+Автор: Агния держала на руках свою сонную дочку, пока ей казалось, что земля под ней разверзлась и готова вот-вот поглотить.
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: Папа, где Алонсо, где мой муж?!
+actor exit="fade" id="Agnia_young" show=false
+actor enter="fade" id="Vladimir" position="right" show=true sprite_url="/content/art/Vladimir.jpg"
+Vladimir: Агния…
+actor exit="fade" id="Vladimir" show=false
+Автор: Пауза.
+Автор: Мучительная тишина, притихла даже маленькая Аня, словно чувствуя, насколько сейчас изменится жизнь ее семьи.
+Автор: Но цикады за окном не молчали. Они зловеще стрекотали, пели, и песнь эта была скорбной…
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: Папа, не молчи! Не молчи!
+actor exit="fade" id="Agnia_young" show=false
+Автор: Владимир сглотнул, чтобы про мочить пересохшее горло, и ответил своей дочери безжизненным голосом:
+actor enter="fade" id="Vladimir" position="right" show=true sprite_url="/content/art/Vladimir.jpg"
+Vladimir: Дочка, Алонсо не сможет полететь с вами.
+actor exit="fade" id="Vladimir" show=false
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: Почему? Почему?
+actor exit="fade" id="Agnia_young" show=false
+actor enter="fade" id="Vladimir" position="right" show=true sprite_url="/content/art/Vladimir.jpg"
+Vladimir: Я не знаю, как об этом сказать…
+actor exit="fade" id="Vladimir" show=false
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: Да говори уже, как есть!
+actor exit="fade" id="Agnia_young" show=false
+actor enter="fade" id="Vladimir" position="right" show=true sprite_url="/content/art/Vladimir.jpg"
+Vladimir: Твой муж… Твой муж оказался предателем.
+Vladimir: Он сбежал в Штаты, прихватив с собой секретные военные документы.
+actor exit="fade" id="Vladimir" show=false
+Автор: В легких закончился воздух, девушка не могла перестать мотать головой в отрицании яростно, остервенело, словно пытаясь вытряхнуть из нее все то, что только что услышала.
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: Я тебе не верю!
+Agnia_young: Не верю! Алонсо не мог так поступить!
+Agnia_young: Он бы нас никогда не бросил!
+Agnia_young: Он бы умер, но никогда не бросил свою семью!
+Agnia_young: Никогда бы не стал предателем!
+Agnia_young: Алонсо верил в революцию! Он ради нее проливал свою кровь!
+Agnia_young: Это было делом всей его жизни!
+Agnia_young: Я тебе не верю!
+actor exit="fade" id="Agnia_young" show=false
+actor enter="fade" id="Vladimir" position="right" show=true sprite_url="/content/art/Vladimir.jpg"
+Vladimir: Доченька, я понимаю, что в это очень тяжело поверить, но это действительно так…
+actor exit="fade" id="Vladimir" show=false
+Автор: Маленькая Аня на руках матери удивленно озиралась своими большими глазами, начиная понимать, что происходит.
+actor enter="fade" id="Little_Anya" position="right" show=true sprite_url="/content/art/Little_Anya.jpg"
+Little_Anya: Мама, потерялся папа?
+actor exit="fade" id="Little_Anya" show=false
+Автор: Бесхитростный вопрос дочери, ее растерянный нежный голос вызвали у Агнии поток горячих слез, которые она начала поспешно вытирать с щек.
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: Милая, папа нас очень сильно любит, он не может потеряться.
+actor exit="fade" id="Agnia_young" show=false
+Автор: Агния крепко-крепко прижала к себе дочку и начала гладить ее по спинке.
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: Он не может нас оставить, не может…
+actor exit="fade" id="Agnia_young" show=false
+Автор: Девушка больше уговаривала себя, чем свою дочь, отчаянно пыталась убедить…
+actor enter="fade" id="Vladimir" position="right" show=true sprite_url="/content/art/Vladimir.jpg"
+Vladimir: Аня, вас ждут. Вам нужно срочно уезжать, улетать с острова.
+Vladimir: Водитель ждет, пилот ждет на аэродроме.
+Vladimir: Здесь сейчас очень опасно находиться. Ракеты сюда запустят в первую очередь, если начнется война.
+actor exit="fade" id="Vladimir" show=false
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: А вот я никуда не полечу без своего мужа!
+actor exit="fade" id="Agnia_young" show=false
+actor enter="fade" id="Little_Anya" position="right" show=true sprite_url="/content/art/Little_Anya.jpg"
+Little_Anya: Мама…
+actor exit="fade" id="Little_Anya" show=false
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: Вот пойду к нему на работу, переверну его кабинет в верх дном, я всю Гавану переверну, но найду его!
+actor exit="fade" id="Agnia_young" show=false
+actor enter="fade" id="Vladimir" position="right" show=true sprite_url="/content/art/Vladimir.jpg"
+Vladimir: Агния, его нет ни в Гаване, ни на всей Кубе.
+Vladimir: Ты его нигде не найдешь. Нигде.
+Vladimir: Времени нет, доченька, совсем нет времени.
+Vladimir: Я сделаю все для того, чтобы вы с Анечкой оказались в безопасном месте как можно скорее.
+Vladimir: В таком месте, что выдержит ядерный удар.
+actor exit="fade" id="Vladimir" show=false
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: Я никуда не полечу!
+actor exit="fade" id="Agnia_young" show=false
+actor enter="fade" id="Vladimir" position="right" show=true sprite_url="/content/art/Vladimir.jpg"
+Vladimir: Подумай о дочери, если о себе совсем не думаешь!
+Vladimir: Не стоит умирать из-за того, кто вас предал.
+actor exit="fade" id="Vladimir" show=false
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: Не говори так о нем!
+actor exit="fade" id="Agnia_young" show=false
+Автор: Полковник тяжело вздыхает и достает из кармана смятый лист, разворачивает его и отдает дочери.
+actor enter="fade" id="Vladimir" position="right" show=true sprite_url="/content/art/Vladimir.jpg"
+Vladimir: Раз уж ты мне никак не веришь, посмотри, что он тебе оставил.
+actor exit="fade" id="Vladimir" show=false
+Автор: Агния усадила дочку на кресло и вцепилась в этот лист бумаги, сразу же узнав на нем почерк мужа, еще до того, как начала читать его прощальное послание.
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: Mi hermosa Агния, моя Анечка, мои любимые… Простите меня за то, что я покидаю вас.
+Agnia_young: Я хотел всегда быть с вами, но обстоятельства разлучают нас.
+Agnia_young: Вы единственный свет в моей жизни, и я всегда буду вас любить, где бы я ни оказался.
+Agnia_young: Вы живете в моем сердце, моя любовь сильнее океана, сильнее огня и сильнее смерти.
+Agnia_young: Прости меня, Агния, и прощай.
+Agnia_young: Поцелуй и крепко обними за меня Анечку.
+Agnia_young: Скажи ей, что душа ее папы всегда будет рядом с ней.
+actor exit="fade" id="Agnia_young" show=false
+Автор: Лист выскользнул из трясущихся рук и упал на пол.
+actor enter="fade" id="Little_Anya" position="right" show=true sprite_url="/content/art/Little_Anya.jpg"
+Little_Anya: Потерялся папа?
+actor exit="fade" id="Little_Anya" show=false
+Автор: Агния уже не знала, что сказать дочери.
+Автор: Никаких объяснений в письме, ничего, только бесконечная боль и сожаления.
+Автор: И любовь, которой Агния уже не знала, стоит ли верить.
+Автор: А ведь девушке так хотелось верить своему мужу, хотелось верить в то, что он покинул их не по своей воле и что всегда будет их любить…
+Автор: Не слушать отца о том, что ее муж – лжец, который предал свою страну, свою семью, и сбежал.
+Автор: Владимир начал метаться по комнате, неловко хватая детские вещи и пихая их в чемодан.
+actor enter="fade" id="Vladimir" position="right" show=true sprite_url="/content/art/Vladimir.jpg"
+Vladimir: Я помогу вам собраться. Самолет улетает совсем скоро.
+Vladimir: Документы мы подправим, Анечке тяжело будет жить, если все будут знать, что она дочь предателя.
+Vladimir: Она будет носить нашу фамилию, не его. Лучше, если все будут думать, что у нее нет отца.
+Vladimir: Я сотру его из вашей жизни, словно его никогда и не было.
+Vladimir: Это хорошо, что Анечка так похожа на тебя. Никто не догадается, что ее отец – кубинец.
+actor exit="fade" id="Vladimir" show=false
+Автор: Все, что Агния сейчас слышала, казалось ей бесконечным кошмарным сном, который никак не заканчивался.
+Автор: Взгляд упал на прощальное письмо мужа, все еще лежащее на полу.
+Автор: И Агния решила…
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: ...
+- Забрать его с собой. -> n2_000000
+- Оставить его. -> n3_000000
+:n2_000000
+actor exit="fade" id="Agnia_young" show=false
+Игрок: [premium]Забрать его с собой.
+set key="Remember.Pick_up_letter_1_19" value=true
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: Я не могу бросить здесь письмо от моего мужа!
+actor exit="fade" id="Agnia_young" show=false
+Автор: Она наклонилась за письмом, подняла его и замерла, снова и снова перечитывая эти строки.
+Автор: Пока слезы застилали глаза, никак не желая останавливаться.
+:n4_000000
+actor enter="fade" id="Vladimir" position="right" show=true sprite_url="/content/art/Vladimir.jpg"
+Vladimir: Аня, собирайся. Вас не будут вечно ждать.
+actor exit="fade" id="Vladimir" show=false
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: А ты не полетишь с нами?
+actor exit="fade" id="Agnia_young" show=false
+actor enter="fade" id="Vladimir" position="right" show=true sprite_url="/content/art/Vladimir.jpg"
+Vladimir: Я сейчас не могу улететь, я должен быть здесь.
+Vladimir: Но если…
+actor exit="fade" id="Vladimir" show=false
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: ...
+actor exit="fade" id="Agnia_young" show=false
+actor enter="fade" id="Vladimir" position="right" show=true sprite_url="/content/art/Vladimir.jpg"
+Vladimir: Я прилечу к вам позднее, доченька. Обязательно прилечу.
+Vladimir: Все будет хорошо, Агния.
+actor exit="fade" id="Vladimir" show=false
+Автор: Но хорошего ничего уже не было для Агнии и Ани.
+Автор: И хоть ядерная война еще даже и не началась, их мир рухнул, когда из их жизни исчез Алонсо Сантана.
+bg id="Cuba_Airfield" sprite_url="/content/bg/Cuba_Airfield.jpg"
+Автор: В октябре на Кубе душно даже ночью, но Агнии казалось, что ей холодно…
+Автор: Что она замерзает, ведь тот, кто согревал ее последние годы своей пламенной любовью, покинул ее.
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: ...
+actor exit="fade" id="Agnia_young" show=false
+Автор: Агния крепче прижала к себе дочку, которая и не думала спать, а смотрела на новую обстановку своими огромными голубыми глазами, блестящими в темноте.
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: ...
+actor exit="fade" id="Agnia_young" show=false
+Автор: Услышала, как бьется крохотное сердечко, почувствовала ее тепло и попыталась взять себя в руки.
+Автор: Пилот докурил сигарету и подошел к Агнии, поторапливая ее.
+Автор: Владимир, который решил проводить дочку и внучку, обнял их на прощание и взял в руки чемоданы, помогая донести их до самолета.
+actor enter="fade" id="Vladimir" position="right" show=true sprite_url="/content/art/Vladimir.jpg"
+Vladimir: Вас там встретят, довезут до места и помогут обустроиться.
+Vladimir: Я обо всем позаботился.
+actor exit="fade" id="Vladimir" show=false
+Автор: Владимир в этот момент был по-военному собранным и хладнокровным, но его душу раздирали тяжкие думы и переживания, хоть он и пытался не показывать этого дочери и внучке.
+actor enter="fade" id="Little_Anya" position="right" show=true sprite_url="/content/art/Little_Anya.jpg"
+Little_Anya: Деда…
+actor exit="fade" id="Little_Anya" show=false
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: Папа, когда ты прилетишь к нам?
+actor exit="fade" id="Agnia_young" show=false
+Автор: Отец улыбнулся, посмотрел в глаза дочери своими добрыми глазами и обнял ее.
+actor enter="fade" id="Vladimir" position="right" show=true sprite_url="/content/art/Vladimir.jpg"
+Vladimir: Скоро, доченька. Я смогу скоро добраться до вас.
+actor exit="fade" id="Vladimir" show=false
+Автор: Мужчина взял на руки внучку, крепко обнял ее и поцеловал в лоб.
+actor enter="fade" id="Vladimir" position="right" show=true sprite_url="/content/art/Vladimir.jpg"
+Vladimir: Анечка… Слушайся маму и будь умницей.
+Vladimir: Все будет хорошо, мои родные.
+actor exit="fade" id="Vladimir" show=false
+Автор: Полковник и сам хотел в это верить, но больше всего он хотел, чтобы в это поверила его дочь.
+Автор: Когда самолет поднялся над аэродромом, набирая высоту, а Агния с бесконечной тоской смотрела на те края, которые стали ей домом, с ее губ сорвалось тихое…
+Автор: Алонсо…
+bg id="Soraksan_National_Park" sprite_url="/content/bg/Soraksan_National_Park.jpg"
+set key="Music.Korea" value=true
+Автор: Яркий свет бьет мне в глаза, я щурюсь и удивленно озираюсь.
+Главный герой: Здесь?
+Автор: Мимо проходят люди, горы Сораксан возвышаются над нами и смотрят на нас с величественным равнодушием.
+Автор: Ведь мы для них не более, чем муравьи, которые живут совсем недолго и хотят хоть на мгновение прикоснуться к чему-то такому незыблемому и вечному.
+Автор: Рядом со мной из черного тумана вырастает Фобос.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Ты меня совершенно не слушаешь, творишь, что тебе взбредет в твою буйную голову.
+Phobos: Так что я умываю руки.
+Phobos: Если ты из-за своего самовольного паркура по снам отъедешь в психушку, я плакать не буду.
+actor exit="fade" id="Phobos" show=false
+Главный герой: ...
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: У тебя совершенно невыносимый характер. И как друзья тебя только терпят?
+actor exit="fade" id="Phobos" show=false
+Главный герой: Этот снова надо мной потешается…
+Главный герой: Что бы ему ответить?
+- Я не такая уж и ужасная! -> n5_000000
+- Да ну тебя! -> n6_000000
+- Они меня просто любят. -> n7_000000
+- Понятия не имею, почему они меня терпят. -> n8_000000
+:n5_000000
+Игрок: Я не такая уж и ужасная!
+set expr="Way.rage + 1" key="Way.rage"
+Выбор пути: + вспыльчивость.
+Главный герой: Хватит мне это постоянно внушать!
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Но если меня породило твое богатое воображение, разве не ты сама себе это говоришь?
+:n9_000000
+actor exit="fade" id="Phobos" show=false
+Автор: Я чувствую, как припекает солнце, вдыхаю свежий горный воздух.
+Главный герой: И как сон может быть настолько правдоподобным?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Вернемся к нашим баранам. Ты силой перетащила нас сюда, не желая просыпаться.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Потому что мне надоело тянуть резину!
+Главный герой: Надоело бояться всего, надоело ничего не знать о себе и своей семье! О том, что привело меня в восемьдесят первый.
+Главный герой: Покончим с этим раз и навсегда! Чтобы я наконец-то знала, как мне жить дальше.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Покончим?
+Phobos: Ты действительно думаешь, что если все узнаешь, то это конец? Хэппи энд?
+Phobos: О нет, дорогая хозяйка, ты тем самым откроешь ящик Пандоры, тебе будет никуда не деться от этого нового знания, о котором ты еще тысячекратно пожалеешь.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Я уже приняла решение. Я здесь, и я все узнаю.
+Главный герой: Потому что я уже совершенно ничего не понимаю. Я не понимаю, кто я и где на самом деле мое место.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Хорошо, я помогу тебе. Буду проводником, которого ты хотела.
+Phobos: Хотя бы попытаюсь.
+Phobos: Только помни о том, что в свои воспоминания нельзя вмешиваться, никого и ничего нельзя трогать.
+Phobos: Можно только наблюдать.
+Phobos: И еще…
+actor exit="fade" id="Phobos" show=false
+Автор: Фобос выдерживает интригующую паузу, пока я всматриваюсь в помехи вместо его лица.
+Главный герой: Что?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Постарайся не реветь так часто. Насколько это возможно.
+actor exit="fade" id="Phobos" show=false
+Главный герой: ...
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: А то я совершенно не знаю, что делать, когда ты плачешь!
+actor exit="fade" id="Phobos" show=false
+Главный герой: ...
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Хотя иногда полезно поплакать, потому что потом все-таки становится легче.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Хватит меня уже пугать!
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Я не пугаю, я всего лишь пытаюсь тебя подготовить.
+actor exit="fade" id="Phobos" show=false
+Автор: Я не сразу замечаю за нашими перепалками, как мимо меня проходят родители…
+Автор: Вместе со мной. Той девочкой, какой я была два года назад.
+set key="Wardrobe.FreeWardrobe_Access" value=false
+set expr="Wardrobe.mainCh_Clothes" key="Temp.saveMainChClothes"
+set expr="Wardrobe.mainCh_Hair" key="Temp.saveMainChHair"
+set key="Wardrobe.mainCh_Clothes" value=11
+set key="Wardrobe.mainCh_Hair" value=11
+actor enter="fade" id="Mother_2" position="right" show=true sprite_url="/content/art/E8LAbHj7OPY (1).jpg"
+Mother_2: ...
+actor exit="fade" id="Mother_2" show=false
+actor enter="fade" id="Father_3" position="right" show=true sprite_url="/content/art/dv_qVPrDh3o (1).jpg"
+Father_3: ...
+actor exit="fade" id="Father_3" show=false
+Главный герой: ...
+Автор: Они проходят так близко ко мне…
+Автор: Мне кажется, что я могу лишь протянуть руку и дотронуться до них.
+set expr="Temp.saveMainChClothes" key="Wardrobe.mainCh_Clothes"
+set expr="Temp.saveMainChHair" key="Wardrobe.mainCh_Hair"
+set key="Wardrobe.FreeWardrobe_Access" value=true
+Главный герой: Как же непривычно видеть себя со стороны в своем воспоминании…
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Словно кто-то тебя тайком снимал, а сейчас ты смотришь этот фильм.
+Phobos: Ты же, когда смотришь фильм в кинотеатре, не пытаешься забраться в него, чтобы спасти героев от злодея.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Да поняла я уже! Ты мне сказал всего лишь сотню раз.
+Главный герой: Только наблюдать и не вмешиваться. Это я уже уяснила.
+Автор: Родители заметно сердятся, а Олеся вся светится от счастья.
+Главный герой: Неужели я была такой жизнерадостной? Тогда, в моем времени.
+Главный герой: Я уже забыла об этом… Это было до…
+Автор: В горле образуется ком, не дающий мне ни договорить, ни сделать вздох.
+Автор: Тогда Фобос подходит ближе и берет меня за руку.
+Автор: Его рука в перчатке, но даже через черную кожу я чувствую ее тепло.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Я буду рядом. Не бойся.
+actor exit="fade" id="Phobos" show=false
+Главный герой: ...
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Не отвлекайся.
+Phobos: Смотри внимательно, чтобы ничего не пропустить.
+Phobos: Очень внимательно.
+actor exit="fade" id="Phobos" show=false
+Автор: Сжав крепче ладонь Фобоса, я направляю взгляд на свою семью.
+set key="Wardrobe.FreeWardrobe_Access" value=false
+set expr="Wardrobe.mainCh_Clothes" key="Temp.saveMainChClothes"
+set expr="Wardrobe.mainCh_Hair" key="Temp.saveMainChHair"
+set key="Wardrobe.mainCh_Clothes" value=11
+set key="Wardrobe.mainCh_Hair" value=11
+Главный герой: Ну все! Мама и папа, хватит на меня дуться!
+actor enter="fade" id="Mother_2" position="right" show=true sprite_url="/content/art/E8LAbHj7OPY (1).jpg"
+Mother_2: Сбежала от нас! Отправилась по всей стране одна путешествовать!
+Mother_2: А если бы ты заблудилась? Если бы тебя кто-нибудь похитил?
+actor exit="fade" id="Mother_2" show=false
+Главный герой: Ага, и продали бы меня в бордель в другую страну.
+actor enter="fade" id="Father_3" position="right" show=true sprite_url="/content/art/dv_qVPrDh3o (1).jpg"
+Father_3: Доченька, мы с мамой очень волновались. Больше так не делай.
+actor exit="fade" id="Father_3" show=false
+actor enter="fade" id="Mother_2" position="right" show=true sprite_url="/content/art/E8LAbHj7OPY (1).jpg"
+Mother_2: Дима, да Олесю вообще нужно было назад в Москву отправить, а не идти у нее на поводу.
+Mother_2: Она заслужила домашнего ареста, а не того, чтобы мы с ней еще потащились в этот национальный парк.
+actor exit="fade" id="Mother_2" show=false
+Главный герой: Ну я хочу быть вольной птицей, а не сидеть в одном городе и ждать, когда же вы освободитесь от своей бесконечной работы!
+Главный герой: Иначе я бы так толком и не увидела Корею!
+actor enter="fade" id="Father_3" position="right" show=true sprite_url="/content/art/dv_qVPrDh3o (1).jpg"
+Father_3: Аня, ты слишком строга с Олесей. Ее можно понять.
+actor exit="fade" id="Father_3" show=false
+actor enter="fade" id="Mother_2" position="right" show=true sprite_url="/content/art/E8LAbHj7OPY (1).jpg"
+Mother_2: Да зато я знаю, в кого она такая безрассудная!
+actor exit="fade" id="Mother_2" show=false
+Главный герой: Ну все, не ссорьтесь из-за меня!
+Главный герой: Сегодня чудесный день, мы сейчас поедем на фуникулере и будем смотреть на горы!
+Главный герой: Все просто замечательно!
+Главный герой: Жизнь прекрасна.
+Автор: Я наблюдаю за всем этим, не веря своим глазам, не доверяя своей памяти.
+set expr="Temp.saveMainChClothes" key="Wardrobe.mainCh_Clothes"
+set expr="Temp.saveMainChHair" key="Wardrobe.mainCh_Hair"
+set key="Wardrobe.FreeWardrobe_Access" value=true
+Главный герой: Неужели я была такой…
+- Наивной? -> n10_000000
+- Счастливой? -> n11_000000
+:n10_000000
+Игрок: Наивной?
+set expr="Way.rage + 1" key="Way.rage"
+Выбор пути: + вспыльчивость.
+Главный герой: Даже тошно смотреть на этот щенячий восторг.
+:n12_000000
+Автор: Девушка подлетает к родителям, крепко их обнимая.
+set key="Wardrobe.FreeWardrobe_Access" value=false
+set expr="Wardrobe.mainCh_Clothes" key="Temp.saveMainChClothes"
+set expr="Wardrobe.mainCh_Hair" key="Temp.saveMainChHair"
+set key="Wardrobe.mainCh_Clothes" value=11
+set key="Wardrobe.mainCh_Hair" value=11
+Главный герой: Ну все, не злитесь на меня, мама и папа!
+actor enter="fade" id="Mother_2" position="right" show=true sprite_url="/content/art/E8LAbHj7OPY (1).jpg"
+Mother_2: Ладно, мы сейчас пойдем купим билеты.
+actor exit="fade" id="Mother_2" show=false
+actor enter="fade" id="Father_3" position="right" show=true sprite_url="/content/art/dv_qVPrDh3o (1).jpg"
+Father_3: Ты с нами?
+actor exit="fade" id="Father_3" show=false
+Главный герой: Я вас на улице подожду.
+actor enter="fade" id="Mother_2" position="right" show=true sprite_url="/content/art/E8LAbHj7OPY (1).jpg"
+Mother_2: Только не думай снова сбежать!
+actor exit="fade" id="Mother_2" show=false
+Главный герой: Я и не собиралась!
+Главный герой: Честное-пречестное слово!
+actor enter="fade" id="Father_3" position="right" show=true sprite_url="/content/art/dv_qVPrDh3o (1).jpg"
+Father_3: Там еще есть забегаловка. Ты голодная? Тебе что-нибудь купить?
+actor exit="fade" id="Father_3" show=false
+Главный герой: Да, купи мне…
+- Кимбап! -> n13_000000
+- Токпокки! -> n14_000000
+- Пянсе! -> n15_000000
+:n13_000000
+Игрок: Кимбап!
+set key="Remember.Kimbap_1_19" value=true
+Главный герой: Мне очень понравились эти огромные роллы с мясом, так что возьми побольше.
+:n16_000000
+actor enter="fade" id="Father_3" position="right" show=true sprite_url="/content/art/dv_qVPrDh3o (1).jpg"
+Father_3: Хорошо, сейчас принесу.
+actor exit="fade" id="Father_3" show=false
+Автор: Когда родители скрываются в большом традиционном корейском здании, Олеся подходит к скамье и садится на нее, запрокинув голову и лениво прикрыв глаза.
+set key="Music.Fight" value=true
+set expr="Temp.saveMainChClothes" key="Wardrobe.mainCh_Clothes"
+set expr="Temp.saveMainChHair" key="Wardrobe.mainCh_Hair"
+set key="Wardrobe.FreeWardrobe_Access" value=true
+Автор: Поэтому она не видит того, кто к ней приближается.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: ...
+actor exit="fade" id="Den" show=false
+Главный герой: ...
+set key="Wardrobe.FreeWardrobe_Access" value=false
+set expr="Wardrobe.mainCh_Clothes" key="Temp.saveMainChClothes"
+set expr="Wardrobe.mainCh_Hair" key="Temp.saveMainChHair"
+set key="Wardrobe.mainCh_Clothes" value=11
+set key="Wardrobe.mainCh_Hair" value=11
+Автор: Увидев мое лицо, Фобос крепче сжимает мою ладонь в знак того, чтобы я и не думала наделать глупостей.
+Автор: Но в то же время этот простой жест успокаивает меня.
+Автор: Сглотнув, я медленно выдыхаю, крепче сжимаю руку Фобоса и снова пристально смотрю на свое воспоминание.
+Автор: Дэн склоняется над Олесей, долго внимательно рассматривает ее с хищной улыбкой на лице, затем решает заговорить.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Какая неожиданная встреча!
+actor exit="fade" id="Den" show=false
+Автор: Олеся открывает глаза, вздрагивает и машинально отшатывается.
+Главный герой: ?
+Автор: Словно на клеточном уровне чувствует, что ей надо держаться от него подальше.
+Автор: Но парень обезоруживающе улыбчив, обаятелен и гипнотически притягателен.
+Автор: Тот, кто умеет к себе располагать.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Вы словно Спящая красавица. Я думал, что вы уснули.
+Den: Даже не хотелось вас будить.
+actor exit="fade" id="Den" show=false
+Главный герой: О нет, я не спала!
+Главный герой: Дэн, но как вы оказались здесь?
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Видимо, это судьба, потому что я не знаю, как еще можно объяснить то, что мы, не договариваясь, снова оказались в одном месте.
+actor exit="fade" id="Den" show=false
+Главный герой: ?
+- Возможно, так и есть. -> n17_000000
+- Я не верю в судьбу. -> n18_000000
+:n17_000000
+Игрок: Возможно, так и есть.
+Главный герой: Иначе как это объяснить?
+:n19_000000
+Главный герой: Только если вы не следили за мной.
+Главный герой: И не отправились целенаправленно за мной в Сораксан.
+Автор: Я только сейчас замечаю, что мой рот открыт от изумления.
+set expr="Temp.saveMainChClothes" key="Wardrobe.mainCh_Clothes"
+set expr="Temp.saveMainChHair" key="Wardrobe.mainCh_Hair"
+set key="Wardrobe.FreeWardrobe_Access" value=true
+Главный герой: Я не помню, чтобы я тогда действительно что-то заподозрила!
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Потому что ты тогда действительно ничего не подозревала. Это была всего лишь шутка.
+Phobos: Разве что твоя природная интуиция тебе что-то тихонько шептала, но ты ее не послушала.
+actor exit="fade" id="Phobos" show=false
+Главный герой: ...
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: И в этом не твоя вина.
+actor exit="fade" id="Phobos" show=false
+Автор: Я снова направляю взгляд, полный боли, на свое воспоминание и слышу беззаботный дружный смех.
+set key="Wardrobe.FreeWardrobe_Access" value=false
+set expr="Wardrobe.mainCh_Clothes" key="Temp.saveMainChClothes"
+set expr="Wardrobe.mainCh_Hair" key="Temp.saveMainChHair"
+set key="Wardrobe.mainCh_Clothes" value=11
+set key="Wardrobe.mainCh_Hair" value=11
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Неужели я действительно похож на сталкера?
+actor exit="fade" id="Den" show=false
+Автор: В этот момент парень делает максимально невинные глаза и хлопает ресницами.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Похож?
+actor exit="fade" id="Den" show=false
+Главный герой: Нет, нисколько.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Очень приятно это слышать.
+Den: Вы мне так и не рассказали, почему сбежали от родителей на Чеджу, где мы и встретились.
+actor exit="fade" id="Den" show=false
+Главный герой: Ах, это… Да там ничего интересного.
+Главный герой: Банальная история.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Мне действительно интересно. Расскажете?
+actor exit="fade" id="Den" show=false
+Главный герой: А вы расскажете, почему полетели именно в Корею?
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Да там тоже ничего интересного.
+Den: Просто отец хочет взвалить на меня непосильную ношу, к которой я не готов, но мне все равно никуда не деться.
+Den: Вот я и решил сбежать и обо всем подумать.
+actor exit="fade" id="Den" show=false
+Главный герой: Понятно…
+Главный герой: А почему именно Корея?
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Люблю K-pop. Например, BTS, вот они слева направо: Намджун, Чонгук, Чингачгук…
+actor exit="fade" id="Den" show=false
+Автор: Олеся взрывается искристым смехом.
+Главный герой: Ха-ха-ха! Ну а если серьезно?
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Если серьезно, то я просто обожаю корейские дорамы! Они такие душевные и романтичные!
+Den: Ли Мин… как его там… Мое все!
+actor exit="fade" id="Den" show=false
+Автор: Снова задорный девичий смех пробивается словно родниковая вода в этой духоте сезона дождей.
+Автор: А я наблюдаю за этим с каменным лицом, но внутри меня раздирают противоречия.
+Автор: Фобос стоит рядом, его рука уже на моем плече, словно он хочет меня поддержать, его голос уже не насмешливый, как обычно, а теплый и сочувствующий.
+set expr="Temp.saveMainChClothes" key="Wardrobe.mainCh_Clothes"
+set expr="Temp.saveMainChHair" key="Wardrobe.mainCh_Hair"
+set key="Wardrobe.FreeWardrobe_Access" value=true
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Олеся, ты… только не плачь…
+actor exit="fade" id="Phobos" show=false
+Главный герой: Я…
+Главный герой: Я и не могу! Не могу заплакать!
+Главный герой: Я уверена была, что когда вспомню больше деталей, у меня будет истерика, слезы, но этого нет!
+Главный герой: Такое чувство, что все слезы на эту тему уже выплаканы, ничего не осталось, кроме пустоты и…
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Вопросов?
+actor exit="fade" id="Phobos" show=false
+Главный герой: Да…
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Так задай эти вопросы.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Кому?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Ну, например, мне.
+Phobos: Я ведь всего лишь часть твоего подсознания.
+Phobos: Если ты задашь мне те вопросы, которые тебя тревожат, считай, что ты сама себя спросила.
+Phobos: А иногда это очень полезно – самому себе задавать вопросы и честно на них отвечать.
+Phobos: Так какие вопросы тебя терзают?
+:n20_000000
+actor exit="fade" id="Phobos" show=false
+Главный герой: Я хочу знать…
+- Почему я сидела рядом с ним и спокойно разговаривала? -> n21_000000 expr="!_once_n21_000000"
+- Почему именно я? -> n22_000000 expr="!_once_n22_000000"
+- Почему я раньше не смогла сложить все в цельную картину? -> n23_000000 expr="!_once_n23_000000"
+- Да у меня уже нет сил на вопросы. -> n24_000000
+:n21_000000
+Игрок: [onetime]Почему я сидела рядом с ним и спокойно разговаривала?
+Главный герой: Почему я сразу не поняла, что он меня преследует?
+Главный герой: Как я могла так легко и просто сидеть и разговаривать с ним? Как я могла быть такой идиоткой?
+Главный герой: Как я могла не понять, кто передо мной?!
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Олеся, ну неужели ты должна была шарахаться от каждого парня?
+Phobos: Неужели Дэн был самым подозрительным из всех парней, с которыми ты общалась?
+actor exit="fade" id="Phobos" show=false
+Главный герой: Не был…
+-> n20_000000
+:n22_000000
+Игрок: [onetime]Почему именно я?
+Главный герой: Почему?!
+Автор: Голос срывается, а я продолжаю шептать одними губами беззвучное:
+Главный герой: Почему?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Просто Дэн привык получать все, что хочет. Абсолютно все.
+Phobos: Он захотел тебя. И когда твой отец сильно усложнил это, Дэн стал по-настоящему одержим тобой.
+Phobos: Он решил заполучить тебя любой ценой. А еще ему понравился сам процесс охоты на тебя: как ты живешь своей жизнью, ни о чем не догадываясь, пока он следует везде за тобой. Как тень.
+-> n20_000000
+:n23_000000
+actor exit="fade" id="Phobos" show=false
+Игрок: [onetime]Почему я раньше не смогла сложить все в цельную картину?
+Главный герой: Сколько я уничтожала себя? Сколько не жила, пытаясь найти его.
+Главный герой: Ходила по замкнутому кругу, билась о глухие бетонные стены, истекая кровью.
+Главный герой: Но, оказывается, все это время я его знала! И как я могла быть такой…
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Олеся, ты не знала Дэна раньше. Ты никогда его не видела раньше и не знала, что он сын друга твоего отца.
+Phobos: Ты бы не поверила, что твой папа приготовил тебя для договорного брака. Поэтому ты не придала значения тому подслушанному разговору отца.
+Phobos: А еще твой мозг заблокировал многие воспоминания после такой жестокой психологической травмы.
+-> n20_000000
+:n24_000000
+actor exit="fade" id="Phobos" show=false
+Игрок: Да у меня уже нет сил на вопросы.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: И ответь мне на один вопрос.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Какой?
+set key="Music.Revelation" value=true
+Автор: Фобос, все еще не убрав свою руку с моего плеча, разворачивается ко мне лицом.
+Автор: Раньше его дыхание было ледяным, пробирающим до костей. Сейчас оно теплое.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Когда ты уже перестанешь винить себя в том, что с тобой произошло?
+Phobos: Когда перестанешь говорить себе, что сама виновата?
+Phobos: Когда?
+actor exit="fade" id="Phobos" show=false
+Главный герой: ...
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Сама виновата: пошла на то посвящение.
+Phobos: Сама виновата: пила там алкоголь.
+Phobos: Сама виновата: не подозревала, что он давно начал охоту на тебя.
+Phobos: И вот сейчас ты снова винишь себя. Из-за того, что не раскусила его, из-за того, что общалась с ним.
+actor exit="fade" id="Phobos" show=false
+Главный герой: ...
+Автор: В горле застрял ком, который я тщетно пытаюсь проглотить, легким не хватает воздуха.
+Автор: Фобос крепче сжимает мое плечо, и я чувствую в этом жесте его сострадание и поддержку.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: И сейчас я вижу, я чувствую, что ты снова себя терзаешь и думаешь, что могла сама дать ему повод.
+Phobos: Послушай меня внимательно, потому что я уже не знаю, что делать, чтобы ты это уяснила.
+actor exit="fade" id="Phobos" show=false
+Главный герой: ...
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Ты не виновата. Никакого повода ты ему не давала.
+Phobos: Просто он конченный ублюдок, вот и все.
+actor exit="fade" id="Phobos" show=false
+Главный герой: ...
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Перестань себя винить.
+actor exit="fade" id="Phobos" show=false
+Главный герой: ...
+- Молча кивнуть. -> n25_000000
+- Расплакаться. -> n26_000000
+:n25_000000
+Игрок: Молча кивнуть.
+set expr="Way.calmness + 1" key="Way.calmness"
+Выбор пути: + сдержанность.
+Автор: Я не могу в такой момент вымолвить ни слова.
+Автор: Израненное сердце обливается кровью, но мне все-таки уже легче. Мне легче…
+Главный герой: ...
+Автор: И я молча киваю, одарив Фобоса благодарным взглядом.
+Главный герой: ...
+:n27_000000
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Олеся, тебе стало хоть немного легче?
+actor exit="fade" id="Phobos" show=false
+Главный герой: Да. Спасибо тебе за поддержку.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Будешь сейчас смотреть то, что было дальше?
+actor exit="fade" id="Phobos" show=false
+Главный герой: А как же?!
+Главный герой: Не для того я ношусь по своим воспоминаниям, чтобы так быстро сдаться.
+Главный герой: Я не сдамся. Я узнаю все, что должна узнать.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Тогда смотри дальше.
+set key="Music.Korea" value=true
+set key="Wardrobe.FreeWardrobe_Access" value=false
+set expr="Wardrobe.mainCh_Clothes" key="Temp.saveMainChClothes"
+set expr="Wardrobe.mainCh_Hair" key="Temp.saveMainChHair"
+set key="Wardrobe.mainCh_Clothes" value=11
+set key="Wardrobe.mainCh_Hair" value=11
+actor exit="fade" id="Phobos" show=false
+Автор: Тяжко вздохнув, я направляю взгляд туда, где прежняя я приятно общается с тем, кто потом станет ее худшим кошмаром.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Олеся, я счастлив, что снова встретил тебя.
+Den: Это особенный день, раз судьба нас снова свела.
+actor exit="fade" id="Den" show=false
+Главный герой: ...
+Автор: Парень еще что-то собирается сказать, но его взгляд устремляется к зданию, где расположены кафе и касса на фуникулер.
+Автор: Он заметно напрягается, но затем озадаченность на его лице снова сменяется обезоруживающей улыбкой.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Но я, к сожалению, не могу задержаться, потому что должен встретиться с гидом, который…
+Den: Который поведет меня на экскурсию по буддийскому храму.
+actor exit="fade" id="Den" show=false
+Главный герой: Интересуешься буддизмом?
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Я интересуюсь много чем.
+Den: В буддизме меня привлекают медитации, поиск нирваны и… отказ от всех эгоистических желаний.
+actor exit="fade" id="Den" show=false
+Автор: Олеся снова взрывается искристым смехом, убирая с лица выбившуюся из прически белокурую прядь.
+Главный герой: Ха-ха-ха!
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Почему ты смеешься?
+actor exit="fade" id="Den" show=false
+Главный герой: Да меня позабавили твои слова об отказе от эгоистических желаний.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Неужели я больше похож на мажора-тусовщика, чем на монаха-аскета?
+actor exit="fade" id="Den" show=false
+Главный герой: Наверное.
+Автор: В глазах парня вспыхивают хищные огоньки, губы растягиваются в усмешке.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Не веришь мне?
+Den: Ну давай тогда когда ты вернешься сюда через год, то найдешь меня в ближайшем буддийском храме, обритым налысо, в красном балахоне.
+actor exit="fade" id="Den" show=false
+Главный герой: Ну да! Я уже поняла, что ты тот еще шутник!
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: И я подарю тебе…
+actor exit="fade" id="Den" show=false
+Автор: Олеся решает принять правила этой нелепой игры и немного подурачиться.
+Главный герой: И ты подаришь мне…
+- Розы! -> n28_000000
+- Лилии! -> n29_000000
+- Лотос! -> n30_000000
+:n28_000000
+Игрок: Розы!
+set key="Remember.Roses_1_19" value=true
+Главный герой: Нежно-розовые, мои любимые.
+:n31_000000
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Договорились.
+actor exit="fade" id="Den" show=false
+Автор: Парень снова устремляет свой взор куда-то за спину Олеси, затем достает телефон из кармана джинсов и резко соскакивает с лавки.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Мне уже звонил гид, я побежал.
+actor exit="fade" id="Den" show=false
+Главный герой: До свиданья!
+Главный герой: Желаю тебе найти то, для чего ты отправился в это путешествие.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: О, Олеся, я это уже нашел.
+actor exit="fade" id="Den" show=false
+Автор: Когда парень уже уходит от Олеси, подмигнув ей на прощание, к ней уже стремительно приближается отец с неподдельным ужасом на лице.
+actor enter="fade" id="Father_3" position="right" show=true sprite_url="/content/art/dv_qVPrDh3o (1).jpg"
+Father_3: Олеся, а кто… кто это только что был рядом с тобой?
+actor exit="fade" id="Father_3" show=false
+Главный герой: Ах, это?
+Главный герой: Да обычный путешественник, мы с ним познакомились на Чеджу, и снова случайно встретились здесь.
+Главный герой: Его зовут Дэн, но он русский, просто долго жил во Франции.
+Автор: Я, все это время внимательно наблюдавшая за кинофильмом своего воспоминания, замечаю то, на что раньше не обратила никакого внимания.
+Автор: Потому что сейчас я знаю гораздо больше, чем тогда.
+Главный герой: А где мама?
+actor enter="fade" id="Father_3" position="right" show=true sprite_url="/content/art/dv_qVPrDh3o (1).jpg"
+Father_3: Мама?
+Father_3: Она задержалась у стенда с сувенирами, никак не может выбрать себе веер. Присмотрела себе еще шкатулку с перламутром.
+actor exit="fade" id="Father_3" show=false
+Автор: Олеся недоумевающе смотрит на пустые руки отца и задает вопрос:
+if Remember.Kimbap_1_19 == true -> n32_000000
+-> n33_000000
+:n32_000000
+Главный герой: Папа, а где мой ролл? Я уже такая голодная…
+:n34_000000
+actor enter="fade" id="Father_3" position="right" show=true sprite_url="/content/art/dv_qVPrDh3o (1).jpg"
+Father_3: Ой, совсем забыл, доченька! Забыл.
+Father_3: Пойдем вместе купим все, что захочешь.
+Father_3: Сопроводи своего немолодого отца, а то я из-за старости опять забуду.
+actor exit="fade" id="Father_3" show=false
+Главный герой: Ладно, пап…
+Автор: Когда они уходят, я слышу, как с гор приближается угнетающий гул, становясь все громче и громче.
+bg id="Soraksan_red_glass" sprite_url="/content/bg/Soraksan_red_glass.jpg"
+set expr="Temp.saveMainChClothes" key="Wardrobe.mainCh_Clothes"
+set expr="Temp.saveMainChHair" key="Wardrobe.mainCh_Hair"
+set key="Wardrobe.FreeWardrobe_Access" value=true
+set key="Music.Fight" value=true
+Автор: Треск, оглушающий звук, словно одновременно взорвались тысячи зеркал.
+Автор: Мое тело инстинктивно сжимается, словно я боюсь, что эти стекла вонзятся сейчас в мою кожу.
+Главный герой: ...
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Говори, Олеся, что ты только что поняла.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Мой отец видел Дэна.
+Главный герой: Папа знал, как тот выглядит, он узнал, какой тот подонок, но тогда еще и понял, что Дэн устроил на меня охоту.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Молодец, Олеся. Ты вспомнила кое-что очень важное и теперь можешь двигаться дальше.
+Phobos: Но если тебе слишком тяжело, то на этом мы пока закончим.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Нет! Только не сейчас!
+Главный герой: Я должна дойти до конца. И хватит меня жалеть, и хватит меня пугать.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Твое право.
+actor exit="fade" id="Phobos" show=false
+bg id="Olesya_father_officedoor" sprite_url="/content/bg/Olesya_father_officedoor.jpg"
+set key="Music.Fantastic" value=true
+Главный герой: Я снова здесь?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: А что тебя удивляет?
+actor exit="fade" id="Phobos" show=false
+Автор: Он рядом со мной. Мой страх и он же мой единственный проводник по воспоминаниям.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Открой эту дверь и узнаешь, чем закончилась эта история.
+Phobos: Но с чего все началось… тебе еще предстоит узнать.
+actor exit="fade" id="Phobos" show=false
+Главный герой: ...
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: У тебя не всегда был выбор.
+Phobos: Но сейчас он есть.
+Phobos: Либо ты открываешь эту дверь и живешь потом с тем, что узнаешь…
+Phobos: Либо оставляешь ее закрытой, но так никогда и не узнаешь, что за ней.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Ничего себе выбор…
+Автор: Смотрю на эту дверь, за которой скрывается обычный кабинет отца, в котором я была много раз...
+Автор: Когда была маленькой, а папа пропадал там за работой, я прибегала к нему, врывалась в кабинет.
+Автор: Папа брал меня на руки и хоть ненадолго отвлекался от своих бесконечных дел.
+Автор: Он неумело поправлял мои растрепавшиеся хвостики и рассказывал мне сказки.
+Автор: Особенно я любила сказку про Алису в стране чудес, папа вставлял в эту сказку много деталей, которых не было в оригинале, но никогда не рассказывал мне ее до конца.
+Автор: Финал этой сказки он мне поведал потом, и он тоже отличался от первоисточника…
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Ну так что, Олеся? Ты хочешь открыть эту дверь?
+actor exit="fade" id="Phobos" show=false
+Главный герой: Открыть или?..
+- Да. -> n35_000000
+- К черту! Я узнаю, что за ней! -> n36_000000
+:n35_000000
+Игрок: Да.
+set expr="Way.calmness + 1" key="Way.calmness"
+Выбор пути: + сдержанность.
+Главный герой: Я смиренно приму то, что узнаю.
+Главный герой: Потому что нельзя жить в постоянной лжи, нельзя жить, даже не зная, кто ты.
+Главный герой: Это не жизнь.
+Главный герой: Я сбежала от родителей, из своего времени, пытаюсь жить дальше и делать вид, что все хорошо, но это не так.
+Главный герой: Я совсем не окей, я медленно и мучительно сгораю, пока на моем лице улыбка.
+:n37_000000
+Автор: Выдыхаю, обхватываю себя ладонями, словно пытаюсь унять дрожь во всем теле.
+Главный герой: Я открою эту дверь.
+Автор: Фобос, до этого внимательно наблюдавший за мной, убирает руки в карманы своей серой толстовки.
+Автор: Тьма вокруг него сгущается…
+Автор: Короткий кивок и пригласительный жест рукой.
+Автор: Я осторожно подхожу к двери, я действительно боюсь того, что меня за ней ждет.
+Автор: Но если ты долгое время живешь в страхе, то в какой-то момент бояться тебе просто надоедает.
+Главный герой: ...
+Автор: Протягиваю ладонь и толкаю дверь.
+bg id="Father_office_dream" sprite_url="/content/bg/Father_office_dream.jpg"
+set key="Music.Magic" value=true
+Автор: Когда дверь передо мной открывается, и я переступаю порог комнаты, то замираю и начинаю пораженно осматриваться.
+Автор: Это действительно кабинет папы.
+Автор: Вот старый стол из темного дуба, на нем ежедневник в кожаной обложке, ручка с золотым пером… Эту ручку папе подарила мама, и он хранил ее на самом почетном месте.
+Автор: Но стены и мебель кабинета опутали ветви с огромными шипами, и на этих страшных ветвях пульсируют алые, как кровь, цветы.
+Главный герой: Фобос, это не похоже на мои прежние воспоминания…
+Главный герой: На все то, что ты открыл мне до этого в моих снах.
+Автор: Фобос, не просто подошедший ко мне, а возникший из воздуха рядом со мной, пожимает плечами.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Это действительно странно, Олеся.
+Phobos: Те воспоминания были нетронутыми, мы их смотрели как фильм.
+Phobos: Это совсем другое.
+actor exit="fade" id="Phobos" show=false
+Главный герой: И что это значит?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Тебе виднее. Это же твои воспоминания.
+actor exit="fade" id="Phobos" show=false
+Главный герой: ...
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Но судя по тому, что я вижу, структура этого воспоминания и так уже давно нарушена.
+Phobos: Оно собрало в себе несколько твоих воспоминаний из разного времени, плюс еще добавило какого-то психодела.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Ты о…
+- Шипах? -> n38_000000
+- Цветах? -> n39_000000
+:n38_000000
+Игрок: Шипах?
+Главный герой: Да.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Это терновник.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Терновник, как…
+Главный герой: В «Спящей красавице»!
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: А ты же знаешь, что было в оригинале этой сказки?
+actor exit="fade" id="Phobos" show=false
+Главный герой: ...
+:n40_000000
+Главный герой: Но что я должна увидеть в папином кабинете?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Прежде всего своего отца.
+actor exit="fade" id="Phobos" show=false
+Автор: Я направляю взгляд в сторону стола и кожаного кресла.
+Father: ...
+Главный герой: Но как? Только что его здесь не было!
+Автор: Фобос лишь пожимает плечами.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Смотри внимательно, Олеся, чтобы ничего не упустить.
+actor exit="fade" id="Phobos" show=false
+Автор: Я подхожу к столу, за которым сидит папа.
+Автор: На столе стоит фотография нашей семьи с отдыха в Корее, где я нарядилась в нежно-розовый ханбок и держала в руке традиционный корейский веер.
+Автор: Мама, папа и счастливая я…
+Автор: Папа держит в руках какой-то конверт и разговаривает по телефону.
+Автор: Я смотрю на него, и мое сердце сжимается из-за того, каким убитым он выглядит…
+Главный герой: Осунувшееся лицо, погасшие глаза, новые морщины и седые волосы…
+- Пожалеть папу. -> n41_000000
+- Не жалеть его. -> n42_000000
+:n41_000000
+Игрок: Пожалеть папу.
+Главный герой: Бедный-бедный папа…
+Главный герой: Почему же ты такой грустный?
+:n43_000000
+Автор: Я хочу подойти к папе, чтобы…
+if Remember.Justify_father_1_18 == true -> n44_000000
+-> n45_000000
+:n44_000000
+Автор: Обнять его и сказать ему, что я не держу на него зла.
+Автор: Сказать ему, что мне разбивает сердце видеть его таким подавленным.
+Автор: Но какой в этом смысл, если это не он настоящий, а всего лишь его проекция?
+:n46_000000
+Автор: Папа меня не видит, я для него словно невидимка.
+Автор: Поворачиваюсь к Фобосу, вопросительно и с надеждой смотрю на него.
+Главный герой: Фобос, ты мне сто раз говорил, что мне нельзя вмешиваться в свои воспоминания, иначе мне снова будет так плохо, как тогда, когда меня накрыло цунами.
+Главный герой: Но структура этого воспоминания и так нарушена.
+Главный герой: Значит ли это, что я могу не только наблюдать, но и…
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Обнять папу и пошариться в его кабинете?
+actor exit="fade" id="Phobos" show=false
+Главный герой: Фобос, а ты в своем неизменном саркастичном репертуаре.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Неужели я действительно всегда так плох?
+actor exit="fade" id="Phobos" show=false
+Главный герой: Не увиливай. Просто ответь на мой вопрос.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Обнять ты своего отца все равно не сможешь. И поговорить с ним тоже.
+Phobos: Ты для него как бесплотный призрак, или он для тебя.
+Phobos: Но в его кабинете ты пошариться можешь, правда, найдешь здесь только то, что сама когда-то видела.
+Phobos: Больше ничего не найдешь.
+actor exit="fade" id="Phobos" show=false
+Автор: Пока я думаю, что ответить Фобосу, мое внимание к себе всецело приковывает мой папа.
+Автор: Ему на телефон поступает звонок, и он отвечает на входящий вызов.
+set key="Music.Fight" value=true
+Father: Да. Все сделано?
+Father: Хорошо. Сейчас переведу остальную сумму на ваш счет на Кайманах.
+Father: Нет, я уверен, что к вашим услугам я больше никогда не обращусь.
+Father: Мы друг друга не знаем. Вам нужно исчезнуть, ведь для вас это обычное дело.
+Автор: Когда папа заканчивает разговор, он включает шредер и уничтожает в нем конверт.
+Автор: Затем достает из шкафа бутылку своего любимого бренди, наливает в стакан.
+Автор: И снова падает в кресло, подносит стакан к губам и берет в другую руку нашу семейную фотографию.
+Автор: Долго смотрит на наше фото, проводит пальцем по моему изображению…
+Автор: По щеке отца скатывается скупая слеза, губы дрожат.
+Father: ...
+Автор: Он снова делает глоток бренди, пока по щекам скатываются слезы.
+Father: ...
+Главный герой: Папа…
+Автор: Метнувшись к нему, я озадаченно наблюдаю за тем, как он медленно растворяется в воздухе и вскоре совсем исчезает.
+Главный герой: Папа…
+Автор: Фобос появляется рядом со мной и обнимает меня за плечо.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Олеся, ты же вспомнила остальное?
+actor exit="fade" id="Phobos" show=false
+Главный герой: Да. Потом мама сообщила о том, что сын Никиты Константиновича погиб.
+Главный герой: Разбился на машине.
+Главный герой: Мама спрашивала папу, пойдем ли мы на похороны, чтобы поддержать его друга, но папа отказался.
+Главный герой: Сказал, что нам не стоит присутствовать на похоронах, что он отправит венок и открытку с соболезнованиями своему другу.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: А это значит, что…
+set key="Music.Magic" value=true
+actor exit="fade" id="Phobos" show=false
+Главный герой: Папа обо всем узнал. О том, что со мной произошло.
+Главный герой: Он узнал, кто это сделал, и заказал его убийство.
+Главный герой: Убийство сына своего лучшего друга.
+Главный герой: Судя по всему, мама ни о чем не знала, иначе не звала бы нас на его похороны.
+Главный герой: И не была бы со мной такой жестокой из-за моих пьяных загулов по клубам.
+Главный герой: Но как папа узнал об этом?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Ты можешь найти ответ в этой урне.
+actor exit="fade" id="Phobos" show=false
+Автор: Он кивает в сторону сетчатой урны у папиного стола.
+Автор: Только сейчас она полностью опутана ветвями с бритвенно острыми шипами.
+Автор: Цветы вспыхивают пульсирующим красным цветом, завораживают и вместе с тем пугают.
+Главный герой: И мне надо продраться через эти шипы, чтобы узнать, что в этой урне?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Ты мыслишь в верном направлении, Олеся.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Острые шипы… Рукам будет очень больно, хотя это всего лишь сон. Стоит ли лезть туда?
+- Залезть. -> n47_000000
+- Не делать этого. -> n48_000000
+:n47_000000
+Игрок: [premium]Залезть.
+set key="Remember.Get_into_trash_can_1_19" value=true
+Главный герой: Я должна узнать, что там спрятано!
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Это твое право.
+Phobos: Но я тебе не могу помочь, ты сама должна продраться через тернии к истине.
+Phobos: Я не могу за тебя это сделать.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Понятно.
+Главный герой: Что ж, я готова вытерпеть эту боль, потому что разве может быть боль сильнее, чем та, через которую я уже прошла?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Я буду рядом, Олеся.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Спасибо, Фобос.
+Автор: Подхожу к урне и сажусь на корточки, боязливо протягиваю руки к ветвям.
+Автор: Пытаюсь аккуратно отвести их в сторону, но они, как живые, смыкаются сильнее, красные цветы насмешливо поворачивают ко мне свои бутоны.
+Главный герой: Вы издеваетесь надо мной?
+Автор: Я стараюсь осторожно ухватиться за ветви и начинаю ломать их, но шипы вонзаются в мои ладони, царапают мою кожу, и первые капли крови уже стекают по пальцам.
+Главный герой: ...
+Главный герой: Отступать слишком поздно.
+Автор: Снова ломаю ветви, снова шипы пронзают мою кожу.
+Автор: Жгучая боль, злые слезы на глазах, которые я тут же вытираю тыльными сторонами ладоней.
+Автор: Когда ветви убраны, я уже даже не обращаю внимания на боль и капающую с кончиков пальцев кровь, потому что мой взгляд устремлен на содержимое урны.
+Автор: И я вижу там…
+if Remember.Roses_1_19 == true -> n49_000000
+-> n50_000000
+:n49_000000
+Главный герой: Розы… Нежно-розовые, как я люблю…
+Автор: Поломанные и помятые, словно кто-то со всей злости засунул этот букет в ведро, нежные цветы жалостливо склонили свои бутоны, когда я взяла их в руки, пачкая кровью.
+:n51_000000
+Автор: Еще я достаю из ведра клочки разорванного листа с посланием.
+Автор: Лист порван так мелко, что совершенно нельзя разобрать, что там написано, но можно увидеть лишь отдельные буквы.
+Главный герой: Французский?
+Автор: Вспоминаю свой разговор с Дэном, первую встречу с ним у водопада на Чеджу, а затем как говорила ему в шутку, что он подарит мне на нашей следующей встрече.
+Главный герой: Вот и подарил…
+Главный герой: Видимо, он прислал это к порогу, а папа первым обнаружил. Начал расследование, нанял детектива, потом киллера…
+Главный герой: Но как я могла вспомнить все это?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Сначала ты выбрасывала мусор и увидела там это мельком, но не рассматривала и не придала этому никакого значения.
+Phobos: Потому что это было после дня рождения твоей мамы, а ей тогда прислали много цветов.
+Phobos: Затем снова случайно подслушанный разговор отца у двери его кабинета…
+actor exit="fade" id="Phobos" show=false
+Главный герой: Но разве я видела его слезы и как он смотрит на мою фотографию? Разве я могла это видеть в прошлом, чтобы вспомнить сейчас?
+Автор: Фобос пожимает плечами и подходит ближе ко мне, протягивая свои руки к моим ладоням.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: У тебя все руки в крови. Дай я тебе помогу.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Испачкаешь свои черные перчатки.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Не испачкаю, дай сюда свои руки.
+actor exit="fade" id="Phobos" show=false
+Автор: Когда он берет меня за запястья и разворачивает мои ладони к себе, тьма вырывается из него, окутывая мои руки плотным черным туманом.
+Автор: И когда туман развеивается, я вижу, что царапины на моих руках полностью затянулись.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Так лучше?
+actor exit="fade" id="Phobos" show=false
+Главный герой: Как ты это сделал?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Олеся, я действительно много чего умею.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Никогда не думала, что смогу подружиться с собственным же страхом.
+Автор: Голос Фобоса от привычно-самодовольного становится теплым, я слышу в нем искренность.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Я рад стать тебе другом.
+:n52_000000
+actor exit="fade" id="Phobos" show=false
+Автор: Я снова обвожу кабинет отца печально-задумчивым взглядом и чувствую…
+Главный герой: ...
+- Как слезы текут по моим щекам… -> n53_000000
+- Облегчение. -> n54_000000
+- Как гнев закипает в моих венах. -> n55_000000
+:n53_000000
+Игрок: Как слезы текут по моим щекам…
+Главный герой: За что же мне такое?!
+Главный герой: За что такое горе моей семье?!
+Главный герой: Бедный папа…
+Автор: Горячие обжигающие соленые слезы катятся по моим щекам, пока я неловко и поспешно их вытираю.
+:n56_000000
+Главный герой: Я должна собраться… Я должна .
+Автор: Тяжко вздохнув и обхватив себя руками, я спрашиваю Фобоса:
+Главный герой: Я так понимаю, мое путешествие по снам закончено?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Нет.
+actor exit="fade" id="Phobos" show=false
+Главный герой: О чем ты?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Это не все тайны твоей семьи, есть еще и другая, но она добьет тебя окончательно.
+Phobos: Так что я не могу этого допустить, ты сейчас проснешься.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Что?
+Главный герой: Нет!
+Автор: Я протестующе мотаю головой, ухватив Фобоса за предплечье.
+Главный герой: Нет, Фобос, нет!
+Главный герой: Я должна узнать остальное!
+Главный герой: Я не могу больше жить во лжи и неведении!
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Олеся, тебе будет невыносимо тяжело и больно об этом узнать!
+Phobos: Ты реально можешь свихнуться. Я тебе не позволю.
+Phobos: Не позволю оказаться в психушке, ты и так в ужасном состоянии.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Фобос, ты забыл, о чем я говорила?
+Главный герой: Это мои сны, мои воспоминания, моя жизнь, в которой я уже должна разобраться, потому что нельзя вечно бегать от ответственности и правды.
+Главный герой: Перенеси меня в следующее воспоминание, пожалуйста.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Тогда я снова проведу тебя через тьму, чтобы она забрала эту твою боль.
+actor exit="fade" id="Phobos" show=false
+Автор: Я молча киваю и покорно подхожу к Фобосу.
+Автор: Он обнимает меня, вокруг сгущается темный туман, вырывающийся из него.
+Автор: Я закрываю глаза, кладу свою голову на плечо Фобоса и полностью проваливаюсь в него.
+bg id="Black_screen_water" sprite_url="/content/bg/Black_screen_water.jpg"
+set key="Music.Fantastic" value=true
+Автор: Мертвенно-молчаливая и бесконечная тьма…
+Автор: Она вытягивает мою боль, растворяет в себе.
+Главный герой: А здесь действительно гораздо спокойнее…
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Да. Только не советую слишком задерживаться в этом месте.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Почему?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Потому что ты можешь потом вовсе не захотеть его покинуть.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Что… Почему?
+Главный герой: Разве такое возможно?
+Автор: Но Фобос не успевает ответить на мои вопросы, потому что меня выбрасывает в следующее воспоминание.
+bg id="Memorial" sprite_url="/content/bg/Memorial.jpg"
+set key="Music.Snowstorm_noise" value=true
+Автор: Холодно.
+Автор: Здесь очень холодно, по моему телу проходит крупная дрожь.
+Автор: Снег хлопьями падает на бетонные плиты.
+Главный герой: Что это за место?
+Автор: Выросший рядом со мной из воздуха Фобос молчит и неотрывно смотрит вперед.
+Автор: От его скорбного скромного молчания мне становится совсем не по себе.
+Автор: Шепотом читаю дрожащим голосом надпись на огромном изваянии, одиноким стражем стоящем среди равнины, спрятанной под снежным покрывалом.
+Главный герой: Памяти… жертвам нефтегорской трагедии.
+Автор: Когда я вспоминаю о том, что нужно дышать, то пар выходит из моего открытого в изумлении рта.
+Автор: Оборачиваюсь, ищу глазами Фобоса.
+Главный герой: Фобос?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: ...
+actor exit="fade" id="Phobos" show=false
+Автор: Он стоит словно окаменевший и никак не реагирует на меня.
+Главный герой: Фобос, что с тобой? Почему я здесь?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: ...
+actor exit="fade" id="Phobos" show=false
+Главный герой: Фобос?
+Автор: Но он продолжает неподвижно стоять, направив свое лицо на мемориал.
+Автор: По снегу осторожно я подхожу ближе к мемориалу, поднимаюсь по ступеням…
+Автор: Мой взгляд скользит по бесконечному списку, вчитываюсь в эти имена и даты…
+Главный герой: Сколько имен…
+Главный герой: Сколько детей…
+Главный герой: Но ведь я… когда-то уже была здесь?
+Автор: Мне тяжело здесь находиться.
+Автор: Сердце сжимается, ноет, в груди больно…
+Автор: Мне страшно здесь находиться.
+Автор: Страшно и чуть ли не физически больно, поэтому я разворачиваюсь, чтобы сбежать к Фобосу, потому что мне кажется, что рядом с ним будет спокойнее.
+Автор: И что он мне наконец-то объяснит, почему я здесь.
+Автор: Но я не успеваю вернуться к Фобосу, потому что снова вижу своих родителей.
+Автор: Вместе со мной. Маленькой.
+bg id="Memorial" sprite_url="/content/bg/Memorial.jpg"
+set key="Wardrobe.Mother" value=2
+Mother: ...
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: ...
+set key="Wardrobe.Child_Olesya" value=1
+actor exit="fade" id="Father_2" show=false
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: ...
+actor exit="fade" id="Child_Olesya" show=false
+Автор: Папа ведет маленькую Олесю за руку, а мама несет в руках белые лилии и плюшевого белого кролика.
+Автор: У родителей скорбные лица, а девочка удивленно озирается.
+Автор: В моей голове только возникает мысль, что они меня сейчас заметят, как я вижу, что они проходят мимо меня, не обращая никакого внимания, словно я невидимка.
+bg id="Memorial" sprite_url="/content/bg/Memorial.jpg"
+Главный герой: ...
+Главный герой: Мама? Папа?
+bg id="Memorial" sprite_url="/content/bg/Memorial.jpg"
+Автор: Они медленно поднимаются по ступеням к мемориалу, затем мама оставляет там цветы, тихонько смахивая слезы с уголков глаз.
+Mother: ...
+Автор: Снежинки падают на волосы мамы, медленно опускаются на пальто девочки, удивленно хлопающей своими голубыми как небо глазами.
+Автор: Только небо над девочкой сейчас не синее и ясное, а меланхолично-пасмурное.
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: Мама, а кому этот кролик?
+Child_Olesya: Мне?
+actor exit="fade" id="Child_Olesya" show=false
+Mother: Не тебе.
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: Но кому?
+actor exit="fade" id="Child_Olesya" show=false
+Mother: ...
+Автор: Мама молчит. Папа тоже отводит взгляд и не находит слов.
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: ...
+actor exit="fade" id="Father_2" show=false
+Автор: Маленькая Олеся, которая еще не умеет читать и не понимает, что за изваяние перед ней, начинает капризничать.
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: Я хочу этого кролика!
+Child_Olesya: Дайте мне его!
+actor exit="fade" id="Child_Olesya" show=false
+Автор: Отец лишь грустно качает головой, а мама уже совсем выходит из себя.
+Mother: Дать?! Тебе его дать?!
+Mother: Мы и так тебе все отдали!
+Mother: Все! Мы с отцом на такое пошли, чтобы уж ты не росла в нищете в захолустье, чтобы ты ни в чем не нуждалась!
+Mother: А ты все это не ценишь! Требуешь еще и еще!
+Автор: Последние слова она отчеканила с особой злостью.
+Mother: Этот. Кролик. Не. Тебе!
+Автор: Резкие слова матери вызывают слезы у девочки.
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: ...
+actor exit="fade" id="Child_Olesya" show=false
+Автор: Девочка резко высвобождает свою ладонь из руки отца и чуть ли не скатывается по ступенькам, убегая по заснеженной равнине прочь.
+set key="Music.Revelation" value=true
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: Аня, ну зачем ты так?
+Father_2: Зачем срываешься на Олесе?
+Father_2: Надо было все рассказать ей…
+actor exit="fade" id="Father_2" show=false
+Mother: Что ей рассказать?
+Mother: Что она не единственная наша дочь?
+Mother: Что мы жили раньше в Нефтегорске, и как за семнадцать секунд вся наша жизнь была уничтожена? Превратилась в руины.
+Mother: Это ты ей хочешь рассказать?
+Mother: Ну тогда расскажи ей еще, как мы были под завалами!
+Mother: Как наша дочь умирала на моих руках, пока до нас не могли добраться!
+Mother: Как задыхалась и истекала кровью на моих руках!
+Mother: И как я не могла ей никак помочь!
+Mother: Расскажи ей и это!
+Автор: Слезы отчаяния, злые, несдержанные, скатываются по щекам женщины.
+Mother: ...
+Автор: Мужчина притягивает жену к себе, пока она сопротивляется и пытается вырваться из его рук, но вскоре перестает его отталкивать.
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: Анечка, я тебя понимаю. Мне тоже невыносимо больно…
+Father_2: Но Олеся всего этого не знает и не понимает.
+Father_2: Она не понимает, почему мама злится, почему нам грустно.
+actor exit="fade" id="Father_2" show=false
+Mother: Надо было назвать нашу дочку не Алисой, как ты хотел. А Олесей, как хотела я.
+Mother: Алефтина, моя бабушка, Агния, Анна, Алиса… У всех множество несчастий. Может это разорвало бы этот проклятый замкнутый круг бед и горя?
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: ...
+actor exit="fade" id="Father_2" show=false
+Mother: Дима, надо было тебе согласиться на предложение Никиты.
+Mother: Тогда мы не оказались бы в этом проклятом поселке, тогда наша дочь была бы жива…
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: ...
+actor exit="fade" id="Father_2" show=false
+Mother: Надо было подарить ей кольцо моего отца. Ну и что, что оно ей тогда было большое? Может оно бы уберегло ее…
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: ...
+actor exit="fade" id="Father_2" show=false
+Mother: Надо было перевезти Алису ближе к нам, чтобы она была рядом со своей семьей, а не на этом кладбище на краю света.
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: Аня, тебе было бы намного тяжелее, если бы она была рядом с нами.
+actor exit="fade" id="Father_2" show=false
+Mother: Я могла бы навещать ее каждый день…
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: Не надо было Олесю тащить на Сахалин.
+actor exit="fade" id="Father_2" show=false
+Mother: А что было делать, если эта дура за ней не уследила?
+Mother: Пока мы найдем новую няню… А наши дела не ждали, мы и так задержались.
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: Не надо было Олесю везти сюда с нами.
+actor exit="fade" id="Father_2" show=false
+Mother: Я не могла не навестить свою дочь.
+Автор: Папа гладит маму по спине, затем отрывается от нее и осторожно забирает кролика из ее рук.
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: Я пойду найду Олесю.
+Father_2: И оставлю кролика на могилке Алисы.
+Father_2: Анечка, успокаивайся и подходи к могилке.
+actor exit="fade" id="Father_2" show=false
+Автор: Папа оставля е т маму у мемориала, а я как тень следую за ним.
+Автор: В моей душе бушует ураган эмоций, но я сейчас даже не могу об этом думать и жалеть себя, потому что должна узнать, что было дальше.
+Автор: Я должна это вспомнить.
+bg id="Cemetery" sprite_url="/content/bg/Cemetery.jpg"
+set key="Music.Snowstorm_noise" value=true
+Автор: Пробираясь между надгробий, папа не перестает громко звать свою дочку.
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: Олеся!
+Father_2: Олесенька!
+actor exit="fade" id="Father_2" show=false
+Автор: Но она не отзывается.
+Автор: Так далеко убежала, что не слышит?
+Автор: Или так обиделась, что не хочет, чтобы ее нашли?
+Автор: Я иду за отцом, и вскоре мы оба находим Олесю у одного надгробия.
+set key="Cutscenes.showMonument_1_19" value=true
+Автор: Лицо папы меняется, когда он видит, к чьей могиле подошла его дочь, но он старается быстро спрятать свое беспокойство.
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: Олесенька, мама не хотела тебя обижать.
+actor exit="fade" id="Father_2" show=false
+Автор: Но девочка пропускает мимо ушей слова отца, потому что ее взгляд обращен на фото на надгробии.
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: Папа, а я видела эту девочку!
+actor exit="fade" id="Child_Olesya" show=false
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: Да?
+actor exit="fade" id="Father_2" show=false
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: Пап, ну тогда! Когда я болела, а ты мне дал посмотреть синий фотоальбом!
+Child_Olesya: Эта девочка выпала из него, и ее быстро спрятала мама.
+Child_Olesya: Кто это?
+actor exit="fade" id="Child_Olesya" show=false
+Автор: Папа выходит из оцепенения, сглатывает, неловко теребя в руках плюшевого зайца.
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: ...
+actor exit="fade" id="Father_2" show=false
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: Кто?
+actor exit="fade" id="Child_Olesya" show=false
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: А… Помнишь, я тебе рассказывал сказку о девочке, которую звали Алисой?
+Father_2: И как она попала в страну чудес?
+actor exit="fade" id="Father_2" show=false
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: Помню!
+Child_Olesya: Она тогда побежала за белым кроликом! И провалилась в кроличью нору.
+actor exit="fade" id="Child_Olesya" show=false
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: Да. Провалилась в нору…
+actor exit="fade" id="Father_2" show=false
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: Но ты так и не рассказал мне, чем закончилась эта сказка!
+Child_Olesya: Где осталась Алиса?
+actor exit="fade" id="Child_Olesya" show=false
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: Она решила остаться в стране чудес со своими друзьями.
+actor exit="fade" id="Father_2" show=false
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: С Безумным Шляпником? И Мартовским зайцем? И Чеширским котом?
+actor exit="fade" id="Child_Olesya" show=false
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: Да…
+actor exit="fade" id="Father_2" show=false
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: А как же кролик?
+actor exit="fade" id="Child_Olesya" show=false
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: Какой?
+actor exit="fade" id="Father_2" show=false
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: Ну в твоих руках!
+actor exit="fade" id="Child_Olesya" show=false
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: А, этот кролик…
+Father_2: Ну он убежал, его надо вернуть Алисе. Для этого мы сюда и приехали.
+Father_2: Это место… Отсюда Алиса попала в страну чудес, поэтому здесь ее фотография.
+actor exit="fade" id="Father_2" show=false
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: А все остальные?
+actor exit="fade" id="Child_Olesya" show=false
+Автор: Девочка кивает в сторону других надгробий.
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: ...
+Father_2: Они тоже все сейчас в стране чудес, и так обозначены те кроличьи норы, по которым они туда попали.
+actor exit="fade" id="Father_2" show=false
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: А я могу попасть в страну чудес через эти норы?
+actor exit="fade" id="Child_Olesya" show=false
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: Нет!
+Father_2: То есть… Эти норы открываются только для этих людей. Для каждого своя.
+Father_2: Сейчас они закрыты и перед тобой не откроются.
+actor exit="fade" id="Father_2" show=false
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: Да? Жаль…
+Child_Olesya: Я бы хотела побывать в стране чудес.
+actor exit="fade" id="Child_Olesya" show=false
+actor enter="fade" id="Father_2" position="right" show=true sprite_url="/content/art/HDTguWwDdaw (1).jpg"
+Father_2: ...
+Father_2: ...
+actor exit="fade" id="Father_2" show=false
+Автор: К могиле девочки подходит мама, не поднимая лица. Она не обращает внимания ни на мужа, ни на Олесю.
+Mother: ...
+Автор: Молча падает на колени перед могилой прямо в снег, отворачивается от родных, пряча свои слезы.
+Mother: ...
+Автор: Олеся забирает кролика из рук отца и ставит рядом с надгробием.
+set key="Cutscenes.showMonumentRabbit_1_19" value=true
+Mother: ?
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: Это Алисе. Как же она будет в стране чудес без белого кролика?
+actor exit="fade" id="Child_Olesya" show=false
+Автор: Мама смогла улыбнуться.
+Mother: Спасибо.
+Автор: Это была мимолетная вымученная улыбка, но мама все-таки нашла на нее силы.
+bg id="Cemetery" sprite_url="/content/bg/Cemetery.jpg"
+Автор: Когда родители вместе c Олесей уходят от могилы Алисы, я все еще остаюсь там.
+Автор: Подхожу ближе.
+set key="Cutscenes.showMonumentRabbit_1_19" value=true
+Главный герой: Белозерова Алиса Дмитриевна… 1 ноября 1990 года – 28 мая 1995 года…
+Главный герой: Любимой доченьке от вечно скорбящих родителей…
+Автор: Дыхание перехватывает, слезы уже застилают глаза, передо мной все расплывается.
+Главный герой: ...
+Автор: И я…
+Главный герой: ...
+- Вспоминаю продолжение маминой сказки о Морской Деве… -> n57_000000
+- Просто хочу покинуть это печальное место. -> n58_000000
+:n57_000000
+Игрок: [premium]Вспоминаю продолжение маминой сказки о Морской Деве…
+Главный герой: Мама же еще тогда…
+Главный герой: Давным-давно, когда подарила мне кольцо и рассказывала сказку о Морской Деве, тогда завуалированно и рассказала о своей первой дочери!
+Главный герой: Но это было иносказательно.
+Главный герой: Я тогда ничего не поняла, а сейчас понимаю…
+bg id="Скала" sprite_url="/content/bg/Скала.jpg"
+set key="Music.Sound_of_the_sea" value=true
+Автор: Я держала тогда мамино кольцо в руках, продолжая рассматривать, как русалка обнимает лазурный камень.
+actor enter="fade" id="Little_Olesya_summer" position="right" show=true sprite_url="/content/art/Little_Olesya_summer.png"
+Little_Olesya_summer: Мам, а чем закончилась эта сказка?
+actor exit="fade" id="Little_Olesya_summer" show=false
+actor enter="fade" id="Young_mother_clothes_2" position="right" show=true sprite_url="/content/art/Screenshot (4).png"
+Young_mother_clothes_2: ?
+actor exit="fade" id="Young_mother_clothes_2" show=false
+actor enter="fade" id="Little_Olesya_summer" position="right" show=true sprite_url="/content/art/Little_Olesya_summer.png"
+Little_Olesya_summer: О Морской Деве и Рыбаке.
+actor exit="fade" id="Little_Olesya_summer" show=false
+Автор: Мама нахмурилась, пытаясь вспомнить, чем закончился ее рассказ.
+actor enter="fade" id="Young_mother_clothes_2" position="right" show=true sprite_url="/content/art/Screenshot (4).png"
+Young_mother_clothes_2: А, ну… И жили они долго и счастливо! Конец!
+actor exit="fade" id="Young_mother_clothes_2" show=false
+actor enter="fade" id="Little_Olesya_summer" position="right" show=true sprite_url="/content/art/Little_Olesya_summer.png"
+Little_Olesya_summer: Нет! Ты же говорила, что Морская Дева выкинула свое волшебное кольцо в море, чтобы не было бурь.
+Little_Olesya_summer: Но сама она осталась без защиты кольца.
+actor exit="fade" id="Little_Olesya_summer" show=false
+actor enter="fade" id="Young_mother_clothes_2" position="right" show=true sprite_url="/content/art/Screenshot (4).png"
+Young_mother_clothes_2: Ах, да…
+Young_mother_clothes_2: Ну давай тогда расскажу тебе продолжение.
+Young_mother_clothes_2: Дева, когда уже вышла замуж за Рыбака, начала тосковать по морским глубинам.
+Young_mother_clothes_2: Но вернуться она не могла, потому что Владычица Морская ее не отпустила бы назад на сушу.
+Young_mother_clothes_2: В океане Дева могла создавать жемчуг, но когда она стала жить на суше, то потеряла этот дар.
+Young_mother_clothes_2: А может быть, виной тому было проклятие матери…
+Young_mother_clothes_2: Морская Дева долго тосковала и часто сидела на берегу, роняя слезы.
+Young_mother_clothes_2: Но однажды случилось настоящее чудо, и ее слеза превратилась в прекрасную Жемчужину.
+Young_mother_clothes_2: И на всем свете не было такой совершенной Жемчужины, такой безупречной и сияющей.
+Young_mother_clothes_2: Но у девушки уже не было волшебного кольца, поэтому его сила больше не защищала ее от бед.
+actor exit="fade" id="Young_mother_clothes_2" show=false
+actor enter="fade" id="Little_Olesya_summer" position="right" show=true sprite_url="/content/art/Little_Olesya_summer.png"
+Little_Olesya_summer: ...
+actor exit="fade" id="Little_Olesya_summer" show=false
+Автор: Я тогда задержала дыхание, внимательно слушала ее, открыв рот, не желая пропустить ничего из этого сказочного повествования.
+actor enter="fade" id="Little_Olesya_summer" position="right" show=true sprite_url="/content/art/Little_Olesya_summer.png"
+Little_Olesya_summer: А что было потом?
+actor exit="fade" id="Little_Olesya_summer" show=false
+actor enter="fade" id="Young_mother_clothes_2" position="right" show=true sprite_url="/content/art/Screenshot (4).png"
+Young_mother_clothes_2: Когда Дева гуляла по берегу, началось землетрясение, она упала и выронила из руки свою Жемчужину.
+Young_mother_clothes_2: Из-за землетрясения земля растрескалась, и Жемчужина укатилась, провалилась в трещину и потерялась навсегда…
+actor exit="fade" id="Young_mother_clothes_2" show=false
+actor enter="fade" id="Little_Olesya_summer" position="right" show=true sprite_url="/content/art/Little_Olesya_summer.png"
+Little_Olesya_summer: Потерялась…
+actor exit="fade" id="Little_Olesya_summer" show=false
+Автор: И мама села прямо на песок в своем прекрасном голубом летящем платье, усадила меня к себе на руки, прижала мою голову к своей груди, словно боялась, что я могу исчезнуть…
+Автор: И, гладя меня по голове, продолжила свой рассказ…
+Автор: С тех пор Морская Дева была в безутешном горе, и ее возлюбленный никак не мог облегчить ее участь.
+Автор: Она подолгу сидела на берегу и смотрела на безбрежное море…
+Автор: И никто не мог разгадать, что творилось на сердце Девы.
+actor enter="fade" id="Mother_Fairy" position="right" show=true sprite_url="/content/art/Mother_Fairy.png"
+Mother_Fairy: ...
+actor exit="fade" id="Mother_Fairy" show=false
+bg id="Скала_пасмурно" sprite_url="/content/bg/Скала_пасмурно.jpg"
+set key="Music.Sound_of_storm" value=true
+Автор: Однажды Владычица Морская поднялась с глубин океана к своей дочери, чтобы убедить ее вернуться домой.
+Автор: Воды забурлили, и Владычицу на высокой волне вынесло на берег.
+actor enter="fade" id="Mother_Fairy" position="right" show=true sprite_url="/content/art/Mother_Fairy.png"
+Mother_Fairy: Мама?
+actor exit="fade" id="Mother_Fairy" show=false
+actor enter="fade" id="Agnia_fairy" position="right" show=true sprite_url="/content/art/Agnia_fairy.png"
+Agnia_fairy: Моя непокорная дочь, возвращайся в наши владения на дне океана.
+Agnia_fairy: Ничего, кроме потерь и горя, не дала тебе жизнь среди людей.
+Agnia_fairy: Я готова тебя простить, если ты вернешься ко мне.
+actor exit="fade" id="Agnia_fairy" show=false
+Автор: Задумалась девушка. Обернулась в сторону скромного дома, где ее ждал ее возлюбленный.
+Автор: В окошке горел свет. Рыбак ждал свою Морскую Деву…
+Автор: Как представила девушка себя без него, так горько и тяжко ей стало, так заныло сердце, что по щеке снова скатилась слеза.
+Автор: Упав на песок, эта слеза превратилась в прекрасную сияющую Жемчужину.
+Автор: Подняла ее Дева и рассмотрела свое сокровище.
+Автор: И снова радостно стало ей на сердце!
+actor enter="fade" id="Mother_Fairy" position="right" show=true sprite_url="/content/art/Mother_Fairy.png"
+Mother_Fairy: ...
+actor exit="fade" id="Mother_Fairy" show=false
+Автор: Отказалась она от предложения матери и вернулась к своему возлюбленному, но никогда не забывала свою первую Жемчужину.
+bg id="Cemetery" sprite_url="/content/bg/Cemetery.jpg"
+set key="Music.Snowstorm_noise" value=true
+Автор: И сейчас я стою на кладбище и смотрю на могилу своей сестры, о которой никогда раньше не знала.
+Автор: Родители тщательно скрывали от меня свою боль, но она прорывалась с глубин их израненных душ намеками и сказками.
+:n59_000000
+set key="Music.Revelation" value=true
+Главный герой: ...
+set key="Cutscenes.showMonumentRabbit_1_19" value=true
+Автор: Но сейчас я смотрю на фотографию той девочки, которая была первой дочерью мо их родителей, которую они безумно любили…
+Автор: Каштановые волосы, сияющие голубые глаза. Она больше похожа на папу, чем на маму.
+Автор: Какой она была? Тихой и скромной? Или своенравной и упорной?
+Автор: Какой же была моя сестра?
+Автор: Во что она любила играть? Как заботились о ней мои родители?
+Главный герой: Такое чувство, что я заняла ее место.
+Главный герой: Если бы не эта кошмарная трагедия, унесшая столько жизней…
+Главный герой: Как такое могло произойти?
+Автор: Я подхожу совсем близко к надгробию своей сестры и присаживаюсь рядом с ним на одно колено. Кладу руку на холодный камень.
+Автор: По щекам все еще скатываются горячие слезы, я слышу легкие быстрые шаги и оборачиваюсь.
+Автор: И снова вижу себя маленькую.
+set key="Cutscenes.showOlesyaTombstone_1_19" value=true
+Автор: Олеся, остановившись перед могилой своей сестры, удивленно смотрит на фотографию Алисы.
+Главный герой: Маленькая девочка стоит прямо перед могилой своей сестры, смотрит на ее фото, и даже ничего не понимает…
+Главный герой: Но почему она вернулась?
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: ...
+actor exit="fade" id="Child_Olesya" show=false
+Автор: Затем она достает из кармана что-то небольшое и подносит к надгробию, оставляя рядом с кроликом.
+actor enter="fade" id="Child_Olesya" position="right" show=true sprite_url="/content/art/Child_Olesya.jpg"
+Child_Olesya: Вот, я нашла камешек. Когда кролик поскачет в страну чудес, принесет его тебе, Алиса.
+actor exit="fade" id="Child_Olesya" show=false
+Автор: Это белый камешек в виде сердца.
+Главный герой: ...
+Автор: Среди метели слышатся обеспокоенные голоса родителей, и девочка спешит вернуться к ним, убегая прочь и оставляя за собой следы на снегу.
+Автор: Рядом со мной из воздуха появляется Фобос.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: ...
+actor exit="fade" id="Phobos" show=false
+Главный герой: Почему тебя сейчас не было рядом со мной?
+Главный герой: Ты же обещал!..
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Прости, это место очень странно на меня действует.
+Phobos: Здесь сконцентрировано столько горя и боли, что оно меня буквально парализует.
+Phobos: Я был словно в оковах, меня словно залили смолой, и она даже успела застыть.
+actor exit="fade" id="Phobos" show=false
+Главный герой: ?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Какие-то семнадцать секунд, разрушившие целый поселок до основания, унесшие две тысячи жизней…
+actor exit="fade" id="Phobos" show=false
+Автор: Голос Фобоса сейчас неподдельно скорбный, я всматриваюсь в помехи вместо его лица и вижу, что тьма вокруг него сгущается.
+Главный герой: Мне тоже очень тяжело здесь находиться.
+Главный герой: Унеси меня отсюда, Фобос, в темноту.
+Главный герой: Унеси меня.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Хорошо, Олеся.
+actor exit="fade" id="Phobos" show=false
+Автор: Он подходит ближе ко мне, раскинув руки, я ныряю в его объятия.
+bg id="Черный_фон" sprite_url="/content/bg/Черный_фон.jpg"
+Автор: И проваливаюсь в темноту.
+-> __end
+:n58_000000
+Игрок: Просто хочу покинуть это печальное место.
+Главный герой: ...
+-> n59_000000
+:n54_000000
+Игрок: Облегчение.
+Главный герой: Сколько же этот ублюдок был моим худшим кошмаром…
+Главный герой: Сколько я пыталась его найти, сколько я уничтожала себя…
+Главный герой: А он был мертв! Столько времени уже…
+Главный герой: Он получил по заслугам .
+-> n56_000000
+:n55_000000
+Игрок: Как гнев закипает в моих венах.
+Главный герой: Как папа мог это сделать?!
+Главный герой: Зачем он это сделал?!
+Главный герой: Как мне жить дальше, когда я знаю, что мой папа стал из-за меня убийцей?!
+Автор: Глаза уже щипет от слез, но я быстро беру себя в руки и душу их.
+-> n56_000000
+:n50_000000
+if Remember.Lilies_1_19 == true -> n60_000000
+-> n61_000000
+:n60_000000
+Автор: Лилии, помятые и поломанные, словно со всего гнева засунутые в это ведро.
+Автор: Но эти лилии не пышные и белые, как из магазина цветов, не желтые или тигровые, как на полях, а…
+Главный герой: Черные лилии? Такие бывают?
+-> n51_000000
+:n61_000000
+Автор: Крупный лотос, с помятыми и поломанными лепестками.
+Автор: Валяющийся там, где самое место мусору, а не прекрасному нежному цветку.
+Главный герой: Я как этот лотос…
+-> n51_000000
+:n48_000000
+Игрок: Не делать этого.
+Автор: Еще раз взглянув на эти острые шипы и поежившись, я решаю:
+Главный герой: Нет, как именно папа узнал об этом, уже не имеет никакого значения. Это неважно.
+-> n52_000000
+:n45_000000
+Автор: Сказать ему все то, что он заслужил услышать.
+Автор: Что он был плохим отцом, и что его самонадеянные поступки поломали мне жизнь.
+Автор: И что если мне все-таки удастся собрать себя из осколков, шрамы все равно останутся.
+-> n46_000000
+:n42_000000
+Игрок: Не жалеть его.
+Главный герой: А мне каково было из-за того поступка отца, когда он решил свести меня с сыном друга?
+Главный герой: Так что почему я должна жалеть его?
+-> n43_000000
+:n39_000000
+Игрок: Цветах?
+Главный герой: Да. Что это за цветы? Что-то знакомое, но не могу вспомнить…
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Гибискус. Он же мугунхва.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Национальный символ Республики Корея.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Его цветы цветут всего два дня, но они распускаются по очереди в течение четырех месяцев.
+Phobos: Поэтому гибискус является символом бессмертия.
+actor exit="fade" id="Phobos" show=false
+Главный герой: ...
+-> n40_000000
+:n36_000000
+Игрок: К черту! Я узнаю, что за ней!
+set expr="Way.rage + 1" key="Way.rage"
+Выбор пути: + вспыльчивость.
+Главный герой: Мне все надоело!
+Главный герой: Ничего не знать о своих родителях и о том, кто я!
+Главный герой: Я пытаюсь жить дальше, но у меня не получается!
+Главный герой: Я в агонии каждый раз, как только остаюсь наедине с собой!
+Главный герой: Это больно, невыносимо больно, и я хочу избавиться от этой боли…
+-> n37_000000
+:n33_000000
+if Remember.Teokbokki_1_19 == true -> n62_000000
+-> n63_000000
+:n62_000000
+Главный герой: Папа, а как же мои токпокки? Ты их не купил?
+-> n34_000000
+:n63_000000
+Главный герой: Папа, а как же мой корейский пирожок? Ты его не купил?
+-> n34_000000
+:n29_000000
+Игрок: Лилии!
+set key="Remember.Lilies_1_19" value=true
+Главный герой: Любые. Больше всего люблю лилии.
+-> n31_000000
+:n30_000000
+Игрок: Лотос!
+set key="Remember.Lotus_1_19" value=true
+Главный герой: Ведь что еще может быть более азиатским, чем прекрасный лотос?
+-> n31_000000
+:n26_000000
+Игрок: Расплакаться.
+set expr="Way.rage + 1" key="Way.rage"
+Выбор пути: + вспыльчивость.
+Автор: Я старалась держаться изо всех сил, но горячие слезы уже текут по моим щекам.
+Главный герой: ...
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Олеся…
+actor exit="fade" id="Phobos" show=false
+Автор: Думаю о том, что он будет ворчать, ведь я снова плачу, но этого не происходит. Фобос притягивает меня к себе, бережно укрывает в своих объятиях.
+Автор: И мне действительно становится легче. Благодаря своему страху, как бы странно это ни звучало.
+-> n27_000000
+:n18_000000
+Игрок: Я не верю в судьбу.
+Главный герой: Это просто невероятное совпадение. Случайность.
+-> n19_000000
+:n14_000000
+Игрок: Токпокки!
+set key="Remember.Teokbokki_1_19" value=true
+Главный герой: Хочу тягучих рисовых колбасок в очень остром соусе! Чтобы стать настоящим огнедышащим драконом!
+-> n16_000000
+:n15_000000
+Игрок: Пянсе!
+Главный герой: Я хочу простого пирожка на пару с капустой и мясом.
+-> n16_000000
+:n11_000000
+Игрок: Счастливой?
+set expr="Way.calmness + 1" key="Way.calmness"
+Выбор пути: + сдержанность.
+Главный герой: Так необычно видеть себя счастливой в том моем времени…
+-> n12_000000
+:n6_000000
+Игрок: Да ну тебя!
+set expr="Way.rage + 1" key="Way.rage"
+Выбор пути: + вспыльчивость.
+Главный герой: Я не позволю никому втаптывать меня в грязь!
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Но ведь я всего лишь являюсь частью твоего сознания.
+-> n9_000000
+:n7_000000
+actor exit="fade" id="Phobos" show=false
+Игрок: Они меня просто любят.
+set expr="Way.calmness + 1" key="Way.calmness"
+Выбор пути: + сдержанность.
+Главный герой: А любовь зла…
+Главный герой: Но мне действительно невероятно повезло с ними.
+-> n9_000000
+:n8_000000
+Игрок: Понятия не имею, почему они меня терпят.
+set expr="Way.calmness + 1" key="Way.calmness"
+Выбор пути: + сдержанность.
+Главный герой: Но я действительно становлюсь лучше рядом с ними.
+Главный герой: Ради них и ради себя.
+-> n9_000000
+:n3_000000
+Игрок: Оставить его.
+set key="Remember.Leave_letter_1_19" value=true
+Автор: Агнию обуяла ярость. Перед ней на полу лежало неопровержимое доказательство того, что ее муж бросил их.
+actor enter="fade" id="Agnia_young" position="right" show=true sprite_url="/content/art/Agnia_young.jpg"
+Agnia_young: Как он мог?!
+actor exit="fade" id="Agnia_young" show=false
+Автор: Агнии не хотелось бередить совсем свежую рану, рану, которая никогда уже не заживет. Поэтому она не забрала письмо.
+-> n4_000000
+:__end

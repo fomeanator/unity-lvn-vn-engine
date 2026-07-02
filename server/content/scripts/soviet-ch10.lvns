@@ -1,0 +1,2056 @@
+scene chapter
+
+set default=true key="Cutscenes.showAndreyFirstScene_1_5" value=false
+set default=true key="Cutscenes.showDaniilLaboratory_1_6" value=false
+set default=true key="Cutscenes.showOlesyaDurka" value=false
+set default=true key="Cutscenes.showKissTimur_1_8" value=false
+set default=true key="Cutscenes.showLyubaOlesya_12_3" value=false
+set default=true key="Cutscenes.showDaniels_bathroom_intim_1_16" value=false
+set default=true key="Cutscenes.showMonument_1_19" value=false
+set default=true key="Cutscenes.showOlesyaTombstone_1_19" value=false
+set default=true key="Cutscenes.showMonumentRabbit_1_19" value=false
+set default=true key="Cutscenes.showOlesya_and_Phobos_21" value=false
+set default=true key="Cutscenes.showMeme_family" value=false
+set default=true key="Cutscenes.showMeme_Dog_bones_market" value=false
+set default=true key="Cutscenes.showMeme_Joke_red_fish" value=false
+set default=true key="Cutscenes.showJonh_1_23" value=false
+set default=true key="Cutscenes.showSiegfried_and_Odette_25" value=false
+set default=true key="Cutscenes.showOlesyas_parents_26" value=false
+set default=true key="Cutscenes.showWedding_with_Timur_29" value=false
+set default=true key="Cutscenes.showOn_hike_with_Andrey_29" value=false
+set default=true key="Cutscenes.showWith_Daniil_on_the_windowsill_29" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_11" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_12" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_13" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_14" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_15" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_16" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_17" value=false
+set default=true key="Music.Silence" value=false
+set default=true key="Music.Passion" value=false
+set default=true key="Music.Romance" value=false
+set default=true key="Music.Fight" value=false
+set default=true key="Music.Afghanistan" value=false
+set default=true key="Music.Fantastic" value=false
+set default=true key="Music.Miracle" value=false
+set default=true key="Music.Promenade" value=false
+set default=true key="Music.Native" value=false
+set default=true key="Music.Adventure" value=false
+set default=true key="Music.Alert" value=false
+set default=true key="Music.Revelation" value=false
+set default=true key="Music.Havana" value=false
+set default=true key="Music.Bustle" value=false
+set default=true key="Music.Comedian" value=false
+set default=true key="Music.Socialism" value=false
+set default=true key="Music.Sound_of_the_sea" value=false
+set default=true key="Music.Noise_underwater" value=false
+set default=true key="Music.Sound_of_storm" value=false
+set default=true key="Music.River" value=false
+set default=true key="Music.Sound_of_cicadas" value=false
+set default=true key="Music.Sound_of_wind" value=false
+set default=true key="Music.Noise_river_campfire" value=false
+set default=true key="Music.Chopping_firewood" value=false
+set default=true key="Music.Stone_in_water" value=false
+set default=true key="Music.Noise_forest" value=false
+set default=true key="Music.Street_noise" value=false
+set default=true key="Music.Sound_city_after_rain" value=false
+set default=true key="Music.Sound_of_rain" value=false
+set default=true key="Music.Kitchen_noise" value=false
+set default=true key="Music.Waterfall_noise" value=false
+set default=true key="Music.Korea" value=false
+set default=true key="Music.Magic" value=false
+set default=true key="Music.Snowstorm_noise" value=false
+set default=true key="Music.Determination" value=false
+set default=true key="Music.Thunderstorm_noise" value=false
+set default=true key="Music.Swan_Lake" value=false
+set default=true key="Music.New_Years" value=false
+set default=true key="Sound.Sirena" value=false
+set default=true key="Sound.Broken_dishes" value=false
+set default=true key="Sound.Car_brakes" value=false
+set default=true key="Sound.Bird_scream" value=false
+set default=true key="Sound.Knock" value=false
+set default=true key="Sound.Sea_waves" value=false
+set default=true key="Sound.Shower" value=false
+set default=true key="Sound.Alarm" value=false
+set default=true key="Sound.KnockDoor" value=false
+set default=true key="Sound.Kitchen" value=false
+set default=true key="Sound.Broken_glass" value=false
+set default=true key="Sound.Svarka" value=false
+set default=true key="Sound.SvarochnyZeh" value=false
+set default=true key="Sound.Tazik" value=false
+set default=true key="Sound.Stolovka" value=false
+set default=true key="Sound.Storm_noise" value=false
+set default=true key="Sound.Cat_howling" value=false
+set default=true key="Sound.Dog_growling" value=false
+set default=true key="Sound.Fountain_noise" value=false
+set default=true key="Sound.Police_whistle" value=false
+set default=true key="Sound.Fire_alarm" value=false
+set default=true key="Sound.shooting_1_10" value=false
+set default=true key="Sound.Silence" value=false
+set default=true key="Sound.War" value=false
+set default=true key="Sound.Urring_cat" value=false
+set default=true key="Sound.Crash_of_stones" value=false
+set default=true key="Sound.Frying_pan_head" value=false
+set default=true key="Sound.Frying_pan_fell_down" value=false
+set default=true key="Sound.Sizzle_hot_stones" value=false
+set default=true key="Sound.Slapping_brooms" value=false
+set default=true key="Sound.Lowing_cow" value=false
+set default=true key="Sound.Bellowing_calf" value=false
+set default=true key="Sound.Cuckoo" value=false
+set default=true key="Sound.ships_horn" value=false
+set default=true key="Sound.happy_crowd" value=false
+set default=true key="Sound.Doorbell_rings" value=false
+set default=true key="Sound.Steps" value=false
+set default=true key="Sound.Sparrows_chirping" value=false
+set default=true key="Sound.Car_beeps" value=false
+set default=true key="Sound.Train" value=false
+set default=true key="Sound.Phone_call" value=false
+set default=true key="Sound.Doorbell_knock" value=false
+set default=true key="Open.Wardrobe" value=false
+set default=true key="Open.ReOpenWardrobe" value=false
+set default=true key="Wardrobe.FreeWardrobe_Access" value=false
+set default=true key="Wardrobe.mainCh_Clothes" value=0
+set default=true key="Wardrobe.mainCh_Hair" value=0
+set default=true key="Wardrobe.Andrey" value=0
+set default=true key="Wardrobe.Timur" value=0
+set default=true key="Wardrobe.Lyuba" value=0
+set default=true key="Wardrobe.Daniil" value=0
+set default=true key="Wardrobe.Psychiatrist" value=0
+set default=true key="Wardrobe.Child_Olesya" value=0
+set default=true key="Wardrobe.Daniil_without_glasses" value=0
+set default=true key="Wardrobe.Child_Olesya_Cold" value=0
+set default=true key="Wardrobe.Mother" value=0
+set default=true key="Wardrobe.Nonna" value=0
+set default=true key="Remember.Pirozhki_1_1" value=false
+set default=true key="Remember.Selfie_1_1" value=false
+set default=true key="Remember.RudeOldLady" value=false
+set default=true key="Remember.TakeaWallet" value=false
+set default=true key="Remember.Made_Flight_1_3" value=false
+set default=true key="Remember.PhilosophLetter_1_3" value=false
+set default=true key="Remember.DrinkBeer_1_3" value=false
+set default=true key="Remember.SoberLyuba_1_3" value=false
+set default=true key="Remember.OpenDoor_1_3" value=false
+set default=true key="Remember.HelpBabulya_1_4" value=false
+set default=true key="Remember.Cooking_1_4" value=false
+set default=true key="Remember.NewVariable" value=false
+set default=true key="Remember.FlashbackOlesya_1_5" value=false
+set default=true key="Remember.Lyuda_pomnit" value=false
+set default=true key="Remember.Samolet" value=false
+set default=true key="Remember.Kiss_Timur_1_8" value=false
+set default=true key="Remember.Relationships_Daniil_1_9" value=false
+set default=true key="Remember.Relationships_Andrey_1_10" value=false
+set default=true key="Remember.Stone_1_10" value=false
+set default=true key="Remember.Candies_1_10" value=false
+set default=true key="Remember.connected_1_10" value=false
+set default=true key="Remember.Take_cat" value=false
+set default=true key="Remember.Reletionship_Lyuba_1_11" value=false
+set default=true key="Remember.Photo_cans_1_11" value=false
+set default=true key="Remember.Exchange_numbers_1_11" value=false
+set default=true key="Remember.OlesyaRememberDomKultyri_1_12" value=false
+set default=true key="Remember.Talk_with_Stalina_1_13" value=false
+set default=true key="Remember.Cow_birth_1_14" value=false
+set default=true key="Remember.Tell_ab_Makar_and_Praskovia_1_15" value=false
+set default=true key="Remember.Timur_asks_Alina_1_15" value=false
+set default=true key="Remember.Take_paper_1_15" value=false
+set default=true key="Remember.Amirani_1_16" value=false
+set default=true key="Remember.Em_1_16" value=false
+set default=true key="Remember.Relationships_John_1_17" value=false
+set default=true key="Remember.FriendshipDanielTimur_1_18" value=false
+set default=true key="Remember.MixerforLuba_1_18" value=false
+set default=true key="Remember.Blame_father_1_18" value=false
+set default=true key="Remember.Justify_father_1_18" value=false
+set default=true key="Remember.Pick_up_letter_1_19" value=false
+set default=true key="Remember.Leave_letter_1_19" value=false
+set default=true key="Remember.Kimbap_1_19" value=false
+set default=true key="Remember.Teokbokki_1_19" value=false
+set default=true key="Remember.Roses_1_19" value=false
+set default=true key="Remember.Lilies_1_19" value=false
+set default=true key="Remember.Lotus_1_19" value=false
+set default=true key="Remember.Get_into_trash_can_1_19" value=false
+set default=true key="Remember.Open_scene_1_20" value=false
+set default=true key="Remember.Will_miss_1_20" value=false
+set default=true key="Remember.Willnot_miss_1_20" value=false
+set default=true key="Remember.Find_out_about_lake_1_20" value=false
+set default=true key="Remember.Want_see_Phobos_1_20" value=false
+set default=true key="Remember.Put_in_place_John_17" value=false
+set default=true key="Remember.Phobos_remains" value=false
+set default=true key="Remember.Tea_with_lemon" value=false
+set default=true key="Remember.Tea_with_acacia_honey" value=false
+set default=true key="Remember.Lyuba_Univer_1_22" value=false
+set default=true key="Remember.Friendship_Lyuba" value=false
+set default=true key="Remember.Bouillon_1_22" value=false
+set default=true key="Remember.Sorcerers_1_22" value=false
+set default=true key="Remember.Keys_1_22" value=false
+set default=true key="Remember.Photos_1_22" value=false
+set default=true key="Remember.Song_1_23" value=false
+set default=true key="Remember.Hello_Melentyev" value=false
+set default=true key="Remember.Documents_1_23" value=false
+set default=true key="Remember.Information_from_room_1_24" value=false
+set default=true key="Remember.Document_case_24" value=false
+set default=true key="Remember.Scientist_24" value=false
+set default=true key="Remember.Timurs_reflection_24" value=false
+set default=true key="Remember.Timurs_bride_24" value=false
+set default=true key="Remember.Shop_24" value=false
+set default=true key="Remember.Andreis_reflection_24" value=false
+set default=true key="Remember.Andreis_bride_24" value=false
+set default=true key="Remember.pot_24" value=false
+set default=true key="Remember.Olesya_great_24" value=false
+set default=true key="Remember.John_newbie_24" value=false
+set default=true key="Remember.Stat_Raisa_eavesdropping_25" value=false
+set default=true key="Remember.Stepka_25" value=false
+set default=true key="Remember.overheard_25" value=false
+set default=true key="Remember.ballerina_25" value=false
+set default=true key="Remember.camera_25" value=false
+set default=true key="Remember.stolen_26" value=false
+set default=true key="Remember.Daniels_discovery_26" value=false
+set default=true key="Remember.child_from_Andrey_26" value=false
+set default=true key="Remember.parents_documents_27" value=false
+set default=true key="Remember.concert_27" value=false
+set default=true key="Remember.friendship_AT_27" value=false
+set default=true key="Remember.resentment_Timur_27" value=false
+set default=true key="Remember.resentment_Andrey_27" value=false
+set default=true key="Remember.headphones_27" value=false
+set default=true key="Remember.lyuda_prison_27" value=false
+set default=true key="Remember.roses_27" value=false
+set default=true key="Remember.Kiss_John_27" value=false
+set default=true key="Remember.favor_to_John_27" value=false
+set default=true key="Remember.help_John_27" value=false
+set default=true key="Remember.Melentyev_details_27" value=false
+set default=true key="Remember.Johns_work_27" value=false
+set default=true key="Remember.sex_John_27" value=false
+set default=true key="Remember.Johns_advice_28" value=false
+set default=true key="Remember.Lyuba_Love_28" value=false
+set default=true key="Remember.tea_Melentyev_28" value=false
+set default=true key="Remember.get_Melentyev_to_talk_28" value=false
+set default=true key="Remember.broke_out_28" value=false
+set default=true key="Remember.parting_Timur_29" value=false
+set default=true key="Remember.parting_Andrey_29" value=false
+set default=true key="Remember.Melentyev_won_29" value=false
+set default=true key="Remember.NP_29" value=false
+set default=true key="Remember.Daniel_parting_29" value=false
+set default=true key="Remember.bride_Daniila_29" value=false
+set default=true key="Remember.Finale_Crazy_Phobos_29" value=false
+set default=true key="Names.cname" value="Олеся"
+set default=true key="Names.pname" value="..."
+set default=true key="Names.Marina" value="Марина"
+set default=true key="Names.Vadim" value="Вадим"
+set default=true key="Names.Starushka" value="Старушка"
+set default=true key="Names.Father" value="Папа"
+set default=true key="Names.Mother" value="Мама"
+set default=true key="Names.Andrey" value="Андрей"
+set default=true key="Names.Daniil" value="Даниил"
+set default=true key="Names.Timur" value="Тимур"
+set default=true key="Names.Lyuba" value="Люба"
+set default=true key="Names.Nina_Pavlovna" value="Нина Павловна"
+set default=true key="Names.OldLady" value="Старушка"
+set default=true key="Names.Milicioner" value="Милиционер"
+set default=true key="Names.Men1" value="Седой мужик"
+set default=true key="Names.Men2" value="Лысый мужик"
+set default=true key="Names.Doorman" value="Швейцар"
+set default=true key="Names.Waiter" value="Официант"
+set default=true key="Names.Driver" value="Водитель"
+set default=true key="Names.Milicioner_2" value="Милиционер"
+set default=true key="Names.Doctor" value="Медик"
+set default=true key="Names.Nurse" value="Медсестра"
+set default=true key="Names.Patient" value="Пациент"
+set default=true key="Names.Psychiatrist" value="Врач"
+set default=true key="Names.Sanitar" value="Санитар"
+set default=true key="Names.Sanitar_2" value="Санитар"
+set default=true key="Names.Crazy" value="Сумасшедший"
+set default=true key="Names.Lyuda" value="Люда"
+set default=true key="Names.Borya" value="Незнакомец"
+set default=true key="Names.Babulya_vedra" value="Старушка"
+set default=true key="Names.Stalina" value="Сталина Ильинична"
+set default=true key="Names.Lyuda_Black" value="Люда"
+set default=true key="Names.Worker" value="Работник цеха"
+set default=true key="Names.Worker_Black1" value="Рабочий"
+set default=true key="Names.Worker_Black2" value="Рабочий"
+set default=true key="Names.Worker_Black3" value="Рабочий"
+set default=true key="Names.WorkerCap" value="Рабочий"
+set default=true key="Names.Iosiph" value="Иосиф"
+set default=true key="Names.Miriam" value="Мириам"
+set default=true key="Names.Alesha" value="Мальчик"
+set default=true key="Names.Zoya" value="Девушка"
+set default=true key="Names.Veduschii" value="Ведущий"
+set default=true key="Names.John" value="Джон"
+set default=true key="Names.Nonna" value="Официантка"
+set default=true key="Names.Eleanor" value="Элеонора"
+set default=true key="Names.Andrey_child" value="Андрей"
+set default=true key="Names.Timur_child" value="Тимур"
+set default=true key="Names.Dog" value="Пес"
+set default=true key="Names.Laboratory_assistant" value="Незнакомка"
+set default=true key="Names.Cat" value="Кошка"
+set default=true key="Names.John_with_glasses" value="Американец"
+set default=true key="Names.Eleanor_without_glasses" value="Женщина"
+set default=true key="Names.John_with_polaroid" value="Джон"
+set default=true key="Names.Timur_Black" value="Тимур"
+set default=true key="Names.Lilia_Igorevna" value="Лилия Игоревна"
+set default=true key="Names.Cow" value="Буренка"
+set default=true key="Names.Mom_Luba" value="Мама"
+set default=true key="Names.Child_Olesya" value="Олеся"
+set default=true key="Names.Beat_paren" value="Парень"
+set default=true key="Names.Bully" value="Задира"
+set default=true key="Names.Vanya" value="Ваня"
+set default=true key="Names.Vanya_rana" value="Ваня"
+set default=true key="Names.Andrey_forma_rana" value="Андрей"
+set default=true key="Names.Dushman" value="Душман"
+set default=true key="Names.Ashrafi" value="Девочка"
+set default=true key="Names.Ashrafi_i_basket" value="Девочка"
+set default=true key="Names.Dushman_blood" value="Душман"
+set default=true key="Names.Dushman_i_Vanya" value="Душман"
+set default=true key="Names.Andrey_rucablood" value="Андрей"
+set default=true key="Names.Andrey_i_gun" value="Андрей"
+set default=true key="Names.Child_Olesya_Cold" value="Олеся"
+set default=true key="Names.Young_mother_clothes_1" value="Аня"
+set default=true key="Names.Young_Father" value="Дима"
+set default=true key="Names.Father_fairy" value="Рыбак"
+set default=true key="Names.Agnia_fairy" value="Владычица"
+set default=true key="Names.Agnia_Older" value="Агния"
+set default=true key="Names.Mother_Fairy" value="Морская дева"
+set default=true key="Names.Little_Olesya_summer" value="Олеся"
+set default=true key="Names.Daniil_without_glasses" value="Даниил"
+set default=true key="Names.Agnia_Older_black" value="Агния"
+set default=true key="Names.Andrey_black" value="Андрей"
+set default=true key="Names.Phobos" value="Незнакомец"
+set default=true key="Names.Borya_work" value="Боря"
+set default=true key="Names.Lyuda_work" value="Люда"
+set default=true key="Names.Agnia_young" value="Агния"
+set default=true key="Names.Vladimir" value="Владимир"
+set default=true key="Names.Little_Anya" value="Аня"
+set default=true key="Names.Alonso" value="Кубинец"
+set default=true key="Names.Young_mother_clothes_2" value="Аня"
+set default=true key="Names.Commandos" value="Кубинец"
+set default=true key="Names.Borya_work_black" value="Боря"
+set default=true key="Names.Lyuda_work_black" value="Люда"
+set default=true key="Names.Lyuba_ryingpan" value="Люба"
+set default=true key="Names.Iraklii" value="Ираклий"
+set default=true key="Names.Jamalia" value="Джамалия"
+set default=true key="Names.Dali" value="Дали"
+set default=true key="Names.Daniil_black" value="Даниил"
+set default=true key="Names.Praskovia" value="Прасковья"
+set default=true key="Names.Andrey_bayan" value="Андрей"
+set default=true key="Names.Calf" value="Теленок"
+set default=true key="Names.Tatyana_Gennadievna" value="Женщина"
+set default=true key="Names.Makar" value="Макар"
+set default=true key="Names.Alina" value="Девушка"
+set default=true key="Names.Andrey_Axe" value="Андрей"
+set default=true key="Names.Dragon" value="Дракон"
+set default=true key="Names.Daniel_child" value="Даниил"
+set default=true key="Names.Ania_black" value="Аня"
+set default=true key="Names.John_lifeline" value="Джон"
+set default=true key="Names.Den" value="Парень"
+set default=true key="Names.Nikita_Melentyev" value="Никита"
+set default=true key="Names.Nikita_Melentyev_glasses" value="Никита"
+set default=true key="Names.Nikita_Melentyev_old" value="Никита"
+set default=true key="Names.Konstantin_Melentyev" value="Мелентьев"
+set default=true key="Names.Mother_2" value="Мама"
+set default=true key="Names.Father_3" value="Папа"
+set default=true key="Names.Father_2" value="Папа"
+set default=true key="Names.Olesya_sleeping" value="Олеся"
+set default=true key="Names.Seagull" value="Чайка"
+set default=true key="Names.Watchman" value="Сторож"
+set default=true key="Names.Boss_black" value="Начальник"
+set default=true key="Names.John_suit" value="Джон"
+set default=true key="Names.Singer_black" value="Певица"
+set default=true key="Names.Singer" value="Певица"
+set default=true key="Names.Valentin_Nikolaevich" value="Дедушка"
+set default=true key="Names.Scientist" value="Ученый"
+set default=true key="Names.Andrey_dirty_24" value="Андрей"
+set default=true key="Names.Timur_dirty_24" value="Тимур"
+set default=true key="Names.Philosopher" value="Георгий Николаевич"
+set default=true key="Names.Raisa_with_child" value="Раиса с ребенком"
+set default=true key="Names.Raisa" value="Раиса"
+set default=true key="Names.Melentyevs_assistant" value="Мужчина"
+set default=true key="Names.Siegfried" value="Зигфрид"
+set default=true key="Names.Svetlana_Ulanova" value="Светлана"
+set default=true key="Names.Victoria_Lisinskaya" value="Виктория"
+set default=true key="Names.Andrey_with_bandage" value="Андрей"
+set default=true key="Names.Iosiph_old" value="Отец"
+set default=true key="Names.Teenager" value="Парень"
+set default=true key="Names.Luda_Spy" value="Люда"
+set default=true key="Names.Tatyana_Gennadievna_without_jacket" value="Татьяна"
+set default=true key="Names.John_underpants_27" value="Джон"
+set default=true key="Names.Iraklii_black" value="Ираклий"
+set default=true key="Names.Jamalia_black" value="Джамалия"
+set default=true key="Names.Policeman_regular_clothes" value="Милиционер"
+set default=true key="Names.Policeman" value="Милиционер"
+set default=true key="Names.Lyuba_black" value="Люба"
+set default=true key="Names.Gypsy_Mirella" value="Женщина"
+set default=true key="Names.Nina_Pavlovna_elegant" value="Нина Павловна"
+set default=true key="Names.Dan_alternate" value="Дэн"
+set default=true key="Names.Daniel_Little_modernity" value="Даниил"
+set default=true key="Names.Lyuba_Little" value="Люба"
+set default=true key="Names.Alice" value="Алиса"
+set default=true key="Names.Mom_Another" value="Мама"
+set default=true key="Names.Andrey_New_Years_accordion" value="Андрей"
+set default=true key="Enter._cname_" value="Олеся"
+set default=true key="Enter._pname_" value=""
+set default=true key="Temp.focus" value=""
+set default=true key="Temp.saveMainChClothes" value=false
+set default=true key="Temp.saveMainChHair" value=false
+set default=true key="Temp.saveMainChClothes_intim" value=false
+set default=true key="Temp.saveMainChHair_intim" value=false
+set default=true key="Temp.saveMainChClothes_underwear" value=false
+set default=true key="Temp.saveMainChClothes_beforeW" value=false
+set default=true key="Temp.saveMainChHair_beforeW" value=false
+set default=true key="Relationships.Andrey" value=0
+set default=true key="Relationships.Lyuba" value=0
+set default=true key="Relationships.Timur" value=0
+set default=true key="Relationships.Daniil" value=0
+set default=true key="Relationships.Nonna" value=0
+set default=true key="Relationships.Jonh" value=0
+set default=true key="Relationships.Father" value=false
+set default=true key="Relationships.Mother" value=0
+set default=true key="Relationships.Marina" value=0
+set default=true key="Relationships.Vadim" value=0
+set default=true key="Relationships.Praskovia" value=0
+set default=true key="Achievements.durka" value=false
+set default=true key="Way.laziness" value=0
+set default=true key="Way.diligence" value=0
+set default=true key="Way.calmness" value=0
+set default=true key="Way.rage" value=0
+set default=true key="Way.crazy" value=0
+set default=true key="Way.normal" value=0
+set default=true key="Way.rage_10" value=0
+set default=true key="Way.Support_parents_1_11" value=0
+set default=true key="Way.Dynamo_Plant_1_11" value=0
+set default=true key="Way.USSR" value=0
+set default=true key="Way.Modernity" value=0
+set default=true key="Way.Secret_ending" value=0
+set default=true key="Way.Drunkard" value=0
+bg id="Скала_пасмурно" sprite_url="/content/bg/Скала_пасмурно.jpg"
+set key="Music.Miracle" value=true
+Автор: Война не кончается тогда, когда перестают стрелять.
+Автор: Она перемещается в человеческую душу, где нельзя бывшее сделать не бывшим.
+Информация: «Цинковые мальчики» Светлана Алексиевич
+Автор: И там у нее другие сроки…
+bg id="Лаборатория_Даниила" sprite_url="/content/bg/Лаборатория_Даниила.jpg"
+Автор: Я тихонько открываю дверь и сразу же попадаю в уже такую знакомую атмосферу химической лаборатории.
+Автор: Тонкий запах химикатов, аккуратно сохнущие над раковиной колбы, теплые лучи солнца, падающие на длинные столы.
+Автор: Даниил снова увлечен своей работой, он спрятался где-то в глубине лаборатории и не заметил моего появления.
+set expr="Wardrobe.mainCh_Clothes" key="Temp.saveMainChClothes_beforeW"
+set expr="Wardrobe.mainCh_Hair" key="Temp.saveMainChHair_beforeW"
+:n2_000000
+set key="Open.Wardrobe" value=true
+Автор: Выбери одежду.
+- Не менять. -> n3_000000
+- Нежность. -> n4_000000
+- Мечта. -> n5_000000
+:n3_000000
+Игрок: Не менять.
+set expr="Temp.saveMainChClothes_beforeW" key="Wardrobe.mainCh_Clothes"
+Главный герой: В другой раз.
+:n6_000000
+Автор: Теперь выбери прическу.
+- Молодежная. -> n7_000000
+- Не менять. -> n8_000000
+- Блеск. -> n9_000000
+:n7_000000
+Игрок: [premium]Молодежная.
+set key="Wardrobe.mainCh_Hair" value=102
+Главный герой: Отлично!
+:n10_000000
+Автор: Ты довольна своим внешним видом?
+- Да. -> n11_000000
+- Нет. -> n12_000000
+:n11_000000
+Игрок: Да.
+set key="Open.Wardrobe" value=false
+Автор: Пройдя по лаборатории, я нахожу ученого.
+Главный герой: Даниил…
+Автор: Он отворачивается от прибора, держа в руках большую тетрадь и ручку, и его лицо озаряет теплая улыбка.
+set key="Wardrobe.Daniil" value=2
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Олеся!
+actor exit="fade" id="Daniil" show=false
+Главный герой: Я не помешала тебе?
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Нет, ну что ты? Я всегда рад тебя здесь видеть.
+if Remember.Relationships_Daniil_1_9 == true -> n13_000000
+-> n14_000000
+:n13_000000
+actor exit="fade" id="Daniil" show=false
+Главный герой: Только ли здесь? А в остальное время?
+Автор: Даниил заметно тушуется, смущенно отводя взгляд в сторону, затем снова смотрит на меня, скромно улыбаясь.
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Ну, Олеся, я не это имел в виду…
+actor exit="fade" id="Daniil" show=false
+Автор: Я смотрю на Даниила и не могу отвести взгляд...
+Автор: От его теплых добрых карих глаз, согревающих мою замерзшую душу одним лишь взглядом, от его кудрявых волос, в которые так и хочется зарыться…
+Автор: И от его губ, которые так и хочется…
+Главный герой: Так и хочется…
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Олеся?
+actor exit="fade" id="Daniil" show=false
+Автор: Мягкий голос Даниила выдергивает меня из задумчивости.
+Главный герой: А?
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Ты о чем-то задумалась.
+actor exit="fade" id="Daniil" show=false
+Главный герой: Да это так… ничего особенного…
+Главный герой: Надеюсь, Даниил не догадался, о чем я думала только что!
+Главный герой: Я же даже не знаю, как себя с ним вести. Что делать, чтобы не отпугнуть его от себя .
+Главный герой: Обольстительница из меня никакая, на самом-то деле…
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: …
+actor exit="fade" id="Daniil" show=false
+Главный герой: …
+:n14_000000
+Главный герой: Даниил, я хотела тебя спросить…
+Главный герой: Ты уже… смог зарядить мое устройство?
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Ах да!
+actor exit="fade" id="Daniil" show=false
+Автор: Даниил убирает в сторону тетрадь с ручкой, задумчиво проводит ладонью по своим кудрявым волосам и одергивает край халата.
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Прости, что забыл тебе раньше сказать. Да, все получилось. Сейчас отдам тебе.
+actor exit="fade" id="Daniil" show=false
+Главный герой: Не может быть! Хоть что-то будет у меня здесь из моего времени…
+Главный герой: Правда чем мне здесь может помочь смартфон? Но посмотрим…
+Главный герой: Спасибо тебе.
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Сейчас принесу.
+actor exit="fade" id="Daniil" show=false
+Автор: Он оставляет свои измерения и обходит меня, устремляясь к другому ряду столов.
+Автор: Наклоняется к одному из столов, открывает ящик и недолго копается в нем.
+Автор: Затем быстро возвращается, протягивая мне мой телефон.
+Главный герой: Спасибо, Даня!
+Автор: Даниил отдает мне телефон и задумчиво смотрит мне прямо в глаза.
+Главный герой: Пожалуйста, не спрашивай меня ни о чем!
+Главный герой: Пожалуйста! Я не хочу тебе лгать, но правда слишком безумна, чтобы хоть кто-нибудь в нее поверил…
+Автор: И Даниил меня не спрашивает, он подходит к прибору, снова берет в руки свою большую тетрадь и записывает показания.
+Автор: Затем отвечает мне, не отрывая взгляда от своей работы.
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Я был очень рад тебе помочь.
+actor exit="fade" id="Daniil" show=false
+Главный герой: …
+Автор: И снова погружается всецело в свои исследования.
+if Remember.Relationships_Daniil_1_9 == true -> n15_000000
+-> n16_000000
+:n15_000000
+Главный герой: Да что же это такое? И ему снова не до меня!
+Главный герой: Я в своем двадцать первом веке не знала, куда от внимания парней деваться…
+Главный герой: Постоянно доставали меня своими подкатами. Хотя ни с кем не флиртовала. Всех отшивала. А Даниил…
+Главный герой: Ох, да что сейчас об этом вспоминать? Все те парни и в подметки не годятся Даниилу!
+Главный герой: Он видит во мне личность, видит мою душу…
+Главный герой: А не просто красивое личико и фигурку, которую было бы неплохо затащить в постель, в отличие от тех парней…
+Главный герой: Но что же мне сделать? Что? Чтобы достучаться до Даниила…
+Главный герой: Что сделать?
+- Привлечь внимание Даниила. -> n17_000000
+- Не отвлекать его от работы. -> n18_000000
+:n17_000000
+Игрок: [premium]Привлечь внимание Даниила.
+set expr="Relationships.Daniil + 1" key="Relationships.Daniil"
+Отношения: Ваши отношения с Даниилом улучшились!
+Главный герой: И что же мне делать?
+Главный герой: А зачем мне торопить события?
+Главный герой: Я хочу быть рядом с Даниилом, и хочу больше узнать о нем .
+Автор: Я подхожу ближе к Даниилу, с любопытством заглядывая в тетрадь, но ничего не понимаю в этих огромных формулах и расчетах.
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Олеся?
+actor exit="fade" id="Daniil" show=false
+Главный герой: Я тебе не мешаю?
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Нет. Можешь посмотреть, если тебе интересно. Я сейчас измеряю электропроводность электролитов.
+actor exit="fade" id="Daniil" show=false
+Автор: После того, как он вкратце рассказывает о своих исследованиях, я спрашиваю его:
+Главный герой: Даниил, расскажи о своем отце.
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Об отце?
+actor exit="fade" id="Daniil" show=false
+Главный герой: Да. Как он стал таким выдающимся человеком.
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Хорошо.
+Daniil: Но рассказ будет не из легких.
+actor exit="fade" id="Daniil" show=false
+Главный герой: Я готова его услышать.
+Автор: И Даниил рассказывает мне. Рассказывает о том, что его дедушка был очень уважаемым хирургом в небольшом городе в Восточной Германии.
+Автор: В течение долгих лет его с семьей прятал у себя немецкий фермер, которому дедушка Даниила спас жизнь.
+Автор: На ферме им нельзя было все это время покидать дом, чтобы никто их не обнаружил.
+Автор: Но однажды их все-таки нашли гестаповцы, кто-то донес на того фермера.
+Автор: Была страшная облава, Иосифа и его родителей увезли в концлагерь. До окончания войны оставались считанные месяцы…
+Автор: Его родители делали все, чтобы не сдаваться, держались изо всех сил ради сына, но были уничтожены нацистами, когда Германия уже проигрывала, и советская армия была на подходе к этому концлагерю.
+Автор: Иосифу чудом удалось спастись, советская армия освободила концлагерь, а осиротевшего мальчика отправили в Советский Союз…
+Автор: Там он был определен в детдом, но учителя сразу заметили, насколько одаренный мальчик попал к ним, и всячески помогали ему.
+Автор: Иосиф блестяще закончил школу, выступая на всесоюзных олимпиадах по математике, физике и химии.
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Он поступил в Московский институт тонких химических технологий имени Ломоносова, закончил его с красным дипломом, стал самым молодым доктором наук в институте, а затем возглавил его как ректор.
+actor exit="fade" id="Daniil" show=false
+Главный герой: Вот это история…
+Главный герой: Неудивительно, что у такого отца получился такой умный сын.
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Олеся, да мне до своего отца…
+actor exit="fade" id="Daniil" show=false
+Главный герой: Не говори так! Я уверена, что ты его еще превзойдешь!
+Главный герой: И станешь гордостью всего Советского Союза.
+Главный герой: Да что Советский Союз? Ты обязательно получишь Нобелевскую премию и впишешь свое имя в мировую историю науки.
+Главный герой: За открытие, которое я даже не смогу выговорить .
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Олеся, ну ты меня совсем засмущала.
+actor exit="fade" id="Daniil" show=false
+Главный герой: Ох, Даня… Я же даже еще и не начинала тебя смущать…
+:n16_000000
+Главный герой: Даниил, ты пойдешь с нами патрулировать улицы сегодня вечером?
+Главный герой: Представляешь, Андрей даже Тимура записал в дружинники.
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Тимура? Как же ему это удалось?
+actor exit="fade" id="Daniil" show=false
+Главный герой: И Люба с нами пойдет, она просто еще пока помогает Нине Павловне.
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Хорошо, я пойду с вами. Закончу только здесь.
+Daniil: Интересно будет посмотреть на Тимура в роли дружинника. Лишь бы только наша планета не сошла с орбиты от такого события.
+actor exit="fade" id="Daniil" show=false
+bg id="Кухня_завода" sprite_url="/content/bg/Кухня_завода.jpg"
+set key="Music.Socialism" value=true
+Автор: Вернувшись на кухню, я всматриваюсь в безупречный порядок и чистоту, оставленные работницами после завершения рабочего дня.
+Автор: Но на кухне еще витают запахи ужина.
+Главный герой: Сливочно-мясной аромат… Бефстроганов .
+Главный герой: Фабрика-кухня, и я здесь всего лишь маленькая шестеренка, которая частенько барахлит…
+- И мне здесь даже уже начинает нравиться работать… -> n19_000000
+- Я тяжко вздыхаю, вспоминая, какой сегодня был аврал. -> n20_000000
+:n19_000000
+Игрок: И мне здесь даже уже начинает нравиться работать…
+set expr="Way.diligence + 1" key="Way.diligence"
+Выбор пути: + трудолюбие.
+:n21_000000
+set key="Wardrobe.Lyuba" value=2
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: ...
+actor exit="fade" id="Lyuba" show=false
+Автор: Она входит на кухню, о чем-то задумавшись так сильно, что не замечает меня.
+Главный герой: Люба! Любаша!
+Автор: Я встаю на носочки и размахиваю руками, чтобы подруга меня наконец-то заметила.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Олесенька! А я уже управилась.
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Вот и здорово! Идем дружинничать? Даниил тоже с нами пойдет, только доделает свои дела.
+Главный герой: Заберем Андрея.
+Главный герой: А вот Тимура будет сложно выцарапать для этого дела…
+Автор: После хитрого молчаливого переглядывания, мы с Любой взрываемся задорным смехом.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Ох, Олесенька! Мне тоже не терпится посмотреть на Тимура-дружинника.
+Lyuba: Сейчас я швидко переоденусь, и потопаем за нашими хлопцами.
+actor exit="fade" id="Lyuba" show=false
+bg id="Сварочный_цех" sprite_url="/content/bg/Сварочный_цех.jpg"
+Автор: В профкоме Андрея снова не оказалось. И мы с Любой знали наверняка, где его искать.
+Главный герой: Когда только Андрей успевает управлять профсоюзом рабочих огромного предприятия, если он в свой цех приходит раньше всех и покидает его последним?
+Автор: В цеху уже нет рабочих, но по знакомому треску сварки нам удается найти бригадира.
+bg id="Установка_в_цеху" sprite_url="/content/bg/Установка_в_цеху.jpg"
+set key="Wardrobe.Andrey" value=2
+set key="Wardrobe.Lyuba" value=1
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: ...
+actor exit="fade" id="Andrey" show=false
+Главный герой: Андрей!
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Андрюша!
+actor exit="fade" id="Lyuba" show=false
+Автор: Нам удается докричаться до друга, он выключает сварочный аппарат и снимает маску.
+set key="Wardrobe.Andrey" value=4
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Девчата! Не ожидал вас здесь увидеть.
+actor exit="fade" id="Andrey" show=false
+Главный герой: А все потому что ты сам нас позвал в дружинники, но пропадаешь здесь в нерабочее время.
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Да, я не должен заставлять вас себя ждать.
+Andrey: Семеро… То есть четверо одного не ждут.
+Andrey: Сейчас приведу себя и свое рабочее место в порядок, и пойдем.
+Andrey: Но для начала вытащим Тимура. Уверен, что без боя он не сдастся.
+actor exit="fade" id="Andrey" show=false
+bg id="Кабинет_Тимура" sprite_url="/content/bg/Кабинет_Тимура.jpg"
+set key="Music.Comedian" value=true
+set key="Wardrobe.Timur" value=2
+set key="Wardrobe.Andrey" value=1
+Автор: Мы с ребятами тихонько подходим к кабинету Тимура, скрытому за красивой деревянной дверью, сильно отличающейся от дверей в других корпусах нашего предприятия.
+Автор: Дверь приоткрыта, поэтому мы заглядываем внутрь, стараясь не толкаться.
+Автор: Тимур сидит, вальяжно откинувшись на стуле и сцепив руки за головой.
+Автор: Когда мы заходим в его кабинет, он мгновенно расцепляет ладони, склоняется над столом и начинает судорожно копаться в бумагах, делая вид, что не заметил нас.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Вах! Ужас, ужас сколько работы на меня нагрузили!
+Timur: Если я такой умный, что быстро справляюсь с документацией, разве же это значит, что на меня можно наваливать еще больше работы?
+actor exit="fade" id="Timur" show=false
+Автор: Андрей показательно прочищает горло и широкими шагами быстро подходит к Тимуру.
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Не притворяйся, Тимур. Мы все прекрасно видели, как ты здесь скучал.
+actor exit="fade" id="Andrey" show=false
+Главный герой: Да-да, Тимур.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Потопали, Тимурчик! Со своими друзьями. А то шо ты тут будешь один хандрить?
+set key="Wardrobe.Daniil" value=1
+actor exit="fade" id="Lyuba" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Пойдем.
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Ла-а-адно. Не удастся мне улизнуть на этот раз от работы на благо общества.
+actor exit="fade" id="Timur" show=false
+Автор: Затем, отвернувшись, сердито шепчет:
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: От этой принудиловки-обязаловки! Угораздило же меня в детстве сдружиться с Андреем!
+Timur: Надо было сразу обходить его за километр…
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Что-что ты сказал?
+actor exit="fade" id="Andrey" show=false
+Автор: Тимур резко поворачивается к нам и ослепительно улыбается.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Ничего, дружище! Сейчас приберу бумаги, закрою кабинет, и выдвигаемся!
+if Remember.Kiss_Timur_1_8 == true -> n22_000000
+-> n23_000000
+:n22_000000
+set key="Music.Romance" value=true
+actor exit="fade" id="Timur" show=false
+Автор: Когда мы выходим из кабинета, я плетусь в хвосте, случайно поравнявшись с Тимуром.
+Автор: Тимур наклоняется к моему уху и тихонько шепчет, чтобы ребята нас не услышали.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Олеся, ну ты хоть заходи ко мне сюда, когда сможешь…
+Timur: А то я же скучаю по своей прекрасной белой лебеди…
+actor exit="fade" id="Timur" show=false
+Главный герой: Тимур…
+Автор: Я нахожу его ладонь, переплетая наши пальцы и чувствуя, как по его руке от меня словно проходит электрический разряд.
+Главный герой: Что это? Или мне показалось?
+Главный герой: Хорошо, Тимур. Я же тоже по тебе скучаю.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: …
+:n23_000000
+actor exit="fade" id="Timur" show=false
+bg id="Танцпол" sprite_url="/content/bg/Танцпол.jpg"
+set key="Music.Socialism" value=true
+Автор: И вот я стала дружинницей. Кто бы мог подумать…
+Главный герой: Хотя и не каждый же попадает в прошлое. Ну и чем это я такая особенная?
+Главный герой: Я патрулирую улицы со своими друзьями, слежу за порядком…
+Главный герой: Что я чувствую?
+- И я даже этому рада! -> n24_000000
+- До сих пор не понимаю, как я на это согласилась… -> n25_000000
+:n24_000000
+Игрок: И я даже этому рада!
+set expr="Way.diligence + 1" key="Way.diligence"
+Выбор пути: + трудолюбие.
+Главный герой: Ну кто еще из моего времени может похвастаться тем, что попал в СССР и теперь активно участвует в любом движе здесь?
+:n26_000000
+Автор: Я пошла в паре с Андреем, Даниил пошел с Любой.
+Автор: Тимура Андрей взял к нам, чтобы лично следить за тем, что он не сбежит с дежурства.
+Автор: И вот мы с Андреем и Тимуром подходим к тому танцполу, на котором танцевали буквально несколько дней назад.
+Автор: Сейчас здесь никто не выступает, поэтому и практически никого нет.
+set key="Music.Fight" value=true
+Автор: Но в дальнем темном краю танцпола, не освещаемом фонарями, происходит что-то неладное.
+Главный герой: Что там происходит, Андрей?
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Не нравится мне это.
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Пойдемте посмотрим.
+actor exit="fade" id="Andrey" show=false
+Автор: Когда мы поcпешно подходим, то видим, как четверо просто запинывают одного парня ногами.
+actor enter="fade" id="Beat_paren" position="right" show=true sprite_url="/content/art/Beat_paren.jpg"
+Beat_paren: …
+actor exit="fade" id="Beat_paren" show=false
+Автор: Он валяется на асфальте, и даже не издает уже ни звука. Только молча вздрагивает от каждого пинка.
+Автор: Тогда главный задира, видимо, за которым и последовало его стадо, делает знак рукой, чтобы его подручные остановились.
+Автор: Он наклоняется над несчастным, хватает его за волосы и притягивает к своему лицу.
+actor enter="fade" id="Bully" position="right" show=true sprite_url="/content/art/Bully.jpg"
+Bully: Ну что, тварь, еще будешь лезть к моей девушке?
+actor exit="fade" id="Bully" show=false
+actor enter="fade" id="Beat_paren" position="right" show=true sprite_url="/content/art/Beat_paren.jpg"
+Beat_paren: Она не твоя девушка, она заслуживает лучшего.
+Beat_paren: Ты ее недостоин, вы никогда и не встречались.
+Beat_paren: Это просто плод твоего больного воображения.
+actor exit="fade" id="Beat_paren" show=false
+actor enter="fade" id="Bully" position="right" show=true sprite_url="/content/art/Bully.jpg"
+Bully: Что ты сказал?!
+actor exit="fade" id="Bully" show=false
+Автор: Он бросает парня обратно на асфальт, плюет на него и жестом снова подзывает своих дружков.
+actor enter="fade" id="Bully" position="right" show=true sprite_url="/content/art/Bully.jpg"
+Bully: Ну готовься, ничтожество. Мы тебе все потроха отобьем, есть через трубочку будешь.
+actor exit="fade" id="Bully" show=false
+Главный герой: Надо их остановить!
+Автор: Я с мольбой направляю свой взгляд на Тимура и Андрея.
+Главный герой: Как поступить?
+- Остановите этих ублюдков! Они же его убьют! -> n27_000000
+- Надо помочь бедняге… -> n28_000000
+:n27_000000
+Игрок: Остановите этих ублюдков! Они же его убьют!
+set expr="Way.rage +1" key="Way.rage"
+Выбор пути: + вспыльчивость .
+:n29_000000
+Автор: Но о чем-то упрашивать мне и не нужно, потому что Андрей уже мчится в центр драки, разбрасывая парней.
+Автор: Он с нечеловеческой яростью вцепляется в главного задиру и наносит ему сокрушительные удары в живот один за другим.
+Главный герой: Андрей же так убьет этого парня!
+Главный герой: С его-то силой и одного удара по голове хватит, чтобы убить!
+Автор: Я рвусь вперед и пытаюсь докричаться до Андрея. Побитый парень в ужасе от увиденного отползает в сторону, встает на ноги и убегает, прихрамывая.
+Главный герой: Отпусти его! Ты же его убьешь!
+Автор: Но друг не слышит меня, он словно оглушен своей яростью, словно одержим демонами прошлого и находится не здесь и не с нами.
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: ...
+actor exit="fade" id="Andrey" show=false
+Автор: Пока я стою в замешательстве как вкопанная, к Андрею подлетает Тимур, силой оттаскивая его от парня.
+Автор: Побитый хулиган убегает со всех ног вслед за своими друзьями, которые сбежали еще раньше.
+bg id="Скамья_у_танцпола" sprite_url="/content/bg/Скамья_у_танцпола.jpg"
+set key="Music.Revelation" value=true
+Автор: Но Андрей, добравшись до скамьи, со всей силы отталкивает от себя Тимура.
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: ...
+actor exit="fade" id="Andrey" show=false
+Автор: Тимур падает на асфальт и встает с пораженным видом, даже не отряхнувшись от пыли.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Что с тобой, дружище?
+actor exit="fade" id="Timur" show=false
+Автор: Андрей сидит с совершенно затуманенным взглядом, его всего трясет, а он смотрит в пустоту, не замечая никого вокруг себя.
+Главный герой: У Андрея ПТСР! Это же был самый настоящий приступ! Он не в себе!
+Главный герой: Это в двадцать первом веке везде трубят о ментальном здоровье, а в СССР вообще хоть лечили посттравматическое стрессовое расстройство?
+Главный герой: Такой сильный и жизнерадостный парень, всем всегда помогает, но сейчас он совершенно сломлен, разбит…
+Главный герой: Как же больно видеть его таким…
+if Remember.Kiss_Timur_1_8 == true -> n30_000000
+-> n31_000000
+:n30_000000
+Главный герой: Даже Тимур в шоке, а уж он знает Андрея дольше всех…
+:n32_000000
+set key="Music.Native" value=true
+Главный герой: Андрей, у тебя раньше были такие приступы?
+Автор: Парень сидит перед нами, все еще согнувшись, устало проводит ладонью по волосам и отрицательно мотает головой.
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Не было такого. Только кошмары снились постоянно, но я думал…
+actor exit="fade" id="Andrey" show=false
+Автор: На этом моменте он шумно выдыхает сквозь стиснутые зубы, нервно сжимая ладони в кулаки.
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Думал, что это пройдет. Когда-нибудь точно.
+Andrey: Но кошмарные сны не прекращались.
+actor exit="fade" id="Andrey" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Андрей, но что же могло спровоцировать у тебя такой приступ, которого раньше не было?
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Ох, Андрюшенька! Бедный наш хлопец!
+Lyuba: Бедный-бедный мальчик… Да шо же за судьбинушка у тебя такая хорькая?
+actor exit="fade" id="Lyuba" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Дружище, но я же не думал, что тебя там так сильно поломало…
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Потому что я вам никаких подробностей и не рассказывал.
+actor exit="fade" id="Andrey" show=false
+Главный герой: Все это время ты держал все это в себе? Даже с лучшими друзьями не поделился своей болью?
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Это так. Но, видимо, больше нельзя держать это в себе за семью замками.
+actor exit="fade" id="Andrey" show=false
+Главный герой: Андрей, но ведь драка, в которую ты ввязался, спровоцировала твой приступ!
+Главный герой: Почему в ресторане в Новороссийске так не было?
+Главный герой: Почему? Ты же тогда там тоже бросился разнимать дерущихся!
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Потому что там просто дрались пьяницы, а я такого и в детстве насмотрелся немало.
+Andrey: Здесь же… Группа ублюдков избивала одного. Того, кто их слабее.
+Andrey: Именно это и вернуло меня в то время, когда я служил в армии.
+actor exit="fade" id="Andrey" show=false
+bg id="Казарма" sprite_url="/content/bg/Казарма.jpg"
+set key="Music.Revelation" value=true
+Автор: Открыв дверь пустой казармы, я уже собираюсь идти с посылкой от мамы к своей койке, но предо мной открывается кошмарная картина.
+Автор: Мой друг висит, корчась, под потолком на ремне, а ноги меня сами несут к нему.
+Автор: Посылка падает на пол.
+Автор: Друг хрипит, болтая ногами, когда я молниеносно достаю складной нож из кармана, ногой поднимаю упавший табурет, с которого он спрыгнул, забираюсь на него.
+Автор: Придерживаю одной рукой друга за ворот, а другой пилю ремень своим нож ом изо всех сил.
+Автор: Вскоре парень оказывается на полу, держится за шею и хватает ртом воздух как рыба, выброшенная на берег.
+actor enter="fade" id="Vanya" position="right" show=true sprite_url="/content/art/Vanya.jpg"
+Vanya: Кх-кх-кх…
+set key="Wardrobe.Andrey" value=5
+actor exit="fade" id="Vanya" show=false
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Живой? Что это ты тут устроил?!
+actor exit="fade" id="Andrey" show=false
+Автор: Не справившись с гневом, я хватаю друга за воротник, силой притягивая к себе, и трясу его.
+actor enter="fade" id="Vanya" position="right" show=true sprite_url="/content/art/Vanya.jpg"
+Vanya: Зачем ты меня спас?
+actor exit="fade" id="Vanya" show=false
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: А затем, что для того я тебя защищал от них? Чтобы ты сдался и наложил на себя руки?
+actor exit="fade" id="Andrey" show=false
+actor enter="fade" id="Vanya" position="right" show=true sprite_url="/content/art/Vanya.jpg"
+Vanya: Я так не могу, я так больше не могу…
+actor exit="fade" id="Vanya" show=false
+Автор: Друг снова безвольной тряпичной куклой оседает на пол.
+Автор: Я хватаю его за грудки и снова тяну к себе.
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Если ты покончишь с собой, значит, эти ублюдки победили. Ты этого хочешь?
+actor exit="fade" id="Andrey" show=false
+actor enter="fade" id="Vanya" position="right" show=true sprite_url="/content/art/Vanya.jpg"
+Vanya: …
+actor exit="fade" id="Vanya" show=false
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: А о матери своей ты подумал?! Что с ней будет?
+Andrey: Твоя смерть убьет ее!
+Andrey: Нельзя быть таким слабым, нельзя!
+actor exit="fade" id="Andrey" show=false
+actor enter="fade" id="Vanya" position="right" show=true sprite_url="/content/art/Vanya.jpg"
+Vanya: Мама…
+actor exit="fade" id="Vanya" show=false
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Только сейчас о ней вспомнил?
+actor exit="fade" id="Andrey" show=false
+Автор: Я разгибаюсь, все еще гневно смотрю на друга и сообщаю ему новость.
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Я уезжаю в Афганистан. Мне уже одобрили перевод.
+actor exit="fade" id="Andrey" show=false
+actor enter="fade" id="Vanya" position="right" show=true sprite_url="/content/art/Vanya.jpg"
+Vanya: В Афганистан? Но почему ты сам вызвался?
+actor exit="fade" id="Vanya" show=false
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Я научился здесь и так всему, чему только можно.
+Andrey: Хочу на передовую, иначе я так и не стану настоящим солдатом.
+Andrey: На что еще мне здесь смотреть? На дедовщину, которую устраивают эти отморозки?
+Andrey: На бездействие офицеров?
+Andrey: Не это я ожидал увидеть в советской армии!
+Andrey: Доблесть и честь… Где?
+- Они за все поплатятся. -> n33_000000
+- Они недостойны называться советскими солдатами! -> n34_000000
+:n33_000000
+actor exit="fade" id="Andrey" show=false
+Игрок: Они за все поплатятся.
+set expr="Way.rage_10 +1" key="Way.rage_10"
+Выбор пути: Вы разжигаете свою ярость!
+:n35_000000
+actor enter="fade" id="Vanya" position="right" show=true sprite_url="/content/art/Vanya.jpg"
+Vanya: И ты оставишь меня здесь?
+Vanya: Ты меня спас для того, чтобы здесь бросить? Чтобы они продолжали надо мной издеваться?
+Vanya: Я тоже поеду с тобой в Афганистан! Это лучше, чем остаться здесь!
+actor exit="fade" id="Vanya" show=false
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Ты с ума сошел, Ваня? Ты здесь не можешь дать отпор кучке отморозков, а там настоящие враги!
+Andrey: Там война, там смерть, там ты не выживешь.
+actor exit="fade" id="Andrey" show=false
+actor enter="fade" id="Vanya" position="right" show=true sprite_url="/content/art/Vanya.jpg"
+Vanya: А ты почему тогда туда вызвался? У тебя же тоже есть семья, да еще и невеста тебя ждет.
+Vanya: Не боишься погибнуть?
+actor exit="fade" id="Vanya" show=false
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Не боюсь. Я не умру.
+Andrey: Я...
+- Я доблестно проявлю себя как настоящий герой. -> n36_000000
+- Я стану настоящим ужасом для душманов. -> n37_000000
+:n36_000000
+actor exit="fade" id="Andrey" show=false
+Игрок: Я доблестно проявлю себя как настоящий герой.
+Выбор пути: Вы не питаете свою ярость!
+:n38_000000
+actor enter="fade" id="Vanya" position="right" show=true sprite_url="/content/art/Vanya.jpg"
+Vanya: Если ты так уверен, что не погибнешь, то почему думаешь, что я умру?
+Vanya: Мы же будем там вместе! Значит, и со мной все будет в порядке.
+actor exit="fade" id="Vanya" show=false
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Тебе не стоит ехать в Афганистан.
+Andrey: Для тебя это самоубийство. Лучше бы сидел здесь ровно до завершения своей службы.
+actor exit="fade" id="Andrey" show=false
+actor enter="fade" id="Vanya" position="right" show=true sprite_url="/content/art/Vanya.jpg"
+Vanya: Я поеду с тобой.
+actor exit="fade" id="Vanya" show=false
+bg id="Дорога_и_перевернувшийся_грузовик" sprite_url="/content/bg/Дорога_и_перевернувшийся_грузовик.jpg"
+set key="Sound.War" value=true
+Автор: Выбравшись из перевернувшегося грузовика, я отползаю за него с оружием в руках.
+Автор: Глазами ищу друга, но не вижу его. Зато вижу тела сослуживцев, не переживших взрыва разорвавшейся гранаты.
+Автор: А точнее то, что от них осталось.
+Автор: Один рядовой, совсем зеленый парень, лежит без рук и без ног.
+Автор: Он открывает глаза, он еще жив, тяжело хрипит, но скоро умрет от кровопотери.
+Автор: Встречается со мной взглядом, шевелит губами, не в силах ничего сказать, но мне кажется, что я по его губам читаю просьбу убить его.
+Автор: Кажется, он мне теперь постоянно будет сниться. Если я выживу…
+Автор: Мы находимся под обстрелом, пули сыпятся градом, пробивают шины, падают в дорожную пыль.
+Автор: Запахи пороха, металла и горящей резины смешиваются с запахом свежей крови, и это врезается на самые подкорки памяти.
+Автор: В ушах стоит звон после взрыва и крушения грузовика.
+Автор: Спрятавшись за машиной рядом с трупом своего боевого товарища, я прицеливаюсь.
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: И я...
+- И отстреливаюсь, чтобы защитить себя и тех, кто еще не погиб. -> n39_000000
+- И палю со всей яростью, чтобы убить всех тех, кто напал на нас. -> n40_000000
+:n39_000000
+actor exit="fade" id="Andrey" show=false
+Игрок: И отстреливаюсь, чтобы защитить себя и тех, кто еще не погиб.
+Выбор пути: Вы не укрепляете свою ярость!
+:n41_000000
+Автор: Перестрелка не длится долго, потому что в сторону грузовика летит очередная граната из гранатомета.
+Автор: Когда она разрывается, меня отбрасывает в сторону, я глохну, и перед тем, как закрыть глаза, я замечаю, как на мне горит одежда.
+Автор: Почему же я даже не чувствую боли?
+set key="Sound.Silence" value=true
+bg id="Сарай_в_кишлаке" sprite_url="/content/bg/Сарай_в_кишлаке.jpg"
+set key="Music.Afghanistan" value=true
+Автор: Я прихожу в себя в каком-то грязном темном помещении.
+Автор: Голова невыносимо болит, ноги словно налиты свинцом, руки затекли.
+Автор: Но я чувствую, что лежу на колючем сене, в нос ударяет запах навоза, над головой жужжат мухи.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Где это я?
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Мне удается привыкнуть к полумраку, и я вижу, что в другом углу лежит еще один человек.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Ваня? Ваня, ты живой!
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Парень шевелится, поднимает голову, его руки тоже связаны, как и у меня, он не без труда приподнимается, затем озирается по сторонам.
+actor enter="fade" id="Vanya_rana" position="right" show=true sprite_url="/content/art/Vanya_rana.jpg"
+Vanya_rana: Андрей! Андрей, ты жив!
+actor exit="fade" id="Vanya_rana" show=false
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Да жив, жив я…
+Andrey_forma_rana: Я думал, ты там погиб! А ты здесь…
+Andrey_forma_rana: Выжил ли еще хоть кто-нибудь из наших?
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Я морщусь, чувствуя, как горит мое плечо. Смотрю на него и вижу огромный кровоточащий ожог.
+actor enter="fade" id="Vanya_rana" position="right" show=true sprite_url="/content/art/Vanya_rana.jpg"
+Vanya_rana: Где мы?
+actor exit="fade" id="Vanya_rana" show=false
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Да судя по нашим связанным рукам и этому глинобитному сараю, явно не у наших.
+Andrey_forma_rana: А это что?
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Я приподнимаю затекшую ногу, дергаю ей, сметая пыль и сено в сторону.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Они посадили нас на цепи! Как каких-то собак!
+actor exit="fade" id="Andrey_forma_rana" show=false
+actor enter="fade" id="Vanya_rana" position="right" show=true sprite_url="/content/art/Vanya_rana.jpg"
+Vanya_rana: Мы попали к душманам… Они нас убьют…
+actor exit="fade" id="Vanya_rana" show=false
+Информация: Душманы - в переводе с арабского означает враги, злоумышленники.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Где же остальные наши парни? Если бы еще кто-то выжил, разве они не оказались бы рядом с нами сейчас?
+Andrey_forma_rana: Душманы…
+Andrey_forma_rana: Мы ...
+- Мы обязательно выберемся отсюда. Нельзя сдаваться. -> n42_000000
+- Это мы их поубиваем. -> n43_000000
+:n42_000000
+actor exit="fade" id="Andrey_forma_rana" show=false
+Игрок: Мы обязательно выберемся отсюда. Нельзя сдаваться.
+Выбор пути: Вы не даете своей ярости стать сильнее!
+:n44_000000
+Автор: Еще я знаю, что моджахеды делают с пленными советскими солдатами.
+Автор: Слышал об этом от тех, кто оказался в Афганистане раньше нас с другом.
+Автор: Душманы отрубают нашим солдатам руки и ноги и перевязывают жгутом, чтобы те не умерли от кровопотери, пока их не подберут свои.
+Автор: Чтобы они продолжали жить в таком ужасе…
+Автор: Поэтому наши солдаты чаще предпочитают смерть попаданию в плен к врагам.
+Автор: Всегда берегут последнюю пулю для себя.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Но этого я другу не расскажу, чтобы не подавлять его боевой дух .
+Andrey_forma_rana: Правильный настрой – залог выживания. Если ты уже сдался, то не выживешь, даже находясь в шаге от спасения .
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Направляю взгляд на друга и подбадривающе улыбаюсь ему, превозмогая боль.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Мы обязательно выберемся отсюда.
+Andrey_forma_rana: Мы приехали сюда, чтобы строить здесь социализм, дать светлое будущее афганскому народу.
+Andrey_forma_rana: А эти «духи» терзают свою страну, мирных людей.
+Andrey_forma_rana: Так что мы здесь ради правого дела. Иначе нас бы с тобой здесь и не было.
+actor exit="fade" id="Andrey_forma_rana" show=false
+actor enter="fade" id="Vanya_rana" position="right" show=true sprite_url="/content/art/Vanya_rana.jpg"
+Vanya_rana: Но наши парни… Я видел, что с ними стало…
+actor exit="fade" id="Vanya_rana" show=false
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Их смерти не будут напрасными.
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Я вижу, что мой друг совсем удручен. Он бледнеет и сгибается, словно его сейчас стошнит.
+Автор: Видимо, тоже видел оторванные руки и ноги, горящее мясо, смешанное с грязью. То, что осталось от наших сослуживцев.
+Автор: С которыми мы проходили подготовку, ходили по горным тропам, ели из одного котелка и пели солдатские песни.
+Автор: Рассказывали друг другу о наших невестах и делились мечтами о том, как будем жить, когда вернемся домой…
+Автор: Мой друг уже сломлен, а это никуда не годится.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Ты хоть слушаешь меня?
+Andrey_forma_rana: Мы обязательно выберемся отсюда. Вместе.
+Andrey_forma_rana: Как же нам быть?
+- Давай осмотримся здесь. Может, что-то найдем? -> n45_000000
+- Что нам остается? Подождем, пока ситуация не прояснится. -> n46_000000
+:n45_000000
+actor exit="fade" id="Andrey_forma_rana" show=false
+Игрок: [premium]Давай осмотримся здесь. Может, что-то найдем?
+set key="Remember.Stone" value=true
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Нельзя терять время.
+Andrey_forma_rana: У нас каждая секунд а может быть на счету, может определить, выживем ли мы…
+actor exit="fade" id="Andrey_forma_rana" show=false
+actor enter="fade" id="Vanya_rana" position="right" show=true sprite_url="/content/art/Vanya_rana.jpg"
+Vanya_rana: Ты прав. Нельзя сдаваться.
+actor exit="fade" id="Vanya_rana" show=false
+Автор: Я осматриваюсь, копаюсь в сене, но не нахожу ничего полезного.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: У меня ничего. А у тебя?
+actor exit="fade" id="Andrey_forma_rana" show=false
+actor enter="fade" id="Vanya_rana" position="right" show=true sprite_url="/content/art/Vanya_rana.jpg"
+Vanya_rana: А я, кажется, что-то нашел!
+actor exit="fade" id="Vanya_rana" show=false
+Автор: Связанными руками он подхватывает что-то небольшое и показывает мне.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Камень?
+actor exit="fade" id="Andrey_forma_rana" show=false
+actor enter="fade" id="Vanya_rana" position="right" show=true sprite_url="/content/art/Vanya_rana.jpg"
+Vanya_rana: И не просто камень, а острый.
+actor exit="fade" id="Vanya_rana" show=false
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Отлично! Мы сможем перерезать им веревки на руках!
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Ваня бросает камень мне, я ловлю его на лету, чувствуя, как покалывает затекшие руки.
+actor enter="fade" id="Vanya_rana" position="right" show=true sprite_url="/content/art/Vanya_rana.jpg"
+Vanya_rana: Пускай у тебя побудет. Ты быстрее с этим справишься, и мне сможешь помочь.
+:n47_000000
+actor exit="fade" id="Vanya_rana" show=false
+Автор: В сарае невыносимая духота, летают мухи и воняет навозом. Я обливаюсь потом и смотрю на свою рваную, обожженную и окровавленную форму.
+Автор: Быть в грязи я уже привык за недолгое время службы в Афганистане. Какая брезгливость? Здесь лишь бы выжить.
+Автор: Но жажда сводит с ума. К ней не привыкнуть.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Как же хочется пить… Мой язык такой сухой, что похож уже на наждачную бумагу…
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Я смотрю на друга, прислонившего голову к стене сарая, и вижу, что он выглядит, наверное, хуже меня.
+Автор: Хотя я же себя в зеркало не видел.
+Автор: Пока мы с другом молча переглядываемся, погруженные в свои мрачные мысли, дверь открывается.
+Автор: Я уже готовлюсь увидеть моджахеда, но появляется не он, а маленькая девочка.
+actor enter="fade" id="Ashrafi" position="right" show=true sprite_url="/content/art/Ashrafi.jpg"
+Ashrafi: …
+actor exit="fade" id="Ashrafi" show=false
+Автор: Она осторожно заглядывает в полумрак сарая, и в ее глазах страх борется с любопытством.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Не бойся меня!
+actor exit="fade" id="Andrey_forma_rana" show=false
+actor enter="fade" id="Ashrafi" position="right" show=true sprite_url="/content/art/Ashrafi.jpg"
+Ashrafi: …
+actor exit="fade" id="Ashrafi" show=false
+Информация: Кишлак — это сельское поселение, где семьи живут вместе, возводя маленькие домики из глины, камня и соломы.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Мы же в кишлаке душманов. Здесь для любого мы страшные враги…
+Andrey_forma_rana: Как же доказать девочке, что я ей не враг? Да и русский она совсем не знает, судя по всему .
+Andrey_forma_rana: Как поступить?
+- Дать ей конфеты. -> n48_000000
+- Ничего не делать. -> n49_000000
+:n48_000000
+actor exit="fade" id="Andrey_forma_rana" show=false
+Игрок: [premium]Дать ей конфеты.
+set key="Remember.Candies_1_10" value=true
+Автор: Я ласково улыбаюсь девочке, поднимаю связанные руки, показывая, как я беспомощен.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Видишь, я хоть и большой, но совсем не страшный.
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Я тянусь к своему карману, куда перед поездкой по перевалу закинул несколько карамелек «Снежок» из посылки, что мне прислала мама.
+Автор: Надеясь, что хоть эти конфеты смогут освежить меня среди палящего зноя Афганистана и вернуть хоть ненадолго домой.
+Автор: Мои пальцы натыкаются на шуршащую бумагу.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Они сохранились? Невероятно. Я валялся за горящим грузовиком на перевале, попал в плен, у меня забрали все оружие, но конфеты чудом сохранились…
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: С трудом вытаскивая конфеты из кармана, я протягиваю их девочке.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Возьми, это тебе! Не бойся нас. Мы же простые парни, у нас тоже есть семьи.
+Andrey_forma_rana: У меня брат примерно твоего возраста.
+actor exit="fade" id="Andrey_forma_rana" show=false
+actor enter="fade" id="Ashrafi" position="right" show=true sprite_url="/content/art/Ashrafi.jpg"
+Ashrafi: …
+actor exit="fade" id="Ashrafi" show=false
+Автор: Девочка с опаской подходит ко мне, хватает конфеты из моих ладоней и стремительно убегает к двери.
+actor enter="fade" id="Ashrafi" position="right" show=true sprite_url="/content/art/Ashrafi.jpg"
+Ashrafi: …
+actor exit="fade" id="Ashrafi" show=false
+Автор: Дверь закрывается, и я слышу, как с той стороны закрывается засов.
+:n50_000000
+Автор: Когда девочка уходит, дверь снова открывается, тяжелые шаги, кажется, что сотрясают глиняные стены сарая.
+actor enter="fade" id="Dushman" position="right" show=true sprite_url="/content/art/Dushman.jpg"
+Dushman: …
+actor exit="fade" id="Dushman" show=false
+actor enter="fade" id="Vanya_rana" position="right" show=true sprite_url="/content/art/Vanya_rana.jpg"
+Vanya_rana: …
+actor exit="fade" id="Vanya_rana" show=false
+Автор: Я подбадривающе смотрю на друга и хочу, чтобы он прочитал мои мысли. Именно сейчас это очень важно.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Не показывай ему свой страх. Пусть он увидит, что нас не сломать.
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Моджахед исторгается бранью на своем языке, источая столько ненависти, что одной этой ненавистью без оружия уже можно кого-нибудь убить.
+actor enter="fade" id="Dushman" position="right" show=true sprite_url="/content/art/Dushman.jpg"
+Dushman: Шурави… Русские ублюдки…
+actor exit="fade" id="Dushman" show=false
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Он знает русский?
+actor exit="fade" id="Andrey_forma_rana" show=false
+actor enter="fade" id="Dushman" position="right" show=true sprite_url="/content/art/Dushman.jpg"
+Dushman: Грязные псы… Вы сжигаете наши кишлаки, поля, убиваете наших стариков, женщин и детей!
+Dushman: Проклятые шурави!
+Dushman: Мы вас всех уничтожим!
+Dushman: Т ех, кто уничтожает нашу религию и культуру, кто топчет нашу святую землю !
+actor exit="fade" id="Dushman" show=false
+actor enter="fade" id="Vanya_rana" position="right" show=true sprite_url="/content/art/Vanya_rana.jpg"
+Vanya_rana: …
+actor exit="fade" id="Vanya_rana" show=false
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: О чем он говорит? Я в жизни не убью невинного, даже если мне приставят автомат к затылку, а Ваня и мухи не обидит. Он приехал на войну и никого еще даже и не убил .
+actor exit="fade" id="Andrey_forma_rana" show=false
+actor enter="fade" id="Dushman" position="right" show=true sprite_url="/content/art/Dushman.jpg"
+Dushman: Вы все подохнете, как паршивые псы!
+Dushman: Где ваша часть расположена? Где остальные?
+Dushman: Мы сотрем их в порошок!
+actor exit="fade" id="Dushman" show=false
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: …
+actor exit="fade" id="Andrey_forma_rana" show=false
+actor enter="fade" id="Vanya_rana" position="right" show=true sprite_url="/content/art/Vanya_rana.jpg"
+Vanya_rana: …
+actor exit="fade" id="Vanya_rana" show=false
+Автор: Мы с другом переглядываемся, и этот короткий взгляд значит очень многое.
+Автор: Словно клятва друг другу, что мы не выдадим наших, через что бы нам ни пришлось пройти.
+Автор: Снова выругавшись на своем языке, моджахед бросает в нашу сторону чашку, намеренно швырнув ее так, чтобы мы не смогли выпить и капли.
+Автор: Вода из нее проливается, впитываясь в сено, смешиваясь с грязью.
+Автор: Душман уходит, со всей злостью хлопнув дверью.
+Автор: В сарае снова становится тихо, но слышно, как на улице ходят люди, играют дети, блеют овцы, словно война не здесь, а где-то далеко-далеко отсюда.
+Автор: Но мы-то здесь в плену, и нашей участи не позавидуешь.
+if Remember.Stone_1_10 == true -> n51_000000
+-> n52_000000
+:n51_000000
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Нельзя терять время .
+Andrey_forma_rana: Надо начать перерезать веревки камнем…
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Осмотрев камень, я замечаю, что он не такой уж и острый.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Это займет какое-то время…
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: С трудом ухватившись, я начинаю тереть веревку, но больше стираю свои пальцы в кровь.
+:n52_000000
+set key="Music.Fight" value=true
+Автор: Время тянется медленно, от жажды кружится голова, мы впадаем в полузабытье, но время близится к ночи.
+Автор: Дневной зной схлынул, теперь нам хотя бы легче переносить жажду.
+Автор: Уже ночь, дверь открывается, и туда снова заходит наш новый знакомый.
+actor enter="fade" id="Dushman" position="right" show=true sprite_url="/content/art/Dushman.jpg"
+Dushman: У вас было время подумать. Нам нужно расположение вашей части, проклятые шакалы!
+actor exit="fade" id="Dushman" show=false
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Вы ничего не добьетесь от нас!
+actor exit="fade" id="Andrey_forma_rana" show=false
+actor enter="fade" id="Vanya_rana" position="right" show=true sprite_url="/content/art/Vanya_rana.jpg"
+Vanya_rana: Да! Мы ничего не скажем!
+actor exit="fade" id="Vanya_rana" show=false
+Автор: Моджахед, молча кивнув, идет в сторону моего друга.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Куда собрались его тащить?
+actor exit="fade" id="Andrey_forma_rana" show=false
+actor enter="fade" id="Dushman" position="right" show=true sprite_url="/content/art/Dushman.jpg"
+Dushman: Пытать.
+actor exit="fade" id="Dushman" show=false
+actor enter="fade" id="Vanya_rana" position="right" show=true sprite_url="/content/art/Vanya_rana.jpg"
+Vanya_rana: ...
+actor exit="fade" id="Vanya_rana" show=false
+Автор: Я вскакиваю, беспомощно размахивая связанными руками, рвусь вперед, но падаю из-за прикованной цепью ноги.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Заберите меня! Не трогайте его!
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Я снова вскакиваю и рвусь вперед.
+actor enter="fade" id="Dushman" position="right" show=true sprite_url="/content/art/Dushman.jpg"
+Dushman: Хорошо.
+actor exit="fade" id="Dushman" show=false
+Автор: Он подходит к двери, открывает ее и кого-то зовет. В тесный сарай вваливается еще пара бородатых душманов неопределенного возраста.
+Автор: Они освобождают меня от цепей, и меня тащат из сарая.
+bg id="Скамья_у_танцпола" sprite_url="/content/bg/Скамья_у_танцпола.jpg"
+set key="Music.Revelation" value=true
+Автор: Мы стоим с друзьями в безмолвии, переглядываясь между собой, раздавленные тяжелым рассказом Андрея. Но я чувствую, что самое страшное еще впереди.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Андрюшенька, они тебя… пытали?
+set key="Wardrobe.Andrey" value=1
+actor exit="fade" id="Lyuba" show=false
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Да. Но подробностей этого я рассказывать не буду.
+actor exit="fade" id="Andrey" show=false
+Главный герой: Андрей…
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: …
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: …
+if Remember.Kiss_Timur_1_8 == true -> n53_000000
+-> n54_000000
+:n53_000000
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Ребята, вы уверены, что мне стоит продолжать этот расска..?
+actor exit="fade" id="Andrey" show=false
+Автор: И прежде, чем он успевает договорить предложение, мы опережаем его, хором выкрикивая:
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Да!
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Да!
+actor exit="fade" id="Lyuba" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Да!
+actor exit="fade" id="Daniil" show=false
+Главный герой: Да!
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Правда?
+actor exit="fade" id="Andrey" show=false
+Главный герой: Если ты хочешь, конечно.
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Я не хочу. Но надо.
+Andrey: Когда-то надо же было вскрыть этот гнойный нарыв, который так долго отравлял мне душу.
+Andrey: Лучше поздно, чем никогда.
+Andrey: А может быть…
+actor exit="fade" id="Andrey" show=false
+Автор: Он тяжело вздыхает, нервно взъерошивая свои волосы и продолжает, махнув рукой:
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Может быть, еще и не поздно.
+actor exit="fade" id="Andrey" show=false
+bg id="Сарай_в_кишлаке_ночью" sprite_url="/content/bg/Сарай_в_кишлаке_ночью.jpg"
+set key="Music.Afghanistan" value=true
+Автор: Когда меня затаскивают назад, в темноте я вижу перепуганного друга.
+actor enter="fade" id="Vanya_rana" position="right" show=true sprite_url="/content/art/Vanya_rana.jpg"
+Vanya_rana: Андрей! Я уже думал, что…
+actor exit="fade" id="Vanya_rana" show=false
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Не боись! Я…
+Andrey_forma_rana: Кх-кх-кх…
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Я захожусь в кашле, отхаркивая кровь. В темноте не видно красного цвета, но металлический вкус крови ни с чем не спутать.
+Автор: Дышать тяжело, острая боль отзывается во всем теле.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Надеюсь, они не сломали мне ребра .
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Ваня дрожащим от ужаса голосом шепчет мне:
+actor enter="fade" id="Vanya_rana" position="right" show=true sprite_url="/content/art/Vanya_rana.jpg"
+Vanya_rana: Андрей…
+actor exit="fade" id="Vanya_rana" show=false
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Со мной все в порядке. Ну потрепали немного – ерунда!
+Andrey_forma_rana: В деревне с парнями я и не так дрался, у душманов кулаки мелковаты, по сравнению с моими земляками.
+Andrey_forma_rana: Кх-кх-кх…
+Andrey_forma_rana: Надеюсь, они его не тронут…
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Отхаркнув кровь, я поворачиваюсь к другу и подбадривающе улыбаюсь ему:
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Спи давай. Нам еще понадобятся силы для побега.
+Andrey_forma_rana: Как мы побежим по пустыне и горам, если ты на ходу будешь падать от усталости?
+actor exit="fade" id="Andrey_forma_rana" show=false
+actor enter="fade" id="Vanya_rana" position="right" show=true sprite_url="/content/art/Vanya_rana.jpg"
+Vanya_rana: Хорошо, брат.
+Vanya_rana: Мы обязательно выберемся отсюда.
+actor exit="fade" id="Vanya_rana" show=false
+Автор: Некоторое время спустя Ваня все-таки проваливается в сон, а я не могу уснуть под стрекот сверчков.
+Автор: Голова пухнет от мыслей, пытается просчитать варианты побега, зацепиться хоть за что-то. Но ничего не удается придумать.
+if Remember.Stone_1_10 == true -> n55_000000
+-> n56_000000
+:n55_000000
+Автор: Беру камень и начинаю перетирать веревку.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Это займет целую вечность!
+Andrey_forma_rana: Но нужно продолжать…
+Andrey_forma_rana: Чтобы...
+- Чтобы сбежать и вернуться к себе домой к своим родным. -> n57_000000
+- Чтобы вырваться и отомстить душманам за наших парней! -> n58_000000
+:n57_000000
+actor exit="fade" id="Andrey_forma_rana" show=false
+Игрок: Чтобы сбежать и вернуться к себе домой к своим родным.
+Выбор пути: Ваша ярость слабеет!
+:n56_000000
+Автор: Но какое-то время спустя усталость и сонливость берут верх, руки и ноги наливаются свинцом.
+Автор: Я прикрываю глаза и начинаю дремать, балансируя между сном и реальностью, изо всех сил пытаясь не отключиться.
+if Remember.Candies_1_10 == true -> n59_000000
+-> n60_000000
+:n59_000000
+Автор: Но мгновенно открываю глаза, внимательно прислушиваясь, когда дверь кто-то открывает.
+Автор: На войне крепко спящий солдат – мертвый солдат.
+Автор: Весь напрягаюсь, ожидая, что сейчас в помещение ввалятся враги, которые только что меня пытали.
+Автор: Но заходят не они.
+Автор: Я слышу осторожные легкие шаги и вижу бьющий в глаза свет керосиновой лампы.
+actor enter="fade" id="Ashrafi_i_basket" position="right" show=true sprite_url="/content/art/Ashrafi_i_basket.jpg"
+Ashrafi_i_basket: …
+actor exit="fade" id="Ashrafi_i_basket" show=false
+Автор: Маленькая девочка нерешительно стоит у двери, затем, увидев мою улыбку, подходит ко мне.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Почему же она не побоялась прийти к своему врагу?
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Девочка присаживается рядом со мной, ставит лампу рядом и копается в своей корзинке.
+Автор: Затем дает мне кувшин с водой, что-то приговаривая на своем языке.
+actor enter="fade" id="Ashrafi_i_basket" position="right" show=true sprite_url="/content/art/Ashrafi_i_basket.jpg"
+Ashrafi_i_basket: ...
+actor exit="fade" id="Ashrafi_i_basket" show=false
+Автор: Я жадно пью воду, думая о том, как же мне оставить воды другу. Поворачиваюсь в его сторону и с сочувствием смотрю на него. Так вымотался, что спит без задних ног…
+Автор: Бросаю взгляд на чашу, которую швырнул здесь раньше душман, и жестом показываю девочке, чтобы она принесла мне ее.
+actor enter="fade" id="Ashrafi_i_basket" position="right" show=true sprite_url="/content/art/Ashrafi_i_basket.jpg"
+Ashrafi_i_basket: …
+actor exit="fade" id="Ashrafi_i_basket" show=false
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Спасибо.
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Она достает из корзинки лепешку и подает мне.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Еда? О ней я здесь даже и не мечтал…
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Пока я вгрызаюсь в лепешку, думая о том, что обязательно надо оставить и другу поесть, замечаю, что девочка показывает на мое обожженное плечо, которое уже начало гноиться.
+actor enter="fade" id="Ashrafi_i_basket" position="right" show=true sprite_url="/content/art/Ashrafi_i_basket.jpg"
+Ashrafi_i_basket: …
+actor exit="fade" id="Ashrafi_i_basket" show=false
+Автор: Она водой из кувшина поливает мою рану, осторожно промакивает ее краем своего платка, затем прикладывает к ране какие-то незнакомые мне размятые травы.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Она меня так лечит?
+Andrey_forma_rana: Спасибо…
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Шепчу я тихо, боясь отпугнуть девочку и не веря, что хоть кто-то здесь не видит во мне ужасного врага и убийцу.
+actor enter="fade" id="Ashrafi_i_basket" position="right" show=true sprite_url="/content/art/Ashrafi_i_basket.jpg"
+Ashrafi_i_basket: …
+actor exit="fade" id="Ashrafi_i_basket" show=false
+Автор: Когда девочка так же бесшумно, как и пришла сюда, убегает, я засыпаю.
+:n60_000000
+bg id="Сарай_в_кишлаке" sprite_url="/content/bg/Сарай_в_кишлаке.jpg"
+Автор: Последующие дни проходят в боли, голоде, жажде и полной неопределенности.
+Автор: Но один день меняет все. Раскалывает жизнь на «до» и «после».
+Автор: Я прислушиваюсь к тому, что происходит на улице. Сердце сразу чувствует неладное.
+Автор: Обычный смех детей, блеянье овец и прочие звуки мирной сельской жизни сменяет брань душманов. Голосов много, и они очень злые.
+Автор: Дверь сарая резко распахивается, и внутрь вваливается моджахед.
+set key="Music.Fight" value=true
+Автор: Вид у него не такой, как раньше.
+Автор: Истинный дьявол во плоти. Одежда испачкана грязью и кровью, а в глазах пылает всепоглощающая ненависть.
+actor enter="fade" id="Dushman_blood" position="right" show=true sprite_url="/content/art/Dushman_blood.jpg"
+Dushman_blood: Ублюдки! Ваши мрази убили наших! Столько наших воинов полегло сегодня!
+Dushman_blood: Во имя Всевышнего! Мы уничтожим вас одного за другим! Всех неверных!
+actor exit="fade" id="Dushman_blood" show=false
+actor enter="fade" id="Vanya_rana" position="right" show=true sprite_url="/content/art/Vanya_rana.jpg"
+Vanya_rana: …
+actor exit="fade" id="Vanya_rana" show=false
+Автор: Душман подходит к другу и освобождает его от кандалов, не убирая кинжала из рук.
+Автор: Хватает его и приставляет кинжал к его горлу.
+Автор: Душман смотрит на меня своими черными глазами, источающими ненависть и презрение, и обращается ко мне:
+actor enter="fade" id="Dushman_i_Vanya" position="right" show=true sprite_url="/content/art/Dushman_i_Vanya.jpg"
+Dushman_i_Vanya: Где ваша часть?!
+Dushman_i_Vanya: Сколько проклятых неверных там?!
+Dushman_i_Vanya: Сколько оружия?!
+set key="Names.Dushman_i_Vanya" value="Ваня"
+Dushman_i_Vanya: ...
+actor exit="fade" id="Dushman_i_Vanya" show=false
+Автор: Я рвусь к другу, к своему боевому товарищу, который доверился мне и последовал за мной в этот ад.
+Автор: Но это абсолютно бессмысленно. Я совершенно беспомощен и бесполезен.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Ваня…
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Направляю гневный взгляд на душмана.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Отпусти его! Немедленно!
+set key="Names.Dushman_i_Vanya" value="Душман"
+actor exit="fade" id="Andrey_forma_rana" show=false
+actor enter="fade" id="Dushman_i_Vanya" position="right" show=true sprite_url="/content/art/Dushman_i_Vanya.jpg"
+Dushman_i_Vanya: Отпущу, если выдадите нам все.
+Dushman_i_Vanya: Я же вижу, как он тебе дорог. Вы друг другу как братья.
+Dushman_i_Vanya: А сколько моих братьев сегодня полегло?!
+Dushman_i_Vanya: Сдайте своих, неверные. А потом примите нашу религию и воюйте в наших рядах.
+set key="Music.Revelation" value=true
+actor exit="fade" id="Dushman_i_Vanya" show=false
+Автор: Я смотрю на друга, мое сердце готово разорваться от отчаяния, но я пораженно замечаю, что страх на его лице сменяется умиротворением.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Как может быть покой на сердце перед лицом смерти?
+Andrey_forma_rana: Или он из-за страха совсем с ума сошел?
+set key="Names.Dushman_i_Vanya" value="Ваня"
+actor exit="fade" id="Andrey_forma_rana" show=false
+actor enter="fade" id="Dushman_i_Vanya" position="right" show=true sprite_url="/content/art/Dushman_i_Vanya.jpg"
+Dushman_i_Vanya: Андрей, не выдавай никого. Хотя ты бы этого и не сделал, я знаю.
+Dushman_i_Vanya: Ты выберешься отсюда. Вернешься к родителям, брату и невесте. К себе домой.
+Dushman_i_Vanya: Передай моей маме, как сильно я любил ее. Передай ей, чтобы сильно по мне не убивалась.
+Dushman_i_Vanya: Спасибо, что стал мне настоящим братом.
+Dushman_i_Vanya: Прощай.
+actor exit="fade" id="Dushman_i_Vanya" show=false
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Друг…
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Ваня закрывает глаза, медленно выдыхая, и в следующую же секунду острая сталь кинжала душмана перерезает его горло.
+Автор: Кровь заливает всю одежду, хлещет на сено, пропитывая пол сарая.
+Автор: Ваня обмякает и падает на пол, душман уходит, закрывая дверь и оставляя меня с телом друга.
+Автор: Я рвусь к нему, падаю и ползу, ползу, ползу…
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Ваня… Друг, брат…
+Andrey_forma_rana: Не сберег я тебя. Прости, Ваня! Прости меня, прости…
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Я сижу у тела друга, у которого вся жизнь была впереди…
+Автор: Совсем пацан…
+Автор: Он даже не успел еще влюбиться, не успел отдать свое сердце какой-нибудь девушке…
+Автор: Не успел решить, кем хочет быть по жизни.
+Автор: Почему он? Почему он погиб? Разве так должно было произойти?!
+Автор: Его мать не получит даже его тело. Будет хоронить пустой гроб.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Я...
+- Я вернусь к его матери и расскажу, каким он был героем… -> n61_000000
+- Я отомщу за него! -> n62_000000
+:n61_000000
+actor exit="fade" id="Andrey_forma_rana" show=false
+Игрок: Я вернусь к его матери и расскажу, каким он был героем…
+Выбор пути: Вы не хотите давать выход своей ярости!
+:n63_000000
+Автор: На коленях я стою перед другом, сокрушенно склонив голову, мои плечи содрогаются, а по лицу стекают горячие слезы.
+Автор: Падают на тело друга, моего брата…
+Автор: Я плачу? Значит, я еще жив? Я жив? А кажется, что моя душа умерла…
+Автор: Сгорела дотла… И ее пепел смешался с порохом, грязью афганских горных дорог и кровью убитых боевых товарищей…
+Автор: Но слезы бегут по щекам, а сердце рвется на части, когда я смотрю на безмятежное лицо своего мертвого друга.
+Автор: Он словно не мертв, а уснул ненадолго и видит прекрасный сон. Если бы не страшная рана на шее и столько крови…
+Автор: А слезы не унимаются, сердце болит.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Если я что-то чувствую, значит, я еще жив? Даже если это невероятная боль…
+actor exit="fade" id="Andrey_forma_rana" show=false
+bg id="Сарай_в_кишлаке_ночью" sprite_url="/content/bg/Сарай_в_кишлаке_ночью.jpg"
+set key="Music.Afghanistan" value=true
+Автор: День, снова день… А за ним еще и еще…
+Автор: Пытки стали еще изощреннее, я, как всегда, ничего не выдавал, но оказывается, что я даже и не подозревал, что могу так кричать.
+Автор: Иногда заглядывала моя новая знакомая девочка, сначала с опаской, потом с любопытством и сочувствием.
+Автор: Мы с ней познакомились. И хотя мы не могли понимать друг друга, а скорее пытались общаться на языке жестов, я узнал, что ее зовут Ашрафи, а она узнала мое имя.
+Автор: Я мастерил из соломы игрушки, как раньше в детстве и позднее для Алешки. Здесь же умудрялся даже со связанными руками…
+Автор: Соломенных человечков и коней, дарил их Ашрафи. Она иногда приносила мне немного еды и драгоценную в этих краях воду.
+Автор: Может быть, если я умру, то память обо мне будет жить в этих чужих землях благодаря маленькой афганской девочке?
+Автор: Я не терял надежды на спасение, но пока не видел никакого выхода отсюда.
+Автор: Но однажды ночью приходит конец моему заточению.
+Автор: Я не сплю, сейчас мне совсем не хочется спать.
+Автор: Дверь осторожно открывается, и туда заглядывает Ашрафи.
+set key="Names.Ashrafi" value="Ашрафи"
+actor enter="fade" id="Ashrafi" position="right" show=true sprite_url="/content/art/Ashrafi.jpg"
+Ashrafi: ...
+actor exit="fade" id="Ashrafi" show=false
+Автор: Но я вижу, что ее лицо совсем не такое, как раньше. Глаза источают неподдельный ужас, руки дрожат, и в них она что-то держит.
+Автор: Подбегает ко мне, присаживается рядом и показывает мне ключи.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Ты стащила ключи? Ты хочешь избавить меня от цепи?
+Andrey_forma_rana: Ты помогаешь мне сбежать! Но почему?
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: И несмотря на то, что девочка не понимает русский язык, я вижу, что она поняла, о чем я ее спрашиваю.
+actor enter="fade" id="Ashrafi" position="right" show=true sprite_url="/content/art/Ashrafi.jpg"
+Ashrafi: …
+actor exit="fade" id="Ashrafi" show=false
+Автор: Она начинает жестами показывать в сторону двери, затем показывает на меня и на себя, проводя пальцем по горлу.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Они собираются меня убить?
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Я показываю на свое горло, проводя по нему пальцем, и вопросительно смотрю на девочку.
+Автор: Она начинает яростно кивать, а ужас в ее глазах становится чуть ли не осязаемым.
+actor enter="fade" id="Ashrafi" position="right" show=true sprite_url="/content/art/Ashrafi.jpg"
+Ashrafi: …
+actor exit="fade" id="Ashrafi" show=false
+Автор: Она тянется к моим ногам и расстегивает кандалы, которые с лязгом падают на пол сарая.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Я свободен? Я свободен? Вот так, благодаря маленькой афганской девочке?
+Andrey_forma_rana: А что будет с ней, когда душманы узнают, что она помогла сбежать врагу?
+Andrey_forma_rana: Они же ее убьют!
+Andrey_forma_rana: Я не могу этого допустить!
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Я отрицательно качаю головой и показываю девочке, что останусь здесь, потому что боюсь, что ее уличат в помощи мне и убьют.
+Автор: Тогда Ашрафи, полная неподдельного отчаяния, лопочет что-то на своем языке, тянет меня за руку в сторону выхода, пытаясь хоть немного сдвинуть с места.
+Автор: Когда это оказывается бессмысленным, она остается стоять рядом со мной.
+actor enter="fade" id="Ashrafi" position="right" show=true sprite_url="/content/art/Ashrafi.jpg"
+Ashrafi: …
+actor exit="fade" id="Ashrafi" show=false
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Что она делает?
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Я осторожно, но настойчиво подталкиваю ее к выходу, но она не собирается никуда уходить.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Если моджахеды ее здесь увидят, то точно убьют!
+Andrey_forma_rana: Пойдем. Ты выведешь меня отсюда. Никто ничего не узнает.
+Andrey_forma_rana: Лишь бы ее не тронули…
+if Remember.Stone_1_10 == true -> n64_000000
+-> n65_000000
+:n64_000000
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Долгая работа по перетиранию веревки камнем не прошла даром.
+Автор: Когда Ашрафи пришла освобождать меня, я был в таком волнении, что даже не заметил, как мне легко порвать оставшиеся волокна.
+Автор: Даже в таком ослабленном состоянии, как сейчас.
+Автор: Резкий рывок руками, треск волокон – и я теперь полностью свободен.
+Автор: Осталось только выбраться из стана врага.
+:n65_000000
+bg id="Кишлак_ночью" sprite_url="/content/bg/Кишлак_ночью.jpg"
+Автор: Кишлак уже спит. Но улицы могут обходить душманы с автоматами наперевес, а устройство этого кишлака я совсем не знаю.
+Автор: Только свет луны освещает эти улицы.
+actor enter="fade" id="Ashrafi" position="right" show=true sprite_url="/content/art/Ashrafi.jpg"
+Ashrafi: …
+actor exit="fade" id="Ashrafi" show=false
+Автор: Теперь девочка собрана, полностью сосредоточена, кажется, что вся она превратилась в слух.
+Автор: Она уверенно ведет меня за собой, ступая так бесшумно, что мое дыхание громче ее шагов, мы петляем по лабиринтам узких улочек.
+if Remember.Stone_1_10 == true -> n66_000000
+-> n67_000000
+:n66_000000
+Автор: Чудом избежав дежуривших ночью душманов, мы оказываемся у самого края кишлака.
+actor enter="fade" id="Ashrafi" position="right" show=true sprite_url="/content/art/Ashrafi.jpg"
+Ashrafi: ...
+actor exit="fade" id="Ashrafi" show=false
+Автор: Она показывает мне на узкую тропу, уходящую в горы.
+actor enter="fade" id="Andrey_rucablood" position="right" show=true sprite_url="/content/art/Andrey_rucablood.jpg"
+Andrey_rucablood: Ты не пойдешь со мной? Останешься здесь?
+actor exit="fade" id="Andrey_rucablood" show=false
+Автор: Я показываю девочке жестом, чтобы она пошла со мной.
+actor enter="fade" id="Andrey_rucablood" position="right" show=true sprite_url="/content/art/Andrey_rucablood.jpg"
+Andrey_rucablood: Пойдем со мной! Я выведу тебя к хорошим людям! Уедешь в Советский Союз!
+Andrey_rucablood: Там тебя ждет совсем другая жизнь!
+Andrey_rucablood: А что ждет тебя здесь?
+actor exit="fade" id="Andrey_rucablood" show=false
+actor enter="fade" id="Ashrafi" position="right" show=true sprite_url="/content/art/Ashrafi.jpg"
+Ashrafi: ?
+Ashrafi: …
+actor exit="fade" id="Ashrafi" show=false
+Автор: Она отрицательно качает головой, поправляя на ней платок, и снова показывает мне на тропу.
+Автор: Я внимательнее рассматриваю, куда же ведет эта тропа, отвернувшись от девочки.
+Автор: Когда снова поворачиваюсь, то вижу, как она быстро убегает в сторону деревни.
+actor enter="fade" id="Andrey_rucablood" position="right" show=true sprite_url="/content/art/Andrey_rucablood.jpg"
+Andrey_rucablood: ?
+Andrey_rucablood: Спасибо тебе, Ашрафи… Спасибо за все.
+actor exit="fade" id="Andrey_rucablood" show=false
+Автор: Провожаю девочку взглядом до тех пор, пока она не скрывается между глинобитными домами кишлака.
+Автор: Затем ловко спускаюсь по склону и иду по тропе, уходящей в горы.
+actor enter="fade" id="Andrey_rucablood" position="right" show=true sprite_url="/content/art/Andrey_rucablood.jpg"
+Andrey_rucablood: Надо убраться отсюда подальше как можно скорее .
+Andrey_rucablood: Когда обнаружат мое отсутствие, могут целый отряд душманов за мной отправить .
+Andrey_rucablood: Я должен вернуться домой!
+:n68_000000
+actor exit="fade" id="Andrey_rucablood" show=false
+Автор: Смерти, кровь, боль, через которые я прошел в Афганистане, кажется, что уже выжгли мою душу дотла.
+Автор: И теперь я, подгоняемый простым желанием выжить и вернуться домой, быстро иду по горной тропе под светом луны.
+bg id="Пещера_в_горах_и_утро" sprite_url="/content/bg/Пещера_в_горах_и_утро.jpg"
+Автор: Я шел остаток ночи, пока ноги не опухли, но когда чуть не свалился в пропасть на острые скалы, то решил передохнуть.
+Автор: Тропа была усыпана пустыми гильзами и осколками металла.
+Автор: Захватив один осколок, я продолжил путь.
+if Remember.connected_1_10 == true -> n69_000000
+-> n70_000000
+:n69_000000
+Автор: Наконец-то смог перерезать веревку на своих руках. Теперь у меня гораздо больше шансов на выживание.
+:n70_000000
+set key="Music.Fight" value=true
+Автор: Спал я очень чутко, поэтому на рассвете услышал тяжелые шаги.
+actor enter="fade" id="Andrey_rucablood" position="right" show=true sprite_url="/content/art/Andrey_rucablood.jpg"
+Andrey_rucablood: Они нашли меня!
+Andrey_rucablood: Выскочу на тропу – стану легкой мишенью. Там негде спрятаться – либо тропа вперед, либо падай в пропасть на скалы .
+Andrey_rucablood: Притаюсь и буду нападать. Шансы ничтожные, но хоть какие-то…
+actor exit="fade" id="Andrey_rucablood" show=false
+Автор: Встав у входа в пещеру и держа осколок наготове, я осторожно выглядываю и вижу того самого душмана, который и держал нас в том сарае, пытал меня и убил моего друга.
+actor enter="fade" id="Andrey_rucablood" position="right" show=true sprite_url="/content/art/Andrey_rucablood.jpg"
+Andrey_rucablood: !
+actor exit="fade" id="Andrey_rucablood" show=false
+Автор: Когда душман с автоматом наготове подходит к пещере, заглядывая в н ее, но пока не замечая меня, я не даю ему выпустить автоматную очередь, а нападаю первым.
+Автор: В ходе яростной схватки автомат летит в глубь пещеры, а душман молниеносно достает кинжал и бросается на меня.
+actor enter="fade" id="Dushman_blood" position="right" show=true sprite_url="/content/art/Dushman_blood.jpg"
+Dushman_blood: !
+actor exit="fade" id="Dushman_blood" show=false
+Автор: Теперь у меня руки не связаны, и теперь я не беспомощный пленник, которого они приковывали цепями, чтобы пытать.
+actor enter="fade" id="Dushman_blood" position="right" show=true sprite_url="/content/art/Dushman_blood.jpg"
+Dushman_blood: ...
+actor exit="fade" id="Dushman_blood" show=false
+Автор: Вцепившись друг в друга со всей ненавистью, мы впечатываемся в острые камни.
+Автор: Мой осколок, которым я ранил его ногу, он выбивает из рук.
+Автор: И сейчас кинжал душмана нависает надо мной в нескольких миллиметрах от моего лица.
+Автор: Тот самый кинжал, которым моджахед перерезал горло моему другу.
+Автор: Говорят, перед лицом неминуемой гибели вся жизнь проносится перед глазами, но сейчас я не вспоминаю всю свою жизнь, я лишь вижу перед собой своего истекающего кровью друга.
+if Way.rage_10 >= 4 -> n71_000000
+-> n72_000000
+:n71_000000
+actor enter="fade" id="Andrey_rucablood" position="right" show=true sprite_url="/content/art/Andrey_rucablood.jpg"
+Andrey_rucablood: За Ваню. За всех, кого вы положили на том перевале!
+actor exit="fade" id="Andrey_rucablood" show=false
+Автор: До этих пор я находился в положении обороны, но моя неистовая ярость придает мне невероятных сил.
+actor enter="fade" id="Dushman_blood" position="right" show=true sprite_url="/content/art/Dushman_blood.jpg"
+Dushman_blood: Умри, шурави! Ты жил как шакал, так хоть умри достойно!
+actor exit="fade" id="Dushman_blood" show=false
+Автор: Удар в живот коленом, залом руки, и мне удается перехватить кинжал...
+Автор: Чья бритвенно острая сталь врезается в горло врага, попадая точно по сонной артерии. Кровь хлещет фонтаном, заливая мое лицо, руки, грудь…
+Автор: Отбросив тело в сторону, я ползу в глубь пещеры, доставая автомат и проверяя его магазин.
+actor enter="fade" id="Andrey_i_gun" position="right" show=true sprite_url="/content/art/Andrey_i_gun.jpg"
+Andrey_i_gun: Там, где был один душман, будут и другие… Скоро окажутся здесь.
+Andrey_i_gun: Всех убью. За Ваню и за всех наших парней, которых они убили. Чьи матери теперь сойдут с ума от горя.
+Andrey_i_gun: За всех отомщу!
+actor exit="fade" id="Andrey_i_gun" show=false
+Автор: Я выглядываю из пещеры и вижу, как где-то далеко по тропе идет отряд душманов.
+Автор: Когда они подбираются ближе, я встречаю их автоматной очередью из того самого оружия, которым один из них поубивал многих советских солдат.
+:n73_000000
+bg id="Танцпол" sprite_url="/content/bg/Танцпол.jpg"
+set key="Music.Revelation" value=true
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: А потом был долгий тяжелый путь через горы и пустыни…
+Andrey: Жажда была такая невыносимая, что я однажды поймал черепаху и хотел ее убить, чтобы выпить ее кровь.
+Andrey: Не смог. Не смог ее убить. Она-то в чем виновата?
+Andrey: Да и мне уже хватило убийств на своем веку.
+if Remember.Candies_1_10 == true -> n74_000000
+-> n75_000000
+:n74_000000
+Andrey: Когда вернулся домой, когда узнал о смерти отца и о том, что Зоя выскочила замуж, хотел вернуться назад в Афганистан…
+Andrey: Не мог привыкнуть к мирной жизни, по ночам видел тела своих боевых товарищей, видел их кровь, которой пропитаны афганские дороги и горные тропы.
+Andrey: Мама не позволила снова уехать туда. Упала передо мной на колени и залилась горькими слезами.
+Andrey: Чувствовала, что уже во второй раз я не вернусь оттуда.
+Andrey: А я понял, что не могу бросить маму и Алешку. Без меня у них больше никого не останется.
+Andrey: Вот и весь мой рассказ вкратце.
+Andrey: Уехал в Афган мальчишка, а вернулся убийца.
+actor exit="fade" id="Andrey" show=false
+bg id="Танцпол" sprite_url="/content/bg/Танцпол.jpg"
+set key="Music.Native" value=true
+Автор: Мы все стоим, оглушенные рассказом Андрея.
+Автор: Словно рядом разорвался снаряд, а в ушах стоит звон, и совсем не слышно окружающего мира.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Друг, прости меня такого дурного. Больше не затрону эту тему, шайтан меня побери.
+Timur: Но если ты захочешь еще чем-то поделиться о своей службе, то я всегда готов буду тебя выслушать.
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: …
+actor exit="fade" id="Lyuba" show=false
+Автор: Люба снова не справляется со своими эмоциями, достает платок и смахивает слезы с глаз, тихонько всхлипывая.
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: ...
+actor exit="fade" id="Daniil" show=false
+Автор: Даниил не находит слов, лишь сочувствующе смотрит на Андрея. Но по глазам Даниила я вижу, как сильно он переживает за друга.
+Автор: Что тут скажешь?
+Главный герой: А мне язык мало отрезать за то, что я использовала в своей речи тот тупой мем из своего времени про афганскую войну .
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Эй, ну вы чего совсем раскисли?
+Andrey: Выше нос, ребята!
+Andrey: У нас еще смена не закончилась! Мы же сегодня дружинники!
+Andrey: Вот и пойдемте и дальше охранять мир на этих улицах.
+Andrey: Одного уже спасли. Может, еще кого-нибудь надо будет спасти?
+actor exit="fade" id="Andrey" show=false
+Главный герой: Вот как ему это удается? Как?
+Главный герой: Несмотря на все ужасы, которые он видел, смотреть в будущее с таким несокрушимым оптимизмом и всегда помогать другим?
+Главный герой: Что же спасло Андрея в Афганистане? Что дало ему сил не сдаваться?
+Главный герой: Желание вернуться домой к своим родным .
+Главный герой: Нет, я определенно должна увидеть своих родителей. Даже если я могу увидеть их здесь только в том возрасте, когда меня еще даже и в планах не было .
+Главный герой: И я завтра же этим и займусь!
+-> __end
+:n75_000000
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Когда добрался до своих, долго провалялся в госпитале… А все инфекция из-за того ожога…
+Andrey: Вовремя его не обработали, а в грязи и жаре Афгана любая мелкая рана может привести к заражению.
+Andrey: Когда опомнился от бреда и пришел в сознание, насмотрелся на искалеченных парней там.
+Andrey: Без рук или без ног… Видел их слезы и нежелание возвращаться такими домой.
+Andrey: Над ними дежурили медсестры, чтобы они не покончили с собой.
+Andrey: А они не знали, как написать своим, что они живы, но теперь калеки.
+-> n74_000000
+:n72_000000
+actor exit="fade" id="Andrey" show=false
+actor enter="fade" id="Andrey_rucablood" position="right" show=true sprite_url="/content/art/Andrey_rucablood.jpg"
+Andrey_rucablood: Ваня завещал мне вернуться домой и донести послание от него его матери!
+Andrey_rucablood: И я это сделаю!
+actor exit="fade" id="Andrey_rucablood" show=false
+Автор: Из последних сил удерживая душмана одной рукой, другой рукой я дотягиваюсь до осколка, который выронил раньше.
+Автор: И вонзаю его в грудь врага.
+Автор: Руки душмана слабеют, кинжал падает на камни.
+Автор: Моджахед хрипит, отчаянно хватая воздух ртом, кровь со слюной стекает по его бороде, но вскоре он затихает.
+Автор: Я доползаю до автомата, проверяю магазин и решаю убраться отсюда как можно быстрее.
+Автор: Потому что если этот душман меня нашел, то и другие из его кишлака скоро найдут. Не мог он один отправиться на мои поиски.
+Автор: Но я должен выжить и вернуться домой. Вернуться к маме, брату, да даже к отцу-алкашу и к своей невесте, которая обещала, что дождется меня.
+Автор: И вернуться к маме Вани, чтобы рассказать ей, каким ее сын был героем и как сильно любил ее.
+-> n73_000000
+:n67_000000
+Автор: Еще не выбравшись с улиц кишлака, Ашрафи показывает на мои связанные руки и качает головой.
+actor enter="fade" id="Ashrafi" position="right" show=true sprite_url="/content/art/Ashrafi.jpg"
+Ashrafi: …
+actor exit="fade" id="Ashrafi" show=false
+Автор: Подводит меня к какому-то сараю и жестом просит подождать меня здесь.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Куда это она? Хочет чем-нибудь разрезать мне веревки?
+Andrey_forma_rana: Но чем дольше мы в кишлаке, тем выше риск, что нас обнаружат…
+Andrey_forma_rana: Если ее увидят со мной, то сразу же убьют .
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Как поступить?
+- Дождаться девочку. -> n76_000000
+- Не дожидаться ее. -> n77_000000
+:n76_000000
+Игрок: Дождаться девочку.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Но как я буду со связанными руками? И я совсем не знаю эту местность, легко нарвусь на душманов. Придется дождаться Ашрафи…
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Кажется, что время тянется невыносимо медленно, а я все больше нервничаю.
+Автор: Наконец девочка выходит с каким-то лезвием в руках. Перерезает мне веревку, и мы продолжаем свой путь.
+Автор: Она подводит меня к обрыву и показывает внизу тропу, уводящую в горы.
+actor enter="fade" id="Ashrafi" position="right" show=true sprite_url="/content/art/Ashrafi.jpg"
+Ashrafi: …
+actor exit="fade" id="Ashrafi" show=false
+Автор: Я внимательно рассматриваю тропу, затем чувствую толчок в спину.
+Автор: Не удержавшись, падаю со склона, автоматически группируюсь, и скатываюсь в колючий пустынный кустарник, ободрав руки.
+actor enter="fade" id="Andrey_rucablood" position="right" show=true sprite_url="/content/art/Andrey_rucablood.jpg"
+Andrey_rucablood: Почему Ашрафи это сделала?
+set key="Sound.shooting_1_10" value=true
+actor exit="fade" id="Andrey_rucablood" show=false
+Автор: Ночную тишину разрушает автоматная очередь и крик девочки.
+actor enter="fade" id="Andrey_rucablood" position="right" show=true sprite_url="/content/art/Andrey_rucablood.jpg"
+Andrey_rucablood: Она заметила душмана! И спасла мне жизнь, пожертвовав своей…
+Andrey_rucablood: Она погибла из-за меня… Мог ли я что-то сделать, чтобы все обернулось не так?
+-> n68_000000
+:n77_000000
+actor exit="fade" id="Andrey_rucablood" show=false
+Игрок: Не дожидаться ее.
+set key="Remember.connected_1_10" value=true
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Так будет лучше. Спасибо тебе, маленькая отважная Ашрафи. Прощай .
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Я быстро убегаю от сарая по незнакомым улицам спящего кишлака.
+Автор: Изрядно поплутав по нему, я выбираюсь на его окраину и вижу горы совсем вблизи.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Надо идти в горы, нельзя идти по дороге, которую полностью контролируют душманы…
+Andrey_forma_rana: Это еще не конец. Нужно добраться через пустыню и горы до своих…
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: И я спускаюсь со склона, гравий под моими ногами осыпается.
+Автор: Не удержавшись, я падаю и кубарем скатываюсь со склона.
+Автор: Ободрав руки и сильно ударившись головой о камни, я встаю на ноги и чувствую острую боль в районе груди.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Точно теперь сломал ребро или даже не одно. Даже глубокий вдох сделать не могу…
+Andrey_forma_rana: Нельзя здесь задерживаться, надо идти вперед…
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Я продолжаю свой путь, превозмогая острую боль и надеясь на то, что сломанное ребро не проткнет легкое.
+Автор: Иначе это в разы сократит мои шансы на выживание…
+-> n68_000000
+:n62_000000
+Игрок: Я отомщу за него!
+set expr="Way.rage_10 +1" key="Way.rage_10"
+Выбор пути: Вы хотите, чтобы Ваша ярость пылала!
+-> n63_000000
+:n58_000000
+Игрок: Чтобы вырваться и отомстить душманам за наших парней!
+set expr="Way.rage_10 +1" key="Way.rage_10"
+Выбор пути: Ваша ярость становится неистовой!
+-> n56_000000
+:n54_000000
+Автор: Я смотрю на Любу и замечаю, как она нервно теребит подол своего платья, как ее нижняя губа дрожит.
+if Remember.Relationships_Daniil_1_9 == true -> n53_000000
+:n78_000000
+Главный герой: Люба же сейчас расплачется…
+if Remember.Relationships_Andrey_1_10 == true -> n53_000000
+:n79_000000
+Главный герой: Бедная Люба…
+Главный герой: Что я думаю?
+- Надо помочь ей успокоиться. -> n80_000000
+- Она очень сильная. Она справится. -> n81_000000
+:n80_000000
+Игрок: [premium]Надо помочь ей успокоиться.
+set expr="Relationships.Lyuba + 1" key="Relationships.Lyuba"
+Отношения: Ваши отношения с Любой улучшились!
+Автор: Я подхожу совсем близко к Любе, с сочувствием смотрю на нее, нерешительно поднимаю руки и заключаю ее в кольцо своих теплых объятий.
+Автор: Глажу подругу по белокурым волосам, как всегда аккуратно уложенным по голове в крепкую косу. Чувствую, как она тихонько всхлипывает.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: …
+actor exit="fade" id="Lyuba" show=false
+Автор: Обнимаю ее крепче и шепчу на ушко:
+Главный герой: Люб… ну ты только не плачь, Любаша…
+Главный герой: То, через что прошел Андрей – ужасно и невообразимо, но это в прошлом.
+Главный герой: Андрей явно не хотел расстраивать нас своим рассказом, хоть это и было неизбежно.
+Главный герой: Люба, ты же наш лучик солнца… Ты всегда нас поддерживаешь и даришь нам позитив, несмотря ни на что.
+Главный герой: Не плачь, пожалуйста! Нам еще понадобится мужество, чтобы дослушать историю Андрея до конца.
+Автор: Шмыгая носом и вытирая слезы из уголков глаз, Люба кивает мне, тщетно пытаясь улыбнуться.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Да, Олесенька, ты права… Шо-то я совсем расклеилась…
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Ты же наше солнце!
+Главный герой: Всегда теплое и готовое нас согреть.
+Главный герой: Вот и пускай наше солнце не закроют никакие мрачные тучи.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Ох, Олесенька, мне никогда такого красивого не говорили…
+actor exit="fade" id="Lyuba" show=false
+Автор: Я ласково улыбаюсь Любе и крепко обнимаю ее.
+Автор: Качаю девушку в своих объятиях, с улыбкой думая о том, что мне тоже сейчас было необходимо почувствовать ее тепло.
+Автор: Заглянуть в ее добрые синие как небо глаза. И почувствовать ландышевый аромат от ее волос. Ее любимые духи «Лесной ландыш»...
+Главный герой: Ну куда я без Любы? Она же для меня уже такая родная …
+-> n53_000000
+:n81_000000
+Игрок: Она очень сильная. Она справится.
+Автор: Я с сочувствием смотрю на Любу, но вижу, что она не справляется со своими эмоциями.
+Автор: Слезы наворачиваются на ее глазах и скатываются по щекам.
+Автор: Люба шмыгает, отворачивается, достает платок из сумочки и вытирает слезы.
+Автор: Поворачивается к нам и с трудом натягивает на лицо вымученную улыбку.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: …
+Lyuba: …
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Люба так переживает за каждого из своих друзей…
+Главный герой: А как она тепло приняла меня! Хотя с чего бы?
+Главный герой: Я вела себя странно, порой грубо и неадекватно. Особенно в первое время…
+Главный герой: Но ребята приняли меня, несмотря на все мои закидоны .
+Главный герой: Они у меня самые лучшие .
+Главный герой: Любого порву за них .
+-> n53_000000
+:n49_000000
+Игрок: Ничего не делать.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Что здесь поделаешь? Эту ненависть к нам разве можно искоренить?
+Andrey_forma_rana: …
+Andrey_forma_rana: Мы пришли строить здесь социализм, но даже дети нас боятся и ненавидят…
+actor exit="fade" id="Andrey_forma_rana" show=false
+Автор: Девочка удивленно смотрит на нас с Ваней, затем прислушивается.
+actor enter="fade" id="Ashrafi" position="right" show=true sprite_url="/content/art/Ashrafi.jpg"
+Ashrafi: …
+actor exit="fade" id="Ashrafi" show=false
+Автор: Что-то услышав, убегает, закрыв дверь на засов.
+-> n50_000000
+:n46_000000
+Игрок: Что нам остается? Подождем, пока ситуация не прояснится.
+actor enter="fade" id="Andrey_forma_rana" position="right" show=true sprite_url="/content/art/Andrey_forma_rana.jpg"
+Andrey_forma_rana: Что мы сейчас можем сделать?
+Andrey_forma_rana: Со связанными руками и прикованными этими цепями?
+-> n47_000000
+:n43_000000
+actor exit="fade" id="Andrey_forma_rana" show=false
+Игрок: Это мы их поубиваем.
+set expr="Way.rage_10 +1" key="Way.rage_10"
+Выбор пути: Ваша ярость становится сильнее!
+-> n44_000000
+:n40_000000
+Игрок: И палю со всей яростью, чтобы убить всех тех, кто напал на нас.
+set expr="Way.rage_10 +1" key="Way.rage_10"
+Выбор пути: Ваша ярость крепнет!
+-> n41_000000
+:n37_000000
+Игрок: Я стану настоящим ужасом для душманов.
+set expr="Way.rage_10 +1" key="Way.rage_10"
+Выбор пути: Вы подпитываете свою ярость!
+-> n38_000000
+:n34_000000
+Игрок: Они недостойны называться советскими солдатами!
+Выбор пути: Вы не разжигаете свою ярость!
+-> n35_000000
+:n31_000000
+if Remember.Relationships_Daniil_1_9 == true -> n82_000000
+-> n83_000000
+:n82_000000
+Главный герой: В Андрее словно пробудился монстр. Как же это печально…
+-> n32_000000
+:n83_000000
+if Relationships.Andrey >= 4 -> n84_000000
+-> n85_000000
+:n84_000000
+Главный герой: И… страшно? Мне страшно или же?.. .
+Подсказка: Внимание! Следующий выбор определит ваши отношения с Андреем!
+Главный герой: Или же я готова разделить его боль?
+- Но с помощью наших друзей. -> n86_000000
+- Меня пронзает осознание, как Андрей мне дорог. -> n87_000000
+:n86_000000
+Игрок: Но с помощью наших друзей.
+Автор: Я стою как вкопанная, боясь одна подойти к Андрею.
+Главный герой: Кто я ему? Никто! Подруга без году неделя и большая ходячая проблема .
+Главный герой: Друзья Андрея знают его лучше, они смогут ему помочь .
+Автор: Я подбегаю к Тимуру и удивленно смотрю на него.
+Главный герой: Ну чего ты тут стоишь? Иди помоги Андрею!
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Конечно.
+actor exit="fade" id="Timur" show=false
+Автор: Он подходит к другу, садится рядом.
+Автор: Я вижу, как к нам подбегают Люба и Даниил, патрулировавшие парк рядом с танцполом.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Шо здесь стряслось?
+actor exit="fade" id="Lyuba" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Олеся, что с Андреем?
+actor exit="fade" id="Daniil" show=false
+Автор: Я объясняю друзьям ситуацию, и вместе мы подходим к Андрею с Тимуром.
+Автор: Общими усилиями нам удается успокоить Андрея.
+-> n32_000000
+:n87_000000
+Игрок: [premium]Меня пронзает осознание, как Андрей мне дорог.
+set key="Remember.Relationships_Andrey_1_10" value=true
+Отношения: Поздравляем! Вы решили бороться за Андрея и стать для него дорогим человеком!
+Главный герой: Ну что я могу ему дать?!
+Главный герой: Я даже себе не могу помочь…
+Главный герой: Я свою-то жизнь пустила под откос. Какой ему от меня толк ?
+Автор: Но мое тело не слушает убедительные доводы разума, оно слушает сердце, которое говорит мне о том, что я хочу быть с Андреем, когда ему так плохо.
+Автор: Я хочу быть с ним.
+Автор: И его безумие меня не пугает, потому что я знаю, что ему сейчас здесь хуже всех.
+Автор: А я хочу облегчить его боль. Хочу избавить его от нее. Но могу ли я это?
+Главный герой: Андрей…
+Автор: Я иду вперед на ватных ногах, Тимур преграждает мне дорогу и обеспокоенно смотрит на меня.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Олеся?
+actor exit="fade" id="Timur" show=false
+Автор: Я мягко, но решительно отталкиваю Тимура, даже не поднимая на него взгляда, и он уступает мне дорогу.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Олеся…
+actor exit="fade" id="Timur" show=false
+Автор: Я подхожу к Андрею, сажусь рядом с ним на лавку, но даже не знаю, как правильно вести себя с такими людьми.
+Автор: В школе такому не учат, да и в университете на маркетинге.
+Автор: Андрей все так же сидит и смотрит в пустоту, его руки трясутся, и всего его бьет крупная дрожь.
+Автор: Я пододвигаюсь ближе, и кладу свою ладонь на его трясущиеся руки, другой рукой обнимаю его широкую спину.
+Автор: Но сама уже не могу сдержать слез. Шепчу дрожащим голосом, уткнувшись в его плечо.
+Главный герой: Андрей, будь со мной, будь со мной…
+Главный герой: Вернись ко мне, вернись…
+Главный герой: Ты не там, не на войне, ты здесь со мной…
+Автор: Андрей сгибается ниже, я крепче обнимаю его, утыкаясь в его макушку и оставляя на ней нежный поцелуй.
+Автор: Мои слезы падают на волосы Андрея, которые все еще пахнут цехом и металлом.
+Автор: Я обнимаю его все сильнее, словно боюсь, что он может ускользнуть от меня, потеряться навсегда в лабиринтах своих ужасов.
+Главный герой: Как же мне тебе помочь? Как помочь вернуться к нам?
+Главный герой: Что я могу для тебя сделать?
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: …
+actor exit="fade" id="Andrey" show=false
+Автор: Но он молчит и не приходит в себя.
+Автор: Я вытираю свои слезы и начинаю укачивать Андрея и шепотом читать строки, внезапно всплывшие в памяти.
+Главный герой: Ночевала тучка золотая…
+Главный герой: На груди утеса-великана…
+Главный герой: Утром в путь она умчалась рано…
+Главный герой: По лазури весело играя…
+Главный герой: Но остался влажный след в морщине…
+Главный герой: Старого утеса. Одиноко…
+Главный герой: Он стоит, задумался глубоко…
+Главный герой: И тихонько плачет он в пустыне…
+Главный герой: Почему именно это? Лермонтов, утес, золотая тучка…
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Олеся?
+actor exit="fade" id="Andrey" show=false
+Главный герой: Ты очнулся, Андрей!
+Главный герой: Как же я испугалась за тебя!
+Автор: Я так крепко обнимаю Андрея, что он удивляется.
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Я не помню, что произошло.
+actor exit="fade" id="Andrey" show=false
+Главный герой: Я знаю. Ты был не в себе и так бил того хулигана, что я испугалась, что ты его убьешь.
+Главный герой: И знаешь что? Знаешь?
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: ?
+actor exit="fade" id="Andrey" show=false
+Автор: Я снова не могу сдержать слезы, они горячими ручьями стекают по лицу и падают на мои нервно сжатые ладони, а я шмыгаю носом, пытаясь унять предательские слезы.
+Главный герой: Я же за тебя безумно испугалась! Переживала за тебя больше, чем за того недоумка.
+Главный герой: Что ты его убьешь, и тебя посадят.
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Ш-ш-ш, Олеся, не плачь, все позади…
+actor exit="fade" id="Andrey" show=false
+Автор: Он неловко вытирает большими пальцами слезы с моих щек, а его бесконечно виноватые глаза умоляют меня о прощении.
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Не плачь… Прости, что напугал тебя.
+actor exit="fade" id="Andrey" show=false
+Главный герой: Да ты же не виноват.
+Автор: Теперь уже Андрей обнимает меня, пытаясь успокоить в своих руках, гладит по голове, а я утыкаясь в его грудь, но его рубашка быстро промокает от моих слез.
+Автор: Я сильнее вжимаюсь в грудь Андрея, кутаюсь в его объятия и не хочу, чтобы он меня отпускал.
+Автор: Мы с ним дышим в унисон, и даже кажется, что наши сердца бьются синхронно.
+Автор: Но одно я знаю точно.
+Главный герой: Я тебя не отпущу, Андрей .
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Олеся, твой голос вывел меня из кошмара.
+Andrey: Спасибо, что была рядом.
+Andrey: Но это было слишком опасно! Я же мог навредить тебе…
+actor exit="fade" id="Andrey" show=false
+Главный герой: Не говори так. Ты не можешь причинить мне никакого вреда.
+Автор: Андрей заглядывает в мои глаза, долго печально смотрит в них…
+Автор: И среди бескрайней печали, вины и боли в его светлых глазах проскальзывает нежность.
+Автор: И я готова сделать шаг в эту бездну, прыгнуть в омут с головой.
+-> n32_000000
+:n85_000000
+Автор: К нам с Тимуром подбегают Люба и Даниил, и вместе нам удается успокоить Андрея, помочь ему очнуться от его кошмара.
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: …
+-> n32_000000
+:n28_000000
+actor exit="fade" id="Andrey" show=false
+Игрок: Надо помочь бедняге…
+set expr="Way.calmness +1" key="Way.calmness"
+Выбор пути: + сдержанность .
+-> n29_000000
+:n25_000000
+Игрок: До сих пор не понимаю, как я на это согласилась…
+set expr="Way.laziness + 1" key="Way.laziness"
+Выбор пути: + лень.
+Главный герой: А я так сегодня устала на работе… И откуда только в моих друзьях столько фонтанирующей энергии?
+-> n26_000000
+:n20_000000
+Игрок: Я тяжко вздыхаю, вспоминая, какой сегодня был аврал.
+set expr="Way.laziness + 1" key="Way.laziness"
+Выбор пути: + лень.
+-> n21_000000
+:n18_000000
+Игрок: Не отвлекать его от работы.
+Главный герой: Не стоит отвлекать Даниила, он же так занят…
+Главный герой: Не хочу быть навязчивой .
+-> n16_000000
+:n12_000000
+Игрок: Нет.
+set key="Open.ReOpenWardrobe" value=true
+-> n2_000000
+:n8_000000
+Игрок: Не менять.
+set expr="Temp.saveMainChHair_beforeW" key="Wardrobe.mainCh_Hair"
+Главный герой: И так п ойдет.
+-> n10_000000
+:n9_000000
+Игрок: [premium]Блеск.
+set key="Wardrobe.mainCh_Hair" value=103
+Главный герой: Супер!
+-> n10_000000
+:n4_000000
+Игрок: [premium]Нежность.
+set key="Wardrobe.mainCh_Clothes" value=102
+Главный герой: Такое легкое и нежное !
+-> n6_000000
+:n5_000000
+Игрок: [premium]Мечта.
+set key="Wardrobe.mainCh_Clothes" value=103
+Главный герой: Вот это красота!
+-> n6_000000
+:__end

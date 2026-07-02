@@ -1,0 +1,2174 @@
+scene chapter
+
+set default=true key="Cutscenes.showAndreyFirstScene_1_5" value=false
+set default=true key="Cutscenes.showDaniilLaboratory_1_6" value=false
+set default=true key="Cutscenes.showOlesyaDurka" value=false
+set default=true key="Cutscenes.showKissTimur_1_8" value=false
+set default=true key="Cutscenes.showLyubaOlesya_12_3" value=false
+set default=true key="Cutscenes.showDaniels_bathroom_intim_1_16" value=false
+set default=true key="Cutscenes.showMonument_1_19" value=false
+set default=true key="Cutscenes.showOlesyaTombstone_1_19" value=false
+set default=true key="Cutscenes.showMonumentRabbit_1_19" value=false
+set default=true key="Cutscenes.showOlesya_and_Phobos_21" value=false
+set default=true key="Cutscenes.showMeme_family" value=false
+set default=true key="Cutscenes.showMeme_Dog_bones_market" value=false
+set default=true key="Cutscenes.showMeme_Joke_red_fish" value=false
+set default=true key="Cutscenes.showJonh_1_23" value=false
+set default=true key="Cutscenes.showSiegfried_and_Odette_25" value=false
+set default=true key="Cutscenes.showOlesyas_parents_26" value=false
+set default=true key="Cutscenes.showWedding_with_Timur_29" value=false
+set default=true key="Cutscenes.showOn_hike_with_Andrey_29" value=false
+set default=true key="Cutscenes.showWith_Daniil_on_the_windowsill_29" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_11" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_12" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_13" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_14" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_15" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_16" value=false
+set default=true key="Cutscenes.showWinter_in_Kulpino_17" value=false
+set default=true key="Music.Silence" value=false
+set default=true key="Music.Passion" value=false
+set default=true key="Music.Romance" value=false
+set default=true key="Music.Fight" value=false
+set default=true key="Music.Afghanistan" value=false
+set default=true key="Music.Fantastic" value=false
+set default=true key="Music.Miracle" value=false
+set default=true key="Music.Promenade" value=false
+set default=true key="Music.Native" value=false
+set default=true key="Music.Adventure" value=false
+set default=true key="Music.Alert" value=false
+set default=true key="Music.Revelation" value=false
+set default=true key="Music.Havana" value=false
+set default=true key="Music.Bustle" value=false
+set default=true key="Music.Comedian" value=false
+set default=true key="Music.Socialism" value=false
+set default=true key="Music.Sound_of_the_sea" value=false
+set default=true key="Music.Noise_underwater" value=false
+set default=true key="Music.Sound_of_storm" value=false
+set default=true key="Music.River" value=false
+set default=true key="Music.Sound_of_cicadas" value=false
+set default=true key="Music.Sound_of_wind" value=false
+set default=true key="Music.Noise_river_campfire" value=false
+set default=true key="Music.Chopping_firewood" value=false
+set default=true key="Music.Stone_in_water" value=false
+set default=true key="Music.Noise_forest" value=false
+set default=true key="Music.Street_noise" value=false
+set default=true key="Music.Sound_city_after_rain" value=false
+set default=true key="Music.Sound_of_rain" value=false
+set default=true key="Music.Kitchen_noise" value=false
+set default=true key="Music.Waterfall_noise" value=false
+set default=true key="Music.Korea" value=false
+set default=true key="Music.Magic" value=false
+set default=true key="Music.Snowstorm_noise" value=false
+set default=true key="Music.Determination" value=false
+set default=true key="Music.Thunderstorm_noise" value=false
+set default=true key="Music.Swan_Lake" value=false
+set default=true key="Music.New_Years" value=false
+set default=true key="Sound.Sirena" value=false
+set default=true key="Sound.Broken_dishes" value=false
+set default=true key="Sound.Car_brakes" value=false
+set default=true key="Sound.Bird_scream" value=false
+set default=true key="Sound.Knock" value=false
+set default=true key="Sound.Sea_waves" value=false
+set default=true key="Sound.Shower" value=false
+set default=true key="Sound.Alarm" value=false
+set default=true key="Sound.KnockDoor" value=false
+set default=true key="Sound.Kitchen" value=false
+set default=true key="Sound.Broken_glass" value=false
+set default=true key="Sound.Svarka" value=false
+set default=true key="Sound.SvarochnyZeh" value=false
+set default=true key="Sound.Tazik" value=false
+set default=true key="Sound.Stolovka" value=false
+set default=true key="Sound.Storm_noise" value=false
+set default=true key="Sound.Cat_howling" value=false
+set default=true key="Sound.Dog_growling" value=false
+set default=true key="Sound.Fountain_noise" value=false
+set default=true key="Sound.Police_whistle" value=false
+set default=true key="Sound.Fire_alarm" value=false
+set default=true key="Sound.shooting_1_10" value=false
+set default=true key="Sound.Silence" value=false
+set default=true key="Sound.War" value=false
+set default=true key="Sound.Urring_cat" value=false
+set default=true key="Sound.Crash_of_stones" value=false
+set default=true key="Sound.Frying_pan_head" value=false
+set default=true key="Sound.Frying_pan_fell_down" value=false
+set default=true key="Sound.Sizzle_hot_stones" value=false
+set default=true key="Sound.Slapping_brooms" value=false
+set default=true key="Sound.Lowing_cow" value=false
+set default=true key="Sound.Bellowing_calf" value=false
+set default=true key="Sound.Cuckoo" value=false
+set default=true key="Sound.ships_horn" value=false
+set default=true key="Sound.happy_crowd" value=false
+set default=true key="Sound.Doorbell_rings" value=false
+set default=true key="Sound.Steps" value=false
+set default=true key="Sound.Sparrows_chirping" value=false
+set default=true key="Sound.Car_beeps" value=false
+set default=true key="Sound.Train" value=false
+set default=true key="Sound.Phone_call" value=false
+set default=true key="Sound.Doorbell_knock" value=false
+set default=true key="Open.Wardrobe" value=false
+set default=true key="Open.ReOpenWardrobe" value=false
+set default=true key="Wardrobe.FreeWardrobe_Access" value=false
+set default=true key="Wardrobe.mainCh_Clothes" value=0
+set default=true key="Wardrobe.mainCh_Hair" value=0
+set default=true key="Wardrobe.Andrey" value=0
+set default=true key="Wardrobe.Timur" value=0
+set default=true key="Wardrobe.Lyuba" value=0
+set default=true key="Wardrobe.Daniil" value=0
+set default=true key="Wardrobe.Psychiatrist" value=0
+set default=true key="Wardrobe.Child_Olesya" value=0
+set default=true key="Wardrobe.Daniil_without_glasses" value=0
+set default=true key="Wardrobe.Child_Olesya_Cold" value=0
+set default=true key="Wardrobe.Mother" value=0
+set default=true key="Wardrobe.Nonna" value=0
+set default=true key="Remember.Pirozhki_1_1" value=false
+set default=true key="Remember.Selfie_1_1" value=false
+set default=true key="Remember.RudeOldLady" value=false
+set default=true key="Remember.TakeaWallet" value=false
+set default=true key="Remember.Made_Flight_1_3" value=false
+set default=true key="Remember.PhilosophLetter_1_3" value=false
+set default=true key="Remember.DrinkBeer_1_3" value=false
+set default=true key="Remember.SoberLyuba_1_3" value=false
+set default=true key="Remember.OpenDoor_1_3" value=false
+set default=true key="Remember.HelpBabulya_1_4" value=false
+set default=true key="Remember.Cooking_1_4" value=false
+set default=true key="Remember.NewVariable" value=false
+set default=true key="Remember.FlashbackOlesya_1_5" value=false
+set default=true key="Remember.Lyuda_pomnit" value=false
+set default=true key="Remember.Samolet" value=false
+set default=true key="Remember.Kiss_Timur_1_8" value=false
+set default=true key="Remember.Relationships_Daniil_1_9" value=false
+set default=true key="Remember.Relationships_Andrey_1_10" value=false
+set default=true key="Remember.Stone_1_10" value=false
+set default=true key="Remember.Candies_1_10" value=false
+set default=true key="Remember.connected_1_10" value=false
+set default=true key="Remember.Take_cat" value=false
+set default=true key="Remember.Reletionship_Lyuba_1_11" value=false
+set default=true key="Remember.Photo_cans_1_11" value=false
+set default=true key="Remember.Exchange_numbers_1_11" value=false
+set default=true key="Remember.OlesyaRememberDomKultyri_1_12" value=false
+set default=true key="Remember.Talk_with_Stalina_1_13" value=false
+set default=true key="Remember.Cow_birth_1_14" value=false
+set default=true key="Remember.Tell_ab_Makar_and_Praskovia_1_15" value=false
+set default=true key="Remember.Timur_asks_Alina_1_15" value=false
+set default=true key="Remember.Take_paper_1_15" value=false
+set default=true key="Remember.Amirani_1_16" value=false
+set default=true key="Remember.Em_1_16" value=false
+set default=true key="Remember.Relationships_John_1_17" value=false
+set default=true key="Remember.FriendshipDanielTimur_1_18" value=false
+set default=true key="Remember.MixerforLuba_1_18" value=false
+set default=true key="Remember.Blame_father_1_18" value=false
+set default=true key="Remember.Justify_father_1_18" value=false
+set default=true key="Remember.Pick_up_letter_1_19" value=false
+set default=true key="Remember.Leave_letter_1_19" value=false
+set default=true key="Remember.Kimbap_1_19" value=false
+set default=true key="Remember.Teokbokki_1_19" value=false
+set default=true key="Remember.Roses_1_19" value=false
+set default=true key="Remember.Lilies_1_19" value=false
+set default=true key="Remember.Lotus_1_19" value=false
+set default=true key="Remember.Get_into_trash_can_1_19" value=false
+set default=true key="Remember.Open_scene_1_20" value=false
+set default=true key="Remember.Will_miss_1_20" value=false
+set default=true key="Remember.Willnot_miss_1_20" value=false
+set default=true key="Remember.Find_out_about_lake_1_20" value=false
+set default=true key="Remember.Want_see_Phobos_1_20" value=false
+set default=true key="Remember.Put_in_place_John_17" value=false
+set default=true key="Remember.Phobos_remains" value=false
+set default=true key="Remember.Tea_with_lemon" value=false
+set default=true key="Remember.Tea_with_acacia_honey" value=false
+set default=true key="Remember.Lyuba_Univer_1_22" value=false
+set default=true key="Remember.Friendship_Lyuba" value=false
+set default=true key="Remember.Bouillon_1_22" value=false
+set default=true key="Remember.Sorcerers_1_22" value=false
+set default=true key="Remember.Keys_1_22" value=false
+set default=true key="Remember.Photos_1_22" value=false
+set default=true key="Remember.Song_1_23" value=false
+set default=true key="Remember.Hello_Melentyev" value=false
+set default=true key="Remember.Documents_1_23" value=false
+set default=true key="Remember.Information_from_room_1_24" value=false
+set default=true key="Remember.Document_case_24" value=false
+set default=true key="Remember.Scientist_24" value=false
+set default=true key="Remember.Timurs_reflection_24" value=false
+set default=true key="Remember.Timurs_bride_24" value=false
+set default=true key="Remember.Shop_24" value=false
+set default=true key="Remember.Andreis_reflection_24" value=false
+set default=true key="Remember.Andreis_bride_24" value=false
+set default=true key="Remember.pot_24" value=false
+set default=true key="Remember.Olesya_great_24" value=false
+set default=true key="Remember.John_newbie_24" value=false
+set default=true key="Remember.Stat_Raisa_eavesdropping_25" value=false
+set default=true key="Remember.Stepka_25" value=false
+set default=true key="Remember.overheard_25" value=false
+set default=true key="Remember.ballerina_25" value=false
+set default=true key="Remember.camera_25" value=false
+set default=true key="Remember.stolen_26" value=false
+set default=true key="Remember.Daniels_discovery_26" value=false
+set default=true key="Remember.child_from_Andrey_26" value=false
+set default=true key="Remember.parents_documents_27" value=false
+set default=true key="Remember.concert_27" value=false
+set default=true key="Remember.friendship_AT_27" value=false
+set default=true key="Remember.resentment_Timur_27" value=false
+set default=true key="Remember.resentment_Andrey_27" value=false
+set default=true key="Remember.headphones_27" value=false
+set default=true key="Remember.lyuda_prison_27" value=false
+set default=true key="Remember.roses_27" value=false
+set default=true key="Remember.Kiss_John_27" value=false
+set default=true key="Remember.favor_to_John_27" value=false
+set default=true key="Remember.help_John_27" value=false
+set default=true key="Remember.Melentyev_details_27" value=false
+set default=true key="Remember.Johns_work_27" value=false
+set default=true key="Remember.sex_John_27" value=false
+set default=true key="Remember.Johns_advice_28" value=false
+set default=true key="Remember.Lyuba_Love_28" value=false
+set default=true key="Remember.tea_Melentyev_28" value=false
+set default=true key="Remember.get_Melentyev_to_talk_28" value=false
+set default=true key="Remember.broke_out_28" value=false
+set default=true key="Remember.parting_Timur_29" value=false
+set default=true key="Remember.parting_Andrey_29" value=false
+set default=true key="Remember.Melentyev_won_29" value=false
+set default=true key="Remember.NP_29" value=false
+set default=true key="Remember.Daniel_parting_29" value=false
+set default=true key="Remember.bride_Daniila_29" value=false
+set default=true key="Remember.Finale_Crazy_Phobos_29" value=false
+set default=true key="Names.cname" value="Олеся"
+set default=true key="Names.pname" value="..."
+set default=true key="Names.Marina" value="Марина"
+set default=true key="Names.Vadim" value="Вадим"
+set default=true key="Names.Starushka" value="Старушка"
+set default=true key="Names.Father" value="Папа"
+set default=true key="Names.Mother" value="Мама"
+set default=true key="Names.Andrey" value="Андрей"
+set default=true key="Names.Daniil" value="Даниил"
+set default=true key="Names.Timur" value="Тимур"
+set default=true key="Names.Lyuba" value="Люба"
+set default=true key="Names.Nina_Pavlovna" value="Нина Павловна"
+set default=true key="Names.OldLady" value="Старушка"
+set default=true key="Names.Milicioner" value="Милиционер"
+set default=true key="Names.Men1" value="Седой мужик"
+set default=true key="Names.Men2" value="Лысый мужик"
+set default=true key="Names.Doorman" value="Швейцар"
+set default=true key="Names.Waiter" value="Официант"
+set default=true key="Names.Driver" value="Водитель"
+set default=true key="Names.Milicioner_2" value="Милиционер"
+set default=true key="Names.Doctor" value="Медик"
+set default=true key="Names.Nurse" value="Медсестра"
+set default=true key="Names.Patient" value="Пациент"
+set default=true key="Names.Psychiatrist" value="Врач"
+set default=true key="Names.Sanitar" value="Санитар"
+set default=true key="Names.Sanitar_2" value="Санитар"
+set default=true key="Names.Crazy" value="Сумасшедший"
+set default=true key="Names.Lyuda" value="Люда"
+set default=true key="Names.Borya" value="Незнакомец"
+set default=true key="Names.Babulya_vedra" value="Старушка"
+set default=true key="Names.Stalina" value="Сталина Ильинична"
+set default=true key="Names.Lyuda_Black" value="Люда"
+set default=true key="Names.Worker" value="Работник цеха"
+set default=true key="Names.Worker_Black1" value="Рабочий"
+set default=true key="Names.Worker_Black2" value="Рабочий"
+set default=true key="Names.Worker_Black3" value="Рабочий"
+set default=true key="Names.WorkerCap" value="Рабочий"
+set default=true key="Names.Iosiph" value="Иосиф"
+set default=true key="Names.Miriam" value="Мириам"
+set default=true key="Names.Alesha" value="Мальчик"
+set default=true key="Names.Zoya" value="Девушка"
+set default=true key="Names.Veduschii" value="Ведущий"
+set default=true key="Names.John" value="Джон"
+set default=true key="Names.Nonna" value="Официантка"
+set default=true key="Names.Eleanor" value="Элеонора"
+set default=true key="Names.Andrey_child" value="Андрей"
+set default=true key="Names.Timur_child" value="Тимур"
+set default=true key="Names.Dog" value="Пес"
+set default=true key="Names.Laboratory_assistant" value="Незнакомка"
+set default=true key="Names.Cat" value="Кошка"
+set default=true key="Names.John_with_glasses" value="Американец"
+set default=true key="Names.Eleanor_without_glasses" value="Женщина"
+set default=true key="Names.John_with_polaroid" value="Джон"
+set default=true key="Names.Timur_Black" value="Тимур"
+set default=true key="Names.Lilia_Igorevna" value="Лилия Игоревна"
+set default=true key="Names.Cow" value="Буренка"
+set default=true key="Names.Mom_Luba" value="Мама"
+set default=true key="Names.Child_Olesya" value="Олеся"
+set default=true key="Names.Beat_paren" value="Парень"
+set default=true key="Names.Bully" value="Задира"
+set default=true key="Names.Vanya" value="Ваня"
+set default=true key="Names.Vanya_rana" value="Ваня"
+set default=true key="Names.Andrey_forma_rana" value="Андрей"
+set default=true key="Names.Dushman" value="Душман"
+set default=true key="Names.Ashrafi" value="Девочка"
+set default=true key="Names.Ashrafi_i_basket" value="Девочка"
+set default=true key="Names.Dushman_blood" value="Душман"
+set default=true key="Names.Dushman_i_Vanya" value="Душман"
+set default=true key="Names.Andrey_rucablood" value="Андрей"
+set default=true key="Names.Andrey_i_gun" value="Андрей"
+set default=true key="Names.Child_Olesya_Cold" value="Олеся"
+set default=true key="Names.Young_mother_clothes_1" value="Аня"
+set default=true key="Names.Young_Father" value="Дима"
+set default=true key="Names.Father_fairy" value="Рыбак"
+set default=true key="Names.Agnia_fairy" value="Владычица"
+set default=true key="Names.Agnia_Older" value="Агния"
+set default=true key="Names.Mother_Fairy" value="Морская дева"
+set default=true key="Names.Little_Olesya_summer" value="Олеся"
+set default=true key="Names.Daniil_without_glasses" value="Даниил"
+set default=true key="Names.Agnia_Older_black" value="Агния"
+set default=true key="Names.Andrey_black" value="Андрей"
+set default=true key="Names.Phobos" value="Незнакомец"
+set default=true key="Names.Borya_work" value="Боря"
+set default=true key="Names.Lyuda_work" value="Люда"
+set default=true key="Names.Agnia_young" value="Агния"
+set default=true key="Names.Vladimir" value="Владимир"
+set default=true key="Names.Little_Anya" value="Аня"
+set default=true key="Names.Alonso" value="Кубинец"
+set default=true key="Names.Young_mother_clothes_2" value="Аня"
+set default=true key="Names.Commandos" value="Кубинец"
+set default=true key="Names.Borya_work_black" value="Боря"
+set default=true key="Names.Lyuda_work_black" value="Люда"
+set default=true key="Names.Lyuba_ryingpan" value="Люба"
+set default=true key="Names.Iraklii" value="Ираклий"
+set default=true key="Names.Jamalia" value="Джамалия"
+set default=true key="Names.Dali" value="Дали"
+set default=true key="Names.Daniil_black" value="Даниил"
+set default=true key="Names.Praskovia" value="Прасковья"
+set default=true key="Names.Andrey_bayan" value="Андрей"
+set default=true key="Names.Calf" value="Теленок"
+set default=true key="Names.Tatyana_Gennadievna" value="Женщина"
+set default=true key="Names.Makar" value="Макар"
+set default=true key="Names.Alina" value="Девушка"
+set default=true key="Names.Andrey_Axe" value="Андрей"
+set default=true key="Names.Dragon" value="Дракон"
+set default=true key="Names.Daniel_child" value="Даниил"
+set default=true key="Names.Ania_black" value="Аня"
+set default=true key="Names.John_lifeline" value="Джон"
+set default=true key="Names.Den" value="Парень"
+set default=true key="Names.Nikita_Melentyev" value="Никита"
+set default=true key="Names.Nikita_Melentyev_glasses" value="Никита"
+set default=true key="Names.Nikita_Melentyev_old" value="Никита"
+set default=true key="Names.Konstantin_Melentyev" value="Мелентьев"
+set default=true key="Names.Mother_2" value="Мама"
+set default=true key="Names.Father_3" value="Папа"
+set default=true key="Names.Father_2" value="Папа"
+set default=true key="Names.Olesya_sleeping" value="Олеся"
+set default=true key="Names.Seagull" value="Чайка"
+set default=true key="Names.Watchman" value="Сторож"
+set default=true key="Names.Boss_black" value="Начальник"
+set default=true key="Names.John_suit" value="Джон"
+set default=true key="Names.Singer_black" value="Певица"
+set default=true key="Names.Singer" value="Певица"
+set default=true key="Names.Valentin_Nikolaevich" value="Дедушка"
+set default=true key="Names.Scientist" value="Ученый"
+set default=true key="Names.Andrey_dirty_24" value="Андрей"
+set default=true key="Names.Timur_dirty_24" value="Тимур"
+set default=true key="Names.Philosopher" value="Георгий Николаевич"
+set default=true key="Names.Raisa_with_child" value="Раиса с ребенком"
+set default=true key="Names.Raisa" value="Раиса"
+set default=true key="Names.Melentyevs_assistant" value="Мужчина"
+set default=true key="Names.Siegfried" value="Зигфрид"
+set default=true key="Names.Svetlana_Ulanova" value="Светлана"
+set default=true key="Names.Victoria_Lisinskaya" value="Виктория"
+set default=true key="Names.Andrey_with_bandage" value="Андрей"
+set default=true key="Names.Iosiph_old" value="Отец"
+set default=true key="Names.Teenager" value="Парень"
+set default=true key="Names.Luda_Spy" value="Люда"
+set default=true key="Names.Tatyana_Gennadievna_without_jacket" value="Татьяна"
+set default=true key="Names.John_underpants_27" value="Джон"
+set default=true key="Names.Iraklii_black" value="Ираклий"
+set default=true key="Names.Jamalia_black" value="Джамалия"
+set default=true key="Names.Policeman_regular_clothes" value="Милиционер"
+set default=true key="Names.Policeman" value="Милиционер"
+set default=true key="Names.Lyuba_black" value="Люба"
+set default=true key="Names.Gypsy_Mirella" value="Женщина"
+set default=true key="Names.Nina_Pavlovna_elegant" value="Нина Павловна"
+set default=true key="Names.Dan_alternate" value="Дэн"
+set default=true key="Names.Daniel_Little_modernity" value="Даниил"
+set default=true key="Names.Lyuba_Little" value="Люба"
+set default=true key="Names.Alice" value="Алиса"
+set default=true key="Names.Mom_Another" value="Мама"
+set default=true key="Names.Andrey_New_Years_accordion" value="Андрей"
+set default=true key="Enter._cname_" value="Олеся"
+set default=true key="Enter._pname_" value=""
+set default=true key="Temp.focus" value=""
+set default=true key="Temp.saveMainChClothes" value=false
+set default=true key="Temp.saveMainChHair" value=false
+set default=true key="Temp.saveMainChClothes_intim" value=false
+set default=true key="Temp.saveMainChHair_intim" value=false
+set default=true key="Temp.saveMainChClothes_underwear" value=false
+set default=true key="Temp.saveMainChClothes_beforeW" value=false
+set default=true key="Temp.saveMainChHair_beforeW" value=false
+set default=true key="Relationships.Andrey" value=0
+set default=true key="Relationships.Lyuba" value=0
+set default=true key="Relationships.Timur" value=0
+set default=true key="Relationships.Daniil" value=0
+set default=true key="Relationships.Nonna" value=0
+set default=true key="Relationships.Jonh" value=0
+set default=true key="Relationships.Father" value=false
+set default=true key="Relationships.Mother" value=0
+set default=true key="Relationships.Marina" value=0
+set default=true key="Relationships.Vadim" value=0
+set default=true key="Relationships.Praskovia" value=0
+set default=true key="Achievements.durka" value=false
+set default=true key="Way.laziness" value=0
+set default=true key="Way.diligence" value=0
+set default=true key="Way.calmness" value=0
+set default=true key="Way.rage" value=0
+set default=true key="Way.crazy" value=0
+set default=true key="Way.normal" value=0
+set default=true key="Way.rage_10" value=0
+set default=true key="Way.Support_parents_1_11" value=0
+set default=true key="Way.Dynamo_Plant_1_11" value=0
+set default=true key="Way.USSR" value=0
+set default=true key="Way.Modernity" value=0
+set default=true key="Way.Secret_ending" value=0
+set default=true key="Way.Drunkard" value=0
+bg id="Комната_Олеси_день" sprite_url="/content/bg/Комната_Олеси_день.jpg"
+set key="Music.Miracle" value=true
+Автор: Я знала, что у людей, сильных духом, в минуты опасности обостряются лучшие качества.
+Автор: У слабых же наоборот, обнажается то, что они скрывают от окружающих, чего сами стыдятся...
+Информация: «Сердечная недостаточность» А. Алексин
+Автор: Все у них происходит как у неопытных шоферов, попавших в аварийные обстоятельства: не в ту сторону крутят руль, не в то мгновение нажимают на тормоза.
+if Remember.Relationships_Andrey_1_10 == true -> n2_000000
+-> n3_000000
+:n2_000000
+if Relationships.Andrey >= 10 -> n4_000000
+-> n5_000000
+:n4_000000
+set key="Wardrobe.FreeWardrobe_Access" value=false
+Автор: Когда я просыпаюсь без будильника, то мой взгляд падает на мужскую руку, бережно обнимающую меня.
+Главный герой: Андрей…
+Автор: Он еще спит, а я не могу перестать смотреть на него спящего…
+Главный герой: Какой красивый…
+Автор: Вспоминаю о том, что было этой ночью, и к моему лицу приливает жар из-за стыда.
+Главный герой: Хочется провалиться под землю .
+Автор: Пока я тону в пучине самоуничижения, Андрей распахивает глаза и щурится от яркого света, пробивающегося из незашторенного окна.
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Доброе утро, Олеся.
+Andrey: Ты выспалась, красавица?
+actor exit="fade" id="Andrey" show=false
+Главный герой: В твоих объятиях выспалась. Без тебя ничего не вышло бы.
+Автор: Потупив взгляд, я не решаюсь заговорить с Андреем.
+Главный герой: Андрей…
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Олеся, не грусти. С этой ночи ничего не изменилось.
+Andrey: Я никогда не отказываюсь от своих слов.
+actor exit="fade" id="Andrey" show=false
+Автор: Не найдя больше слов, пока любовь и благодарность переполняют меня, я притягиваю к себе Андрея и утыкаюсь в его грудь.
+Главный герой: Андрей… Мой любимый…
+Автор: Он гладит меня по спине своей широкой крепкой ладонью так бережно, и оставляет на моей макушке нежный поцелуй.
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Я пойду собираться на работу. Ты тоже не задерживайся, чтобы не опоздать.
+actor exit="fade" id="Andrey" show=false
+Автор: Когда он выбирается из постели, я перекатываюсь на его сторону кровати, которая хранит в себе еще его тепло и запах, и обнимаю одеяло, лениво потягиваясь.
+set expr="Temp.saveMainChClothes" key="Wardrobe.mainCh_Clothes"
+set expr="Temp.saveMainChHair" key="Wardrobe.mainCh_Hair"
+set key="Wardrobe.FreeWardrobe_Access" value=true
+set key="Wardrobe.Andrey" value=1
+:n6_000000
+bg id="Кухня_общаги" sprite_url="/content/bg/Кухня_общаги.jpg"
+Автор: Заскочив перед началом рабочего дня на кухню, я нахожу там только Даниила и Тимура.
+Главный герой: Где же Люба?
+Главный герой: И даже не заскочила в мою комнату, чтобы меня разбудить…
+Главный герой: Она всегда хлопочет по утрам, а ее уже нет…
+Автор: Мой взгляд падает на тарелку, накрытую вафельным полотенцем.
+Автор: Подхожу ближе к столу и приподнимаю край полотенца.
+Главный герой: Сырники. Люба точно была здесь.
+Главный герой: Но дождаться меня, чтобы вместе пойти на работу, она не захотела…
+Главный герой: Люба на меня обиделась?
+Автор: Я сажусь за стол, наливаю в свою кружку какао и беру еще горячий сырник.
+Автор: Даниил сосредоточенно обходит кухню, открывая шкафы и вытаскивая из них стеклянные бутылки из-под кефира.
+Главный герой: Даня, что ты делаешь?
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Собирается уносить бутылки в пункт приема стеклотары.
+actor exit="fade" id="Timur" show=false
+Главный герой: Но за…
+set key="Music.Comedian" value=true
+Автор: Я не успеваю договорить, потому что меня перебивает Даниил, направляя испытующий взгляд своих карих глаз на Тимура.
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Ты же накопил бутылки? Давай сюда мне.
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Даня, ты же знаешь, что я кефир не пью.
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: А я не о кефире.
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: На что же ты намекаешь?
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: А то ты не знаешь!
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Ты о бутылках из-под вина что ли?
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Да.
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Ну была где-то парочка. Специально для тебя припас.
+Timur: Хотел их просто выбросить в мусорное ведро, но вовремя вспомнил о тебе.
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Давай-давай сюда!
+actor exit="fade" id="Daniil" show=false
+Автор: Тимур, до этого вальяжно развалившийся на стуле, соскакивает с него и подходит к кухонному шкафу.
+Автор: Он открывает дверцу шкафа и копается в его содержимом, ловко ловит какие-то пачки, падающие ему на голову, небрежно ставит их на место.
+Главный герой: Да уж… Понятно почему из этих шкафов вечно все падает мне на голову.
+Главный герой: Потому что Тимур туда иногда заглядывает.
+- Надо будет его попросить аккуратнее ставить вещи в шкафах… -> n7_000000
+- Надо будет его потом отчитать за этот беспорядок! -> n8_000000
+:n7_000000
+Игрок: Надо будет его попросить аккуратнее ставить вещи в шкафах…
+set expr="Way.calmness + 1" key="Way.calmness"
+Выбор пути: + сдержанность.
+Главный герой: Тимур вечно торопится, спешит по жизни, вот поэтому на такие мелочи даже и не обращает внимания.
+:n9_000000
+Автор: Наконец Тимуру удается найти пару пустых бутылок, которые он передает Даниилу.
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Спасибо, Тимур.
+actor exit="fade" id="Daniil" show=false
+Главный герой: Ну и зачем Даниилу сдавать эти бутылки? Я слышала, что у молодых ученых в Советском Союзе скромные зарплаты, но неужели настолько?
+Автор: Но ответ на мой вопрос приходит оттуда, откуда я не ожидала.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Даниил зорко следит за тем, чтобы мы заботились о природе.
+Timur: Бегает сдавать стеклотару, макулатуру отдает пионерам.
+actor exit="fade" id="Timur" show=false
+Главный герой: Так вот оно в чем дело! И почему я сразу об этом не подумала?
+Главный герой: У Даниила же мама – эколог, вот она и сыну привила бережное отношение к нашей планете.
+Автор: Наблюдая за тем, как Даниил убирает бутылки в свою сетчатую авоську, я начинаю чувствовать укол вины.
+Главный герой: А я своем времени ни разу не сортировала мусор. Просто выбрасывала все вместе без разбору.
+Главный герой: Всегда проходила мимо баков для стекла, бумаги и пластика.
+Главный герой: Ребята даже и не представляют, как наша планета будет задыхаться от пластика в двадцать первом веке.
+Главный герой: Но теперь я буду сортировать мусор!
+Главный герой: Стекло – в пункт приема стеклотары, макулатуру – пионерам, а пластик здесь и так не используют в качестве упаковки.
+Главный герой: Когда-то же и мне пора уже становиться более сознательной.
+Автор: Даниил убегает, звеня бутылками в авоське, а я направляю удивленный взгляд на Тимура.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Что такое, Олеся?
+actor exit="fade" id="Timur" show=false
+Главный герой: Я просто удивляюсь тому, как же Даниил вписался в вашу дружную компанию.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: А что не так?
+actor exit="fade" id="Timur" show=false
+Главный герой: Просто… ты с Даниилом – вы настолько разные, что в любом другом месте вас одной компании невозможно было бы и представить.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Ну это все Любаша! Она – клей всей нашей дружной компашки.
+Timur: Когда я пришел работать на завод, она уже взяла под свое крыло Даню и Андрея.
+Timur: А уж как я-то обрадовался, когда понял, что жизнь свела меня с самым настоящим химиком!
+Timur: Вспоминаю, как первое время часто посещал лабораторию Даниила и донимал его глупыми расспросами.
+actor exit="fade" id="Timur" show=false
+Главный герой: Я могу сейчас узнать немного больше о дружбе Даниила и Тимура.
+- Так и сделаю! -> n10_000000
+- Нет, не хочу донимать Тимура расспросами… -> n11_000000
+:n10_000000
+Игрок: [premium]Так и сделаю!
+set key="Remember.FriendshipDanielTimur_1_18" value=true
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: И как только у него на меня терпения хватало?
+Timur: Помню, как я стоял над Даниилом, согнувшимся над своими опытами…
+actor exit="fade" id="Timur" show=false
+Главный герой: Расскажи-расскажи!
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Ну как я могу тебе отказать?
+set key="Music.Bustle" value=true
+set key="Wardrobe.Daniil" value=2
+Timur: Дань, слушай!
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Ну что тебе еще нужно?
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: А ты же многое знаешь о ядах?
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: И что?
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: А вот существует такой яд, который бы убивал мгновенно, не оставляя следов в организме?
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Зачем это тебе?
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Всего лишь праздное любопытство, честное слово!
+Timur: Слушай, а что было бы, если бы у нас шли дожди из… серной кислоты?
+actor exit="fade" id="Timur" show=false
+Автор: Схватив со стола бутылку из темного стекла, я всмотрелся в формулу и попытался вспомнить школьный курс химии.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Вот… А это, кажется, она самая!
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Что это здесь делает концентрированная кислота? Она должна стоять под вытяжкой.
+Daniil: Дай сюда, пока не пролил на свои руки.
+actor exit="fade" id="Daniil" show=false
+Автор: Когда наш химик вернулся, я продолжил его расспрашивать, но вскоре мои вопросы стали гораздо серьезнее.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Слушай, а вот нашли бы ученые способ избавляться быстро без следа от самых опасных токсичных отходов производства!
+actor exit="fade" id="Timur" show=false
+Автор: Даниил тяжело вздохнул, оторвавшись от своих исследований и многозначительно посмотрев мне в глаза.
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Это плата человечества за технический прогресс и более комфортную жизнь.
+Daniil: Мы уничтожаем нашу планету.
+Daniil: Вот что делать с тоннами соединений тяжелых металлов? А с радиоактивными отходами?
+Daniil: Канцерогены и мутагены.
+Daniil: А сколько ядов изобрели люди, небольшая утечка которых может унести тысячи жизней?
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: ...
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Люди сами загнали себя в угол. Уже сейчас.
+Daniil: А нашим потомкам еще долго расхлебывать последствия этого наследия. Этот процесс уже необратим.
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Но должен же быть какой-то выход!
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Просто очистные сооружения и утилизация опасных отходов – не то, на чем стоит экономить предприятиям. Но так ли на самом деле?
+Daniil: Что у капиталистов, что у коммунистов… Я не вижу, чтобы эти пункты ставили на первое место.
+Daniil: Ты же слышал о диоксиновой трагедии в Севезо?
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Да.
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: А о ртутной катастрофе в Минамате?
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Да…
+Timur: Точно! У меня же даже есть тот выпуск журнала Life!
+Timur: Я не мог без слез смотреть на те фотографии…
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Вот. То, что в нашей стране о таком не слышно, не значит, что подобного не было.
+Daniil: Ты же знаешь, какая у нас цензура и как легко любое происшествие могут засекретить и заставить молчать очевидцев.
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Знаю.
+actor exit="fade" id="Timur" show=false
+Автор: Слова Даниила тогда заставили меня крепко задуматься.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Слушай! А значит ли это… что у нас еще впереди крупные техногенные катастрофы?
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Я бы сказал, что это неизбежно. Но узнаем ли мы о них?
+set key="Wardrobe.Daniil" value=1
+:n12_000000
+set key="Music.Miracle" value=true
+actor exit="fade" id="Daniil" show=false
+Автор: Пока я разговаривала с ребятами, услышала приближающиеся шаги.
+if Remember.Reletionship_Lyuba_1_11 == true -> n13_000000
+-> n14_000000
+:n13_000000
+Главный герой: Люба?
+Автор: Но радость мгновенно сменяется разочарованием.
+Главный герой: Нет, это не она. У Любаши походка легкая и плавная, словно лебедушка плывет. А так по-армейски шаги чеканит только Андрей.
+:n14_000000
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Ну что, ребята, готовы к труду и обороне?
+actor exit="fade" id="Andrey" show=false
+Автор: С добродушной улыбкой на лице Андрей обводит взглядом кухню и удивленно выгибает бровь.
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: А где же наша пчелка-Любаша?
+actor exit="fade" id="Andrey" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Она нажарила сырников и побежала. Сказала, что на работе много дел.
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Да? На нее не похоже.
+actor exit="fade" id="Andrey" show=false
+Главный герой: Обиделась на меня, видимо .
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Ну мы сейчас подкрепимся и тоже на работу!
+actor exit="fade" id="Andrey" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Ага, прямо не терпится…
+if Remember.Kiss_Timur_1_8 == true -> n15_000000
+-> n16_000000
+:n15_000000
+actor exit="fade" id="Timur" show=false
+Главный герой: У Тимура что-то не ладится на работе?
+Главный герой: Я же даже не знаю, как у него там дела. Хоть бы раз спросила…
+Главный герой: Хороша же девушка.
+Автор: Я решаю начать исправляться прямо сейчас.
+Главный герой: А что не так, Тимур? У тебя на работе какие-то проблемы?
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Да они накосячили с цифрами! А мне все за ними исправлять!
+Timur: Иначе завод не получит нужное количество железа и запчастей.
+actor exit="fade" id="Timur" show=false
+Главный герой: Не грусти. Ты со всем справишься. Если не ты, то кто?
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Твои слова, красавица, для меня как мед для ушей.
+Timur: Так что мне теперь все по плечу!
+actor exit="fade" id="Timur" show=false
+Автор: Тимур одаривает меня таким взглядом, из-за которого мне кажется, что все внутри горит от смущения.
+Автор: Андрей и Даниил начинают внезапно между собой обсуждать перспективы развития советской науки.
+Главный герой: Никак еще не привыкну, что нам с Тимуром не нужно больше прятаться…
+:n16_000000
+set key="Music.Socialism" value=true
+Автор: Мы с ребятами завтракаем и уходим на работу.
+Автор: Нас ждет электромашиностроительный завод «Динамо».
+Автор: Новый рабочий день, новые заботы и надежда на то, что хотя бы сегодня не будет никаких потрясений.
+bg id="Раздаточная" sprite_url="/content/bg/Раздаточная.jpg"
+set key="Wardrobe.FreeWardrobe_Access" value=false
+set expr="Wardrobe.mainCh_Clothes" key="Temp.saveMainChClothes"
+set expr="Wardrobe.mainCh_Hair" key="Temp.saveMainChHair"
+set key="Wardrobe.mainCh_Clothes" value=5
+set key="Wardrobe.mainCh_Hair" value=5
+Автор: Когда я появляюсь на своем рабочем месте при полном параде, сразу же сталкиваюсь со своей начальницей.
+Nina_Pavlovna: Безродных, опять без дела шатаешься?
+Nina_Pavlovna: Ну что ты ходишь как неприкаянная?
+Nina_Pavlovna: Иди уже! Иди, включайся в производственный процесс!
+Главный герой: Кое-что никогда не меняется…
+- Когда же Нина Павловна меня похвалит?.. -> n17_000000
+- Мне на работе умереть что ли? -> n18_000000
+:n17_000000
+Игрок: Когда же Нина Павловна меня похвалит?..
+set expr="Way.diligence + 1" key="Way.diligence"
+Выбор пути: + трудолюбие .
+Главный герой: Я же стараюсь изо всех сил, а моя начальница этого словно не замечает…
+Главный герой: И ради чего тогда все эти мои старания?
+Главный герой: Ну зато я многому здесь уже научилась. И прежде всего стрессоустойчивости при общении со всякими неприятными личностями .
+Главный герой: А это очень нужный навык во все времена…
+Главный герой: Нина Павловна, я еще просто даже не успела опомниться! Уже бегу трудиться на благо советского общепита!
+Главный герой: Я действительно очень сильно стараюсь!
+Nina_Pavlovna: Молодец, Олеся!
+Nina_Pavlovna: Похвальный настрой!
+:n19_000000
+Автор: Нагрузив меня бесчисленными поручениями, моя начальница уходит с видом настоящей владычицы пищеблока.
+Главный герой: Пошла гонять других работниц .
+Главный герой: Ну хоть не меня одну она здесь гоняет.
+bg id="Кухня_завода" sprite_url="/content/bg/Кухня_завода.jpg"
+set key="Music.Kitchen_noise" value=true
+set key="Wardrobe.Lyuba" value=2
+Автор: Добравшись до кухни, я чуть не сталкиваюсь с Любой, которая тащит тяжелую кастрюлю.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: ...
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Любаша!
+Автор: Но она проходит мимо, даже не взглянув на меня.
+Главный герой: Лю… Любаша?..
+Главный герой: Что это с ней? Утром меня не будила, с нами не завтракала, сейчас меня вообще игнорирует!
+Главный герой: Люба на меня обиделась?
+Главный герой: Но почему?
+Автор: Дождавшись, когда девушка снова вернется на кухню и пойдет мимо меня, я хватаю ее за руку и заталкиваю в подсобку, удивляясь, откуда у меня только взялись на это силы.
+bg id="Подсобка" sprite_url="/content/bg/Подсобка.jpg"
+set key="Music.Revelation" value=true
+Автор: Высвободив руку из моих цепких пальцев, Люба прожигает меня гневным взглядом.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Олеся, шо ты вытворяешь?
+Lyuba: Пусти! Мне работать надо!
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Работа подождет!
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: У тебя она всегда подождет!
+actor exit="fade" id="Lyuba" show=false
+Автор: Пропустив мимо ушей колкость Любы, я медленно выдыхаю и смотрю ей в глаза.
+Главный герой: Просто скажи, в чем я провинилась перед тобой.
+Главный герой: Пожалуйста.
+Автор: Люба убирает в сторону сотейник, который до этого угрожающе держала в руках.
+Главный герой: Фух, а то я уже подумала, что разгневанная казачка может огреть меня им…
+Автор: Девушка подбоченивается и сдувает упавшую на глаза прядь.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Ты шо считаешь меня неотесанной деревенщиной, которая ничего не смыслит?
+Lyuba: Которой ничего доверить нельзя?
+actor exit="fade" id="Lyuba" show=false
+Главный герой: О… О чем ты, Люба?
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Как будто не я помогала Нине Павловне найти причину недостачи, не я спасла тебя от Людки с Борькой, не я разыгрывала тот спектакль перед председательницей!
+Lyuba: Но ты нашла зацепку и ничего мне не сказала! Потащилась без меня на тот теплоход расследовать, нарвалась на того американца!
+Lyuba: Подвергла себя опасности!
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Люба…
+- Пожалуйста, сбавь обороты! -> n20_000000
+- Мне очень жаль… -> n21_000000
+:n20_000000
+Игрок: Пожалуйста, сбавь обороты!
+set expr="Way.rage + 1" key="Way.rage"
+Выбор пути: + вспыльчивость .
+Главный герой: У меня и мысли не было, что тебя это так обидит!
+Главный герой: Не надо пытаться контролировать каждый мой шаг! Я взрослая!
+Главный герой: Да что же такое я несу?..
+:n22_000000
+Главный герой: Люба…
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Зато потащилась туда с этой новой своей подругой!
+Lyuba: Ей ты теперь больше всех доверяешь?
+Lyuba: Ты же знаешь ее без году неделю!
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Люба…
+Главный герой: Люба меня ревнует?
+Главный герой: Она же даже и не представляет, что это моя мама.
+Главный герой: Я совсем завралась. Как же тяжело, как же тяжело мне скрывать от самых близких правду о себе.
+Главный герой: А я боюсь, что не поверят, не поймут, отвернутся…
+Главный герой: Как же мне это надоело.
+Главный герой: Как же хочется рассказать им всю правду, но как же я боюсь последствий…
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Я пошла работать! Некогда мне тут языком молоть.
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Нет! Ты не уйдешь, пока мы не помиримся!
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: ...
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Люба…
+- Ну не годится нам ссориться… -> n23_000000
+- Как ты можешь говорить такие жестокие вещи? -> n24_000000
+:n23_000000
+Игрок: Ну не годится нам ссориться…
+set expr="Way.calmness + 1" key="Way.calmness"
+Выбор пути: + сдержанность.
+Главный герой: Люба, ты мне очень-очень дорога, не отталкивай меня…
+Главный герой: Ну как я буду без тебя, Любаша?
+:n25_000000
+set key="Music.Native" value=true
+Главный герой: Я восхищаюсь тобой, Люба.
+Главный герой: Тем, какая ты сильная, решительная, деятельная, как сплачиваешь вокруг себя людей.
+Главный герой: Хотела бы я обладать хотя бы десятой частью твоих прекрасных качеств, но куда уж мне…
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: ?
+Lyuba: Олесенька, ты меня совсем засмущала!
+actor exit="fade" id="Lyuba" show=false
+Автор: Увидев, как смягчилась Люба, я чуть не подпрыгиваю от радости и порывисто обнимаю ее.
+Главный герой: Больше не обижайся на меня, ладно?
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Добре, Олесенька.
+Lyuba: Ну ты и хитрая лиса! Знаешь, как меня задобрить.
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Все абсолютно искренне! От всего сердца!
+Главный герой: Правда-правда!
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Надо бы сегодня купить «Птичье молоко» в нашем кондитерском цеху.
+actor exit="fade" id="Lyuba" show=false
+Главный герой: А зачем его все время покупать? У тебя же золотые ручки!
+Главный герой: Ты разве сама не можешь испечь этот торт?
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Я-то могу, но у меня нет миксера. Суфле для «Птичьего молока» никак не взбить без мощного миксера, а он пока мне не по карману…
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Как так? У Любы и нет миксера.
+if Remember.TakeaWallet == true -> n26_000000
+-> n27_000000
+:n26_000000
+Главный герой: Но у меня же как раз еще остались деньги из тех, что я забрала в милицейском участке в Новороссийске…
+Главный герой: Я могла бы купить Любаше миксер в универмаге и сделать ей сюрприз.
+Главный герой: Вот она была бы рада!
+Главный герой: Так и сделаю!
+if Way.diligence >= 13 -> n28_000000
+-> n29_000000
+:n28_000000
+Главный герой: Я бы так хотела, чтобы Любаша научила меня всему тому, что она умеет.
+Главный герой: Тогда я смогла бы сама баловать себя и друзей самой вкусной выпечкой!
+:n30_000000
+if Relationships.Lyuba >= 8 -> n31_000000
+-> n32_000000
+:n31_000000
+Автор: Я обвожу взглядом эту тесную темную подсобку, в которой провела столько времени…
+Главный герой: Люб, когда я здесь находилась в заточении, выполняя бесконечные поручения Нины Павловны, я чувствовала себя настоящей Золушкой, которую мачеха загрузила тяжелой работой.
+Главный герой: А я к тяжелой работе вообще не привыкла.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Олесенька, ну ты думаешь, шо ты такая одна тут?
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Ну да. Где еще взять такую недотепу?
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Ну так я когда-то была на твоем месте здесь.
+Lyuba: Когда-то и меня Нина Павловна нагружала тяжелой и грязной работой, с которой я еле-еле справлялась.
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Я тебе не верю!
+Главный герой: Этого не может быть!
+Главный герой: Ни за что не поверю, что ты могла с чем-то не справляться.
+Главный герой: Ты же такая… потрясающая! Тебе все всегда по плечу.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Олесенька, готовить на семью, даже на большую – это не то же самое, шо и на сотни и тысячи работников нашего завода.
+Lyuba: Так шо и у меня тут поначалу все валилось из рук, я многое поразбивала и напроливала.
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Не может быть…
+Главный герой: Я просто даже как-то и не задумывалась, что все умения Любы не появились сами по себе из воздуха.
+Главный герой: Это результат адового труда и множества неудач, после которых она не опускала руки.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Ты мне никак не веришь, Олесенька?
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Как же я люблю, когда Люба зовет меня Олесенькой…
+Главный герой: Столько заботы и нежности в том, как она произносит это имя…
+Автор: Шевельнувшийся в моей груди азарт заставляет меня гордо поднять голову, дерзко усмехнувшись.
+Главный герой: Не-а. Не верю.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: А я тебе сейчас докажу!
+actor exit="fade" id="Lyuba" show=false
+Автор: Люба подходит к тяжелому железному стеллажу, стоящему у дальней стены, и начинает его отодвигать.
+Главный герой: Что ты делаешь, Люба? Он же тяжелый!
+Автор: Но девушка и не думает останавливаться, тогда я подбегаю к ней, хватаюсь за стеллаж с другой стороны и помогаю его двигать.
+Главный герой: Что же Люба задумала?
+Автор: Люба, что-то увидев, подбирает под себя юбку халата и присаживается.
+Автор: Когда она с робкой улыбкой достает запылившуюся жестяную коробочку, сдувает с нее пыль и открывает ее, я все еще не могу понять, что сейчас происходит.
+Главный герой: В коробочке из-под карамелек какие-то вырезки из газет и журналов, какие-то фотографии…
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Вот, Олесенька, это я собирала, вырезала отовсюду еще когда жила в своем хуторе.
+Lyuba: Здесь заметки о московских ресторанах, новых блюдах, шеф-поварах.
+Lyuba: Эту коробочку я привезла с собой, она была со мной во время учебы и когда я устроилась на завод.
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Но почему же она оказалась в этой подсобке в пыльном углу?
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Да все из-за того, шо я как-то сидела тут так же, как и ты, чистила гору картошки, тем более тогда картофелечистка была в ремонте.
+Lyuba: И мои мечты стать шеф-поваром в престижном ресторане показались мне такой глупостью!
+Lyuba: Убрала я с глаз подальше эту коробку и свои мечты, похоронила их в том самом месте, где они умерли…
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Люба…
+Главный герой: Любаша…
+Главный герой: Не смей отказываться от своей мечты! Я тебе запрещаю от нее отказываться!
+Главный герой: Кто, если не ты?
+Автор: Подобравшись ближе к девушке, я обнимаю ее и кладу свою ладонь на ее руки, нерешительно держащие коробочку.
+Главный герой: Мы заберем эту коробочку! Ей не место в этом страшном чулане.
+Главный герой: Она будет стоять в твоей комнате на самом почетном месте на полке.
+Главный герой: Потому что когда-нибудь ты обязательно станешь шеф-поваром в самом лучшем ресторане!
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Олесенька, все-то ты складно говоришь, аж на сердце тепло стало и соловьи запели.
+actor exit="fade" id="Lyuba" show=false
+Автор: Обняв Любу еще крепче, я целую ее в щеку и задумчиво продолжаю:
+Главный герой: Хотя я уже так от всего устала. Я бы хотела сбежать с тобой.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Сбежать?
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Да. В какое-нибудь красивое тихое место, как твой хутор!
+Главный герой: Мы бы жили там в домике душа в душу, занимались бы хозяйством… Разводили бы коров и кур…
+Главный герой: Ходили бы к реке Кубань, когда она утопает в белых облаках цветущих акаций.
+Главный герой: Расстилали бы красивый расшитый плед на лугу.
+Главный герой: Ели бы всякие вкусняшки…
+Главный герой: А потом лежали бы, взявшись за руки, и наблюдали за тем, как над нами плывут пушистые облака на синем-синем бескрайнем небе.
+set key="Cutscenes.showLyubaOlesya_12_3" value=true
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Ой-ли? Такая городская девчонка и заговорила о деревенской жизни?
+actor exit="fade" id="Lyuba" show=false
+Автор: Звонко рассмеявшись и махнув рукой, я подпираю ладонью щеку и смущенно смотрю на Любу.
+Главный герой: Да я просто фантазирую! Я последую за тобой куда угодно, Любаша!
+Главный герой: Хоть на край света! Хоть в огонь, хоть в воду.
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Олесенька…
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Что же ты такое говоришь, Олеся? Вот вышвырнет тебя в твое время, и Люба останется одна с разбитым сердцем…
+Главный герой: Разве можно быть такой эгоисткой? Не стоило нам настолько сближаться…
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Шо бы ни было потом, Олесенька, ты уже сделала меня очень счастливой.
+actor exit="fade" id="Lyuba" show=false
+Главный герой: А ты меня.
+Автор: Мы долго смотрим друг другу в глаза, и я не могу перестать смотреть на Любу…
+set key="Sound.Broken_dishes" value=true
+Автор: Когда за дверью слышится какой-то грохот, мы быстро поднимаемся на ноги и переглядываемся.
+set key="Music.Adventure" value=true
+Главный герой: Что там произошло?
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Опять, видимо, кто-то набедокурил.
+Lyuba: Вот видишь, не у тебя одной может что-то не клеиться.
+Lyuba: Побежали, пока нас здесь не застукали.
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Побежали.
+:n32_000000
+bg id="Раздаточная" sprite_url="/content/bg/Раздаточная.jpg"
+set key="Music.Fantastic" value=true
+Автор: Мы с Любой возвращаемся к нашей непростой работе в заводской столовой.
+Автор: Очередной рабочий день полон забот, но когда меня отпускают на небольшой перерыв, я решаю навестить своих родителей на их рабочем месте.
+Главный герой: Мне же надо как-то наводить с ними мосты, хотя они даже и не могут представить, кто я на самом деле.
+Главный герой: Интересно, как бы они отреагировали, если бы я им сказала, что я их дочь из будущего?
+Главный герой: Точно покрутили бы у виска и отправили бы меня в психушку.
+Главный герой: Но… Но на их лица было бы любопытно посмотреть.
+Главный герой: Если бы у меня был стиратель памяти, как в «Людях в черном», я могла бы такое провернуть, а так…
+Nina_Pavlovna: ...
+Автор: Когда мимо меня проходит моя начальница, я вздрагиваю и начинаю отчаянно искать, куда бы от нее спрятаться, но она настолько погружена в свои мысли, что не замечает меня.
+Главный герой: Сбегаю-ка я к своим родителям, пока начальница меня снова не припахала…
+bg id="Design_Department" sprite_url="/content/bg/Design_Department.jpg"
+set key="Music.Miracle" value=true
+Автор: Когда я пробралась к инженерному корпусу, мне пришлось долго плутать в поисках нужного кабинета.
+Автор: Я уже была здесь, но теперь снова умудрилась потерять дорогу.
+Автор: Когда я заглянула в кабинет, в нем никого не было, кроме моих родителей.
+Автор: И то, что я сейчас вижу перед собой, заставляет меня тихонько замереть, чтобы не рушить этот трогательный момент..
+Автор: Аня стоит за своей чертежной доской и тщетно пытается притянуть какую-то линейку по огромному листу.
+Автор: Она сердится, вздыхает и цокает, но не говорит ни слова жалобы, пока это не замечает Дима.
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: Аня, что случилось?
+actor exit="fade" id="Young_Father" show=false
+Young_mother_clothes_1: Да что-то с рейсшиной.
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: Давай я посмотрю.
+actor exit="fade" id="Young_Father" show=false
+Young_mother_clothes_1: Не надо, я сама справлюсь.
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: Какая же ты всегда сильная и независимая, но я все же хочу тебе помочь.
+actor exit="fade" id="Young_Father" show=false
+Автор: Дима подходит к девушке и наклоняется к ее доске.
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: Понятно. Тут дело в чертежном узле.
+Young_Father: Я сейчас быстро починю.
+actor exit="fade" id="Young_Father" show=false
+Автор: Недолго покопавшись, он с легкостью передвигает рейсшину по доске.
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: Готово. Принимай работу.
+actor exit="fade" id="Young_Father" show=false
+Young_mother_clothes_1: Спасибо.
+set key="Music.Romance" value=true
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: Я помню, как ты мне в первый раз улыбнулась.
+Young_Father: Тогда цвела черемуха, а я снова пришел к твоей школе в надежде увидеть тебя.
+Young_Father: Ты играла в теннис с подругой, когда ваш воланчик перелетел за забор, а когда ты побежала за ним…
+actor exit="fade" id="Young_Father" show=false
+Young_mother_clothes_1: Ты протянул мне его между прутьями ограды.
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: И тогда ты впервые увидела меня и улыбнулась мне.
+Young_Father: Подул ветер, и на тебя полетели лепестки черемухи.
+Young_Father: Ты была такой красивой с белыми лепестками в волосах, хоть и пыталась их с себя стряхнуть.
+actor exit="fade" id="Young_Father" show=false
+Автор: Я наблюдаю, затаив дыхание, за своими родителями.
+Главный герой: Вот с чего начались их отношения…
+Главный герой: Это так…
+- Трогательно и романтично. -> n33_000000
+- Глупо и наивно. -> n34_000000
+:n33_000000
+Игрок: Трогательно и романтично.
+set expr="Way.Support_parents_1_11 + 1" key="Way.Support_parents_1_11"
+Выбор пути: Вы поддерживаете отношения своих родителей!
+Главный герой: Который год они уже борются за свою любовь вопреки всему…
+Главный герой: Разве это не заслуживает восхищения?
+:n35_000000
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: Хочу всегда видеть твою улыбку.
+actor exit="fade" id="Young_Father" show=false
+Young_mother_clothes_1: Хотела бы я всегда улыбаться, но это невозможно.
+Автор: Между Димой и Аней повисает неловкая пауза, они смущенно, как подростки, переглядываются.
+Автор: Когда родители тянутся друг к другу с явным намерением поцеловаться, я начинаю чувствовать себя здесь совсем уже лишней.
+Главный герой: Надо уходить! И зачем я вообще сюда притащилась?
+Автор: Я спешу покинуть отдел проектирования, пока меня не заметили мои родители.
+bg id="Комната_Олеси_день" sprite_url="/content/bg/Комната_Олеси_день.jpg"
+set key="Music.Fantastic" value=true
+set expr="Temp.saveMainChClothes" key="Wardrobe.mainCh_Clothes"
+set expr="Temp.saveMainChHair" key="Wardrobe.mainCh_Hair"
+set key="Wardrobe.FreeWardrobe_Access" value=true
+Автор: Вот уже который час я после работы лежу на своей кровати, рассматривая трещины в штукатурке на потолке.
+Главный герой: Я все меньше понимаю, для чего я попала в это время.
+Главный герой: Если я должна была измениться, стать хорошей девочкой, то разве я уже не стала такой?
+Главный герой: Родители и без меня разберутся со своими отношениями…
+Главный герой: Но ясно, что они мне многое не рассказывали о своей жизни…
+Главный герой: И когда я разберусь со всем в этом времени, я…
+Главный герой: Вернусь?
+Главный герой: Но хочу ли я вернуться в свое время?
+Главный герой: Хочу ли я этого?
+Главный герой: Где же осталось мое сердце? Где?
+Автор: От этих мыслей просто хочется сбежать на край света, улететь вольной птицей за горизонт. Далеко-далеко, лишь бы не нести это тяжкое бремя.
+Главный герой: Я хочу сама определять свою жизнь. Не хочу быть ничьей игрушкой.
+Автор: Голова раскалывается, я резко встаю с кровати и с чувством легкого головокружения ид у к двери.
+set key="Music.Miracle" value=true
+Автор: На секунду задумываюсь о том, что мне нужно отвлечься.
+Главный герой: Стоит ли мне сменить свой образ? Посмотрим…
+set expr="Wardrobe.mainCh_Clothes" key="Temp.saveMainChClothes_beforeW"
+set expr="Wardrobe.mainCh_Hair" key="Temp.saveMainChHair_beforeW"
+:n36_000000
+set key="Open.Wardrobe" value=true
+Автор: Выбери одежду.
+- Не менять. -> n37_000000
+- Морячка. -> n38_000000
+- Хозяйка Медной горы. -> n39_000000
+:n37_000000
+Игрок: Не менять.
+set expr="Temp.saveMainChClothes_beforeW" key="Wardrobe.mainCh_Clothes"
+Главный герой: Ничего не нравится ...
+:n40_000000
+Автор: Теперь выбери прическу.
+- Морские хвостики. -> n41_000000
+- Волны мечты. -> n42_000000
+- Не менять. -> n43_000000
+:n41_000000
+Игрок: [premium]Морские хвостики.
+set key="Wardrobe.mainCh_Hair" value=182
+Главный герой: Отлично!
+:n44_000000
+Автор: Ты довольна своим внешним видом?
+- Да. -> n45_000000
+- Нет. -> n46_000000
+:n45_000000
+Игрок: Да.
+set key="Open.Wardrobe" value=false
+Главный герой: Я великолепна! Впрочем, как и всегда…
+bg id="Коридор_общежития" sprite_url="/content/bg/Коридор_общежития.jpg"
+Автор: Я выхожу из своей комнаты и брожу по коридорам общежития, захожу в то крыло, в котором еще ни разу не была.
+Автор: По полу растекается яркий свет из-под одной из дверей.
+Главный герой: Что же там?
+bg id="Greenhouse" sprite_url="/content/bg/Greenhouse.jpg"
+Автор: Открыв дверь, я замираю, увидев, какая красота открылась передо мной.
+Автор: Цветущие экзотические растения в огромных горшках, длинные ветви, нависающие надо мной и создающие ощущение, словно я нахожусь в зеленом шатре.
+Автор: С губ слетает непроизвольное:
+Главный герой: Вот это да…
+Главный герой: И почему я не знала, что у нас здесь такой красивый зимний сад?
+Главный герой: Кто же ухаживает за всей этой красотой?
+if Remember.Talk_with_Stalina_1_13 == true -> n47_000000
+-> n48_000000
+:n47_000000
+actor enter="fade" id="Stalina" position="right" show=true sprite_url="/content/art/Сталина.png"
+Stalina: Это я.
+actor exit="fade" id="Stalina" show=false
+Автор: Мягкий добрый голос женщины, так неожиданно раздавшийся за спиной, заставляет меня вздрогнуть и обернуться.
+Главный герой: Вы? Все это устроили здесь вы, Сталина Ильинична?
+actor enter="fade" id="Stalina" position="right" show=true sprite_url="/content/art/Сталина.png"
+Stalina: Да. Люблю зелень, а так здесь островок жизни даже посреди зимы.
+if Way.diligence >= 13 -> n49_000000
+-> n50_000000
+:n49_000000
+actor exit="fade" id="Stalina" show=false
+Главный герой: Сколько же трудов сюда вложено…
+Главный герой: Я совершенно не умею ухаживать за комнатными растениями, у меня любая герань быстро умрет.
+Главный герой: Хотела бы и я уметь так же, но думаю, что мне это просто не дано…
+actor enter="fade" id="Stalina" position="right" show=true sprite_url="/content/art/Сталина.png"
+Stalina: Олесенька, здесь нет ничего сложного! Я тебя обучу, если хочешь.
+actor exit="fade" id="Stalina" show=false
+Главный герой: Конечно же, хочу!
+actor enter="fade" id="Stalina" position="right" show=true sprite_url="/content/art/Сталина.png"
+Stalina: Работа с землёй и растениями очень успокаивает. Помогает привести мысли в порядок, отвлечься от любых неприятностей.
+Stalina: Так что я тебя с радостью научу.
+actor exit="fade" id="Stalina" show=false
+Главный герой: Ура! Спасибо, Сталина Ильинична!
+:n51_000000
+Автор: Мое внимание привлекает дерево с глянцевыми листьями и желтыми плодами.
+Главный герой: Это… лимоны?
+actor enter="fade" id="Stalina" position="right" show=true sprite_url="/content/art/Сталина.png"
+Stalina: Да, они уже созрели. Возьми один, попьешь чай с лимоном.
+actor exit="fade" id="Stalina" show=false
+Автор: Женщина срывает лимон и протягивает его мне.
+Главный герой: Спасибо! Будем вместе с друзьями пить чай.
+actor enter="fade" id="Stalina" position="right" show=true sprite_url="/content/art/Сталина.png"
+Stalina: Лимонов много, берите, когда хотите. Я люблю вашу компанию.
+Stalina: Хорошие ребята: добрые, дружные, деятельные, друг за друга всегда горой.
+actor exit="fade" id="Stalina" show=false
+Автор: Когда женщина уходит, я сажусь в мягкое кресло.
+:n48_000000
+Автор: Под сенью деревьев так хорошо и спокойно, что я прикрываю глаза.
+if Remember.Kiss_Timur_1_8 == true -> n52_000000
+-> n53_000000
+:n52_000000
+Автор: Когда открываю их, то вижу над собой…
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Моя прекрасная белая лебедь решила немного отдохнуть?
+actor exit="fade" id="Timur" show=false
+Главный герой: Тимур?
+Автор: Резко приподнявшись от неожиданности, я сталкиваюсь лбом с парнем.
+Главный герой: Ай!
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Ты так рада меня видеть?
+Timur: Но можно и поаккуратнее, красавица.
+actor exit="fade" id="Timur" show=false
+Главный герой: Да я просто совсем не ожидала тебя здесь увидеть!
+Автор: Пока Тимур растирает лоб, неловко улыбаясь, я тянусь к нему и убираю ладонь с его лба.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: ...
+actor exit="fade" id="Timur" show=false
+Автор: Притягиваю мужчину к себе и оставляю на месте ушиба нежный поцелуй.
+Главный герой: Так меньше болит?
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Меньше.
+Timur: Надо мне ударяться почаще, чтобы ты меня чаще целовала.
+actor exit="fade" id="Timur" show=false
+Главный герой: Я и так буду тебя чаще целовать. Не нужно себя ради этого травмировать.
+Автор: Тимур садится рядом со мной на диван и притягивает меня к себе, крепко, но бережно обнимая.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Когда я только увидел тебя впервые, ты была такой напуганной и потерянной…
+Timur: Но и такой прекрасной, что я глаз от тебя не мог оторвать.
+actor exit="fade" id="Timur" show=false
+Главный герой: Я думаю, ты не мог глаз оторвать от всех хоть сколько-то симпатичных девушек.
+Автор: Коротко рассмеявшись, мужчина снова притягивает меня к себе, целуя мою макушку и вдыхая аромат моих волос.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Это не так, Олеся, это не так…
+Timur: Ты прекраснее их всех, вместе взятых, в… миллиард раз!
+actor exit="fade" id="Timur" show=false
+Главный герой: Ты так говоришь только потому что ты очень горячий темпераментный мужчина, и сейчас у тебя бушуют эмоции. Но объективно это совсем не так.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: А ты так и не научилась принимать комплименты. Буду тогда почаще осыпать тебя ими, пора тебе уже к ним привыкнуть.
+actor exit="fade" id="Timur" show=false
+Автор: Я смотрю на своего мужчину и думаю о том, как же он изменился рядом со мной…
+Главный герой: Он такой чуткий и заботливый. Могла ли я подумать, что Тимур, который всю жизнь жил в свое удовольствие, может так раскрыться?
+Главный герой: Как ты, Тимур?
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Как я?
+actor exit="fade" id="Timur" show=false
+Автор: Мужчина так удивлен, словно совсем не ожидал такого вопроса.
+Автор: В его темных глазах вспыхивает какая-то неведомая мне печаль, но она быстро скрывается за пеленой беспечности.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Все замечательно, моя прекрасная белая лебедь.
+actor exit="fade" id="Timur" show=false
+Главный герой: Слушай, я же кое-что купила в универмаге!
+Автор: Я достаю из кармана маленькую фарфоровую статуэтку и протягивая ему.
+Главный герой: Когда увидела эту Царевну-лебедь, сразу вспомнила о тебе.
+Главный герой: Пускай у тебя стоит на полке. Чтобы ты всегда помнил о своей белой лебеди.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Я и так всегда помню о тебе. Но эта статуэтка пусть тогда станет моим талисманом.
+if Relationships.Timur >= 10 -> n54_000000
+-> n55_000000
+:n54_000000
+actor exit="fade" id="Timur" show=false
+Автор: Затем Тимур стремительно соскакивает с дивана и тянет меня за руку за собой.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Пойдем за мной.
+actor exit="fade" id="Timur" show=false
+Главный герой: Куда ты меня тащишь?
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Доверься мне.
+actor exit="fade" id="Timur" show=false
+Автор: Тимур как фокусник достает из кармана шелковый платок и притягивает меня к себе.
+Главный герой: Что это ты задумал?
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Так ты доверишься мне или?..
+actor exit="fade" id="Timur" show=false
+Автор: Я завороженно смотрю в его глаза, медленный кивок, и вот он уже завязывает платок на моих глазах.
+bg id="Фонтан" sprite_url="/content/bg/Фонтан.jpg"
+set key="Music.Romance" value=true
+Автор: Когда Тимур снимает платок с моих глаз, я вижу то, чего совершенно не ожидала увидеть.
+Автор: Он стоит на одном колене передо мной и держит кольцо в лазурной коробочке.
+Главный герой: Что? Что происходит?
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Моя прекрасная белая лебедь, выходи за меня замуж.
+Timur: Здесь рядом дворец бракосочетаний, мы можем пойти и расписаться прямо сейчас.
+Timur: Но если ты хочешь, чтобы у тебя были белое платье, пышная гулянка со множеством гостей, то можем сейчас просто подать заявление.
+actor exit="fade" id="Timur" show=false
+Автор: Любая на моем месте была бы счастлива, но…
+Главный герой: Но я не любая, я всего лишь гостья в этом времени. Все зашло слишком далеко, Олеся.
+Автор: Слезы застилают глаза, а Тимур недоумевающе смотрит на меня, пока я отрицательно мотаю головой, вырывая свою ладонь из его руки и убегаю.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Олеся?!
+actor exit="fade" id="Timur" show=false
+Автор: Я останавливаюсь у фонтана, где мы поцеловались с Тимуром в первый раз, когда он догоняет меня.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Олеся, так в чем дело? Я же люблю тебя!
+Timur: Я хотел, чтобы ты не думала, что я отношусь к тебе несерьезно.
+actor exit="fade" id="Timur" show=false
+Главный герой: Я тоже люблю тебя, Тимур!
+Главный герой: Я даже не догадывалась, что могу так сильно любить, но…
+Главный герой: Прости, но я не… Это все слишком…
+Главный герой: Я уже твоя, и больше всего я боюсь тебя потерять, но…
+Автор: Тимур словно с облегчением выдыхает, закрывает коробочку с кольцом и прячет в карман.
+Автор: Он притягивает меня к себе, вытирает слезы своими большими пальцами с моих мокрых щек.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Это ты меня прости, красавица. Я напугал тебя.
+Timur: Я раньше думал, что семейная жизнь – мой самый большой страх, но рядом с тобой… Я становлюсь лучше.
+Timur: Так что кольцо пока побудет у меня, мы к этому разговору вернемся позднее, хорошо?
+actor exit="fade" id="Timur" show=false
+Автор: Он обнимает меня и гладит по голове, пока я утвердительно киваю, тихонько всхлипывая.
+Главный герой: И откуда ты взял кольцо от Тиффани?
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Ну я же фарцовщик, я могу достать, что угодно!
+actor exit="fade" id="Timur" show=false
+Автор: Я слушаю сердцебиение своего мужчины, вдыхаю аромат его парфюма, и мне становится спокойнее, спокойнее…
+Автор: Но в следующее же мгновение он наклоняется к моим ногам и начинает снимать с них босоножки, затем сбрасывает со своих ног ботинки.
+Главный герой: Что ты… делаешь?!
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Хочу повторить наш первый поцелуй.
+actor exit="fade" id="Timur" show=false
+Автор: Он подхватывает меня на руки и несет в сторону фонтана.
+Автор: Раньше бы я учинила скандал и потребовала бы меня отпустить, но сейчас я крепче обхватываю руками плечи Тимура, когда он подхватывает меня и несет под струи фонтана.
+Главный герой: Ха-ха-ха, Тимур! Ты не перестаешь меня удивлять!
+set key="Cutscenes.showKissTimur_1_8" value=true
+Автор: Когда он ставит меня в воду, я прижимаюсь к нему, наши губы находят друг друга…
+Автор: И мы целуемся долго-долго, отчаянно и самозабвенно.
+Автор: Как в первый раз, но даже лучше.
+Автор: Пока прохладная вода из фонтана обливает нас, а солнце ярко светит на ясном небе.
+:n55_000000
+bg id="Кухня_общаги" sprite_url="/content/bg/Кухня_общаги.jpg"
+set key="Music.Adventure" value=true
+set key="Wardrobe.Lyuba" value=3
+Автор: Вечером Тимур собрал нас на кухне.
+Автор: Я всматриваюсь в его лицо и не вижу ни следа от его вечной веселой беззаботности.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: ...
+actor exit="fade" id="Timur" show=false
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Ну так ты скажешь, для чего нас собрал?
+actor exit="fade" id="Andrey" show=false
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Да, Тимур, не томи!
+actor exit="fade" id="Lyuba" show=false
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: ...
+set key="Music.Fight" value=true
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: В общем, мне звонил мой знакомый, он сообщил, что Борис в СИЗО повесился, а Люда сбежала.
+actor exit="fade" id="Timur" show=false
+Автор: Это известие производит эффект разорвавшейся бомбы.
+Автор: Пока ребята молча переглядываются, я молчать не собираюсь.
+Главный герой: Сам ли он повесился? Или ему помогли?
+Главный герой: И как этой рыжей-бесстыжей удалось сбежать?
+Главный герой: А ведь она была напугана, когда я их застукала! Говорила о важных людях, что их самих убьют, если они попадутся!
+Главный герой: А если в этом замешан этот Мелентьев?
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: И шо ты собралась снова расследовать?
+actor exit="fade" id="Lyuba" show=false
+actor enter="fade" id="Andrey" position="right" show=true sprite_url="/content/art/Андрей_Обычный.png"
+Andrey: Мы ничего не будем делать. Этим должны заниматься правоохранительные органы.
+actor exit="fade" id="Andrey" show=false
+Главный герой: Но!
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Это слишком опасно, Олеся. Тебе не стоит в это лезть.
+actor exit="fade" id="Daniil" show=false
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Да. Дело здесь уже намного серьезнее, чем какая-то недостача в столовой. Или проворовавшаяся председательница колхоза.
+actor exit="fade" id="Timur" show=false
+Главный герой: И что? Неужели вас это остановит?
+actor enter="fade" id="Lyuba" position="right" show=true sprite_url="/content/art/Люба_Обычная.png"
+Lyuba: Олесенька, мы же с тобой вчера об этом говорили…
+actor exit="fade" id="Lyuba" show=false
+Главный герой: Понятно.
+Главный герой: Я устала, у меня раскалывается голова.
+Главный герой: Пойду в свою комнату, отдохну, может, завалюсь спать.
+bg id="Комната_Олеси_день" sprite_url="/content/bg/Комната_Олеси_день.jpg"
+set key="Music.Alert" value=true
+Автор: Провалявшись в постели битый час и пытаясь выстроить в голове все, что я узнала, я начинаю злиться.
+Главный герой: Не получается. Все слишком запутанно, много пробелов, я еще многое не знаю…
+Главный герой: И как мне узнать, если никто не хочет, чтобы я лезла в это дальше?
+Автор: Только прикрываю уставшие глаза…
+bg id="Скала_пасмурно" sprite_url="/content/bg/Скала_пасмурно.jpg"
+set key="Music.Sound_of_storm" value=true
+Главный герой: Я снова здесь?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: А где тебе еще быть, если ты уснула?
+actor exit="fade" id="Phobos" show=false
+Главный герой: Ты!
+Главный герой: Снова ты!
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Я тоже рад тебя видеть.
+Phobos: Как ты после своего прошлого путешествия по снам?
+actor exit="fade" id="Phobos" show=false
+Автор: Я вспоминаю цунами, весь тот ужас и боль, которое оно мне принесло…
+Главный герой: Я…
+- Ужасно! -> n56_000000
+- Сносно. -> n57_000000
+:n56_000000
+Игрок: Ужасно!
+set expr="Way.rage + 1" key="Way.rage"
+Выбор пути: + вспыльчивост ь.
+Главный герой: Как я, по-твоему, должна себя чувствовать?
+Главный герой: Но ты обязан был меня предупредить заранее!
+:n58_000000
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Ну все, не злись.
+Phobos: Прости меня.
+Phobos: Я бы тебе отправил стикер с сердечками, но у меня тут нет никаких сердечек.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Что? Серьезно? Ты конкретно накосячил, я была в агонии из-за тебя!
+Главный герой: И ты думаешь, что стоит только попросить прощения, состроить милые гла…
+Главный герой: Да у тебя даже глаз нет!
+Главный герой: И все? И ты прощен?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Ну прости-прости меня!
+Phobos: Я и не думал, что ты рванешь за его тенью!
+Phobos: Я не хотел, чтобы ты так страдала.
+actor exit="fade" id="Phobos" show=false
+Автор: Я вслушиваюсь в голос Фобоса, пытаюсь понять, насколько искренни его слова.
+Автор: И решаю поверить ему.
+Автор: Усмирив клокочащий в груди гнев, я выдыхаю и продолжаю ровным голосом.
+Главный герой: Не будем терять зря время. Перенеси меня в следующее воспоминание.
+Главный герой: Только безо всяких своих спецэффектов.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Хорошо, Олеся.
+actor exit="fade" id="Phobos" show=false
+bg id="Chongjien_Waterfall" sprite_url="/content/bg/Chongjien_Waterfall.jpg"
+set key="Music.Waterfall_noise" value=true
+Главный герой: Я здесь?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: А почему нет? Продолжаем вспоминать твое путешествие по Корее.
+actor exit="fade" id="Phobos" show=false
+Автор: Я смотрю на то, как искрятся потоки воды, падающие со скалы.
+Главный герой: Водопад на Чеджу. Не помню название…
+Главный герой: Когда родители потеряли меня и звонили мне, я вместо того, чтобы вернуться в Сеул, полетела на Чеджу.
+Главный герой: Я просто сбежала. Ведь я хотела увидеть Корею, а не быть привязанной все время к номеру в Сеуле, пока они решают свои рабочие дела.
+Автор: Увидев старушек вдалеке, продающих морепродукты, я улыбаюсь.
+Главный герой: Ныряльщицы-хэне… Настоящие сильные и свободные женщины, бережно передававшие тайны своего тяжелого промысла из поколени я в поколение.
+Главный герой: Но… почему я здесь?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Разве можно быть такой непонятливой?
+Phobos: Неужели ты не помнишь, кого встретила у того водопада?
+Phobos: В Корее европейцы прямо на каждом шагу встречаются?
+actor exit="fade" id="Phobos" show=false
+Главный герой: ...
+Автор: То, что я вижу перед собой, заставляет меня замереть в онемении, ведь раньше я не видела себя в своих снах.
+Автор: Теперь же я стою и наблюдаю за этим как за каким-то жутким фильмом.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Помни о правиле. Помни о нем.
+set key="Music.Fight" value=true
+set key="Wardrobe.FreeWardrobe_Access" value=false
+set expr="Wardrobe.mainCh_Clothes" key="Temp.saveMainChClothes"
+set expr="Wardrobe.mainCh_Hair" key="Temp.saveMainChHair"
+set key="Wardrobe.mainCh_Clothes" value=11
+set key="Wardrobe.mainCh_Hair" value=11
+actor exit="fade" id="Phobos" show=false
+Автор: Олеся подходит к ограждению, когда порыв ветра срывает с нее кепку.
+Автор: Когда она бросается за ней, то сталкивается с парнем, который уже протягивает ей кепку.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Вы обронили, прекрасная незнакомка.
+actor exit="fade" id="Den" show=false
+Главный герой: Спасибо…
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Не туфелька Золушки, но…
+actor exit="fade" id="Den" show=false
+Автор: Увидев замешательство девушки, парень беззаботно рассмеялся, сверкая своими белоснежными зубами.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Меня зовут Дэн.
+set key="Names.Den" value="Дэн"
+actor exit="fade" id="Den" show=false
+Главный герой: Олеся…
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Я один путешествую по Корее и очень рад увидеть свою землячку.
+actor exit="fade" id="Den" show=false
+Главный герой: Какое-то у вас не очень русское имя.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Ах, это? Да я просто много лет прожил во Франции, привык, что меня так зовут.
+Den: Но я не забыл о своих корнях.
+actor exit="fade" id="Den" show=false
+Главный герой: Во Франции? Как интересно.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Tu as compris, petit oiseau. Et tu seras à moi.
+actor exit="fade" id="Den" show=false
+Главный герой: Что это значит?
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Сегодня прекрасная погода. И вы прекрасны.
+set expr="Temp.saveMainChClothes" key="Wardrobe.mainCh_Clothes"
+set expr="Temp.saveMainChHair" key="Wardrobe.mainCh_Hair"
+set key="Wardrobe.FreeWardrobe_Access" value=true
+actor exit="fade" id="Den" show=false
+Автор: Наблюдая за всем этим со стороны, я чувствую, как меня душат слезы, все передо мной расплывается.
+Главный герой: Фобос, скажи мне… Это… Это он?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Ну не просто же так я привел тебя именно сюда.
+Phobos: И он неправильно перевел тебе свои слова.
+Phobos: Он солгал.
+actor exit="fade" id="Phobos" show=false
+Автор: Я наблюдаю за собой, за тем, как юная девочка, которая даже и не подозревает, через что ей придется пройти, общается с незнакомцем.
+Автор: Шепчу дрожащим голосом:
+Главный герой: Не… говори с ним. Беги от него.
+Главный герой: Не разговаривай с ним.
+Автор: Хочется увести эту девочку, спрятать, укрыть ее от всех опасностей. Но опасный хищник уже начал на нее охоту.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Не делай этого. Снова себе навредишь.
+actor exit="fade" id="Phobos" show=false
+Главный герой: О чем ты?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Я же вижу, что ты хочешь сделать.
+if Way.calmness >= 27 -> n59_000000
+-> n60_000000
+:n59_000000
+Phobos: Хочешь подойти к нему. Посмотреть ему в глаза и спросить, за что он так с тобой.
+Phobos: Но не стоит искать какого-то смысла в поступках психопата.
+Phobos: Они напрочь лишены эмпатии, зато мастерски умеют притворяться и надевать любые маски.
+:n61_000000
+Phobos: Не вмешивайся в свое воспоминание, все равно это не изменит реальность.
+set key="Wardrobe.FreeWardrobe_Access" value=false
+set expr="Wardrobe.mainCh_Clothes" key="Temp.saveMainChClothes"
+set expr="Wardrobe.mainCh_Hair" key="Temp.saveMainChHair"
+set key="Wardrobe.mainCh_Clothes" value=11
+set key="Wardrobe.mainCh_Hair" value=11
+actor exit="fade" id="Phobos" show=false
+Автор: У Олеси звонит телефон, она берет трубку и извиняется перед родителями, пока они ее ругают за побег.
+Главный герой: Родители обнаружили, что я сбежала.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Ох уж эти родители. Никак не могут понять, что их детки уже взрослые.
+actor exit="fade" id="Den" show=false
+Главный герой: Мне нужно бежать, пока они не посадили меня под домашний арест до конца жизни.
+actor enter="fade" id="Den" position="right" show=true sprite_url="/content/art/Den.png"
+Den: Надеюсь, мы еще когда-нибудь увидимся.
+actor exit="fade" id="Den" show=false
+Главный герой: Земля круглая. Так что как знать?
+Автор: Олеся убегает, пока парень провожает ее взглядом.
+bg id="Chongjien_Waterfall_red" sprite_url="/content/bg/Chongjien_Waterfall_red.jpg"
+set key="Music.Revelation" value=true
+set expr="Temp.saveMainChClothes" key="Wardrobe.mainCh_Clothes"
+set expr="Temp.saveMainChHair" key="Wardrobe.mainCh_Hair"
+set key="Wardrobe.FreeWardrobe_Access" value=true
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Ну вот ты и увидела его.
+Phobos: Но ты еще не знаешь, кто он на самом деле.
+actor exit="fade" id="Phobos" show=false
+Главный герой: О чем ты?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: А ты думаешь, что он просто увидел тебя где-то на улице? И мгновенно решил охотиться на тебя?
+Phobos: Не-е-е. Все было не так. Это связано с твоей семьей.
+actor exit="fade" id="Phobos" show=false
+Главный герой: С семьей? Но при чем тут моя семья?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Об этом ты узнаешь на своем следующем сеансе психотерапии, где я выступаю в роли психотерапевта.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Что это значит?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Пора тебе просыпаться, хозяйка.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Нет! Не прогоняй меня!
+Автор: Но все уже передо мной расплывается, я словно проваливаюсь в кроличью нору, а просыпаюсь посреди ночи в своей смятой постели.
+bg id="Завод_снаружи" sprite_url="/content/bg/Завод_снаружи.jpg"
+set key="Music.Adventure" value=true
+set key="Wardrobe.Timur" value=2
+Автор: На следующий день.
+Автор: Когда мы с Тимуром уже идем от завода в сторону общежития, то видим, как останавливается черная «Волга».
+Автор: Словно заметив что-то, парень хватает меня за руку и утаскивает за трансформаторную будку.
+Главный герой: Что ты делаешь?
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Тихо, Олеся! Там в машине Мелентьев!
+actor exit="fade" id="Timur" show=false
+Главный герой: Чт… Но что он забыл на нашем заводе?
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Понятия не имею. Сейчас воочию увидишь Мелентьева Константина Аркадьевича.
+actor exit="fade" id="Timur" show=false
+Автор: Невысокий полноватый водитель с усами глушит двигатель и выходит из автомобиля.
+set key="Music.Socialism" value=true
+Автор: Он открывает заднюю дверь «Волги», и тот, кто затем появляется из нее, мгновенно приковывает мой взгляд.
+actor enter="fade" id="Konstantin_Melentyev" position="right" show=true sprite_url="/content/art/Konstantin_Melentyev.png"
+Konstantin_Melentyev: ...
+actor exit="fade" id="Konstantin_Melentyev" show=false
+Автор: Следом за ним из машины выскакивает бойкий молодой парень, который начинает тут же с любопытством рассматривать территорию завода.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: А это же его сын! Никита.
+actor exit="fade" id="Timur" show=false
+Автор: Никита прислоняется к машине, убрав руки в карманы, и начинает копаться носком своего ослепительно блестящего лакированного ботинка в земле.
+actor enter="fade" id="Nikita_Melentyev_glasses" position="right" show=true sprite_url="/content/art/Nikita_Melentyev_glasses.png"
+Nikita_Melentyev_glasses: Отец, зачем ты меня сюда притащил? Неужели хочешь отправить своего сына-разгильдяя работать на завод?
+set key="Names.Konstantin_Melentyev" value="Константин"
+actor exit="fade" id="Nikita_Melentyev_glasses" show=false
+actor enter="fade" id="Konstantin_Melentyev" position="right" show=true sprite_url="/content/art/Konstantin_Melentyev.png"
+Konstantin_Melentyev: Подожди меня здесь.
+Konstantin_Melentyev: Я сейчас быстро решу кое-какие вопросы, и мы поедем дальше.
+actor exit="fade" id="Konstantin_Melentyev" show=false
+actor enter="fade" id="Nikita_Melentyev_glasses" position="right" show=true sprite_url="/content/art/Nikita_Melentyev_glasses.png"
+Nikita_Melentyev_glasses: Хорошо, отец!
+Nikita_Melentyev_glasses: Отправимся дальше устраивать мое великое будущее.
+Nikita_Melentyev_glasses: Будущее достойного сына своего отца.
+actor exit="fade" id="Nikita_Melentyev_glasses" show=false
+Автор: Константин Аркадьевич уходит, а я, затаив дыхание, продолжаю наблюдать за этим молодым парнем.
+Главный герой: Я… его знаю…
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Но где ты могла его видеть? Это невозможно!
+actor exit="fade" id="Timur" show=false
+Главный герой: В моей жизни было уже много невозможного.
+Главный герой: Никита Константинович Мелентьев…
+Главный герой: Я его точно знаю. Только я его видела тогда, когда он уже был на десятки лет старше .
+Автор: Когда старший Мелентьев уходит, младший достает из машины бутылку «Буратино» и начинает ее опустошать жадными громкими глотками.
+Автор: Тем временем я замечаю своих родителей, которые идут от инженерного корпуса по тропинке в нашу сторону.
+set key="Music.Revelation" value=true
+Young_mother_clothes_1: ...
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: ...
+actor exit="fade" id="Young_Father" show=false
+Главный герой: Ясно… Снова поссорились…
+- Если столько ссор у них сейчас, то что будет дальше? -> n62_000000
+- Как же без драмы, когда столько обстоятельств против них? -> n63_000000
+:n62_000000
+Игрок: Если столько ссор у них сейчас, то что будет дальше?
+Выбор пути: Вы не видите родителей вместе!
+Главный герой: Может быть, они просто несовместимы, поэтому все обстоятельства против них?
+:n64_000000
+Автор: Аня убегает вперед, отец догоняет ее и хватает за руку, притягивая к себе.
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: Аня! Ну почему ты никак не можешь довериться мне?
+actor exit="fade" id="Young_Father" show=false
+Young_mother_clothes_1: Что ты мне предлагаешь, что требуешь от меня… Да это же абсолютное безумие!
+Young_mother_clothes_1: Ну как ты это себе представляешь? Как?
+Young_mother_clothes_1: Мы студенты! Еще только учимся, у нас нет ничего своего!
+Young_mother_clothes_1: Где мы будем жить? На что мы будем жить?
+Young_mother_clothes_1: Или ты предлагаешь мне бросить учебу и пойти работать?
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: Нет, Аня! Нет! Ты доучишься!
+Young_Father: Я не позволю тебе погубить свое будущее ради меня, но и не позволю никому тебя у меня отнять!
+Young_Father: Я буду больше работать! Ради тебя! Ради нас с тобой!
+Young_Father: Хоть круглые сутки! Нам дадут комнату в общежитии, потом я смогу снимать нам квартиру…
+actor exit="fade" id="Young_Father" show=false
+Young_mother_clothes_1: А учебу ты собрался бросить?
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: Если никак не смогу совмещать работу с очным обучением, пойду на заочку.
+actor exit="fade" id="Young_Father" show=false
+Young_mother_clothes_1: Ты живешь в своих фантазиях! В жизни все намного сложнее!
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: Нет! В жизни все намного проще, если ты действительно любишь!
+Young_Father: Я хотя бы борюсь за нас! А ты уже сдалась!
+actor exit="fade" id="Young_Father" show=false
+Автор: Аня мучительно взвывает и прикрывает лицо ладонью, качая головой.
+Автор: Когда она убирает руку с лица, говорит ровным безжизненным голосом.
+Young_mother_clothes_1: Я пойду домой. Мама меня ждет.
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: Я провожу тебя! Она меня не увидит.
+actor exit="fade" id="Young_Father" show=false
+Young_mother_clothes_1: Не стоит. Я хочу побыть одна.
+Young_mother_clothes_1: Мне нужно прийти в себя и спокойно обо всем подумать.
+Young_mother_clothes_1: Не могу я принимать такие важные решения на горячую голову. Потому что я не такая, как ты.
+Автор: Когда Аня уходит быстрым шагом, стуча каблуками по асфальту, Дима хватается за голову, затем его руки бессильно падают.
+Автор: Тимур толкает меня локтем в бок и шепчет:
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Кажется, Олеся, мы увидели то, что не должны были видеть…
+Timur: Ну и страсти бушуют у твоих новых друзей…
+actor exit="fade" id="Timur" show=false
+Главный герой: Но я-то должна была это увидеть. Кто, если не я?
+Автор: Но дело в том, что не только же мы с Тимуром оказались невольными очевидцами ссоры моих родителей.
+Автор: Никита наблюдал за этой драмой с несходящей с лица усмешкой, даже забыв о своей бутылке лимонада.
+actor enter="fade" id="Nikita_Melentyev_glasses" position="right" show=true sprite_url="/content/art/Nikita_Melentyev_glasses.png"
+Nikita_Melentyev_glasses: ...
+actor exit="fade" id="Nikita_Melentyev_glasses" show=false
+Автор: Когда он все-таки вспоминает о своем лимонаде, допивает его и бросает бутылку в сторону мусорки, но промахивается.
+Автор: Бутылка падает в мягкую траву, но Никиту это нисколько не смущает.
+Автор: Он стоит все так же: прислонившись к машине и снова засунув руки в карманы. И даже не шелохнется.
+set key="Music.Adventure" value=true
+Автор: Увидев это, Дима выходит из своего оцепенения и подходит к наглому парню.
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: Подними бутылку. Не мусори здесь.
+actor exit="fade" id="Young_Father" show=false
+actor enter="fade" id="Nikita_Melentyev_glasses" position="right" show=true sprite_url="/content/art/Nikita_Melentyev_glasses.png"
+Nikita_Melentyev_glasses: Да… Да ты как со мной разговариваешь?
+Nikita_Melentyev_glasses: Ты хоть знаешь, кто мой отец?
+actor exit="fade" id="Nikita_Melentyev_glasses" show=false
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: Да хоть сам генсек! Это не дает тебе никакого права мусорить.
+Young_Father: Уважай людей, которые здесь убираются. Людей, которые проходят мимо и не хотят видеть здесь помойку.
+Young_Father: Или ты такой немощный, что не можешь поднять эту бутылку и нормально выбросить в мусорку?
+actor exit="fade" id="Young_Father" show=false
+Автор: Мелентьев-младший удивленно хлопает глазами, затем изумление на его лице сменяется каким-то хищным восторгом.
+set key="Music.Socialism" value=true
+Автор: Он начинает громко смеяться и хлопать в ладони. Затем кладет свою руку на плечо моего отца.
+actor enter="fade" id="Nikita_Melentyev_glasses" position="right" show=true sprite_url="/content/art/Nikita_Melentyev_glasses.png"
+Nikita_Melentyev_glasses: Ха-ха-ха!
+Nikita_Melentyev_glasses: А ты мне нравишься! Весь такой правильный и отважный!
+Nikita_Melentyev_glasses: Никто со мной так не разговаривал из чужих. Все передо мной стелятся, аж тошно…
+actor exit="fade" id="Nikita_Melentyev_glasses" show=false
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: ...
+actor exit="fade" id="Young_Father" show=false
+actor enter="fade" id="Nikita_Melentyev_glasses" position="right" show=true sprite_url="/content/art/Nikita_Melentyev_glasses.png"
+Nikita_Melentyev_glasses: Как я понял из вашей ссоры с этой прекрасной девушкой, ты не из ее круга?
+actor exit="fade" id="Nikita_Melentyev_glasses" show=false
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: ...
+actor exit="fade" id="Young_Father" show=false
+actor enter="fade" id="Nikita_Melentyev_glasses" position="right" show=true sprite_url="/content/art/Nikita_Melentyev_glasses.png"
+Nikita_Melentyev_glasses: И весь мир против вас… Ах, как же это драматично и романтично!
+Nikita_Melentyev_glasses: Ответь мне, смельчак, на один вопрос. На что ты готов ради нее?
+actor exit="fade" id="Nikita_Melentyev_glasses" show=false
+actor enter="fade" id="Young_Father" position="right" show=true sprite_url="/content/art/Young_Father.png"
+Young_Father: Абсолютно на все.
+actor exit="fade" id="Young_Father" show=false
+Автор: Никита снова хлопает моего отца по плечу и с видом покровителя отвечает ему:
+actor enter="fade" id="Nikita_Melentyev_glasses" position="right" show=true sprite_url="/content/art/Nikita_Melentyev_glasses.png"
+Nikita_Melentyev_glasses: Тогда держись меня, и она будет твоей.
+actor exit="fade" id="Nikita_Melentyev_glasses" show=false
+Главный герой: Ну вот я и увидела, как они познакомились.
+Автор: К горлу подступают слезы, потому что еще неосознанно я начинаю сопоставлять сон, который видела этой ночью, с тем, что только что вспомнила.
+Автор: И это осознание вышибает воздух из моих легких.
+bg id="Olesya_father_officedoor" sprite_url="/content/bg/Olesya_father_officedoor.jpg"
+set key="Music.Revelation" value=true
+Автор: Я тогда вернулась домой из школы, голова была полностью забита предстоящими экзаменами, но я не чувствовала никакой нервозности.
+Автор: В прихожей меня встретила мама, которая сказала, что к папе приехал его давний друг, поэтому мне не стоит их сейчас беспокоить.
+Автор: Я помнила Никиту Константиновича: я видела его раз в несколько лет, и каждый раз он был веселым, шумным, осыпал маму комплиментами и одаривал меня дорогими подарками мне не по возрасту.
+Автор: И сейчас, проходя мимо кабинета отца, через приоткрытую дверь краем уха я услышала разговор папы со своим старым другом.
+Автор: О котором, как оказалось, я почти ничего не знала.
+Главный герой: Я…
+- Не хотела подслушивать их разговор, это вышло случайно. -> n65_000000
+- Намеренно подслушала, потому что мне было любопытно. -> n66_000000
+:n65_000000
+Игрок: Не хотела подслушивать их разговор, это вышло случайно.
+:n67_000000
+Father: Они примут твое предложение, у них не осталось никакого другого выхода.
+actor enter="fade" id="Nikita_Melentyev_old" position="right" show=true sprite_url="/content/art/Nikita_Melentyev_old.png"
+Nikita_Melentyev_old: Знаю-знаю! Я их прижал!
+Nikita_Melentyev_old: Они могли договориться со мной по-хорошему, но брыкались изо всех сил.
+Nikita_Melentyev_old: Так что теперь им пришлось согласиться на совершенно невыгодные им условия, зато…
+Nikita_Melentyev_old: Зато у меня все в ажуре!
+actor exit="fade" id="Nikita_Melentyev_old" show=false
+Father: Ну я в тебе не сомневался, я же столько лет знаю, что ты за фрукт.
+Father: А как у тебя на личном фронте? Все так же безнадежно?
+actor enter="fade" id="Nikita_Melentyev_old" position="right" show=true sprite_url="/content/art/Nikita_Melentyev_old.png"
+Nikita_Melentyev_old: Да после Анжелики ты же знаешь… Ничего серьезного так и не было.
+Nikita_Melentyev_old: Мне не так повезло с женой как тебе, Дима.
+Nikita_Melentyev_old: Моя змея тогда еще из меня всю кровь выпила, после развода все делала для того, чтобы я сына почти не видел.
+Nikita_Melentyev_old: Хотя я ей оплачивал всю ее расточительную жизнь там. Где бы она была без меня?
+Nikita_Melentyev_old: Вернулась бы в свою дыру, из которой я ее вытащил, работала бы там кассиршей в супермаркете.
+Nikita_Melentyev_old: В общем, ну ее!
+Nikita_Melentyev_old: Нужно было мне сделать как ты: жениться по молодости по большой любви.
+Nikita_Melentyev_old: Но я кутил долго… А когда решил, что пора уже остепениться, обзавестись наследником… вот и попал в лапы этой хищнице.
+actor exit="fade" id="Nikita_Melentyev_old" show=false
+Father: Но ты же знаешь, сколько бед нам пришлось с Аней пережить, так что мы заплатили слишком большую цену за то, что мы вместе.
+actor enter="fade" id="Nikita_Melentyev_old" position="right" show=true sprite_url="/content/art/Nikita_Melentyev_old.png"
+Nikita_Melentyev_old: Знаю. Мне очень жаль… Такая трагедия, такая трагедия…
+actor exit="fade" id="Nikita_Melentyev_old" show=false
+Father: Ну, мы об этом стараемся не вспоминать. Хочется верить, что время лечит, но Аня до сих пор не оправилась.
+Father: Олеся ничего не знает и не должна узнать. Мы с Аней решили, что так будет лучше.
+actor enter="fade" id="Nikita_Melentyev_old" position="right" show=true sprite_url="/content/art/Nikita_Melentyev_old.png"
+Nikita_Melentyev_old: Интересно все-таки… как тогда сложилась бы ваша жизнь, если бы ты послушал меня и согласился бы на мое предложение?
+Nikita_Melentyev_old: Но ты был слишком правильным, мои методы казались тебе подлыми и грязными.
+Nikita_Melentyev_old: Тогда бы вы с Аней не оказались на Сахалине.
+Nikita_Melentyev_old: Все могло бы сложиться иначе.
+actor exit="fade" id="Nikita_Melentyev_old" show=false
+Father: У тебя хватает еще совести говорить мне об этом?
+actor enter="fade" id="Nikita_Melentyev_old" position="right" show=true sprite_url="/content/art/Nikita_Melentyev_old.png"
+Nikita_Melentyev_old: А у меня разве была когда-то совесть?
+actor exit="fade" id="Nikita_Melentyev_old" show=false
+Father: И то верно.
+Father: Но если бы судьба повела нас по другому пути, тогда бы у нас не было Олесеньки.
+Father: А я люблю ее больше всего на свете, убить за нее готов.
+Автор: Когда папа замолчал, а я недоумевала, о какой же трагедии он говорил, воцарилась мертвая тишина, длившаяся мучительно долго.
+Father: Ну а как там твой сын во Франции поживает?
+actor enter="fade" id="Nikita_Melentyev_old" position="right" show=true sprite_url="/content/art/Nikita_Melentyev_old.png"
+Nikita_Melentyev_old: Слушай! Я как раз хотел с тобой поговорить насчет него.
+actor exit="fade" id="Nikita_Melentyev_old" show=false
+Father: Со мной? О чем же?
+actor enter="fade" id="Nikita_Melentyev_old" position="right" show=true sprite_url="/content/art/Nikita_Melentyev_old.png"
+Nikita_Melentyev_old: В общем, он в этом году закончил Сорбонну. И так как он мой единственный наследник, я не хочу, чтобы он кутил так долго, как я.
+Nikita_Melentyev_old: Он унаследует мою компанию, я хочу уже сейчас вызвать его из Франции, чтобы начать вводить в курс дел.
+Nikita_Melentyev_old: Ему бы остепениться, а то подцепит какую-нибудь охотницу за состоянием без рода и без племени, как моя бывшая…
+Nikita_Melentyev_old: А он парень смышленый, везде душа компании, ну и красавец, все при нем!
+actor exit="fade" id="Nikita_Melentyev_old" show=false
+Father: К чему это ты клонишь?
+Автор: Дальше я не смогла дослушать, потому что мама позвала меня на кухню.
+bg id="Завод_снаружи" sprite_url="/content/bg/Завод_снаружи.jpg"
+set key="Music.Fight" value=true
+Автор: Сейчас же моя голова разрывалась от нового осознания.
+Главный герой: Тяжело, это слишком тяжело для меня. Это слишком. Почему я? Почему именно я?
+Автор: Ноги подкашиваются, в голове вакуум, я не слышу ничего вокруг, ничего не вижу, когда чувствую, что меня кто-то трясет за плечо.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Олеся, Олеся, что с тобой?
+Timur: Олеся?
+Timur: Дима уже ушел, Мелентьевы уехали, а ты этого словно не заметила…
+actor exit="fade" id="Timur" show=false
+Главный герой: Для меня это все слишком…
+- Не надо меня так трясти, Тимур! -> n68_000000
+- Просто мне не по себе… -> n69_000000
+- Просто я только что поняла, что вся моя жизнь была ложью! -> n70_000000
+- Я в порядке, Тимур… -> n71_000000
+:n68_000000
+Игрок: Не надо меня так трясти, Тимур!
+set expr="Way.rage + 1" key="Way.rage"
+Выбор пути: + вспыльчив ость.
+Главный герой: У меня голова раскалывается, а ты меня еще трясешь!
+:n72_000000
+Главный герой: Просто отведи меня в общежитие, пожалуйста.
+Главный герой: Я хочу в свою комнату. Хочу побыть в тишине и покое, упасть на кровать и обо всем подумать.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: Хорошо, Олеся…
+actor exit="fade" id="Timur" show=false
+bg id="Комната_Олеси_день" sprite_url="/content/bg/Комната_Олеси_день.jpg"
+Автор: Добравшись до своей комнаты, я упала на кровать и обняла подушку.
+Автор: Только прикрыла глаза…
+bg id="Скала_пасмурно" sprite_url="/content/bg/Скала_пасмурно.jpg"
+set key="Music.Sound_of_storm" value=true
+Главный герой: Я снова здесь? Но почему?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Просто потому что ты уснула.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Ты?! Снова ты!
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: А ты не рада меня видеть?
+actor exit="fade" id="Phobos" show=false
+Главный герой: ...
+- Ты меня совсем замучил! -> n73_000000
+- Именно сейчас я тебя рада видеть! -> n74_000000
+:n73_000000
+Игрок: Ты меня совсем замучил!
+set expr="Way.rage + 1" key="Way.rage"
+Выбор пути: + вспыльчив ость.
+Главный герой: Тебе нравится видеть, как я мучаюсь! Ты же мой страх! Ты питаешься моими страданиями.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Ты снова рубишь с плеча и спешишь с выводами.
+:n75_000000
+Phobos: Я хочу тебе помочь, но работа с твоим подсознанием очень сложна и кропотлива, а ты самонадеянна и опрометчива.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Тогда помоги мне. Будь настоящим проводником.
+Главный герой: Проведи меня по всем важным воспоминаниям.
+Главный герой: Оберегай меня и защищай. Я должна, должна узнать все, что пока от меня сокрыто.
+Главный герой: Потому что это мое прошлое, моя семья, моя жизнь.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Ты точно уверена, что готова узнать все?
+actor exit="fade" id="Phobos" show=false
+Автор: Я чувствую, что все внутри меня похолодело от вкрадчивого голоса Фобоса.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: У тебя и так весьма расшатанная психика, она просто не выдержит того, что ты можешь узнать.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Что может быть хуже того, что я узнала?
+Главный герой: Что?
+Главный герой: Мой отец хотел устроить мой брак с сыном своего друга.
+Главный герой: Но что-то пошло не так, меня с ним так и не познакомили.
+Главный герой: Но, видимо, этот Дэн наслушался рассказов обо мне, он следил за мной, отправился за мной в Корею, следовал там за мной повсюду, а потом…
+Главный герой: Потом…
+Автор: Сердце разрывается, слезы застилают глаза, все передо мной расплывается…
+Главный герой: И как я только раньше все это не поняла?
+Автор: Я закрываю глаза, сжавшись как маленький одинокий котенок, и начинаю дрожать.
+Главный герой: Холодно, как же холодно…
+Автор: Тогда происходит то, чего я не ожидала.
+Автор: Фобос подходит ко мне и обнимает меня. Объятие крепкое, успокаивающее, и… теплое?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Приготовься, ты сейчас упадешь в свое воспоминание.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Упаду?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Тьма, которую я сдерживаю, сейчас вырвется и поглотит тебя.
+actor exit="fade" id="Phobos" show=false
+bg id="Черный_фон" sprite_url="/content/bg/Черный_фон.jpg"
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Не бойся ее, она заберет твою боль и перенесет тебя к твоему воспоминанию.
+Phobos: Заберет всю твою боль, потому что то, что ты сейчас узнаешь, причинит тебе еще большие страдания.
+actor exit="fade" id="Phobos" show=false
+Главный герой: О чем ты?..
+Автор: Но Фобос не отвечает на мой вопрос.
+Автор: Он растворяется, а я чувствую, как тьма высасывает из меня всю печаль и все тревоги.
+Автор: Так спокойно…
+Автор: Я прикрываю глаза, я словно плыву в теплых водах бескрайнего океана.
+Автор: Все дальше и дальше, я словно забываю о том, как здесь оказалась и что ждет меня впереди…
+Автор: Но меня выбрасывает в мое воспоминание.
+bg id="Гостиная" sprite_url="/content/bg/Гостиная.jpg"
+set key="Music.Miracle" value=true
+Главный герой: Я снова дома?
+Главный герой: Как же удивительно видеть здесь все так четко…
+Главный герой: А то я уже стала забывать детали: что где стояло, и этот любимый мамой аромат лаванды, которую она привезла из Франции, высушила и ставила в букетах по всей квартире.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: А ты где думала оказаться?
+Phobos: Помни о главном правиле: ничего нельзя трогать и пытаться изменить, потому что это всего лишь твое воспоминание.
+Phobos: Так ты только себе навредишь.
+Phobos: Можно только смотреть и слушать.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Прямо как в музее.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Я вижу, тебе уже намного лучше, раз ты даже шутишь.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Просто так я пытаюсь справиться со страхом.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Помнишь, что было в этом воспоминании?
+actor exit="fade" id="Phobos" show=false
+Главный герой: Помню ли?
+- Да. -> n76_000000
+- Нет! -> n77_000000
+:n76_000000
+Игрок: Да.
+Главный герой: Я тогда вернулась домой после экзамена. До своей поездки в Южную Корею.
+Главный герой: Мамы дома не было. Зато я застала папу, который так был увлечен разговором по телефону, что не сразу меня заметил.
+Главный герой: Разговор был действительно странным.
+:n78_000000
+set key="Music.Fight" value=true
+Автор: Когда папа в сильном раздражении заходит в гостиную, с каким-то остервенением держа в руке телефон, я чуть не прячусь за шкаф.
+Father: ...
+Главный герой: Что это я? Он же меня все равно не видит.
+Автор: Голос папы гремит словно гром, от которого стены дома сотрясаются.
+Главный герой: С кем это он так ругается?
+Father: Под наркотой попал в аварию! С двумя эскортницами в машине!
+Father: Откуда я об этом узнал?! Ты что не знаешь, какие у меня везде связи?
+Father: Я уже давно не тот нищий мальчишка из детдома у тебя на подхвате!
+Father: Ты меня слышал? Я уничтожаю нашу договоренность, пусть он даже не смеет к ней приближаться!
+Главный герой: Папа хотел меня свести с сыном друга, а когда оказалось, что это абсолютный подонок, разорвал договоренность…
+- Как папа мог решать за меня такое? -> n79_000000
+- Папа пытался меня защитить… -> n80_000000
+:n79_000000
+Игрок: Как папа мог решать за меня такое?
+set key="Remember.Blame_father_1_18" value=true
+Выбор пути: Вы определили свое отношение к поступку отца!
+Главный герой: Он собирался продать меня богатенькому сыну друга!
+Главный герой: Из-за него этот психопат вообще узнал обо мне и стал меня преследовать!
+Главный герой: Если бы не мой отец, всего этого кошмара со мной бы не произошло!
+Главный герой: Почему я должна была расплачиваться за его грехи?!
+Автор: Гнев бурлит в моих венах, оглушает меня, и вот я уже забываю о главном правиле, которому должна следовать в путешествии по своим снам.
+Автор: Я подлетаю к отцу, хочу посмотреть ему в глаза и спросить его о том, как же он так мог распоряжаться моей жизнью…
+:n81_000000
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Что ты творишь, Олеся?!
+Phobos: Ты забыла?
+actor exit="fade" id="Phobos" show=false
+Автор: Прежде чем я успеваю навредить себе, Фобос вырастает из воздуха передо мной, подхватывает меня и уносит из воспоминания.
+bg id="Скала_пасмурно" sprite_url="/content/bg/Скала_пасмурно.jpg"
+set key="Music.Sound_of_storm" value=true
+Главный герой: Отпусти меня! Я должна туда вернуться!
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Хорошо, я тебя отпущу.
+actor exit="fade" id="Phobos" show=false
+Автор: Фобос, до этого держащий меня на руках над пляжем, выпускает меня из рук.
+Автор: Я падаю на песок, руки саднит от боли, порывистый соленый ветер треплет мои волосы, а я поднимаюсь на ноги и бросаюсь к Фобосу.
+Главный герой: Верни меня туда! Верни!
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Верну только тогда, когда ты остынешь.
+Phobos: Ты еще не готова узнать все остальное.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Что еще я должна такого узнать? Что может быть хуже этого?!
+Главный герой: Верни меня!
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Ты сейчас проснешься. Приготовься.
+actor exit="fade" id="Phobos" show=false
+Главный герой: Нет! Я не хочу просыпаться сейчас!
+Главный герой: Я хочу уже все узнать!
+Главный герой: И на этот раз ты меня не прогонишь!
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Так нельзя, Олеся!
+actor exit="fade" id="Phobos" show=false
+Главный герой: Это мои сны! Мои воспоминания!
+Главный герой: И только я тут решаю, как можно!
+bg id="Черный_фон" sprite_url="/content/bg/Черный_фон.jpg"
+Автор: Я не успеваю договорить все, что я хотела ему сказать, потому что проваливаюсь в темноту.
+-> __end
+:n80_000000
+Игрок: Папа пытался меня защитить…
+set key="Remember.Justify_father_1_18" value=true
+Выбор пути: Вы определили свое отношение к поступку отца!
+Главный герой: Папа очень меня любит и всегда хотел меня защитить…
+Главный герой: Видимо, он боялся, что я попадусь какому-нибудь охотнику за состоянием, поэтому решил устроить мой брак с сыном своего старого друга…
+Главный герой: Папа не мог и подумать, во что выльется это решение, но он до последнего пытался меня защитить…
+Главный герой: Сколько боли, сколько боли могут приносить наши решения, когда мы даже об этом и не подозреваем…
+Автор: Слезы застилают глаза, я уже забываю о главном правиле путешествия по снам, я просто иду к своему папе, чтобы обнять его.
+Главный герой: Папа…
+-> n81_000000
+:n77_000000
+Игрок: Нет!
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Совсем-совсем ничего не помнишь?
+actor exit="fade" id="Phobos" show=false
+Главный герой: С этой гостиной связано много воспоминаний. О чем конкретно, по-твоему, я должна сейчас вспомнить?
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Тогда смотри, раз уж такая упрямая.
+-> n78_000000
+:n74_000000
+actor exit="fade" id="Phobos" show=false
+Игрок: Именно сейчас я тебя рада видеть!
+set expr="Way.calmness + 1" key="Way.calmness"
+Выбор пути: + сдержанность.
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: С чего бы это, моя повелительница?
+actor exit="fade" id="Phobos" show=false
+Главный герой: Ого, как ты заговорил…
+-> n75_000000
+:n69_000000
+Игрок: Просто мне не по себе…
+set expr="Way.calmness + 1" key="Way.calmness"
+Выбор пути: + сдержанность.
+Главный герой: Голова кружится.
+-> n72_000000
+:n70_000000
+Игрок: Просто я только что поняла, что вся моя жизнь была ложью!
+set expr="Way.rage + 1" key="Way.rage"
+Выбор пути: + вспыльчиво сть.
+actor enter="fade" id="Timur" position="right" show=true sprite_url="/content/art/Тимур_Обычный.png"
+Timur: О чем ты, Олеся?
+-> n72_000000
+:n71_000000
+actor exit="fade" id="Timur" show=false
+Игрок: Я в порядке, Тимур…
+set expr="Way.calmness + 1" key="Way.calmness"
+Выбор пути: + сдержанность.
+Автор: Но я была совсем-совсем не в порядке.
+-> n72_000000
+:n66_000000
+Игрок: Намеренно подслушала, потому что мне было любопытно.
+-> n67_000000
+:n63_000000
+Игрок: Как же без драмы, когда столько обстоятельств против них?
+set expr="Way.Support_parents_1_11 + 1" key="Way.Support_parents_1_11"
+Выбор пути: Вы поддерживаете отношения родителей!
+Главный герой: Они такие молодые, а им уже приходится противостоять всему миру. Конечно же, им очень тяжело, но они борются…
+-> n64_000000
+:n60_000000
+actor enter="fade" id="Phobos" position="right" show=true sprite_url="/content/art/Phobos.jpg"
+Phobos: Ты хочешь сбросить его в этот водопад.
+Phobos: Смотреть, как он падает, представлять, как ломаются его кости.
+Phobos: Как его смазливое лицо разбивается в кровь.
+-> n61_000000
+:n57_000000
+actor exit="fade" id="Phobos" show=false
+Игрок: Сносно.
+set expr="Way.calmness + 1" key="Way.calmness"
+Выбор пути: + сдержанность.
+Главный герой: Я уже оправилась. Куда деваться?
+Главный герой: Но о таком нужно предупреждать!
+-> n58_000000
+:n53_000000
+if Remember.Relationships_Daniil_1_9 == true -> n82_000000
+-> n55_000000
+:n82_000000
+if Relationships.Daniil >= 12 -> n83_000000
+-> n55_000000
+:n83_000000
+set key="Music.Miracle" value=true
+Автор: Пока я наслаждаюсь умиротворяющей красотой, окружающей меня, думаю о том, что хочу разделить эти мгновения с человеком, который стал мне невероятно дорог.
+Главный герой: Вот бы сидеть под этими ветвями с Даней, слушать его спокойный голос, смотреть, как непослушные кудряшки спадают на его лоб…
+Главный герой: Умиляться от того, как он смущается и делает вид, что не замечает, как я хочу его поцеловать…
+Автор: Пока я все это представляю, чувствую, как мне невыносимо сильно хочется побыть с Даниилом. Прямо сейчас.
+Автор: Поэтому я поднимаюсь с удобного кресла и иду за ним.
+bg id="Коридор_общежития" sprite_url="/content/bg/Коридор_общежития.jpg"
+Автор: Но Даниила в его комнате я не нахожу.
+Главный герой: Неужели он все еще на работе?
+Автор: Я захожу в какой-то закуток и вижу приоткрытую дверь.
+Автор: Интуитивно открываю ее…
+bg id="Daniels_Darkroom" sprite_url="/content/bg/Daniels_Darkroom.jpg"
+set key="Music.Bustle" value=true
+Главный герой: Это же самая настоящая фотолаборатория!
+Автор: Красный свет лампы создает ощущение, будто я попала в какой-нибудь фильм ужасов, но фотографии, которые я вижу перед собой, погружают меня в самые светлые и счастливые воспоминания.
+Главный герой: Это мы на ВДНХ, на танцполе, в Кульпино, а это у Москвы-реки…
+Главный герой: Какие замечательные кадры поймал Даня…
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Нравится, Олеся?
+actor exit="fade" id="Daniil" show=false
+Главный герой: Ой! Ты меня напугал!
+Главный герой: Нельзя же так внезапно выскакивать из темного угла!
+set key="Music.Miracle" value=true
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Прости, Олеся… У тебя еще, наверное, нервы расшатаны из-за…
+actor exit="fade" id="Daniil" show=false
+Автор: Он осекается, словно не решается договорить то, что хотел сказать, чтобы меня не травмировать.
+Главный герой: Того, что мне пришлось побывать в психушке, и того, что я дважды чуть не погибла.
+Главный герой: Знаешь, я действительно иногда чувствую себя абсолютно потерянной и обессилевшей.
+Главный герой: Я не знаю, где мне место, в каком…
+Главный герой: Времени…
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Олеся…
+actor exit="fade" id="Daniil" show=false
+Автор: Даниил подходит ближе ко мне, заглядывая в мои глаза с трепетным сочувствием и множеством невысказанного, и нерешительно притягивает меня к себе за талию.
+Автор: И я ныряю в его объятия, словно только этого и ждала.
+Автор: Потому что я хочу почувствовать его тепло, услышать, как бьется его сердце, его размеренное дыхание над собой, хочу зарыться пальцами в его кудряшки…
+Главный герой: Не отпускай меня, любимый. Не отпускай…
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Я не хочу тебя отпускать, но и не могу лишить тебя свободы.
+Daniil: Если ты кого-то действительно любишь, и вы не можете быть вместе…
+Daniil: Тебе будет достаточно знать, что этот человек на своем месте и счастлив. Что жив и здоров.
+Daniil: Тебе будет этого достаточно.
+Daniil: Разве не в этом наивысший смысл любви? Любовь – это всегда жертвы, в ней нет места эгоизму.
+Daniil: Она дарит мир на сердце, хотя ее часто путают с болезненной одержимостью.
+Daniil: Это одержимость хочет любой ценой привязать к себе, даже когда это рушит чужие жизни и делает вас несчастными.
+Daniil: Это касается не только романтической любви, но и родственной, и дружеской.
+actor exit="fade" id="Daniil" show=false
+Главный герой: Какой же Даня мудрый…
+Главный герой: Значит, он действительно отпустил свою маму и простил ее.
+Главный герой: Но разве я смогу быть без тебя счастливой, Даня?
+Автор: Воцаряется тягостное молчание.
+Автор: Мой взгляд снова останавливается на развешанных фотографиях.
+Автор: Оторвавшись от Даниила, я подхожу ближе к фотографиям и протягиваю к ним руку.
+Главный герой: Ты поймал прекрасные кадры, Даня. Они наполнены жизнью и счастьем.
+Главный герой: И я здесь выгляжу очень органично.
+Главный герой: Словно именно рядом с вами мое место…
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Я рад, что тебе нравится.
+Daniil: Фотография – это моя отдушина.
+Daniil: Я сейчас как раз проявлял новые фотографии.
+Daniil: Можешь мне помочь, если хочешь.
+actor exit="fade" id="Daniil" show=false
+Главный герой: Но я не умею!
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Я тебя всему научу. Там ничего сложного.
+actor exit="fade" id="Daniil" show=false
+Автор: Он берет меня за руку и подводит к емкостям с реактивами.
+Автор: Когда мы рука в руке погружаем в реактивы фотографию, и я вижу, как проявляется изображение, чуть не подпрыгиваю в детском восторге.
+Главный герой: Это настоящее волшебство!
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Всего лишь химия в повседневной жизни.
+Daniil: А теперь повесим для просушки.
+actor exit="fade" id="Daniil" show=false
+Автор: Когда мы заканчиваем, я с гордостью смотрю на получившийся результат.
+Главный герой: Кто молодец? Я молодец!
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Ты молодец, Олеся.
+actor exit="fade" id="Daniil" show=false
+Автор: Словно о чем-то вспоминая, он уходит в другую часть комнаты и вскоре возвращается со своим фотоаппаратом в руках.
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Вот, я хотел подарить тебе…
+actor exit="fade" id="Daniil" show=false
+Главный герой: Но это же твой любимый «Зенит»… Я не могу его принять! Ты останешься без фотоаппарата…
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: У меня есть и другой.
+Daniil: Но да, этот мой любимый.
+Daniil: Но я уже подарил тебе свое сердце. Так что какой-то там фотоаппарат, это так… мелочь.
+actor exit="fade" id="Daniil" show=false
+Главный герой: Будешь учить меня им пользоваться.
+actor enter="fade" id="Daniil" position="right" show=true sprite_url="/content/art/Даниил_Обычный.png"
+Daniil: Обязательно.
+-> n55_000000
+:n50_000000
+actor exit="fade" id="Daniil" show=false
+Главный герой: Спасибо вам, Сталина Ильинична, за такую красоту.
+Главный герой: Наверное, очень приятно здесь сидеть и отдыхать после работы, читать книги под сенью деревьев, даже посреди зимы.
+actor enter="fade" id="Stalina" position="right" show=true sprite_url="/content/art/Сталина.png"
+Stalina: Не стесняйся, приходи сюда, когда только пожелаешь.
+actor exit="fade" id="Stalina" show=false
+Главный герой: Но почему ребята мне не рассказывали об этом прекрасном зимнем саде?
+actor enter="fade" id="Stalina" position="right" show=true sprite_url="/content/art/Сталина.png"
+Stalina: Не знаю, раньше они любили сюда заглядывать, но сейчас им, наверное, некогда.
+actor exit="fade" id="Stalina" show=false
+Главный герой: Я им напомню!
+-> n51_000000
+:n46_000000
+Игрок: Нет.
+set key="Open.ReOpenWardrobe" value=true
+-> n36_000000
+:n42_000000
+Игрок: [premium]Волны мечты.
+set key="Wardrobe.mainCh_Hair" value=183
+Главный герой: Супер!
+-> n44_000000
+:n43_000000
+Игрок: Не менять.
+set expr="Temp.saveMainChHair_beforeW" key="Wardrobe.mainCh_Hair"
+Главный герой: Я сейчас не в настроении что-то менять.
+-> n44_000000
+:n38_000000
+Игрок: [premium]Морячка.
+set key="Wardrobe.mainCh_Clothes" value=182
+Главный герой: Вот это красотища!
+-> n40_000000
+:n39_000000
+Игрок: [premium]Хозяйка Медной горы.
+set key="Wardrobe.mainCh_Clothes" value=183
+Главный герой: Вот это красотища!
+-> n40_000000
+:n34_000000
+Игрок: Глупо и наивно.
+Выбор пути: Вы не хотите поддерживать отношения своих родителей!
+Главный герой: Ну вот когда, когда первая детская влюбленность заканчивалась чем-то хорошим?
+Главный герой: Только в книжках и фильмах для девочек-подростков?
+-> n35_000000
+:n29_000000
+Главный герой: Напекла бы нам много-много вкусняшек!
+Главный герой: Если она без миксера постоянно нас балует, то что она могла бы напечь, если у нее был бы миксер?
+-> n30_000000
+:n27_000000
+Главный герой: Как бы я хотела подарить Любе миксер, но у меня почти нет денег…
+Главный герой: Эх, если бы я тогда взяла те деньги в милицейском участке, у меня сейчас была бы хорошая заначка.
+Главный герой: Что же делать?
+- Я обязательно что-нибудь придумаю! -> n84_000000
+- Да что уж тут поделать… -> n85_000000
+:n84_000000
+Игрок: [premium]Я обязательно что-нибудь придумаю!
+set key="Remember.MixerforLuba_1_18" value=true
+Главный герой: Ничего! Как-нибудь выкручусь, но у Любы будет миксер!
+Главный герой: Вот она обрадуется…
+-> n30_000000
+:n85_000000
+Игрок: Да что уж тут поделать…
+Главный герой: Ну Люба сама разберется.
+Главный герой: Все-таки взрослая девушка и гораздо более самостоятельная, чем я.
+-> n30_000000
+:n24_000000
+Игрок: Как ты можешь говорить такие жестокие вещи?
+set expr="Way.rage + 1" key="Way.rage"
+Выбор пути: + вспыльчивост ь.
+Главный герой: Хоть когда-то я давала знать, что так о тебе думаю?
+Главный герой: Что считаю себя лучше тебя?
+-> n25_000000
+:n21_000000
+Игрок: Мне очень жаль…
+set expr="Way.calmness + 1" key="Way.calmness"
+Выбор пути: + сдержанность.
+Главный герой: Люб, я не была уверена, что смогу что-то там узнать.
+Главный герой: Я не могла и представить, что встречу там этого американца.
+Главный герой: Но я поступила весьма самонадеянно.
+-> n22_000000
+:n18_000000
+Игрок: Мне на работе умереть что ли?
+set expr="Way.laziness + 1" key="Way.laziness"
+Выбор пути: + лен ь.
+Главный герой: Не хватало мне еще тут пасть нелепой смертью в погоне за похвалой своей начальницы .
+Главный герой: Все равно мне зарплату не повысят, я здесь вкалываю за три копейки, так что в лепешку расшибаться не обязана .
+Главный герой: Мое здоровье важнее, его мне никто не вернет. Да и мне нужно беречь силы для друзей и раскрытия тайн моей семьи.
+Главный герой: Так что я правильно расставила приоритеты.
+Главный герой: Нина Павловна, я все понимаю, но и вы меня поймите! Я слишком молода и прекрасна, чтобы убиваться на такой тяжелой работе за такую низкую оплату.
+Главный герой: Но так как жить мне все-таки на что-то надо, я буду работать, но не буду здесь рабыней.
+Автор: Нина Павловна не находит, что мне на это ответить, лишь несколько раз пораженно открывает и закрывает рот, и хлопает своими густо накрашенными ресницами.
+Nina_Pavlovna: Иди-иди, болтушка! Работай!
+-> n19_000000
+:n11_000000
+Игрок: Нет, не хочу донимать Тимура расспросами…
+-> n12_000000
+:n8_000000
+Игрок: Надо будет его потом отчитать за этот беспорядок!
+set expr="Way.rage + 1" key="Way.rage"
+Выбор пути: + вспыльчиво сть.
+Главный герой: Заставлю его там прибраться! А то так ведь кто-нибудь и покалечиться может!
+-> n9_000000
+:n5_000000
+set expr="Temp.saveMainChClothes" key="Wardrobe.mainCh_Clothes"
+set expr="Temp.saveMainChHair" key="Wardrobe.mainCh_Hair"
+-> n6_000000
+:n3_000000
+set expr="Temp.saveMainChClothes" key="Wardrobe.mainCh_Clothes"
+set expr="Temp.saveMainChHair" key="Wardrobe.mainCh_Hair"
+-> n6_000000
+:__end

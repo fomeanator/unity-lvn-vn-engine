@@ -1,5 +1,1010 @@
 {
   "sprites": {
+    "Agnia_Older": {
+      "layers": [
+        "/content/art/Agnia_Older.png"
+      ],
+      "name": "Agnia_Older"
+    },
+    "Agnia_Older_black": {
+      "layers": [
+        "/content/art/Артс14.jpg"
+      ],
+      "name": "Agnia_Older_black"
+    },
+    "Agnia_fairy": {
+      "layers": [
+        "/content/art/Agnia_fairy.png"
+      ],
+      "name": "Agnia_fairy"
+    },
+    "Agnia_young": {
+      "layers": [
+        "/content/art/Agnia_young.jpg"
+      ],
+      "name": "Agnia_young"
+    },
+    "Alesha": {
+      "layers": [
+        "/content/art/Алеша.png"
+      ],
+      "name": "Alesha"
+    },
+    "Alina": {
+      "layers": [
+        "/content/art/Alina.jpg"
+      ],
+      "name": "Alina"
+    },
+    "Alonso": {
+      "layers": [
+        "/content/art/Alonso.jpg"
+      ],
+      "name": "Alonso"
+    },
+    "Andrey": {
+      "layers": [
+        "/content/art/Андрей_Обычный.png"
+      ],
+      "name": "Andrey"
+    },
+    "Andrey_Axe": {
+      "layers": [
+        "/content/art/Andrey_Axe.png"
+      ],
+      "name": "Andrey_Axe"
+    },
+    "Andrey_bayan": {
+      "layers": [
+        "/content/art/Andrey_bayan.jpg"
+      ],
+      "name": "Andrey_bayan"
+    },
+    "Andrey_black": {
+      "layers": [
+        "/content/art/Артс20.jpg"
+      ],
+      "name": "Andrey_black"
+    },
+    "Andrey_child": {
+      "layers": [
+        "/content/art/Andrey_child.png"
+      ],
+      "name": "Andrey_child"
+    },
+    "Andrey_dirty_24": {
+      "layers": [
+        "/content/art/Andrey_dirty_24.png"
+      ],
+      "name": "Andrey_dirty_24"
+    },
+    "Andrey_forma_rana": {
+      "layers": [
+        "/content/art/Andrey_forma_rana.jpg"
+      ],
+      "name": "Andrey_forma_rana"
+    },
+    "Andrey_i_gun": {
+      "layers": [
+        "/content/art/Andrey_i_gun.jpg"
+      ],
+      "name": "Andrey_i_gun"
+    },
+    "Andrey_rucablood": {
+      "layers": [
+        "/content/art/Andrey_rucablood.jpg"
+      ],
+      "name": "Andrey_rucablood"
+    },
+    "Andrey_with_bandage": {
+      "layers": [
+        "/content/art/Andrey_with_bandage.png"
+      ],
+      "name": "Andrey_with_bandage"
+    },
+    "Ania_black": {
+      "layers": [
+        "/content/art/Ania_black.jpg"
+      ],
+      "name": "Ania_black"
+    },
+    "Ashrafi": {
+      "layers": [
+        "/content/art/Ashrafi.jpg"
+      ],
+      "name": "Ashrafi"
+    },
+    "Ashrafi_i_basket": {
+      "layers": [
+        "/content/art/Ashrafi_i_basket.jpg"
+      ],
+      "name": "Ashrafi_i_basket"
+    },
+    "Beat_paren": {
+      "layers": [
+        "/content/art/Beat_paren.jpg"
+      ],
+      "name": "Beat_paren"
+    },
+    "Borya": {
+      "layers": [
+        "/content/art/Боря.png"
+      ],
+      "name": "Borya"
+    },
+    "Borya_work_black": {
+      "layers": [
+        "/content/art/Borya_work_black.jpg"
+      ],
+      "name": "Borya_work_black"
+    },
+    "Boss_black": {
+      "layers": [
+        "/content/art/Boss_black.png"
+      ],
+      "name": "Boss_black"
+    },
+    "Bully": {
+      "layers": [
+        "/content/art/Bully.jpg"
+      ],
+      "name": "Bully"
+    },
+    "Calf": {
+      "layers": [
+        "/content/art/Calf.jpg"
+      ],
+      "name": "Calf"
+    },
+    "Cat": {
+      "layers": [
+        "/content/art/Cat.png"
+      ],
+      "name": "Cat"
+    },
+    "Child_Olesya": {
+      "layers": [
+        "/content/art/Child_Olesya.jpg"
+      ],
+      "name": "Child_Olesya"
+    },
+    "Child_Olesya_Cold": {
+      "layers": [
+        "/content/art/Артс4.jpg"
+      ],
+      "name": "Child_Olesya_Cold"
+    },
+    "Commandos": {
+      "layers": [
+        "/content/art/Commandos.jpg"
+      ],
+      "name": "Commandos"
+    },
+    "Crazy": {
+      "layers": [
+        "/content/art/Crazy.jpg"
+      ],
+      "name": "Crazy"
+    },
+    "Dali": {
+      "layers": [
+        "/content/art/Dali.jpg"
+      ],
+      "name": "Dali"
+    },
+    "Daniel_child": {
+      "layers": [
+        "/content/art/Daniel_child.jpg"
+      ],
+      "name": "Daniel_child"
+    },
+    "Daniil": {
+      "layers": [
+        "/content/art/Даниил_Обычный.png"
+      ],
+      "name": "Daniil"
+    },
+    "Daniil_black": {
+      "layers": [
+        "/content/art/Daniil_black.jpg"
+      ],
+      "name": "Daniil_black"
+    },
+    "Daniil_without_glasses": {
+      "layers": [
+        "/content/art/Daniil_without_glasses.png"
+      ],
+      "name": "Daniil_without_glasses"
+    },
+    "Den": {
+      "layers": [
+        "/content/art/Den.png"
+      ],
+      "name": "Den"
+    },
+    "Dog": {
+      "layers": [
+        "/content/art/Dog.png"
+      ],
+      "name": "Dog"
+    },
+    "Dragon": {
+      "layers": [
+        "/content/art/Dragon.jpg"
+      ],
+      "name": "Dragon"
+    },
+    "Driver": {
+      "layers": [
+        "/content/art/Driver.png"
+      ],
+      "name": "Driver"
+    },
+    "Dushman": {
+      "layers": [
+        "/content/art/Dushman.jpg"
+      ],
+      "name": "Dushman"
+    },
+    "Dushman_blood": {
+      "layers": [
+        "/content/art/Dushman_blood.jpg"
+      ],
+      "name": "Dushman_blood"
+    },
+    "Dushman_i_Vanya": {
+      "layers": [
+        "/content/art/Dushman_i_Vanya.jpg"
+      ],
+      "name": "Dushman_i_Vanya"
+    },
+    "Eleanor": {
+      "layers": [
+        "/content/art/Eleanor.png"
+      ],
+      "name": "Eleanor"
+    },
+    "Father_2": {
+      "layers": [
+        "/content/art/HDTguWwDdaw (1).jpg"
+      ],
+      "name": "Father_2"
+    },
+    "Father_3": {
+      "layers": [
+        "/content/art/dv_qVPrDh3o (1).jpg"
+      ],
+      "name": "Father_3"
+    },
+    "Father_fairy": {
+      "layers": [
+        "/content/art/Father_fairy.png"
+      ],
+      "name": "Father_fairy"
+    },
+    "Iraklii": {
+      "layers": [
+        "/content/art/Iraklii.jpg"
+      ],
+      "name": "Iraklii"
+    },
+    "Jamalia": {
+      "layers": [
+        "/content/art/Jamalia.jpg"
+      ],
+      "name": "Jamalia"
+    },
+    "John_lifeline": {
+      "layers": [
+        "/content/art/John_lifeline.jpg"
+      ],
+      "name": "John_lifeline"
+    },
+    "John_with_glasses": {
+      "layers": [
+        "/content/art/John_with_glasses.png"
+      ],
+      "name": "John_with_glasses"
+    },
+    "John_with_polaroid": {
+      "layers": [
+        "/content/art/John_with_polaroid.png"
+      ],
+      "name": "John_with_polaroid"
+    },
+    "Konstantin_Melentyev": {
+      "layers": [
+        "/content/art/Konstantin_Melentyev.png"
+      ],
+      "name": "Konstantin_Melentyev"
+    },
+    "Laboratory_assistant": {
+      "layers": [
+        "/content/art/Laboratory_assistant.png"
+      ],
+      "name": "Laboratory_assistant"
+    },
+    "Lilia_Igorevna": {
+      "layers": [
+        "/content/art/Lilia_Igorevna.jpg"
+      ],
+      "name": "Lilia_Igorevna"
+    },
+    "Little_Anya": {
+      "layers": [
+        "/content/art/Little_Anya.jpg"
+      ],
+      "name": "Little_Anya"
+    },
+    "Little_Olesya_summer": {
+      "layers": [
+        "/content/art/Little_Olesya_summer.png"
+      ],
+      "name": "Little_Olesya_summer"
+    },
+    "Lyuba": {
+      "layers": [
+        "/content/art/Люба_Обычная.png"
+      ],
+      "name": "Lyuba"
+    },
+    "Lyuba_ryingpan": {
+      "layers": [
+        "/content/art/Lyuba_ryingpan.jpg"
+      ],
+      "name": "Lyuba_ryingpan"
+    },
+    "Lyuda": {
+      "layers": [
+        "/content/art/Люда.png"
+      ],
+      "name": "Lyuda"
+    },
+    "Lyuda_Black": {
+      "layers": [
+        "/content/art/Lyuda_Black.jpg"
+      ],
+      "name": "Lyuda_Black"
+    },
+    "Lyuda_work_black": {
+      "layers": [
+        "/content/art/Lyuda_work_black.jpg"
+      ],
+      "name": "Lyuda_work_black"
+    },
+    "Makar": {
+      "layers": [
+        "/content/art/Makar.jpg"
+      ],
+      "name": "Makar"
+    },
+    "Marina": {
+      "layers": [
+        "/content/art/Марина_Обычная.png"
+      ],
+      "name": "Marina"
+    },
+    "Melentyevs_assistant": {
+      "layers": [
+        "/content/art/Melentyevs_assistant.png"
+      ],
+      "name": "Melentyevs_assistant"
+    },
+    "Men1": {
+      "layers": [
+        "/content/art/Men1.jpg"
+      ],
+      "name": "Men1"
+    },
+    "Men2": {
+      "layers": [
+        "/content/art/Men2.jpg"
+      ],
+      "name": "Men2"
+    },
+    "Milicioner_2": {
+      "layers": [
+        "/content/art/Milicioner_2.png"
+      ],
+      "name": "Milicioner_2"
+    },
+    "Miriam": {
+      "layers": [
+        "/content/art/Мириам.png"
+      ],
+      "name": "Miriam"
+    },
+    "Mother_2": {
+      "layers": [
+        "/content/art/E8LAbHj7OPY (1).jpg"
+      ],
+      "name": "Mother_2"
+    },
+    "Mother_Fairy": {
+      "layers": [
+        "/content/art/Mother_Fairy.png"
+      ],
+      "name": "Mother_Fairy"
+    },
+    "Nikita_Melentyev": {
+      "layers": [
+        "/content/art/Nikita_Melentyev.png"
+      ],
+      "name": "Nikita_Melentyev"
+    },
+    "Nikita_Melentyev_glasses": {
+      "layers": [
+        "/content/art/Nikita_Melentyev_glasses.png"
+      ],
+      "name": "Nikita_Melentyev_glasses"
+    },
+    "Nikita_Melentyev_old": {
+      "layers": [
+        "/content/art/Nikita_Melentyev_old.png"
+      ],
+      "name": "Nikita_Melentyev_old"
+    },
+    "Nonna": {
+      "layers": [
+        "/content/art/Nonna.png"
+      ],
+      "name": "Nonna"
+    },
+    "Olesya_sleeping": {
+      "layers": [
+        "/content/art/41P9RkIJ6w0 (1).jpg"
+      ],
+      "name": "Olesya_sleeping"
+    },
+    "Philosopher": {
+      "layers": [
+        "/content/art/Philosopher.png"
+      ],
+      "name": "Philosopher"
+    },
+    "Phobos": {
+      "layers": [
+        "/content/art/Phobos.jpg"
+      ],
+      "name": "Phobos"
+    },
+    "Praskovia": {
+      "layers": [
+        "/content/art/Praskovia.jpg"
+      ],
+      "name": "Praskovia"
+    },
+    "Raisa": {
+      "layers": [
+        "/content/art/Raisa.png"
+      ],
+      "name": "Raisa"
+    },
+    "Raisa_with_child": {
+      "layers": [
+        "/content/art/Raisa_with_child.png"
+      ],
+      "name": "Raisa_with_child"
+    },
+    "Sanitar": {
+      "layers": [
+        "/content/art/Санитар_Злой.png"
+      ],
+      "name": "Sanitar"
+    },
+    "Sanitar_2": {
+      "layers": [
+        "/content/art/Sanitar_2.png"
+      ],
+      "name": "Sanitar_2"
+    },
+    "Scientist": {
+      "layers": [
+        "/content/art/Scientist.png"
+      ],
+      "name": "Scientist"
+    },
+    "Seagull": {
+      "layers": [
+        "/content/art/krbWnsDK6BY (1).jpg"
+      ],
+      "name": "Seagull"
+    },
+    "Siegfried": {
+      "layers": [
+        "/content/art/Siegfried.png"
+      ],
+      "name": "Siegfried"
+    },
+    "Singer": {
+      "layers": [
+        "/content/art/Singer.png"
+      ],
+      "name": "Singer"
+    },
+    "Singer_black": {
+      "layers": [
+        "/content/art/Singer_black.png"
+      ],
+      "name": "Singer_black"
+    },
+    "Stalina": {
+      "layers": [
+        "/content/art/Сталина.png"
+      ],
+      "name": "Stalina"
+    },
+    "Starushka": {
+      "layers": [
+        "/content/art/Бабушка.png"
+      ],
+      "name": "Starushka"
+    },
+    "Svetlana_Ulanova": {
+      "layers": [
+        "/content/art/Svetlana_Ulanova.png"
+      ],
+      "name": "Svetlana_Ulanova"
+    },
+    "Tatyana_Gennadievna": {
+      "layers": [
+        "/content/art/Tatyana_Gennadievna.jpg"
+      ],
+      "name": "Tatyana_Gennadievna"
+    },
+    "Timur": {
+      "layers": [
+        "/content/art/Тимур_Обычный.png"
+      ],
+      "name": "Timur"
+    },
+    "Timur_Black": {
+      "layers": [
+        "/content/art/0b2af4802196e42d5e5f7e97b0bf2d04.jpg"
+      ],
+      "name": "Timur_Black"
+    },
+    "Timur_child": {
+      "layers": [
+        "/content/art/Timur_child.png"
+      ],
+      "name": "Timur_child"
+    },
+    "Timur_dirty_24": {
+      "layers": [
+        "/content/art/Timur_dirty_24.png"
+      ],
+      "name": "Timur_dirty_24"
+    },
+    "Vadim": {
+      "layers": [
+        "/content/art/Вадим_Обычный.png"
+      ],
+      "name": "Vadim"
+    },
+    "Valentin_Nikolaevich": {
+      "layers": [
+        "/content/art/Valentin_Nikolaevich_black.png"
+      ],
+      "name": "Valentin_Nikolaevich"
+    },
+    "Vanya": {
+      "layers": [
+        "/content/art/Vanya.jpg"
+      ],
+      "name": "Vanya"
+    },
+    "Vanya_rana": {
+      "layers": [
+        "/content/art/Vanya_rana.jpg"
+      ],
+      "name": "Vanya_rana"
+    },
+    "Victoria_Lisinskaya": {
+      "layers": [
+        "/content/art/Victoria_Lisinskaya.png"
+      ],
+      "name": "Victoria_Lisinskaya"
+    },
+    "Vladimir": {
+      "layers": [
+        "/content/art/Vladimir.jpg"
+      ],
+      "name": "Vladimir"
+    },
+    "Watchman": {
+      "layers": [
+        "/content/art/Watchman.jpg"
+      ],
+      "name": "Watchman"
+    },
+    "WorkerCap": {
+      "layers": [
+        "/content/art/WorkerCap.jpg"
+      ],
+      "name": "WorkerCap"
+    },
+    "Worker_Black1": {
+      "layers": [
+        "/content/art/Worker_Black1.jpg"
+      ],
+      "name": "Worker_Black1"
+    },
+    "Worker_Black2": {
+      "layers": [
+        "/content/art/Worker_Black2.jpg"
+      ],
+      "name": "Worker_Black2"
+    },
+    "Worker_Black3": {
+      "layers": [
+        "/content/art/Worker_Black3.jpg"
+      ],
+      "name": "Worker_Black3"
+    },
+    "Young_Father": {
+      "layers": [
+        "/content/art/Young_Father.png"
+      ],
+      "name": "Young_Father"
+    },
+    "Young_mother_clothes_2": {
+      "layers": [
+        "/content/art/Screenshot (4).png"
+      ],
+      "name": "Young_mother_clothes_2"
+    },
+    "Zoya": {
+      "layers": [
+        "/content/art/Зоя.png"
+      ],
+      "name": "Zoya"
+    },
+    "codel": {
+      "axes": {
+        "emotion": [
+          "neutral",
+          "happy",
+          "serious",
+          "annoyed",
+          "pout",
+          "sad",
+          "worried",
+          "nervous",
+          "shy",
+          "flustered"
+        ]
+      },
+      "defaults": {
+        "emotion": "neutral"
+      },
+      "kind": "layered",
+      "layers": [
+        {
+          "url": "/content/sprites/codel/{emotion}.png"
+        }
+      ],
+      "name": "Codel"
+    },
+    "codel_layered": {
+      "axes": {
+        "emotion": [
+          "neutral",
+          "happy",
+          "serious",
+          "annoyed",
+          "pout",
+          "sad",
+          "worried",
+          "nervous",
+          "shy",
+          "flustered"
+        ]
+      },
+      "defaults": {
+        "emotion": "neutral"
+      },
+      "kind": "layered",
+      "layers": [
+        {
+          "url": "/content/sprites/codel_layered/body.png"
+        },
+        {
+          "h": 0.11,
+          "url": "/content/sprites/codel_layered/face_{emotion}.png",
+          "w": 0.225,
+          "x": 0.33,
+          "y": 0.095
+        }
+      ],
+      "name": "Codel (слои)"
+    },
+    "goblin2": {
+      "anim": {
+        "attack": {
+          "duration": 0.3,
+          "loop": false,
+          "tracks": [
+            {
+              "axis": "pose",
+              "keys": [
+                [
+                  0,
+                  "attack_0"
+                ],
+                [
+                  0.1,
+                  "attack_1"
+                ],
+                [
+                  0.2,
+                  "attack_2"
+                ]
+              ],
+              "layer": "body",
+              "prop": "frame"
+            }
+          ]
+        },
+        "die": {
+          "duration": 1.5,
+          "loop": false,
+          "tracks": [
+            {
+              "axis": "pose",
+              "keys": [
+                [
+                  0,
+                  "death_0"
+                ],
+                [
+                  0.08,
+                  "death_1"
+                ],
+                [
+                  0.16,
+                  "death_2"
+                ],
+                [
+                  0.24,
+                  "death_3"
+                ],
+                [
+                  0.32,
+                  "death_4"
+                ],
+                [
+                  0.4,
+                  "death_5"
+                ],
+                [
+                  0.48,
+                  "death_6"
+                ],
+                [
+                  0.56,
+                  "death_7"
+                ],
+                [
+                  0.64,
+                  "death_8"
+                ],
+                [
+                  0.72,
+                  "death_9"
+                ],
+                [
+                  0.8,
+                  "death_10"
+                ],
+                [
+                  0.88,
+                  "death_11"
+                ],
+                [
+                  0.96,
+                  "death_12"
+                ],
+                [
+                  1.04,
+                  "death_13"
+                ],
+                [
+                  1.12,
+                  "death_14"
+                ],
+                [
+                  1.2,
+                  "death_15"
+                ],
+                [
+                  1.28,
+                  "death_16"
+                ],
+                [
+                  1.36,
+                  "death_17"
+                ],
+                [
+                  1.44,
+                  "death_18"
+                ]
+              ],
+              "layer": "body",
+              "prop": "frame"
+            }
+          ]
+        }
+      },
+      "defaults": {
+        "pose": "idle_0"
+      },
+      "kind": "rigged",
+      "layers": [
+        {
+          "id": "body",
+          "url": "/content/sprites/goblin2/{pose}.png"
+        }
+      ],
+      "name": "Гоблин"
+    },
+    "hero": {
+      "anim": {
+        "idle": {
+          "auto": "true",
+          "duration": 0.96,
+          "loop": true,
+          "tracks": [
+            {
+              "axis": "pose",
+              "keys": [
+                [
+                  0,
+                  "walk0"
+                ],
+                [
+                  0.12,
+                  "walk1"
+                ],
+                [
+                  0.24,
+                  "walk2"
+                ],
+                [
+                  0.36,
+                  "walk3"
+                ],
+                [
+                  0.48,
+                  "walk4"
+                ],
+                [
+                  0.6,
+                  "walk5"
+                ],
+                [
+                  0.72,
+                  "walk6"
+                ],
+                [
+                  0.84,
+                  "walk7"
+                ]
+              ],
+              "layer": "body",
+              "prop": "frame"
+            },
+            {
+              "axis": "pose",
+              "keys": [
+                [
+                  0,
+                  "walk0"
+                ],
+                [
+                  0.12,
+                  "walk1"
+                ],
+                [
+                  0.24,
+                  "walk2"
+                ],
+                [
+                  0.36,
+                  "walk3"
+                ],
+                [
+                  0.48,
+                  "walk4"
+                ],
+                [
+                  0.6,
+                  "walk5"
+                ],
+                [
+                  0.72,
+                  "walk6"
+                ],
+                [
+                  0.84,
+                  "walk7"
+                ]
+              ],
+              "layer": "armor",
+              "prop": "frame"
+            },
+            {
+              "axis": "pose",
+              "keys": [
+                [
+                  0,
+                  "walk0"
+                ],
+                [
+                  0.12,
+                  "walk1"
+                ],
+                [
+                  0.24,
+                  "walk2"
+                ],
+                [
+                  0.36,
+                  "walk3"
+                ],
+                [
+                  0.48,
+                  "walk4"
+                ],
+                [
+                  0.6,
+                  "walk5"
+                ],
+                [
+                  0.72,
+                  "walk6"
+                ],
+                [
+                  0.84,
+                  "walk7"
+                ]
+              ],
+              "layer": "weapon",
+              "prop": "frame"
+            }
+          ]
+        }
+      },
+      "axes": {
+        "armor": [
+          "leather",
+          "chain"
+        ],
+        "weapon": [
+          "sword",
+          "heavy"
+        ]
+      },
+      "defaults": {
+        "pose": "walk0"
+      },
+      "kind": "rigged",
+      "layers": [
+        {
+          "id": "body",
+          "url": "/content/sprites/hero/body_{pose}.png"
+        },
+        {
+          "id": "armor",
+          "url": "/content/sprites/hero/armor_{armor}_{pose}.png"
+        },
+        {
+          "id": "weapon",
+          "url": "/content/sprites/hero/weapon_{weapon}_{pose}.png"
+        }
+      ],
+      "name": "Странник"
+    },
     "mara": {
       "anim": {
         "idle": {
@@ -105,353 +1110,58 @@
         "/content/bg/porch.jpg"
       ]
     },
-    "codel": {
-      "name": "Codel",
-      "layers": [
-        {
-          "url": "/content/sprites/codel/{emotion}.png"
-        }
-      ],
-      "defaults": {
-        "emotion": "neutral"
-      },
-      "axes": {
-        "emotion": [
-          "neutral",
-          "happy",
-          "serious",
-          "annoyed",
-          "pout",
-          "sad",
-          "worried",
-          "nervous",
-          "shy",
-          "flustered"
-        ]
-      },
-      "kind": "layered"
-    },
-    "codel_layered": {
-      "name": "Codel (слои)",
-      "layers": [
-        {
-          "url": "/content/sprites/codel_layered/body.png"
-        },
-        {
-          "url": "/content/sprites/codel_layered/face_{emotion}.png",
-          "x": 0.33,
-          "y": 0.095,
-          "w": 0.225,
-          "h": 0.11
-        }
-      ],
-      "defaults": {
-        "emotion": "neutral"
-      },
-      "axes": {
-        "emotion": [
-          "neutral",
-          "happy",
-          "serious",
-          "annoyed",
-          "pout",
-          "sad",
-          "worried",
-          "nervous",
-          "shy",
-          "flustered"
-        ]
-      },
-      "kind": "layered"
-    },
-    "goblin2": {
-      "name": "Гоблин",
-      "kind": "rigged",
-      "layers": [
-        {
-          "id": "body",
-          "url": "/content/sprites/goblin2/{pose}.png"
-        }
-      ],
-      "defaults": {
-        "pose": "idle_0"
-      },
+    "skeleton": {
       "anim": {
-        "attack": {
-          "loop": false,
-          "duration": 0.3,
+        "idle": {
+          "auto": "true",
+          "duration": 0.96,
+          "loop": true,
           "tracks": [
             {
-              "layer": "body",
-              "prop": "frame",
               "axis": "pose",
               "keys": [
                 [
                   0,
-                  "attack_0"
+                  "walk0"
                 ],
                 [
-                  0.1,
-                  "attack_1"
-                ],
-                [
-                  0.2,
-                  "attack_2"
-                ]
-              ]
-            }
-          ]
-        },
-        "die": {
-          "loop": false,
-          "duration": 1.5,
-          "tracks": [
-            {
-              "layer": "body",
-              "prop": "frame",
-              "axis": "pose",
-              "keys": [
-                [
-                  0,
-                  "death_0"
-                ],
-                [
-                  0.08,
-                  "death_1"
-                ],
-                [
-                  0.16,
-                  "death_2"
+                  0.12,
+                  "walk1"
                 ],
                 [
                   0.24,
-                  "death_3"
+                  "walk2"
                 ],
                 [
-                  0.32,
-                  "death_4"
-                ],
-                [
-                  0.4,
-                  "death_5"
+                  0.36,
+                  "walk3"
                 ],
                 [
                   0.48,
-                  "death_6"
+                  "walk4"
                 ],
                 [
-                  0.56,
-                  "death_7"
-                ],
-                [
-                  0.64,
-                  "death_8"
+                  0.6,
+                  "walk5"
                 ],
                 [
                   0.72,
-                  "death_9"
+                  "walk6"
                 ],
                 [
-                  0.8,
-                  "death_10"
-                ],
-                [
-                  0.88,
-                  "death_11"
-                ],
-                [
-                  0.96,
-                  "death_12"
-                ],
-                [
-                  1.04,
-                  "death_13"
-                ],
-                [
-                  1.12,
-                  "death_14"
-                ],
-                [
-                  1.2,
-                  "death_15"
-                ],
-                [
-                  1.28,
-                  "death_16"
-                ],
-                [
-                  1.36,
-                  "death_17"
-                ],
-                [
-                  1.44,
-                  "death_18"
+                  0.84,
+                  "walk7"
                 ]
-              ]
+              ],
+              "layer": "body",
+              "prop": "frame"
             }
           ]
         }
-      }
-    },
-    "hero": {
-      "name": "Странник",
-      "kind": "rigged",
-      "layers": [
-        {
-          "id": "body",
-          "url": "/content/sprites/hero/body_{pose}.png"
-        },
-        {
-          "id": "armor",
-          "url": "/content/sprites/hero/armor_{armor}_{pose}.png"
-        },
-        {
-          "id": "weapon",
-          "url": "/content/sprites/hero/weapon_{weapon}_{pose}.png"
-        }
-      ],
-      "axes": {
-        "armor": [
-          "leather",
-          "chain"
-        ],
-        "weapon": [
-          "sword",
-          "heavy"
-        ]
       },
       "defaults": {
         "pose": "walk0"
       },
-      "anim": {
-        "idle": {
-          "loop": true,
-          "auto": "true",
-          "duration": 0.96,
-          "tracks": [
-            {
-              "layer": "body",
-              "prop": "frame",
-              "axis": "pose",
-              "keys": [
-                [
-                  0.0,
-                  "walk0"
-                ],
-                [
-                  0.12,
-                  "walk1"
-                ],
-                [
-                  0.24,
-                  "walk2"
-                ],
-                [
-                  0.36,
-                  "walk3"
-                ],
-                [
-                  0.48,
-                  "walk4"
-                ],
-                [
-                  0.6,
-                  "walk5"
-                ],
-                [
-                  0.72,
-                  "walk6"
-                ],
-                [
-                  0.84,
-                  "walk7"
-                ]
-              ]
-            },
-            {
-              "layer": "armor",
-              "prop": "frame",
-              "axis": "pose",
-              "keys": [
-                [
-                  0.0,
-                  "walk0"
-                ],
-                [
-                  0.12,
-                  "walk1"
-                ],
-                [
-                  0.24,
-                  "walk2"
-                ],
-                [
-                  0.36,
-                  "walk3"
-                ],
-                [
-                  0.48,
-                  "walk4"
-                ],
-                [
-                  0.6,
-                  "walk5"
-                ],
-                [
-                  0.72,
-                  "walk6"
-                ],
-                [
-                  0.84,
-                  "walk7"
-                ]
-              ]
-            },
-            {
-              "layer": "weapon",
-              "prop": "frame",
-              "axis": "pose",
-              "keys": [
-                [
-                  0.0,
-                  "walk0"
-                ],
-                [
-                  0.12,
-                  "walk1"
-                ],
-                [
-                  0.24,
-                  "walk2"
-                ],
-                [
-                  0.36,
-                  "walk3"
-                ],
-                [
-                  0.48,
-                  "walk4"
-                ],
-                [
-                  0.6,
-                  "walk5"
-                ],
-                [
-                  0.72,
-                  "walk6"
-                ],
-                [
-                  0.84,
-                  "walk7"
-                ]
-              ]
-            }
-          ]
-        }
-      }
-    },
-    "skeleton": {
-      "name": "Скелет",
       "kind": "rigged",
       "layers": [
         {
@@ -459,57 +1169,7 @@
           "url": "/content/sprites/skeleton/skel_{pose}.png"
         }
       ],
-      "defaults": {
-        "pose": "walk0"
-      },
-      "anim": {
-        "idle": {
-          "loop": true,
-          "auto": "true",
-          "duration": 0.96,
-          "tracks": [
-            {
-              "layer": "body",
-              "prop": "frame",
-              "axis": "pose",
-              "keys": [
-                [
-                  0.0,
-                  "walk0"
-                ],
-                [
-                  0.12,
-                  "walk1"
-                ],
-                [
-                  0.24,
-                  "walk2"
-                ],
-                [
-                  0.36,
-                  "walk3"
-                ],
-                [
-                  0.48,
-                  "walk4"
-                ],
-                [
-                  0.6,
-                  "walk5"
-                ],
-                [
-                  0.72,
-                  "walk6"
-                ],
-                [
-                  0.84,
-                  "walk7"
-                ]
-              ]
-            }
-          ]
-        }
-      }
+      "name": "Скелет"
     }
   },
   "titles": [
@@ -550,17 +1210,3363 @@
       "subtitle": "Не новелла: кликабельные хотспоты + состояние"
     },
     {
-      "cover_url": "/content/bg/Cemetery.jpg",
+      "cover_url": "/content/bg/Двор.jpg",
       "id": "soviet",
       "name": "Советское воспитание",
       "seasons": [
         {
           "chapters": [
             {
-              "bg_url": "/content/bg/Cemetery.jpg",
-              "id": "soviet-ch1",
+              "assets": {
+                "/content/art/Андрей_Обычный.png": {
+                  "eta_ms": 4320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Бабушка.png": {
+                  "eta_ms": 2120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Вадим_Обычный.png": {
+                  "eta_ms": 1160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 4200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "eta_ms": 4120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Марина_Обычная.png": {
+                  "eta_ms": 280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 4080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/БМВ_деревня.jpg": {
+                  "eta_ms": 1720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/БМВ_у_моря.jpg": {
+                  "eta_ms": 1120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Вода.jpg": {
+                  "eta_ms": 3800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Гостиная.jpg": {
+                  "eta_ms": 120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Гостиная_Марины.jpg": {
+                  "eta_ms": 360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Двор.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Дорога_без_жигулей.jpg": {
+                  "eta_ms": 4000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Жигули_у_дороги.jpg": {
+                  "eta_ms": 4040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Закат.jpg": {
+                  "eta_ms": 3880,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Машина_Новороссийск.jpg": {
+                  "eta_ms": 6280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Ночная_дорога.jpg": {
+                  "eta_ms": 4920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Пещера.jpg": {
+                  "eta_ms": 3160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Площадь_торговая.jpg": {
+                  "eta_ms": 1920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Прихожая.jpg": {
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Спальня.jpg": {
+                  "eta_ms": 160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Двор.jpg",
+              "id": "soviet-ch01",
+              "name": "Эпизод 1. Побег из дома.",
               "number": 1,
-              "script_url": "/content/scripts/soviet.lvn"
+              "script_url": "/content/scripts/soviet-ch01.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Driver.png": {
+                  "eta_ms": 4360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Men1.jpg": {
+                  "eta_ms": 3520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Men2.jpg": {
+                  "eta_ms": 3560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Milicioner_2.png": {
+                  "eta_ms": 4880,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Дежурная_часть.jpg": {
+                  "eta_ms": 680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Машина_Новороссийск.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Милиция_снаружи.jpg": {
+                  "eta_ms": 600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Ресторан.jpg": {
+                  "eta_ms": 1480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Ресторан_разбитый.jpg": {
+                  "eta_ms": 3480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Ресторан_снаружи.jpg": {
+                  "eta_ms": 3920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Ресторан_снаружи_машина.jpg": {
+                  "eta_ms": 4200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Ресторан_снаружи_скорая.jpg": {
+                  "eta_ms": 5560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скамейка_порт.jpg": {
+                  "eta_ms": 4400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скорая_внутри.jpg": {
+                  "eta_ms": 5920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Столик.jpg": {
+                  "eta_ms": 1720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Столик_еда.jpg": {
+                  "eta_ms": 2920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Машина_Новороссийск.jpg",
+              "id": "soviet-ch02",
+              "name": "Эпизод 2. Гостья из будущего.",
+              "number": 2,
+              "script_url": "/content/scripts/soviet-ch02.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Crazy.jpg": {
+                  "eta_ms": 5560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Sanitar_2.png": {
+                  "eta_ms": 560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "critical": true,
+                  "eta_ms": 120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Санитар_Злой.png": {
+                  "eta_ms": 520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Больница_снаружи.jpg": {
+                  "eta_ms": 680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Внутри_пивной.jpg": {
+                  "eta_ms": 2560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Ворота.jpg": {
+                  "eta_ms": 1160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Ворота_чайка.jpg": {
+                  "eta_ms": 1640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Машина_стена.jpg": {
+                  "eta_ms": 2200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Море.jpg": {
+                  "eta_ms": 4600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Набережная.jpg": {
+                  "eta_ms": 1760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Окно_дурки.jpg": {
+                  "eta_ms": 240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Окно_открыто.jpg": {
+                  "eta_ms": 360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Окно_чайка.jpg": {
+                  "eta_ms": 280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Палата.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скала.jpg": {
+                  "eta_ms": 4440,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Столовая_психушки.jpg": {
+                  "eta_ms": 600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Палата.jpg",
+              "id": "soviet-ch03",
+              "name": "Эпизод 3. И тебя вылечат.",
+              "number": 3,
+              "script_url": "/content/scripts/soviet-ch03.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Lyuda_Black.jpg": {
+                  "eta_ms": 2520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "eta_ms": 1120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Боря.png": {
+                  "eta_ms": 720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 1280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люда.png": {
+                  "eta_ms": 600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 1160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Двор_общаги.jpg": {
+                  "eta_ms": 5320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Душевая.jpg": {
+                  "eta_ms": 1080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_день.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_одеяло_на_полу.jpg": {
+                  "eta_ms": 200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Коридор_общежития.jpg": {
+                  "eta_ms": 4640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кухня_общаги.jpg": {
+                  "eta_ms": 2600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Окно_в_коридоре.jpg": {
+                  "eta_ms": 4680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/У_двери_в_душевую.jpg": {
+                  "eta_ms": 560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Комната_Олеси_день.jpg",
+              "id": "soviet-ch04",
+              "name": "Эпизод 4. Жилищный вопрос.",
+              "number": 4,
+              "script_url": "/content/scripts/soviet-ch04.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/WorkerCap.jpg": {
+                  "eta_ms": 2240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Worker_Black1.jpg": {
+                  "eta_ms": 2120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Worker_Black2.jpg": {
+                  "eta_ms": 2160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Worker_Black3.jpg": {
+                  "eta_ms": 2200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Завод_снаружи.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кухня_завода.jpg": {
+                  "eta_ms": 600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Подсобка.jpg": {
+                  "eta_ms": 760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Сварочный_цех.jpg": {
+                  "eta_ms": 2520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Столовая_за_раздаточной.jpg": {
+                  "eta_ms": 1960,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Установка.jpg": {
+                  "eta_ms": 2560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Завод_снаружи.jpg",
+              "id": "soviet-ch05",
+              "name": "Эпизод 5. Ударница труда.",
+              "number": 5,
+              "script_url": "/content/scripts/soviet-ch05.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Андрей_Обычный.png": {
+                  "eta_ms": 4760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 2080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люда.png": {
+                  "eta_ms": 3760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Марина_Обычная.png": {
+                  "eta_ms": 440,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Мириам.png": {
+                  "eta_ms": 2920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Сталина.png": {
+                  "eta_ms": 3800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 4120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Двор_общаги.jpg": {
+                  "eta_ms": 3680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси.jpg": {
+                  "eta_ms": 3920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Тимура.jpg": {
+                  "eta_ms": 4680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Коридор_завода.jpg": {
+                  "eta_ms": 1960,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Коридор_общаги.jpg": {
+                  "eta_ms": 4360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кухня_общаги.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кухня_столовой.jpg": {
+                  "eta_ms": 1720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Лаборатория_Даниила.jpg": {
+                  "eta_ms": 2000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Околоток_лаборатории.jpg": {
+                  "eta_ms": 2040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Фойе_общаги.jpg": {
+                  "eta_ms": 3720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Кухня_общаги.jpg",
+              "id": "soviet-ch06",
+              "name": "Эпизод 6. Новая жизнь.",
+              "number": 6,
+              "script_url": "/content/scripts/soviet-ch06.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Алеша.png": {
+                  "eta_ms": 1360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Зоя.png": {
+                  "eta_ms": 1320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Автоматы_газировка.jpg": {
+                  "eta_ms": 2520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/ВДНХ.jpg": {
+                  "eta_ms": 1280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Двор_общаги.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кафе_мороженое.jpg": {
+                  "eta_ms": 4800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Ночной_парк.jpg": {
+                  "eta_ms": 6400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Павильон_внутри.jpg": {
+                  "eta_ms": 3880,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Танцплощадка.jpg": {
+                  "eta_ms": 5840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/У_павильона.jpg": {
+                  "eta_ms": 3640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Двор_общаги.jpg",
+              "id": "soviet-ch07",
+              "name": "Эпизод 7. Променад на ВДНХ.",
+              "number": 7,
+              "script_url": "/content/scripts/soviet-ch07.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/0b2af4802196e42d5e5f7e97b0bf2d04.jpg": {
+                  "eta_ms": 5000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Andrey_child.png": {
+                  "eta_ms": 2080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Cat.png": {
+                  "eta_ms": 920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Dog.png": {
+                  "eta_ms": 2760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Eleanor.png": {
+                  "eta_ms": 320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/John_with_glasses.png": {
+                  "eta_ms": 4040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/John_with_polaroid.png": {
+                  "eta_ms": 4880,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Laboratory_assistant.png": {
+                  "eta_ms": 7600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Timur_child.png": {
+                  "eta_ms": 2120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "eta_ms": 6000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Сталина.png": {
+                  "eta_ms": 880,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Автоматы_газировка.jpg": {
+                  "eta_ms": 4000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/ВДНХ.jpg": {
+                  "eta_ms": 1560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Гостиная_Философа.jpg": {
+                  "eta_ms": 400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Двор_общаги.jpg": {
+                  "eta_ms": 5800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кафе_мороженое.jpg": {
+                  "eta_ms": 4520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_день.jpg": {
+                  "eta_ms": 6200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Коридор_дым.jpg": {
+                  "eta_ms": 7680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Коридор_завода.jpg": {
+                  "eta_ms": 7560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Коридор_общежития.jpg": {
+                  "eta_ms": 5960,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Подъезд_Философа.jpg": {
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скала_пасмурно.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Фойе_общаги.jpg": {
+                  "eta_ms": 760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Фонтан.jpg": {
+                  "eta_ms": 4960,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Фонтан_брызги.jpg": {
+                  "eta_ms": 5200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Скала_пасмурно.jpg",
+              "id": "soviet-ch08",
+              "name": "Эпизод 8. Фарца и череда неудач.",
+              "number": 8,
+              "script_url": "/content/scripts/soviet-ch08.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Child_Olesya.jpg": {
+                  "eta_ms": 5920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Lilia_Igorevna.jpg": {
+                  "eta_ms": 1840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "eta_ms": 1400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Артс4.jpg": {
+                  "eta_ms": 6120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "eta_ms": 240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люда.png": {
+                  "eta_ms": 4800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 1200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Гостиная_Флешбек.jpg": {
+                  "eta_ms": 5840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Душевая_в_общежитии.jpg": {
+                  "eta_ms": 200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Зал_ДК_украшенный.jpg": {
+                  "eta_ms": 1800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Зимний_парк_и_пруд.jpg": {
+                  "eta_ms": 5880,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси.jpg": {
+                  "eta_ms": 800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_ночь.jpg": {
+                  "eta_ms": 7320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_цветы.jpg": {
+                  "eta_ms": 6480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Коридор_дым.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Отдел_игрушек.jpg": {
+                  "eta_ms": 3960,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Коридор_дым.jpg",
+              "id": "soviet-ch09",
+              "name": "Эпизод 9. Семья новая и старая.",
+              "number": 9,
+              "script_url": "/content/scripts/soviet-ch09.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Andrey_forma_rana.jpg": {
+                  "eta_ms": 3480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Andrey_i_gun.jpg": {
+                  "eta_ms": 8320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Andrey_rucablood.jpg": {
+                  "eta_ms": 7840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Ashrafi.jpg": {
+                  "eta_ms": 4400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Ashrafi_i_basket.jpg": {
+                  "eta_ms": 6440,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Beat_paren.jpg": {
+                  "eta_ms": 1840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Bully.jpg": {
+                  "eta_ms": 1880,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Dushman.jpg": {
+                  "eta_ms": 4760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Dushman_blood.jpg": {
+                  "eta_ms": 6840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Dushman_i_Vanya.jpg": {
+                  "eta_ms": 6920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Vanya.jpg": {
+                  "eta_ms": 2560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Vanya_rana.jpg": {
+                  "eta_ms": 3560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "eta_ms": 1120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "eta_ms": 920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 1320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Дорога_и_перевернувшийся_грузовик.jpg": {
+                  "eta_ms": 3360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кабинет_Тимура.jpg": {
+                  "eta_ms": 1280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Казарма.jpg": {
+                  "eta_ms": 2520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кишлак_ночью.jpg": {
+                  "eta_ms": 7720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кухня_завода.jpg": {
+                  "eta_ms": 880,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Лаборатория_Даниила.jpg": {
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Пещера_в_горах_и_утро.jpg": {
+                  "eta_ms": 8040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Сарай_в_кишлаке.jpg": {
+                  "eta_ms": 3440,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Сарай_в_кишлаке_ночью.jpg": {
+                  "eta_ms": 6080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Сварочный_цех.jpg": {
+                  "eta_ms": 1040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скала_пасмурно.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скамья_у_танцпола.jpg": {
+                  "eta_ms": 2080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Танцпол.jpg": {
+                  "eta_ms": 1720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Установка_в_цеху.jpg": {
+                  "eta_ms": 1080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Скала_пасмурно.jpg",
+              "id": "soviet-ch10",
+              "name": "Эпизод 10. Исповедь солдата.",
+              "number": 10,
+              "script_url": "/content/scripts/soviet-ch10.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Agnia_Older.png": {
+                  "eta_ms": 640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Agnia_fairy.png": {
+                  "eta_ms": 1800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Cat.png": {
+                  "eta_ms": 440,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Daniil_without_glasses.png": {
+                  "eta_ms": 4640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Father_fairy.png": {
+                  "eta_ms": 1880,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Little_Olesya_summer.png": {
+                  "eta_ms": 1120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Mother_Fairy.png": {
+                  "eta_ms": 1920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Screenshot (4).png": {
+                  "eta_ms": 1160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/WorkerCap.jpg": {
+                  "eta_ms": 320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Young_Father.png": {
+                  "eta_ms": 760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "eta_ms": 2600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Артс14.jpg": {
+                  "eta_ms": 1000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Артс20.jpg": {
+                  "eta_ms": 3680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 2720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "eta_ms": 200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 2640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Двор_общаги.jpg": {
+                  "eta_ms": 2560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси.jpg": {
+                  "eta_ms": 560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кухня_завода.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Лестничная_площадка.jpg": {
+                  "eta_ms": 600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Лестничная_площалка.jpg": {
+                  "eta_ms": 2520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Луг_и_Москва-река.jpg": {
+                  "eta_ms": 2760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Морской_дворец.jpg": {
+                  "eta_ms": 1760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Москва-река_и_пляж.jpg": {
+                  "eta_ms": 3000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Подсобка.jpg": {
+                  "eta_ms": 160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Раздаточная.jpg": {
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скала_у_моря.jpg": {
+                  "eta_ms": 1080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Фойе_общаги.jpg": {
+                  "eta_ms": 400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Кухня_завода.jpg",
+              "id": "soviet-ch11",
+              "name": "Эпизод 11. Долгожданное воссоединение.",
+              "number": 11,
+              "script_url": "/content/scripts/soviet-ch11.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Agnia_young.jpg": {
+                  "eta_ms": 4080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Alonso.jpg": {
+                  "eta_ms": 4800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Cat.png": {
+                  "eta_ms": 760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Laboratory_assistant.png": {
+                  "eta_ms": 7360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Lilia_Igorevna.jpg": {
+                  "eta_ms": 2880,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Little_Anya.jpg": {
+                  "eta_ms": 4400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Phobos.jpg": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Vladimir.jpg": {
+                  "eta_ms": 4120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Young_Father.png": {
+                  "eta_ms": 3720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 2520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "eta_ms": 640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 1600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Бар.jpg": {
+                  "eta_ms": 5240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Двор_общаги.jpg": {
+                  "eta_ms": 3920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Дом_культуры.jpg": {
+                  "eta_ms": 2360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Квартира_Гавана.jpg": {
+                  "eta_ms": 4040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_день.jpg": {
+                  "eta_ms": 600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кухня_общаги.jpg": {
+                  "eta_ms": 880,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Набережная_Малекон.jpg": {
+                  "eta_ms": 4680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Подсобка.jpg": {
+                  "eta_ms": 3960,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Раздаточная.jpg": {
+                  "eta_ms": 2320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скала_пасмурно.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Сцена_ДК.jpg": {
+                  "eta_ms": 2800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Фойе_общаги.jpg": {
+                  "eta_ms": 1920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Скала_пасмурно.jpg",
+              "id": "soviet-ch12",
+              "name": "Эпизод 12. Уроки истории.",
+              "number": 12,
+              "script_url": "/content/scripts/soviet-ch12.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Agnia_young.jpg": {
+                  "eta_ms": 600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Alonso.jpg": {
+                  "eta_ms": 560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Borya_work_black.jpg": {
+                  "eta_ms": 2080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Commandos.jpg": {
+                  "eta_ms": 720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Dali.jpg": {
+                  "eta_ms": 4920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Daniil_black.jpg": {
+                  "eta_ms": 5760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Daniil_without_glasses.png": {
+                  "eta_ms": 6280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Iraklii.jpg": {
+                  "eta_ms": 3240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Jamalia.jpg": {
+                  "eta_ms": 3280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Lyuba_ryingpan.jpg": {
+                  "eta_ms": 2320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Lyuda_work_black.jpg": {
+                  "eta_ms": 2120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Phobos.jpg": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "eta_ms": 2440,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 2640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "eta_ms": 2680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Сталина.png": {
+                  "eta_ms": 4160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 2480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Бар.jpg": {
+                  "eta_ms": 520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Двор_общаги_ночью.jpg": {
+                  "eta_ms": 2400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Двор_общаги_ночью_машина.jpg": {
+                  "eta_ms": 2840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_день.jpg": {
+                  "eta_ms": 5360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_ночь.jpg": {
+                  "eta_ms": 5640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_ночь_свет.jpg": {
+                  "eta_ms": 4040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Коридор_общежития.jpg": {
+                  "eta_ms": 5400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Коридор_общежития_ночью.jpg": {
+                  "eta_ms": 5680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Крыша_общежития.jpg": {
+                  "eta_ms": 5720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Подвал.jpg": {
+                  "eta_ms": 2040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скала_пасмурно.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Скала_пасмурно.jpg",
+              "id": "soviet-ch13",
+              "name": "Эпизод 13. Джентельмены удачи.",
+              "number": 13,
+              "script_url": "/content/scripts/soviet-ch13.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Andrey_bayan.jpg": {
+                  "eta_ms": 4480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Calf.jpg": {
+                  "eta_ms": 7240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Cat.png": {
+                  "eta_ms": 1120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Praskovia.jpg": {
+                  "eta_ms": 1840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Алеша.png": {
+                  "eta_ms": 4040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "eta_ms": 360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Артс20.jpg": {
+                  "eta_ms": 8040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 440,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Andrey_mothers_house_inside_day.jpg": {
+                  "eta_ms": 2840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Andrey_mothers_house_inside_night.jpg": {
+                  "eta_ms": 3480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Andrey_mothers_house_street_day.jpg": {
+                  "eta_ms": 1800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Andrey_mothers_house_street_night.jpg": {
+                  "eta_ms": 5920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Bathhouse.jpg": {
+                  "eta_ms": 5280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Carrot_field.jpg": {
+                  "eta_ms": 1480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Cowshed.jpg": {
+                  "eta_ms": 6920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/River_and_birch.jpg": {
+                  "eta_ms": 8000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/River_and_bonfire.jpg": {
+                  "eta_ms": 8320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/River_and_night.jpg": {
+                  "eta_ms": 7680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Двор_общаги.jpg": {
+                  "eta_ms": 720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_день.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Фойе_общаги.jpg": {
+                  "eta_ms": 320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Комната_Олеси_день.jpg",
+              "id": "soviet-ch14",
+              "name": "Эпизод 14. Малая Родина.",
+              "number": 14,
+              "script_url": "/content/scripts/soviet-ch14.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Alina.jpg": {
+                  "eta_ms": 4560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Andrey_Axe.png": {
+                  "eta_ms": 1280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Makar.jpg": {
+                  "eta_ms": 2120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Phobos.jpg": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Praskovia.jpg": {
+                  "eta_ms": 720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Tatyana_Gennadievna.jpg": {
+                  "eta_ms": 680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Алеша.png": {
+                  "eta_ms": 5360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "eta_ms": 1600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 1560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Зоя.png": {
+                  "eta_ms": 5440,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "eta_ms": 600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 1080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Andrey_mothers_house_inside_day.jpg": {
+                  "eta_ms": 1120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Andrey_mothers_house_street_day.jpg": {
+                  "eta_ms": 1200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Andrey_mothers_house_street_night.jpg": {
+                  "eta_ms": 6400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Chairwomans_office.jpg": {
+                  "eta_ms": 4320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Club_and_stage.jpg": {
+                  "eta_ms": 6000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Cowshed.jpg": {
+                  "eta_ms": 560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Entrance_collectivefarm.jpg": {
+                  "eta_ms": 1800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Garden_and_tractor.jpg": {
+                  "eta_ms": 2040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Next_to_cowshed.jpg": {
+                  "eta_ms": 960,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Ravine.jpg": {
+                  "eta_ms": 8840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/River_village.jpg": {
+                  "eta_ms": 6200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Seoul_Street.jpg": {
+                  "eta_ms": 280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Seoul_Street_cracks.jpg": {
+                  "eta_ms": 400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Woodpile.jpg": {
+                  "eta_ms": 1240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скала_пасмурно.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Скала_пасмурно.jpg",
+              "id": "soviet-ch15",
+              "name": "Эпизод 15. Проводник по снам.",
+              "number": 15,
+              "script_url": "/content/scripts/soviet-ch15.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Ania_black.jpg": {
+                  "eta_ms": 3200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Dali.jpg": {
+                  "eta_ms": 360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Daniel_child.jpg": {
+                  "eta_ms": 5040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Daniil_without_glasses.png": {
+                  "eta_ms": 4200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Dragon.jpg": {
+                  "eta_ms": 1240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Lilia_Igorevna.jpg": {
+                  "eta_ms": 1120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Nonna.png": {
+                  "eta_ms": 6360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "eta_ms": 2360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 2240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "eta_ms": 2280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Мириам.png": {
+                  "eta_ms": 5080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Сталина.png": {
+                  "eta_ms": 3040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Daniels_apartment.jpg": {
+                  "eta_ms": 3560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Daniels_bathroom.jpg": {
+                  "eta_ms": 3760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Daniels_bubble_bathroom.jpg": {
+                  "eta_ms": 4160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Daniels_moms_room.jpg": {
+                  "eta_ms": 4640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Deck_of_ship.jpg": {
+                  "eta_ms": 6280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Dressing_room.jpg": {
+                  "eta_ms": 320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Rain_and_cloudy_sky.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Restaurant_of_the_ship.jpg": {
+                  "eta_ms": 6320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/River_station.jpg": {
+                  "eta_ms": 6240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Scene_with_mountaines.jpg": {
+                  "eta_ms": 1040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Дом_Культуры.jpg": {
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси.jpg": {
+                  "eta_ms": 2520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кухня_общаги.jpg": {
+                  "eta_ms": 2200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Сварочный_цех.jpg": {
+                  "eta_ms": 5680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Фабрика-кухня_снаружи.jpg": {
+                  "eta_ms": 5640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Фойе_общежития.jpg": {
+                  "eta_ms": 3160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Rain_and_cloudy_sky.jpg",
+              "id": "soviet-ch16",
+              "name": "Эпизод 16. По следам контрабандистов.",
+              "number": 16,
+              "script_url": "/content/scripts/soviet-ch16.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Agnia_young.jpg": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Alonso.jpg": {
+                  "critical": true,
+                  "eta_ms": 120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/John_lifeline.jpg": {
+                  "eta_ms": 1520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Nonna.png": {
+                  "eta_ms": 1040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Phobos.jpg": {
+                  "eta_ms": 3240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "eta_ms": 2000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 2080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "eta_ms": 2120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 2040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Deck_of_ship.jpg": {
+                  "eta_ms": 1480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Haundae_beach.jpg": {
+                  "eta_ms": 3640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Haundae_beach_Destruction.jpg": {
+                  "eta_ms": 3920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Haundae_beach_tsunami.jpg": {
+                  "eta_ms": 4120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Kitchen_of_ship.jpg": {
+                  "eta_ms": 1160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Malecon_embankment.jpg": {
+                  "eta_ms": 320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Museum_of_revolution.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Restaurant_of_the_ship.jpg": {
+                  "eta_ms": 1000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/River_station.jpg": {
+                  "eta_ms": 1800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Sand_tornado_on_beach.jpg": {
+                  "eta_ms": 3520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Sand_wall_of_tornado.jpg": {
+                  "eta_ms": 3600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/river_station_closer_to_bench.jpg": {
+                  "eta_ms": 1960,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_ночь.jpg": {
+                  "eta_ms": 4160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_ночь_свет.jpg": {
+                  "eta_ms": 3160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скала.jpg": {
+                  "eta_ms": 1720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скала_пасмурно.jpg": {
+                  "eta_ms": 3200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Museum_of_revolution.jpg",
+              "id": "soviet-ch17",
+              "name": "Эпизод 17. Невыносимый американец.",
+              "number": 17,
+              "script_url": "/content/scripts/soviet-ch17.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Den.png": {
+                  "eta_ms": 5640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Konstantin_Melentyev.png": {
+                  "eta_ms": 6440,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Nikita_Melentyev_glasses.png": {
+                  "eta_ms": 6520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Nikita_Melentyev_old.png": {
+                  "eta_ms": 7440,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Phobos.jpg": {
+                  "eta_ms": 5280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Young_Father.png": {
+                  "eta_ms": 3280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "eta_ms": 2160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Сталина.png": {
+                  "eta_ms": 3720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Chongjien_Waterfall.jpg": {
+                  "eta_ms": 5480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Chongjien_Waterfall_red.jpg": {
+                  "eta_ms": 6120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Daniels_Darkroom.jpg": {
+                  "eta_ms": 8960,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Design_Department.jpg": {
+                  "eta_ms": 3240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Greenhouse.jpg": {
+                  "eta_ms": 3680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Olesya_father_officedoor.jpg": {
+                  "eta_ms": 7400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Гостиная.jpg": {
+                  "eta_ms": 8280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Завод_снаружи.jpg": {
+                  "eta_ms": 6320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_день.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Коридор_общежития.jpg": {
+                  "eta_ms": 3640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кухня_завода.jpg": {
+                  "eta_ms": 2120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кухня_общаги.jpg": {
+                  "eta_ms": 200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Подсобка.jpg": {
+                  "eta_ms": 2200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Раздаточная.jpg": {
+                  "eta_ms": 2080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скала_пасмурно.jpg": {
+                  "eta_ms": 5240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Фонтан.jpg": {
+                  "eta_ms": 4480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Черный_фон.jpg": {
+                  "eta_ms": 8200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Комната_Олеси_день.jpg",
+              "id": "soviet-ch18",
+              "name": "Эпизод 18. Корень зла.",
+              "number": 18,
+              "script_url": "/content/scripts/soviet-ch18.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Agnia_fairy.png": {
+                  "eta_ms": 8480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Agnia_young.jpg": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Child_Olesya.jpg": {
+                  "eta_ms": 6160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Den.png": {
+                  "eta_ms": 2720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/E8LAbHj7OPY (1).jpg": {
+                  "eta_ms": 2120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/HDTguWwDdaw (1).jpg": {
+                  "eta_ms": 6120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Little_Anya.jpg": {
+                  "eta_ms": 480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Little_Olesya_summer.png": {
+                  "eta_ms": 7960,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Mother_Fairy.png": {
+                  "eta_ms": 8360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Phobos.jpg": {
+                  "eta_ms": 1720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Screenshot (4).png": {
+                  "eta_ms": 8000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Vladimir.jpg": {
+                  "critical": true,
+                  "eta_ms": 120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/dv_qVPrDh3o (1).jpg": {
+                  "eta_ms": 2160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Black_screen_water.jpg": {
+                  "eta_ms": 5840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Cemetery.jpg": {
+                  "eta_ms": 6840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Cuba_Airfield.jpg": {
+                  "eta_ms": 1360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Father_office_dream.jpg": {
+                  "eta_ms": 4760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Memorial.jpg": {
+                  "eta_ms": 5960,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Olesya_father_officedoor.jpg": {
+                  "eta_ms": 4560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Soraksan_National_Park.jpg": {
+                  "eta_ms": 1680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Soraksan_red_glass.jpg": {
+                  "eta_ms": 4400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Квартира_Гавана.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скала.jpg": {
+                  "eta_ms": 7920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скала_пасмурно.jpg": {
+                  "eta_ms": 8400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Черный_фон.jpg": {
+                  "eta_ms": 8840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Квартира_Гавана.jpg",
+              "id": "soviet-ch19",
+              "name": "Эпизод 19. Горькая правда.",
+              "number": 19,
+              "script_url": "/content/scripts/soviet-ch19.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/41P9RkIJ6w0 (1).jpg": {
+                  "eta_ms": 120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Den.png": {
+                  "eta_ms": 160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Phobos.jpg": {
+                  "eta_ms": 600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/krbWnsDK6BY (1).jpg": {
+                  "eta_ms": 1040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "eta_ms": 1400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Бабушка.png": {
+                  "eta_ms": 1520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 1320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "eta_ms": 1280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 1360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Andrey_room_night.jpg": {
+                  "eta_ms": 3280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Beach_cliff_cloudy__portal.jpg": {
+                  "eta_ms": 2760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Black_screen_water.jpg": {
+                  "eta_ms": 560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Daniil_Room_night.jpg": {
+                  "eta_ms": 9720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Daniil_Room_night_light.jpg": {
+                  "eta_ms": 9040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Darkness_water_light.jpg": {
+                  "eta_ms": 1440,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Dormitory_thunderstorm_night.jpg": {
+                  "eta_ms": 4480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Greenhouse.jpg": {
+                  "eta_ms": 5120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Room_campsite.jpg": {
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Showerroom_night.jpg": {
+                  "eta_ms": 7280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_ночь.jpg": {
+                  "eta_ms": 3040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_ночь_свет.jpg": {
+                  "eta_ms": 3080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Коридор_общежития_ночью.jpg": {
+                  "eta_ms": 3120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скала_пасмурно.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Скала_пасмурно.jpg",
+              "id": "soviet-ch20",
+              "name": "Эпизод 20. Неожиданная решимость.",
+              "number": 20,
+              "script_url": "/content/scripts/soviet-ch20.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Phobos.jpg": {
+                  "eta_ms": 320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Watchman.jpg": {
+                  "eta_ms": 3560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "critical": true,
+                  "eta_ms": 200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Сталина.png": {
+                  "eta_ms": 1360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Greenhouse.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Meadow_and_Moscow_River_Picnic.jpg": {
+                  "eta_ms": 2080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Park.jpg": {
+                  "eta_ms": 7360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_день.jpg": {
+                  "eta_ms": 640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кухня_общаги.jpg": {
+                  "eta_ms": 8520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скала_пасмурно.jpg": {
+                  "eta_ms": 280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Черный_фон.jpg": {
+                  "eta_ms": 240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Greenhouse.jpg",
+              "id": "soviet-ch21",
+              "name": "Эпизод 21. Вам и не снилось.",
+              "number": 21,
+              "script_url": "/content/scripts/soviet-ch21.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Laboratory_assistant.png": {
+                  "eta_ms": 1600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Nikita_Melentyev.png": {
+                  "eta_ms": 7120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Phobos.jpg": {
+                  "eta_ms": 4640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Young_Father.png": {
+                  "eta_ms": 6880,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "eta_ms": 480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Артс20.jpg": {
+                  "eta_ms": 3760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 440,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "eta_ms": 120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Сталина.png": {
+                  "eta_ms": 4400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Cafe_22.jpg": {
+                  "eta_ms": 3040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Daniels_Darkroom.jpg": {
+                  "eta_ms": 6040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Room_Luda_Borya.jpg": {
+                  "eta_ms": 5560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Skriper_Cliff_day.jpg": {
+                  "eta_ms": 4840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Skriper_Cliff_night.jpg": {
+                  "eta_ms": 5000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Skriper_Cliff_night_fire.jpg": {
+                  "eta_ms": 5080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/University.jpg": {
+                  "eta_ms": 2880,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Завод_снаружи.jpg": {
+                  "eta_ms": 2760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_день.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кухня_завода.jpg": {
+                  "eta_ms": 1240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кухня_общаги.jpg": {
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Лаборатория_Даниила.jpg": {
+                  "eta_ms": 1560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Подсобка.jpg": {
+                  "eta_ms": 6680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Скала_пасмурно.jpg": {
+                  "eta_ms": 4600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Фойе_общаги.jpg": {
+                  "eta_ms": 5280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Комната_Олеси_день.jpg",
+              "id": "soviet-ch22",
+              "name": "Эпизод 22. Ищите женщину.",
+              "number": 22,
+              "script_url": "/content/scripts/soviet-ch22.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/0b2af4802196e42d5e5f7e97b0bf2d04.jpg": {
+                  "eta_ms": 600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Boss_black.png": {
+                  "eta_ms": 640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Konstantin_Melentyev.png": {
+                  "eta_ms": 840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Nikita_Melentyev.png": {
+                  "eta_ms": 800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Nonna.png": {
+                  "eta_ms": 2800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Singer.png": {
+                  "eta_ms": 4640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Singer_black.png": {
+                  "eta_ms": 4480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "eta_ms": 1360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 1320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "eta_ms": 1280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Сталина.png": {
+                  "eta_ms": 2680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Hotel_corridor.jpg": {
+                  "eta_ms": 6000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Hotel_inside.jpg": {
+                  "eta_ms": 5240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Restaurant_23.jpg": {
+                  "eta_ms": 4360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Storage.jpg": {
+                  "eta_ms": 4400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Двор_общаги.jpg": {
+                  "eta_ms": 3920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кабинет_Тимура.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_день.jpg": {
+                  "eta_ms": 3000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кухня_общаги.jpg": {
+                  "eta_ms": 1200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Ночной_парк.jpg": {
+                  "eta_ms": 5120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Кабинет_Тимура.jpg",
+              "id": "soviet-ch23",
+              "name": "Эпизод 23. Мой ласковый и нежный зверь.",
+              "number": 23,
+              "script_url": "/content/scripts/soviet-ch23.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/0b2af4802196e42d5e5f7e97b0bf2d04.jpg": {
+                  "eta_ms": 1520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Andrey_dirty_24.png": {
+                  "eta_ms": 10640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Daniil_black.jpg": {
+                  "eta_ms": 13080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Iraklii.jpg": {
+                  "eta_ms": 11840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Jamalia.jpg": {
+                  "eta_ms": 11760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Makar.jpg": {
+                  "eta_ms": 9680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Praskovia.jpg": {
+                  "eta_ms": 8880,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Scientist.png": {
+                  "eta_ms": 6080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Tatyana_Gennadievna.jpg": {
+                  "eta_ms": 3880,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Timur_dirty_24.png": {
+                  "eta_ms": 10560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Valentin_Nikolaevich_black.png": {
+                  "eta_ms": 5760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Алеша.png": {
+                  "eta_ms": 9600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "eta_ms": 1920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Артс20.jpg": {
+                  "eta_ms": 14560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 1000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "eta_ms": 1840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Сталина.png": {
+                  "eta_ms": 10240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Andrey_mothers_house_inside_day.jpg": {
+                  "eta_ms": 8840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Chairwomans_office.jpg": {
+                  "eta_ms": 3920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Garden_and_tractor.jpg": {
+                  "eta_ms": 3280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Greenhouse.jpg": {
+                  "eta_ms": 10200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Hardware_store.jpg": {
+                  "eta_ms": 7400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Next_to_cowshed.jpg": {
+                  "eta_ms": 3840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Scientists_Entrance.jpg": {
+                  "eta_ms": 5960,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Tsum.jpg": {
+                  "eta_ms": 7080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Двор_общаги.jpg": {
+                  "eta_ms": 9960,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_ночь_свет.jpg": {
+                  "eta_ms": 11240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Тимура.jpg": {
+                  "eta_ms": 440,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Коридор_завода.jpg": {
+                  "eta_ms": 5640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Коридор_общежития.jpg": {
+                  "eta_ms": 12600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кухня_общаги.jpg": {
+                  "eta_ms": 1480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Лестничная_площадка.jpg": {
+                  "eta_ms": 5680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Ночной_парк.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Фойе_общаги.jpg": {
+                  "eta_ms": 280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Ночной_парк.jpg",
+              "id": "soviet-ch24",
+              "name": "Эпизод 24. Нужные люди.",
+              "number": 24,
+              "script_url": "/content/scripts/soviet-ch24.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/0b2af4802196e42d5e5f7e97b0bf2d04.jpg": {
+                  "eta_ms": 3880,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Eleanor.png": {
+                  "eta_ms": 3200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Konstantin_Melentyev.png": {
+                  "eta_ms": 360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Melentyevs_assistant.png": {
+                  "eta_ms": 7280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Nonna.png": {
+                  "eta_ms": 1400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Philosopher.png": {
+                  "eta_ms": 3000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Raisa.png": {
+                  "eta_ms": 4040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Raisa_with_child.png": {
+                  "eta_ms": 3960,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Siegfried.png": {
+                  "eta_ms": 9280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Svetlana_Ulanova.png": {
+                  "eta_ms": 7840,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Victoria_Lisinskaya.png": {
+                  "eta_ms": 7760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "eta_ms": 960,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "eta_ms": 560,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "eta_ms": 120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Сталина.png": {
+                  "eta_ms": 280,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "eta_ms": 800,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Autumn_street.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Bolshoi_Theatre_scene_CLOSED.jpg": {
+                  "eta_ms": 6400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Bolshoi_Theatre_scene_OPEN.jpg": {
+                  "eta_ms": 7360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Corridor_of_Bolshoi_Theatre.jpg": {
+                  "eta_ms": 7720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Dormitory_courtyard_in_autumn.jpg": {
+                  "eta_ms": 5040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Robot_shop.jpg": {
+                  "eta_ms": 5520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Гостиная_Философа.jpg": {
+                  "eta_ms": 3160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_день.jpg": {
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Коридор_общежития.jpg": {
+                  "eta_ms": 240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Кухня_общаги.jpg": {
+                  "eta_ms": 480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Лаборатория_Даниила.jpg": {
+                  "eta_ms": 520,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Подъезд_Философа.jpg": {
+                  "eta_ms": 2760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Autumn_street.jpg",
+              "id": "soviet-ch25",
+              "name": "Эпизод 25. Карнавал.",
+              "number": 25,
+              "script_url": "/content/scripts/soviet-ch25.lvn"
+            },
+            {
+              "assets": {
+                "/content/art/Agnia_Older.png": {
+                  "eta_ms": 4200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Alonso.jpg": {
+                  "eta_ms": 4440,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Andrey_bayan.jpg": {
+                  "eta_ms": 6600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Andrey_dirty_24.png": {
+                  "eta_ms": 4080,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Andrey_with_bandage.png": {
+                  "eta_ms": 11880,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Iraklii.jpg": {
+                  "eta_ms": 8760,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Jamalia.jpg": {
+                  "eta_ms": 8720,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Konstantin_Melentyev.png": {
+                  "critical": true,
+                  "eta_ms": 80,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Timur_dirty_24.png": {
+                  "eta_ms": 4040,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Vladimir.jpg": {
+                  "eta_ms": 4400,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Young_Father.png": {
+                  "eta_ms": 2480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Андрей_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Даниил_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 240,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Люба_Обычная.png": {
+                  "critical": true,
+                  "eta_ms": 120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/art/Тимур_Обычный.png": {
+                  "critical": true,
+                  "eta_ms": 200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Clearing_in_forest.jpg": {
+                  "eta_ms": 8200,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Corridor_of_Bolshoi_Theatre.jpg": {
+                  "critical": true,
+                  "eta_ms": 40,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Door_to_office.jpg": {
+                  "eta_ms": 8680,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Dormitory_courtyard_in_autumn.jpg": {
+                  "eta_ms": 2320,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Dormitory_courtyard_night_police_in_autumn.jpg": {
+                  "eta_ms": 480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Fireplace.jpg": {
+                  "eta_ms": 7640,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Morning_pine_forest.jpg": {
+                  "eta_ms": 8160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Olesyas_room_dacha.jpg": {
+                  "eta_ms": 5480,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Timurs_parents_dacha.jpg": {
+                  "eta_ms": 3120,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Timurs_parents_dacha_volga.jpg": {
+                  "eta_ms": 8600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Veranda_Timurs_dacha_during_day.jpg": {
+                  "eta_ms": 5920,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Veranda_Timurs_dacha_during_day_food.jpg": {
+                  "eta_ms": 9600,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Veranda_Timurs_dacha_during_night_food.jpg": {
+                  "eta_ms": 6000,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Квартира_Гавана.jpg": {
+                  "eta_ms": 4360,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Комната_Олеси_день.jpg": {
+                  "eta_ms": 1960,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                },
+                "/content/bg/Лестничная_площадка.jpg": {
+                  "eta_ms": 4160,
+                  "kind": "sprite",
+                  "scope": "chapter"
+                }
+              },
+              "bg_url": "/content/bg/Corridor_of_Bolshoi_Theatre.jpg",
+              "id": "soviet-ch26",
+              "name": "Эпизод 26. По семейным обстоятельствам.",
+              "number": 26,
+              "script_url": "/content/scripts/soviet-ch26.lvn"
             }
           ]
         }
@@ -568,139 +4574,139 @@
       "subtitle": "Импорт из articy"
     },
     {
+      "cover_url": "/content/sprites/codel/happy.png",
       "id": "codel-demo",
       "name": "Codel — демо эмоций",
-      "subtitle": "Реальный персонаж, эмоции из скрипта",
-      "cover_url": "/content/sprites/codel/happy.png",
       "seasons": [
         {
           "chapters": [
             {
+              "bg_url": "/content/sprites/codel/happy.png",
               "id": "codel-demo-ch1",
               "number": 1,
-              "script_url": "/content/scripts/codel-demo.lvn",
-              "bg_url": "/content/sprites/codel/happy.png"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "codel-anim",
-      "name": "Codel — анимации",
-      "subtitle": "Сплайны/твины из языка (.lvns)",
-      "cover_url": "/content/sprites/codel/happy.png",
-      "seasons": [
-        {
-          "chapters": [
-            {
-              "id": "codel-anim-ch1",
-              "number": 1,
-              "script_url": "/content/scripts/codel-anim-demo.lvn",
-              "bg_url": "/content/bg/Andrey_mothers_house_inside_day.jpg"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "strandgade",
-      "name": "Особняк на Страндгаде",
-      "subtitle": "Детектив-квест · 3 комнаты, инвентарь, код",
-      "cover_url": "/content/bg/hh_room2.jpg",
-      "seasons": [
-        {
-          "chapters": [
-            {
-              "id": "strandgade-ch1",
-              "number": 1,
-              "script_url": "/content/scripts/strandgade.lvn",
-              "bg_url": "/content/bg/hh_room1.jpg"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "goblin-battle",
-      "name": "Бой с гоблином",
-      "subtitle": "Пошаговый фэнтези-RPG · HP, меню, защита",
-      "cover_url": "/content/bg/fantasy_forest.jpg",
-      "seasons": [
-        {
-          "chapters": [
-            {
-              "id": "goblin-ch1",
-              "number": 1,
-              "script_url": "/content/scripts/goblin-battle.lvn",
-              "bg_url": "/content/bg/fantasy_forest.jpg"
+              "script_url": "/content/scripts/codel-demo.lvn"
             }
           ]
         }
       ],
+      "subtitle": "Реальный персонаж, эмоции из скрипта"
+    },
+    {
+      "cover_url": "/content/sprites/codel/happy.png",
+      "id": "codel-anim",
+      "name": "Codel — анимации",
+      "seasons": [
+        {
+          "chapters": [
+            {
+              "bg_url": "/content/bg/Andrey_mothers_house_inside_day.jpg",
+              "id": "codel-anim-ch1",
+              "number": 1,
+              "script_url": "/content/scripts/codel-anim-demo.lvn"
+            }
+          ]
+        }
+      ],
+      "subtitle": "Сплайны/твины из языка (.lvns)"
+    },
+    {
+      "cover_url": "/content/bg/hh_room2.jpg",
+      "id": "strandgade",
+      "name": "Особняк на Страндгаде",
+      "seasons": [
+        {
+          "chapters": [
+            {
+              "bg_url": "/content/bg/hh_room1.jpg",
+              "id": "strandgade-ch1",
+              "number": 1,
+              "script_url": "/content/scripts/strandgade.lvn"
+            }
+          ]
+        }
+      ],
+      "subtitle": "Детектив-квест · 3 комнаты, инвентарь, код"
+    },
+    {
+      "cover_url": "/content/bg/fantasy_forest.jpg",
+      "id": "goblin-battle",
+      "name": "Бой с гоблином",
+      "seasons": [
+        {
+          "chapters": [
+            {
+              "bg_url": "/content/bg/fantasy_forest.jpg",
+              "id": "goblin-ch1",
+              "number": 1,
+              "script_url": "/content/scripts/goblin-battle.lvn"
+            }
+          ]
+        }
+      ],
+      "subtitle": "Пошаговый фэнтези-RPG · HP, меню, защита",
       "ui": {
-        "dialogue": {
-          "panel_image": "/content/ui/frames/panel.png",
-          "panel_slice": 36,
-          "text_color": "#f1e4c9",
-          "speaker_color": "#e3b24a",
-          "body_size": 36,
-          "panel_padding_x": 30,
-          "panel_padding_y": 24,
-          "x_percent": 50,
-          "anchor": "center",
-          "width_percent": 70,
-          "max_height_percent": 34,
-          "corner_radius": 18,
-          "y_percent": 85
-        },
         "choices": {
-          "button_image": "/content/ui/frames/button.png",
+          "align": "center",
           "button_hover_image": "/content/ui/frames/button_hover.png",
+          "button_image": "/content/ui/frames/button.png",
           "button_slice": 28,
-          "text_color": "#f1e4c9",
           "cost_color": "#e3b24a",
           "font_size": 30,
           "padding_y": 16,
           "spacing": 12,
-          "y_percent": 72,
-          "align": "center"
+          "text_color": "#f1e4c9",
+          "y_percent": 72
+        },
+        "dialogue": {
+          "anchor": "center",
+          "body_size": 36,
+          "corner_radius": 18,
+          "max_height_percent": 34,
+          "panel_image": "/content/ui/frames/panel.png",
+          "panel_padding_x": 30,
+          "panel_padding_y": 24,
+          "panel_slice": 36,
+          "speaker_color": "#e3b24a",
+          "text_color": "#f1e4c9",
+          "width_percent": 70,
+          "x_percent": 50,
+          "y_percent": 85
         }
       }
     },
     {
+      "cover_url": "/content/bg/fantasy_forest.jpg",
       "id": "rpg-inv",
       "name": "Тропа героя",
-      "subtitle": "RPG с инвентарём · списки, циклы, лут",
-      "cover_url": "/content/bg/fantasy_forest.jpg",
       "seasons": [
         {
           "chapters": [
             {
+              "bg_url": "/content/bg/fantasy_forest.jpg",
               "id": "rpg-inv-ch1",
               "number": 1,
-              "script_url": "/content/scripts/rpg-inv.lvn",
-              "bg_url": "/content/bg/fantasy_forest.jpg"
+              "script_url": "/content/scripts/rpg-inv.lvn"
             }
           ]
         }
       ],
+      "subtitle": "RPG с инвентарём · списки, циклы, лут",
       "ui": {
+        "choices": {
+          "button_hover_image": "/content/ui/frames/button_hover.png",
+          "button_image": "/content/ui/frames/button.png",
+          "button_slice": 28,
+          "spacing": 10,
+          "text_color": "#f1e4c9"
+        },
         "dialogue": {
           "align": "center",
+          "corner_radius": 16,
           "max_width_percent": 74,
           "panel_image": "/content/ui/frames/panel.png",
           "panel_slice": 36,
-          "text_color": "#f1e4c9",
           "speaker_color": "#e3b24a",
-          "corner_radius": 16
-        },
-        "choices": {
-          "button_image": "/content/ui/frames/button.png",
-          "button_hover_image": "/content/ui/frames/button_hover.png",
-          "button_slice": 28,
-          "text_color": "#f1e4c9",
-          "spacing": 10
+          "text_color": "#f1e4c9"
         }
       }
     }

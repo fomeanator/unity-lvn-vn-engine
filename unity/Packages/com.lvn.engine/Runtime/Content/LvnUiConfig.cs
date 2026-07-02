@@ -145,6 +145,8 @@ namespace Lvn.Content
         public float? subtitle_size;     // px; default 22
 
         public string play_text;         // default "Play"
+        public string continue_text;     // Play label when there's progress; default "Continue"
+        public string chapters_text;     // the chapter-picker button; default "Chapters"
         public string play_color;        // default #f4ecd8
         public string play_bg_color;     // default #3a3a44
         public string dot_color;         // page-dot inactive; default #ffffff55

@@ -146,6 +146,9 @@ namespace Lvn.Content
         /// logic orders by this (not array position), so out-of-order or pilot
         /// (number 0) entries don't break the chain.</summary>
         public int number;
+        /// <summary>Episode display name ("Эпизод 3. …") — shown by the chapter
+        /// picker and the Continue label. Optional; importers emit it.</summary>
+        public string name;
         /// <summary>URL of the chapter's <c>.lvn</c> script.</summary>
         public string script_url;
         /// <summary>Loading-screen background, painted the instant the chapter opens.</summary>

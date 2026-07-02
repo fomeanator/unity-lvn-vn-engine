@@ -119,6 +119,7 @@ namespace Lvn.UI.Screens
             while (!ct.IsCancellationRequested)
             {
                 // ── title carousel: wait for Play ──
+                Carousel.RefreshProgress(); // progress moved while a chapter played
                 Show(Carousel);
                 int idx = await WaitForPlay(ct);
                 if (ct.IsCancellationRequested) return;

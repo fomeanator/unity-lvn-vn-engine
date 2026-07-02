@@ -286,11 +286,11 @@ namespace Lvn.UI.Screens
         // finishing the last chapter clears it so a replay starts clean.
         private async Task PlayChapterAsync(LvnTitle title, LvnChapter chapter, string playerName)
         {
-            var resume = ResumeChapterOf(title);
+            var resume = LvnProgress.Current(title);
             if (resume != null) chapter = resume;
             while (chapter != null)
             {
-                MarkChapterProgress(title, chapter);
+                LvnProgress.SetCurrent(title, chapter);
                 var finished = await PlayOneChapterAsync(title, chapter, playerName);
                 if (finished == null) break; // left mid-chapter (cancel/error) → carousel
                 // A cross-chapter save load can land the player in another title —
@@ -300,41 +300,11 @@ namespace Lvn.UI.Screens
                 var next = NextChapterOf(title, finished);
                 if (next == null)
                 {
-                    ClearChapterProgress(title); // the novel is complete — replays restart
+                    LvnProgress.ClearCurrent(title); // the novel is complete — replays restart
                     break;
                 }
                 chapter = next;
             }
-        }
-
-        private static string ProgressKey(LvnTitle title) => "lvn_chapter_" + (title?.id ?? "");
-
-        private static void MarkChapterProgress(LvnTitle title, LvnChapter chapter)
-        {
-            if (title == null || chapter == null) return;
-            PlayerPrefs.SetString(ProgressKey(title), chapter.id);
-            PlayerPrefs.Save();
-        }
-
-        private static void ClearChapterProgress(LvnTitle title)
-        {
-            if (title == null) return;
-            PlayerPrefs.DeleteKey(ProgressKey(title));
-        }
-
-        // The chapter to continue from (the furthest one started), or null to
-        // start at the beginning.
-        private static LvnChapter ResumeChapterOf(LvnTitle title)
-        {
-            if (title?.seasons == null) return null;
-            var id = PlayerPrefs.GetString(ProgressKey(title), "");
-            if (string.IsNullOrEmpty(id)) return null;
-            foreach (var s in title.seasons)
-                if (s?.chapters != null)
-                    foreach (var c in s.chapters)
-                        if (c != null && c.id == id)
-                            return c;
-            return null; // the chapter vanished from the manifest — start over
         }
 
         // The next chapter by number, or null when this was the last one.
@@ -409,18 +379,43 @@ namespace Lvn.UI.Screens
             // don't overwrite these; a fresh game starts empty. The store is local-first
             // (offline-safe) and, when a server is configured, syncs through /v1/state.
             Stage.SeedVars = await _state.LoadVarsAsync(title?.id, default);
-            Stage.SetSaveContext(title?.id, chapter.id, chapter.script_url);
-            Stage.Play(json);
-            if (Stage.Player != null && !string.IsNullOrEmpty(playerName))
-                Stage.Player.Vars["player"] = playerName;
+
+            // The genre-standard restart semantics: picking a chapter from the
+            // picker resets the variables to what they were when that chapter was
+            // FIRST entered — stats from the future must not leak into the past
+            // and mis-gate its choices. The live state store rolls back with it,
+            // so a later stat sync doesn't resurrect the discarded future.
+            bool restart = LvnProgress.TakeRestart(title?.id, chapter.id);
+            if (restart)
+            {
+                Stage.SeedVars = LvnProgress.Checkpoint(title?.id, chapter.id)
+                                 ?? new Newtonsoft.Json.Linq.JObject();
+                await _state.SaveVarsAsync(title?.id, Stage.SeedVars, default);
+                LvnSaveStore.Delete(title?.id, LvnSaveStore.AutoSlot);
+                Debug.Log($"[novelapp] restarting '{chapter.id}' from its entry checkpoint");
+            }
 
             // Resume where the player actually was: a mid-chapter autosave for THIS
             // script (written on choices/every few lines/app pause) beats replaying
             // the chapter from the top. A finished chapter's autosave was deleted on
             // OnEnd, so replays start clean.
             var autosave = LvnSaveStore.Get(title?.id, LvnSaveStore.AutoSlot);
-            if (autosave?.Snap != null && autosave.Snap.ScriptUrl == chapter.script_url
-                && !autosave.Snap.Finished)
+            bool resuming = !restart && autosave?.Snap != null
+                            && autosave.Snap.ScriptUrl == chapter.script_url
+                            && !autosave.Snap.Finished;
+
+            // A FRESH entry (chapter transition, picker restart, first launch) is
+            // the moment the entry checkpoint captures; a mid-chapter resume must
+            // NOT overwrite it with mid-chapter stats.
+            if (!resuming)
+                LvnProgress.SaveCheckpoint(title?.id, chapter.id, Stage.SeedVars);
+
+            Stage.SetSaveContext(title?.id, chapter.id, chapter.script_url);
+            Stage.Play(json);
+            if (Stage.Player != null && !string.IsNullOrEmpty(playerName))
+                Stage.Player.Vars["player"] = playerName;
+
+            if (resuming)
             {
                 Debug.Log($"[novelapp] resuming '{chapter.id}' from autosave (@{autosave.Snap.Index})");
                 Stage.RestoreSnapshot(autosave.Snap);
@@ -484,7 +479,7 @@ namespace Lvn.UI.Screens
             _currentChapter = chapter;
             _currentTitle = title ?? _currentTitle;
             _currentScriptJson = json;
-            MarkChapterProgress(_currentTitle, chapter); // continue follows the jump
+            LvnProgress.SetCurrent(_currentTitle, chapter); // continue follows the jump
             Debug.Log($"[novelapp] loaded save into '{chapter.id}' (@{slot.Snap.Index})");
             return true;
         }

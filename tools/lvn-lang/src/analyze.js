@@ -323,3 +323,35 @@ export function posToOffset(src, pos) {
   for (let i = 0; i < pos.line && i < lines.length; i++) off += lines[i].length + 1;
   return off + pos.character;
 }
+
+// Every textual occurrence of a label — its :definition and each reference
+// (goto/call/-> targets, if then=/else=) — as {line, col, len} (1-based),
+// pointing at the NAME itself. Powers rename-symbol in the IDE: renaming a
+// label rewrites every jump to it in one undoable edit.
+export function labelOccurrences(src, name) {
+  const out = [];
+  if (!name) return out;
+  const esc = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const res = [
+    new RegExp("^\\s*:(" + esc + ")(?![\\w])", "g"),                 // :def
+    new RegExp("->\\s*(" + esc + ")(?![\\w])", "g"),                 // choice target
+    new RegExp("\\b(?:goto|call)\\s+(" + esc + ")(?![\\w])", "g"),   // jumps
+    new RegExp("\\b(?:then|else)\\s*=\\s*\"?(" + esc + ")(?![\\w])", "g"), // if branches
+  ];
+  const lines = src.split("\n");
+  for (let i = 0; i < lines.length; i++) {
+    const seen = new Set(); // one line can match several patterns at one spot
+    for (const re of res) {
+      re.lastIndex = 0;
+      let m;
+      while ((m = re.exec(lines[i]))) {
+        const col = m.index + m[0].lastIndexOf(m[1]) + 1;
+        if (seen.has(col)) continue;
+        seen.add(col);
+        out.push({ line: i + 1, col, len: name.length });
+      }
+    }
+  }
+  out.sort((a, b) => a.line - b.line || a.col - b.col);
+  return out;
+}

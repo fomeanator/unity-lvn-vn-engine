@@ -142,8 +142,9 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
   const saveRef = useRef(null);
 
   // Global shortcuts: Ctrl/Cmd+S saves to the app; Ctrl/Cmd+P opens the
-  // chapter quick-open (the "go to file" every IDE has).
+  // chapter quick-open; Ctrl/Cmd+Shift+F searches across every chapter.
   const [quickOpen, setQuickOpen] = useState(false);
+  const [searchAll, setSearchAll] = useState(false);
   useEffect(() => {
     const h = (e) => {
       if ((e.metaKey || e.ctrlKey) && (e.key === "s" || e.key === "S")) {
@@ -154,7 +155,11 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
         e.preventDefault();
         setQuickOpen(true);
       }
-      if (e.key === "Escape") setQuickOpen(false);
+      if ((e.metaKey || e.ctrlKey) && e.shiftKey && (e.key === "f" || e.key === "F")) {
+        e.preventDefault();
+        setSearchAll(true);
+      }
+      if (e.key === "Escape") { setQuickOpen(false); setSearchAll(false); }
     };
     window.addEventListener("keydown", h);
     return () => window.removeEventListener("keydown", h);
@@ -497,6 +502,17 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
           currentId={selId}
           onPick={(c) => { setQuickOpen(false); openChapter(c); }}
           onClose={() => setQuickOpen(false)}
+        />
+      )}
+      {searchAll && (
+        <SearchAll
+          chapters={chapters}
+          onPick={async (c, line) => {
+            setSearchAll(false);
+            await openChapter(c);
+            if (line > 0) goLine(line);
+          }}
+          onClose={() => setSearchAll(false)}
         />
       )}
       <div className="ide-top">
@@ -1452,6 +1468,78 @@ function QuickOpen({ chapters, currentId, onPick, onClose }) {
             </button>
           ))}
           {hits.length === 0 && <div className="qo-empty">No chapters match</div>}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Search across every chapter (Ctrl/Cmd+Shift+F): fetches each chapter's
+// .lvns source once, greps case-insensitively, and jumps straight to the
+// matched line in the right chapter — the workspace search every IDE has.
+function SearchAll({ chapters, onPick, onClose }) {
+  const [q, setQ] = useState("");
+  const [hits, setHits] = useState([]);
+  const [busy, setBusy] = useState(false);
+  const cache = useRef({}); // chapter id → source text (per overlay session)
+  const runTimer = useRef(0);
+
+  useEffect(() => () => clearTimeout(runTimer.current), []);
+
+  function schedule(text) {
+    setQ(text);
+    clearTimeout(runTimer.current);
+    if (text.trim().length < 2) { setHits([]); return; }
+    runTimer.current = setTimeout(() => run(text), 250);
+  }
+
+  async function run(text) {
+    const needle = text.toLowerCase();
+    setBusy(true);
+    const out = [];
+    for (const c of chapters) {
+      if (out.length >= 200) break; // enough to act on
+      let src = cache.current[c.id];
+      if (src == null) {
+        try {
+          const url = String(c.script_url || "").replace(/\.lvn$/, ".lvns");
+          const r = await fetch(url + "?v=" + Date.now(), { cache: "no-store" });
+          src = r.ok ? await r.text() : "";
+          if (src.trimStart().startsWith("{")) src = ""; // compiled import — no source to grep
+        } catch { src = ""; }
+        cache.current[c.id] = src;
+      }
+      if (!src) continue;
+      const lines = src.split("\n");
+      for (let i = 0; i < lines.length && out.length < 200; i++) {
+        if (lines[i].toLowerCase().includes(needle))
+          out.push({ ch: c, line: i + 1, text: lines[i].trim().slice(0, 120) });
+      }
+    }
+    setHits(out);
+    setBusy(false);
+  }
+
+  return (
+    <div className="qo-overlay" onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+      <div className="qo-box">
+        <input
+          autoFocus
+          className="qo-input"
+          placeholder="Search in all chapters… (2+ characters)"
+          value={q}
+          onChange={(e) => schedule(e.target.value)}
+          onKeyDown={(e) => { if (e.key === "Escape") { e.preventDefault(); onClose(); } e.stopPropagation(); }}
+        />
+        <div className="qo-list">
+          {busy && <div className="qo-empty">Searching…</div>}
+          {!busy && hits.map((h, i) => (
+            <button key={i} className="qo-item" onClick={() => onPick(h.ch, h.line)}>
+              <span className="qo-item-id">{h.ch.id}:{h.line}</span>
+              <span className="qo-item-name">{h.text}</span>
+            </button>
+          ))}
+          {!busy && q.trim().length >= 2 && hits.length === 0 && <div className="qo-empty">No matches</div>}
         </div>
       </div>
     </div>

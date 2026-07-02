@@ -5,6 +5,7 @@ import editorWorker from "monaco-editor/esm/vs/editor/editor.worker?worker";
 import { OP_DOCS } from "lvn-lang/grammar.js";
 import {
   completionAt, hoverAt, definitionAt, documentSymbols, predictGhost, labelsIn, labelInfo, varInfo,
+  labelOccurrences,
 } from "lvn-lang/analyze.js";
 
 // Bundle Monaco from npm (no CDN) and give it a local worker — works offline.
@@ -147,6 +148,31 @@ function registerLvns(mo, getCtx) {
       const d = definitionAt(model.getValue(), position.lineNumber, position.column - 1);
       if (!d) return null;
       return { uri: model.uri, range: new mo.Range(d.line, 1, d.line, (d.length || 0) + 1) };
+    },
+  });
+
+  // F2 rename on a label: rewrites the :definition and every goto/call/->/
+  // then/else reference in one undoable edit.
+  mo.languages.registerRenameProvider("lvns", {
+    resolveRenameLocation(model, position) {
+      const w = model.getWordAtPosition(position);
+      if (!w) return { range: new mo.Range(1, 1, 1, 1), text: "", rejectReason: "Nothing to rename here" };
+      const labels = labelsIn(model.getValue());
+      if (!labels.includes(w.word))
+        return { range: new mo.Range(1, 1, 1, 1), text: "", rejectReason: "Only labels can be renamed" };
+      return { range: new mo.Range(position.lineNumber, w.startColumn, position.lineNumber, w.endColumn), text: w.word };
+    },
+    provideRenameEdits(model, position, newName) {
+      const w = model.getWordAtPosition(position);
+      if (!w) return { edits: [] };
+      if (!/^[A-Za-z0-9_]+$/.test(newName))
+        return { edits: [], rejectReason: "Labels are letters, digits and _" };
+      const edits = labelOccurrences(model.getValue(), w.word).map((o) => ({
+        resource: model.uri,
+        textEdit: { range: new mo.Range(o.line, o.col, o.line, o.col + o.len), text: newName },
+        versionId: undefined,
+      }));
+      return { edits };
     },
   });
 

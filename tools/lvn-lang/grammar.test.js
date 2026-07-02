@@ -34,3 +34,19 @@ test("closed-field ops and enums reference real ops/fields", () => {
       assert.ok(json.op_fields[op].includes(f), `enum field not in op_fields: ${op}.${f}`);
   }
 });
+
+test("labelOccurrences finds the definition and every reference", async () => {
+  const { labelOccurrences } = await import("./src/analyze.js");
+  const src = [
+    ":tavern",            // def (line 1)
+    "goto tavern",        // ref (line 2)
+    "- Drink -> tavern",  // ref (line 3)
+    'if expr="x" then="tavern" else="street"', // ref (line 4)
+    "goto tavern_back",   // NOT a match (longer name)
+    "call tavern",        // ref (line 6)
+  ].join("\n");
+  const occ = labelOccurrences(src, "tavern");
+  assert.deepEqual(occ.map((o) => o.line), [1, 2, 3, 4, 6]);
+  for (const o of occ)
+    assert.equal(src.split("\n")[o.line - 1].slice(o.col - 1, o.col - 1 + o.len), "tavern");
+});

@@ -1,48 +1,9 @@
 // Slide-in reference: the engine ops authors can use, grouped, plus a copyable
-// prompt for drafting chapters with an LLM.
+// prompt for drafting chapters with an LLM. Both are DERIVED from the grammar
+// contract (tools/lvn-lang grammar.json → grammar.js) — no hand-kept op lists
+// here, so a new op shows up everywhere by editing one file.
 import ResizeHandle from "./ResizeHandle.jsx";
-
-const GROUPS = [
-  {
-    title: "Visuals & camera",
-    rows: [
-      ["bg", "sprite_url, id"],
-      ["actor", "id, sprite_url, show, position, emotion"],
-      ["obj", "id, sprite_url, x, y, width, height, on_click"],
-      ["fade", "to (black/white/clear), duration"],
-      ["dim", "alpha, duration"],
-      ["flash", "color, duration"],
-      ["tint", "color, alpha, duration"],
-      ["blur", "alpha, duration"],
-      ["camera", "action (shake/zoom/pan/reset), amplitude, factor, x, y, duration"],
-      ["particles", "type (rain/snow), on"],
-    ],
-  },
-  {
-    title: "Audio & timing",
-    rows: [
-      ["audio", "channel, url, action"],
-      ["wait", "ms"],
-      ["text_pace", "cps"],
-    ],
-  },
-  {
-    title: "Flow",
-    rows: [
-      ["goto", "label (special: __end)"],
-      ["if", "expr, then, else"],
-      ["call / return", "subroutine jump"],
-    ],
-  },
-  {
-    title: "State",
-    rows: [
-      ["set", "key, value"],
-      ["inc", "key, by"],
-      ["hint", "text, show"],
-    ],
-  },
-];
+import { GROUPS, OP_DOCS } from "lvn-lang/grammar.js";
 
 const SYNTAX = [
   [":label", "a jump target"],
@@ -51,16 +12,21 @@ const SYNTAX = [
   ['bg sprite_url="…"', "an engine op"],
 ];
 
+// Op signatures for the LLM prompt come straight from the grammar's hover docs.
+const opSignatures = GROUPS
+  .flatMap((g) => g.rows.map(([op]) => OP_DOCS[op]?.[0]))
+  .filter(Boolean)
+  .map((sig) => `  \`${sig}\``)
+  .join("\n");
+
 const AI_PROMPT = `# LVNScript (.lvns) — generation rules
 Write narrative scripts in LVNScript. Grammar:
 - \`scene name\` and \`actor_map Display=asset_id\` at the top.
 - \`:label\` is a jump target; \`goto label\`, \`call\`/\`return\`.
 - Plain line = narration; \`Name: text\` = speech; \`Name [emo]: text\` = speech + emotion.
 - Choices: consecutive \`- Text -> target\` lines (+ optional \`cost=\`, \`min=\`, \`requires_stat=\`).
-- Ops: \`set key="k" value=v\`, \`inc key="k" by=1\`, \`bg sprite_url="…"\`,
-  \`actor id="x" show=true position="left"\`, \`fade to="black" duration=0.8\`,
-  \`flash color="white"\`, \`tint color="cold" alpha=0.4\`, \`particles type="rain" on=true\`,
-  \`camera action="shake" duration=0.5\`, \`if expr="score>=10" then="win" else="lose"\`.
+- Ops:
+${opSignatures}
 - End paths with \`goto __end\`.`;
 
 export default function DocsPanel({ onClose }) {

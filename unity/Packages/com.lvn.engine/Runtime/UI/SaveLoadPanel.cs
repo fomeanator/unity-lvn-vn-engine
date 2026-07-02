@@ -22,16 +22,13 @@ namespace Lvn.UI
 
         private UIDocument _doc;
         private List<VisualElement> _slots = new List<VisualElement>();
-        private List<LvnPlayer.LvnSnapshot> _snapshots = new List<LvnPlayer.LvnSnapshot>();
         private bool _isOpen;
+
+        private static string SlotName(int index) => "slot" + (index + 1);
 
         private void Awake()
         {
             _doc = GetComponent<UIDocument>();
-            for (int i = 0; i < SlotCount; i++)
-            {
-                _snapshots.Add(null);
-            }
         }
 
         private void OnEnable()
@@ -143,38 +140,40 @@ namespace Lvn.UI
 
         private void RefreshSlots()
         {
-            for (int i = 0; i < _slots.Count && i < _snapshots.Count; i++)
+            var all = LvnSaveStore.Slots(Stage != null ? Stage.SaveTitleId : null);
+            for (int i = 0; i < _slots.Count; i++)
             {
                 var label = _slots[i].Q<Label>();
-                var snap = _snapshots[i];
-                if (snap != null)
+                var loadable = Stage != null && Stage.CanLoadSlot(SlotName(i));
+                if (all.TryGetValue(SlotName(i), out var slot) && slot?.Snap != null)
                 {
-                    label.text = $"Slot {i + 1}: Saved (IP {snap.Index})";
+                    var when = System.DateTimeOffset.FromUnixTimeMilliseconds(slot.SavedAtUnixMs)
+                        .ToLocalTime().ToString("dd.MM HH:mm");
+                    label.text = $"Slot {i + 1}: {when}" +
+                                 (string.IsNullOrEmpty(slot.Preview) ? "" : $"  «{Trunc(slot.Preview, 26)}»");
                     label.style.color = Color.white;
-                    _slots[i].Query<Button>().Last().style.opacity = 1f;
                 }
                 else
                 {
                     label.text = $"Slot {i + 1}: Empty";
                     label.style.color = Color.gray;
-                    _slots[i].Query<Button>().Last().style.opacity = 0.5f;
                 }
+                _slots[i].Query<Button>().Last().style.opacity = loadable ? 1f : 0.5f;
             }
         }
 
+        private static string Trunc(string s, int max)
+            => s.Length <= max ? s : s.Substring(0, max) + "…";
+
         private void SaveToSlot(int index)
         {
-            if (Stage == null || Stage.Player == null) return;
-            _snapshots[index] = Stage.Player.Save();
+            if (Stage == null || !Stage.SaveToSlot(SlotName(index))) return;
             RefreshSlots();
         }
 
         private void LoadFromSlot(int index)
         {
-            if (Stage == null || Stage.Player == null) return;
-            var snap = _snapshots[index];
-            if (snap == null) return;
-            Stage.Player.Restore(snap);
+            if (Stage == null || !Stage.LoadFromSlot(SlotName(index))) return;
             Close();
         }
     }

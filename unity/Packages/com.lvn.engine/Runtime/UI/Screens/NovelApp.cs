@@ -326,9 +326,24 @@ namespace Lvn.UI.Screens
             // don't overwrite these; a fresh game starts empty. The store is local-first
             // (offline-safe) and, when a server is configured, syncs through /v1/state.
             Stage.SeedVars = await _state.LoadVarsAsync(title?.id, default);
+            Stage.SetSaveContext(title?.id, chapter.id, chapter.script_url);
             Stage.Play(json);
             if (Stage.Player != null && !string.IsNullOrEmpty(playerName))
                 Stage.Player.Vars["player"] = playerName;
+
+            // Resume where the player actually was: a mid-chapter autosave for THIS
+            // script (written on choices/every few lines/app pause) beats replaying
+            // the chapter from the top. A finished chapter's autosave was deleted on
+            // OnEnd, so replays start clean.
+            var autosave = LvnSaveStore.Get(title?.id, LvnSaveStore.AutoSlot);
+            if (autosave?.Snap != null && autosave.Snap.ScriptUrl == chapter.script_url
+                && !autosave.Snap.Finished)
+            {
+                Debug.Log($"[novelapp] resuming '{chapter.id}' from autosave (@{autosave.Snap.Index})");
+                Stage.RestoreSnapshot(autosave.Snap);
+                if (Stage.Player != null && !string.IsNullOrEmpty(playerName))
+                    Stage.Player.Vars["player"] = playerName;
+            }
 
             // Drive the HUD percent until the player reaches the end of the chapter.
             while (Stage.Player != null && !Stage.Player.Finished)
@@ -379,6 +394,9 @@ namespace Lvn.UI.Screens
         {
             if (paused && _state != null && Stage?.Player != null && _currentTitle != null)
                 _ = _state.SaveVarsAsync(_currentTitle.id, VarsToJObject(Stage.Player.Vars), default);
+            // Position too, not just stats — so a suspended app resumes on the same
+            // line (the autosave slot; SaveToSlot is synchronous PlayerPrefs).
+            if (paused) Stage?.AutosaveNow();
         }
 
         // Server content changed: refresh the version index, re-apply the manifest

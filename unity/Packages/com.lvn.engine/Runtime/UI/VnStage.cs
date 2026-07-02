@@ -424,6 +424,12 @@ namespace Lvn.UI
                 }
             }
             _backlog.Add((who, text, style));
+            // Rolling autosave so a crash mid-scene loses a few lines at most.
+            if (++_saySinceAutosave >= 5)
+            {
+                _saySinceAutosave = 0;
+                AutosaveNow();
+            }
         }
 
         private bool _suppressDupSay;
@@ -532,6 +538,8 @@ namespace Lvn.UI
             if (_player == null || !_player.AtChoice) return;
             _player.Choose(index);
             _player.Advance();
+            // A picked branch is exactly what a crash must not lose — autosave here.
+            AutosaveNow();
         }
 
         // ── ILvnStage ─────────────────────────────────────────────────────────
@@ -607,12 +615,86 @@ namespace Lvn.UI
                 _player.ContinueFrom(_player.Index + 1); // no/invalid save → skip the load op
                 return;
             }
+            RestoreSnapshot(snap);
+        }
+
+        /// <summary>Restore a snapshot of the CURRENT chapter in place: clean the
+        /// stage, restore cursor/vars/call stack (position resolves via its label
+        /// anchor), rebuild the scene's visuals/FX/audio up to that point, resume.
+        /// The shared machinery behind the in-script `load` op, the save/load
+        /// panel and the autosave resume.</summary>
+        public void RestoreSnapshot(LvnPlayer.LvnSnapshot snap)
+        {
+            if (_player == null || snap == null) return;
             ResetStage();                       // clean slate
             _player.Restore(snap);              // cursor (via label anchor) + vars + call stack
             _player.ClearHistory();             // the rollback trail no longer describes the path here
             int at = _player.Index;             // the anchor-relocated cursor, not the raw saved index
-            _player.ReplayVisuals(at);          // rebuild bg / actors / HUD up to the saved point
+            _player.ReplayVisuals(at);          // rebuild bg / actors / FX / audio up to the saved point
             _player.ContinueFrom(at);           // resume → renders the saved beat
+        }
+
+        // ── persistent save slots (per title, survive restarts) ─────────────
+
+        /// <summary>Save-slot namespace + labels, set by the host per chapter entry
+        /// (title id keys the slot store; script url tags snapshots so a slot is
+        /// only restored into the chapter it belongs to).</summary>
+        public void SetSaveContext(string titleId, string chapterId, string scriptUrl)
+        {
+            _saveTitleId = titleId;
+            _saveChapterId = chapterId;
+            _saveScriptUrl = scriptUrl;
+        }
+
+        private string _saveTitleId, _saveChapterId, _saveScriptUrl;
+        private int _saySinceAutosave;
+
+        /// <summary>The title id save slots are namespaced under (host-set).</summary>
+        public string SaveTitleId => _saveTitleId;
+
+        /// <summary>Write the current position into a named persistent slot.</summary>
+        public bool SaveToSlot(string slot)
+        {
+            if (_player == null || string.IsNullOrEmpty(slot)) return false;
+            var snap = _player.Save();
+            snap.ScriptUrl = _saveScriptUrl;
+            var last = _backlog.Count > 0 ? _backlog[_backlog.Count - 1].text : "";
+            LvnSaveStore.Put(_saveTitleId, slot, new LvnSaveSlot
+            {
+                Snap = snap,
+                ChapterId = _saveChapterId,
+                Preview = last,
+            });
+            LvnPlayer.Log?.Invoke("saved slot '" + slot + "' @#" + snap.Index);
+            return true;
+        }
+
+        /// <summary>Restore a persistent slot. Only slots taken in the CURRENT
+        /// chapter restore (a slot from another chapter needs that chapter's script
+        /// — the host's job); returns false otherwise so a UI can grey it out.</summary>
+        public bool LoadFromSlot(string slot)
+        {
+            var s = LvnSaveStore.Get(_saveTitleId, slot);
+            if (s?.Snap == null || _player == null) return false;
+            if (!string.IsNullOrEmpty(s.Snap.ScriptUrl) && s.Snap.ScriptUrl != _saveScriptUrl) return false;
+            RestoreSnapshot(s.Snap);
+            return true;
+        }
+
+        /// <summary>True when the slot exists and belongs to the current chapter.</summary>
+        public bool CanLoadSlot(string slot)
+        {
+            var s = LvnSaveStore.Get(_saveTitleId, slot);
+            return s?.Snap != null
+                   && (string.IsNullOrEmpty(s.Snap.ScriptUrl) || s.Snap.ScriptUrl == _saveScriptUrl);
+        }
+
+        /// <summary>Autosave into the reserved slot now — called by the host on
+        /// app pause, and internally on choices / every few lines.</summary>
+        public void AutosaveNow()
+        {
+            if (_player == null || _player.Finished) return;
+            SaveToSlot(LvnSaveStore.AutoSlot);
         }
 
         // A persistent reactive text label (`text id=… x= y= anchor= «{expr}»`): a
@@ -802,6 +884,9 @@ namespace Lvn.UI
 
         public void OnEnd()
         {
+            // The chapter is finished — its mid-chapter autosave must not hijack the
+            // next entry back to a stale position.
+            LvnSaveStore.Delete(_saveTitleId, LvnSaveStore.AutoSlot);
             // Garbage-collect the scene when the chapter ends: without this the last
             // actors keep their (looping) animations running and bleed into the menu
             // or the next chapter. ResetStage stops coroutines, removes actors,

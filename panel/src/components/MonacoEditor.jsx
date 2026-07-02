@@ -179,9 +179,18 @@ function registerLvns(mo, getCtx) {
 const MonacoEditor = forwardRef(function MonacoEditor({ src, onChange, diags = [], jump, catalog = {}, onCaret, readOnly = false }, ref) {
   const edRef = useRef(null);
   const moRef = useRef(null);
-  // keep the shared (module-level) context current for the registered providers
+  // keep the shared (module-level) context current for the registered providers.
+  // actorMapOf is a full-document scan — rebuilding it on EVERY keystroke's
+  // render is waste; throttle to ~3/s (completions tolerate a 300ms-stale map).
+  const amCache = useRef({ src: null, map: {}, at: 0 });
   sharedCtx.catalog = catalog;
-  sharedCtx.actorMap = actorMapOf(src);
+  if (amCache.current.src !== src) {
+    const now = performance.now();
+    if (now - amCache.current.at > 300) {
+      amCache.current = { src, map: actorMapOf(src), at: now };
+    }
+  }
+  sharedCtx.actorMap = amCache.current.map;
 
   useImperativeHandle(ref, () => ({
     applyText(text) {

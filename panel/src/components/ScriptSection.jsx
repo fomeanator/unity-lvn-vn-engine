@@ -141,13 +141,20 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
   const wasmReady = useRef(false);
   const saveRef = useRef(null);
 
-  // Ctrl/Cmd+S saves the current chapter to the app (no browser save dialog).
+  // Global shortcuts: Ctrl/Cmd+S saves to the app; Ctrl/Cmd+P opens the
+  // chapter quick-open (the "go to file" every IDE has).
+  const [quickOpen, setQuickOpen] = useState(false);
   useEffect(() => {
     const h = (e) => {
       if ((e.metaKey || e.ctrlKey) && (e.key === "s" || e.key === "S")) {
         e.preventDefault();
         saveRef.current && saveRef.current();
       }
+      if ((e.metaKey || e.ctrlKey) && (e.key === "p" || e.key === "P") && !e.shiftKey) {
+        e.preventDefault();
+        setQuickOpen(true);
+      }
+      if (e.key === "Escape") setQuickOpen(false);
     };
     window.addEventListener("keydown", h);
     return () => window.removeEventListener("keydown", h);
@@ -184,14 +191,46 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
     return out;
   }, [title]);
 
+  // ── unsaved-work safety ───────────────────────────────────────────────
+  // Every IDE keeps your typing safe; "the server is the single source of
+  // truth" must not mean "a closed tab eats an hour of writing". The editor
+  // keeps a per-chapter DRAFT in localStorage while the text differs from the
+  // last server copy; opening the chapter restores the draft (Reload from
+  // server discards it), saving clears it, and closing the tab with unsaved
+  // changes asks first.
+  const savedSrc = useRef(""); // the last server-agreed source for this chapter
+  const draftKey = (chapterId) => `lvn_draft_${titleId}_${chapterId}`;
+  const dirty = !imported && !!selId && src !== savedSrc.current;
+
+  useEffect(() => {
+    document.title = (dirty ? "● " : "") + "ELVIN IDE";
+    if (!dirty) return;
+    const h = (e) => { e.preventDefault(); e.returnValue = ""; };
+    window.addEventListener("beforeunload", h);
+    return () => window.removeEventListener("beforeunload", h);
+  }, [dirty]);
+
+  // Adopt server text as the agreed baseline, then let a stashed draft win.
+  function adoptSource(chapterId, serverText) {
+    savedSrc.current = serverText;
+    const draft = localStorage.getItem(draftKey(chapterId));
+    if (draft != null && draft !== serverText) {
+      setSrc(draft);
+      compile(draft);
+      notify("Restored an unsaved draft — «Reload from server» discards it", "");
+      return true;
+    }
+    return false;
+  }
+
   async function openChapter(c) {
     // Guard against a slow fetch from a previous open clobbering the chapter the
     // user has since switched to (and leaving importedRef stuck → dropped keys).
     const epoch = ++openEpoch.current;
     setSelId(c.id);
     if (c.script_url) creds.setPath(String(c.script_url).replace(/^\/+content\/+/, "").replace(/^\/+/, ""));
-    // Always read the source fresh from the server (no local drafts) — the server
-    // is the single source of truth, so edits made anywhere show up on open.
+    // Read the source fresh from the server; a local unsaved draft, when one
+    // exists, wins over it (see adoptSource).
     // Prefer a sibling .lvns SOURCE next to the compiled .lvn; it's editable, so
     // hand-made novels open as language, never as read-only bytecode.
     if (c.script_url && /\.lvn$/.test(c.script_url)) {
@@ -207,6 +246,7 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
           if (txt && !txt.trimStart().startsWith("{")) {
             importedRef.current = false;
             setImported(false);
+            if (adoptSource(c.id, txt)) return;
             setSrc(txt);
             compile(txt);
             return;
@@ -244,7 +284,9 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
     }
     importedRef.current = false;
     setImported(false);
+    if (adoptSource(c.id, "")) return; // a draft of a never-published chapter
     const text = defaultSrc(c.id);
+    savedSrc.current = text; // a fresh template is "clean" until edited
     setSrc(text);
     compile(text);
   }
@@ -275,13 +317,29 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
     setStat(s); setStatus?.(s);
   }
 
+  // Compiling on EVERY keystroke froze the editor on real chapters (a 1.5k-line
+  // articy episode = a full WASM compile + a giant JSON re-render per key).
+  // The text state updates immediately (typing stays instant); the compile —
+  // diagnostics, Problems, the Compiled pane — settles ~200ms after the pause.
+  const compileTimer = useRef(0);
+  useEffect(() => () => clearTimeout(compileTimer.current), []);
+
   function onEdit(text) {
     // Imported chapters are read-only — ignore the editor's mount-time echo so we
     // don't clobber the server .lvn shown in the Compiled pane.
     // Use the ref (not state) — the echo can fire before the state commit lands.
     if (importedRef.current) return;
     setSrc(text);
-    if (wasmReady.current) compile(text);
+    // Draft stash: unsaved typing survives a closed tab / crashed browser.
+    if (selId) {
+      try {
+        if (text !== savedSrc.current) localStorage.setItem(draftKey(selId), text);
+        else localStorage.removeItem(draftKey(selId));
+      } catch { /* quota — the beforeunload guard still protects */ }
+    }
+    if (!wasmReady.current) return;
+    clearTimeout(compileTimer.current);
+    compileTimer.current = setTimeout(() => compile(text), 200);
   }
 
   // ── chapter CRUD / meta ───────────────────────────────────────────────
@@ -372,6 +430,10 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
   }
 
   async function save() {
+    // The compile is debounced behind typing — flush it so we never save a
+    // stale .lvn against fresh .lvns source.
+    clearTimeout(compileTimer.current);
+    if (wasmReady.current && !importedRef.current) compile(src);
     if (!lastJson.current) { notify("Fix the errors before saving.", "err"); return; }
     const lvnPath = (creds.path || "scripts/ch1.lvn").trim();
     const lvnsPath = lvnPath.replace(/\.lvn$/, ".lvns");
@@ -390,6 +452,8 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
       } else {
         notify(`✓ Saved ${lvnsPath} (+ .lvn) — live in ~2s`, "ok");
       }
+      savedSrc.current = src; // the server now agrees — clean
+      if (selId) try { localStorage.removeItem(draftKey(selId)); } catch { }
     } catch (e) { notify("✗ " + e.message, "err"); }
   }
 
@@ -401,8 +465,9 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
   // changes) — handy when the source was edited out-of-band, e.g. on disk.
   function reloadFromServer() {
     if (!sel) return;
+    try { localStorage.removeItem(draftKey(sel.id)); } catch { } // an explicit reload discards the draft
     openChapter(sel);
-    notify("Перечитано с сервера", "ok");
+    notify("Перечитано с сервера (черновик сброшен)", "ok");
   }
   const cmdCount = (output.match(/"op":/g) || []).length;
   const errCount = diags.filter((d) => d.sev === "error").length;
@@ -426,10 +491,18 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
 
   return (
     <div className="ide">
+      {quickOpen && (
+        <QuickOpen
+          chapters={chapters}
+          currentId={selId}
+          onPick={(c) => { setQuickOpen(false); openChapter(c); }}
+          onClose={() => setQuickOpen(false)}
+        />
+      )}
       <div className="ide-top">
         <div className="ide-file">
-          <span className="ide-file-dot" />
-          <span className="ide-file-name">{sel ? sel.id : "—"}<em>.lvns</em></span>
+          <span className={"ide-file-dot" + (dirty ? " dirty" : "")} title={dirty ? "Unsaved changes (drafted locally)" : "Saved"} />
+          <span className="ide-file-name">{sel ? sel.id : "—"}<em>.lvns</em>{dirty ? " •" : ""}</span>
         </div>
         <div className="ide-top-actions">
           <button className={"btn-ghost sm" + (showExamples ? " on" : "")} onClick={() => { setShowExamples((v) => !v); setShowDocs(false); }}>❖ Examples</button>
@@ -1327,6 +1400,59 @@ function ProblemsDock({ diags, onJump, onClose }) {
             <span className="diag-msg">{d.op ? <em>{d.op}</em> : null}{d.op ? " · " : ""}{d.msg}</span>
           </button>
         ))}
+      </div>
+    </div>
+  );
+}
+
+// Quick Open (Ctrl/Cmd+P): fuzzy-jump to any chapter by id, episode name or
+// number — the "go to file" every IDE has. Arrow keys + Enter, Esc closes.
+function QuickOpen({ chapters, currentId, onPick, onClose }) {
+  const [q, setQ] = useState("");
+  const [idx, setIdx] = useState(0);
+
+  const needle = q.trim().toLowerCase();
+  const hits = chapters.filter((c) => {
+    if (!needle) return true;
+    const hay = `${c.id} ${c.name || ""} ${c.number || ""}`.toLowerCase();
+    // every space-separated term must appear somewhere (order-free)
+    return needle.split(/\s+/).every((t) => hay.includes(t));
+  });
+  const sel = Math.min(idx, Math.max(0, hits.length - 1));
+
+  function onKey(e) {
+    if (e.key === "ArrowDown") { e.preventDefault(); setIdx((i) => Math.min(i + 1, hits.length - 1)); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); setIdx((i) => Math.max(i - 1, 0)); }
+    else if (e.key === "Enter") { e.preventDefault(); if (hits[sel]) onPick(hits[sel]); }
+    else if (e.key === "Escape") { e.preventDefault(); onClose(); }
+    e.stopPropagation();
+  }
+
+  return (
+    <div className="qo-overlay" onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}>
+      <div className="qo-box">
+        <input
+          autoFocus
+          className="qo-input"
+          placeholder="Chapter… (id, name or number)"
+          value={q}
+          onChange={(e) => { setQ(e.target.value); setIdx(0); }}
+          onKeyDown={onKey}
+        />
+        <div className="qo-list">
+          {hits.map((c, i) => (
+            <button
+              key={c.id}
+              className={"qo-item" + (i === sel ? " active" : "") + (c.id === currentId ? " current" : "")}
+              onMouseEnter={() => setIdx(i)}
+              onClick={() => onPick(c)}
+            >
+              <span className="qo-item-id">{c.id}</span>
+              {c.name ? <span className="qo-item-name">{c.name}</span> : null}
+            </button>
+          ))}
+          {hits.length === 0 && <div className="qo-empty">No chapters match</div>}
+        </div>
       </div>
     </div>
   );

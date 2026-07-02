@@ -169,11 +169,17 @@ namespace Lvn.UI
             _tw.SetText(text ?? "");
             _cps = cps.HasValue && cps.Value > TypewriterClock.MinCps ? cps.Value : _theme.CharsPerSecond;
             _startTime = Time.realtimeSinceStartup;
-            _body.text = "";
+            _lastQuantum = -1;
             _tick?.Pause();
 
             IsRevealing = _tw.VisibleCount > 0;
-            if (IsRevealing) _tick = schedule.Execute(Tick).Every(16);
+            if (IsRevealing)
+            {
+                // Fixed layout from frame 0: the whole line is present (hidden),
+                // so word-wrap and box height never shift during the reveal.
+                _body.text = _tw.SliceFadedFixed(0f, _theme.FadeWidth);
+                _tick = schedule.Execute(Tick).Every(16);
+            }
             else _body.text = _tw.Full();
         }
 
@@ -254,6 +260,11 @@ namespace Lvn.UI
             ApplyPanelBackground();
         }
 
+        // Progress quantum of the last rebuild — rebuilding the rich-text string
+        // (and regenerating the text mesh) every 16ms tick is pure GC churn when
+        // the reveal head barely moved. Eighth-glyph steps look identical.
+        private int _lastQuantum = -1;
+
         private void Tick()
         {
             if (!IsRevealing) { _tick?.Pause(); return; }
@@ -264,7 +275,10 @@ namespace Lvn.UI
                 Complete();
                 return;
             }
-            _body.text = _tw.SliceFaded(p, _theme.FadeWidth);
+            int q = (int)(p * 8f);
+            if (q == _lastQuantum) return; // head hasn't visibly moved — skip the rebuild
+            _lastQuantum = q;
+            _body.text = _tw.SliceFadedFixed(p, _theme.FadeWidth);
         }
 
         private static void SetCorner(VisualElement el, float r, bool top, bool bottom)

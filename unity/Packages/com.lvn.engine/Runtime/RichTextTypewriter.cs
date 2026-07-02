@@ -116,6 +116,57 @@ namespace Lvn
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Like <see cref="SliceFaded"/>, but emits the WHOLE line every time: the
+        /// revealed head with its fade ramp, then the rest of the text hidden under
+        /// <c>&lt;alpha=#00&gt;</c>. The label therefore lays out the final text
+        /// from glyph 0 — word-wrap and box height never shift mid-reveal (the
+        /// classic typewriter reflow). Only opacity animates.
+        /// </summary>
+        public string SliceFadedFixed(float progress, float fadeWidth)
+        {
+            if (_steps.Count == 0) return Full();
+            if (progress < 0f) progress = 0f;
+            if (fadeWidth < 0.01f) fadeWidth = 0.01f;
+
+            int shown = (int)System.Math.Ceiling(progress);
+            if (shown > _steps.Count) shown = _steps.Count;
+
+            var sb = new StringBuilder();
+            int i = 0;
+            for (; i < shown; i++)
+            {
+                float a = (progress - i) / fadeWidth;
+                if (a <= 0f) break;
+                if (a > 1f) a = 1f;
+
+                var chunk = _steps[i].Chunk;
+                if (a >= 0.999f)
+                {
+                    sb.Append(chunk);
+                }
+                else
+                {
+                    int b = (int)(a * 255f + 0.5f);
+                    sb.Append(chunk, 0, chunk.Length - 1);
+                    sb.Append("<alpha=#").Append(b.ToString("X2")).Append('>');
+                    sb.Append(chunk[chunk.Length - 1]);
+                }
+            }
+            // The unrevealed remainder: present for layout, invisible to the eye.
+            // A <color> tag inside it would reset the alpha, so re-hide after any
+            // chunk that carries markup.
+            sb.Append("<alpha=#00>");
+            for (; i < _steps.Count; i++)
+            {
+                var chunk = _steps[i].Chunk;
+                sb.Append(chunk);
+                if (chunk.Length > 1 && chunk.IndexOf('<') >= 0) sb.Append("<alpha=#00>");
+            }
+            sb.Append(_trailing);
+            return sb.ToString();
+        }
+
         private static void TrackTag(string tag, List<string> open)
         {
             if (tag.Length < 3) return;

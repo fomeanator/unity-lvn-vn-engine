@@ -32,14 +32,15 @@ namespace Lvn.UI
             style.left = 0; style.right = 0; style.top = 0; style.bottom = 0;
             pickingMode = PickingMode.Ignore; // the closed layer never eats stage taps
 
-            // Floating buttons, top-right under the shell HUD strip.
+            // Floating buttons, top-right under the shell HUD strip. Which ones
+            // exist — and every colour below — comes from the theme (manifest.ui.menu).
             _fabRow = new VisualElement();
             _fabRow.style.position = Position.Absolute;
             _fabRow.style.top = Length.Percent(8.5f);
             _fabRow.style.right = 10;
             _fabRow.style.flexDirection = FlexDirection.Row;
-            _fabRow.Add(Fab("↩", () => _stage.RollbackStep()));
-            _fabRow.Add(Fab("☰", OpenSheet));
+            if (_theme.MenuShowRollback) _fabRow.Add(Fab("↩", () => _stage.RollbackStep()));
+            if (_theme.MenuShowMenu) _fabRow.Add(Fab("☰", OpenSheet));
             Add(_fabRow);
         }
 
@@ -49,8 +50,8 @@ namespace Lvn.UI
             b.style.width = 44; b.style.height = 44;
             b.style.marginLeft = 8;
             b.style.fontSize = 20;
-            b.style.color = new Color(1f, 1f, 1f, 0.9f);
-            b.style.backgroundColor = new Color(0f, 0f, 0f, 0.35f);
+            b.style.color = _theme.MenuTextColor;
+            b.style.backgroundColor = _theme.MenuFabColor;
             Round(b, 22);
             ClearBorder(b);
             // A press on the chrome must never bubble into tap-to-advance.
@@ -71,7 +72,7 @@ namespace Lvn.UI
             _scrim = new VisualElement();
             _scrim.style.position = Position.Absolute;
             _scrim.style.left = 0; _scrim.style.right = 0; _scrim.style.top = 0; _scrim.style.bottom = 0;
-            _scrim.style.backgroundColor = new Color(0f, 0f, 0f, 0.55f);
+            _scrim.style.backgroundColor = _theme.MenuScrimColor;
             _scrim.RegisterCallback<PointerDownEvent>(e =>
             {
                 e.StopPropagation();
@@ -100,10 +101,10 @@ namespace Lvn.UI
             p.style.position = Position.Absolute;
             p.style.left = Length.Percent(8); p.style.right = Length.Percent(8);
             p.style.top = Length.Percent(12); p.style.bottom = Length.Percent(12);
-            p.style.backgroundColor = new Color(0.08f, 0.08f, 0.1f, 0.97f);
+            p.style.backgroundColor = _theme.MenuBgColor;
             p.style.paddingLeft = 18; p.style.paddingRight = 18;
             p.style.paddingTop = 14; p.style.paddingBottom = 14;
-            Round(p, 14);
+            Round(p, _theme.MenuCornerRadius + 2f);
             p.RegisterCallback<PointerDownEvent>(e => e.StopPropagation());
             _scrim.Add(p);
 
@@ -128,9 +129,9 @@ namespace Lvn.UI
             sheet.style.right = 12;
             sheet.style.top = Length.Percent(10);
             sheet.style.width = 240;
-            sheet.style.backgroundColor = new Color(0.08f, 0.08f, 0.1f, 0.97f);
+            sheet.style.backgroundColor = _theme.MenuBgColor;
             sheet.style.paddingTop = 8; sheet.style.paddingBottom = 8;
-            Round(sheet, 12);
+            Round(sheet, _theme.MenuCornerRadius);
             sheet.RegisterCallback<PointerDownEvent>(e => e.StopPropagation());
             _scrim.Add(sheet);
 
@@ -151,7 +152,7 @@ namespace Lvn.UI
             var b = new Button(onClick) { text = label };
             b.style.height = 46;
             b.style.fontSize = 17;
-            b.style.color = new Color(0.95f, 0.93f, 0.88f);
+            b.style.color = _theme.MenuTextColor;
             b.style.backgroundColor = Color.clear;
             b.style.unityTextAlign = TextAnchor.MiddleLeft;
             b.style.paddingLeft = 18;
@@ -202,12 +203,13 @@ namespace Lvn.UI
             var row = new Button(onClick);
             row.style.height = 56;
             row.style.marginBottom = 6;
-            row.style.backgroundColor = new Color(1f, 1f, 1f, 0.06f);
+            var tint = _theme.MenuTextColor;
+            row.style.backgroundColor = new Color(tint.r, tint.g, tint.b, 0.06f);
             row.style.unityTextAlign = TextAnchor.MiddleLeft;
             row.style.paddingLeft = 12;
             row.style.flexDirection = FlexDirection.Column;
             row.style.justifyContent = Justify.Center;
-            Round(row, 8);
+            Round(row, Mathf.Max(4f, _theme.MenuCornerRadius - 4f));
             ClearBorder(row);
             row.SetEnabled(enabled);
 
@@ -291,7 +293,7 @@ namespace Lvn.UI
             var l = new Label(s);
             l.style.fontSize = size;
             l.style.unityFontStyleAndWeight = weight;
-            l.style.color = dim ? new Color(0.8f, 0.78f, 0.74f) : new Color(0.95f, 0.93f, 0.88f);
+            l.style.color = dim ? _theme.MenuDimTextColor : _theme.MenuTextColor;
             l.style.whiteSpace = WhiteSpace.Normal;
             if (_theme.Font != null) l.style.unityFont = new StyleFont(_theme.Font);
             return l;
@@ -300,7 +302,7 @@ namespace Lvn.UI
         private void StyleGhost(Button b)
         {
             b.style.backgroundColor = Color.clear;
-            b.style.color = new Color(0.95f, 0.93f, 0.88f);
+            b.style.color = _theme.MenuTextColor;
             b.style.fontSize = 22;
             b.style.width = 34; b.style.height = 30;
             ClearBorder(b);

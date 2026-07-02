@@ -85,6 +85,19 @@ namespace Lvn.UI
                 if (c.button_slice.HasValue) t.ChoiceSlice = c.button_slice.Value;
             }
 
+            var m = ui.menu;
+            if (m != null)
+            {
+                t.MenuBgColor = UiColor.Parse(m.bg_color, t.MenuBgColor);
+                t.MenuTextColor = UiColor.Parse(m.text_color, t.MenuTextColor);
+                t.MenuDimTextColor = UiColor.Parse(m.dim_text_color, t.MenuDimTextColor);
+                t.MenuFabColor = UiColor.Parse(m.fab_color, t.MenuFabColor);
+                t.MenuScrimColor = UiColor.Parse(m.scrim_color, t.MenuScrimColor);
+                if (m.corner_radius.HasValue) t.MenuCornerRadius = m.corner_radius.Value;
+                if (m.show_rollback.HasValue) t.MenuShowRollback = m.show_rollback.Value;
+                if (m.show_menu.HasValue) t.MenuShowMenu = m.show_menu.Value;
+            }
+
             return t;
         }
     }

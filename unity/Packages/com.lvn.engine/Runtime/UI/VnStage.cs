@@ -226,6 +226,13 @@ namespace Lvn.UI
             root.Insert(fxIndex + 1, _choices);
             _choices.OnSelected += OnChoiceSelected;
 
+            // The quick menu is themeable too (manifest.ui.menu) — rebuild it with
+            // the fresh theme, keeping it the topmost layer.
+            _menu?.Close();
+            _menu?.RemoveFromHierarchy();
+            _menu = new StageMenu(this, Theme);
+            root.Add(_menu);
+
             // Restore the visible beat onto the fresh chrome so a live theme change
             // never blanks the line/choices the player is mid-reading (the text is
             // set instantly — no typewriter restart on each live tweak).

@@ -137,5 +137,23 @@ namespace Lvn.UI
         [HideInInspector] public string PlateImageUrl;
         [HideInInspector] public string ChoiceImageUrl;
         [HideInInspector] public string ChoiceHoverImageUrl;
+
+        [Header("Quick menu (StageMenu)")]
+        [Tooltip("Sheet / panel background of the in-game quick menu.")]
+        public Color MenuBgColor = new Color(0.08f, 0.08f, 0.10f, 0.97f);
+        [Tooltip("Primary text of menu items, slots and settings labels.")]
+        public Color MenuTextColor = new Color(0.95f, 0.93f, 0.88f, 1f);
+        [Tooltip("Secondary text (slot previews, narration in history).")]
+        public Color MenuDimTextColor = new Color(0.80f, 0.78f, 0.74f, 1f);
+        [Tooltip("Floating-button (↩ / ☰) fill.")]
+        public Color MenuFabColor = new Color(0f, 0f, 0f, 0.35f);
+        [Tooltip("Fullscreen backdrop behind an open menu.")]
+        public Color MenuScrimColor = new Color(0f, 0f, 0f, 0.55f);
+        [Tooltip("Sheet / panel corner rounding (px).")]
+        public float MenuCornerRadius = 12f;
+        [Tooltip("Show the ↩ rollback floating button.")]
+        public bool MenuShowRollback = true;
+        [Tooltip("Show the ☰ quick-menu floating button (hiding it removes the whole menu).")]
+        public bool MenuShowMenu = true;
     }
 }

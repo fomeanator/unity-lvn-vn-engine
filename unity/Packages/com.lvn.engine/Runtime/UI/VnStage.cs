@@ -301,6 +301,24 @@ namespace Lvn.UI
         /// tap handling) while an overlay is up.</summary>
         public bool InputBlocked;
 
+        /// <summary>Set when the player asks to leave the chapter (the quick
+        /// menu's Exit). The host's play loop watches it and returns to the
+        /// title screen; position and stats are already autosaved, so Continue
+        /// brings the player back to this exact line.</summary>
+        public bool ExitRequested { get; private set; }
+
+        /// <summary>Player-initiated exit to the menu: autosave the position,
+        /// then signal the host loop.</summary>
+        public void RequestExit()
+        {
+            AutosaveNow();
+            ExitRequested = true;
+        }
+
+        /// <summary>Host acknowledgment — called by the play loop once it has
+        /// acted on the request (and by Play for a fresh chapter).</summary>
+        public void ClearExitRequest() => ExitRequested = false;
+
         // ── look-ahead prefetch ──────────────────────────────────────────────
         // While the player reads a line, warm the assets the next few beats will
         // show — the decode happens during the pause, so a cold bg/portrait never
@@ -411,6 +429,7 @@ namespace Lvn.UI
         {
             var doc = LvnDocument.Parse(lvnJson);
             LvnPlayer.Log?.Invoke("════ PLAY scene=" + doc.Scene + " (" + (doc.Script?.Count ?? 0) + " cmds) ════");
+            ExitRequested = false; // a fresh chapter is a fresh run
             _cast = SpriteComposer.ParseCast(doc.Cast);
             ResetStage();
             _player = new LvnPlayer(doc, this);

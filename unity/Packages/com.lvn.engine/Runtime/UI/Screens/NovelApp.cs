@@ -423,13 +423,18 @@ namespace Lvn.UI.Screens
                     Stage.Player.Vars["player"] = playerName;
             }
 
-            // Drive the HUD percent until the player reaches the end of the chapter.
-            while (Stage.Player != null && !Stage.Player.Finished)
+            // Drive the HUD percent until the chapter ends — or the player asks
+            // out (the quick menu's Exit; position already autosaved, so the
+            // carousel's Continue leads straight back to this line).
+            while (Stage.Player != null && !Stage.Player.Finished && !Stage.ExitRequested)
             {
                 _shell.Hud.SetProgress(Stage.Player.Index, Stage.Player.Count);
                 try { await Task.Yield(); }
                 catch (OperationCanceledException) { break; }
             }
+            bool exited = Stage.ExitRequested;
+            Stage.ClearExitRequest();
+            if (exited) Stage.ClearStage(); // leave nothing behind under the carousel
             // Persist the chapter's ending state so the next chapter (and the next
             // session) resume with the same stats — whether it finished or the player
             // left mid-chapter (the loop also breaks on cancellation).

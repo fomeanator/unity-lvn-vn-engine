@@ -144,6 +144,13 @@ namespace Lvn.UI
                 Close(); // hands-free mode starts/stops right away
             }));
             sheet.Add(Item("Settings", ShowSettings));
+            sheet.Add(Item("Exit to menu", () =>
+            {
+                // Autosaves, then signals the host loop back to the title screen —
+                // the carousel's Continue returns to this exact line.
+                Close();
+                _stage.RequestExit();
+            }));
             sheet.Add(Item("Close", Close));
         }
 

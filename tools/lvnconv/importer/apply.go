@@ -54,6 +54,12 @@ func WriteToContentDir(contentDir string, res *Result) error {
 			return fmt.Errorf("write catalog: %w", err)
 		}
 	}
+	// Multi-chapter localized import: one catalog sidecar per chapter.
+	for _, cf := range res.Catalogs {
+		if err := write(cf.Rel, cf.Data); err != nil {
+			return fmt.Errorf("write catalog %s: %w", cf.Rel, err)
+		}
+	}
 	for _, a := range res.Art {
 		if err := write(a.Rel, a.Data); err != nil {
 			return fmt.Errorf("write %s: %w", a.Rel, err)

@@ -105,6 +105,7 @@ func collectChapterAssets(doc *articy.Doc) map[string]AssetMeta {
 	}
 	return assets
 }
+
 type Season struct {
 	Chapters []Chapter `json:"chapters"`
 }
@@ -150,6 +151,11 @@ type Result struct {
 	// When non-empty, WriteToContentDir writes these (ScriptRel/Lvn is the single-
 	// chapter path).
 	Scripts []ScriptFile
+
+	// Catalogs holds each chapter's localization sidecar (scripts/<cid>.<lang>.json)
+	// for a localized multi-chapter import. The runtime loads a chapter's catalog
+	// beside its script by the same <script>.<lang>.json convention as single-chapter.
+	Catalogs []ScriptFile
 }
 
 // ScriptFile is one written script (content-relative path + bytes).
@@ -289,6 +295,19 @@ func runMultiChapter(projectDir string, opt Options, chs []adpd.ChapterExport) (
 	index := buildAssetIndex(projectDir)
 	artCache := map[string][]byte{}
 
+	// Localization is per chapter (each chapter script loads its own sidecar), but
+	// the language code is a project-level fact — resolve it once.
+	var lang string
+	if opt.Localize {
+		l, lerr := adpd.Lang(projectDir)
+		if lerr != nil {
+			l = "und"
+		}
+		lang = l
+		res.Lang = lang
+		res.Catalog = map[string]string{} // merged view, for the reported string count
+	}
+
 	for i, ch := range chs {
 		doc, err := articy.Convert(ch.JSON, "")
 		if err != nil {
@@ -300,8 +319,27 @@ func runMultiChapter(projectDir string, opt Options, chs []adpd.ChapterExport) (
 		art, missing, firstBg := collectArt(index, doc, artCache)
 		sprites, extraArt := BuildCatalog(doc)
 		art = append(art, extraArt...)
-		lvns := ToLvns(doc)
-		StripStableIds(doc)
+		lvns := ToLvns(doc)                          // decompile before localization swaps text for keys
+		cid := fmt.Sprintf("%s-ch%02d", opt.ID, i+1) // zero-padded → files sort in order
+
+		if opt.Localize {
+			catalog := Localize(doc)
+			if len(catalog) > 0 {
+				cb, cerr := json.MarshalIndent(catalog, "", " ")
+				if cerr != nil {
+					return nil, cerr
+				}
+				res.Catalogs = append(res.Catalogs, ScriptFile{
+					Rel: "scripts/" + cid + "." + lang + ".json", Data: cb,
+				})
+				for k, v := range catalog {
+					res.Catalog[k] = v
+				}
+			}
+		} else {
+			StripStableIds(doc) // keys are only needed for the catalog
+		}
+
 		lvn, err := json.MarshalIndent(doc, "", " ")
 		if err != nil {
 			return nil, err
@@ -310,7 +348,6 @@ func runMultiChapter(projectDir string, opt Options, chs []adpd.ChapterExport) (
 		if !reachesEnd(doc) {
 			return nil, nil // a chapter can't be finished when scoped → fall back to one
 		}
-		cid := fmt.Sprintf("%s-ch%02d", opt.ID, i+1) // zero-padded → files sort in order
 		rel := "scripts/" + cid + ".lvn"
 		res.Scripts = append(res.Scripts,
 			ScriptFile{Rel: rel, Data: lvn},

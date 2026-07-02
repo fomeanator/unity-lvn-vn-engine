@@ -70,6 +70,64 @@ func TestE2EProjects(t *testing.T) {
 	}
 }
 
+// TestE2ELocalizeMultiChapter asserts that -localize is honoured on the chaptered
+// path (the primary path for real novels): every chapter gets its own catalog
+// sidecar and its .lvn references text ONLY by text_id (no inline strings left).
+// This is a regression guard — localization used to be a silent no-op here.
+func TestE2ELocalizeMultiChapter(t *testing.T) {
+	root := os.Getenv("ARTICY_PROJECTS")
+	if root == "" {
+		t.Skip("set ARTICY_PROJECTS=<dir of extracted articy projects>")
+	}
+	// Find a project that actually imports as multiple chapters.
+	for _, proj := range discoverProjects(root) {
+		res, err := Run(proj, Options{ID: "loc", Name: "loc", Start: -1, AutoStage: true, Localize: true})
+		if err != nil {
+			t.Fatalf("%s: import: %v", filepath.Base(proj), err)
+		}
+		if len(res.Scripts) == 0 {
+			continue // single-chapter project — not what this test targets
+		}
+		if len(res.Catalogs) == 0 {
+			t.Fatalf("%s: multi-chapter import produced no localization catalogs", filepath.Base(proj))
+		}
+		if res.Lang == "" {
+			t.Errorf("%s: localized import has no language code", filepath.Base(proj))
+		}
+		// Every chapter .lvn should be fully keyed (no inline say text survived).
+		out := t.TempDir()
+		if err := WriteToContentDir(out, res); err != nil {
+			t.Fatalf("write: %v", err)
+		}
+		inlineFound := false
+		for _, rel := range chaptersOf(res) {
+			data, _ := os.ReadFile(filepath.Join(out, filepath.FromSlash(rel)))
+			var doc lvnDoc
+			_ = json.Unmarshal(data, &doc)
+			for _, c := range doc.Script {
+				if c["op"] == "say" {
+					if _, has := c["text"]; has {
+						inlineFound = true
+					}
+				}
+			}
+		}
+		if inlineFound {
+			t.Errorf("%s: a localized chapter still has inline say text (should be text_id only)", filepath.Base(proj))
+		}
+		// Catalog sidecars must be named <chapter>.<lang>.json and written.
+		for _, cf := range res.Catalogs {
+			if _, err := os.Stat(filepath.Join(out, filepath.FromSlash(cf.Rel))); err != nil {
+				t.Errorf("catalog sidecar not written: %s", cf.Rel)
+			}
+		}
+		t.Logf("%s: %d chapters, %d catalogs, lang=%s, %d merged strings",
+			filepath.Base(proj), len(chaptersOf(res)), len(res.Catalogs), res.Lang, len(res.Catalog))
+		return // one multi-chapter project is enough
+	}
+	t.Skip("no multi-chapter project found under ARTICY_PROJECTS")
+}
+
 func discoverProjects(root string) []string {
 	var out []string
 	_ = filepath.Walk(root, func(p string, info os.FileInfo, err error) error {

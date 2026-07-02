@@ -22,7 +22,12 @@ func Slug(s string) string { return strings.ReplaceAll(strings.TrimSpace(s), " "
 // pass removes.
 func Localize(doc *articy.Doc) map[string]string {
 	catalog := map[string]string{}
-	move := func(m map[string]any) {
+	// suffix namespaces a choice caption's key. A choice option and the spoken
+	// line share the SAME fragment stable id (the option's caption is the target
+	// fragment's MenuText; the walked target is emitted as a say with its Text) —
+	// so without a distinct suffix they collide on one catalog key and the button
+	// ends up showing the full spoken line. "#opt" keeps them separate.
+	move := func(m map[string]any, suffix string) {
 		text, _ := m["text"].(string)
 		if text == "" {
 			return
@@ -31,6 +36,7 @@ func Localize(doc *articy.Doc) map[string]string {
 		if key == "" {
 			key = text // no stable id available — the text is its own key
 		}
+		key += suffix
 		catalog[key] = text
 		m["text_id"] = key
 		delete(m, "text")
@@ -39,12 +45,12 @@ func Localize(doc *articy.Doc) map[string]string {
 	for _, c := range doc.Script {
 		switch c["op"] {
 		case "say":
-			move(c)
+			move(c, "")
 		case "choice":
 			if opts, ok := c["options"].([]any); ok {
 				for _, o := range opts {
 					if m, ok := o.(articy.Cmd); ok {
-						move(m)
+						move(m, "#opt")
 					}
 				}
 			}

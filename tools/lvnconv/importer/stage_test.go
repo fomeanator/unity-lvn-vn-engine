@@ -178,7 +178,9 @@ func TestLocalizeExtractsCatalogByStableId(t *testing.T) {
 
 	cat := Localize(doc)
 
-	if cat["g-1"] != "Привет" || cat["g-2"] != "Вариант А" || cat["g-3"] != "Вариант Б" {
+	// Choice captions are namespaced with "#opt" so they never collide with a
+	// spoken line that shares the same fragment stable id.
+	if cat["g-1"] != "Привет" || cat["g-2#opt"] != "Вариант А" || cat["g-3#opt"] != "Вариант Б" {
 		t.Fatalf("catalog by stable id wrong: %v", cat)
 	}
 	if cat["Безымянная строка"] != "Безымянная строка" {
@@ -189,11 +191,41 @@ func TestLocalizeExtractsCatalogByStableId(t *testing.T) {
 		t.Errorf("say not rewritten to text_id: %v", say)
 	}
 	opt := doc.Script[2]["options"].([]any)[0].(articy.Cmd)
-	if opt["text_id"] != "g-2" || opt["text"] != nil {
+	if opt["text_id"] != "g-2#opt" || opt["text"] != nil {
 		t.Errorf("option not rewritten to text_id: %v", opt)
 	}
 	if opt["goto"] != "a" {
 		t.Errorf("option goto must be preserved: %v", opt)
+	}
+}
+
+// A choice option's caption and the spoken line of the SAME fragment share a
+// stable id. Localization must keep them as two distinct catalog entries, or the
+// button ends up showing the full spoken line instead of the short caption.
+func TestLocalizeChoiceCaptionDoesNotCollideWithLine(t *testing.T) {
+	doc := &articy.Doc{Script: []articy.Cmd{
+		{"op": "choice", "options": []any{
+			articy.Cmd{"goto": "frag", "text": "Спросить о городе", "id": "frag"},
+		}},
+		{"op": "label", "id": "frag"},
+		{"op": "say", "who": "Тимур", "text": "Это долгая история о нашем городе…", "id": "frag"},
+	}}
+
+	cat := Localize(doc)
+
+	if cat["frag"] != "Это долгая история о нашем городе…" {
+		t.Fatalf("spoken line lost its full text: %v", cat)
+	}
+	if cat["frag#opt"] != "Спросить о городе" {
+		t.Fatalf("caption collided with the line: %v", cat)
+	}
+	opt := doc.Script[0]["options"].([]any)[0].(articy.Cmd)
+	if opt["text_id"] != "frag#opt" {
+		t.Errorf("option must reference the caption key: %v", opt)
+	}
+	say := doc.Script[2]
+	if say["text_id"] != "frag" {
+		t.Errorf("say must reference the line key: %v", say)
 	}
 }
 

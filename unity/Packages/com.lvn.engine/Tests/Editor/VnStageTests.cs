@@ -129,6 +129,32 @@ namespace Lvn.Tests
             Assert.AreEqual(0.5f, p.TransitionDuration, 0.001f);
         }
 
+        // A malformed field (wrong type) must degrade to a sensible default rather
+        // than throw and abort the whole chapter. Numeric/bool written as strings
+        // are still honoured.
+        [Test]
+        public void PlacementFromMalformedFieldsDoNotThrow()
+        {
+            var cmd = new JObject
+            {
+                ["op"] = "actor", ["id"] = "x", ["position"] = "right",
+                ["x"] = "not-a-number", // malformed → falls back to the slot for "right"
+                ["opacity"] = "0.5",    // numeric string → parsed
+                ["show"] = "true",      // stringy bool → true
+                ["flip"] = "yes",       // stringy bool → true
+                ["z"] = "abc",          // malformed → null
+                ["rotation"] = new JArray(1, 2), // wrong type → default 0
+            };
+            Placement p = default;
+            Assert.DoesNotThrow(() => p = VnStage.PlacementFrom(cmd));
+            Assert.AreEqual(ActorLayer.SlotX("right"), p.X, 0.001f); // malformed x → slot
+            Assert.AreEqual(0.5f, p.Opacity, 0.001f);               // "0.5" parsed
+            Assert.IsTrue(p.Show);                                  // "true" parsed
+            Assert.IsTrue(p.Flip);                                  // "yes" parsed
+            Assert.IsFalse(p.Z.HasValue);                           // "abc" → null
+            Assert.AreEqual(0f, p.Rotation, 0.001f);                // array → default
+        }
+
         // ── ParseTransition ─────────────────────────────────────────────────
 
         [Test]

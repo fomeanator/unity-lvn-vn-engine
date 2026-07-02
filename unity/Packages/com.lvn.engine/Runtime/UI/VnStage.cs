@@ -523,7 +523,7 @@ namespace Lvn.UI
             var id = (string)cmd["id"];
             if (string.IsNullOrEmpty(id) || _labelLayer == null) return;
 
-            if (cmd["hide"] != null && (bool)cmd["hide"])
+            if (BoolOr(cmd["hide"], false))
             {
                 if (_labelEls.TryGetValue(id, out var old)) { old.RemoveFromHierarchy(); _labelEls.Remove(id); }
                 _labelTmpl.Remove(id);
@@ -571,10 +571,42 @@ namespace Lvn.UI
                 }
         }
 
-        private static float NumOr(JToken t, float dflt)
+        private static float NumOr(JToken t, float dflt) => NumOrNull(t) ?? dflt;
+
+        // Nullable numeric read: absent → null, malformed → null (never throws), so
+        // one bad field can't abort the whole chapter. A number written as a string
+        // ("0.5") is still accepted.
+        private static float? NumOrNull(JToken t)
+        {
+            if (t == null) return null;
+            try { return (float)t; } catch { }
+            try
+            {
+                if (float.TryParse((string)t, NumberStyles.Float, CultureInfo.InvariantCulture, out var f))
+                    return f;
+            }
+            catch { }
+            return null;
+        }
+
+        private static int? IntOrNull(JToken t)
+        {
+            var f = NumOrNull(t);
+            return f == null ? (int?)null : (int)Mathf.Round(f.Value);
+        }
+
+        // Tolerant boolean read: absent → dflt, and true/false/1/0 written as a
+        // string or number are all accepted rather than throwing an invalid cast.
+        private static bool BoolOr(JToken t, bool dflt)
         {
             if (t == null) return dflt;
-            try { return (float)t; } catch { return dflt; }
+            try { return (bool)t; } catch { }
+            switch (t.ToString().Trim().ToLowerInvariant())
+            {
+                case "true": case "1": case "yes": return true;
+                case "false": case "0": case "no": return false;
+                default: return dflt;
+            }
         }
 
         // Translate fractions for a label anchor (default top-left, so x/y read as an
@@ -649,7 +681,7 @@ namespace Lvn.UI
                 case "blur": ApplyBlur(command); break;
                 case "camera": ApplyCamera(command); break;
                 case "particles":
-                    _particles.Set((string)command["type"], command["on"] == null || (bool)command["on"]);
+                    _particles.Set((string)command["type"], BoolOr(command["on"], true));
                     break;
                 case "audio": _ = _audio.ApplyAsync(command, Assets, _cts.Token); break;
                 case "text": ApplyText(command); break; // reactive HUD/stat label
@@ -682,7 +714,7 @@ namespace Lvn.UI
 
         private IEnumerator WaitCoroutine(JObject cmd)
         {
-            float ms = cmd["ms"] != null ? (float)cmd["ms"] : 1000f;
+            float ms = NumOr(cmd["ms"], 1000f);
             yield return new WaitForSecondsRealtime(ms / 1000f);
             _awaitingWait = false;
             if (_player != null && !_player.Finished)
@@ -719,44 +751,44 @@ namespace Lvn.UI
         private void ApplyFade(JObject cmd)
         {
             var to = (string)cmd["to"] ?? "black";
-            float dur = cmd["duration"] != null ? (float)cmd["duration"] : 0.5f;
+            float dur = NumOr(cmd["duration"], 0.5f);
             if (to == "clear" || to == "none") _fx.Clear(dur);
             else _fx.Fade(to == "white" ? Color.white : Color.black, dur);
         }
 
         private void ApplyDim(JObject cmd)
         {
-            float alpha = cmd["alpha"] != null ? (float)cmd["alpha"] : 0.4f;
-            float dur = cmd["duration"] != null ? (float)cmd["duration"] : 0.5f;
+            float alpha = NumOr(cmd["alpha"], 0.4f);
+            float dur = NumOr(cmd["duration"], 0.5f);
             _fx.Dim(alpha, dur);
         }
 
         private void ApplyFlash(JObject cmd)
         {
             var colour = ParseColor((string)cmd["color"], Color.white);
-            float dur = cmd["duration"] != null ? (float)cmd["duration"] : 0.2f;
+            float dur = NumOr(cmd["duration"], 0.2f);
             _fx.Flash(colour, dur);
         }
 
         private void ApplyTint(JObject cmd)
         {
             var colour = ParseColor((string)cmd["color"], Color.white);
-            float alpha = cmd["alpha"] != null ? (float)cmd["alpha"] : 0.3f;
-            float dur = cmd["duration"] != null ? (float)cmd["duration"] : 0.5f;
+            float alpha = NumOr(cmd["alpha"], 0.3f);
+            float dur = NumOr(cmd["duration"], 0.5f);
             _fx.Tint(colour, alpha, dur);
         }
 
         private void ApplyBlur(JObject cmd)
         {
-            float alpha = cmd["alpha"] != null ? (float)cmd["alpha"] : 0.5f;
-            float dur = cmd["duration"] != null ? (float)cmd["duration"] : 0.5f;
+            float alpha = NumOr(cmd["alpha"], 0.5f);
+            float dur = NumOr(cmd["duration"], 0.5f);
             if (alpha <= 0f) _fx.ClearBlur(dur);
             else _fx.Blur(alpha, dur);
         }
 
         private void ApplyTextPace(JObject cmd)
         {
-            float cps = cmd["cps"] != null ? (float)cmd["cps"] : 0f;
+            float cps = NumOr(cmd["cps"], 0f);
             TypewriterClock.GlobalCps = cps;
         }
 
@@ -797,25 +829,25 @@ namespace Lvn.UI
 
         private void ApplyCamera(JObject cmd)
         {
-            float dur = cmd["duration"] != null ? (float)cmd["duration"] : 0.3f;
+            float dur = NumOr(cmd["duration"], 0.3f);
             switch ((string)cmd["action"])
             {
                 case "shake":
                 {
-                    float amp = cmd["amplitude"] != null ? (float)cmd["amplitude"] : 8f;
+                    float amp = NumOr(cmd["amplitude"], 8f);
                     if (UseCanvasScene) _scene?.Shake(amp, dur); else _camera.Shake(amp, dur);
                     break;
                 }
                 case "zoom":
                 {
-                    float factor = cmd["factor"] != null ? (float)cmd["factor"] : 1.2f;
+                    float factor = NumOr(cmd["factor"], 1.2f);
                     if (UseCanvasScene) _scene?.Zoom(factor, dur); else _camera.Zoom(factor, dur);
                     break;
                 }
                 case "pan":
                 {
-                    float px = cmd["x"] != null ? (float)cmd["x"] : 0f;
-                    float py = cmd["y"] != null ? (float)cmd["y"] : 0f;
+                    float px = NumOr(cmd["x"], 0f);
+                    float py = NumOr(cmd["y"], 0f);
                     if (UseCanvasScene) _scene?.Pan(px, py, dur); else _camera.Pan(px, py, dur);
                     break;
                 }
@@ -1057,21 +1089,21 @@ namespace Lvn.UI
         {
             var p = new Placement
             {
-                Show = cmd["show"] == null || (bool)cmd["show"],
-                X = cmd["x"] != null ? (float)cmd["x"] : ActorLayer.SlotX((string)cmd["position"]),
-                Y = cmd["y"] != null ? (float)cmd["y"] : 1f,
-                Width = cmd["width"] != null ? (float?)(float)cmd["width"] : null,
-                Height = cmd["height"] != null ? (float?)(float)cmd["height"] : null,
+                Show = BoolOr(cmd["show"], true),
+                X = NumOrNull(cmd["x"]) ?? ActorLayer.SlotX((string)cmd["position"]),
+                Y = NumOr(cmd["y"], 1f),
+                Width = NumOrNull(cmd["width"]),
+                Height = NumOrNull(cmd["height"]),
                 AnchorX = 0.5f,
                 AnchorY = 1f,
-                Z = cmd["z"] != null ? (int?)(int)cmd["z"] : null,
-                Flip = cmd["flip"] != null && (bool)cmd["flip"],
-                Rotation = cmd["rotation"] != null ? (float)cmd["rotation"] : 0f,
-                Opacity = cmd["opacity"] != null ? (float)cmd["opacity"] : 1f,
-                HoverOpacity = cmd["hover_opacity"] != null ? (float)cmd["hover_opacity"] : 1f,
+                Z = IntOrNull(cmd["z"]),
+                Flip = BoolOr(cmd["flip"], false),
+                Rotation = NumOr(cmd["rotation"], 0f),
+                Opacity = NumOr(cmd["opacity"], 1f),
+                HoverOpacity = NumOr(cmd["hover_opacity"], 1f),
                 EnterTransition = ParseTransition((string)cmd["enter"]),
                 ExitTransition = ParseTransition((string)cmd["exit"]),
-                TransitionDuration = cmd["transition_duration"] != null ? (float)cmd["transition_duration"] : 0.3f,
+                TransitionDuration = NumOr(cmd["transition_duration"], 0.3f),
             };
 
             var anchor = (string)cmd["anchor"];
@@ -1088,8 +1120,8 @@ namespace Lvn.UI
             }
             else
             {
-                if (cmd["anchor_x"] != null) p.AnchorX = (float)cmd["anchor_x"];
-                if (cmd["anchor_y"] != null) p.AnchorY = (float)cmd["anchor_y"];
+                if (cmd["anchor_x"] != null) p.AnchorX = NumOr(cmd["anchor_x"], p.AnchorX);
+                if (cmd["anchor_y"] != null) p.AnchorY = NumOr(cmd["anchor_y"], p.AnchorY);
             }
             return p;
         }

@@ -428,8 +428,13 @@ namespace Lvn
                 throw new InvalidOperationException("Choose called when not at a choice");
             var c = (JObject)_script[_ip];
 
-            var opts = (JArray)c["options"];
-            var opt = (JObject)opts[optionIndex];
+            // Degrade gracefully on a malformed choice (missing/typed-wrong options,
+            // or an out-of-range index) — skip past it instead of aborting the whole
+            // chapter with a cast/index exception. The validator flags these authoring.
+            var opts = c["options"] as JArray;
+            if (opts == null || optionIndex < 0 || optionIndex >= opts.Count) { _ip++; return; }
+            var opt = opts[optionIndex] as JObject;
+            if (opt == null) { _ip++; return; }
             Log?.Invoke("CHOOSE [" + optionIndex + "] \"" + (string)opt["text"] + "\"" + (opt["goto"] != null ? " → :" + opt["goto"] : ""));
 
             if (opt["body"] is JArray body)
@@ -499,10 +504,12 @@ namespace Lvn
         private List<LvnOption> BuildOptions(JObject choice)
         {
             var result = new List<LvnOption>();
-            var opts = (JArray)choice["options"];
+            var opts = choice["options"] as JArray;
+            if (opts == null) return result; // malformed choice → no options (validator flags this)
             for (int i = 0; i < opts.Count; i++)
             {
-                var o = (JObject)opts[i];
+                var o = opts[i] as JObject;
+                if (o == null) continue;
 
                 var requires = (string)o["requires_stat"];
                 if (requires != null && VarNum(requires) < Num(o["min"], 0))

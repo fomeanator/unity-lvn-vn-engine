@@ -1,13 +1,14 @@
 {
-  "name": "lvn-atelier",
+  "name": "elvin-ide",
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "LVN Atelier — authoring panel for the LVN visual-novel engine",
+  "description": "ELVIN IDE — the authoring IDE for the Elvin narrative-game engine",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vite build && rm -rf ../server/website && mkdir -p ../server/website && cp -r dist/* ../server/website/"
   },
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",

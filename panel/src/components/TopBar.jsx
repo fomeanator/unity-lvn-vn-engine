@@ -6,7 +6,7 @@ export default function TopBar({ nav, status, creds }) {
     <header className="topbar">
       <div className="brand">
         <button className="brand-mark as-link" onClick={nav.goHome} title="Library">
-          LVN <em>Atelier</em>
+          ELVIN <em>IDE</em>
         </button>
 
         {inside ? (

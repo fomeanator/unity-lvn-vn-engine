@@ -872,6 +872,12 @@ namespace Lvn.Content
                         }
 
                         body = await fetchTask;
+                        // Same integrity rule as DownloadBytes: never cache bytes
+                        // that don't match the version index's sha256.
+                        var expect = VersionFor(asset.Url);
+                        if (body != null && expect != null && !Sha256Matches(body, expect))
+                            throw new LvnFetchException(0, "integrity",
+                                "sha256 mismatch for " + asset.Url + " — refetching");
                         if (prefetchUrl == "") prefetchUrl = null;
                         break;
                     }
@@ -1133,6 +1139,19 @@ namespace Lvn.Content
                             try { resumeFrom = new FileInfo(partPath).Length; } catch { }
 
                         var bytes = await FetchResumable(url, partPath, resumeFrom, ct);
+
+                        // Integrity: the version index carries each asset's sha256.
+                        // A torn resume (server changed the file between two Range
+                        // requests) would otherwise cache spliced bytes as valid
+                        // forever. Mismatch → drop the .part and refetch clean.
+                        var expect = VersionFor(url);
+                        if (expect != null && !Sha256Matches(bytes, expect))
+                        {
+                            try { File.Delete(partPath); } catch { }
+                            throw new LvnFetchException(0, "integrity",
+                                "sha256 mismatch for " + url + " — refetching");
+                        }
+
                         lock (_inflight) _attempts.Remove(url);
 
                         if (File.Exists(path)) File.Delete(path);
@@ -1388,6 +1407,19 @@ namespace Lvn.Content
         {
             var ver = VersionFor(url);
             return Path.Combine(dir, HashKey(url, ver) + ext);
+        }
+
+        /// <summary>Content-integrity check: does the payload hash to the version
+        /// index's sha256 hex? Exposed for tests.</summary>
+        internal static bool Sha256Matches(byte[] data, string expectedHex)
+        {
+            if (data == null || string.IsNullOrEmpty(expectedHex)) return false;
+            using var sha = SHA256.Create();
+            var hash = sha.ComputeHash(data);
+            if (expectedHex.Length != hash.Length * 2) return false;
+            var sb = new StringBuilder(hash.Length * 2);
+            foreach (var b in hash) sb.Append(b.ToString("x2"));
+            return string.Equals(sb.ToString(), expectedHex, StringComparison.OrdinalIgnoreCase);
         }
 
         // Pure cache-key hash, exposed for tests: sha1(url) or sha1(url@version).

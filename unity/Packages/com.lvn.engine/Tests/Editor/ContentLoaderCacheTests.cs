@@ -71,6 +71,19 @@ namespace Lvn.Tests
         }
 
         [Test]
+        public void Sha256Matches_AcceptsCorrectRejectsWrong()
+        {
+            var data = System.Text.Encoding.UTF8.GetBytes("hello");
+            const string good = "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824";
+            Assert.IsTrue(ContentLoader.Sha256Matches(data, good));
+            Assert.IsTrue(ContentLoader.Sha256Matches(data, good.ToUpperInvariant()), "hex case-insensitive");
+            Assert.IsFalse(ContentLoader.Sha256Matches(data, good.Replace('2', '3')));
+            Assert.IsFalse(ContentLoader.Sha256Matches(data, "deadbeef"), "wrong length rejected");
+            Assert.IsFalse(ContentLoader.Sha256Matches(null, good));
+            Assert.IsFalse(ContentLoader.Sha256Matches(data, null));
+        }
+
+        [Test]
         public void HashKey_IsDeterministic()
         {
             var a = ContentLoader.HashKey("/content/bg/porch.jpg", null);

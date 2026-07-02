@@ -120,16 +120,61 @@ namespace Lvn
         }
 
         /// <summary>Re-apply the persistent visual side-effects (background, actors,
-        /// HUD labels, idle animations) of commands <c>0..upto</c> without showing
-        /// any dialogue — used after <see cref="Restore(LvnSnapshot)"/> to rebuild
-        /// the scene a save was taken in before resuming.</summary>
+        /// HUD labels, idle animations, and the net FX/audio state) of commands
+        /// <c>0..upto</c> without showing any dialogue — used after
+        /// <see cref="Restore(LvnSnapshot)"/> to rebuild the scene a save was taken
+        /// in before resuming.</summary>
         public void ReplayVisuals(int upto)
         {
             if (_script == null) return;
             int end = System.Math.Min(upto, _script.Count);
+            // Two replay classes. Structural ops (bg/actor/obj/anim/text) accumulate,
+            // so they re-run in order. FX/audio are stateful overlays where only the
+            // LAST setting matters — re-running every fade/tint/track of the chapter
+            // would flash through all of them — so they collapse to the final value
+            // per state key and apply once at the end.
+            var fx = new Dictionary<string, JObject>();
+            var fxOrder = new List<string>();
+            void SetFx(string key, JObject cmd)
+            {
+                if (!fx.ContainsKey(key)) fxOrder.Add(key);
+                fx[key] = cmd;
+            }
             for (int i = 0; i < end; i++)
-                if (_script[i] is JObject c && IsReapplyable((string)c["op"]))
-                    _stage.ApplyStage(c);
+            {
+                if (!(_script[i] is JObject c)) continue;
+                var op = (string)c["op"];
+                if (IsReapplyable(op)) { _stage.ApplyStage(c); continue; }
+                switch (op)
+                {
+                    case "fade":
+                    case "dim":
+                    case "tint":
+                    case "blur":
+                        SetFx(op, c);
+                        break;
+                    case "particles":
+                        SetFx("particles:" + ((string)c["type"] ?? ""), c);
+                        break;
+                    case "camera":
+                        // zoom/pan persist; reset returns both to default (so drop
+                        // them); shake is transient and never replayed.
+                        var act = (string)c["action"];
+                        if (act == "zoom" || act == "pan") SetFx("camera:" + act, c);
+                        else if (act == "reset") { fx.Remove("camera:zoom"); fx.Remove("camera:pan"); }
+                        break;
+                    case "audio":
+                        // The looping channels (music/ambient) resume their last
+                        // track (or stay stopped if the last command was a stop);
+                        // sfx one-shots don't replay.
+                        var ch = (string)c["channel"] ?? "sfx";
+                        if (ch != "sfx") SetFx("audio:" + ch, c);
+                        break;
+                }
+            }
+            foreach (var key in fxOrder)
+                if (fx.TryGetValue(key, out var cmd))
+                    _stage.ApplyStage(cmd);
         }
 
         /// <summary>Set the cursor and run forward to the next pause — the resume

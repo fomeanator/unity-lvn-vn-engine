@@ -12,7 +12,10 @@
 #   ЛЮДИ         уникальных игроков в отчёте ровно столько, сколько их было;
 #   ИМЕНА        разбивка по типу события совпадает с посланным;
 #   ОКНО         вчерашние события не попадают в отчёт за сегодня;
-#   ЧУЖОЕ        событие без входа не приписывается никому из вошедших.
+#   ЧУЖОЕ        событие без входа не приписывается никому из вошедших;
+#   ЧАСЫ         игрок со сбитыми часами виден в отчёте за сегодня, а не в
+#                тысяча девятьсот девяносто девятом — и сервер честно говорит,
+#                сколько раз время пришлось поправить.
 #
 #   qa/report-truth-check.sh [-bite]
 #
@@ -147,3 +150,31 @@ if плохо:
     raise SystemExit(1)
 print("держит: отчёт показывает ровно то, что было послано")
 PY
+
+[ -n "$BITE" ] && exit 0
+
+# ── ЧАСЫ: события с невозможным временем ───────────────────────────────────
+# Часы на телефоне принадлежат игроку: после разряда они уезжают на годы, и это
+# происходит с обычными людьми, а не только с теми, кто ковыряет протокол.
+# Событие терять нельзя (игрок-то играет), но и верить его времени нельзя —
+# иначе оно уедет из отчёта за сегодня в год, которого никто не смотрит.
+before_total="$(python3 -c "import json;print(json.load(open('$W/summary.json',encoding='utf-8')).get('total'))")"
+TOK_CLOCK="$(curl -s -X POST "$B/v1/auth/register" -H 'Content-Type: application/json' \
+  -d '{"device_id":"часы-сбитые-0123456789abcdef"}' \
+  | python3 -c "import json,sys;print(json.load(sys.stdin)['token'])")"
+skew="$(curl -s -X POST "$B/v1/analytics/events" -H "Authorization: Bearer $TOK_CLOCK" \
+  -H 'Content-Type: application/json' \
+  -d '[{"name":"из будущего","ts":"2035-01-01T00:00:00Z"},{"name":"из прошлого","ts":"1999-01-01T00:00:00Z"},{"name":"из очереди"}]' \
+  | python3 -c "import json,sys;d=json.load(sys.stdin);print(d.get('accepted'),d.get('clock_skew'))")"
+sleep 1
+after_total="$(curl -s "$B/v1/analytics/summary?days=1" -H "Authorization: Bearer $TOKEN" \
+  | python3 -c "import json,sys;print(json.load(sys.stdin).get('total'))")"
+
+echo "  часы:   принято/поправлено — $skew; событий в отчёте за сегодня $before_total → $after_total"
+
+fail=0
+[ "$skew" = "3 2" ] || { echo "РВЁТСЯ: сбитые часы посчитаны как «$skew», ожидалось «3 2»"; fail=1; }
+[ "$after_total" = "$((before_total + 3))" ] \
+  || { echo "РВЁТСЯ: события со сбитыми часами потерялись ($before_total → $after_total)"; fail=1; }
+[ "$fail" = "0" ] || exit 1
+echo "держит: сбитые часы не уносят игрока из отчёта и не остаются в нём чужим временем"

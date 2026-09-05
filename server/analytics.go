@@ -105,6 +105,12 @@ const (
 	analyticsBurst      = 30        // instant burst per source
 	analyticsPerMinute  = 60        // sustained batches/min per source
 	analyticsDayMaxSize = 256 << 20 // one day's JSONL hard cap (bytes)
+
+	// Насколько далеко от серверного времени может отстоять ts, присланный
+	// клиентом. Сутки — это офлайновая очередь, пролежавшая ночь в самолёте;
+	// всё, что дальше, — сбитые или подделанные часы, и такому событию
+	// ставится серверный штамп (см. handleEvents).
+	clientClockWindow = 24 * time.Hour
 )
 
 // clientIP: the peer address without the port. Deliberately IGNORES
@@ -189,13 +195,33 @@ func (s *AnalyticsService) handleEvents(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 	defer f.Close()
-	accepted := 0
+	accepted, skewed := 0, 0
 	for _, ev := range events {
 		if ev.Name == "" || len(ev.Name) > 64 {
 			continue
 		}
+		// ВРЕМЯ СОБЫТИЯ — НЕ ПОКАЗАНИЯ ЧУЖИХ ЧАСОВ. Клиент вправе прислать
+		// свой ts (событие могло случиться офлайн и ждать в очереди), но часы
+		// на устройстве принадлежат игроку: они сбиваются после разряда, их
+		// двигают руками, их подделывает кто угодно.
+		//
+		// Замер 05.09 на живом сервере: события с ts «2035-01-01» и
+		// «1999-01-01» принимались как есть и ложились в файл сегодняшнего дня.
+		// В сводке они считаются (она идёт по файлу), а всякий отчёт, который
+		// группирует ПО ВРЕМЕНИ СОБЫТИЯ, их не видит — активность такого игрока
+		// просто пропадает из статистики, и никто об этом не узнает.
+		//
+		// Правило: чужой ts принимается, пока он в разумном окне от серверного
+		// времени; вышел за окно — событие штампуется серверным временем, а
+		// расхождение считается отдельно (в сводке видно, сколько раз часы
+		// разошлись). Окно щедрое: офлайновая очередь честно может пролежать
+		// сутки, и терять её содержимое нельзя.
 		if ev.TS == "" {
 			ev.TS = now.Format(time.RFC3339)
+		} else if t, err := time.Parse(time.RFC3339, ev.TS); err != nil ||
+			t.Before(now.Add(-clientClockWindow)) || t.After(now.Add(clientClockWindow)) {
+			ev.TS = now.Format(time.RFC3339)
+			skewed++
 		}
 		ev.User = user
 		// The client may also pass the title inside props (that is where the
@@ -227,7 +253,10 @@ func (s *AnalyticsService) handleEvents(w http.ResponseWriter, r *http.Request) 
 			accepted++
 		}
 	}
-	writeJSON(w, http.StatusOK, map[string]int{"accepted": accepted})
+	// skewed возвращается клиенту не для красоты: клиент видит, что его часы
+	// разошлись с сервером, и может это показать или залогировать. Отчёты же
+	// теперь считают по времени, которому можно верить.
+	writeJSON(w, http.StatusOK, map[string]int{"accepted": accepted, "clock_skew": skewed})
 }
 
 // handleSummary lives in analytics_report.go — reading is a different job from

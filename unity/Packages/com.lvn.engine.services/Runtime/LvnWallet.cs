@@ -524,6 +524,21 @@ namespace Lvn.Services
             Changed?.Invoke();
         }
 
+        /// <summary>Перечитать кошелёк С ДИСКА — ровно так, как это делает
+        /// свежий запуск игры. Нужно проверкам, которые спрашивают «а пережила
+        /// ли очередь закрытие приложения»: без этого они спрашивали бы у
+        /// оперативной памяти, которая ничего не теряла и в дефектном
+        /// случае.</summary>
+        internal static void ReloadLocal()
+        {
+            _balances = new Dictionary<string, long>();
+            _inventory = new Dictionary<string, long>();
+            _regen = new Dictionary<string, RegenInfo>();
+            _queue.Clear();
+            _loaded = false;
+            EnsureLoaded();
+        }
+
         internal static void ResetLocal()
         {
             _balances = new Dictionary<string, long>();

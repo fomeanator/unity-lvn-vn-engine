@@ -21,6 +21,7 @@ namespace Lvn.UI.Screens
         private static string CurKey(string titleId) => Lvn.LvnKeep.Scoped("lvn_chapter_", titleId);
         private static string CurNumKey(string titleId) => Lvn.LvnKeep.Scoped("lvn_chapter_num_", titleId);
         private static string ReachedKey(string titleId) => Lvn.LvnKeep.Scoped("lvn_reached_", titleId);
+        private static string ReachedIdKey(string titleId) => Lvn.LvnKeep.Scoped("lvn_reached_id_", titleId);
 
         /// <summary>
         /// ПРОГРЕСС СДВИНУЛСЯ — знать об этом обязан не только тот, кто его
@@ -67,7 +68,18 @@ namespace Lvn.UI.Screens
                 // not orphan the marker — position is the player's, ids are ours.
                 LvnKeep.Put(CurNumKey(title.id), chapter.number);
                 if (!HasReached(title) || chapter.number > Reached(title))
+                {
                     LvnKeep.Put(ReachedKey(title.id), chapter.number);
+                    // ИМЯ ЕДЕТ РЯДОМ С НОМЕРОМ — по той же причине, что и у
+                    // точки продолжения строкой выше, только беда обратная.
+                    // Точку убивает ПЕРЕИМЕНОВАНИЕ глав, потолок — ВСТАВКА:
+                    // автор дописывает эпизод в середину вышедшего сезона,
+                    // номера всех следующих съезжают на единицу, и число «5»
+                    // начинает указывать на чужую главу. Замер 06.09: игрок,
+                    // прочитавший четыре главы, видел четвёртую как
+                    // непрочитанную. Имя от вставки не съезжает.
+                    LvnKeep.Put(ReachedIdKey(title.id), chapter.id);
+                }
             }
             Announce();
         }
@@ -159,9 +171,47 @@ namespace Lvn.UI.Screens
             return found; // null — прохождения и правда не было
         }
 
-        /// <summary>The furthest chapter number ever started (0 = nothing yet).</summary>
-        public static int Reached(LvnTitle title) =>
-            title == null ? 0 : LvnKeep.Get(ReachedKey(title.id), 0);
+        /// <summary>
+        /// ДОКУДА ДОШЁЛ — номером, но правду о нём знает ИМЯ.
+        ///
+        /// <para>Номер главы принадлежит каталогу, а не игроку: вставка эпизода
+        /// в середину сезона двигает все последующие номера, и записанное вчера
+        /// «5» назавтра указывает на другую главу. Поэтому рядом с числом лежит
+        /// имя самой дальней достигнутой главы, и если оно ещё живёт в
+        /// каталоге — число лечится по нему, ровно как <see cref="Current"/>
+        /// лечит имя по числу при переименовании.</para>
+        ///
+        /// <para>Лечение ТОЛЬКО ВВЕРХ. Автор может и убрать главу из каталога
+        /// (см. проверку про снятую с публикации): опустить потолок значило бы
+        /// закрыть игроку то, что он уже прошёл, — а этого дом обязан не
+        /// допускать.</para>
+        /// </summary>
+        public static int Reached(LvnTitle title)
+        {
+            if (title == null) return 0;
+            // НЕТ ЗАПИСИ О ПОТОЛКЕ — НЕТ И ЛЕЧЕНИЯ. Имя достигнутой главы
+            // переживает сброс новеллы дольше числа (и чистку в чужом стенде),
+            // а лечение по нему на пустом месте выдаёт «дошёл до третьей» тому,
+            // кто не открывал новеллу ни разу: непочатая новелла показывала
+            // главы галочками, а «продолжать нечего» отвечало «продолжай с
+            // третьей». Поймано соседними проверками в том же прогоне.
+            if (!HasReached(title)) return 0;
+            int number = LvnKeep.Get(ReachedKey(title.id), 0);
+            var id = LvnKeep.Get(ReachedIdKey(title.id), "");
+            if (string.IsNullOrEmpty(id)) return number;
+            var chapter = title.ChapterByIdOrNumber(id, LvnTitleExtensions.NoNumber);
+            if (chapter == null) return number;
+            // Сравниваем ДВА ПОЛОЖЕНИЯ ОДНОЙ И ТОЙ ЖЕ главы — записанное вчера
+            // и сегодняшнее, — а не «открыта ли глава»: это правило Швейцара, и
+            // трогать его здесь нечем. Разница видна только вверх (см. выше).
+            int сегодня = chapter.number;
+            if (сегодня > number)
+            {
+                LvnKeep.Put(ReachedKey(title.id), сегодня); // каталог сдвинулся — чиним запись
+                return сегодня;
+            }
+            return number;
+        }
 
         /// <summary>
         /// НОВЕЛЛУ УЖЕ ОТКРЫВАЛИ — стоит ли в ней игрок сейчас ИЛИ доходил
@@ -295,6 +345,10 @@ namespace Lvn.UI.Screens
             }
             if (reached > LvnKeep.Get(ReachedKey(titleId), int.MinValue))
                 LvnKeep.Put(ReachedKey(titleId), reached);
+            // Свёрток хранит потолок числом и имени достигнутой главы не знает.
+            // Оставлять СТАРОЕ имя рядом с новым числом нельзя: лечение по имени
+            // потянуло бы потолок назад к тому, что было до восстановления.
+            LvnKeep.Drop(ReachedIdKey(titleId));
         }
 
         // ── chapter-entry checkpoints ────────────────────────────────────────
@@ -441,6 +495,7 @@ namespace Lvn.UI.Screens
                 LvnKeep.Drop(CurKey(titleId));
                 LvnKeep.Drop(CurNumKey(titleId));
                 LvnKeep.Drop(ReachedKey(titleId));
+                LvnKeep.Drop(ReachedIdKey(titleId)); // имя достигнутой — часть потолка
                 LvnKeep.Drop(EntryKey(titleId));
                 LvnKeep.Drop(RestartKey(titleId));
             }

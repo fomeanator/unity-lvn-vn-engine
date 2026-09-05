@@ -85,13 +85,18 @@ func TestClientClockOutsideWindowIsStamped(t *testing.T) {
 // годичной давности утаскивает P90 из часов в тысячи часов. Магазин по такому
 // числу показывают не тогда, когда надо.
 func TestSkewedClockWouldStretchTimeToFirstPurchase(t *testing.T) {
-	now := time.Now().UTC()
-	день := now.Format("2006-01-02")
-	покупка := now.Add(30 * time.Minute)
+	// ЧАСТЬ ПЕРВАЯ ЖИВЁТ В ФИКСИРОВАННОМ ДНЕ. Она пишет журнал сама, значит
+	// «сегодня» ей не нужно — а привязка к нему стоила красного прогона:
+	// покупка ставилась на полчаса вперёд, и в 23:35 UTC она уезжала в
+	// следующие сутки, выпадая из окна отчёта. Отчёты у нас по UTC-дням, и
+	// проверка обязана это учитывать, а не совпадать с ним случайно.
+	const день = "2026-08-02"
+	отсчёт, _ := time.Parse(time.RFC3339, день+"T10:00:00Z")
+	покупкаТогда := отсчёт.Add(2 * time.Hour)
 	pay := &fakePayments{
 		buys: []walletPurchase{
-			{User: "честный", TS: покупка.Format(time.RFC3339), SKU: "gold_100"},
-			{User: "сбитый", TS: покупка.Format(time.RFC3339), SKU: "gold_100"},
+			{User: "честный", TS: покупкаТогда.Format(time.RFC3339), SKU: "gold_100"},
+			{User: "сбитый", TS: покупкаТогда.Format(time.RFC3339), SKU: "gold_100"},
 		},
 		prices: map[string]struct {
 			v   float64
@@ -102,8 +107,8 @@ func TestSkewedClockWouldStretchTimeToFirstPurchase(t *testing.T) {
 	// Как было бы БЕЗ окна доверия: строки пишутся в журнал напрямую, минуя
 	// приём — ровно то, что попадало в файл до 05.09.2026.
 	dir := t.TempDir()
-	события := `{"name":"boot","ts":"` + now.Format(time.RFC3339) + `","user":"честный"}` + "\n" +
-		`{"name":"boot","ts":"` + now.Add(-365*24*time.Hour).Format(time.RFC3339) + `","user":"сбитый"}` + "\n"
+	события := `{"name":"boot","ts":"` + отсчёт.Format(time.RFC3339) + `","user":"честный"}` + "\n" +
+		`{"name":"boot","ts":"` + отсчёт.Add(-365*24*time.Hour).Format(time.RFC3339) + `","user":"сбитый"}` + "\n"
 	if err := os.WriteFile(filepath.Join(dir, день+".jsonl"), []byte(события), 0o644); err != nil {
 		t.Fatal(err)
 	}
@@ -119,7 +124,12 @@ func TestSkewedClockWouldStretchTimeToFirstPurchase(t *testing.T) {
 		t.Fatalf("замер цены не удался: без окна P90 должен был улететь, а он %+v", сырой.ToFirstPurchase)
 	}
 
-	// А теперь то же самое ЧЕРЕЗ ПРИЁМ, с настоящими пропусками игроков.
+	// ЧАСТЬ ВТОРАЯ идёт ЧЕРЕЗ ПРИЁМ, а он штампует события серверным
+	// временем — значит она обязана жить в сегодняшнем UTC-дне. Покупку
+	// ставим тем же временем, что и события: сдвиг вперёд снова увёл бы её
+	// за полночь.
+	now := time.Now().UTC()
+	сегодня := now.Format("2006-01-02")
 	mux2, _ := clockRig(t, pay)
 	честный := regDev(t, mux2, "chasy-chestnyj-0123456789ab")
 	сбитый := regDev(t, mux2, "chasy-sbityj-0123456789abc")
@@ -128,14 +138,14 @@ func TestSkewedClockWouldStretchTimeToFirstPurchase(t *testing.T) {
 		return out["user_id"].(string)
 	}
 	pay.buys = []walletPurchase{
-		{User: uid(честный), TS: покупка.Format(time.RFC3339), SKU: "gold_100"},
-		{User: uid(сбитый), TS: покупка.Format(time.RFC3339), SKU: "gold_100"},
+		{User: uid(честный), TS: now.Format(time.RFC3339), SKU: "gold_100"},
+		{User: uid(сбитый), TS: now.Format(time.RFC3339), SKU: "gold_100"},
 	}
 	call(t, mux2, "POST", "/v1/analytics/events", честный, []map[string]any{{"name": "boot"}})
 	call(t, mux2, "POST", "/v1/analytics/events", сбитый, []map[string]any{
 		{"name": "boot", "ts": now.Add(-365 * 24 * time.Hour).Format(time.RFC3339)}})
 
-	rec2, _ := call(t, mux2, "GET", "/v1/analytics/money?from="+день+"&to="+день, "admintok", nil)
+	rec2, _ := call(t, mux2, "GET", "/v1/analytics/money?from="+сегодня+"&to="+сегодня, "admintok", nil)
 	var честно moneyReport
 	if err := json.Unmarshal(rec2.Body.Bytes(), &честно); err != nil {
 		t.Fatal(err)

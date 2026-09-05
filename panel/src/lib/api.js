@@ -22,20 +22,42 @@ export async function getExtGrammar() {
 const encodePath = (rel) => String(rel).split("/").map(encodeURIComponent).join("/");
 
 // PUT a file through the token-gated admin route. `body` is a string (script /
-// manifest JSON) or a File/Blob (uploaded art). Returns { path, bytes }.
-export async function putAsset(path, body, token, contentType) {
+// manifest JSON) or a File/Blob (uploaded art). Returns { path, bytes, etag }.
+//
+// ifMatch — версия файла, НА КОТОРОЙ правил автор (ETag, полученный при
+// чтении). Сервер запишет, только если на диске всё ещё она; иначе ответит 409,
+// и здесь это становится ошибкой с признаком `conflict`, чтобы вызывающий не
+// разбирал текст сообщения. Без аргумента запись идёт как раньше — этим
+// пользуются загрузка арта и скрипты сборки, которые версий не читают.
+export async function putAsset(path, body, token, contentType, ifMatch) {
   const rel = encodePath(String(path).replace(/^\/+content\/+/, "").replace(/^\/+/, ""));
+  const headers = {
+    Authorization: "Bearer " + (token || ""),
+    "Content-Type": contentType || "application/octet-stream",
+  };
+  if (ifMatch) headers["If-Match"] = ifMatch;
   const r = await fetch("/v1/admin/assets/" + rel, {
     credentials: "include",
     method: "PUT",
-    headers: {
-      Authorization: "Bearer " + (token || ""),
-      "Content-Type": contentType || "application/octet-stream",
-    },
+    headers,
     body,
   });
-  if (!r.ok) throw new Error(await errorMessage(r, r.status + ": "));
+  if (!r.ok) {
+    const e = new Error(await errorMessage(r, r.status + ": "));
+    if (r.status === 409) e.conflict = true;
+    throw e;
+  }
   return r.json();
+}
+
+// Текущая серверная редакция файла контента: текст и его версия. Нужна перед
+// сохранением — чтобы увидеть чужую правку ДО того, как своя ляжет поверх.
+// Файла нет → { text: null }, и это не ошибка: так выглядит новая глава.
+export async function readSource(path) {
+  const rel = encodePath(String(path).replace(/^\/+content\/+/, "").replace(/^\/+/, ""));
+  const r = await fetch("/content/" + rel + "?v=" + Date.now(), { cache: "no-store" });
+  if (!r.ok) return { text: null, etag: null };
+  return { text: await r.text(), etag: r.headers.get("ETag") };
 }
 
 // uploadStaged PUTs a File to the server in chunks, resuming from wherever the

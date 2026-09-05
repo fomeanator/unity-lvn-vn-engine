@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { getManifest, getExtGrammar, putAsset, adminFiles, rebuildDependents } from "../lib/api.js";
+import { getManifest, getExtGrammar, putAsset, readSource, adminFiles, rebuildDependents } from "../lib/api.js";
 import { ensureWasm, compileLvns } from "../lib/wasm.js";
 import DocsPanel from "./DocsPanel.jsx";
 import ExamplesPanel from "./ExamplesPanel.jsx";
@@ -296,6 +296,10 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
   //     выглядело бы как чужая правка;
   //   - список файлов обновлять тоже, иначе созданная ИИ глава не появится.
   const [serverAhead, setServerAhead] = useState(false);
+  // Автор увидел плашку и выбрал «Оставить мою» — значит следующее сохранение
+  // идёт поверх чужой правки ОСОЗНАННО. Без этого флага проверка перед записью
+  // отказывала бы вечно и работать стало бы нельзя.
+  const overwriteOk = useRef(false);
   const srcRef = useRef("");
   useEffect(() => { srcRef.current = src; }, [src]);
 
@@ -644,7 +648,12 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
       m.titles = titles;
       await putAsset("manifest.json", JSON.stringify(m, null, 2), creds.token, "application/json");
       notify("✓ Chapters saved — live in ~2s", "ok");
-    } catch (e) { notify("✗ " + e.message, "err"); }
+    } catch (e) {
+      if (e && e.conflict) {
+        setServerAhead(true);
+        notify("✗ Кто-то сохранил эту главу прямо сейчас. Твой текст цел: возьми серверную версию или сохрани поверх", "err");
+      } else notify("✗ " + e.message, "err");
+    }
   }
   function addToSeasonOne(ch) {
     return { ...title, seasons: title.seasons.map((s, i) => (i === 0 ? { ...s, chapters: [...(s.chapters || []), ch] } : s)) };
@@ -728,6 +737,25 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
     picker.click();
   }
 
+  // ЧУЖАЯ ПРАВКА ДО ЗАПИСИ, А НЕ ПОСЛЕ. Спрашиваем сервер прямо перед
+  // сохранением и сверяем с тем, что мы в последний раз видели у него сами.
+  // Возвращает версию для If-Match, либо null, если писать нельзя.
+  //
+  // Плашка «файл ушёл вперёд» ловит то же самое раньше — но только пока автор
+  // сидит в редакторе с открытой главой и только раз в четыре секунды. Здесь —
+  // последняя проверка, общая для главы и для общего файла: правку механик,
+  // которую подключают все главы, терять ещё дороже, чем правку одной.
+  async function baseVersion(rel) {
+    if (overwriteOk.current) return { ok: true, etag: null };
+    const base = await readSource(rel);
+    if (base.text !== null && savedSrc.current && base.text !== savedSrc.current && base.text !== srcRef.current) {
+      setServerAhead(true);
+      notify("✗ Файл изменил кто-то ещё, пока ты правил. Твой текст цел: сверься с плашкой над редактором", "err");
+      return { ok: false, etag: null };
+    }
+    return { ok: true, etag: base.etag };
+  }
+
   async function save() {
     // The compile is debounced behind typing — flush it so we never save a
     // stale .lvn against fresh .lvns source.
@@ -755,7 +783,10 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
     if (libName) {
       notify("Saving…");
       try {
-        await putAsset("scripts/" + libName, src, creds.token, "text/plain; charset=utf-8");
+        const base = await baseVersion("scripts/" + libName);
+        if (!base.ok) return;
+        await putAsset("scripts/" + libName, src, creds.token, "text/plain; charset=utf-8", base.etag);
+        overwriteOk.current = false;
         sourcesRef.current[libName] = src;
         savedSrc.current = src;
         localStorage.removeItem(draftKey(libName));
@@ -775,7 +806,10 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
           notify(`✓ ${libName} сохранён. Его пока не подключает ни одна глава`, "ok");
         }
       } catch (e) {
-        notify("Save failed: " + ((e && e.message) || "unknown"), "err");
+        if (e && e.conflict) {
+          setServerAhead(true);
+          notify("✗ Кто-то сохранил этот файл прямо сейчас. Твой текст цел: возьми серверную версию или сохрани поверх", "err");
+        } else notify("Save failed: " + ((e && e.message) || "unknown"), "err");
       }
       return;
     }
@@ -794,8 +828,14 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
       // touched, so source and bytecode can never end up describing different
       // stories; the author's text is still in the editor (and its local
       // draft) and the errors land in the toast.
+      const base = await baseVersion(lvnsPath);
+      if (!base.ok) return;
       const saved = await putAsset(lvnPath, lastJson.current, creds.token, "application/json");
-      await putAsset(lvnsPath, src, creds.token, "text/plain; charset=utf-8");
+      // Версию сторожит .lvns — исходник автора; байткод рядом с ним всегда
+      // пересобирается из него же. If-Match здесь — против ГОНКИ: чужое
+      // сохранение, успевшее пройти между проверкой выше и этой строкой.
+      await putAsset(lvnsPath, src, creds.token, "text/plain; charset=utf-8", base.etag);
+      overwriteOk.current = false;
       // a new chapter is published on first save: push its manifest entry too.
       if (selId && !published.has(selId)) {
         await persist(title);
@@ -1097,7 +1137,12 @@ export default function ScriptSection({ creds, notify, titleId, setStatus }) {
                       setServerAhead(false);
                       if (sharedName) openShared(sharedName); else if (sel) openChapter(sel);
                     }}>Взять серверную</button>
-                    <button className="btn-ghost sm" onClick={() => setServerAhead(false)}>
+                    <button className="btn-ghost sm" onClick={() => {
+                      // Явное решение автора: следующее сохранение ложится
+                      // поверх серверной редакции.
+                      overwriteOk.current = true;
+                      setServerAhead(false);
+                    }}>
                       Оставить мою
                     </button>
                   </div>

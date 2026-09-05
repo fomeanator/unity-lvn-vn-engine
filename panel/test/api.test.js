@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   adminFetch, adminUsers, adminDeleteAsset, putAsset,
   adminConflicts, adminResolveConflict, analyticsSummary, analyticsFunnel, analyticsHealth,
+  readSource,
 } from "../src/lib/api.js";
 
 // fetch is mocked per test — these are contract tests for the thin client:
@@ -68,6 +69,44 @@ describe("wrappers", () => {
     await putAsset("/content/scripts/ch1.lvn", "hi", "tok", "text/plain");
     const [url] = fn.mock.calls[0];
     expect(url).toBe("/v1/admin/assets/scripts/ch1.lvn");
+  });
+
+  // Версия, на которой правил автор, уезжает на сервер: без неё второй
+  // сохранивший молча затирает работу первого, и оба видят «сохранено».
+  it("putAsset передаёт версию файла, на которой правил автор", async () => {
+    const fn = mockFetch(async () => jsonResponse({ path: "scripts/ch1.lvns", bytes: 2 }));
+    await putAsset("scripts/ch1.lvns", "текст", "tok", "text/plain", '"4e-abc"');
+    const [, opt] = fn.mock.calls[0];
+    expect(opt.headers["If-Match"]).toBe('"4e-abc"');
+  });
+
+  it("putAsset без версии не шлёт If-Match — сборке и загрузке арта он не нужен", async () => {
+    const fn = mockFetch(async () => jsonResponse({ path: "bg/room.jpg", bytes: 2 }));
+    await putAsset("bg/room.jpg", "…", "tok", "image/jpeg");
+    const [, opt] = fn.mock.calls[0];
+    expect(opt.headers["If-Match"]).toBeUndefined();
+  });
+
+  // 409 обязан отличаться от прочих отказов ПРИЗНАКОМ, а не текстом: интерфейс
+  // на нём показывает выбор «взять серверную / оставить мою», а разбирать для
+  // этого сообщение сервера значило бы сломаться на первой же его правке.
+  it("putAsset помечает конфликт версий отдельным признаком", async () => {
+    mockFetch(async () => jsonResponse({ conflict: true, error: "файл изменился на сервере" }, 409));
+    await expect(putAsset("scripts/ch1.lvns", "текст", "tok", "text/plain", '"старая"'))
+      .rejects.toMatchObject({ conflict: true });
+  });
+});
+
+describe("readSource", () => {
+  it("отдаёт текст и версию — то, чем сверяются перед записью", async () => {
+    mockFetch(async () => new Response("сцена ch1", { status: 200, headers: { ETag: '"4e-abc"' } }));
+    await expect(readSource("scripts/ch1.lvns")).resolves.toEqual({ text: "сцена ch1", etag: '"4e-abc"' });
+  });
+
+  // Новая глава — это отсутствующий файл, а не ошибка: сохранение её создаст.
+  it("на отсутствующий файл отвечает пустотой, а не исключением", async () => {
+    mockFetch(async () => new Response("not found", { status: 404 }));
+    await expect(readSource("scripts/новая.lvns")).resolves.toEqual({ text: null, etag: null });
   });
 });
 

@@ -33,6 +33,7 @@ import (
 	_ "embed"
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"path"
@@ -40,6 +41,7 @@ import (
 	"regexp"
 	"sort"
 	"strings"
+	"time"
 
 	"github.com/fomeanator/elvin/tools/lvnconv/importer"
 )
@@ -151,6 +153,10 @@ func agentHeader(base, token string) string {
   цела.
 * Повторная публикация с тем же ` + "`id`" + ` и ` + "`chapter`" + ` заменяет главу; прошлая версия
   уходит в историю студии, её можно откатить из панели.
+* ` + "`replaced`" + ` в ответе — под твоим текстом лежал ЧУЖОЙ, и он только что заменён
+  (значение — время той редакции). Над новеллой работают и люди: если ты этой
+  замены не планировал, скажи об этом человеку, прежняя редакция цела в истории
+  студии. Поля нет — значит главы не было или текст совпал побайтово.
 
 ## Игра из нескольких глав: общий файл
 
@@ -273,6 +279,13 @@ func (s *server) handleAgentPublish(w http.ResponseWriter, r *http.Request) {
 	srcRel := strings.TrimSuffix(rel, ".lvn") + ".lvns"
 	lk := s.writeLock()
 	lk.Lock()
+	// ПЕРЕЗАПИСЬ ЧУЖОЙ РАБОТЫ ОБЯЗАНА БЫТЬ ВИДНА. Агент версий не читает и
+	// прислать их не может: он публикует главу целиком, не зная, правил ли её
+	// кто-то с прошлого раза. Требовать от него If-Match значило бы сломать
+	// тракт публикации; но промолчать о том, что под его текстом лежал ЧУЖОЙ,
+	// нельзя — именно так работа исчезает незамеченной. Ответ и журнал говорят
+	// «заменено», а прежняя редакция остаётся в .history.
+	replaced := replacedSource(s.content, srcRel, req.Lvns)
 	werr := s.writeContentFile(srcRel, []byte(req.Lvns))
 	if werr == nil {
 		werr = s.writeContentFile(rel, compiled)
@@ -289,11 +302,15 @@ func (s *server) handleAgentPublish(w http.ResponseWriter, r *http.Request) {
 	if mErr != nil {
 		// Скрипт уже лежит и играбелен по прямой ссылке — врать про полный
 		// успех нельзя, но и терять сделанное незачем.
-		writeJSON(w, http.StatusOK, map[string]any{
+		half := map[string]any{
 			"ok": false, "stage": "manifest", "error": mErr.Error(),
 			"script_url": "/content/" + rel,
 			"warnings":   orEmpty(findings.Warnings),
-		})
+		}
+		if replaced != "" {
+			half["replaced"] = replaced
+		}
+		writeJSON(w, http.StatusOK, half)
 		return
 	}
 
@@ -301,12 +318,33 @@ func (s *server) handleAgentPublish(w http.ResponseWriter, r *http.Request) {
 		Script []any `json:"script"`
 	}
 	_ = json.Unmarshal(compiled, &doc)
-	writeJSON(w, http.StatusOK, map[string]any{
+	out := map[string]any{
 		"ok": true, "id": req.ID, "chapter": req.Chapter,
 		"commands": len(doc.Script), "warnings": orEmpty(findings.Warnings),
 		"script_url": "/content/" + rel,
 		"play_url":   requestBase(r) + "/",
-	})
+	}
+	if replaced != "" {
+		out["replaced"] = replaced
+		log.Printf("agent publish %s: заменена редакция от %s (прежняя — в .history)", srcRel, replaced)
+	}
+	writeJSON(w, http.StatusOK, out)
+}
+
+// replacedSource: если на месте уже лежал ДРУГОЙ текст, вернуть время его
+// последней правки. Пустая строка — файла не было или он побайтово тот же
+// (повторная публикация того же текста ничего не заменяет и молчать о ней
+// правильно).
+func replacedSource(content, rel, next string) string {
+	b, err := os.ReadFile(filepath.Join(content, filepath.FromSlash(rel)))
+	if err != nil || string(b) == next {
+		return ""
+	}
+	info, err := os.Stat(filepath.Join(content, filepath.FromSlash(rel)))
+	if err != nil {
+		return ""
+	}
+	return info.ModTime().UTC().Format(time.RFC3339)
 }
 
 // sharedNameRe — имя общего файла: только само имя, без каталогов, и только

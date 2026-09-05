@@ -529,6 +529,29 @@ func fileETag(dir, rel string) string {
 	return fmt.Sprintf("\"%x-%x\"", info.Size(), info.ModTime().UnixNano())
 }
 
+// etagMatches: совпадает ли ETag файла с тем, что прислали в If-Match.
+// Заголовок допускает список через запятую и «*» (подходит любой существующий
+// файл); слабые метки (W/"...") сравниваются по своей части — наш ETag всегда
+// сильный, но клиент, прошедший через прокси, может вернуть слабую копию.
+func etagMatches(ifMatch, current string) bool {
+	if current == "" {
+		return false
+	}
+	for _, part := range strings.Split(ifMatch, ",") {
+		part = strings.TrimSpace(part)
+		if part == "*" {
+			return true
+		}
+		if strings.HasPrefix(part, "W/") {
+			part = strings.TrimSpace(part[2:])
+		}
+		if part == current {
+			return true
+		}
+	}
+	return false
+}
+
 // hasDotSegment reports whether any path segment starts with a dot. Nothing a
 // player fetches ever does, while everything editorial under the content root
 // does: .history/, .lvn-import/, and the short-lived .publish-*.lvns a publish
@@ -1090,6 +1113,7 @@ func (s *server) handleAdminAsset(w http.ResponseWriter, r *http.Request) {
 	dst := filepath.Join(s.content, filepath.Clean(rel))
 	switch r.Method {
 	case http.MethodPut:
+		ifMatch := strings.TrimSpace(r.Header.Get("If-Match"))
 		body, err := io.ReadAll(io.LimitReader(r.Body, bodyHuge))
 		if err != nil {
 			http.Error(w, "read body", http.StatusBadRequest)
@@ -1165,15 +1189,55 @@ func (s *server) handleAdminAsset(w http.ResponseWriter, r *http.Request) {
 		// collide on it and the older revision is gone.
 		lk := s.writeLock()
 		lk.Lock()
+		// УСЛОВНАЯ ЗАПИСЬ. Над одной новеллой работают несколько рук: автор в
+		// панели, редактор в другой вкладке, ИИ-агент по API. Все они пишут
+		// главу одной и той же дверью, и до 05.09.2026 последний записавший
+		// молча выигрывал: оба получали 200, на диске оставалась одна правка,
+		// и потерявший узнавал об этом (если вообще узнавал) через день, читая
+		// свою главу заново. Снимок в .history делал потерю ВОССТАНОВИМОЙ, но
+		// не делал её ВИДИМОЙ, а это разные вещи.
+		//
+		// Правило то же, что у манифеста и у прогресса игрока: кто прислал
+		// версию, на которой правил, тот и проверяется. If-Match с ETag
+		// прочитанного файла → запись идёт, только если на диске всё ещё он.
+		// Заголовка нет — пишем как раньше (скрипты сборки, CLI и агенты
+		// версии не читают, и запрещать им запись значило бы сломать тракт
+		// публикации ради проверки, которой они не просили).
+		//
+		// Проверка живёт ВНУТРИ замка, вместе со снимком и записью: снаружи
+		// две сохранённые копии успевали пройти её обе и снова затереть друг
+		// друга — окно узкое, но оно и есть тот случай, ради которого пишут
+		// оптимистическую блокировку.
+		current := fileETag(s.content, rel)
+		if ifMatch != "" && !etagMatches(ifMatch, current) {
+			lk.Unlock()
+			was := "файл изменился на сервере, пока вы правили"
+			if current == "" {
+				was = "файла на сервере больше нет — его удалили или переименовали, пока вы правили"
+			}
+			log.Printf("asset PUT conflict %s: If-Match %s, на диске %s", rel, ifMatch, current)
+			writeJSON(w, http.StatusConflict, map[string]any{
+				"path": rel, "conflict": true, "etag": current,
+				"error": was + ": перечитайте главу и сохраните заново, ваш текст цел в редакторе",
+			})
+			return
+		}
 		snapshotHistory(s.content, rel) // scripts keep their past versions
 		err = atomicWrite(dst, body, 0o644)
+		etag := fileETag(s.content, rel)
 		lk.Unlock()
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
+		// ETag ответа — чтобы редактор мог сохранять дальше, не перечитывая
+		// только что написанный им же файл.
+		if etag != "" {
+			w.Header().Set("ETag", etag)
+		}
 		writeJSON(w, http.StatusOK, map[string]any{
-			"path": rel, "bytes": len(body), "warnings": orEmpty(findings.Warnings),
+			"path": rel, "bytes": len(body), "etag": etag,
+			"warnings": orEmpty(findings.Warnings),
 		})
 	case http.MethodDelete:
 		// Same pair, same lock: a delete that races a save must not lose the

@@ -36,11 +36,41 @@ namespace Lvn.Services
         /// которой надо знать про вход и выход.</summary>
         public static event Action<string> SignedInChanged;
 
-        /// <summary>Register (or recover) the device account. Safe to call every
-        /// boot; no-ops offline and keeps the previous token.</summary>
+        /// <summary>
+        /// Вход при запуске: подтвердить свой пропуск, а если сервер его не
+        /// признал — представиться устройством. Безопасно звать каждый старт,
+        /// офлайн ничего не трогает.
+        ///
+        /// <para>РАНЬШЕ ЗДЕСЬ БЫЛА ТОЛЬКО РЕГИСТРАЦИЯ УСТРОЙСТВОМ, и это
+        /// отменяло вход игрока при каждом запуске. Замер 06.09 на живом
+        /// сервере: устройство u_9eeb…, игрок вошёл своим аккаунтом u_fb58…,
+        /// перезапуск — снова u_9eeb…. То есть «войти через Google» ради своих
+        /// покупок и облачного прогресса работало ровно до закрытия игры, а
+        /// потом человек молча оказывался в чужой пустой учётке.</para>
+        ///
+        /// <para>Правило: есть пропуск — спрашиваем сервер, он ли ещё нас
+        /// узнаёт (<c>GET /v1/auth/me</c>). Узнаёт — не трогаем НИЧЕГО.
+        /// Не узнаёт (401 после разворота базы, отзыва, чистого сервера) —
+        /// представляемся устройством, как при первом запуске. Сервер молчит
+        /// (офлайн) — тоже не трогаем: пропуск на устройстве всё ещё наш.</para>
+        /// </summary>
         public static async Task<bool> EnsureRegisteredAsync()
         {
             if (string.IsNullOrEmpty(BaseUrl)) return SignedIn;
+            if (SignedIn)
+            {
+                var (mine, _) = await GetAsync("/v1/auth/me");
+                if (Ok(mine))
+                {
+                    // Сервер узнаёт этот пропуск — он и есть вход. Владельца
+                    // локальных данных подтверждаем на случай, если процесс
+                    // только что запустился и о нём ещё никто не объявлял.
+                    Lvn.LvnKeep.NoteOwner(UserId);
+                    LvnWallet.NoteUser(UserId);
+                    return true;
+                }
+                if (mine == 0) return SignedIn; // сети нет — пропуск остаётся нашим
+            }
             // Метка устройства — у ПАСПОРТИСТА: её потеря регистрирует НОВУЮ
             // учётку, то есть отнимает кошелёк и покупки, поэтому дома два.
             var device = LvnMark.Steady(PDevice);
@@ -55,9 +85,37 @@ namespace Lvn.Services
                 LvnKeep.Put(PUser, resp.user_id);
             }
             LvnWallet.NoteUser(resp.user_id); // bind (or reset) the offline wallet to this account
-            Lvn.LvnKeep.NoteOwner(resp.user_id); // и всё прохождение на устройстве — тоже его
+            // ВХОД УСТРОЙСТВОМ — ЭТО ТОТ ЖЕ ЧЕЛОВЕК. Метка устройства не
+            // менялась; если номер игрока стал другим, то не потому, что
+            // телефон сменил хозяина, а потому что сервер потерял свою базу.
+            // Прохождение на устройстве остаётся его — см. LvnKeep.InheritOwner.
+            Lvn.LvnKeep.InheritOwner(resp.user_id);
             SignedInChanged?.Invoke(resp.user_id);
             return true;
+        }
+
+        /// <summary>
+        /// ВЫЙТИ ИЗ УЧЁТКИ — осознанно и явно: пропуск игрока забывается, игра
+        /// возвращается к учётке устройства. До 06.09 выхода не было вовсе, и
+        /// его роль случайно исполняла регистрация при старте — то есть выход
+        /// происходил сам, без спроса, у каждого вошедшего.
+        ///
+        /// <para>Метку устройства не трогаем: она — паспорт телефона, а не
+        /// игрока, и её потеря завела бы новую пустую учётку («удалить
+        /// аккаунт» — другая дверь, см. <see cref="DeleteAccountAsync"/>).
+        /// Локальные данные тоже остаются на месте: их владельца объявит
+        /// регистрация устройства, и хозяин телефона застанет своё.</para>
+        /// </summary>
+        public static async Task<bool> SignOutAsync()
+        {
+            using (LvnKeep.Batch())
+            {
+                LvnKeep.Drop(PToken);
+                LvnKeep.Drop(PUser);
+            }
+            Lvn.LvnKeep.NoteOwner("");
+            SignedInChanged?.Invoke("");
+            return await EnsureRegisteredAsync();
         }
 
         [Serializable] private class RegisterReq { public string device_id; }

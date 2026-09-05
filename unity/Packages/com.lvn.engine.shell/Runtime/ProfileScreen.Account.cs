@@ -41,6 +41,59 @@ namespace Lvn.UI.Screens
             return row;
         }
 
+        // «ВЫЙТИ ИЗ АККАУНТА». До 06.09 выхода не было вовсе, и его роль
+        // случайно исполняла регистрация при старте: вход игрока не переживал
+        // закрытия игры. Теперь вход держится — значит выход обязан быть
+        // явным, иначе телефон, на котором кто-то вошёл своей учёткой,
+        // невозможно вернуть хозяину.
+        private VisualElement SignOutRow()
+        {
+            var row = LvnStyler.CardRow(ScreenUi.Row(spread: true), LvnTokens.SurfaceSoft);
+            LvnAir.PadX(row, LvnTokens.Space3);
+            row.style.marginBottom = LvnTokens.Space2;
+
+            var col = new VisualElement();
+            col.style.flexGrow = 1;
+            col.style.flexShrink = 1;
+            col.style.marginRight = LvnTokens.Space2;
+            var lbl = Lvn.UI.LvnRedress.Bind(new Label(), () => LvnWords.Of("account.sign_out", "Sign out"));
+            lbl.style.color = LvnTokens.Text;
+            lbl.style.fontSize = LvnTokens.TextSm;
+            col.Add(lbl);
+            var hint = Lvn.UI.LvnRedress.Bind(new Label(), () => LvnWords.Of("account.sign_out_hint", "Back to this device's account. Nothing is deleted."));
+            hint.style.color = LvnTokens.TextDim;
+            hint.style.fontSize = LvnTokens.TextXs;
+            hint.style.marginTop = LvnTokens.Hair;
+            hint.style.whiteSpace = WhiteSpace.Normal;
+            col.Add(hint);
+            row.Add(col);
+
+            var btn = new Button();
+            btn.style.fontSize = LvnTokens.TextXs;
+            LvnAir.Pad(btn, LvnTokens.Space3, LvnTokens.Space2);
+            LvnStyler.Plate(btn, LvnTokens.Faint, LvnTokens.Text, LvnTokens.RadiusSm);
+            // Выход ничего не стирает, поэтому переспроса не заслуживает —
+            // в отличие от удаления, которое рядом и необратимо.
+            Lvn.UI.LvnRedress.Bind(btn, () => LvnWords.Of("account.sign_out_do", "Sign out"));
+            btn.clicked += () =>
+            {
+                btn.SetEnabled(false);
+                LvnAsync.Fire(RunSignOutAsync(btn), "SignOut");
+            };
+            row.Add(btn);
+            return row;
+        }
+
+        private async Task RunSignOutAsync(Button btn)
+        {
+            bool ok = false;
+            try { ok = await OnSignOut(); }
+            catch (Exception e) { Debug.LogWarning($"[lvn-profile] выход: {e.Message}"); }
+            if (ok) { Close(); return; }
+            btn.SetEnabled(true);
+            LvnMotion.FlashText(btn, Lvn.Content.LvnOfflineText.TryLater, LvnMotion.NoticeLong);
+        }
+
         // «Удалить аккаунт»: приглушённая строка с подтверждением в два нажатия
         // прямо в кнопке — отдельный диалог тут был бы тяжелее самого действия.
         private VisualElement DeleteAccountRow()

@@ -97,6 +97,11 @@ namespace Lvn.UI.Screens
         /// не вышло (нет сети), кнопка объясняет. null прячет строку.</summary>
         public Func<Task<bool>> OnDeleteAccount;
 
+        /// <summary>«Выйти из аккаунта»: хост забывает пропуск игрока и
+        /// возвращается к учётке устройства. Ничего не удаляет. null прячет
+        /// строку — играм без входа она не нужна.</summary>
+        public Func<Task<bool>> OnSignOut;
+
         private readonly ILvnAssets _assets;
         private readonly ScrollView _body;
 
@@ -166,6 +171,7 @@ namespace Lvn.UI.Screens
                 LvnWords.Of("profile.relations_empty", "The first choice already bends the story. Start a chapter and your ties appear here.")));
 
             if (OnOpenSettings != null) _body.Add(SettingsLink());
+            if (OnSignOut != null) _body.Add(SignOutRow());
             if (OnDeleteAccount != null) _body.Add(DeleteAccountRow());
 
             _body.Add(BuildFooter());

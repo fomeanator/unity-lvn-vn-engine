@@ -113,6 +113,9 @@ namespace Lvn.UI.Screens
             if (!string.IsNullOrEmpty(uid)) p.Uid = uid;
             p.Wallet = BuildWalletTiles();
             p.OnDeleteAccount = DeleteAccountAndForgetAsync;
+            // Выход возвращает телефон к его собственной учётке. Нужен ровно
+            // с того дня, как вход перестал слетать сам при перезапуске.
+            p.OnSignOut = Lvn.Services.LvnBackend.SignOutAsync;
             p.OnOpenSettings = () => LvnAsync.Fire(_shell.OpenSettingsAsync(), "OpenSettings");
             await _shell.TabGoTo(LvnTabs.Profile); // вкладка ленты, не модалка
         }

@@ -24,6 +24,18 @@
   "default": "Deleting…"
  },
  {
+  "key": "account.sign_out",
+  "default": "Sign out"
+ },
+ {
+  "key": "account.sign_out_do",
+  "default": "Sign out"
+ },
+ {
+  "key": "account.sign_out_hint",
+  "default": "Back to this device's account. Nothing is deleted."
+ },
+ {
   "key": "account.uid_hint",
   "default": "Quote it if you contact support"
  },

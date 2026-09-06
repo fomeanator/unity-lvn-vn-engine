@@ -25,6 +25,45 @@ namespace Lvn
 
         public static int RamMb => SystemInfo.systemMemorySize;
 
+        /// <summary>
+        /// СКОЛЬКО ПАМЯТИ ОБЕЩАНО ПРИЛОЖЕНИЮ, А НЕ УСТРОЙСТВУ.
+        ///
+        /// <para>Вся память устройства — не наша: её делят система, магазин,
+        /// лаунчер и всё, что крутится рядом. Замер на устройстве с 976 МБ:
+        /// системе и сервисам ушло около полутысячи мегабайт, свободными
+        /// оставались 80. Планировать кэш от ОБЩЕЙ памяти в такой обстановке
+        /// значит планировать вдвое больше, чем существует.</para>
+        ///
+        /// <para>Android называет свою обещанную планку сам —
+        /// <c>ActivityManager.getMemoryClass()</c>. Это тот размер, на который
+        /// приложение вправе рассчитывать; всё сверх него живёт до первой
+        /// нехватки. Ноль означает «спросить не у кого» (редактор, другая
+        /// платформа) — тогда решение принимается по прежнему правилу.</para>
+        /// </summary>
+        public static int HeapLimitMb => _heapMb ??= AskHeapLimit();
+
+        private static int? _heapMb;
+
+        private static int AskHeapLimit()
+        {
+#if UNITY_ANDROID && !UNITY_EDITOR
+            try
+            {
+                using var player = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+                using var activity = player.GetStatic<AndroidJavaObject>("currentActivity");
+                using var am = activity.Call<AndroidJavaObject>("getSystemService", "activity");
+                // Большая планка — та, что действует с android:largeHeap; без
+                // него обе совпадают, поэтому меньшая из двух и есть правда.
+                int normal = am.Call<int>("getMemoryClass");
+                int large = am.Call<int>("getLargeMemoryClass");
+                return Mathf.Max(normal, 0) == 0 ? 0 : Mathf.Min(Mathf.Max(normal, large), 4096);
+            }
+            catch { return 0; }   // спросить не удалось — молчим, решает прежнее правило
+#else
+            return 0;
+#endif
+        }
+
         public static float RefreshHz => (float)Screen.currentResolution.refreshRateRatio.value;
 
         public static string Model => SystemInfo.deviceModel;
@@ -102,7 +141,21 @@ namespace Lvn
         /// этого всё равно, откуда он спрашивает.</para></summary>
         [UnityEngine.RuntimeInitializeOnLoadMethod(
             UnityEngine.RuntimeInitializeLoadType.BeforeSceneLoad)]
-        private static void PrimeAdvice() { _advice = Advise(); }
+        private static void PrimeAdvice() { _advice = Advise(); _cores = SafeCores(); }
+
+        /// <summary>Сколько потоков у устройства. Нужно тем, кто раздаёт
+        /// параллельную работу: полоса шириной в три на двухъядерном телефоне
+        /// отнимает процессор у главного потока, и загрузка ассетов начинает
+        /// «лагать» именно тогда, когда игрок ждёт картинку.</summary>
+        public static int Cores => _cores > 0 ? _cores : (_cores = SafeCores());
+
+        private static int _cores;
+
+        private static int SafeCores()
+        {
+            try { return Mathf.Max(1, SystemInfo.processorCount); }
+            catch { return 0; }   // спросили не с главного потока — решит вызывающий
+        }
 
         private static string _advice;
 

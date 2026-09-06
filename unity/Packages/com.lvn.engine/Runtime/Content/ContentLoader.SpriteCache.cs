@@ -39,18 +39,48 @@ namespace Lvn.Content
     /// </summary>
     public sealed partial class ContentLoader
     {
+        /// <summary>
+        /// СКОЛЬКО ПАМЯТИ ОТДАТЬ ПОД КАРТИНКИ — одно правило, отдельно от того,
+        /// кто его применяет.
+        ///
+        /// <para>Шестая часть памяти устройства — старая мерка, годная для
+        /// телефона, который наш целиком. Рядом, однако, живут система,
+        /// магазин и лаунчер, и на устройстве с 976 МБ свободными оставались
+        /// 80 при объявленном бюджете 162 МБ (живой замер 06.09). Поэтому
+        /// решает МЕНЬШЕЕ из двух: доля устройства и половина планки, которую
+        /// Android обещает приложению.</para>
+        ///
+        /// <para>Планка неизвестна (редактор, другая платформа) — работает
+        /// прежнее правило с полом в 96 МБ. Планка известна и мала — пол
+        /// опускается вместе с ней: невыполнимый бюджет хуже маленького.</para>
+        /// </summary>
+        internal static long BudgetFor(int ramMb, int heapMb)
+        {
+            long b = ((long)ramMb << 20) / 6;
+            long floor = 96L << 20;
+            if (heapMb > 0)
+            {
+                long half = ((long)heapMb << 20) / 2;
+                b = Math.Min(b, half);
+                floor = Math.Min(floor, half);
+            }
+            return Math.Max(floor, Math.Min(384L << 20, b));
+        }
+
         private static void TuneBudgetForDevice()
         {
             if (_budgetTuned) return;
             _budgetTuned = true;
             int mb = Lvn.LvnDeviceProfile.RamMb;
             if (mb <= 0) return; // тесты/неизвестное устройство — дефолт
-            long b = ((long)mb << 20) / 6;
-            long clamped = Math.Max(96L << 20, Math.Min(384L << 20, b));
+            int heap = Lvn.LvnDeviceProfile.HeapLimitMb;
+            long clamped = BudgetFor(mb, heap);
             if (clamped != SpriteCacheBudgetBytes)
             {
                 SpriteCacheBudgetBytes = clamped;
-                LvnLog.Info($"[lvn-content] бюджет спрайт-кэша: {clamped >> 20} МБ (RAM устройства {mb} МБ)");
+                LvnLog.Info($"[lvn-content] бюджет спрайт-кэша: {clamped >> 20} МБ "
+                          + $"(RAM устройства {mb} МБ, планка приложения "
+                          + (heap > 0 ? $"{heap} МБ)" : "неизвестна)"));
             }
         }
 

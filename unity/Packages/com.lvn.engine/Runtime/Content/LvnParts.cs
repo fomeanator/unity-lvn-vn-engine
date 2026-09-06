@@ -123,6 +123,96 @@ namespace Lvn.Content
         private static bool Fetchable(string url)
             => !string.IsNullOrEmpty(url) && !DownloadPolicy.IsTemplate(url);
 
+        /// <summary>
+        /// КТО ГЛАВНАЯ ГЕРОИНЯ — вопрос данных, а не догадки движка.
+        ///
+        /// <para>Отвечает манифест: <c>ui.wardrobe.entity</c> — та, кого
+        /// гардероб открывает по умолчанию. Не назвали — берём первую сущность
+        /// с гардеробом, ровно как это делает сам экран гардероба. Правило уже
+        /// существовало для ОТКРЫТИЯ листа и не использовалось загрузкой:
+        /// качали всех подряд и последними.</para>
+        /// </summary>
+        public static string HeroEntity(LvnManifest m)
+        {
+            if (m?.sprites == null) return null;
+            var named = m.ui?.wardrobe?.entity;
+            if (!string.IsNullOrEmpty(named) && m.sprites.ContainsKey(named)) return named;
+            foreach (var kv in m.sprites)
+                if (kv.Value?.wardrobe != null && kv.Value.wardrobe.Count > 0)
+                    return kv.Key;
+            return null;
+        }
+
+        /// <summary>
+        /// ОБЛИК ГЕРОИНИ ЦЕЛИКОМ: её эмоции (и прочие оси) плюс её гардероб.
+        ///
+        /// <para>Слои в каталоге — ШАБЛОНЫ (<c>hero_{emotion}.png</c>), и
+        /// прогрев их пропускал: файла с фигурными скобками нет и быть не
+        /// должно. Значит база с эмоциями не качалась ЗАРАНЕЕ НИКОГДА — только
+        /// в момент показа. Гардероб это видел как пустые карточки.</para>
+        ///
+        /// <para>Здесь шаблоны разворачиваются по ОБЪЯВЛЕННЫМ осям
+        /// (<c>sprites[…].axes</c>) — тем же домом подстановки, что и показ на
+        /// сцене. Разворот идёт ПО ОДНОЙ ОСИ ОТ УМОЛЧАНИЙ: меняем одну ось,
+        /// остальные держим по умолчанию. Иначе это произведение, а не сумма:
+        /// 27 эмоций × 5 нарядов × 3 причёски — четыреста файлов вместо
+        /// тридцати пяти, и «приоритет героини» превратился бы в новый способ
+        /// забить очередь.</para>
+        /// </summary>
+        public static IEnumerable<LvnPart> OfHero(LvnManifest m)
+        {
+            var id = HeroEntity(m);
+            if (id == null || m?.sprites == null) yield break;
+            if (!m.sprites.TryGetValue(id, out var e) || e == null) yield break;
+
+            var seen = new HashSet<string>();
+            foreach (var url in HeroLooks(e, seen))
+                yield return new LvnPart(url, Sprite);
+
+            if (e.wardrobe == null) yield break;
+            foreach (var slot in e.wardrobe.Values)
+            {
+                if (slot == null) continue;
+                if (Fetchable(slot.icon) && seen.Add(slot.icon))
+                    yield return new LvnPart(slot.icon, Sprite);
+                if (slot.items == null) continue;
+                foreach (var it in slot.items)
+                    if (Fetchable(it?.icon) && seen.Add(it.icon))
+                        yield return new LvnPart(it.icon, Sprite);
+            }
+        }
+
+        // Слои героини во всех объявленных состояниях: сперва умолчания (то,
+        // как она выглядит по умолчанию), затем по одному значению каждой оси.
+        private static IEnumerable<string> HeroLooks(LvnSpriteEntity e, HashSet<string> seen)
+        {
+            var defaults = e.defaults ?? new Dictionary<string, string>();
+            foreach (var url in LooksAt(e, defaults, seen)) yield return url;
+            if (e.axes == null) yield break;
+            foreach (var axis in e.axes)
+            {
+                if (string.IsNullOrEmpty(axis.Key) || axis.Value == null) continue;
+                foreach (var value in axis.Value)
+                {
+                    if (string.IsNullOrEmpty(value)) continue;
+                    var state = new Dictionary<string, string>(defaults) { [axis.Key] = value };
+                    foreach (var url in LooksAt(e, state, seen)) yield return url;
+                }
+            }
+        }
+
+        private static IEnumerable<string> LooksAt(LvnSpriteEntity e,
+                                                   IReadOnlyDictionary<string, string> state,
+                                                   HashSet<string> seen)
+        {
+            if (e.layers == null) yield break;
+            foreach (var layer in e.layers)
+            {
+                var url = Lvn.LayerTemplate.Fill(layer?.url, state, e.defaults);
+                if (Fetchable(url) && seen.Add(url)) yield return url;
+            }
+        }
+
         public static IEnumerable<LvnPart> OfCast(LvnManifest m)
         {
             if (m?.sprites == null) yield break;

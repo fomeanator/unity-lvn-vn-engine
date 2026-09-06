@@ -133,6 +133,57 @@ namespace Lvn.Tests
                 "облик героини не развернул ни одной эмоции — гардероб останется пустым");
         }
 
+        /// <summary>
+        /// СПАЙНОВАЯ ГЕРОИНЯ — ТОЖЕ ГЕРОИНЯ.
+        ///
+        /// <para>Прогрев искал облик в <c>layers</c> и <c>wardrobe</c>. У
+        /// спайновой сущности слоёв нет вовсе: её облик — скелет, атлас и
+        /// страница атласа. Замер на живом каталоге 06.09: 14 спайновых
+        /// сущностей, 48 файлов скелета, прогревалось из них НОЛЬ — атлас в
+        /// несколько мегабайт приезжал в тот миг, когда персонажа показывают.</para>
+        /// </summary>
+        [Test]
+        public void СкелетСпайновойГероиниЕдетВместеСОбликом()
+        {
+            var каталог = Каталог();
+            каталог.sprites["кукла"] = new LvnSpriteEntity
+            {
+                kind = "spine",
+                spine = new LvnSpineRef
+                {
+                    json = "spine/doll/doll.json",
+                    atlas = "spine/doll/doll.atlas.txt",
+                    texture = "spine/doll/doll.png",
+                    bg = "spine/doll/back.jpg",
+                },
+                wardrobe = new Dictionary<string, LvnWardrobeSlot>
+                {
+                    ["outfit"] = new LvnWardrobeSlot { icon = "ui/doll_slot.png" },
+                },
+            };
+            каталог.ui.wardrobe.entity = "кукла";
+
+            var облик = LvnParts.OfHero(каталог).Select(p => p.Url).ToList();
+            TestContext.WriteLine("облик спайновой героини: " + string.Join(", ", облик));
+            foreach (var url in new[]
+            {
+                "spine/doll/doll.json", "spine/doll/doll.atlas.txt",
+                "spine/doll/doll.png", "spine/doll/back.jpg",
+            })
+                Assert.Contains(url, облик,
+                    $"облик спайновой героини не содержит {url} — скелет приедет в момент показа");
+
+            // Разметка раньше страницы атласа: собирать скелет будет из чего к
+            // тому мигу, когда доедут мегабайты картинки.
+            Assert.Less(облик.IndexOf("spine/doll/doll.json"), облик.IndexOf("spine/doll/doll.png"),
+                "тяжёлая страница атласа встала перед разметкой скелета");
+
+            // Остальной спайн — тоже в очереди, но на своей последней ступени.
+            var кастом = LvnParts.OfCast(каталог).Select(p => p.Url).ToList();
+            Assert.Contains("spine/doll/doll.json", кастом,
+                "скелеты каста не попали в прогрев вовсе");
+        }
+
         [Test]
         public void ГероиняСтоитВышеБиблиотекиИНижеТекущейГлавы()
         {

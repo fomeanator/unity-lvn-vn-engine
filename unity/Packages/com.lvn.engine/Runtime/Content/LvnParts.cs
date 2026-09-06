@@ -168,6 +168,9 @@ namespace Lvn.Content
             var seen = new HashSet<string>();
             foreach (var url in HeroLooks(e, seen))
                 yield return new LvnPart(url, Sprite);
+            // Героиня может быть спайновой — тогда её облик это скелет, а не слои.
+            foreach (var part in OfSpine(e))
+                if (seen.Add(part.Url)) yield return part;
 
             if (e.wardrobe == null) yield break;
             foreach (var slot in e.wardrobe.Values)
@@ -201,6 +204,28 @@ namespace Lvn.Content
             }
         }
 
+        /// <summary>
+        /// СКЕЛЕТ SPINE — ТОЖЕ ОБЛИК, и его до сих пор не грел никто.
+        ///
+        /// <para>Прогрев читал у сущности только <c>layers</c> и
+        /// <c>wardrobe</c>. У спайновой сущности слоёв нет вовсе: её облик —
+        /// это <c>spine.json</c>, атлас, страница атласа и (если есть)
+        /// подложка. Замер 06.09 на живом каталоге: 14 спайновых сущностей,
+        /// 48 файлов скелета, прогревалось из них НОЛЬ — скелет приезжал
+        /// только в момент показа, а это мегабайты атласа посреди сцены.</para>
+        /// </summary>
+        public static IEnumerable<LvnPart> OfSpine(LvnSpriteEntity e)
+        {
+            var sp = e?.spine;
+            if (sp == null) yield break;
+            // Порядок — от лёгкого к тяжёлому: разметка приезжает первой, и к
+            // моменту, когда доедет атлас, собирать скелет уже есть из чего.
+            if (Fetchable(sp.json)) yield return new LvnPart(sp.json, Sprite);
+            if (Fetchable(sp.atlas)) yield return new LvnPart(sp.atlas, Sprite);
+            if (Fetchable(sp.texture)) yield return new LvnPart(sp.texture, Sprite);
+            if (Fetchable(sp.bg)) yield return new LvnPart(sp.bg, Sprite);
+        }
+
         private static IEnumerable<string> LooksAt(LvnSpriteEntity e,
                                                    IReadOnlyDictionary<string, string> state,
                                                    HashSet<string> seen)
@@ -224,6 +249,8 @@ namespace Lvn.Content
                     foreach (var layer in e.layers)
                         if (Fetchable(layer?.url))
                             yield return new LvnPart(layer.url, Sprite);
+                foreach (var part in OfSpine(e))
+                    yield return part;
                 // Гардероб принадлежит СУЩНОСТИ, а не новелле: одну героиню
                 // могут одевать в нескольких новеллах, и набор у неё один.
                 if (e.wardrobe == null) continue;

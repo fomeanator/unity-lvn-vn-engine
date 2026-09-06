@@ -128,11 +128,43 @@ cp "$W/content/art/hero.png" "$W/hero.orig.png"
 RAW=$(stat -f%z "$W/hero.orig.png" 2>/dev/null || stat -c%s "$W/hero.orig.png")
 echo "сырой слой: $RAW байт (900×1600×4 = $((900*1600*4)))"
 
+# СВОБОДЕН — ЗНАЧИТ НА НЁМ МОЖНО СЛУШАТЬ, а не «на нём молчит healthz».
+#
+# Прежняя проверка спрашивала /healthz: порт, занятый чем угодно другим
+# (соседний прогон, python-раздача этого же стенда, чужой сервер), считался
+# свободным — и сервер падал с «address already in use», а стенд объявлял
+# поломкой то, что поломкой не было. Мерка, краснеющая по случайности,
+# обесценивает весь прогон: её перестают читать.
+can_bind() {
+  python3 -c "
+import socket, sys
+s = socket.socket()
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+try:
+    s.bind(('127.0.0.1', int(sys.argv[1])))
+except OSError:
+    sys.exit(1)
+finally:
+    s.close()
+" "$1"
+}
+
 free_port() {
   for p in "$@"; do
-    curl -fsS -m 1 "http://127.0.0.1:$p/healthz" >/dev/null 2>&1 || { echo "$p"; return 0; }
+    can_bind "$p" && { echo "$p"; return 0; }
   done
   echo 0
+}
+
+# Порт освобождается не в тот же миг, что и убитый процесс: ядро держит его,
+# пока закрываются соединения. Ждём явно — иначе вторая половина стенда
+# спотыкается о первую.
+wait_port_free() {
+  for _ in $(seq 1 40); do
+    can_bind "$1" && return 0
+    sleep 0.25
+  done
+  return 1
 }
 PORT="$(free_port 8086 8087 8088 8089)"
 [ "$PORT" = "0" ] && { echo "порты заняты — пропускаю"; exit 0; }

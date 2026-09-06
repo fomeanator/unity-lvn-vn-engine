@@ -3,7 +3,8 @@
   "title": "clear empties the cast and leaves everything else standing",
   "why": "The whole definition of the op is which things it does NOT touch. It removes every actor and obj — the same removal `show=false` performs, not a dim — while the backdrop stays exactly as it was, so a scene transition is still `clear` + a new `bg` and never an accidental black screen. A renderer that also dropped the backdrop, or that hid the cast by fading it, would satisfy the forwarding case and still be wrong.",
   "runtimes": [
-    "csharp"
+    "csharp",
+    "js"
   ],
   "doc": {
     "scene": "conformance",

@@ -4,7 +4,56 @@
 import { readFileSync } from "node:fs";
 
 const [, , playerPath, casesJson] = process.argv;
-const { Player } = await import(playerPath);
+const { Player, flag } = await import(playerPath);
+
+// СВЁРТКА КАДРА — та же, что у C#-прогона (ConformanceCorpusTests.Run).
+//
+// Корпус описывает не только поток команд, но и КАДР, к которому он сводится:
+// последний фон и кто в итоге на экране. Браузерная половина сверки этого не
+// делала, и три случая про сцену (включая тот, где `show="no"` обязано убрать
+// героиню) браузером не гонялись вовсе — а ведь именно там рантаймы и
+// расходились: движок читает «no» словарём, а сырая истинность JS считает
+// непустую строку правдой.
+//
+// Правила ровно живые: размещение ЛИПКОЕ (повторная команда без места
+// возвращает актёра туда, где он стоял), `clear` снимает всех, но память о
+// местах оставляет, `obj` идёт тем же трактом, что и `actor`.
+function reduceScene(staged) {
+  let bg = null;
+  const actors = new Map();
+  const sticky = (was, cmd) => {
+    const next = { ...cmd };
+    for (const keep of ["position", "x", "y"])
+      if (next[keep] === undefined && was && was[keep] !== undefined) next[keep] = was[keep];
+    return next;
+  };
+  for (const cmd of staged) {
+    switch (cmd.op) {
+      case "bg":
+        bg = cmd.sprite_url ?? bg;
+        break;
+      case "clear":
+        for (const [id, was] of actors) {
+          const kept = {};
+          for (const keep of ["position", "x", "y"])
+            if (was[keep] !== undefined) kept[keep] = was[keep];
+          kept.show = false;
+          actors.set(id, kept);
+        }
+        break;
+      case "obj":
+      case "actor": {
+        if (!cmd.id) break;
+        actors.set(cmd.id, sticky(actors.get(cmd.id), cmd));
+        break;
+      }
+    }
+  }
+  const visible = [];
+  for (const [id, st] of actors) if (flag(st.show, true)) visible.push(id);
+  visible.sort();
+  return { bg, visible };
+}
 const cases = JSON.parse(readFileSync(casesJson, "utf8"));
 
 const out = [];
@@ -62,6 +111,7 @@ for (const c of cases) {
   } catch (e) {
     fail = "исключение: " + String((e && e.message) || e);
   }
-  out.push({ id: c.id, stops, staged, vars: player ? player.vars : {}, fail });
+  out.push({ id: c.id, stops, staged, scene: reduceScene(staged),
+             vars: player ? player.vars : {}, fail });
 }
 process.stdout.write(JSON.stringify(out));

@@ -3,7 +3,8 @@
   "title": "The scene a player sees: latest backdrop, visible cast, sticky placement",
   "why": "Staging ops accumulate rather than replace. A re-issued actor keeps its last placement (sticky) but takes the new command's emotion; show=false removes her from the scene rather than dimming her. This is the reduction every renderer must agree on.",
   "runtimes": [
-    "csharp"
+    "csharp",
+    "js"
   ],
   "doc": {
     "scene": "conformance",

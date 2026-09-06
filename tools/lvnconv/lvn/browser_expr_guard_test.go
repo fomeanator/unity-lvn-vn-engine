@@ -258,6 +258,15 @@ func TestBrowserPlayerPlaysTheCorpus(t *testing.T) {
 			Stops []map[string]any `json:"stops"`
 			Vars  map[string]any   `json:"vars"`
 			Stage []map[string]any `json:"stage"`
+			// КАДР, К КОТОРОМУ СВОДЯТСЯ КОМАНДЫ. Раньше здесь его не было, и
+			// три случая про сцену браузером не гонялись вовсе — а расходятся
+			// рантаймы именно на ней: движок читает «show=no» словарём, сырая
+			// истинность JS считает непустую строку правдой, и героиня, ушедшая
+			// в игре, оставалась стоять в песочнице.
+			Scene *struct {
+				Bg      *string  `json:"bg"`
+				Visible []string `json:"visible"`
+			} `json:"scene"`
 		} `json:"expect"`
 	}
 	files, _ := filepath.Glob(filepath.Join(root, "conformance", "cases", "*.json"))
@@ -307,6 +316,10 @@ func TestBrowserPlayerPlaysTheCorpus(t *testing.T) {
 		Fail   string           `json:"fail"`
 		Stops  []map[string]any `json:"stops"`
 		Staged []map[string]any `json:"staged"`
+		Scene  struct {
+			Bg      *string  `json:"bg"`
+			Visible []string `json:"visible"`
+		} `json:"scene"`
 	}
 	if err := json.Unmarshal(out, &got); err != nil {
 		t.Fatalf("непонятный ответ node: %v\n%s", err, out)
@@ -378,6 +391,27 @@ func TestBrowserPlayerPlaysTheCorpus(t *testing.T) {
 				}
 			}
 		}
+		// КАДР: кто в итоге на экране и какой фон. Сверяется по тем же
+		// правилам, что у C#-прогона (липкое размещение, clear снимает всех,
+		// obj идёт трактом актёра) — иначе «одна новелла, два рантайма»
+		// проверялось бы только на потоке команд, а не на его результате.
+		if k.Expect.Scene != nil {
+			if k.Expect.Scene.Bg != nil && fmt.Sprint(*k.Expect.Scene.Bg) != fmt.Sprint(deref(g.Scene.Bg)) {
+				bad = append(bad, fmt.Sprintf("%s: фон кадра %q, корпус ждёт %q",
+					g.ID, deref(g.Scene.Bg), *k.Expect.Scene.Bg))
+			}
+			if k.Expect.Scene.Visible != nil {
+				want := append([]string(nil), k.Expect.Scene.Visible...)
+				got := append([]string(nil), g.Scene.Visible...)
+				sort.Strings(want)
+				sort.Strings(got)
+				if strings.Join(want, ",") != strings.Join(got, ",") {
+					bad = append(bad, fmt.Sprintf("%s: на экране [%s], корпус ждёт [%s]",
+						g.ID, strings.Join(got, ", "), strings.Join(want, ", ")))
+				}
+			}
+		}
+
 		for name, wantVal := range k.Expect.Vars {
 			gotVal, ok := g.Vars[name]
 			if !ok {
@@ -400,6 +434,14 @@ func TestBrowserPlayerPlaysTheCorpus(t *testing.T) {
 			len(bad), strings.Join(bad, "\n  "))
 	}
 	t.Logf("браузерный плеер сыграл %d случая(ев) корпуса без расхождений", len(got))
+}
+
+// deref: пустая строка вместо отсутствующего фона — корпус пишет его строкой.
+func deref(s *string) string {
+	if s == nil {
+		return ""
+	}
+	return *s
 }
 
 // stopKinds: вид каждой остановки по порядку — say / choice / input / end.

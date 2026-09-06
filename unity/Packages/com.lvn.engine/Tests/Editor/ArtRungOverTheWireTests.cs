@@ -125,5 +125,45 @@ namespace Lvn.Tests
             Assert.AreEqual(4, orig.Result.Length,
                 "исходник не поднялся после промаха по ступени — игрок увидит пустое место");
         }
+
+        // ОБОЗ ТОЖЕ ПРОСИТ СТУПЕНЬ. Одиночная загрузка выше идёт через
+        // DownscaleVariant руками; фоновый прогрев библиотеки собирает записи
+        // обоза из частей контента — и три его очереди клали адрес как есть,
+        // утаскивая исходник (9,95 МБ) вместо «@1k» (470 КБ) при любой
+        // настройке. Запись обязана собираться домом, который ступень знает.
+        [UnityTest]
+        public IEnumerator ОбозПроситВыбраннуюСтупеньАНеИсходник()
+        {
+            using var srv = new TestHttpServer(Art("content/art/hero@1k.png", "content/art/hero.png"));
+            using var loader = new ContentLoader(srv.Root, _cache);
+
+            DownloadPolicy.PreferredSuffix = DownloadPolicy.Q1k;
+            var item = PreloadItem.Of(new LvnPart("/content/art/hero.png", LvnParts.Sprite, 123));
+            Assert.AreEqual("/content/art/hero@1k.png", item.Url, "запись обоза не подставила ступень");
+            Assert.AreEqual(123, item.Size, "вес по манифесту потерялся по дороге в обоз");
+
+            var t = loader.StartPreloadBatch(new[] { item }, default);
+            yield return Await(t);
+
+            Assert.IsTrue(srv.WasAsked("content/art/hero@1k.png"),
+                "обоз не спросил выбранную ступень: " + string.Join(", ", srv.Asked));
+            Assert.IsFalse(srv.WasAsked("content/art/hero.png"),
+                "обоз утянул исходник — прогрев библиотеки тащит полноразмерный арт при любой настройке");
+        }
+
+        // Звук и сценарий ступеней не имеют — запись обоза оставляет их адрес
+        // нетронутым, иначе прогрев звука ушёл бы в гарантированный 404.
+        [Test]
+        public void ЗаписьОбозаНеТрогаетНеКартинки()
+        {
+            DownloadPolicy.PreferredSuffix = DownloadPolicy.Q1k;
+            Assert.AreEqual("/content/audio/theme.ogg",
+                PreloadItem.Of(new LvnPart("/content/audio/theme.ogg", LvnParts.Audio)).Url);
+            Assert.AreEqual("/content/scripts/ch1.lvn",
+                PreloadItem.Of(new LvnPart("/content/scripts/ch1.lvn", LvnParts.Script)).Url);
+            Assert.AreEqual("/content/ui/frame.png",
+                PreloadItem.Of(new LvnPart("/content/ui/frame.png", LvnParts.Sprite)).Url,
+                "обшивке интерфейса ступеней не положено — у рамок и значков вариантов нет");
+        }
     }
 }

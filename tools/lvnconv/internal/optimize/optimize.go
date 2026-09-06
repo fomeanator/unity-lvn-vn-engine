@@ -77,6 +77,14 @@ type Options struct {
 	MaxSize     int  // longest-side cap in px (default 2560 — see LvnManifest fit modes)
 	JPEGQuality int  // default 85
 	Apply       bool // false = dry run: decide + measure, write nothing
+	// Lossless — только пережатие: те же пиксели, тот же размер, тот же
+	// формат. Ни уменьшения до бокса, ни png→jpg. Режим для исходников
+	// художника: на проде 06.09 двадцать восемь PNG из art/ (238 МБ из 424)
+	// лежали БЕЗ СЖАТИЯ — deflate «store», файл равен w×h×4, — а обычный
+	// прогон тут же превратил бы часть из них в JPEG q85, то есть в потерю,
+	// которой владелец не просил. Пережатие без потерь на живом файле
+	// 9,95 МБ: 2,19 МБ (x4,5), пиксель в пиксель.
+	Lossless bool
 }
 
 func (o Options) withDefaults() Options {
@@ -224,7 +232,7 @@ func processFile(path string, kind Kind, opt Options) Result {
 
 	img := src
 	resized := false
-	if kind == KindStandalone {
+	if kind == KindStandalone && !opt.Lossless {
 		if m := max(r.OldW, r.OldH); m > opt.MaxSize {
 			img = resizeToFit(src, opt.MaxSize)
 			nb := img.Bounds()
@@ -255,7 +263,7 @@ func processFile(path string, kind Kind, opt Options) Result {
 	best, bestFormat := pngOut, "png"
 	// Atlas pages NEVER leave PNG (Spine's .atlas.txt names the exact file and
 	// needs the alpha channel) — no JPEG candidate for those, ever.
-	if kind == KindStandalone && !hasRealAlpha(img) {
+	if kind == KindStandalone && !opt.Lossless && !hasRealAlpha(img) {
 		jpegOut, err := encodeJPEG(img, opt.JPEGQuality)
 		if err != nil {
 			r.Err = fmt.Errorf("encode jpeg: %w", err)

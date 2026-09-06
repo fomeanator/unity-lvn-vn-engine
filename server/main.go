@@ -123,6 +123,9 @@ func main() {
 	mux.HandleFunc("/v1/content/version", srv.handleVersion)
 	mux.HandleFunc("/v1/content/changes", srv.handleContentChanges)
 	ds := newDownscaler() // shared: withDownscale + withKTX2 (@2k source materialization)
+	// Сырое лечится и до первого запроса: обход при старте, в фоне и в один
+	// поток (rawpng.go). На проде 06.09 таких было 28 файлов на 238 МБ.
+	go healRawTree(*contentDir)
 	mux.Handle("/content/", srv.withKTX2(ds, srv.withDownscale(ds, srv.contentHandler(*contentDir))))
 	mux.HandleFunc("/v1/state", srv.handleState)
 
@@ -481,6 +484,15 @@ func (s *server) contentHandler(dir string) http.Handler {
 		if privateRel(rel) {
 			http.Error(w, "not found", http.StatusNotFound)
 			return
+		}
+		// СЫРОЕ НАРУЖУ НЕ ОТДАЁМ (rawpng.go). В эту дверь стучат по адресу
+		// без ступени — фоновый прогрев, экспорт, сид, — и несжатый PNG
+		// художника ушёл бы игроку как есть. Здоровому файлу проверка стоит
+		// один stat; лечение идёт ДО ETag, чтобы метка описывала то, что ушло.
+		if strings.HasSuffix(rel, ".png") {
+			if p, ok := s.contentPath(strings.TrimPrefix(r.URL.Path, "/content/")); ok {
+				raws.heal(p)
+			}
 		}
 		// The manifest is the LIVE index of the whole game — a stale copy
 		// keeps every player on yesterday's config. Scripts (.lvn) are live

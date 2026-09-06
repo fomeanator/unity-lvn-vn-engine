@@ -19,7 +19,9 @@ package main
 // NVIDIA) recommends for atlas pages.
 //
 // The full-resolution source stays on disk as the single source of truth —
-// this never modifies it, so print-quality art survives for future targets.
+// its PIXELS are never touched, so print-quality art survives for future
+// targets. Its bytes may be: a source saved without compression is re-packed
+// losslessly in place before it reaches anyone (rawpng.go).
 
 import (
 	"fmt"
@@ -339,6 +341,11 @@ func (s *server) withDownscale(d *downscaler, next http.Handler) http.Handler {
 				// The replaced source fits the box itself now — a variant file
 				// left from its bigger predecessor would shadow it forever.
 				_ = os.Remove(variantPath)
+				// СЫРОЙ ИСХОДНИК НАРУЖУ НЕ УХОДИТ. Именно здесь ступень «2k»
+				// отдавала 9,95 МБ несжатого PNG за слой облика 1212×2048:
+				// бокс не требовал уменьшения, и «исходник и есть вариант»
+				// читалось буквально — вместе с deflate «store» художника.
+				raws.heal(srcRel)
 				http.ServeFile(w, r, srcRel) // small enough already — the source IS the variant
 				return
 			default:

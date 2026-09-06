@@ -16,9 +16,11 @@ import (
 //	lvnconv optimize -i server/content                      # dry run, just report
 //	lvnconv optimize -i server/content -apply                # write the smaller files
 //	lvnconv optimize -i server/content -apply -rewrite-refs   # + fix png→jpg references
+//	lvnconv optimize -i server/content -apply -lossless       # recompress only: same pixels, size, format
 func cmdOptimize(args []string) {
 	fs := newFlagSet("optimize")
 	in := fs.String("i", "server/content", "content root to scan (recursively)")
+	lossless := fs.Bool("lossless", false, "recompress only — same pixels, same size, same format (no resize, no png→jpg); for artist sources saved without compression")
 	maxSize := fs.Int("max", 2560, "longest-side cap in px for non-atlas images")
 	quality := fs.Int("quality", 85, "JPEG quality for alpha-free images converted from PNG")
 	apply := fs.Bool("apply", false, "write the results (default: dry run, report only)")
@@ -30,7 +32,7 @@ func cmdOptimize(args []string) {
 	}
 
 	results, err := optimize.Run(*in, optimize.Options{
-		MaxSize: *maxSize, JPEGQuality: *quality, Apply: *apply,
+		MaxSize: *maxSize, JPEGQuality: *quality, Apply: *apply, Lossless: *lossless,
 	})
 	if err != nil {
 		die("optimize: " + err.Error())

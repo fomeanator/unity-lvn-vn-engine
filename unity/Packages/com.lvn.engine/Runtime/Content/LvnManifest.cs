@@ -285,37 +285,28 @@ namespace Lvn.Content
             url = url.Trim();
             if (url.EndsWith("/"))
             {
-                var name = url.TrimEnd('/');
-                int slash = name.LastIndexOf('/');
-                if (slash >= 0) name = name.Substring(slash + 1);
+                // Папка означает комплект с её именем: /spine/hero/ → hero.json.
+                var folder = Lvn.LvnUrl.Base(url);
+                int slash = folder.LastIndexOf('/');
+                var name = slash >= 0 ? folder.Substring(slash + 1) : folder;
                 if (name.Length == 0) return null;
-                url += name + ".json";
+                url = folder + "/" + name + ".json";
             }
-            string basePath = url;
-            foreach (var ext in new[] { ".json", ".skel.bytes", ".skel" })
-                if (basePath.EndsWith(ext, System.StringComparison.OrdinalIgnoreCase))
-                {
-                    basePath = basePath.Substring(0, basePath.Length - ext.Length);
-                    break;
-                }
+            // .skel.bytes — двойное расширение, и сосед по адресу срежет только
+            // последнее. Снимаем «.bytes» заранее, чтобы атлас встал рядом со
+            // скелетом, а не рядом с «.skel».
+            var basis = url.EndsWith(".bytes", System.StringComparison.OrdinalIgnoreCase)
+                ? url.Substring(0, url.Length - ".bytes".Length) : url;
             return new LvnSpineRef
             {
                 json = url,
                 // Spine пишет атлас либо как .atlas, либо (для веба и Unity) как
-                // .atlas.txt. Берём второй: он же лежит у нас на сервере, а
-                // сцена при промахе пробует первый.
-                atlas = basePath + ".atlas.txt",
+                // .atlas.txt. Берём второй; сцена при промахе пробует первый.
+                atlas = Lvn.LvnUrl.Sibling(basis, ".atlas.txt"),
                 bg = bg,
                 auto = play,
             };
         }
-
-        /// <summary>Запасное имя атласа — то же, но без <c>.txt</c>. Сцена
-        /// пробует его, если первого на сервере не оказалось: два написания
-        /// одного файла не должны быть заботой автора.</summary>
-        public string AtlasFallback
-            => string.IsNullOrEmpty(atlas) || !atlas.EndsWith(".atlas.txt")
-                ? null : atlas.Substring(0, atlas.Length - 4);
 
         public string json;    // skeleton (.json export)
         public string atlas;   // .atlas text

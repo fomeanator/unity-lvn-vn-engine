@@ -24,8 +24,9 @@ namespace Lvn.Tests
             Assert.AreEqual("/content/spine/hero/hero.json", sp.json);
             Assert.AreEqual("/content/spine/hero/hero.atlas.txt", sp.atlas,
                 "атлас обязан выводиться из имени скелета — иначе автор пишет его руками");
-            Assert.AreEqual("/content/spine/hero/hero.atlas", sp.AtlasFallback,
-                "второе написание атласа не названо — комплект из Spine перестанет открываться");
+            // Запасное написание сцена выводит тем же домом адресов.
+            Assert.AreEqual("/content/spine/hero/hero.atlas", Lvn.LvnUrl.Sibling(sp.atlas, ".atlas"),
+                "второе написание атласа не выводится — комплект из Spine перестанет открываться");
         }
 
         [Test]

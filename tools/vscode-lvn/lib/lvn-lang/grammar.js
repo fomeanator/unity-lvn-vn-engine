@@ -71,6 +71,8 @@ export const OP_FIELDS = {
   "actor": [
     "id",
     "sprite_url",
+    "spine",
+    "spine_bg",
     "show",
     "position",
     "x",
@@ -97,6 +99,8 @@ export const OP_FIELDS = {
   "obj": [
     "id",
     "sprite_url",
+    "spine",
+    "spine_bg",
     "x",
     "y",
     "width",
@@ -734,11 +738,11 @@ export const GROUPS = [
       ],
       [
         "actor",
-        "id, sprite_url, show, position (offscreen_left/far_left/left/center_left/center/center_right/right/far_right/offscreen_right), x, y, width, height, scale, emotion, play, enter (fade/slide_left/slide_right/pop/rise/sink/drop/unfold/dissolve/burn/drift/side), exit (fade/slide_left/slide_right/pop/rise/sink/drop/unfold/dissolve/burn/drift/side), flip, mirror, rotation, opacity, z, on_click, draggable, on_drop, on_drop_miss, loop, drag_bounds"
+        "id, sprite_url, spine, spine_bg, show, position (offscreen_left/far_left/left/center_left/center/center_right/right/far_right/offscreen_right), x, y, width, height, scale, emotion, play, enter (fade/slide_left/slide_right/pop/rise/sink/drop/unfold/dissolve/burn/drift/side), exit (fade/slide_left/slide_right/pop/rise/sink/drop/unfold/dissolve/burn/drift/side), flip, mirror, rotation, opacity, z, on_click, draggable, on_drop, on_drop_miss, loop, drag_bounds"
       ],
       [
         "obj",
-        "id, sprite_url, x, y, width, height, anchor, on_click, show, opacity, z, enter (fade/slide_left/slide_right/pop/rise/sink/drop/unfold/dissolve/burn/drift/side), exit (fade/slide_left/slide_right/pop/rise/sink/drop/unfold/dissolve/burn/drift/side), draggable, on_drop, on_drop_miss, loop, play, drag_bounds"
+        "id, sprite_url, spine, spine_bg, x, y, width, height, anchor, on_click, show, opacity, z, enter (fade/slide_left/slide_right/pop/rise/sink/drop/unfold/dissolve/burn/drift/side), exit (fade/slide_left/slide_right/pop/rise/sink/drop/unfold/dissolve/burn/drift/side), draggable, on_drop, on_drop_miss, loop, play, drag_bounds"
       ],
       [
         "clear",
@@ -795,7 +799,7 @@ export const GROUPS = [
       ],
       [
         "preload",
-        "assets, url, kind"
+        "assets, url, kind (sprite/audio/spine)"
       ]
     ]
   },

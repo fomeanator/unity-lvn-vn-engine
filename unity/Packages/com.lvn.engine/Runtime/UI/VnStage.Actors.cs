@@ -181,15 +181,10 @@ namespace Lvn.UI
 
             // Spine entities render through the optional spine-unity bridge —
             // a different pipeline entirely (runtime skeleton, own animations).
-            var spineEntity = Catalog != null ? Catalog.Get(id) : null;
-            // СКЕЛЕТ МОЖНО НАЗВАТЬ ПРЯМО В КОМАНДЕ — одним адресом.
-            // Spine экспортирует стандартный комплект, и заставлять автора
-            // переписывать четыре пути в каталог спрайтов значит брать плату за
-            // то, что выводится само (см. LvnSpineRef.FromUrl).
-            var прямойАдрес = (string)cmd["spine"];
-            if (!string.IsNullOrEmpty(прямойАдрес))
-                spineEntity = InlineSpine(id, прямойАдрес, cmd);
-            if (spineEntity != null && spineEntity.kind == "spine" && spineEntity.spine != null)
+            // Скелет: из каталога или названный одним адресом в самой команде
+            // (см. SpineEntityFor — там же, где остальная спайновая тема).
+            var spineEntity = SpineEntityFor(id, cmd);
+            if (spineEntity != null)
             {
                 await ApplySpineAsync(id, spineEntity, cmd);
                 return;

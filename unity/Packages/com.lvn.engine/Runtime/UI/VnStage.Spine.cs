@@ -247,6 +247,27 @@ namespace Lvn.UI
         private readonly Dictionary<string, Lvn.Content.LvnSpriteEntity> _inlineSpine
             = new Dictionary<string, Lvn.Content.LvnSpriteEntity>();
 
+        /// <summary>
+        /// СКЕЛЕТ ЭТОЙ КОМАНДЫ, откуда бы он ни был назван.
+        ///
+        /// <para>Два законных источника: каталог спрайтов (сущность
+        /// <c>kind: spine</c>) и сам сценарий — <c>spine="…/hero.json"</c>.
+        /// Второй появился потому, что Spine экспортирует стандартный
+        /// комплект, и переписывать его четырьмя полями в каталог значило
+        /// брать с автора плату за то, что выводится само.</para>
+        ///
+        /// <para>Возвращает null, если персонаж не спайновый: тогда его рисует
+        /// обычный слоёвый путь.</para>
+        /// </summary>
+        internal Lvn.Content.LvnSpriteEntity SpineEntityFor(string id, JObject cmd)
+        {
+            var прямойАдрес = (string)cmd["spine"];
+            var e = !string.IsNullOrEmpty(прямойАдрес)
+                ? InlineSpine(id, прямойАдрес, cmd)
+                : (Catalog != null ? Catalog.Get(id) : null);
+            return e != null && e.kind == "spine" && e.spine != null ? e : null;
+        }
+
         /// <summary>Скелет, названный одним адресом прямо в команде.</summary>
         internal Lvn.Content.LvnSpriteEntity InlineSpine(string id, string url, JObject cmd)
         {
@@ -345,7 +366,9 @@ namespace Lvn.UI
                             // Два написания одного файла: Spine кладёт рядом
                             // либо .atlas, либо .atlas.txt. Какое из них выбрал
                             // экспорт — не забота автора.
-                            var запасной = sp.AtlasFallback;
+                            // Второе написание того же файла: .atlas против
+                            // .atlas.txt. Какое выбрал экспорт — не забота автора.
+                            var запасной = Lvn.LvnUrl.Sibling(sp.atlas, ".atlas");
                             if (string.IsNullOrEmpty(запасной)) throw;
                             atlasText = await Assets.LoadTextAsync(запасной, _cts.Token);
                             sp.atlas = запасной;

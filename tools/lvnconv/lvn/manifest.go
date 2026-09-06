@@ -142,6 +142,75 @@ func ValidateManifest(data []byte) []Issue {
 	// Спуск дальше идёт по ТИПАМ полей из снимка, так что и каталог, и облик
 	// проверяются одинаково.
 	walk(root, "", "LvnManifest", 0)
+	out = append(out, duplicateIDs(root)...)
+	return out
+}
+
+// ОДИНАКОВЫЕ ИМЕНА В КАТАЛОГЕ — ТИХАЯ ПОТЕРЯ ПРОГРЕССА.
+//
+// Прогресс игрока ключуется ИМЕНЕМ новеллы: «докуда дошёл», точка
+// продолжения, отметки прочитанного, сейвы — всё под `id`. Две новеллы с
+// одним именем делят одно прохождение: игрок открывает вторую и видит своё
+// место из первой, а сохранившись — затирает его. Две главы с одним именем
+// внутри новеллы ломают продолжение: «где я остановился» указывает на первую
+// попавшуюся, и игрок либо перечитывает, либо перескакивает.
+//
+// Замер 06.09: манифест с двумя новеллами `проба` и двумя главами `ch1`
+// принимался БЕЗ ЕДИНОГО СЛОВА. Способ появления самый обычный — автор
+// копирует новеллу «сделать похожую» и забывает сменить имя, или импорт
+// приносит одинаковые имена глав.
+//
+// Предупреждение, а не ошибка: заблокировать публикацию значило бы запереть
+// живой каталог, в котором дубль уже есть, — и автор не смог бы выложить
+// ничего, пока не почистит. Слово в ответе он видит сразу.
+func duplicateIDs(root any) []Issue {
+	m, ok := root.(map[string]any)
+	if !ok {
+		return nil
+	}
+	titles, _ := m["titles"].([]any)
+	var out []Issue
+	seenTitle := map[string]bool{}
+	for _, t := range titles {
+		tm, ok := t.(map[string]any)
+		if !ok {
+			continue
+		}
+		id, _ := tm["id"].(string)
+		if id != "" {
+			if seenTitle[id] {
+				out = append(out, Issue{Index: -1, Op: "manifest", Sev: SevWarning,
+					Msg: fmt.Sprintf("новелла %q встречается дважды: прогресс игрока ключуется именем, "+
+						"и обе будут делить одно прохождение — дайте второй своё имя", id)})
+			}
+			seenTitle[id] = true
+		}
+		seasons, _ := tm["seasons"].([]any)
+		seenChapter := map[string]bool{}
+		for _, se := range seasons {
+			sm, ok := se.(map[string]any)
+			if !ok {
+				continue
+			}
+			chapters, _ := sm["chapters"].([]any)
+			for _, c := range chapters {
+				cm, ok := c.(map[string]any)
+				if !ok {
+					continue
+				}
+				cid, _ := cm["id"].(string)
+				if cid == "" {
+					continue
+				}
+				if seenChapter[cid] {
+					out = append(out, Issue{Index: -1, Op: "manifest", Sev: SevWarning,
+						Msg: fmt.Sprintf("в новелле %q глава %q встречается дважды: точка продолжения "+
+							"укажет на первую попавшуюся — переименуйте одну", id, cid)})
+				}
+				seenChapter[cid] = true
+			}
+		}
+	}
 	return out
 }
 

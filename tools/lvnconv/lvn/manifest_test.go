@@ -720,3 +720,41 @@ func TestСнимокСхемыЧитаетсяИНеПуст(t *testing.T) {
 		t.Fatal("в снимке нет корневых классов LvnManifest/LvnUiConfig — проверять будет нечего")
 	}
 }
+
+// ОДИНАКОВЫЕ ИМЕНА В КАТАЛОГЕ — прогресс игрока ключуется именем новеллы, и
+// дубль означает общее прохождение у двух разных историй.
+func TestDuplicateIDsAreWarned(t *testing.T) {
+	дубли := []byte(`{"titles":[
+		{"id":"проба","name":"Первая","seasons":[{"chapters":[{"id":"ch1","number":1},{"id":"ch1","number":2}]}]},
+		{"id":"проба","name":"Копия","seasons":[{"chapters":[]}]}]}`)
+
+	var новелла, глава bool
+	for _, is := range ValidateManifest(дубли) {
+		if is.Sev != SevWarning {
+			continue
+		}
+		if strings.Contains(is.Msg, "встречается дважды") && strings.Contains(is.Msg, "новелла") {
+			новелла = true
+		}
+		if strings.Contains(is.Msg, "глава") && strings.Contains(is.Msg, "встречается дважды") {
+			глава = true
+		}
+	}
+	if !новелла {
+		t.Error("две новеллы с одним именем прошли молча — они разделят одно прохождение")
+	}
+	if !глава {
+		t.Error("две главы с одним именем прошли молча — точка продолжения станет неоднозначной")
+	}
+
+	// Здоровый каталог молчит: предупреждение, которое звучит всегда, не
+	// значит ничего.
+	чистый := []byte(`{"titles":[
+		{"id":"первая","name":"Первая","seasons":[{"chapters":[{"id":"ch1","number":1},{"id":"ch2","number":2}]}]},
+		{"id":"вторая","name":"Вторая","seasons":[{"chapters":[{"id":"ch1","number":1}]}]}]}`)
+	for _, is := range ValidateManifest(чистый) {
+		if strings.Contains(is.Msg, "встречается дважды") {
+			t.Errorf("здоровый каталог получил предупреждение о дублях: %s", is.Msg)
+		}
+	}
+}

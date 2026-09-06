@@ -85,6 +85,28 @@ namespace Lvn.Tests
             return p;
         }
 
+        // ПОРТ ОСВОБОЖДАЕТСЯ НЕ МГНОВЕННО. Тест гасит сервер и поднимает его
+        // заново на том же порту; убитый процесс успевает отдать порт не
+        // всегда, и `bind` у нового падает молча — тест видел «сервер не
+        // поднялся» и краснел без единого дефекта в движке (прогон 06.09).
+        // Поэтому подъём настойчивый: несколько попыток с паузой.
+        private static IEnumerator StartUntilHealthy(string bin, int port, string content,
+                                                     System.Action<System.Diagnostics.Process, bool> got)
+        {
+            System.Diagnostics.Process p = null;
+            bool healthy = false;
+            for (int попытка = 1; попытка <= 3 && !healthy; попытка++)
+            {
+                p = Start(bin, port, content);
+                yield return WaitHealthy(port, v => healthy = v);
+                if (healthy) break;
+                TestContext.WriteLine($"подъём сервера: попытка {попытка} не удалась, порт ещё занят — повторяю");
+                try { if (!p.HasExited) p.Kill(); } catch { }
+                yield return new WaitForSecondsRealtime(1.5f);
+            }
+            got(p, healthy);
+        }
+
         private static IEnumerator WaitHealthy(int port, System.Action<bool> got)
         {
             var healthy = false;
@@ -178,9 +200,8 @@ namespace Lvn.Tests
                 Assert.AreEqual(2, вОчереди, "офлайновые операции обязаны ждать в очереди");
 
                 // ── связь вернулась ─────────────────────────────────────────
-                proc = Start(bin, port, content);
                 healthy = false;
-                yield return WaitHealthy(port, v => healthy = v);
+                yield return StartUntilHealthy(bin, port, content, (p, ok) => { proc = p; healthy = ok; });
                 Assert.IsTrue(healthy, "сервер не поднялся обратно");
 
                 var refresh = LvnWallet.RefreshAsync();
@@ -217,9 +238,8 @@ namespace Lvn.Tests
                 Assert.AreEqual(1, LvnWallet.PendingCount, "очередь не пережила перезапуск игры");
                 Assert.AreEqual(60, LvnWallet.Balances["gold"], "зеркало баланса не пережило перезапуск");
 
-                proc = Start(bin, port, content);
                 healthy = false;
-                yield return WaitHealthy(port, v => healthy = v);
+                yield return StartUntilHealthy(bin, port, content, (p, ok) => { proc = p; healthy = ok; });
                 Assert.IsTrue(healthy, "сервер не поднялся обратно");
                 var last = LvnWallet.RefreshAsync();
                 yield return Await(last);

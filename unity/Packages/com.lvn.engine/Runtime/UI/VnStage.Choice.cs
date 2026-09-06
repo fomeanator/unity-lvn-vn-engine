@@ -229,6 +229,11 @@ namespace Lvn.UI
             if (!SwapCurrent(gen) || _choices == null) return;
             _choices.Present(options);
             _choiceLocks.Hold(ChoiceLockChoreography);
+            // ВЗВОД: своя пауза, не зависящая от анимации появления. См.
+            // ChoiceArmingMs — почему она есть и почему её нельзя оставлять
+            // темам.
+            _choiceLocks.Hold(ChoiceLockArming);
+            _choices.schedule.Execute(() => DropArmingLock(gen)).ExecuteLater(ChoiceArmingMs);
             PaintChoiceEnabled();
             // Present() makes the list visible before UI Toolkit has completed
             // its new layout. Re-evaluate once after that pass; subsequent text
@@ -250,6 +255,17 @@ namespace Lvn.UI
             }
             EnableChoiceWhenChoreographyReady(gen);
         }
+        // Пауза взвода истекла. Снимаем ТОЛЬКО свой замок: хореография,
+        // оплата и прочие причины держат стопку сами и по своим срокам.
+        private void DropArmingLock(int gen)
+        {
+            if (!SwapCurrent(gen) || _choices == null) return;
+            _choiceLocks.Drop(ChoiceLockArming);
+            PaintChoiceEnabled();
+            if (_choiceLocks.Any) return;
+            StartChoiceTimer(_player != null ? _player.CurrentChoiceTimeout : 0f);
+        }
+
         private void EnableChoiceWhenChoreographyReady(int gen)
         {
             if (!SwapCurrent(gen) || _choices == null

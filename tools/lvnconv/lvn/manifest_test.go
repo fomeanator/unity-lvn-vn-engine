@@ -758,3 +758,43 @@ func TestDuplicateIDsAreWarned(t *testing.T) {
 		}
 	}
 }
+
+// ГЕРОИНЯ, КОТОРОЙ НЕТ. Имя в ui.wardrobe.entity пишут руками, а сущности
+// переименовывают при переимпорте: промах тихий — гардероб откроет первую
+// попавшуюся, и её же будет греть загрузка.
+func TestDanglingWardrobeEntityIsWarned(t *testing.T) {
+	каталог := []byte(`{"ui":{"wardrobe":{"entity":"Гeроиня"}},
+		"sprites":{"Героиня":{"layers":["hero.png"]},"Статист":{"layers":["extra.png"]}}}`)
+
+	var найдено string
+	for _, is := range ValidateManifest(каталог) {
+		if is.Sev == SevWarning && strings.Contains(is.Msg, "ui.wardrobe.entity") {
+			найдено = is.Msg
+		}
+	}
+	if найдено == "" {
+		t.Fatal("ссылка на несуществующую сущность прошла молча — гардероб откроет чужого")
+	}
+	// Подсказка обязана назвать похожее имя: промах здесь чаще всего опечатка
+	// или латиница вместо кириллицы, и без подсказки автор ищет глазами.
+	if !strings.Contains(найдено, "Героиня") {
+		t.Errorf("предупреждение не подсказало ближайшее имя: %s", найдено)
+	}
+
+	// Правильная ссылка молчит.
+	верный := []byte(`{"ui":{"wardrobe":{"entity":"Героиня"}},
+		"sprites":{"Героиня":{"layers":["hero.png"]}}}`)
+	for _, is := range ValidateManifest(верный) {
+		if strings.Contains(is.Msg, "ui.wardrobe.entity") {
+			t.Errorf("верная ссылка получила предупреждение: %s", is.Msg)
+		}
+	}
+
+	// Имени нет вовсе — это законно (героиню выберут по гардеробу), молчим.
+	без := []byte(`{"sprites":{"Героиня":{"layers":["hero.png"]}}}`)
+	for _, is := range ValidateManifest(без) {
+		if strings.Contains(is.Msg, "ui.wardrobe.entity") {
+			t.Errorf("отсутствие имени принято за ошибку: %s", is.Msg)
+		}
+	}
+}

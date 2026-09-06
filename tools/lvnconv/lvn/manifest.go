@@ -143,7 +143,47 @@ func ValidateManifest(data []byte) []Issue {
 	// проверяются одинаково.
 	walk(root, "", "LvnManifest", 0)
 	out = append(out, duplicateIDs(root)...)
+	out = append(out, danglingRefs(root)...)
 	return out
+}
+
+// ССЫЛКА НА СУЩНОСТЬ, КОТОРОЙ НЕТ.
+//
+// `ui.wardrobe.entity` называет героиню — ту, кого гардероб открывает по
+// умолчанию и чей облик движок качает раньше остальной библиотеки. Имя
+// пишут руками, сущности переименовывают при переимпорте, и промах здесь
+// тихий: гардероб молча открывает ПЕРВУЮ попавшуюся сущность с нарядами, а
+// прогрев греет её же. Автор видит «работает», игрок — чужой гардероб.
+//
+// Замер 06.09 на живом каталоге: имя задано, сущности с таким именем среди
+// спрайтов нет, совпадений без учёта регистра тоже нет. Никто об этом не
+// сказал ни разу.
+func danglingRefs(root any) []Issue {
+	m, ok := root.(map[string]any)
+	if !ok {
+		return nil
+	}
+	ui, _ := m["ui"].(map[string]any)
+	wardrobe, _ := ui["wardrobe"].(map[string]any)
+	named, _ := wardrobe["entity"].(string)
+	if named == "" {
+		return nil
+	}
+	sprites, _ := m["sprites"].(map[string]any)
+	if _, есть := sprites[named]; есть {
+		return nil
+	}
+	msg := fmt.Sprintf("ui.wardrobe.entity=%q — такой сущности нет среди sprites: "+
+		"гардероб откроет первую попавшуюся, и её же будет греть загрузка", named)
+	names := make([]string, 0, len(sprites))
+	for k := range sprites {
+		names = append(names, k)
+	}
+	slices.Sort(names)
+	if sg := nearest.Of(named, names, 3); sg != "" {
+		msg += fmt.Sprintf(" — может быть %q?", sg)
+	}
+	return []Issue{{Index: -1, Op: "manifest", Sev: SevWarning, Msg: msg}}
 }
 
 // ОДИНАКОВЫЕ ИМЕНА В КАТАЛОГЕ — ТИХАЯ ПОТЕРЯ ПРОГРЕССА.

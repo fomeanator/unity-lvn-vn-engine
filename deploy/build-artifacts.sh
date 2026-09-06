@@ -47,6 +47,21 @@ log "go build lvnconv → bin/lvnconv-linux-amd64"
   go build -trimpath -ldflags='-s -w' -o "$API_REPO/bin/lvnconv-linux-amd64" .)
 
 # ── 3. Studio-панель (npm run deploy пересобирает и wasm-компилятор) ───────
+#
+# СНАЧАЛА ДОКУМЕНТАЦИЯ. `panel/public/docs/content` НЕ хранится в
+# репозитории — его собирает build-content.sh из howto/ и docs/. Сборка
+# панели про это не знала, и документация уезжала на прод только у того, у
+# кого эти файлы случайно остались на диске от прошлого раза. На чистой
+# копии (а именно так собирают в CI и на другой машине) артефакт молча
+# выходил без единой страницы справки: 34 файла в никуда.
+log "docs → panel/public/docs/content"
+if [ -x "$HERE/panel/public/docs/build-content.sh" ]; then
+  (cd "$HERE" && panel/public/docs/build-content.sh . panel/public/docs/content >/dev/null)
+  docs_n="$(ls "$HERE/panel/public/docs/content"/*.md 2>/dev/null | wc -l | tr -d ' ')"
+  [ "${docs_n:-0}" -gt 0 ] || { echo "документация не собралась — на проде пропала бы справка"; exit 1; }
+  log "  страниц справки: $docs_n"
+fi
+
 log "panel build (npm run deploy)"
 (cd "$HERE/panel" && npm run deploy >/dev/null)
 

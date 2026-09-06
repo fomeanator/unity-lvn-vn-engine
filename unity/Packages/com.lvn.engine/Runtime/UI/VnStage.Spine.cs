@@ -268,6 +268,13 @@ namespace Lvn.UI
             return e != null && e.kind == "spine" && e.spine != null ? e : null;
         }
 
+        /// <summary>Тот же атлас, записанный вторым принятым способом:
+        /// <c>hero.atlas.txt</c> → <c>hero.atlas</c>. Пусто, если хвоста нет —
+        /// значит пробовать нечего.</summary>
+        internal static string AtlasWithoutTxt(string atlas)
+            => string.IsNullOrEmpty(atlas) || !atlas.EndsWith(".atlas.txt", System.StringComparison.OrdinalIgnoreCase)
+                ? null : atlas.Substring(0, atlas.Length - ".txt".Length);
+
         /// <summary>Скелет, названный одним адресом прямо в команде.</summary>
         internal Lvn.Content.LvnSpriteEntity InlineSpine(string id, string url, JObject cmd)
         {
@@ -366,9 +373,13 @@ namespace Lvn.UI
                             // Два написания одного файла: Spine кладёт рядом
                             // либо .atlas, либо .atlas.txt. Какое из них выбрал
                             // экспорт — не забота автора.
-                            // Второе написание того же файла: .atlas против
-                            // .atlas.txt. Какое выбрал экспорт — не забота автора.
-                            var запасной = Lvn.LvnUrl.Sibling(sp.atlas, ".atlas");
+                            // ВТОРОЕ НАПИСАНИЕ ТОГО ЖЕ ФАЙЛА: .atlas против
+                            // .atlas.txt. Какое выбрал экспорт — не забота
+                            // автора. Считается снятием хвоста «.txt», а НЕ
+                            // соседом по имени: сосед срезает последнее
+                            // расширение и давал «hero.atlas.atlas» — адрес,
+                            // которого не существует нигде (поймано прогоном).
+                            var запасной = AtlasWithoutTxt(sp.atlas);
                             if (string.IsNullOrEmpty(запасной)) throw;
                             atlasText = await Assets.LoadTextAsync(запасной, _cts.Token);
                             sp.atlas = запасной;

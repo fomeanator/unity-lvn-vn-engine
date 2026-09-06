@@ -24,9 +24,14 @@ namespace Lvn.Tests
             Assert.AreEqual("/content/spine/hero/hero.json", sp.json);
             Assert.AreEqual("/content/spine/hero/hero.atlas.txt", sp.atlas,
                 "атлас обязан выводиться из имени скелета — иначе автор пишет его руками");
-            // Запасное написание сцена выводит тем же домом адресов.
-            Assert.AreEqual("/content/spine/hero/hero.atlas", Lvn.LvnUrl.Sibling(sp.atlas, ".atlas"),
+            // ЗАПАСНОЕ НАПИСАНИЕ — снятие хвоста, а не сосед по имени. Сосед
+            // срезает последнее расширение и давал «hero.atlas.atlas»: адрес,
+            // которого нет нигде. Прогон это поймал, и проверка осталась здесь.
+            Assert.AreEqual("/content/spine/hero/hero.atlas",
+                Lvn.UI.VnStage.AtlasWithoutTxt(sp.atlas),
                 "второе написание атласа не выводится — комплект из Spine перестанет открываться");
+            Assert.IsNull(Lvn.UI.VnStage.AtlasWithoutTxt("/s/a.atlas"),
+                "у атласа без хвоста запасного имени быть не должно — пробовать нечего");
         }
 
         [Test]

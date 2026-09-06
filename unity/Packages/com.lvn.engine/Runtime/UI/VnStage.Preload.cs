@@ -59,7 +59,13 @@ namespace Lvn.UI
                     // right at chapter entry. Later beats warm the rest.
                     if (string.IsNullOrEmpty(url) && Lvn.LvnOpKind.Of(op) == Lvn.LvnOpSubject.Actor)
                     {
-                        var sp = Catalog?.Get((string)c["id"]);
+                        // Скелет, названный одним адресом в самой команде,
+                        // греется наравне с каталожным: автору не должно быть
+                        // выгоднее писать длиннее.
+                        var прямой = (string)c["spine"];
+                        var sp = !string.IsNullOrEmpty(прямой)
+                            ? InlineSpine((string)c["id"], прямой, (JObject)c)
+                            : Catalog?.Get((string)c["id"]);
                         if (sp != null && sp.kind == "spine" && sp.spine != null)
                         {
                             var spineId = (string)c["id"];

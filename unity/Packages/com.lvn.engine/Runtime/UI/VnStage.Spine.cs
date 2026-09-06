@@ -241,6 +241,32 @@ namespace Lvn.UI
             return urls;
         }
 
+        // Сущности, собранные из адреса в команде. Помним их: сцена спрашивает
+        // облик не только в миг показа (перестановка, прогрев, возврат из
+        // главы), а второй раз адрес может и не прийти.
+        private readonly Dictionary<string, Lvn.Content.LvnSpriteEntity> _inlineSpine
+            = new Dictionary<string, Lvn.Content.LvnSpriteEntity>();
+
+        /// <summary>Скелет, названный одним адресом прямо в команде.</summary>
+        internal Lvn.Content.LvnSpriteEntity InlineSpine(string id, string url, JObject cmd)
+        {
+            var bg = (string)cmd["spine_bg"];
+            var play = (string)cmd["play"];
+            if (_inlineSpine.TryGetValue(id, out var было) && было?.spine != null &&
+                было.spine.json == Lvn.Content.LvnSpineRef.FromUrl(url)?.json)
+            {
+                // Тот же скелет — не пересобираем, но проигрыш мог смениться.
+                if (!string.IsNullOrEmpty(play)) было.spine.auto = play;
+                if (!string.IsNullOrEmpty(bg)) было.spine.bg = bg;
+                return было;
+            }
+            var sp = Lvn.Content.LvnSpineRef.FromUrl(url, bg, play);
+            if (sp == null) return null;
+            var e = new Lvn.Content.LvnSpriteEntity { kind = "spine", spine = sp };
+            _inlineSpine[id] = e;
+            return e;
+        }
+
         private async Task ApplySpineAsync(string id, Lvn.Content.LvnSpriteEntity e, JObject cmd)
         {
             int epoch = _stageEpoch; // the scene this build belongs to (see ResetStage)
@@ -313,7 +339,17 @@ namespace Lvn.UI
                     {
                         json = await Assets.LoadTextAsync(sp.json, _cts.Token);
                         lap("json");
-                        atlasText = await Assets.LoadTextAsync(sp.atlas, _cts.Token);
+                        try { atlasText = await Assets.LoadTextAsync(sp.atlas, _cts.Token); }
+                        catch
+                        {
+                            // Два написания одного файла: Spine кладёт рядом
+                            // либо .atlas, либо .atlas.txt. Какое из них выбрал
+                            // экспорт — не забота автора.
+                            var запасной = sp.AtlasFallback;
+                            if (string.IsNullOrEmpty(запасной)) throw;
+                            atlasText = await Assets.LoadTextAsync(запасной, _cts.Token);
+                            sp.atlas = запасной;
+                        }
                         lap("atlas");
                         // Load EVERY atlas page (multi-page atlases have >1), in
                         // the order they appear, resolved next to the atlas file.

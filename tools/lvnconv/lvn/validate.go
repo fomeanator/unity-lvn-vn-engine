@@ -226,8 +226,8 @@ var KnownOps = map[string]bool{
 // ним ищется явная описка. Не путать с OpFields — там набор закрыт, и любое
 // чужое поле ошибка; здесь чужое поле норма, а вот «почти известное» — нет.
 var OpenFieldHints = map[string][]string{
-	"actor": {"id", "sprite_url", "show", "position", "x", "y", "width", "height", "scale", "emotion", "play", "enter", "exit", "flip", "mirror", "rotation", "opacity", "z", "on_click", "draggable", "on_drop", "on_drop_miss", "loop", "drag_bounds"},
-	"obj":   {"id", "sprite_url", "x", "y", "width", "height", "anchor", "on_click", "show", "opacity", "z", "enter", "exit", "draggable", "on_drop", "on_drop_miss", "loop", "play", "drag_bounds"},
+	"actor": {"id", "sprite_url", "spine", "spine_bg", "show", "position", "x", "y", "width", "height", "scale", "emotion", "play", "enter", "exit", "flip", "mirror", "rotation", "opacity", "z", "on_click", "draggable", "on_drop", "on_drop_miss", "loop", "drag_bounds"},
+	"obj":   {"id", "sprite_url", "spine", "spine_bg", "x", "y", "width", "height", "anchor", "on_click", "show", "opacity", "z", "enter", "exit", "draggable", "on_drop", "on_drop_miss", "loop", "play", "drag_bounds"},
 }
 
 // OpFields is the set of accepted top-level field keys per op, used to catch

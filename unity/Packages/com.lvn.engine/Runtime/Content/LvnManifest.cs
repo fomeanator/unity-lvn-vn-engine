@@ -266,6 +266,57 @@ namespace Lvn.Content
     /// Spine editor produces, plus the import scale and the idle to auto-play.</summary>
     public sealed class LvnSpineRef
     {
+        /// <summary>
+        /// ОДИН АДРЕС ВМЕСТО ЧЕТЫРЁХ ПОЛЕЙ.
+        ///
+        /// <para>Spine — отраслевой стандарт, и экспортирует он всегда один и
+        /// тот же комплект: <c>имя.json</c> (или <c>.skel</c>), <c>имя.atlas</c>
+        /// рядом и страницы, которые атлас называет сам. Значит автору
+        /// достаточно назвать ОДИН файл — остальное выводится, а не
+        /// переписывается руками в каталог спрайтов.</para>
+        ///
+        /// <para>Принимаем и папку: <c>/content/spine/hero/</c> означает
+        /// <c>hero.json</c> внутри неё — так пишут, когда комплект назван по
+        /// папке, а это самый частый случай выгрузки.</para>
+        /// </summary>
+        public static LvnSpineRef FromUrl(string url, string bg = null, string play = null)
+        {
+            if (string.IsNullOrWhiteSpace(url)) return null;
+            url = url.Trim();
+            if (url.EndsWith("/"))
+            {
+                var name = url.TrimEnd('/');
+                int slash = name.LastIndexOf('/');
+                if (slash >= 0) name = name.Substring(slash + 1);
+                if (name.Length == 0) return null;
+                url += name + ".json";
+            }
+            string basePath = url;
+            foreach (var ext in new[] { ".json", ".skel.bytes", ".skel" })
+                if (basePath.EndsWith(ext, System.StringComparison.OrdinalIgnoreCase))
+                {
+                    basePath = basePath.Substring(0, basePath.Length - ext.Length);
+                    break;
+                }
+            return new LvnSpineRef
+            {
+                json = url,
+                // Spine пишет атлас либо как .atlas, либо (для веба и Unity) как
+                // .atlas.txt. Берём второй: он же лежит у нас на сервере, а
+                // сцена при промахе пробует первый.
+                atlas = basePath + ".atlas.txt",
+                bg = bg,
+                auto = play,
+            };
+        }
+
+        /// <summary>Запасное имя атласа — то же, но без <c>.txt</c>. Сцена
+        /// пробует его, если первого на сервере не оказалось: два написания
+        /// одного файла не должны быть заботой автора.</summary>
+        public string AtlasFallback
+            => string.IsNullOrEmpty(atlas) || !atlas.EndsWith(".atlas.txt")
+                ? null : atlas.Substring(0, atlas.Length - 4);
+
         public string json;    // skeleton (.json export)
         public string atlas;   // .atlas text
         public string texture; // the atlas page image

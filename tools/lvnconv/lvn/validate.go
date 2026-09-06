@@ -275,9 +275,13 @@ var EnumValues = map[string]map[string][]string{
 	// Валидатор о нём не знал и ругался на законное слово.
 	"fade":      {"to": {"black", "white", "clear", "none", ""}},
 	"particles": {"type": {"rain", "snow"}},
-	"audio":     {"channel": {"music", "ambient", "sfx"}, "action": {"play", "stop"}},
-	"camera":    {"action": {"shake", "zoom", "pan", "reset"}},
-	"sfx":       {"aura_style": AuraStyles},
+	// Что именно греем. `spine` тянет ВЕСЬ комплект скелета по одному адресу
+	// (json + атлас + все его страницы), а не только названную картинку;
+	// пустое значение = спрайт, как было до появления вида.
+	"preload": {"kind": {"sprite", "audio", "spine", ""}},
+	"audio":   {"channel": {"music", "ambient", "sfx"}, "action": {"play", "stop"}},
+	"camera":  {"action": {"shake", "zoom", "pan", "reset"}},
+	"sfx":     {"aura_style": AuraStyles},
 	// Словарь мест — один (Placement.SlotNames в движке, enums.actor.position
 	// в грамматике). center_left/center_right движок знал, а здесь их не было:
 	// валидатор ругался на место, которое рантайм понимает.

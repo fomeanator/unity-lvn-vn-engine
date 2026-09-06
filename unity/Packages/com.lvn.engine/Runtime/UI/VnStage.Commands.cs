@@ -460,11 +460,24 @@ namespace Lvn.UI
             var spriteUrls = new List<string>();
             var audioUrls = new List<string>();
 
+            // ЦЕЛЫЙ СКЕЛЕТ ОДНОЙ СТРОКОЙ. Раньше автор грел спайн, называя
+            // страницу атласа спрайтом: грелась картинка, а разметка (json и
+            // атлас) всё равно ехала в миг показа. Комплект известен по одному
+            // адресу — значит и греть его нужно комплектом.
+            var spineRefs = new List<Lvn.Content.LvnSpineRef>();
+
             void Add(string url, string kind)
             {
                 if (string.IsNullOrEmpty(url)) return;
-                if (kind == "audio") audioUrls.Add(url);
-                else spriteUrls.Add(url); // a Spine texture warms as a sprite too
+                if (kind == "audio") { audioUrls.Add(url); return; }
+                if (kind == "spine")
+                {
+                    var sp = Lvn.Content.LvnSpineRef.FromUrl(url);
+                    if (sp == null) return;
+                    spineRefs.Add(sp);
+                    return;
+                }
+                spriteUrls.Add(url); // a Spine texture warms as a sprite too
             }
 
             // Batch form (`assets=[…]`) OR the terse single-asset form
@@ -475,6 +488,18 @@ namespace Lvn.UI
                     Add((string)((JObject)a)["url"], (string)((JObject)a)["kind"]);
             else
                 Add((string)cmd["url"], (string)cmd["kind"]);
+
+            // Скелет греется своим трактом: сцена сама разберёт атлас и вытянет
+            // все его страницы, а не только ту, что назвал автор.
+            foreach (var sp in spineRefs)
+            {
+                var id = "preload:" + sp.json;
+                LvnAsync.Fire(PrefetchSpineAsync(id, new Lvn.Content.LvnSpriteEntity
+                {
+                    kind = "spine",
+                    spine = sp,
+                }), "PreloadSpine");
+            }
 
             if (spriteUrls.Count == 0 && audioUrls.Count == 0) return;
 

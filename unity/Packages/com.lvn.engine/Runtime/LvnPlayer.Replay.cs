@@ -78,6 +78,7 @@ namespace Lvn
             // across the path, transitions stripped (a rebuild snaps into place).
             var fx = new Dictionary<string, JObject>();
             var fxOrder = new List<string>();
+            JObject bg = null;   // полотно: одно на кадр, копится слиянием
             void SetFx(string key, JObject cmd)
             {
                 if (!fx.ContainsKey(key)) fxOrder.Add(key);
@@ -91,7 +92,15 @@ namespace Lvn
             {
                 int i = path[pi];
                 if (i < 0 || i >= _script.Count) continue;
-                if (!(_script[i] is JObject c) || (string)c["op"] != "actor") continue;
+                if (!(_script[i] is JObject c)) continue;
+                if ((string)c["op"] == "bg")
+                {
+                    if (bg == null) bg = new JObject { ["op"] = "bg" };
+                    foreach (var prop in c.Properties())
+                        if (prop.Name != "op") bg[prop.Name] = prop.Value.DeepClone();
+                    continue;
+                }
+                if ((string)c["op"] != "actor") continue;
                 var aid = (string)c["id"];
                 if (string.IsNullOrEmpty(aid)) continue;
                 if (!actorSticky.TryGetValue(aid, out var st)) { st = new JObject(); actorSticky[aid] = st; }
@@ -99,6 +108,15 @@ namespace Lvn
                     if (StickyActorFields.Contains(prop.Name))
                         st[prop.Name] = prop.Value.DeepClone();
                 actorLastPos[aid] = pi;
+            }
+
+            // СНАЧАЛА МИР, ПОТОМ ЛЮДИ. Полотно ставится один раз и первым:
+            // порядок кадра читается так же, как его писал автор, а игрок не
+            // платит за девять комнат, из которых он давно ушёл.
+            if (bg != null)
+            {
+                bg.Remove("fade");      // перестройка встаёт на место, а не проступает
+                StageApply(bg);
             }
 
             // Pass 2: replay inline, in path order. An actor fires exactly once —
@@ -125,6 +143,21 @@ namespace Lvn
                     _replayShown.Add(aid);
                     continue;
                 }
+                // ПОЛОТНО ОДНО, И ПОБЕЖДАЕТ ПОСЛЕДНЕЕ.
+                //
+                // Раньше bg переигрывался наравне с прочими структурными — по
+                // всему пути, командой за командой. Замер на живой главе:
+                // 11 команд bg, 10 разных картинок; возврат в её конец гнал
+                // через загрузчик все десять, из которых игрок увидит одну.
+                // На слабом устройстве (замер того же дня: 80 МБ свободных при
+                // 976 МБ памяти) это десятки мегабайт декода ради кадра,
+                // который перекроется следующей строкой.
+                //
+                // Схлопываем СЛИЯНИЕМ, а не «берём последнюю команду»: у
+                // полотна есть поля, которые автор задаёт врозь (картинку
+                // одной командой, переезд камеры — другой, без url). Взяли бы
+                // последнюю целиком — потеряли бы картинку.
+                if (op == "bg") continue;   // уже поставлено выше, одним слиянием
                 if (IsReapplyable(op)) { StageApply(c); continue; }
                 switch (op)
                 {

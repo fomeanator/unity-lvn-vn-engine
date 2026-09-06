@@ -140,6 +140,44 @@ namespace Lvn.Tests
             Assert.AreEqual("stop", (string)audio[0]["action"], "a stopped channel replays as stopped");
         }
 
+        /// <summary>
+        /// ПОЛОТНО СТАВИТСЯ ОДИН РАЗ, И ПЕРВЫМ.
+        ///
+        /// <para>Прежний договор гнал каждый <c>bg</c> пути через сцену.
+        /// Замер на живой главе: 11 команд полотна, 10 разных картинок — и
+        /// возврат в её конец тянул через загрузчик все десять, из которых
+        /// игрок увидит одну. На устройстве, где свободно 80 МБ из 976, это
+        /// десятки мегабайт декода ради кадра, который тут же перекроется.</para>
+        ///
+        /// <para>Схлопывается СЛИЯНИЕМ полей, а не «берём последнюю команду»:
+        /// картинку и переезд камеры автор задаёт врозь, и последняя команда
+        /// вполне может быть без адреса.</para>
+        /// </summary>
+        [Test]
+        public void ПолотноСтавитсяОдинРазИПервым()
+        {
+            var (p, s) = Make(@"{""script"":[
+                {""op"":""bg"",""sprite_url"":""/bg/a.jpg"",""fade"":1.0},
+                {""op"":""actor"",""id"":""hero"",""show"":true},
+                {""op"":""bg"",""sprite_url"":""/bg/b.jpg""},
+                {""op"":""bg"",""pan"":0.7},
+                {""op"":""say"",""text"":""x""}
+            ]}");
+            p.ReplayVisuals(5);
+
+            var ops = s.Applied.Select(c => (string)c["op"]).ToList();
+            CollectionAssert.AreEqual(new[] { "bg", "actor" }, ops,
+                "полотно обязано ставиться один раз и до людей");
+
+            var bg = s.Applied.First(c => (string)c["op"] == "bg");
+            Assert.AreEqual("/bg/b.jpg", (string)bg["sprite_url"],
+                "взята не последняя картинка полотна");
+            Assert.AreEqual(0.7, (double)bg["pan"], 0.0001,
+                "переезд камеры, заданный отдельной командой, потерян при слиянии");
+            Assert.IsNull(bg["fade"],
+                "перестройка кадра обязана вставать на место, а не проступать");
+        }
+
         [Test]
         public void StructuralOpsStillReplayInOrderAndFxComesAfter()
         {
@@ -153,8 +191,10 @@ namespace Lvn.Tests
             p.ReplayVisuals(5);
 
             var ops = s.Applied.Select(c => (string)c["op"]).ToList();
-            Assert.AreEqual(new[] { "bg", "actor", "bg", "fade" }, ops,
-                "structural ops in order, collapsed FX after");
+            // Полотно теперь одно и первое (см. соседнюю проверку); остальные
+            // структурные по-прежнему идут по порядку пути, эффекты — после.
+            Assert.AreEqual(new[] { "bg", "actor", "fade" }, ops,
+                "structural ops in order, backdrop once up front, collapsed FX after");
         }
 
         [Test]

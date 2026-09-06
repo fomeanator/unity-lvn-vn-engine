@@ -182,6 +182,19 @@ if [ -x "$REPO_ROOT/qa/experiment-assign-check.sh" ]; then
   fi
 fi
 
+# ОПЫТ ДОВОДИТСЯ ДО РЕШЕНИЯ. Деление проверено выше; здесь вторая половина:
+# две группы сыграли по-разному — отчёт обязан назвать разницу, а на одинаковом
+# поведении обязан промолчать и сказать, сколько игроков нужно.
+if [ -x "$REPO_ROOT/qa/experiment-report-check.sh" ]; then
+  gout_er="$OUT/experiment-report.log"
+  if "$REPO_ROOT/qa/experiment-report-check.sh" >"$gout_er" 2>&1; then
+    log "отчёт опыта: $(tail -1 "$gout_er")"
+  else
+    log "FAIL: отчёт опыта — подробности: $gout_er"
+    fail=1
+  fi
+fi
+
 # НАГРАДА ЗА ДЕНЬ, А НЕ ЗА НАЖАТИЕ. Двойное нажатие и двадцать одновременных
 # запросов не должны размножать награду, а серия обязана считаться днями.
 if [ -x "$REPO_ROOT/qa/daily-reward-check.sh" ]; then

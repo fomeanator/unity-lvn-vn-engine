@@ -19,6 +19,19 @@ namespace Lvn.Content
             Status = status;
             Code = code;
         }
+
+        /// <summary>
+        /// СЕРВЕР ОТВЕТИЛ «ЭТОГО НЕТ» — а не «я не дозвонился».
+        ///
+        /// <para>Разница нужна тому, кто объясняет игроку, почему глава не
+        /// открылась: при мёртвой связи он идёт проверять вайфай, а при
+        /// отсутствующем файле проверять нечего — виноват автор. Спрашивать
+        /// это ДОМА, а не разбирать код строкой на месте: страж
+        /// «адрес разбирает дом» справедливо покраснел на `Code.StartsWith
+        /// ("http_4")` — по форме такая строка неотличима от разбора схемы
+        /// адреса, и правил становится столько же, сколько мест.</para>
+        /// </summary>
+        public bool MissingOnServer => Status >= 400 && Status < 500;
     }
 
     /// <summary>
@@ -55,6 +68,14 @@ namespace Lvn.Content
         /// мимо этого дома, — и потому не переводился вместе с остальными.</summary>
         public static string ChapterNeedsNetwork => LvnWords.Of("network.chapter_needs",
             "This chapter needs a connection. Check it and try again.");
+
+        /// <summary>Сеть исправна, а главы на сервере нет: автор её ещё не
+        /// выложил или удалил. Игроку незачем проверять вайфай — ему нечего
+        /// чинить, и сказать об этом надо прямо.</summary>
+        public static string ChapterMissingTitle => LvnWords.Of("chapter.missing_title", "Chapter isn't here yet");
+
+        public static string ChapterMissing => LvnWords.Of("chapter.missing",
+            "This chapter isn't published yet. Your progress is safe — try again later.");
     }
 
     /// <summary>

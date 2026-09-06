@@ -124,6 +124,14 @@
   "default": "locked"
  },
  {
+  "key": "chapter.missing",
+  "default": "This chapter isn't published yet. Your progress is safe — try again later."
+ },
+ {
+  "key": "chapter.missing_title",
+  "default": "Chapter isn't here yet"
+ },
+ {
   "key": "chapter.one",
   "default": "chapter"
  },

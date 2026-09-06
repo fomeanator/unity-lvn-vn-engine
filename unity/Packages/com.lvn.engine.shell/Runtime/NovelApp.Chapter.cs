@@ -44,8 +44,11 @@ namespace Lvn.UI.Screens
                 if (!await EnsureChapterScriptAsync(chapter))
                 {
                     var eco = _manifest?.economy;
-                    await _shell.AlertAsync(eco?.gate_title ?? LvnOfflineText.Title,
-                        LvnOfflineText.ChapterNeedsNetwork);
+                    await _shell.AlertAsync(
+                        _chapterMissingOnServer ? LvnOfflineText.ChapterMissingTitle
+                                                : (eco?.gate_title ?? LvnOfflineText.Title),
+                        _chapterMissingOnServer ? LvnOfflineText.ChapterMissing
+                                                : LvnOfflineText.ChapterNeedsNetwork);
                     break;
                 }
                 if (!alreadyEntered && !await ChargeChapterEntryAsync(chapter))
@@ -213,14 +216,30 @@ namespace Lvn.UI.Screens
         // a live fetch) BEFORE the entry charge — money never burns on a
         // chapter that can't start. The later fetch inside PlayOneChapterAsync
         // then hits the cache.
+        // ПОЧЕМУ ГЛАВА НЕ ОТКРЫЛАСЬ — вопрос игрока, а не наш. «Нет сети» и
+        // «главы нет на сервере» выглядят одинаково только изнутри: снаружи
+        // первый идёт проверять вайфай, а второму проверять нечего, потому что
+        // виноват автор. Причина последней неудачи живёт здесь, чтобы
+        // сообщение называло её словом.
+        private bool _chapterMissingOnServer;
+
         private async Task<bool> EnsureChapterScriptAsync(LvnChapter chapter)
         {
+            _chapterMissingOnServer = false;
             if (chapter == null || string.IsNullOrEmpty(chapter.script_url)) return false;
             if (_assets.Loader.IsScriptCached(chapter.script_url)) return true;
             try
             {
                 var json = await _assets.Loader.DownloadScriptCached(chapter.script_url);
                 return !string.IsNullOrEmpty(json);
+            }
+            catch (Lvn.Content.LvnFetchException e)
+            {
+                // 404 — файла нет на сервере: сеть исправна, глава не выложена.
+                // Спрашиваем ДОМ (см. LvnFetchException.MissingOnServer), а не
+                // разбираем код строкой здесь.
+                _chapterMissingOnServer = e.MissingOnServer;
+                return false;
             }
             catch { return false; }
         }

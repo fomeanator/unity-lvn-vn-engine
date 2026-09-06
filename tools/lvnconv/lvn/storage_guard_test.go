@@ -128,3 +128,33 @@ func TestSavesAreWrittenInInk(t *testing.T) {
 			"и переживают ли они убийство процесса", rel)
 	}
 }
+
+// «НЕТ СЕТИ» И «ГЛАВЫ НЕТ» — РАЗНЫЕ СООБЩЕНИЯ.
+//
+// Изнутри оба случая выглядят одинаково: скрипт скачать не удалось. Снаружи
+// они разные. При мёртвой сети человек идёт проверять вайфай; при
+// отсутствующей главе проверять нечего — файл не выложен автором, и
+// единственное верное действие игрока это подождать. Сообщение, называющее
+// вторую беду первой, отправляет чинить исправное.
+//
+// Замер 06.09 по проводу: загрузчик отличает 404 (`http_404`) от обрыва и не
+// объявляет сеть мёртвой. Наверху эта разница едва не потерялась в общем
+// `catch` — страж держит ветку на месте.
+func TestChapterMissingHasItsOwnMessage(t *testing.T) {
+	root := repoRoot(t)
+	rel := filepath.Join("unity", "Packages", "com.lvn.engine.shell", "Runtime", "NovelApp.Chapter.cs")
+	data, err := os.ReadFile(filepath.Join(root, rel))
+	if err != nil {
+		t.Fatalf("%s не читается: %v", rel, err)
+	}
+	src := string(data)
+
+	if !strings.Contains(src, "LvnOfflineText.ChapterMissing") {
+		t.Errorf("%s больше не различает «главы нет» и «нет сети»: игроку с исправной связью "+
+			"скажут «проверьте соединение», и он пойдёт чинить то, что не сломано", rel)
+	}
+	if !strings.Contains(src, "MissingOnServer") {
+		t.Errorf("%s перестал спрашивать причину у дома (LvnFetchException.MissingOnServer) — "+
+			"без неё сообщение снова станет одним на все беды", rel)
+	}
+}

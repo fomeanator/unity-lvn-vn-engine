@@ -11,9 +11,15 @@
 #
 #   silent  соединение принято, ответа нет вовсе (сервер за таймаутом);
 #   drip    ответ идёт кусочками с паузами — медленно, но жив;
-#   stall   ответ начался и замер на середине тела.
+#   stall   ответ начался и замер на середине тела;
+#   error   отвечает сразу и честно: 500. Сервер жив, но сохранить не может —
+#           так выглядит перегрузка, полный диск или упавшая база.
 #
-#   qa/slow-server.py <silent|drip|stall> <порт> [байт] [пауза]
+#   qa/slow-server.py <silent|drip|stall|error> <порт> [байт] [пауза] [журнал]
+#
+# журнал — путь, куда режим `error` дописывает строку на КАЖДЫЙ пришедший
+# запрос. Без него проверка не может отличить «сервер отказал» от «клиент даже
+# не постучался», а это разные вердикты.
 #
 # Печатает «готов» в stdout, когда порт слушается: тот, кто его запустил, ждёт
 # эту строку, а не спит наугад.
@@ -23,6 +29,7 @@ MODE = sys.argv[1]
 PORT = int(sys.argv[2])
 SIZE = int(sys.argv[3]) if len(sys.argv) > 3 else 4096
 PAUSE = float(sys.argv[4]) if len(sys.argv) > 4 else 0.4
+LOG = sys.argv[5] if len(sys.argv) > 5 else ""
 CHUNK = max(1, SIZE // 16)
 
 def handle(conn):
@@ -30,6 +37,14 @@ def handle(conn):
         conn.recv(65536)
         if MODE == "silent":
             time.sleep(300)                 # не отвечаем вовсе
+            return
+        if MODE == "error":
+            if LOG:
+                with open(LOG, "a", encoding="utf-8") as f:
+                    f.write("запрос\n")
+            тело = b'{"error":"storage unavailable"}'
+            conn.sendall(b"HTTP/1.1 500 Internal Server Error\r\nContent-Length: "
+                         + str(len(тело)).encode() + b"\r\nContent-Type: application/json\r\n\r\n" + тело)
             return
         body = b"x" * SIZE
         conn.sendall(b"HTTP/1.1 200 OK\r\nContent-Length: " + str(SIZE).encode()

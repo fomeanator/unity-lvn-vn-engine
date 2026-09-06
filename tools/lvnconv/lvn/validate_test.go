@@ -1334,3 +1334,45 @@ func TestDanglingKeywordIsAnError(t *testing.T) {
 		}
 	}
 }
+
+// ГЛАВА БЕЗ ЕДИНОЙ МЕТКИ — предупреждение, а не молчание.
+//
+// Продолжение главы после правки держится на якоре: сохранение помнит
+// ближайшую метку и шаги от неё. Меток нет — якорю не за что зацепиться, и
+// правка возвращает читающих в начало. Автор об этом не узнает ниоткуда:
+// глава компилируется и играется, потеря видна только игроку и только потом.
+func TestLongChapterWithoutLabelsIsWarned(t *testing.T) {
+	длинная := &Doc{Scene: "глава"}
+	for i := 0; i < 60; i++ {
+		длинная.Script = append(длинная.Script, Cmd{"op": "say", "text": "реплика"})
+	}
+	var нашли string
+	for _, is := range Validate(длинная) {
+		if is.Sev == SevWarning && strings.Contains(is.Msg, "ни одной метки") {
+			нашли = is.Msg
+		}
+	}
+	if нашли == "" {
+		t.Error("длинная глава без меток прошла молча — автор узнает о потере от игроков")
+	}
+
+	// Одна метка — и якорю есть за что держаться: предупреждать не о чем.
+	сМеткой := &Doc{Scene: "глава", Script: append(
+		[]Cmd{{"op": "label", "id": "сцена1"}}, длинная.Script...)}
+	for _, is := range Validate(сМеткой) {
+		if is.Sev == SevWarning && strings.Contains(is.Msg, "ни одной метки") {
+			t.Errorf("глава с меткой получила предупреждение о метках: %s", is.Msg)
+		}
+	}
+
+	// Короткую главу перечитать не жалко — молчим.
+	короткая := &Doc{Scene: "глава"}
+	for i := 0; i < 10; i++ {
+		короткая.Script = append(короткая.Script, Cmd{"op": "say", "text": "реплика"})
+	}
+	for _, is := range Validate(короткая) {
+		if is.Sev == SevWarning && strings.Contains(is.Msg, "ни одной метки") {
+			t.Errorf("короткая глава получила предупреждение: %s", is.Msg)
+		}
+	}
+}
